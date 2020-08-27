@@ -158,7 +158,8 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+# THEME = "bootblog4"
+THEME = "bootstrap4"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -221,18 +222,41 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
+# POSTS = (
+#     ("posts/*.rst", "posts", "post.tmpl"),
+#     ("posts/*.md", "posts", "post.tmpl"),
+#     ("posts/*.txt", "posts", "post.tmpl"),
+#     ("posts/*.html", "posts", "post.tmpl"),
+#     ("posts/*.ipynb", "posts", "post.tmpl"),
+# )
+# PAGES = (
+#     ("pages/*.rst", "pages", "page.tmpl"),
+#     ("pages/*.md", "pages", "page.tmpl"),
+#     ("pages/*.txt", "pages", "page.tmpl"),
+#     ("pages/*.html", "pages", "page.tmpl"),
+#     ("pages/*.ipynb", "pages", "page.tmpl"), 
+# )
+
+# NON-Blog site
+# you can also keep the current content of POSTS if you want a blog with your site
 POSTS = (
-    ("posts/*.rst", "posts", "post.tmpl"),
-    ("posts/*.md", "posts", "post.tmpl"),
-    ("posts/*.txt", "posts", "post.tmpl"),
-    ("posts/*.html", "posts", "post.tmpl"),
+    ("posts/*.rst", "blog", "post.tmpl"),
+    ("posts/*.md", "blog", "post.tmpl"),
+    ("posts/*.txt", "blog", "post.tmpl"),
+    ("posts/*.html", "blog", "post.tmpl"),
+    ("posts/*.ipynb", "blog", "post.tmpl"),
 )
+
 PAGES = (
-    ("pages/*.rst", "pages", "page.tmpl"),
-    ("pages/*.md", "pages", "page.tmpl"),
-    ("pages/*.txt", "pages", "page.tmpl"),
-    ("pages/*.html", "pages", "page.tmpl"),
+    ("pages/*.rst", "", "page.tmpl"),
+    ("pages/*.md", "", "page.tmpl"),
+    ("pages/*.txt", "", "page.tmpl"),
+    ("pages/*.html", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "page.tmpl"), 
 )
+# And to avoid a conflict because blogs try to generate /index.html
+INDEX_PATH = "blog"
+
 
 
 # Below this point, everything is optional
@@ -255,6 +279,7 @@ TIMEZONE = "America/La_Paz"
 # Used by babel.dates, CLDR style: http://cldr.unicode.org/translation/date-time
 # You can also use 'full', 'long', 'medium', or 'short'
 # DATE_FORMAT = 'yyyy-MM-dd HH:mm'
+DATE_FORMAT = 'yyyy-MM-dd'
 
 # Date format used to display post dates, if local dates are used. (translatable)
 # Used by Luxon: https://moment.github.io/luxon/docs/manual/formatting
@@ -568,7 +593,7 @@ FRONT_INDEX_HEADER = {
 # Create per-month archives instead of per-year
 # CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-# CREATE_SINGLE_ARCHIVE = False
+CREATE_SINGLE_ARCHIVE = True
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
