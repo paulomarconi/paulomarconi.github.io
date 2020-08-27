@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi</title><link>https://paulomarconi.github.io/</link><description>Personal blog</description><atom:link href="https://paulomarconi.github.io/es/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 Aug 2020 20:15:33 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with jupyter, Nikola and VSCode</title><link>https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about jupyter)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/jupyter.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; </copyright><lastBuildDate>Thu, 27 Aug 2020 20:02:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with jupyter, Nikola and VSCode</title><link>https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Table-of-contents"&gt;Table of contents&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#Table-of-contents"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#paragraph1"&gt;Some paragraph&lt;/a&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#subparagraph1"&gt;Sub paragraph&lt;/a&gt;&lt;/li&gt;
+&lt;h2 id="Table-of-contents"&gt;Table of contents&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#Table-of-contents"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#paragraph1"&gt;Some paragraph&lt;/a&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#subparagraph1"&gt;Sub paragraph&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#paragraph2"&gt;Another paragraph&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#paragraph2"&gt;Another paragraph&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id="This-is-the-introduction-"&gt;This is the introduction &lt;a name="introduction"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#This-is-the-introduction-"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Some introduction text, formatted in heading 2 style.&lt;/p&gt;
-&lt;h3 id="Some-paragraph-"&gt;Some paragraph &lt;a name="paragraph1"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#Some-paragraph-"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The first paragraph text&lt;/p&gt;
-&lt;h4 id="Sub-paragraph-"&gt;Sub paragraph &lt;a name="subparagraph1"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#Sub-paragraph-"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;This is a sub paragraph, formatted in heading 3 style&lt;/p&gt;
-&lt;h3 id="Another-paragraph-"&gt;Another paragraph &lt;a name="paragraph2"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#Another-paragraph-"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The second paragraph text&lt;/p&gt;
+&lt;h3 id="This-is-the-introduction-"&gt;This is the introduction &lt;a name="introduction"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#This-is-the-introduction-"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Some introduction text, formatted in heading 2 style.&lt;/p&gt;
+&lt;h3 id="Some-paragraph-"&gt;Some paragraph &lt;a name="paragraph1"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#Some-paragraph-"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The first paragraph text&lt;/p&gt;
+&lt;h4 id="Sub-paragraph-"&gt;Sub paragraph &lt;a name="subparagraph1"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#Sub-paragraph-"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;This is a sub paragraph, formatted in heading 3 style&lt;/p&gt;
+&lt;h3 id="Another-paragraph-"&gt;Another paragraph &lt;a name="paragraph2"&gt;&lt;/a&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#Another-paragraph-"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The second paragraph text&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -34,7 +34,7 @@
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script-test"&gt;Matlab script test&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#Matlab-script-test"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script-test"&gt;Matlab script test&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#Matlab-script-test"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -165,8 +165,8 @@ $$ f(x) = x^{2i}$$&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Embedded-pdf"&gt;Embedded pdf&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/#Embedded-pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;this some intro text for the embedded pdf.&lt;/p&gt;
+&lt;h2 id="Embedded-pdf"&gt;Embedded pdf&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/#Embedded-pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;this some intro text for the embedded pdf.&lt;/p&gt;
 &lt;embed src="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px" type="application/pdf"&gt;
 &lt;/embed&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/</guid><pubDate>Fri, 21 Aug 2020 23:25:13 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>jupyter</category><category>Matlab engine</category><category>Nikola</category><category>python 3.6</category><guid>https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/</guid><pubDate>Fri, 21 Aug 2020 23:25:13 GMT</pubDate></item></channel></rss>

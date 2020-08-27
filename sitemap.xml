@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-08-27T19:23:00Z</lastmod>
+  <lastmod>2020-08-27T20:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,11 +19,43 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-08-27T18:53:00Z</lastmod>
+  <lastmod>2020-08-27T20:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/</loc>
+  <lastmod>2020-08-27T20:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-jupyter/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-rst/</loc>
+  <lastmod>2020-08-27T20:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-08-27T16:06:00Z</lastmod>
+  <lastmod>2020-08-27T20:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/jupyter/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/matlab-engine/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/matlab_kernel/</loc>
+  <lastmod>2020-08-27T20:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/nikola/</loc>
+  <lastmod>2020-08-27T20:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/python-36/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/</loc>
@@ -31,7 +63,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-08-27T19:23:00Z</lastmod>
+  <lastmod>2020-08-27T20:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -39,11 +71,44 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-08-27T18:53:00Z</lastmod>
+  <lastmod>2020-08-27T20:12:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/</loc>
+  <lastmod>2020-08-27T20:00:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/" />
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/test-jupyter/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/test-rst/</loc>
+  <lastmod>2020-08-27T20:12:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-08-27T16:06:00Z</lastmod>
+  <lastmod>2020-08-27T20:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/jupyter/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/matlab-engine/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/matlab_kernel/</loc>
+  <lastmod>2020-08-27T20:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/nikola/</loc>
+  <lastmod>2020-08-27T20:01:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/python-36/</loc>
+  <lastmod>2020-08-27T19:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/galleries/</loc>
