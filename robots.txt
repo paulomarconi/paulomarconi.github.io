@@ -1,0 +1,4 @@
+Sitemap: https://paulomarconi.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: paulomarconi.github.io
