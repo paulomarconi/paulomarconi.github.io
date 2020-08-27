@@ -7,11 +7,15 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://paulomarconi.github.io/</loc>
-  <lastmod>2020-08-27T18:53:00Z</lastmod>
+  <lastmod>2020-08-27T18:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-08-27T18:53:00Z</lastmod>
+  <lastmod>2020-08-27T19:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/bio/</loc>
+  <lastmod>2020-08-27T18:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
@@ -23,11 +27,15 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/</loc>
-  <lastmod>2020-08-27T18:53:00Z</lastmod>
+  <lastmod>2020-08-27T18:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-08-27T18:53:00Z</lastmod>
+  <lastmod>2020-08-27T19:00:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/bio/</loc>
+  <lastmod>2020-08-27T18:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
