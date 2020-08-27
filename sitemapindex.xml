@@ -14,10 +14,6 @@
   <lastmod>2020-08-27T20:02:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/categories/matlab_kernel.xml</loc>
-  <lastmod>2020-08-27T20:00:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://paulomarconi.github.io/categories/nikola.xml</loc>
   <lastmod>2020-08-27T20:02:00Z</lastmod>
  </sitemap>
@@ -34,10 +30,6 @@
   <lastmod>2020-08-27T20:02:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/matlab_kernel.xml</loc>
-  <lastmod>2020-08-27T20:00:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nikola.xml</loc>
   <lastmod>2020-08-27T20:02:00Z</lastmod>
  </sitemap>
@@ -47,7 +39,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/galleries/rss.xml</loc>
-  <lastmod>2020-08-27T20:02:00Z</lastmod>
+  <lastmod>2020-08-27T20:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
@@ -55,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
-  <lastmod>2020-08-27T20:02:00Z</lastmod>
+  <lastmod>2020-08-27T20:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
@@ -63,6 +55,6 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-08-27T20:15:00Z</lastmod>
+  <lastmod>2020-08-27T20:35:00Z</lastmod>
  </sitemap>
 </sitemapindex>
