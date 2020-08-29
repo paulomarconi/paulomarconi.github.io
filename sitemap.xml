@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://paulomarconi.github.io/</loc>
-  <lastmod>2020-08-27T18:58:00Z</lastmod>
+  <lastmod>2020-08-29T17:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-08-27T20:50:00Z</lastmod>
+  <lastmod>2020-08-29T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,15 +19,27 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-08-27T20:12:00Z</lastmod>
+  <lastmod>2020-08-28T08:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/</loc>
   <lastmod>2020-08-27T20:00:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/blog/test-html/</loc>
+  <lastmod>2020-08-28T08:25:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-markdown/</loc>
+  <lastmod>2020-08-28T07:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-rst/</loc>
+  <lastmod>2020-08-28T07:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-08-27T20:23:00Z</lastmod>
+  <lastmod>2020-08-28T07:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/jupyter/</loc>
@@ -47,11 +59,11 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/</loc>
-  <lastmod>2020-08-27T18:58:00Z</lastmod>
+  <lastmod>2020-08-29T08:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-08-27T20:50:00Z</lastmod>
+  <lastmod>2020-08-29T20:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -59,7 +71,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-08-27T20:12:00Z</lastmod>
+  <lastmod>2020-08-28T08:25:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/</loc>
@@ -67,8 +79,23 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/blog/test-html/</loc>
+  <lastmod>2020-08-28T08:25:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-html/" />
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/test-markdown/</loc>
+  <lastmod>2020-08-28T07:18:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-markdown/" />
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/test-rst/</loc>
+  <lastmod>2020-08-28T07:24:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-rst/" />
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-08-27T20:23:00Z</lastmod>
+  <lastmod>2020-08-28T07:38:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/jupyter/</loc>
@@ -91,11 +118,23 @@
   <lastmod>2020-08-27T16:06:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/test-page/</loc>
+  <lastmod>2020-08-29T08:19:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/galleries/</loc>
   <lastmod>2020-08-27T16:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/</loc>
-  <lastmod>2020-08-27T16:06:00Z</lastmod>
+  <lastmod>2020-08-28T07:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/listings/test.py.html</loc>
+  <lastmod>2020-08-29T20:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/test-page/</loc>
+  <lastmod>2020-08-29T08:19:00Z</lastmod>
  </url>
 </urlset>
