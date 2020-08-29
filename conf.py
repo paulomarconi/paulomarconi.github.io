@@ -162,6 +162,7 @@ NAVIGATION_ALT_LINKS = {
 # Name of the theme to use.
 # THEME = "bootblog4"
 THEME = "bootstrap4"
+# THEME = "custom" #cerulean 
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -297,7 +298,7 @@ DATE_FORMAT = 'yyyy-MM-dd'
 # 2 = using a string like “2 days ago” (JS, using Luxon)
 #
 # Your theme must support it, Bootstrap already does.
-# DATE_FANCINESS = 0
+DATE_FANCINESS = 0
 
 # Customize the locale/region used for a language.
 # For example, to use British instead of US English: LOCALES = {'en': 'en_GB'}
@@ -308,11 +309,13 @@ DATE_FORMAT = 'yyyy-MM-dd'
 # Default is:
 # FILES_FOLDERS = {'files': ''}
 # Which means copy 'files' into 'output'
+FILES_FOLDERS = {'files': 'files'}
+# Which means copy 'files' into 'output/files'
 
 # One or more folders containing code listings to be processed and published on
 # the site. The format is a dictionary of {source: relative destination}.
 # Default is:
-# LISTINGS_FOLDERS = {'listings': 'listings'}
+LISTINGS_FOLDERS = {'listings': 'listings'}
 # Which means process listings from 'listings' into 'output/listings'
 
 # A mapping of languages to file-extensions that represent that language.
@@ -341,6 +344,7 @@ COMPILERS = {
     # but is disabled by default as it would conflict
     # with many of the others.
     # "pandoc": ['.rst', '.md', '.txt'],
+    "pdf": ['.pdf'],
 }
 
 # Enable reST directives that insert the contents of external files such
@@ -932,7 +936,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'default'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
@@ -986,7 +990,44 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+# CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         {license}'
+CONTENT_FOOTER = '''
+<div class="text-center">
+    <p>
+        <span class="fa-stack fa-2x">
+        <a href="https://github.com/paulomarconi">
+            <i class="fa fa-github-square fa-stack-2x"></i>
+        </a>
+        </span>
+        <!--
+        <span class="fa-stack fa-2x">
+        <a href="https://scholar.google.com/citations?user=">
+            <i class="ai ai-google-scholar-square ai-2x"></i>
+        </a>
+        </span>
+        -->
+        <span class="fa-stack fa-2x">
+        <a href="https://www.linkedin.com/in/paulomarconi">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>
+        <span class="fa-stack fa-2x">
+        <a href="mailto:{email}">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>
+    </p>
+    <p>
+        Contents &copy; {date}  {author}  &mdash;  {license}  &mdash;  Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    </p>
+</div>
+
+'''
+
+
+
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1028,7 +1069,7 @@ COMMENT_SYSTEM = "disqus"
 # depends on what comment system you use. The default is
 # "nikolademo" which is a test account for Disqus. More information
 # is in the manual.
-COMMENT_SYSTEM_ID = "zurits"
+COMMENT_SYSTEM_ID = "paulomarconi"
 
 # Create index.html for page folders?
 # WARNING: if a page would conflict with the index file (usually
@@ -1164,10 +1205,10 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # """
 
 # Show link to source for the posts?
-# SHOW_SOURCELINK = True
+SHOW_SOURCELINK = True
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
-# COPY_SOURCES = True
+COPY_SOURCES = True
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -1227,19 +1268,19 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # """ % SITE_URL
 #
 # If you prefer a Google search form, here's an example that should just work:
-# SEARCH_FORM = """
-# <!-- Google custom search -->
-# <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-# <div class="form-group">
-# <input type="text" name="q" class="form-control" placeholder="Search">
-# </div>
-# <button type="submit" class="btn btn-primary">
-# 	<span class="glyphicon glyphicon-search"></span>
-# </button>
-# <input type="hidden" name="sitesearch" value="%s">
-# </form>
-# <!-- End of custom search -->
-# """ % SITE_URL
+SEARCH_FORM = """
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+    <div class="form-group">
+        <input type="text" name="q" class="form-control" placeholder="Search">
+    </div>
+    <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span>
+    </button>
+    <input type="hidden" name="sitesearch" value="%s">
+</form>
+<!-- End of custom search -->
+""" % SITE_URL
 
 # Use content distribution networks for jQuery, twitter-bootstrap css and js,
 # and html5shiv (for older versions of Internet Explorer)
@@ -1258,11 +1299,17 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
+EXTRA_HEAD_DATA = '''
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <link href="../../files/prism/prism.css" rel="stylesheet" />
+'''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-# BODY_END = ""
+BODY_END = '''
+    <script src="../../files/prism/prism.js"></script>
+'''
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.
