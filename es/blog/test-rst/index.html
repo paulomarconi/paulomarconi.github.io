@@ -22,18 +22,15 @@
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Test rst">
 <meta property="og:url" content="https://paulomarconi.github.io/es/blog/test-rst/">
-<meta property="og:description" content="Write your post here.
-This is a paragraph.  It's quite
-short.
+<meta property="og:description" content="Title
 
-This paragraph will result in an indented block of
-text, typically used for quoting other text.
-
-This is another one.
-2*3
-*
-text
-double b">
+Subtitle
+Titles are underlined (or over-
+and underlined) with a printing of
+nonalphanumeric 7-bit ASCII
+character. Recommended choices
+are &quot;= - ` : ' &quot; ~ ^ _ * + # &lt; &gt;&quot;.
+The underline/overline ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-08-22T14:11:29-04:00">
 <link rel="alternate" hreflang="en" href="../../../blog/test-rst/">
@@ -130,8 +127,20 @@ navbar-dark bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<p>Write your post here.</p>
+    <div class="section" id="title">
+<h2>Title</h2>
+<div class="section" id="subtitle">
+<h3>Subtitle</h3>
+<p>Titles are underlined (or over-
+and underlined) with a printing of
+nonalphanumeric 7-bit ASCII
+character. Recommended choices
+are "<code class="docutils literal">= - ` : ' " ~ ^ _ * + # &lt; &gt;</code>".
+The underline/overline must be at
+least as long as the title text.</p>
+<p>A lone top-level (sub)section
+is lifted up to be the document's
+(sub)title.</p>
 <p>This is a paragraph.  It's quite
 short.</p>
 <blockquote>
@@ -157,10 +166,38 @@ Blank lines are not allowed between term and definition.</p>
 </dd>
 </dl>
 <div class="section" id="chapter-1-title">
-<h2>Chapter 1 Title</h2>
+<h4>Chapter 1 Title</h4>
 <p>test</p>
-<pre class="lang-markup" data-jsonp="https://api.github.com/repos/umsaETN/IEA_Robotics/contents/README.md"></pre>
+<p>Inline math, <span class="math">\(e^{ix} = \cos x + i\sin x\)</span></p>
+<div class="math">
+\begin{equation*}
+\begin{cases}
+\begin{aligned}
+    \hat{x}_{k+1|k+1} &amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
+    e_{k+1|k+1}       &amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
+    P_{k+1|k+1}       &amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
+    K_{k+1}           &amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
+\end{aligned}
+\end{cases}
+\end{equation*}
+</div>
+<pre class="code octave"><a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-1"></a><span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-2"></a>    <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-3"></a>    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-4"></a>        <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-5"></a>    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-6"></a>        <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-7"></a>    <span class="k">end</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-8"></a>    <span class="c">% check feasibility</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-9"></a>    <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-10"></a>        <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-11"></a>        <span class="k">break</span><span class="p">;</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-12"></a>    <span class="k">end</span>
+<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-13"></a><span class="k">end</span>
+</pre>
+<pre class="lang-markup" data-jsonp="https://api.github.com/repos/paulomarconi/MPC-SSTO/contents/README.md"></pre>
 <embed src="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px" type="application/pdf"></embed>
+</div>
 </div>
 </div>
     </div>
@@ -193,7 +230,19 @@ Blank lines are not allowed between term and definition.</p>
     <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
-        </section></article><script>var disqus_shortname="paulomarconi";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"><div class="text-center">
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script></article><script>var disqus_shortname="paulomarconi";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"><div class="text-center">
     <p>
         <span class="fa-stack fa-2x">
         <a href="https://github.com/paulomarconi">
@@ -202,7 +251,7 @@ Blank lines are not allowed between term and definition.</p>
         </span>
         <!--
         <span class="fa-stack fa-2x">
-        <a href="https://scholar.google.com/citations?user=">
+        <a href="https://scholar.google.com/citations?user=ID">
             <i class="ai ai-google-scholar-square ai-2x"></i>
         </a>
         </span>

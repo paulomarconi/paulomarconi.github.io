@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre nonlinear)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/nonlinear.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; </copyright><lastBuildDate>Mon, 31 Aug 2020 23:11:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Sinusoidal-Input Describing Functions (SIDF) analysis of a HVAC system.</title><link>https://paulomarconi.github.io/es/blog/SIDF/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Write your post here.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/SIDF/</guid><pubDate>Mon, 31 Aug 2020 21:50:14 GMT</pubDate></item><item><title>Nonlinear stability analysis of a root-locus compensator</title><link>https://paulomarconi.github.io/es/blog/Root-locus_nonlinear-analysis/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Write your post here.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Root-locus_nonlinear-analysis/</guid><pubDate>Mon, 31 Aug 2020 21:50:02 GMT</pubDate></item><item><title>Absolute stability of nonlinear systems by Nyquist, Popov and Circle criteria</title><link>https://paulomarconi.github.io/es/blog/Popov-circle_criteria/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Write your post here.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Popov-circle_criteria/</guid><pubDate>Mon, 31 Aug 2020 21:49:52 GMT</pubDate></item><item><title>Nonlinear electro-mechanical system with continuous reversing mode</title><link>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Analysis and simulation of a simple nonlinear electro-mechanical system composed of a permanent DC motor with gear train, load, thermal model, and Coulomb friction.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-formulation."&gt;Problem formulation.&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/#Problem-formulation."&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Nonlinear_DCmotor/master/asst02_2017_assignment.pdf" width="100%" height="800px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Nonlinear_DCmotor/master/asst02_2017_assignment.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
+&lt;/object&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="The-proposed-solution"&gt;The proposed solution&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/#The-proposed-solution"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Nonlinear_DCmotor/master/asst02_2017/asst02_2017.pdf" width="100%" height="800px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Nonlinear_DCmotor/master/asst02_2017/asst02_2017.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Source code on &lt;a href="https://github.com/paulomarconi/Nonlinear_DCmotor"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</guid><pubDate>Mon, 31 Aug 2020 21:48:34 GMT</pubDate></item></channel></rss>
