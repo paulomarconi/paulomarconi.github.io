@@ -139,9 +139,9 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ("/index.html", "Home"),
-        ("/bio/index.html", "Bio"),
         ("/archive.html", "Blog"),
         ("/categories/", "Tags"),
+        ("/bio/index.html", "Bio"),                
         ("/rss.xml", "RSS feed"),
     ),
 
@@ -255,7 +255,7 @@ PAGES = (
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
-    ("pages/*.ipynb", "", "page.tmpl"), 
+    ("pages/*.ipynb", "", "page.tmpl"),
 )
 # And to avoid a conflict because blogs try to generate /index.html
 INDEX_PATH = "blog"
@@ -344,13 +344,12 @@ COMPILERS = {
     # but is disabled by default as it would conflict
     # with many of the others.
     # "pandoc": ['.rst', '.md', '.txt'],
-    "pdf": ['.pdf'],
 }
 
 # Enable reST directives that insert the contents of external files such
 # as "include" and "raw." This maps directly to the docutils file_insertion_enabled
 # config. See: http://docutils.sourceforge.net/docs/user/config.html#file-insertion-enabled
-# REST_FILE_INSERTION_ENABLED = True
+REST_FILE_INSERTION_ENABLED = True
 
 # Create by default posts in one file format?
 # Set to False for two-file posts, with separate metadata.
@@ -1001,7 +1000,7 @@ CONTENT_FOOTER = '''
         </span>
         <!--
         <span class="fa-stack fa-2x">
-        <a href="https://scholar.google.com/citations?user=">
+        <a href="https://scholar.google.com/citations?user=ID">
             <i class="ai ai-google-scholar-square ai-2x"></i>
         </a>
         </span>
@@ -1127,21 +1126,21 @@ PRETTY_URLS = True
 
 # If you want support for the $.$ syntax (which may conflict with running
 # text!), just use this config:
-# MATHJAX_CONFIG = """
-# <script type="text/x-mathjax-config">
-# MathJax.Hub.Config({
-#     tex2jax: {
-#         inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
-#         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
-#         processEscapes: true
-#     },
-#     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
-#     "HTML-CSS": {
-#         styles: {'.MathJax_Display': {"margin": 0}}
-#     }
-# });
-# </script>
-# """
+MATHJAX_CONFIG = """
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+"""
 
 # Want to use KaTeX instead of MathJax? While KaTeX may not support every
 # feature yet, it's faster and the output looks better.
@@ -1453,3 +1452,4 @@ GLOBAL_CONTEXT_FILLER = []
 # Add any post types here that you want to be displayed without a title.
 # Ir your theme supports it, the titles will not be shown.
 TYPES_TO_HIDE_TITLE = []
+
