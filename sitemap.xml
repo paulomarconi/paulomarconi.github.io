@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://paulomarconi.github.io/</loc>
-  <lastmod>2020-08-31T03:18:00Z</lastmod>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Cache_memory-FPGA-VHDL-Quartus/</loc>
@@ -34,8 +34,8 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/blog/MPC-SSTOO/</loc>
-  <lastmod>2020-08-31T21:00:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Nikola-guide/</loc>
@@ -78,14 +78,6 @@
   <lastmod>2020-08-27T20:00:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/blog/mpc-ssto/</loc>
-  <lastmod>2020-08-31T17:43:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/blog/personal-website-with-nikola-in-5-min-well-not-really/</loc>
-  <lastmod>2020-08-31T06:28:00Z</lastmod>
- </url>
- <url>
   <loc>https://paulomarconi.github.io/blog/test-html/</loc>
   <lastmod>2020-08-28T08:25:00Z</lastmod>
  </url>
@@ -99,7 +91,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -118,10 +110,6 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/categories/cat_control-systems/</loc>
-  <lastmod>2020-08-31T17:37:00Z</lastmod>
- </url>
- <url>
   <loc>https://paulomarconi.github.io/categories/circle-criteria/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
@@ -132,10 +120,6 @@
  <url>
   <loc>https://paulomarconi.github.io/categories/control-systems/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/categories/control/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/dc-motor/</loc>
@@ -168,10 +152,6 @@
  <url>
   <loc>https://paulomarconi.github.io/categories/matlab-engine/</loc>
   <lastmod>2020-08-27T19:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/categories/matlab/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/mpc/</loc>
@@ -255,7 +235,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Cache_memory-FPGA-VHDL-Quartus/</loc>
@@ -273,8 +253,9 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Least-square_nonlinearity/" />
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/blog/MPC-SSTOO/</loc>
-  <lastmod>2020-08-31T21:00:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/blog/MPC-SSTO/</loc>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/MPC-SSTO/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Nikola-guide/</loc>
@@ -326,14 +307,6 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/" />
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/blog/mpc-ssto/</loc>
-  <lastmod>2020-08-31T17:43:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/es/blog/personal-website-with-nikola-in-5-min-well-not-really/</loc>
-  <lastmod>2020-08-31T06:28:00Z</lastmod>
- </url>
- <url>
   <loc>https://paulomarconi.github.io/es/blog/test-html/</loc>
   <lastmod>2020-08-28T08:25:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-html/" />
@@ -350,7 +323,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -369,10 +342,6 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/cat_control-systems/</loc>
-  <lastmod>2020-08-31T17:37:00Z</lastmod>
- </url>
- <url>
   <loc>https://paulomarconi.github.io/es/categories/circle-criteria/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
@@ -383,10 +352,6 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/control-systems/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/es/categories/control/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/dc-motor/</loc>
@@ -419,10 +384,6 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/matlab-engine/</loc>
   <lastmod>2020-08-27T19:28:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/es/categories/matlab/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/mpc/</loc>

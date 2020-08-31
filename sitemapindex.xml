@@ -22,10 +22,6 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/categories/cat_control-systems.xml</loc>
-  <lastmod>2020-08-31T21:01:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://paulomarconi.github.io/categories/circle-criteria.xml</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
@@ -36,10 +32,6 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/control-systems.xml</loc>
   <lastmod>2020-08-31T23:11:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://paulomarconi.github.io/categories/control.xml</loc>
-  <lastmod>2020-08-31T21:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/dc-motor.xml</loc>
@@ -72,10 +64,6 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab-engine.xml</loc>
   <lastmod>2020-08-31T03:18:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
-  <lastmod>2020-08-31T21:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
@@ -162,10 +150,6 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/cat_control-systems.xml</loc>
-  <lastmod>2020-08-31T21:01:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/circle-criteria.xml</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
@@ -176,10 +160,6 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/control-systems.xml</loc>
   <lastmod>2020-08-31T23:11:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/control.xml</loc>
-  <lastmod>2020-08-31T21:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/dc-motor.xml</loc>
@@ -212,10 +192,6 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/matlab-engine.xml</loc>
   <lastmod>2020-08-31T03:18:00Z</lastmod>
- </sitemap>
- <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
-  <lastmod>2020-08-31T21:01:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/mpc.xml</loc>
@@ -303,6 +279,6 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-08-31T23:18:00Z</lastmod>
  </sitemap>
 </sitemapindex>
