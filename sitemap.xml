@@ -7,99 +7,107 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://paulomarconi.github.io/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
-  <lastmod>2020-08-27T18:58:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Cache_memory-FPGA-VHDL-Quartus/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Least-square_nonlinearity/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Nikola-guide/</loc>
-  <lastmod>2020-08-31T06:28:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Phase-lead_phase-lag/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Popov-circle_criteria/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Root-locus_nonlinear-analysis/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/SIDF/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/cesar-put/</loc>
+  <lastmod>2020-09-11T03:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/cesar-puto/</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/draft/</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/index-1.html</loc>
-  <lastmod>2020-08-31T22:29:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/inverted-cart-pendulum_kalman-filter/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/</loc>
-  <lastmod>2020-08-27T20:00:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/test-html/</loc>
-  <lastmod>2020-08-28T08:25:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/test-markdown/</loc>
-  <lastmod>2020-08-28T07:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/test-rst/</loc>
-  <lastmod>2020-08-28T07:24:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-06T00:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/categories/blog/</loc>
-  <lastmod>2020-08-31T06:29:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/categories/anaconda/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/bode/</loc>
@@ -138,6 +146,10 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/github/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/hvac-system/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
@@ -150,8 +162,8 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/categories/matlab-engine/</loc>
-  <lastmod>2020-08-27T19:28:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/categories/matlab/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/mpc/</loc>
@@ -186,8 +198,8 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/categories/python-36/</loc>
-  <lastmod>2020-08-27T19:28:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/categories/python/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/quartus/</loc>
@@ -222,116 +234,132 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/vscode/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/cheatsheet/</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/</loc>
-  <lastmod>2020-08-29T08:19:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
-  <lastmod>2020-08-27T18:58:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:35:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Cache_memory-FPGA-VHDL-Quartus/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Cache_memory-FPGA-VHDL-Quartus/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Least-square_nonlinearity/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Least-square_nonlinearity/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/MPC-SSTO/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/MPC-SSTO/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Nikola-guide/</loc>
-  <lastmod>2020-08-31T06:28:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nikola-guide/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Popov-circle_criteria/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Popov-circle_criteria/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Root-locus_nonlinear-analysis/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Root-locus_nonlinear-analysis/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/SIDF/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/SIDF/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/blog/cesar-put/</loc>
+  <lastmod>2020-09-11T03:35:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/cesar-puto/</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/draft/</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/draft/" />
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/blog/index-1.html</loc>
-  <lastmod>2020-08-31T22:29:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/inverted-cart-pendulum_kalman-filter/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/inverted-cart-pendulum_kalman-filter/" />
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/blog/jupypter-Nikola-VSCode/</loc>
-  <lastmod>2020-08-27T20:00:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/jupypter-Nikola-VSCode/" />
- </url>
- <url>
   <loc>https://paulomarconi.github.io/es/blog/test-html/</loc>
-  <lastmod>2020-08-28T08:25:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-html/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/test-markdown/</loc>
-  <lastmod>2020-08-28T07:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-markdown/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/test-rst/</loc>
-  <lastmod>2020-08-28T07:24:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/test-rst/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-06T00:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/blog/</loc>
-  <lastmod>2020-08-31T06:29:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/anaconda/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/bode/</loc>
@@ -370,6 +398,10 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/github/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/hvac-system/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
@@ -382,8 +414,8 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/matlab-engine/</loc>
-  <lastmod>2020-08-27T19:28:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/matlab/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/mpc/</loc>
@@ -418,8 +450,8 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/python-36/</loc>
-  <lastmod>2020-08-27T19:28:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/python/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/quartus/</loc>
@@ -454,12 +486,20 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/vscode/</loc>
+  <lastmod>2020-09-03T18:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/cheatsheet/</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/galleries/</loc>
   <lastmod>2020-08-27T16:06:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/test-page/</loc>
-  <lastmod>2020-08-29T08:19:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/galleries/</loc>
@@ -471,10 +511,10 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/test.py.html</loc>
-  <lastmod>2020-08-31T21:43:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/test-page/</loc>
-  <lastmod>2020-08-29T08:19:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
 </urlset>

@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about circle criteria)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/circle-criteria.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; </copyright><lastBuildDate>Mon, 31 Aug 2020 22:26:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Absolute stability of nonlinear systems by Nyquist, Popov and Circle criteria</title><link>https://paulomarconi.github.io/blog/Popov-circle_criteria/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about circle criteria)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/circle-criteria.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; </copyright><lastBuildDate>Tue, 01 Sep 2020 02:35:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Absolute stability of nonlinear systems by Nyquist, Popov and Circle criteria</title><link>https://paulomarconi.github.io/blog/Popov-circle_criteria/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Write your post here.&lt;/p&gt;
+&lt;p&gt;The following describes the analysis of nonlinear systems by Nyquist, Popov and Circle criteria.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description><category>circle criteria</category><category>nonlinear</category><category>Popov</category><guid>https://paulomarconi.github.io/blog/Popov-circle_criteria/</guid><pubDate>Mon, 31 Aug 2020 21:49:52 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Problem-formulation"&gt;Problem formulation&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Popov-circle_criteria/#Problem-formulation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Popov-Circle_criteria/master/asst04_2017_assignment.pdf" width="100%" height="800px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Popov-Circle_criteria/master/asst04_2017_assignment.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
+&lt;/object&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="The-proposed-solution."&gt;The proposed solution.&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Popov-circle_criteria/#The-proposed-solution."&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Popov-Circle_criteria/master/asst04_2017/asst04_2017.pdf" width="100%" height="800px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Popov-Circle_criteria/master/asst04_2017/asst04_2017.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Source code on &lt;a href="https://github.com/paulomarconi/Popov-Circle_criteria"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><category>circle criteria</category><category>nonlinear</category><category>Popov</category><guid>https://paulomarconi.github.io/blog/Popov-circle_criteria/</guid><pubDate>Mon, 31 Aug 2020 21:49:52 GMT</pubDate></item></channel></rss>

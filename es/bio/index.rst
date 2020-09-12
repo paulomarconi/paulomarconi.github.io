@@ -1,6 +1,6 @@
-.. title: Bio
+.. title: bio
 .. slug: bio
-.. date: 2020-08-27 14:57:54 UTC-04:00
+.. date: 2020-09-10 02:21:17 UTC-04:00
 .. tags: 
 .. category: 
 .. link: 

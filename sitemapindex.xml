@@ -10,8 +10,8 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/categories/blog.xml</loc>
-  <lastmod>2020-08-31T06:30:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/categories/anaconda.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/bode.xml</loc>
@@ -23,15 +23,15 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/circle-criteria.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/compensator.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/control-systems.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/dc-motor.xml</loc>
@@ -50,20 +50,24 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/github.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/categories/hvac-system.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/jupyter.xml</loc>
-  <lastmod>2020-08-31T03:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/least-square.xml</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/categories/matlab-engine.xml</loc>
-  <lastmod>2020-08-31T03:18:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
@@ -71,11 +75,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nikola.xml</loc>
-  <lastmod>2020-08-31T06:30:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nonlinear.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nonlinearity.xml</loc>
@@ -95,11 +99,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/popov.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/categories/python-36.xml</loc>
-  <lastmod>2020-08-31T06:30:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/categories/python.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/quartus.xml</loc>
@@ -107,11 +111,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/root-locus.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/sidf.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/ssto.xml</loc>
@@ -119,7 +123,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/stability.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/swarm-robotics.xml</loc>
@@ -134,12 +138,16 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/vscode.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/aggregation.xml</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/blog.xml</loc>
-  <lastmod>2020-08-31T06:30:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/anaconda.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/bode.xml</loc>
@@ -151,15 +159,15 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/circle-criteria.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/compensator.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/control-systems.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/dc-motor.xml</loc>
@@ -178,20 +186,24 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/github.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/hvac-system.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/jupyter.xml</loc>
-  <lastmod>2020-08-31T03:18:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/least-square.xml</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/matlab-engine.xml</loc>
-  <lastmod>2020-08-31T03:18:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/mpc.xml</loc>
@@ -199,11 +211,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nikola.xml</loc>
-  <lastmod>2020-08-31T06:30:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nonlinear.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nonlinearity.xml</loc>
@@ -223,11 +235,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/popov.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://paulomarconi.github.io/es/categories/python-36.xml</loc>
-  <lastmod>2020-08-31T06:30:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/python.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/quartus.xml</loc>
@@ -235,11 +247,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/root-locus.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/sidf.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/ssto.xml</loc>
@@ -247,7 +259,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/stability.xml</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2020-09-01T02:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics.xml</loc>
@@ -262,23 +274,27 @@
   <lastmod>2020-08-31T22:26:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/vscode.xml</loc>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/galleries/rss.xml</loc>
-  <lastmod>2020-08-31T21:43:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
-  <lastmod>2020-08-31T21:43:00Z</lastmod>
+  <lastmod>2020-09-11T03:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2020-08-31T23:11:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-08-31T23:18:00Z</lastmod>
+  <lastmod>2020-09-12T01:40:00Z</lastmod>
  </sitemap>
 </sitemapindex>
