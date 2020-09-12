@@ -162,7 +162,6 @@ NAVIGATION_ALT_LINKS = {
 # Name of the theme to use.
 # THEME = "bootblog4"
 # THEME = "bootstrap4"
-# THEME = "custom" #cerulean 
 THEME = "themeBlog"
 
 # Primary color of your theme. This will be used to customize your theme.
@@ -946,7 +945,7 @@ CODE_COLOR_SCHEME = 'default'
 FAVICONS = (
     # ("icon", "/favicon.ico", "16x16"),
     # ("icon", "/icon_128x128.png", "128x128"),
-    ("icon", "../images/website/favicon.ico", "128x128"),
+    ("icon", "/files/blogFavicon.ico", "128x128"),
 )
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
@@ -985,11 +984,11 @@ FEED_LINKS_APPEND_QUERY = False
 LICENSE = ""
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
@@ -1023,10 +1022,9 @@ CONTENT_FOOTER = '''
         </span>
     </p>
     <p>
-        Contents &copy; {date}  {author}  &mdash;  {license}  &mdash;  Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+        {license} Contents &copy; {date}  <a href="mailto:{email}">{author}</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
     </p>
 </div>
-
 '''
 
 
@@ -1211,7 +1209,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.c
 SHOW_SOURCELINK = True
 # Copy the source files for your pages?
 # Setting it to False implies SHOW_SOURCELINK = False
-COPY_SOURCES = True
+# COPY_SOURCES = False
 
 # Modify the number of Post per Index Page
 # Defaults to 10
@@ -1274,13 +1272,13 @@ COPY_SOURCES = True
 SEARCH_FORM = """
 <!-- Google custom search -->
 <form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-    <div class="form-group">
+    <div class="input-group">
         <input type="text" name="q" class="form-control" placeholder="Search">
-    </div>
-    <button type="submit" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
-    <input type="hidden" name="sitesearch" value="%s">
+        <button type="submit" class="btn btn-secondary">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="hidden" name="sitesearch" value="%s">
+    </div>    
 </form>
 <!-- End of custom search -->
 """ % SITE_URL

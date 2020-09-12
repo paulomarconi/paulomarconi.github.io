@@ -161,7 +161,7 @@ Although, most of them are self-explained, they can be categorized in three type
 
 # Configure a non-blog Nikola site 
 
-From now on, we will configure Nikola using `conf.py` located in your root directory.
+From now on, we will configure Nikola using `conf.py`, located in your root directory.
 
 ## Create the index and bio page
 
@@ -372,7 +372,7 @@ THEME = "themeBlog"
 
 Done!. Now you can create and edit posts as Jupyter Notebooks.
 
-# Extra configuration
+# Extra configurations
 
 ## Files and Listings 
 
@@ -381,30 +381,236 @@ FILES_FOLDERS = {'files': 'files'} # Which means copy 'files' into 'output/files
 LISTINGS_FOLDERS = {'listings': 'listings'} # Which means process listings from 'listings' into 'output/listings'
 ```
 
-## Date format
+## Enable single Archive
 
 ```python
-DATE_FORMAT = 'yyyy-MM-dd'
+# Create one large archive instead of per-year
+CREATE_SINGLE_ARCHIVE = True
 ```
 
-## 
+## Favicon
+
+```python
+FAVICONS = (
+    ("icon", "/files/blogFavicon.ico", "128x128"),
+)
+```
+
+## License
+
+```html
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+```
+
+## Header
+
+Add FontAwesone and Academic Icons.
+```html
+EXTRA_HEAD_DATA = '''
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+'''
+```
+
+## Footer
+
+```html
+CONTENT_FOOTER = '''
+<div class="text-center">
+    <p>
+        <span class="fa-stack fa-2x">
+        <a href="https://github.com/<user_name>">
+            <i class="fa fa-github-square fa-stack-2x"></i>
+        </a>
+        </span>
+        <span class="fa-stack fa-2x">
+        <a href="https://scholar.google.com/citations?user=ID">
+            <i class="ai ai-google-scholar-square ai-2x"></i>
+        </a>
+        </span>
+        <span class="fa-stack fa-2x">
+        <a href="https://www.linkedin.com/in/ID">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>
+        <span class="fa-stack fa-2x">
+        <a href="mailto:{email}">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>
+    </p>
+    <p>
+        {license} Contents &copy; {date}  <a href="mailto:{email}">{author}</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+    </p>
+</div>
+'''
+```
 
 
+## Google search
+
+```html
+SEARCH_FORM = """
+<!-- Google custom search -->
+<form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search">
+        <button type="submit" class="btn btn-secondary">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="hidden" name="sitesearch" value="%s">
+    </div>    
+</form>
+<!-- End of custom search -->
+""" % SITE_URL
+```
+
+**Notes**
+- You may find that `conf.py` uses Glyphicon, but Bootstrap 4+ uses [FontAwesome](https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration) instead. 
+- For Bootstrap 4+, change `form-group` to `input-group`.
+- More configurations with [Bootstrap 4 demo Icon inputs](https://www.codeply.com/go/ioPsDfyCBc).
+
+## Disqus
+
+- Create an account on [Disqus](https://disqus.com/).
+- On Disqus, *create a new site*.
+- Choose a `disqus_shortname`, e.g. `github_user_name`. I recommend not to use `<user_name>.github.io`
+- Add your blog site `<user_name>.github.io`.
+- Chose *Basic Plan* 
+- Skip instructions in the  *Select Platform* section.
+- Add the following 
+```python
+COMMENT_SYSTEM = "disqus"
+COMMENT_SYSTEM_ID = "<disqus_shortname>"
+```
 
 
+## Config the sticky menu
+
+You can set the navigation bar sticks on the top as you scroll down the page.
+
+- Copy the parent base template
+```bash
+nikola theme --copy-template=base.tmpl
+```
+- Move it to `/themes/themeBlog/templates/` and add the following as follows
+```html
+<!-- Menubar -->
+<nav class="navbar navbar-expand-md sticky-top mb-4
+...
+```
 
 
+## Adding Prism
 
+By default, Nikola uses Pygments for code highlighting.
 
+- For Markdown and Jupyter Notebook.
+```
+    ```python
+    def fn()
+    pass:
+    print('hello world')
+    ```
+```
+- In rST.
+```
+    .. code-block:: python
 
+        def fn()
+        pass:
+        print('hello world')
+```
 
+Alternatively, I like to use [Prism](https://prismjs.com/) due its JSONP Highlight plugin that allows to import external code hosted on GitHub or some other place.
 
+- Select the [Minifed version](https://prismjs.com/download.html) with all Languages. 
+- You can add any plugins.
+![Prism plugins](/images/selected_prism_plugins.png).
+- Download the JS and CSS files.
+- Save them in `/themes/themeBlog/assets/css/prism.css` and `/themes/themeBlog/assets/js/prism.js`
+- Add the following into the `conf.py`
+```html
+EXTRA_HEAD_DATA = '''
+  ...
+  <link href="../../assets/css/prism.css" rel="stylesheet" />
+'''
+...
+
+BODY_END = '''
+    <script src="../../assets/js/prism.js"></script>
+'''
+```
+- Also, add the `prism.css` into the `post_ipynb.tmpl`
+```html
+<%block name="extra_head">
+    ...
+    <link href="../../assets/css/prism.css" rel="stylesheet" />
+</%block>
+```
+- Done!. Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight a code file.
+```html
+    <pre class="lang-markup" data-jsonp="https://api.github.com/repos/<user_name>/<repository_name>/contents/<file_location>"></pre>
+```
+- In rST.
+```html
+
+    .. raw:: html
+
+        <pre class="lang-markup" data-jsonp="https://api.github.com/repos/<user_name>/<repository_name>/contents/<file_location>"></pre>
+
+```
+- Check [Prism Plugins](https://prismjs.com/#plugins) for usage examples.
+
+# Latex with Mathjax
+
+```html
+# If you want support for the $.$ syntax (which may conflict with running
+# text!), just use this config:
+MATHJAX_CONFIG = """
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
+        processEscapes: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    }
+});
+</script>
+"""
+```
+
+# GitHub pages
+
+- Initialize Git
+```bash
+git init .
+git remote add origin https://github.com/<user_name>/<user_name>.github.io
+```
+- Edit `conf.py`
+```python
+GITHUB_SOURCE_BRANCH = 'src'
+GITHUB_DEPLOY_BRANCH = 'master'
+GITHUB_REMOTE_NAME = 'origin'
+GITHUB_COMMIT_SOURCE = True
+```
 
 # Configure VSCode
 
 - Install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - Make sure `Python › Data Science: Allow Import From Notebook` is enabled.
 
+ 
 
 # Recommendations
 
@@ -413,7 +619,7 @@ DATE_FORMAT = 'yyyy-MM-dd'
 
 # Notes
 
-- Python extension does not handle Markdown embedded html ToC code very well in a Mardown cell when you open a .ipynb file. 
+- Python extension does not handle Markdown embedded html ToC code very well in a Markdown cell when you open a .ipynb file. 
 
 # Extras
 - Install Windows Terminal
