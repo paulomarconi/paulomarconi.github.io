@@ -14,7 +14,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../es/rss.xml">
 <link rel="canonical" href="https://paulomarconi.github.io/blog/index-1.html">
-<link rel="icon" href="../images/website/favicon.ico" sizes="128x128">
+<link rel="icon" href="../files/blogFavicon.ico" sizes="128x128">
 <link rel="prev" href="." type="text/html">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
@@ -59,13 +59,12 @@ navbar-dark bg-dark
             </li>
 </ul>
 <!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-    <div class="form-group">
-        <input type="text" name="q" class="form-control" placeholder="Search">
-</div>
-    <button type="submit" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
-    <input type="hidden" name="sitesearch" value="https://paulomarconi.github.io/">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search"><button type="submit" class="btn btn-secondary">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="hidden" name="sitesearch" value="https://paulomarconi.github.io/">
+</div>    
 </form>
 <!-- End of custom search -->
 
@@ -365,19 +364,19 @@ Blank lines are not allowed between term and definition.</p>
 \end{cases}
 \end{equation*}
 </div>
-<pre class="code octave"><a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-1"></a><span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-2"></a>    <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-3"></a>    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-4"></a>        <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-5"></a>    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-6"></a>        <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-7"></a>    <span class="k">end</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-8"></a>    <span class="c">% check feasibility</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-9"></a>    <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-10"></a>        <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-11"></a>        <span class="k">break</span><span class="p">;</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-12"></a>    <span class="k">end</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-13"></a><span class="k">end</span>
+<pre class="code octave"><a name="rest_code_16d7affa9c484224bf0be1227a85767f-1"></a><span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-2"></a>    <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-3"></a>    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-4"></a>        <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-5"></a>    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-6"></a>        <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-7"></a>    <span class="k">end</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-8"></a>    <span class="c">% check feasibility</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-9"></a>    <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-10"></a>        <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-11"></a>        <span class="k">break</span><span class="p">;</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-12"></a>    <span class="k">end</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-13"></a><span class="k">end</span>
 </pre>
 <pre class="lang-markup" data-jsonp="https://api.github.com/repos/paulomarconi/MPC-SSTO/contents/README.md"></pre>
 <embed src="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px" type="application/pdf"></embed>
@@ -457,7 +456,7 @@ Blank lines are not allowed between term and definition.</p>
 </ul>
 <p>I want to work with OpenCV:</p>
 <ul>
-<li>Run <code>activate openCV_TF</code> → it switches to Python 3.8 and the kernel and libraries of <code>jmatlabNikola</code> are not available and won't get mixed with this environment.</li>
+<li>Run <code>activate openCV_TF</code> → it switches to Python 3.8, the kernel and libraries of <code>jmatlabNikola</code> are not available and won't get mixed with this environment.</li>
 </ul>
 <p><strong>Notes</strong></p>
 <ul>
@@ -472,7 +471,7 @@ Blank lines are not allowed between term and definition.</p>
 </li>
 <li>Jupyter Notebook:<ul>
 <li>When you create a new environment with Anaconda, Jupyter Notebook is installed by default.</li>
-<li>If it's no installed, run <code>pip install notebook</code>
+<li>For conda, run <code>pip install notebook</code>
 </li>
 </ul>
 </li>
@@ -492,20 +491,13 @@ Blank lines are not allowed between term and definition.</p>
 <li>Check installed kernels <code>jupyter kernelspec list</code>
 </li>
 </ul>
-<p>Done!, now you have everything what you will need in your environment. Check all installed libraries with Anaconda Navigator.</p>
+<p>Done!, now you have everything what you need in your environment. Check all installed libraries with Anaconda Navigator.</p>
 <p><strong>Notes</strong></p>
 <ul>
 <li>Make sure you activate <code>jmatlabNikola</code> environment with admin rights.</li>
 <li>If you have doubts about the python kernel, check <code>python --version</code> every time you activate an environment.</li>
 </ul>
-<h2 id="Configure-VSCode">Configure VSCode<a class="anchor-link" href="Nikola-guide/#Configure-VSCode">¶</a>
-</h2>
-<ul>
-<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a>
-</li>
-<li>Make sure <code>Python › Data Science: Allow Import From Notebook</code> is enabled.</li>
-</ul>
-<h2 id="Create-the-Nikola-demo-site">Create the Nikola demo site<a class="anchor-link" href="Nikola-guide/#Create-the-Nikola-demo-site">¶</a>
+<h2 id="Create-the-Nikola-demo-site,-and-your-first-post">Create the Nikola demo site, and your first post<a class="anchor-link" href="Nikola-guide/#Create-the-Nikola-demo-site,-and-your-first-post">¶</a>
 </h2>
 <ul>
 <li>Create a new folder called <code>blog</code> anywhere you like except inside <code>jmatlabNikola</code> environment.</li>
@@ -522,13 +514,23 @@ Blank lines are not allowed between term and definition.</p>
 <li>View in your browser, it will open a host in <code>http://127.0.0.1:8000</code>.<div class="highlight"><pre><span></span>nikola serve -b
 </pre></div>
 </li>
-<li>Automatically <code>build</code> and <code>serve</code> your site if you want to see all changes.constantly (recommended). <div class="highlight"><pre><span></span>nikola auto
+<li>Automatically <code>build</code> and <code>serve</code> your site if you want to see all changes.constantly (<strong>recommended</strong>). <div class="highlight"><pre><span></span>nikola auto
+</pre></div>
+</li>
+<li>Create a new post and new page. By default, they are created in <code>.rst</code> format.<div class="highlight"><pre><span></span>nikola new_post
+nikola new_page
+</pre></div>
+</li>
+<li>Other posts in different formats. <code>-f ipynb</code> needs extra configuration, see  .<div class="highlight"><pre><span></span>nikola new_post -f md
+nikola new_post -f rst
+nikola new_post -f html
+nikola new_post -f ipynb
 </pre></div>
 </li>
 <li>Press <code>ctrl+c</code> to stop the server.</li>
 </ul>
-<h2 id="Create-a-clean-Nikola-site">Create a clean Nikola site<a class="anchor-link" href="Nikola-guide/#Create-a-clean-Nikola-site">¶</a>
-</h2>
+<h3 id="Create-a-clean-Nikola-site">Create a clean Nikola site<a class="anchor-link" href="Nikola-guide/#Create-a-clean-Nikola-site">¶</a>
+</h3>
 <p>Same as before but run <code>nikola init</code> instead.</p>
 <p>That's it!. Navigate through the files and see what Nikola has done with the demo, and the clean version.</p>
 <h2 id="Nikola-directories">Nikola directories<a class="anchor-link" href="Nikola-guide/#Nikola-directories">¶</a>
@@ -546,14 +548,289 @@ Blank lines are not allowed between term and definition.</p>
 ../images     <span class="c1"># images of your website</span>
 ../listings   <span class="c1"># code files, e.g. .py, .tex, .m, .cpp, etc.</span>
 ../output     <span class="c1"># the root directory of your website. </span>
-../pages      <span class="c1"># stores index.html, blog.html, Home.html, about-me.html. </span>
+../pages      <span class="c1"># stores index.html, blog.html, home.html, about-me.html. </span>
 ../plugins    <span class="c1"># additional plugins.</span>
 ../posts      <span class="c1"># stores all your posts, .md, .html, .ipynb, and .rst</span>
 ../templates  <span class="c1"># additional templates. </span>
 ../themes     <span class="c1"># addtional themes.</span>
 </pre></div>
-<h2 id="-"> <a class="anchor-link" href="Nikola-guide/#-">¶</a>
+<h2 id="Configure-a-non-blog-Nikola-site">Configure a non-blog Nikola site<a class="anchor-link" href="Nikola-guide/#Configure-a-non-blog-Nikola-site">¶</a>
 </h2>
+<p>From now on, we will configure Nikola using <code>conf.py</code> located in your root directory.</p>
+<h3 id="Create-the-index-and-bio-page">Create the index and bio page<a class="anchor-link" href="Nikola-guide/#Create-the-index-and-bio-page">¶</a>
+</h3>
+<p>First, create both pages using the terminal,</p>
+<div class="highlight"><pre><span></span>nikola new_page --title<span class="o">=</span><span class="s2">"index"</span>
+nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
+</pre></div>
+<p>add them to the navigation links in <code>conf.py</code>.</p>
+<div class="highlight"><pre><span></span><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
+        <span class="p">(</span><span class="s2">"/index.html"</span><span class="p">,</span> <span class="s2">"Home"</span><span class="p">),</span>
+        <span class="p">(</span><span class="s2">"/bio/index.html"</span><span class="p">,</span> <span class="s2">"Bio"</span><span class="p">),</span>
+        <span class="o">...</span>
+    <span class="p">),</span>
+</pre></div>
+<p>Add any other page, just make sure you add it in the navigation list, e.g. about-me, contact, etc.</p>
+<h3 id="Use-Jupyter-Notebooks">Use Jupyter Notebooks<a class="anchor-link" href="Nikola-guide/#Use-Jupyter-Notebooks">¶</a>
+</h3>
+<p>By default, Nikola uses the <strong>blog</strong> configuration,</p>
+<div class="highlight"><pre><span></span><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"posts/*.rst"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.md"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.html"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.ipynb"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"pages/*.rst"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.md"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.txt"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.html"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.ipynb"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span> 
+<span class="p">)</span>
+</pre></div>
+<p>change it to the <a href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html"><strong>non-blog</strong> configuration</a>,</p>
+<div class="highlight"><pre><span></span><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"posts/*.rst"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.md"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.html"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"posts/*.ipynb"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post_ipynb.tmpl"</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"pages/*.rst"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.md"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.html"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"pages/*.ipynb"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post_ipynb.tmpl"</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="c1"># And to avoid a conflict because blogs try to generate /index.html</span>
+<span class="n">INDEX_PATH</span> <span class="o">=</span> <span class="s2">"blog"</span>
+</pre></div>
+<p>and check if <code>.ipynb</code> is listed in the compilers section.</p>
+<div class="highlight"><pre><span></span><span class="n">COMPILERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"rest"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'.txt'</span><span class="p">],</span>
+    <span class="s2">"markdown"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.md'</span><span class="p">,</span> <span class="s1">'.mdown'</span><span class="p">,</span> <span class="s1">'.markdown'</span><span class="p">],</span>
+    <span class="s2">"textile"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.textile'</span><span class="p">],</span>
+    <span class="s2">"txt2tags"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.t2t'</span><span class="p">],</span>
+    <span class="s2">"bbcode"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.bb'</span><span class="p">],</span>
+    <span class="s2">"wiki"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.wiki'</span><span class="p">],</span>
+    <span class="s2">"ipynb"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.ipynb'</span><span class="p">],</span>
+    <span class="s2">"html"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">'.htm'</span><span class="p">],</span>
+    <span class="o">...</span>
+</pre></div>
+<h3 id="Create-the-post_ipynb.tmpl-template">Create the <code>post_ipynb.tmpl</code> template<a class="anchor-link" href="Nikola-guide/#Create-the-post_ipynb.tmpl-template">¶</a>
+</h3>
+<ul>
+<li>Create a new theme<div class="highlight"><pre><span></span>nikola theme --new<span class="o">=</span>themeBlog --parent<span class="o">=</span>bootstrap4 --engine<span class="o">=</span>mako
+</pre></div>
+</li>
+<li>Copy <code>post.tmpl</code> template from parent theme <div class="highlight"><pre><span></span>nikola theme --copy-template<span class="o">=</span>post.tmpl
+</pre></div>
+</li>
+<li>Move it to the <code>../themes/themeBlog/templates/</code> folder and rename it as <code>post_ipynb.tmpl</code>
+</li>
+<li>Add the following in the extra head section<div class="highlight"><pre><span></span><span class="err">&lt;</span>%block name="extra_head"&gt;
+  ... 
+  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../assets/css/post_ipynb.css"</span><span class="p">&gt;</span>
+<span class="err">&lt;</span>/%block&gt;
+</pre></div>
+</li>
+</ul>
+<h3 id="Create-the-post_ipynb.css">Create the <code>post_ipynb.css</code><a class="anchor-link" href="Nikola-guide/#Create-the-post_ipynb.css">¶</a>
+</h3>
+<ul>
+<li>Create the file in <code>../themeBlog/assets/css/</code> folder and copy the following</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mf">0.6</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ffffff</span><span class="p">;</span>
+    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
+    <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">output_prompt</span> <span class="p">{</span>
+    <span class="c">/* 5px right shift to account for margin in parent container */</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+  <span class="nt">div</span><span class="p">.</span><span class="nc">output_area</span> <span class="nt">pre</span> <span class="p">{</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">text_cell_render</span> <span class="p">{</span>
+    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">color</span><span class="p">:</span> <span class="mh">#333333</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">ul</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">rendered_html</span> <span class="p">:</span><span class="nd">visited</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">rendered_html</span> <span class="p">:</span><span class="nd">link</span> <span class="p">{</span>
+    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">pre</span><span class="o">,</span> <span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">code</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#DDDDDD</span><span class="p">;</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span> <span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">pre</span> <span class="p">{</span>
+    <span class="k">padding-left</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">padding-right</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">padding-top</span><span class="p">:</span> <span class="mf">0.05</span><span class="kt">em</span><span class="p">;</span>
+    <span class="k">padding-bottom</span><span class="p">:</span> <span class="mf">0.05</span><span class="kt">em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">page-content</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">content</span> <span class="nt">p</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">input</span>  <span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* set a max-width for horizontal fluid layout and make it centered */</span>
+<span class="p">.</span><span class="nc">body-content</span> <span class="p">{</span>
+    <span class="k">margin-right</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span> <span class="c">/* or 950px */</span>
+<span class="p">}</span>
+
+<span class="c">/* Widens image-containing divs so that image is full body width */</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">output_subarea</span> <span class="p">{</span>     
+    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="Clean-version-of-post_ipynb.css">Clean version of <code>post_ipynb.css</code><a class="anchor-link" href="Nikola-guide/#Clean-version-of-post_ipynb.css">¶</a>
+</h4>
+<div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">input</span>  <span class="p">{</span>
+    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">div</span><span class="p">.</span><span class="nc">input</span> <span class="o">*</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* set a max-width for horizontal fluid layout and make it centered */</span>
+<span class="p">.</span><span class="nc">body-content</span> <span class="p">{</span>
+  <span class="k">margin-right</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+  <span class="k">max-width</span><span class="p">:</span> <span class="mi">750</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* or 950px */</span>
+<span class="p">}</span>
+
+<span class="c">/* Widens image-containing divs so that image is full body width */</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">output_subarea</span> <span class="p">{</span>
+    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Use-your-custom-theme">Use your custom theme<a class="anchor-link" href="Nikola-guide/#Use-your-custom-theme">¶</a>
+</h3>
+<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s2">"themeBlog"</span>
+</pre></div>
+<p>Done!. Now you can create and edit posts as Jupyter Notebooks.</p>
+<h2 id="Extra-configurations">Extra configurations<a class="anchor-link" href="Nikola-guide/#Extra-configurations">¶</a>
+</h2>
+<h3 id="Files-and-Listings">Files and Listings<a class="anchor-link" href="Nikola-guide/#Files-and-Listings">¶</a>
+</h3>
+<div class="highlight"><pre><span></span><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span> <span class="c1"># Which means copy 'files' into 'output/files'</span>
+<span class="n">LISTINGS_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'listings'</span><span class="p">:</span> <span class="s1">'listings'</span><span class="p">}</span> <span class="c1"># Which means process listings from 'listings' into 'output/listings'</span>
+</pre></div>
+<h3 id="Enable-single-Archive">Enable single Archive<a class="anchor-link" href="Nikola-guide/#Enable-single-Archive">¶</a>
+</h3>
+<div class="highlight"><pre><span></span><span class="c1"># Create one large archive instead of per-year</span>
+<span class="n">CREATE_SINGLE_ARCHIVE</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+<h3 id="Favicon">Favicon<a class="anchor-link" href="Nikola-guide/#Favicon">¶</a>
+</h3>
+<div class="highlight"><pre><span></span><span class="n">FAVICONS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"icon"</span><span class="p">,</span> <span class="s2">"/files/blogFavicon.ico"</span><span class="p">,</span> <span class="s2">"128x128"</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+<h3 id="License">License<a class="anchor-link" href="Nikola-guide/#License">¶</a>
+</h3>
+<div class="highlight"><pre><span></span><span class="n">LICENSE</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;</span>
+<span class="s2">&lt;img alt="Creative Commons License BY-NC-SA"</span>
+<span class="s2">style="border-width:0; margin-bottom:12px;"</span>
+<span class="s2">src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;"""</span>
+</pre></div>
+<h3 id="Header">Header<a class="anchor-link" href="Nikola-guide/#Header">¶</a>
+</h3>
+<div class="highlight"><pre><span></span><span class="n">EXTRA_HEAD_DATA</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"&gt;</span>
+<span class="s1">  &lt;link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"&gt;</span>
+<span class="s1">'''</span>
+</pre></div>
+<h3 id="Footer">Footer<a class="anchor-link" href="Nikola-guide/#Footer">¶</a>
+</h3>
+<div class="highlight"><pre><span></span>CONTENT_FOOTER = '''
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-center"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://github.com/&lt;user_name&gt;"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-github-square fa-stack-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="c">&lt;!--</span>
+<span class="c">        &lt;span class="fa-stack fa-2x"&gt;</span>
+<span class="c">        &lt;a href="https://scholar.google.com/citations?user=ID"&gt;</span>
+<span class="c">            &lt;i class="ai ai-google-scholar-square ai-2x"&gt;&lt;/i&gt;</span>
+<span class="c">        &lt;/a&gt;</span>
+<span class="c">        &lt;/span&gt;</span>
+<span class="c">        --&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://www.linkedin.com/in/ID"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-square fa-stack-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-linkedin fa-inverse fa-stack-1x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:{email}"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-square fa-stack-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-envelope fa-inverse fa-stack-1x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+        Contents <span class="ni">&amp;copy;</span> {date}  {author}  <span class="ni">&amp;mdash;</span>  {license}  <span class="ni">&amp;mdash;</span>  Powered by <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://getnikola.com"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"nofollow"</span><span class="p">&gt;</span>Nikola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+'''
+</pre></div>
+<h3 id="Adding-Prism">Adding Prism<a class="anchor-link" href="Nikola-guide/#Adding-Prism">¶</a>
+</h3>
+<h2 id="GitHub-pages">GitHub pages<a class="anchor-link" href="Nikola-guide/#GitHub-pages">¶</a>
+</h2>
+<h2 id="Configure-VSCode">Configure VSCode<a class="anchor-link" href="Nikola-guide/#Configure-VSCode">¶</a>
+</h2>
+<ul>
+<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a>
+</li>
+<li>Make sure <code>Python › Data Science: Allow Import From Notebook</code> is enabled.</li>
+</ul>
 <h2 id="Recommendations">Recommendations<a class="anchor-link" href="Nikola-guide/#Recommendations">¶</a>
 </h2>
 <ul>
@@ -570,8 +847,6 @@ Blank lines are not allowed between term and definition.</p>
 <ul>
 <li>Install Windows Terminal</li>
 <li>Install Power Shell 7.0</li>
-<li>
-</li>
 </ul>
 </div>
 </div>
@@ -956,10 +1231,11 @@ MathJax.Hub.Config({
         </span>
     </p>
     <p>
-        Contents © 2020  Paulo Loma Marconi  —    —  Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+        
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> Contents © 2020  <a href="mailto:prlomarconi@gmail.com">Paulo Loma Marconi</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
     </p>
 </div>
-
 
             
             

@@ -13,7 +13,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
 <link rel="canonical" href="https://paulomarconi.github.io/blog/test-rst/">
-<link rel="icon" href="../images/website/favicon.ico" sizes="128x128">
+<link rel="icon" href="../../files/blogFavicon.ico" sizes="128x128">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <link href="../../assets/css/prism.css" rel="stylesheet">
@@ -75,13 +75,12 @@ navbar-dark bg-dark
             </li>
 </ul>
 <!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
-    <div class="form-group">
-        <input type="text" name="q" class="form-control" placeholder="Search">
-</div>
-    <button type="submit" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span>
-    </button>
-    <input type="hidden" name="sitesearch" value="https://paulomarconi.github.io/">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search"><button type="submit" class="btn btn-secondary">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="hidden" name="sitesearch" value="https://paulomarconi.github.io/">
+</div>    
 </form>
 <!-- End of custom search -->
 
@@ -188,19 +187,19 @@ Blank lines are not allowed between term and definition.</p>
 \end{cases}
 \end{equation*}
 </div>
-<pre class="code octave"><a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-1"></a><span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-2"></a>    <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-3"></a>    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-4"></a>        <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-5"></a>    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-6"></a>        <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-7"></a>    <span class="k">end</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-8"></a>    <span class="c">% check feasibility</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-9"></a>    <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-10"></a>        <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-11"></a>        <span class="k">break</span><span class="p">;</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-12"></a>    <span class="k">end</span>
-<a name="rest_code_1402b3808b1a48b1993d50fdae1afce7-13"></a><span class="k">end</span>
+<pre class="code octave"><a name="rest_code_16d7affa9c484224bf0be1227a85767f-1"></a><span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-2"></a>    <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-3"></a>    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-4"></a>        <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-5"></a>    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-6"></a>        <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-7"></a>    <span class="k">end</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-8"></a>    <span class="c">% check feasibility</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-9"></a>    <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-10"></a>        <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-11"></a>        <span class="k">break</span><span class="p">;</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-12"></a>    <span class="k">end</span>
+<a name="rest_code_16d7affa9c484224bf0be1227a85767f-13"></a><span class="k">end</span>
 </pre>
 <pre class="lang-markup" data-jsonp="https://api.github.com/repos/paulomarconi/MPC-SSTO/contents/README.md"></pre>
 <embed src="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px" type="application/pdf"></embed>
@@ -277,10 +276,11 @@ MathJax.Hub.Config({
         </span>
     </p>
     <p>
-        Contents © 2020  Paulo Loma Marconi  —    —  Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a>
+        
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> Contents © 2020  <a href="mailto:prlomarconi@gmail.com">Paulo Loma Marconi</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
     </p>
 </div>
-
 
             
             
