@@ -1,7 +1,7 @@
 
-function p = multi_line_func(a,b)
+function c = fnc(a,b)
     % in-file comments can be added like this
     a = a+3;
     b = b+1;
-    p = a+b;
+    c = a+b;
 end

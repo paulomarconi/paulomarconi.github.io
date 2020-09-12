@@ -161,8 +161,9 @@ NAVIGATION_ALT_LINKS = {
 
 # Name of the theme to use.
 # THEME = "bootblog4"
-THEME = "bootstrap4"
+# THEME = "bootstrap4"
 # THEME = "custom" #cerulean 
+THEME = "themeBlog"
 
 # Primary color of your theme. This will be used to customize your theme.
 # Must be a HEX value.
@@ -247,7 +248,8 @@ POSTS = (
     ("posts/*.md", "blog", "post.tmpl"),
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
-    ("posts/*.ipynb", "blog", "post.tmpl"),
+    # ("posts/*.ipynb", "blog", "post.tmpl"),
+    ("posts/*.ipynb", "blog", "post_ipynb.tmpl"),
 )
 
 PAGES = (
@@ -255,7 +257,8 @@ PAGES = (
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.txt", "", "page.tmpl"),
     ("pages/*.html", "", "page.tmpl"),
-    ("pages/*.ipynb", "", "page.tmpl"),
+    # ("pages/*.ipynb", "", "page.tmpl"),
+    ("pages/*.ipynb", "", "post_ipynb.tmpl"),
 )
 # And to avoid a conflict because blogs try to generate /index.html
 INDEX_PATH = "blog"
@@ -940,10 +943,11 @@ CODE_COLOR_SCHEME = 'default'
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
 # <link rel="name" href="file" sizes="size"/>
-# FAVICONS = (
-#     ("icon", "/favicon.ico", "16x16"),
-#     ("icon", "/icon_128x128.png", "128x128"),
-# )
+FAVICONS = (
+    # ("icon", "/favicon.ico", "16x16"),
+    # ("icon", "/icon_128x128.png", "128x128"),
+    ("icon", "../images/website/favicon.ico", "128x128"),
+)
 
 # Show teasers (instead of full posts) in indexes? Defaults to False.
 # INDEX_TEASERS = False
@@ -1171,7 +1175,7 @@ MathJax.Hub.Config({
 #       with the MarkdownExtension class and should not be added here.
 # Defaults are markdown.extensions.(fenced_code|codehilite|extra)
 # markdown.extensions.meta is required for Markdown metadata.
-MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra']
+MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code', 'markdown.extensions.codehilite', 'markdown.extensions.extra', 'markdown.extensions.meta']
 
 # Options to be passed to markdown extensions (See https://python-markdown.github.io/reference/)
 # Default is {} (no config at all)
@@ -1301,13 +1305,13 @@ SEARCH_FORM = """
 EXTRA_HEAD_DATA = '''
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-  <link href="../../files/prism/prism.css" rel="stylesheet" />
+  <link href="../../assets/css/prism.css" rel="stylesheet" />
 '''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
 BODY_END = '''
-    <script src="../../files/prism/prism.js"></script>
+    <script src="../../assets/js/prism.js"></script>
 '''
 
 # The possibility to extract metadata from the filename by using a
