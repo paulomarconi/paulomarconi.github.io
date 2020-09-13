@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <link href="../../assets/css/prism.css" rel="stylesheet">
 <meta name="author" content="Paulo Loma Marconi">
-<link rel="prev" href="../Least-square_nonlinearity/" title="Least-square model identification of static nonlinearity" type="text/html">
+<meta name="robots" content="noindex">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="draft nikola guida md">
 <meta property="og:url" content="https://paulomarconi.github.io/es/blog/draft/">
@@ -469,8 +469,8 @@ nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
 </code></pre>
 
 
-<h4>Clean version of <code>post_ipynb.css</code>
-</h4>
+<h3>Clean version of <code>post_ipynb.css</code>
+</h3>
 <pre class="code literal-block"><span></span><code><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
@@ -732,6 +732,8 @@ MATHJAX_CONFIG = """
 
 <h2>GitHub pages</h2>
 <ul>
+<li>Create a new repository named <code>&lt;user_name&gt;.github.io</code>
+</li>
 <li>Initialize Git</li>
 </ul>
 <pre class="code literal-block"><span></span><code>git init .
@@ -750,33 +752,33 @@ git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.git
 </code></pre>
 
 
-<h2>Configure VSCode</h2>
 <ul>
-<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a>
+<li>Create a <code>.gitignore</code>
 </li>
-<li>Make sure <code>Python › Data Science: Allow Import From Notebook</code> is enabled.</li>
 </ul>
-<h2>Recommendations</h2>
+<pre class="code literal-block"><span></span><code>.vscode
+.doit.db*
+cache
+__pycache__
+output
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+</code></pre>
+
+
 <ul>
-<li>Install WSL2 for better integration.</li>
-<li>Install Windows Terminal for better console scripting.</li>
+<li>Deploy to GitHub</li>
 </ul>
-<h2>Notes</h2>
+<pre class="code literal-block"><span></span><code>nikola github_deploy
+</code></pre>
+
+
 <ul>
-<li>Python extension does not handle Markdown embedded html ToC code very well in a Markdown cell when you open a .ipynb file. </li>
-</ul>
-<h2>Extras</h2>
-<ul>
-<li>Install Windows Terminal</li>
-<li>Install Power Shell 7.0</li>
+<li>Choose <code>master</code> as the branch on GitHub Pages settings. </li>
 </ul>
 </div>
     </div>
-    <aside class="postpromonav"><nav><ul class="pager hidden-print">
-<li class="previous">
-                <a href="../Least-square_nonlinearity/" rel="prev" title="Least-square model identification of static nonlinearity">Publicación anterior</a>
-            </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+    <aside class="postpromonav"><nav></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         
         
         <div id="disqus_thread"></div>

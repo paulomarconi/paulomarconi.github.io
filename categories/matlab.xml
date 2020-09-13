@@ -3,31 +3,59 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Sep 2020 07:46:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Anaconda, jupyter, Matlab, GitHub pages, and VSCode in 10 min... Well, not really!.</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Sep 2020 20:00:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt;, &lt;a href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican&lt;/a&gt;, and &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;Sphinx&lt;/a&gt;. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.&lt;/p&gt;
 &lt;p&gt;There is a lot of good material on the internet about installing and using Nikola, but I thought it will be useful to show my methodology from the perspective of someone who has never used Anaconda, Jupyter and Nikola.&lt;/p&gt;
 &lt;p&gt;Nevertheless, here is a list of the official documentation and good tutorials I recommend:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://getnikola.com/getting-started.html"&gt;Nikola Getting Started&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://getnikola.com/handbook.html#"&gt;Nikola Handbook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://randlow.github.io/posts/python/create-nikola-coding-blog/"&gt;Complete and comprehensive tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://jiaweizhuang.github.io/blog/nikola-guide/"&gt;Compact tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://notes.mikejarrett.ca/optimizing-your-nikola-blog-for-jupyter-notebooks/"&gt;For extra customization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getnikola.com/getting-started.html"&gt;Nikola Getting Started&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://getnikola.com/handbook.html#"&gt;Nikola Handbook&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://randlow.github.io/posts/python/create-nikola-coding-blog/"&gt;Complete and comprehensive tutorial&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jiaweizhuang.github.io/blog/nikola-guide/"&gt;Compact tutorial&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://notes.mikejarrett.ca/optimizing-your-nikola-blog-for-jupyter-notebooks/"&gt;For extra customization&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Pre-requisites"&gt;Pre-requisites&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Pre-requisites"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://www.anaconda.com/"&gt;Anaconda&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://jupyter.org/"&gt;Jupyter Notebook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://github.com/Calysto/matlab_kernel"&gt;Matlab-kernel (jmatlab)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.anaconda.com/"&gt;Anaconda&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jupyter.org/"&gt;Jupyter Notebook&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/Calysto/matlab_kernel"&gt;Matlab-kernel (jmatlab)&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://code.visualstudio.com/"&gt;VSCode&lt;/a&gt;, but you can use any editor you like.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;GitHub pages&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Knowledge in HTML, CSS, JS, Matlab, Python, Markdown, and reStructedText.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pages.github.com/"&gt;GitHub pages&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Knowledge in HTML, CSS, JS, Matlab, Python, Git, Markdown, and reStructedText.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Configure-VSCode"&gt;Configure VSCode&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Configure-VSCode"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Install the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"&gt;Python extension&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Make sure &lt;code&gt;Python › Data Science: Allow Import From Notebook&lt;/code&gt; setting is enabled.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Create-a-new-environment-with-Anaconda-or-Conda"&gt;Create a new environment with Anaconda or Conda&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-environment-with-Anaconda-or-Conda"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Download and install &lt;a href="https://www.anaconda.com/products/individual#Downloads"&gt;Anaconda&lt;/a&gt; or &lt;a href="https://repo.anaconda.com/miniconda/"&gt;Miniconda&lt;/a&gt;, it's your choice.&lt;/li&gt;
+&lt;li&gt;Download and install &lt;a href="https://www.anaconda.com/products/individual#Downloads"&gt;Anaconda&lt;/a&gt; or &lt;a href="https://repo.anaconda.com/miniconda/"&gt;Miniconda&lt;/a&gt;. It's your choice.&lt;/li&gt;
 &lt;li&gt;Make sure &lt;code&gt;C:\ProgramData\Anaconda3&lt;/code&gt; and &lt;code&gt;C:\ProgramData\Anaconda3\Scripts&lt;/code&gt; are listed in your Windows &lt;code&gt;path variables&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;In Anaconda Navigator, create a new environment called &lt;code&gt;jmatlabNikola&lt;/code&gt; with &lt;code&gt;Python 3.6&lt;/code&gt;, or open terminal and run &lt;code&gt;conda create -n jmatlabNikola python=3.6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In Anaconda Navigator, create a new environment named &lt;code&gt;jmatlabNikola&lt;/code&gt; with &lt;code&gt;Python 3.6&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Or open terminal and run
+&lt;pre&gt;&lt;code&gt;  conda create -n jmatlabNikola python=3.6&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;li&gt;A new folder will be created inside &lt;code&gt;C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Why Python 3.6?&lt;/strong&gt;&lt;/p&gt;
@@ -36,47 +64,91 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;p&gt;Anaconda (conda) is a powerful &lt;strong&gt;package management platform&lt;/strong&gt; that allows you to install any &lt;strong&gt;self-contained&lt;/strong&gt; workspace (environment) with different kernels and libraries. For example, let's say I have two environments:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;jmatlabNikola&lt;/code&gt;: composed by Python 3.6, Jupyter Notebook, jmatlab, and Nikola.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;openCV_TF&lt;/code&gt;: composed by Python 3.8, OpenCV, and TensorFlow.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;openCV_TF&lt;/code&gt;: composed by Python 3.7, OpenCV, and TensorFlow.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So, I want to write a post:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → it switches to Python 3.6 (you can check with &lt;code&gt;python --version&lt;/code&gt;). Any post I write will be compiled by this environment only. None of the libraries from the other environment will be available. &lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → it switches to Python 3.6 (you can check with &lt;code&gt;python --version&lt;/code&gt;). 
+&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;
+(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
+Python 3.6.10 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
+Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available. &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I want to work with OpenCV:&lt;/p&gt;
+&lt;p&gt;If I want to work with OpenCV:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;activate openCV_TF&lt;/code&gt; → it switches to Python 3.8, the kernel and libraries of &lt;code&gt;jmatlabNikola&lt;/code&gt; are not available and won't get mixed with this environment.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;activate openCV_TF&lt;/code&gt; → it switches to Python 3.7. The kernel and libraries of &lt;code&gt;jmatlabNikola&lt;/code&gt; are not available and won't get mixed with this environment.
+&lt;pre&gt;&lt;code&gt;(openCV_TF) C:\Users\&amp;lt;user_name&amp;gt;\ML_project&amp;gt;
+(openCV_TF) C:\Users\&amp;lt;user_name&amp;gt;\ML_project&amp;gt;python --version
+Python 3.7.6 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Don't touch the &lt;code&gt;base&lt;/code&gt; environment of Anaconda if you want to test packages. Use it as a reference because it's the default environment for your OS.&lt;/li&gt;
-&lt;li&gt;If you already have Python installed, you can still use Anaconda without any problems. Just make sure the &lt;code&gt;Anaconda python path&lt;/code&gt; is configured in your code editor and in your Windows.&lt;/li&gt;
-&lt;li&gt;Your work files and folders could be anywhere in your hard drive, but don't create them inside the environments folders. If you delete any environment by accident, it's very unlikely to recover them.&lt;/li&gt;
+&lt;li&gt;Don't use the &lt;code&gt;base&lt;/code&gt; environment of Anaconda if you want to test packages. Use it as a reference because it's the default environment for your OS.&lt;/li&gt;
+&lt;li&gt;If you already have Python installed, you can still use Anaconda without any problems. Just make sure the &lt;code&gt;Anaconda python path&lt;/code&gt; is configured in VSCode. &lt;/li&gt;
+&lt;li&gt;Your work files and folders could be anywhere on your hard drive, but don't create them inside the environment folders.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Install-Jupyter-Notebook,-Nikola-and-jmatlab"&gt;Install Jupyter Notebook, Nikola and jmatlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Install-Jupyter-Notebook,-Nikola-and-jmatlab"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Open terminal as &lt;strong&gt;administrator&lt;/strong&gt; in &lt;code&gt;cd C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Jupyter Notebook:&lt;ul&gt;
-&lt;li&gt;When you create a new environment with Anaconda, Jupyter Notebook is installed by default.&lt;/li&gt;
-&lt;li&gt;For conda, run &lt;code&gt;pip install notebook&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Open terminal in &lt;code&gt;cd "C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install Jupyter Notebook:&lt;ul&gt;
+&lt;li&gt;Jupyter Notebook is installed by default when you create a new environment with Anaconda Navigator.&lt;/li&gt;
+&lt;li&gt;With conda.
+&lt;pre&gt;&lt;code&gt;conda install -c conda-forge notebook&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;With pip.
+&lt;pre&gt;&lt;code&gt;pip install notebook&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Run Jupyter Notebook in your browser to check it was installed correctly.
+&lt;pre&gt;&lt;code&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;pip install Nikola[extras]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;pip install matlab_kernel&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Config Matlab:&lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Go to &lt;code&gt;cd “C:\Program Files\MATLAB\R2018b\extern\engines\python”&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Run &lt;code&gt;python setup.py install&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;Install Nikola.
+&lt;pre&gt;&lt;code&gt;pip install Nikola[extras]&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Check installed kernels &lt;code&gt;jupyter kernelspec list&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install Matlab-kernel.
+&lt;pre&gt;&lt;code&gt;pip install matlab_kernel&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Check installed kernels. 
+&lt;pre&gt;&lt;code&gt;jupyter kernelspec list&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;You'll see something like this.
+&lt;pre&gt;&lt;code&gt;Available kernels:
+matlab     C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\jupyter\kernels\matlab
+python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\jupyter\kernels\python3&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Done!, now you have everything what you need in your environment. Check all installed libraries with Anaconda Navigator.&lt;/p&gt;
+&lt;h3 id="Config-Matlab"&gt;Config Matlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Config-Matlab"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Open terminal as &lt;strong&gt;administrator&lt;/strong&gt;
+&lt;pre&gt;&lt;code&gt;activate jmatlabNikola&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Go to &lt;code&gt;cd "C:\Program Files\MATLAB\R2018b\extern\engines\python"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install the Python engine.
+&lt;pre&gt;&lt;code&gt;python setup.py install&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Done!, now you have everything what it's needed in your environment.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Make sure you activate &lt;code&gt;jmatlabNikola&lt;/code&gt; environment with admin rights.&lt;/li&gt;
-&lt;li&gt;If you have doubts about the python kernel, check &lt;code&gt;python --version&lt;/code&gt; every time you activate an environment.&lt;/li&gt;
+&lt;li&gt;Make sure you activate &lt;code&gt;jmatlabNikola&lt;/code&gt; environment with admin rights only to install &lt;code&gt;matlab_kernel&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;If you have doubts about the Python kernel, check with &lt;code&gt;python --version&lt;/code&gt; every time you activate an environment.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="Create-the-Nikola-demo-site,-and-your-first-post"&gt;Create the Nikola demo site, and your first post&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-Nikola-demo-site,-and-your-first-post"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Create a new folder called &lt;code&gt;blog&lt;/code&gt; anywhere you like except inside &lt;code&gt;jmatlabNikola&lt;/code&gt; environment.&lt;/li&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Create-a-Nikola-demo-site"&gt;Create a Nikola demo site&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-Nikola-demo-site"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Create a new folder called &lt;code&gt;blog&lt;/code&gt; anywhere you like except inside the &lt;code&gt;jmatlabNikola&lt;/code&gt; environment.&lt;/li&gt;
 &lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder.&lt;/li&gt;
 &lt;li&gt;Activate the environment. &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
 &lt;/pre&gt;&lt;/div&gt;
@@ -87,61 +159,107 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;li&gt;Build (generate) the HTML files of the site.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola build
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;View in your browser, it will open a host in &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola serve -b
+&lt;li&gt;View on your browser. It will open the localhost on &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola serve -b
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Automatically &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; your site if you want to see all changes.constantly (&lt;strong&gt;recommended&lt;/strong&gt;). &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola auto
+&lt;li&gt;Automatically &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; your site if you want to see all changes constantly (&lt;strong&gt;recommended&lt;/strong&gt;). &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola auto
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;ctrl+c&lt;/code&gt; to stop the server.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Create-a-new-post-and-new-page"&gt;Create a new post and new page&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-post-and-new-page"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Create a new post and new page. By default, they are created in &lt;code&gt;.rst&lt;/code&gt; format.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post
 nikola new_page
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Other posts in different formats. &lt;code&gt;-f ipynb&lt;/code&gt; needs extra configuration, see  .&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f md
+&lt;li&gt;Other posts on different formats (&lt;code&gt;-f ipynb&lt;/code&gt; needs extra configuration, you'll see that later).&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f md
 nikola new_post -f rst
 nikola new_post -f html
 nikola new_post -f ipynb
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Press &lt;code&gt;ctrl+c&lt;/code&gt; to stop the server.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="Create-a-clean-Nikola-site"&gt;Create a clean Nikola site&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-clean-Nikola-site"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Same as before but run &lt;code&gt;nikola init&lt;/code&gt; instead.&lt;/p&gt;
-&lt;p&gt;That's it!. Navigate through the files and see what Nikola has done with the demo, and the clean version.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Create-a-clean-Nikola-site"&gt;Create a clean Nikola site&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-clean-Nikola-site"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Same as before but run &lt;code&gt;nikola init&lt;/code&gt; instead of &lt;code&gt;nikola init --demo&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;That's it!. Navigate through the files and see what Nikola has done with the demo, or the clean version.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Nikola-directories"&gt;Nikola directories&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Nikola-directories"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Although, most of them are self-explained, they can be categorized in three types:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Content: &lt;code&gt;files&lt;/code&gt;, &lt;code&gt;galleries&lt;/code&gt;, &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;listings&lt;/code&gt;, &lt;code&gt;pages&lt;/code&gt;, &lt;code&gt;posts&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Customization: &lt;code&gt;plugins&lt;/code&gt;, &lt;code&gt;templates&lt;/code&gt;, &lt;code&gt;themes&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Visible output: &lt;code&gt;output&lt;/code&gt;. Here, all your content is parsed to &lt;code&gt;.html&lt;/code&gt; to be visible in any web hosting service such as GitHub pages.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;../__pycache__
+&lt;li&gt;Visible output: &lt;code&gt;output&lt;/code&gt;. Here, all your content is parsed to &lt;code&gt;.html&lt;/code&gt; to be visible in any web hosting service such as GitHub pages.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;../__pycache__
 ../cache     
 ../files      &lt;span class="c1"&gt;# all the files of your blog, e.g. pdf, videos, etc.&lt;/span&gt;
 ../galleries  &lt;span class="c1"&gt;# galleries of images.&lt;/span&gt;
-../images     &lt;span class="c1"&gt;# images of your website&lt;/span&gt;
+../images     &lt;span class="c1"&gt;# images of your website.&lt;/span&gt;
 ../listings   &lt;span class="c1"&gt;# code files, e.g. .py, .tex, .m, .cpp, etc.&lt;/span&gt;
 ../output     &lt;span class="c1"&gt;# the root directory of your website. &lt;/span&gt;
 ../pages      &lt;span class="c1"&gt;# stores index.html, blog.html, home.html, about-me.html. &lt;/span&gt;
 ../plugins    &lt;span class="c1"&gt;# additional plugins.&lt;/span&gt;
 ../posts      &lt;span class="c1"&gt;# stores all your posts, .md, .html, .ipynb, and .rst&lt;/span&gt;
 ../templates  &lt;span class="c1"&gt;# additional templates. &lt;/span&gt;
-../themes     &lt;span class="c1"&gt;# addtional themes.&lt;/span&gt;
+../themes     &lt;span class="c1"&gt;# additional themes.&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h2 id="Configure-a-non-blog-Nikola-site"&gt;Configure a non-blog Nikola site&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Configure-a-non-blog-Nikola-site"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;From now on, we will configure Nikola using &lt;code&gt;conf.py&lt;/code&gt; located in your root directory.&lt;/p&gt;
-&lt;h3 id="Create-the-index-and-bio-page"&gt;Create the index and bio page&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-index-and-bio-page"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;First, create both pages using the terminal,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"index"&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Configure-a-non-blog-Nikola-site"&gt;Configure a non-blog Nikola site&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Configure-a-non-blog-Nikola-site"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;From now on, we will configure Nikola using &lt;code&gt;conf.py&lt;/code&gt;, located in your root directory.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Create-the-index-page-and-bio-page"&gt;Create the index page and bio page&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-index-page-and-bio-page"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;First, create both pages using the terminal.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"index"&lt;/span&gt;
 nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"bio"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;add them to the navigation links in &lt;code&gt;conf.py&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;NAVIGATION_LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;Add them to the navigation links.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;NAVIGATION_LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/index.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Home"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/bio/index.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Bio"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
         &lt;span class="o"&gt;...&lt;/span&gt;
     &lt;span class="p"&gt;),&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Add any other page, just make sure you add it in the navigation list, e.g. about-me, contact, etc.&lt;/p&gt;
-&lt;h3 id="Use-Jupyter-Notebooks"&gt;Use Jupyter Notebooks&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-Jupyter-Notebooks"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By default, Nikola uses the &lt;strong&gt;blog&lt;/strong&gt; configuration,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;Add any other page, just make sure you add it in the navigation list, e.g. about-me, contact, etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Use-Jupyter-Notebooks"&gt;Use Jupyter Notebooks&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-Jupyter-Notebooks"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;By default, Nikola uses the &lt;strong&gt;blog&lt;/strong&gt; configuration.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.rst"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"posts"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.md"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"posts"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.txt"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"posts"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -156,15 +274,14 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"pages/*.ipynb"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"pages"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"page.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; 
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;change it to the &lt;a href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html"&gt;&lt;strong&gt;non-blog&lt;/strong&gt; configuration&lt;/a&gt;,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;Change it to the &lt;a href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html"&gt;&lt;strong&gt;non-blog&lt;/strong&gt; configuration&lt;/a&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.rst"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.md"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.txt"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.ipynb"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post_ipynb.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
-
 &lt;span class="n"&gt;PAGES&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"pages/*.rst"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"page.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"pages/*.md"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;""&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"page.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -175,8 +292,8 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;span class="c1"&gt;# And to avoid a conflict because blogs try to generate /index.html&lt;/span&gt;
 &lt;span class="n"&gt;INDEX_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;and check if &lt;code&gt;.ipynb&lt;/code&gt; is listed in the compilers section.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMPILERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;Check if &lt;code&gt;.ipynb&lt;/code&gt; is listed in the compilers section.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMPILERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="s2"&gt;"rest"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.rst'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.txt'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
     &lt;span class="s2"&gt;"markdown"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.md'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.mdown'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.markdown'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
     &lt;span class="s2"&gt;"textile"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.textile'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -187,24 +304,40 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="s2"&gt;"html"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.htm'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
     &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;If you &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; the site, it will give you an error that &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; is missing. We'll create it on the next section.&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; to &lt;code&gt;post.tmpl&lt;/code&gt;, and run &lt;code&gt;nikola auto&lt;/code&gt; to see the default Jupyter Notebook style.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Create-the-post_ipynb.tmpl-template"&gt;Create the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; template&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-post_ipynb.tmpl-template"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create a new theme&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --new&lt;span class="o"&gt;=&lt;/span&gt;themeBlog --parent&lt;span class="o"&gt;=&lt;/span&gt;bootstrap4 --engine&lt;span class="o"&gt;=&lt;/span&gt;mako
+&lt;li&gt;Create a new theme.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --new&lt;span class="o"&gt;=&lt;/span&gt;themeBlog --parent&lt;span class="o"&gt;=&lt;/span&gt;bootstrap4 --engine&lt;span class="o"&gt;=&lt;/span&gt;mako
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Copy &lt;code&gt;post.tmpl&lt;/code&gt; template from parent theme &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;post.tmpl
+&lt;li&gt;Copy &lt;code&gt;post.tmpl&lt;/code&gt; template from the parent theme. &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;post.tmpl
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Move it to the &lt;code&gt;../themes/themeBlog/templates/&lt;/code&gt; folder and rename it as &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add the following in the extra head section&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
-  ... 
-  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/post_ipynb.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;li&gt;Move it to the &lt;code&gt;/themes/themeBlog/templates/post_ipynb.tmpl&lt;/code&gt; folder and rename it as &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the following in the extra head section.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+    ... 
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/post_ipynb.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="Create-the-post_ipynb.css"&gt;Create the &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create the file in &lt;code&gt;../themeBlog/assets/css/&lt;/code&gt; folder and copy the following&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Create-the-post_ipynb.css"&gt;Create the &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create the file inside &lt;code&gt;/themes/themeBlog/assets/css/post_ipynb.css&lt;/code&gt; folder and copy the following.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -246,7 +379,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
   &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt; &lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt; &lt;span class="nt"&gt;code&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#DDDDDD&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#eeeeee&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -280,7 +413,14 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h4 id="Clean-version-of-post_ipynb.css"&gt;Clean version of &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Clean-version-of-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Clean-version-of-post_ipynb.css"&gt;Clean version of &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Clean-version-of-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -305,31 +445,96 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Use-your-custom-theme"&gt;Use your custom theme&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-your-custom-theme"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"themeBlog"&lt;/span&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Use-your-custom-theme"&gt;Use your custom theme&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-your-custom-theme"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Enable your theme.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"themeBlog"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Done!. Now you can create and edit posts as Jupyter Notebooks.&lt;/p&gt;
-&lt;h2 id="Extra-configurations"&gt;Extra configurations&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Extra-configurations"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h3 id="Files-and-Listings"&gt;Files and Listings&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Files-and-Listings"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="c1"&gt;# Which means copy 'files' into 'output/files'&lt;/span&gt;
-&lt;span class="n"&gt;LISTINGS_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'listings'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'listings'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="c1"&gt;# Which means process listings from 'listings' into 'output/listings'&lt;/span&gt;
+&lt;/li&gt;
+&lt;li&gt;Create a Jupyter Notebook post, and start editing with VSCode.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f ipynb --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Jupyter-notebook-test"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Enable-single-Archive"&gt;Enable single Archive&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Enable-single-Archive"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# Create one large archive instead of per-year&lt;/span&gt;
-&lt;span class="n"&gt;CREATE_SINGLE_ARCHIVE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Extra-configurations"&gt;Extra configurations&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Extra-configurations"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Output-location-of-files-folder"&gt;Output location of files folder&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Output-location-of-files-folder"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your documents saved in &lt;code&gt;files&lt;/code&gt; folder will be copied to &lt;code&gt;/output/files&lt;/code&gt; instead of the root folder, which is the default location.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Favicon"&gt;Favicon&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Favicon"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FAVICONS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Enable-single-Archive"&gt;Enable single Archive&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Enable-single-Archive"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create one large archive instead of per-year.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;CREATE_SINGLE_ARCHIVE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Favicon"&gt;Favicon&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Favicon"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add a favicon to your site.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FAVICONS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"icon"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"/files/blogFavicon.ico"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"128x128"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="License"&gt;License&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#License"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;LICENSE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"""&lt;/span&gt;
-&lt;span class="s2"&gt;&amp;lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&amp;gt;&lt;/span&gt;
-&lt;span class="s2"&gt;&amp;lt;img alt="Creative Commons License BY-NC-SA"&lt;/span&gt;
-&lt;span class="s2"&gt;style="border-width:0; margin-bottom:12px;"&lt;/span&gt;
-&lt;span class="s2"&gt;src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&amp;gt;&amp;lt;/a&amp;gt;"""&lt;/span&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="License"&gt;License&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#License"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add a license to your content.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;LICENSE = """
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"license"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://creativecommons.org/licenses/by-nc-sa/4.0/"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Creative Commons License BY-NC-SA"&lt;/span&gt;
+&lt;span class="na"&gt;style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"border-width:0; margin-bottom:12px;"&lt;/span&gt;
+&lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;"""
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Header"&gt;Header&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Header"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;EXTRA_HEAD_DATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'''&lt;/span&gt;
-&lt;span class="s1"&gt;  &amp;lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"&amp;gt;&lt;/span&gt;
-&lt;span class="s1"&gt;  &amp;lt;link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"&amp;gt;&lt;/span&gt;
-&lt;span class="s1"&gt;'''&lt;/span&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Header"&gt;Header&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Header"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add &lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/fontawesome.com/"&gt;FontAwesone&lt;/a&gt; and &lt;a href="https://jpswalsh.github.io/academicons/"&gt;Academic Icons&lt;/a&gt; to use in the footer.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+'''
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Footer"&gt;Footer&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Footer"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CONTENT_FOOTER = '''
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Footer"&gt;Footer&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Footer"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Customize the footer as you like. A good way is to show your social network profiles.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CONTENT_FOOTER = '''
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text-center"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fa-stack fa-2x"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -337,13 +542,11 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
             &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fa fa-github-square fa-stack-2x"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="c"&gt;&amp;lt;!--&lt;/span&gt;
-&lt;span class="c"&gt;        &amp;lt;span class="fa-stack fa-2x"&amp;gt;&lt;/span&gt;
-&lt;span class="c"&gt;        &amp;lt;a href="https://scholar.google.com/citations?user=ID"&amp;gt;&lt;/span&gt;
-&lt;span class="c"&gt;            &amp;lt;i class="ai ai-google-scholar-square ai-2x"&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
-&lt;span class="c"&gt;        &amp;lt;/a&amp;gt;&lt;/span&gt;
-&lt;span class="c"&gt;        &amp;lt;/span&amp;gt;&lt;/span&gt;
-&lt;span class="c"&gt;        --&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fa-stack fa-2x"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://scholar.google.com/citations?user=ID"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"ai ai-google-scholar-square ai-2x"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fa-stack fa-2x"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
         &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.linkedin.com/in/ID"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
             &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fa fa-square fa-stack-2x"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -358,25 +561,39 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
         &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;span&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
-        Contents &lt;span class="ni"&gt;&amp;amp;copy;&lt;/span&gt; {date}  {author}  &lt;span class="ni"&gt;&amp;amp;mdash;&lt;/span&gt;  {license}  &lt;span class="ni"&gt;&amp;amp;mdash;&lt;/span&gt;  Powered by &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://getnikola.com"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"nofollow"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Nikola&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        {license} Contents &lt;span class="ni"&gt;&amp;amp;copy;&lt;/span&gt; {date}  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"mailto:{email}"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;{author}&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; - Powered by &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://getnikola.com"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"nofollow"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Nikola&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 '''
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Adding-Prism"&gt;Adding Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Adding-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;h2 id="GitHub-pages"&gt;GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;h2 id="Configure-VSCode"&gt;Configure VSCode&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Configure-VSCode"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Install the &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"&gt;Python extension&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Make sure &lt;code&gt;Python › Data Science: Allow Import From Notebook&lt;/code&gt; is enabled.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="Recommendations"&gt;Recommendations&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Recommendations"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Install WSL2 for better integration.&lt;/li&gt;
-&lt;li&gt;Install Windows Terminal for better console scripting.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="Notes"&gt;Notes&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Notes"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Python extension does not handle Markdown embedded html ToC code very well in a Mardown cell when you open a .ipynb file. &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="Extras"&gt;Extras&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Extras"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Install Windows Terminal&lt;/li&gt;
-&lt;li&gt;Install Power Shell 7.0&lt;/li&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Google-search"&gt;Google search&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Google-search"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Enable Google search.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SEARCH_FORM = """
+&lt;span class="c"&gt;&amp;lt;!-- Google custom search --&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"get"&lt;/span&gt; &lt;span class="na"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.google.com/search"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navbar-form navbar-right"&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"search"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"input-group"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text"&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"q"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"form-control"&lt;/span&gt; &lt;span class="na"&gt;placeholder&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Search"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"submit"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"btn btn-secondary"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"fa fa-search"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;i&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;button&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"hidden"&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"sitesearch"&lt;/span&gt; &lt;span class="na"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"%s"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;    
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;!-- End of custom search --&amp;gt;&lt;/span&gt;
+""" % SITE_URL
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;You may find that &lt;code&gt;conf.py&lt;/code&gt; uses &lt;a href="https://www.glyphicons.com"&gt;Glyphicon&lt;/a&gt;, but recently Bootstrap 4+ changed it to &lt;a href="https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration"&gt;FontAwesome&lt;/a&gt;, so Glyphicon is not available anymore.&lt;/li&gt;
+&lt;li&gt;Change &lt;code&gt;form-group&lt;/code&gt; to &lt;code&gt;input-group&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;More configurations with &lt;a href="https://www.codeply.com/go/ioPsDfyCBc"&gt;Bootstrap 4 demo Icon inputs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://duckduckgo.com/"&gt;Duckduckgo&lt;/a&gt; is also available.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -385,7 +602,195 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Python-test"&gt;Python test&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Python-test"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Disqus"&gt;Disqus&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Disqus"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create an account on &lt;a href="https://disqus.com/"&gt;Disqus&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On Disqus, &lt;em&gt;'create a new site'&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Choose a &lt;code&gt;disqus_shortname&lt;/code&gt;, e.g. &lt;code&gt;github_user_name&lt;/code&gt;. I recommend not to use &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add your blog site &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Chose &lt;em&gt;'Basic Plan'&lt;/em&gt; &lt;/li&gt;
+&lt;li&gt;Skip instructions in the  &lt;em&gt;'Select Platform'&lt;/em&gt; section.&lt;/li&gt;
+&lt;li&gt;Enable the following in &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMMENT_SYSTEM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"disqus"&lt;/span&gt;
+&lt;span class="n"&gt;COMMENT_SYSTEM_ID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;disqus_shortname&amp;gt;"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Config-the-sticky-menu"&gt;Config the sticky menu&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Config-the-sticky-menu"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can set the navigation bar sticks on the top as you scroll down the page.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy the parent base template.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;base.tmpl
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Move it to &lt;code&gt;/themes/themeBlog/templates/base.tmpl&lt;/code&gt; and add the following as follows.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- Menubar --&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;nav&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navbar&lt;/span&gt; &lt;span class="na"&gt;navbar-expand-md&lt;/span&gt; &lt;span class="na"&gt;sticky-top&lt;/span&gt; &lt;span class="na"&gt;mb-4&lt;/span&gt;
+&lt;span class="err"&gt;...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Code-highlighting"&gt;Code highlighting&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Code-highlighting"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By default, Nikola uses &lt;a href="https://pygments.org"&gt;Pygments&lt;/a&gt; for code highlighting.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For Markdown and Jupyter Notebook.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;```python
+def fn()
+pass:
+print('hello world')
+```&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;With rST.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.. code-block:: python
+
+  def fn()
+  pass:
+  print('hello world')&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Adding-Prism"&gt;Adding Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Adding-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternatively, I like to use &lt;a href="https://prismjs.com/"&gt;Prism&lt;/a&gt; due its &lt;strong&gt;JSONP Highlight plugin&lt;/strong&gt; which allows you to import external code hosted on GitHub or some other place.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Select the &lt;a href="https://prismjs.com/download.html"&gt;Minifed version&lt;/a&gt; and all available languages. &lt;/li&gt;
+&lt;li&gt;Add any plugins. My selection is as follows.
+&lt;img src="https://paulomarconi.github.io/images/selected_prism_plugins.png" alt="Prism plugins"&gt;&lt;/li&gt;
+&lt;li&gt;Download the JS and CSS files.&lt;/li&gt;
+&lt;li&gt;Save them on &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; and &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the following inside &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
+...
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+'''
+BODY_END = '''
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/js/prism.js"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+'''
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Also, add the &lt;code&gt;prism.css&lt;/code&gt; into the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+    ...
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Done!. &lt;/li&gt;
+&lt;li&gt;Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight a code file.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In rST.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.. raw:: html
+
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Check &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; for usage examples.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Latex-with-Mathjax"&gt;Latex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Latex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax. If you want support for the &lt;code&gt;$...$&lt;/code&gt; inline LaTex syntax.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MATHJAX_CONFIG = """
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/x-mathjax-config"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nx"&gt;MathJax&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Hub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Config&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
+    &lt;span class="nx"&gt;tex2jax&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;inlineMath&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'$'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"\\\("&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"\\\)"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;displayMath&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'$$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'$$'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"\\\["&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"\\\]"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+        &lt;span class="nx"&gt;processEscapes&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nx"&gt;displayAlign&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'center'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// Change this to 'left' if you want left-aligned equations.&lt;/span&gt;
+    &lt;span class="s2"&gt;"HTML-CSS"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;styles&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'.MathJax_Display'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"margin"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+"""
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="GitHub-pages"&gt;GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Initialize Git.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
+git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Edit &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'origin'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_COMMIT_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.vscode
+.doit.db*
+cache
+__pycache__
+output
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Deploy to GitHub.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Select the &lt;code&gt;master&lt;/code&gt; branch on the GitHub Pages section located on the repository settings. &lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the result.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nikola creates two branches, &lt;code&gt;master&lt;/code&gt; has the content of the output folder, and &lt;code&gt;src&lt;/code&gt; has the actual content of your posts and pages. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we need to run VSCode under our environment. If you run VSCode directly, it will show the kernels but they won't be available.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder&lt;/li&gt;
+&lt;li&gt;Activate the environment.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Open VSCode&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Check if the kernels are available. They are double listed because one means that the paths is correct, and the other means it's available. Perhaps it's a bug, not sure. 
+&lt;img src="https://paulomarconi.github.io/images/VSCode_available_kernels.png" alt="VSCode kernels"&gt;&lt;/li&gt;
+&lt;li&gt;Alternatively, activate &lt;code&gt;jmatlabNikola&lt;/code&gt; and run VSCode with Anaconda Navigator.&lt;/li&gt;
+&lt;li&gt;Every time you need it, remember to switch the &lt;strong&gt;Matlab and Python kernels&lt;/strong&gt; for each cell.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now that everything is set, let's do some testing with both kernels.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Python-test"&gt;Python test&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Python-test"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -394,7 +799,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hissss'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello world'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -411,7 +816,44 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 
 
 &lt;div class="output_subarea output_stream output_stdout output_text"&gt;
-&lt;pre&gt;hissss
+&lt;pre&gt;hello world
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"i="&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;i= 0
+i= 2
+i= 4
+i= 6
+i= 8
+i= 10
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -423,17 +865,18 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script-test"&gt;Matlab script test&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-script-test"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id="Matlab-test"&gt;Matlab test&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-test"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;See more examples &lt;a href="https://am111.readthedocs.io/en/latest/jmatlab_use.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="s"&gt;compact&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;.5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mf"&gt;3.5&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
     &lt;span class="n"&gt;i&lt;/span&gt;
 &lt;span class="s"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -455,19 +898,15 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;pre&gt;i =
      0
 i =
-    0.5000
-i =
-     1
-i =
-    1.5000
-i =
      2
 i =
-    2.5000
+     4
 i =
-     3
+     6
 i =
-    3.5000
+     8
+i =
+    10
 
 &lt;/pre&gt;
 &lt;/div&gt;
@@ -476,6 +915,14 @@ i =
 &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="3D-plotting"&gt;3D plotting&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#3D-plotting"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's use &lt;code&gt;%plot inline&lt;/code&gt; magic command.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
@@ -528,42 +975,17 @@ i =
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file fnc.m&lt;/span&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Matlab-optimization-solver"&gt;Matlab optimization solver&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-optimization-solver"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We can also call Matlab solvers.&lt;/p&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;c &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;fnc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a,b&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% in-file comments can be added like this&lt;/span&gt;
-    &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;pi&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="n"&gt;end&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;fnc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;test
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
@@ -582,11 +1004,44 @@ i =
 &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+x =
+    0.0000
+    0.5000
+    0.0000
+
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Some-random-latex-formulas"&gt;Some random latex formulas&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Some-random-latex-formulas"&gt;¶&lt;/a&gt;&lt;/h3&gt;$$ f(x) = x^{2i}$$$$ 
+&lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas
+$$ f(x) = x^{2i}$$&lt;/p&gt;
+$$ 
 \begin{equation}
 \begin{aligned}
 \underbrace{
@@ -619,8 +1074,7 @@ i =
 }_{q_{x_N}}
 \end{aligned}
 \end{equation}
-$$&lt;p&gt;other formulas&lt;/p&gt;
-$$
+$$$$
 \begin{equation}
 \begin{cases}
 \begin{aligned}
@@ -638,59 +1092,63 @@ $$
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Code-Highlighting"&gt;Code Highlighting&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Code-Highlighting"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;nk&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; 
-    &lt;span class="c"&gt;% Constrained MPC control law (RH-FH) LQ-MPC at every step k        &lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'reg'&lt;/span&gt;
-        &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Ustar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;fval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;flag&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quadprog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Pc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;qc&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Sc&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
-    &lt;span class="k"&gt;elseif&lt;/span&gt; &lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'trk'&lt;/span&gt;
-        &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;NUstar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;fval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;flag&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quadprog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;epsilon&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;Pc_ssto&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;qc_ssto&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Sc_ssto&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;epsilon&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt; 
-    &lt;span class="k"&gt;end&lt;/span&gt;
-    &lt;span class="c"&gt;% check feasibility&lt;/span&gt;
-    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;flag&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; 
-        &lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;'Optimization is infeasible at k = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;num2str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)]);&lt;/span&gt;
-        &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    
-    &lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;h2 id="Code-Highlighting-testing"&gt;Code Highlighting testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Code-Highlighting-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;With Pygments.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;nk&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; 
+      &lt;span class="c"&gt;% Constrained MPC control law (RH-FH) LQ-MPC at every step k        &lt;/span&gt;
+      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'reg'&lt;/span&gt;
+          &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Ustar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;fval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;flag&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quadprog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Pc&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;qc&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Sc&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; 
+      &lt;span class="k"&gt;elseif&lt;/span&gt; &lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'trk'&lt;/span&gt;
+          &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;NUstar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;fval&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;flag&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;quadprog&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;epsilon&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;Pc_ssto&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;qc_ssto&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;Sc_ssto&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;epsilon&lt;/span&gt;&lt;span class="p"&gt;(:,&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt; 
+      &lt;span class="k"&gt;end&lt;/span&gt;
+      &lt;span class="c"&gt;% check feasibility&lt;/span&gt;
+      &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;flag&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt; 
+          &lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s"&gt;'Optimization is infeasible at k = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;num2str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;)]);&lt;/span&gt;
+          &lt;span class="k"&gt;break&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    
+      &lt;span class="k"&gt;end&lt;/span&gt;
+  &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Import-Code"&gt;Import Code&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Import-Code"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Importing code&lt;/p&gt;
-&lt;pre class="lang-markup" data-jsonp="https://api.github.com/repos/umsaETN/IEA_Robotics/contents/README.md"&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code class="language-matlab"&gt;
-for k = 1:nk+1 
-    % Constrained MPC control law (RH-FH) LQ-MPC at every step k        
-    if mode == 'reg'
-        [Ustar,fval,flag] = quadprog(H,L*x,Pc,qc+Sc*x); 
-    elseif mode == 'trk'
-        [NUstar,fval,flag] = quadprog(H,L*epsilon(:,k),Pc_ssto,qc_ssto+Sc_ssto*epsilon(:,k)); 
-    end
-    % check feasibility
-    if flag &amp;lt; 1 
-        disp(['Optimization is infeasible at k = ',num2str(k)]);
-        break;    
-    end
-end
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;With Prism.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-matlab"&gt;
+  for k = 1:nk+1 
+      % Constrained MPC control law (RH-FH) LQ-MPC at every step k        
+      if mode == 'reg'
+          [Ustar,fval,flag] = quadprog(H,L*x,Pc,qc+Sc*x); 
+      elseif mode == 'trk'
+          [NUstar,fval,flag] = quadprog(H,L*epsilon(:,k),Pc_ssto,qc_ssto+Sc_ssto*epsilon(:,k)); 
+      end
+      % check feasibility
+      if flag &amp;lt; 1 
+          disp(['Optimization is infeasible at k = ',num2str(k)]);
+          break;    
+      end
+  end
+  &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Embedded-pdf"&gt;Embedded pdf&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Embedded-pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;this some intro text for the embedded pdf.&lt;/p&gt;
-&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px"&gt; 
+&lt;h2 id="Embedded-.pdf"&gt;Embedded &lt;code&gt;.pdf&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Embedded-.pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To embed a local or external &lt;code&gt;.pdf&lt;/code&gt; document, you can use the Google Drive viewer.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt; &lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100%"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"800px"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;download the PDF.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;  
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id="Example"&gt;Example&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Example"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px"&gt; 
     &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
 &lt;/object&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;Well, that's it for now. Let me know if you find some problems. Thanks for reading.&lt;/p&gt;
 
-    &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;/div&gt;&lt;/div&gt;</description><category>Anaconda</category><category>GitHub</category><category>jupyter</category><category>Matlab</category><category>Nikola</category><category>Python</category><category>VSCode</category><guid>https://paulomarconi.github.io/blog/Nikola-guide/</guid><pubDate>Fri, 21 Aug 2020 23:25:13 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Anaconda</category><category>GitHub</category><category>Jupyter</category><category>Matlab</category><category>Nikola</category><category>Python</category><category>VSCode</category><guid>https://paulomarconi.github.io/blog/Nikola-guide/</guid><pubDate>Fri, 21 Aug 2020 23:25:13 GMT</pubDate></item></channel></rss>

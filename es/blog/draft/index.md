@@ -7,9 +7,9 @@
 .. link: 
 .. description: 
 .. type: text
+.. has_math:true
+.. status: draft
 -->
-
-
 
 
 # Introduction 
@@ -35,6 +35,8 @@ Nevertheless, here is a list of the official documentation and good tutorials I 
 - [VSCode](https://code.visualstudio.com/), but you can use any editor you like.
 - [GitHub pages](https://pages.github.com/)
 - Knowledge in HTML, CSS, JS, Matlab, Python, Markdown, and reStructedText.
+
+
 
 # Create a new environment with Anaconda or Conda 
 
@@ -335,7 +337,7 @@ div.output_subarea {
 ```
 
 
-### Clean version of `post_ipynb.css`
+## Clean version of `post_ipynb.css`
 
 ```css
 div.prompt {
@@ -592,6 +594,7 @@ MathJax.Hub.Config({
 
 # GitHub pages
 
+- Create a new repository named `<user_name>.github.io`
 - Initialize Git
 ```bash
 git init .
@@ -604,26 +607,26 @@ GITHUB_DEPLOY_BRANCH = 'master'
 GITHUB_REMOTE_NAME = 'origin'
 GITHUB_COMMIT_SOURCE = True
 ```
+- Create a `.gitignore`
+```bash
+.vscode
+.doit.db*
+cache
+__pycache__
+output
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+```
+- Deploy to GitHub
+```bash
+nikola github_deploy
+```
+- Choose `master` as the branch on GitHub Pages settings. 
 
-# Configure VSCode
 
-- Install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- Make sure `Python › Data Science: Allow Import From Notebook` is enabled.
 
- 
 
-# Recommendations
 
-- Install WSL2 for better integration.
-- Install Windows Terminal for better console scripting.
-
-# Notes
-
-- Python extension does not handle Markdown embedded html ToC code very well in a Markdown cell when you open a .ipynb file. 
-
-# Extras
-- Install Windows Terminal
-- Install Power Shell 7.0
 
 
 

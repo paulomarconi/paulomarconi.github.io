@@ -94,677 +94,7 @@ navbar-dark bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="draft/" class="u-url">draft nikola guida md</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                Paulo Loma Marconi
-            </span></p>
-            <p class="dateline">
-            <a href="draft/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-09-03T16:59:58-04:00" itemprop="datePublished" title="2020-09-03">2020-09-03</time></a>
-            </p>
-                <p class="commentline">
-        
-    <a href="draft/#disqus_thread" data-disqus-identifier="cache/posts/draft.html">Comments</a>
-
-
-        </p>
-</div>
-    </header><div class="e-content entry-content">
-    <div>
-<h2>Introduction</h2>
-<p><a href="https://getnikola.com/">Nikola</a> is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, <a href="https://gohugo.io/">Hugo</a>, <a href="https://docs.getpelican.com/en/stable/quickstart.html">Pelican</a>, and <a href="https://github.com/sphinx-doc/sphinx">Sphinx</a>. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.</p>
-<p>There is a lot of good material on the internet about installing and using Nikola, but I thought it will be useful to show my methodology from the perspective of someone who has never used Anaconda, Jupyter and Nikola.</p>
-<p>Nevertheless, here is a list of the official documentation and good tutorials I recommend:</p>
-<ul>
-<li><a href="https://getnikola.com/getting-started.html">Nikola Getting Started</a></li>
-<li><a href="https://getnikola.com/handbook.html#">Nikola Handbook</a></li>
-<li><a href="https://randlow.github.io/posts/python/create-nikola-coding-blog/">Complete and comprehensive tutorial</a></li>
-<li><a href="https://jiaweizhuang.github.io/blog/nikola-guide/">Compact tutorial</a></li>
-<li><a href="https://notes.mikejarrett.ca/optimizing-your-nikola-blog-for-jupyter-notebooks/">For extra customization</a></li>
-</ul>
-<h2>Pre-requisites</h2>
-<ul>
-<li><a href="https://www.anaconda.com/">Anaconda</a></li>
-<li><a href="https://jupyter.org/">Jupyter Notebook</a></li>
-<li><a href="https://github.com/Calysto/matlab_kernel">Matlab-kernel (jmatlab)</a></li>
-<li>
-<a href="https://code.visualstudio.com/">VSCode</a>, but you can use any editor you like.</li>
-<li><a href="https://pages.github.com/">GitHub pages</a></li>
-<li>Knowledge in HTML, CSS, JS, Matlab, Python, Markdown, and reStructedText.</li>
-</ul>
-<h2>Create a new environment with Anaconda or Conda</h2>
-<ul>
-<li>Download and install <a href="https://www.anaconda.com/products/individual#Downloads">Anaconda</a> or <a href="https://repo.anaconda.com/miniconda/">Miniconda</a>, it's your choice.</li>
-<li>Make sure <code>C:\ProgramData\Anaconda3</code> and <code>C:\ProgramData\Anaconda3\Scripts</code> are listed in your Windows <code>path variables</code>.</li>
-<li>In Anaconda Navigator, create a new environment called <code>jmatlabNikola</code> with <code>Python 3.6</code>, or open terminal and run <code>conda create -n jmatlabNikola python=3.6</code>
-</li>
-<li>A new folder will be created inside <code>C:\Users\&lt;user_name&gt;\.conda\envs\</code>
-</li>
-</ul>
-<p><strong>Why Python 3.6?</strong></p>
-<p>Because <a href="https://www.mathworks.com/help/matlab/matlab-engine-for-python.html">Matlab engine</a> is compatible only with Python 2.7, 3.6, and 3.7. Version 3.7 is for Matlab 2019+, and version 3.6 is for Matlab 2018+. Also, Python 3.6 is known as the most stable version.</p>
-<p><strong>Why a new environment?</strong> </p>
-<p>Anaconda (conda) is a powerful <strong>package management platform</strong> that allows you to install any <strong>self-contained</strong> workspace (environment) with different kernels and libraries. For example, let's say I have two environments:</p>
-<ul>
-<li>
-<code>jmatlabNikola</code>: composed by Python 3.6, Jupyter Notebook, jmatlab, and Nikola.</li>
-<li>
-<code>openCV_TF</code>: composed by Python 3.8, OpenCV, and TensorFlow.</li>
-</ul>
-<p>So, I want to write a post: </p>
-<ul>
-<li>Run <code>activate jmatlabNikola</code> → it switches to Python 3.6 (you can check with <code>python --version</code>). Any post I write will be compiled by this environment only. None of the libraries from the other environment will be available. </li>
-</ul>
-<p>I want to work with OpenCV:</p>
-<ul>
-<li>Run <code>activate openCV_TF</code> → it switches to Python 3.8, the kernel and libraries of <code>jmatlabNikola</code> are not available and won't get mixed with this environment.</li>
-</ul>
-<p><strong>Notes</strong></p>
-<ul>
-<li>Don't touch the <code>base</code> environment of Anaconda if you want to test packages. Use it as a reference because it's the default environment for your OS.</li>
-<li>If you already have Python installed, you can still use Anaconda without any problems. Just make sure the <code>Anaconda python path</code> is configured in your code editor and in your Windows.</li>
-<li>Your work files and folders could be anywhere in your hard drive, but don't create them inside the environments folders. If you delete any environment by accident, it's very unlikely to recover them.</li>
-</ul>
-<h2>Install Jupyter Notebook, Nikola and jmatlab</h2>
-<ul>
-<li>Open terminal as <strong>administrator</strong> in <code>cd C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola</code>
-</li>
-<li>Jupyter Notebook:</li>
-<li>When you create a new environment with Anaconda, Jupyter Notebook is installed by default.</li>
-<li>For conda, run <code>pip install notebook</code>
-</li>
-<li>Run <code>pip install Nikola[extras]</code>
-</li>
-<li>Run <code>pip install matlab_kernel</code>
-</li>
-<li>Config Matlab:</li>
-<li>Run <code>activate jmatlabNikola</code>
-</li>
-<li>Go to <code>cd “C:\Program Files\MATLAB\R2018b\extern\engines\python”</code>
-</li>
-<li>Run <code>python setup.py install</code>
-</li>
-<li>Check installed kernels <code>jupyter kernelspec list</code>
-</li>
-</ul>
-<p>Done!, now you have everything what you need in your environment. Check all installed libraries with Anaconda Navigator.</p>
-<p><strong>Notes</strong></p>
-<ul>
-<li>Make sure you activate <code>jmatlabNikola</code> environment with admin rights.</li>
-<li>If you have doubts about the python kernel, check <code>python --version</code> every time you activate an environment.</li>
-</ul>
-<h2>Create the Nikola demo site, and your first post</h2>
-<ul>
-<li>Create a new folder called <code>blog</code> anywhere you like except inside <code>jmatlabNikola</code> environment.</li>
-<li>Open terminal inside your <code>blog</code> folder.</li>
-<li>Activate the environment. </li>
-</ul>
-<pre class="code literal-block"><span></span><code>activate jmatlabNikola
-</code></pre>
-
-
-<ul>
-<li>Initialize a demo, and fill its content.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola init --demo
-</code></pre>
-
-
-<ul>
-<li>Build (generate) the HTML files of the site.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola build
-</code></pre>
-
-
-<ul>
-<li>View in your browser, it will open a host in <code>http://127.0.0.1:8000</code>.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola serve -b
-</code></pre>
-
-
-<ul>
-<li>Automatically <code>build</code> and <code>serve</code> your site if you want to see all changes.constantly (<strong>recommended</strong>). </li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola auto
-</code></pre>
-
-
-<ul>
-<li>Create a new post and new page. By default, they are created in <code>.rst</code> format.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola new_post
-nikola new_page
-</code></pre>
-
-
-<ul>
-<li>Other posts in different formats. <code>-f ipynb</code> needs extra configuration, see  .</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola new_post -f md
-nikola new_post -f rst
-nikola new_post -f html
-nikola new_post -f ipynb
-</code></pre>
-
-
-<ul>
-<li>Press <code>ctrl+c</code> to stop the server.</li>
-</ul>
-<h3>Create a clean Nikola site</h3>
-<p>Same as before but run <code>nikola init</code> instead. </p>
-<p>That's it!. Navigate through the files and see what Nikola has done with the demo, and the clean version.</p>
-<h2>Nikola directories</h2>
-<p>Although, most of them are self-explained, they can be categorized in three types:</p>
-<ul>
-<li>Content: <code>files</code>, <code>galleries</code>, <code>images</code>, <code>listings</code>, <code>pages</code>, <code>posts</code>.</li>
-<li>Customization: <code>plugins</code>, <code>templates</code>, <code>themes</code>.</li>
-<li>Visible output: <code>output</code>. Here, all your content is parsed to <code>.html</code> to be visible in any web hosting service such as GitHub pages.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>../__pycache__
-../cache     
-../files      <span class="c1"># all the files of your blog, e.g. pdf, videos, etc.</span>
-../galleries  <span class="c1"># galleries of images.</span>
-../images     <span class="c1"># images of your website</span>
-../listings   <span class="c1"># code files, e.g. .py, .tex, .m, .cpp, etc.</span>
-../output     <span class="c1"># the root directory of your website. </span>
-../pages      <span class="c1"># stores index.html, blog.html, home.html, about-me.html. </span>
-../plugins    <span class="c1"># additional plugins.</span>
-../posts      <span class="c1"># stores all your posts, .md, .html, .ipynb, and .rst</span>
-../templates  <span class="c1"># additional templates. </span>
-../themes     <span class="c1"># addtional themes.</span>
-</code></pre>
-
-
-<h2>Configure a non-blog Nikola site</h2>
-<p>From now on, we will configure Nikola using <code>conf.py</code>, located in your root directory.</p>
-<h3>Create the index and bio page</h3>
-<p>First, create both pages using the terminal,</p>
-<pre class="code literal-block"><span></span><code>nikola new_page --title<span class="o">=</span><span class="s2">"index"</span>
-nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
-</code></pre>
-
-
-<p>add them to the navigation links in <code>conf.py</code>.</p>
-<pre class="code literal-block"><span></span><code><span class="n">NAVIGATION_LINKS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="n">DEFAULT_LANG</span><span class="p">:</span> <span class="p">(</span>
-        <span class="p">(</span><span class="s2">"/index.html"</span><span class="p">,</span> <span class="s2">"Home"</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">"/bio/index.html"</span><span class="p">,</span> <span class="s2">"Bio"</span><span class="p">),</span>
-        <span class="o">...</span>
-    <span class="p">),</span>
-</code></pre>
-
-
-<p>Add any other page, just make sure you add it in the navigation list, e.g. about-me, contact, etc.</p>
-<h3>Use Jupyter Notebooks</h3>
-<p>By default, Nikola uses the <strong>blog</strong> configuration,</p>
-<pre class="code literal-block"><span></span><code><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s2">"posts/*.rst"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.md"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.html"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.ipynb"</span><span class="p">,</span> <span class="s2">"posts"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s2">"pages/*.rst"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.md"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.txt"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.html"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.ipynb"</span><span class="p">,</span> <span class="s2">"pages"</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span> 
-<span class="p">)</span>
-</code></pre>
-
-
-<p>change it to the <a href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html"><strong>non-blog</strong> configuration</a>,</p>
-<pre class="code literal-block"><span></span><code><span class="n">POSTS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s2">"posts/*.rst"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.md"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.txt"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.html"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"posts/*.ipynb"</span><span class="p">,</span> <span class="s2">"blog"</span><span class="p">,</span> <span class="s2">"post_ipynb.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
-
-<span class="n">PAGES</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s2">"pages/*.rst"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.md"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.txt"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.html"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"page.tmpl"</span><span class="p">),</span>
-    <span class="p">(</span><span class="s2">"pages/*.ipynb"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"post_ipynb.tmpl"</span><span class="p">),</span>
-<span class="p">)</span>
-<span class="c1"># And to avoid a conflict because blogs try to generate /index.html</span>
-<span class="n">INDEX_PATH</span> <span class="o">=</span> <span class="s2">"blog"</span>
-</code></pre>
-
-
-<p>and check if <code>.ipynb</code> is listed in the compilers section.</p>
-<pre class="code literal-block"><span></span><code><span class="n">COMPILERS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"rest"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.rst'</span><span class="p">,</span> <span class="s1">'.txt'</span><span class="p">],</span>
-    <span class="s2">"markdown"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.md'</span><span class="p">,</span> <span class="s1">'.mdown'</span><span class="p">,</span> <span class="s1">'.markdown'</span><span class="p">],</span>
-    <span class="s2">"textile"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.textile'</span><span class="p">],</span>
-    <span class="s2">"txt2tags"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.t2t'</span><span class="p">],</span>
-    <span class="s2">"bbcode"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.bb'</span><span class="p">],</span>
-    <span class="s2">"wiki"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.wiki'</span><span class="p">],</span>
-    <span class="s2">"ipynb"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.ipynb'</span><span class="p">],</span>
-    <span class="s2">"html"</span><span class="p">:</span> <span class="p">[</span><span class="s1">'.html'</span><span class="p">,</span> <span class="s1">'.htm'</span><span class="p">],</span>
-    <span class="o">...</span>
-</code></pre>
-
-
-<h3>Create the <code>post_ipynb.tmpl</code> template</h3>
-<ul>
-<li>Create a new theme</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola theme --new<span class="o">=</span>themeBlog --parent<span class="o">=</span>bootstrap4 --engine<span class="o">=</span>mako
-</code></pre>
-
-
-<ul>
-<li>Copy <code>post.tmpl</code> template from parent theme </li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola theme --copy-template<span class="o">=</span>post.tmpl
-</code></pre>
-
-
-<ul>
-<li>Move it to the <code>../themes/themeBlog/templates/</code> folder and rename it as <code>post_ipynb.tmpl</code>
-</li>
-<li>Add the following in the extra head section</li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="err">&lt;</span>%block name="extra_head"&gt;
-    ... 
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../assets/css/post_ipynb.css"</span><span class="p">&gt;</span>
-<span class="err">&lt;</span>/%block&gt;
-</code></pre>
-
-
-<h3>Create the <code>post_ipynb.css</code>
-</h3>
-<ul>
-<li>Create the file in <code>../themeBlog/assets/css/</code> folder and copy the following</li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span> <span class="p">{</span>
-    <span class="k">padding</span><span class="p">:</span> <span class="mf">0.6</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#ffffff</span><span class="p">;</span>
-    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
-    <span class="kp">-webkit-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-    <span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="p">.</span><span class="nc">output_prompt</span> <span class="p">{</span>
-    <span class="c">/* 5px right shift to account for margin in parent container */</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-  <span class="nt">div</span><span class="p">.</span><span class="nc">output_area</span> <span class="nt">pre</span> <span class="p">{</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="p">.</span><span class="nc">text_cell_render</span> <span class="p">{</span>
-    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">color</span><span class="p">:</span> <span class="mh">#333333</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">p</span> <span class="p">{</span>
-    <span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">ul</span> <span class="p">{</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">12</span><span class="kt">px</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">rendered_html</span> <span class="p">:</span><span class="nd">visited</span> <span class="p">{</span>
-    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">rendered_html</span> <span class="p">:</span><span class="nd">link</span> <span class="p">{</span>
-    <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-  <span class="p">}</span>
-
-<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">pre</span><span class="o">,</span> <span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">code</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#DDDDDD</span><span class="p">;</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span> <span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">rendered_html</span> <span class="nt">pre</span> <span class="p">{</span>
-    <span class="k">padding-left</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">padding-right</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">padding-top</span><span class="p">:</span> <span class="mf">0.05</span><span class="kt">em</span><span class="p">;</span>
-    <span class="k">padding-bottom</span><span class="p">:</span> <span class="mf">0.05</span><span class="kt">em</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="p">.</span><span class="nc">page-content</span> <span class="o">&gt;</span> <span class="p">.</span><span class="nc">content</span> <span class="nt">p</span> <span class="p">{</span>
-    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-
-
-<span class="nt">div</span><span class="p">.</span><span class="nc">input</span>  <span class="p">{</span>
-    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c">/* set a max-width for horizontal fluid layout and make it centered */</span>
-<span class="p">.</span><span class="nc">body-content</span> <span class="p">{</span>
-    <span class="k">margin-right</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-    <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span> <span class="c">/* or 950px */</span>
-<span class="p">}</span>
-
-<span class="c">/* Widens image-containing divs so that image is full body width */</span>
-<span class="nt">div</span><span class="p">.</span><span class="nc">output_subarea</span> <span class="p">{</span>     
-    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-
-<h4>Clean version of <code>post_ipynb.css</code>
-</h4>
-<pre class="code literal-block"><span></span><code><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span> <span class="p">{</span>
-    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="p">.</span><span class="nc">input</span>  <span class="p">{</span>
-    <span class="k">border</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">div</span><span class="p">.</span><span class="nc">input</span> <span class="o">*</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c">/* set a max-width for horizontal fluid layout and make it centered */</span>
-<span class="p">.</span><span class="nc">body-content</span> <span class="p">{</span>
-  <span class="k">margin-right</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-  <span class="k">margin-left</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
-  <span class="k">max-width</span><span class="p">:</span> <span class="mi">750</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* or 950px */</span>
-<span class="p">}</span>
-
-<span class="c">/* Widens image-containing divs so that image is full body width */</span>
-<span class="nt">div</span><span class="p">.</span><span class="nc">output_subarea</span> <span class="p">{</span>
-    <span class="k">max-width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-
-
-<h3>Use your custom theme</h3>
-<pre class="code literal-block"><span></span><code><span class="n">THEME</span> <span class="o">=</span> <span class="s2">"themeBlog"</span>
-</code></pre>
-
-
-<p>Done!. Now you can create and edit posts as Jupyter Notebooks.</p>
-<h2>Extra configurations</h2>
-<h3>Files and Listings</h3>
-<pre class="code literal-block"><span></span><code><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span> <span class="c1"># Which means copy 'files' into 'output/files'</span>
-<span class="n">LISTINGS_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'listings'</span><span class="p">:</span> <span class="s1">'listings'</span><span class="p">}</span> <span class="c1"># Which means process listings from 'listings' into 'output/listings'</span>
-</code></pre>
-
-
-<h3>Enable single Archive</h3>
-<pre class="code literal-block"><span></span><code><span class="c1"># Create one large archive instead of per-year</span>
-<span class="n">CREATE_SINGLE_ARCHIVE</span> <span class="o">=</span> <span class="kc">True</span>
-</code></pre>
-
-
-<h3>Favicon</h3>
-<pre class="code literal-block"><span></span><code><span class="n">FAVICONS</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="p">(</span><span class="s2">"icon"</span><span class="p">,</span> <span class="s2">"/files/blogFavicon.ico"</span><span class="p">,</span> <span class="s2">"128x128"</span><span class="p">),</span>
-<span class="p">)</span>
-</code></pre>
-
-
-<h3>License</h3>
-<pre class="code literal-block"><span></span><code>LICENSE = """
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">rel</span><span class="o">=</span><span class="s">"license"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://creativecommons.org/licenses/by-nc-sa/4.0/"</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">img</span> <span class="na">alt</span><span class="o">=</span><span class="s">"Creative Commons License BY-NC-SA"</span>
-<span class="na">style</span><span class="o">=</span><span class="s">"border-width:0; margin-bottom:12px;"</span>
-<span class="na">src</span><span class="o">=</span><span class="s">"https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>"""
-</code></pre>
-
-
-<h3>Header</h3>
-<p>Add FontAwesone and Academic Icons.</p>
-<pre class="code literal-block"><span></span><code>EXTRA_HEAD_DATA = '''
-  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"</span><span class="p">&gt;</span>
-'''
-</code></pre>
-
-
-<h3>Footer</h3>
-<pre class="code literal-block"><span></span><code>CONTENT_FOOTER = '''
-<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"text-center"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://github.com/&lt;user_name&gt;"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-github-square fa-stack-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://scholar.google.com/citations?user=ID"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"ai ai-google-scholar-square ai-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://www.linkedin.com/in/ID"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-square fa-stack-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-linkedin fa-inverse fa-stack-1x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa-stack fa-2x"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:{email}"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-square fa-stack-2x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-envelope fa-inverse fa-stack-1x"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
-        {license} Contents <span class="ni">&amp;copy;</span> {date}  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"mailto:{email}"</span><span class="p">&gt;</span>{author}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> - Powered by <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://getnikola.com"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"nofollow"</span><span class="p">&gt;</span>Nikola<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-'''
-</code></pre>
-
-
-<h3>Google search</h3>
-<pre class="code literal-block"><span></span><code>SEARCH_FORM = """
-<span class="c">&lt;!-- Google custom search --&gt;</span>
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"get"</span> <span class="na">action</span><span class="o">=</span><span class="s">"https://www.google.com/search"</span> <span class="na">class</span><span class="o">=</span><span class="s">"navbar-form navbar-right"</span> <span class="na">role</span><span class="o">=</span><span class="s">"search"</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"input-group"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">name</span><span class="o">=</span><span class="s">"q"</span> <span class="na">class</span><span class="o">=</span><span class="s">"form-control"</span> <span class="na">placeholder</span><span class="o">=</span><span class="s">"Search"</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">"submit"</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn btn-secondary"</span><span class="p">&gt;</span>
-            <span class="p">&lt;</span><span class="nt">i</span> <span class="na">class</span><span class="o">=</span><span class="s">"fa fa-search"</span><span class="p">&gt;&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
-        <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"hidden"</span> <span class="na">name</span><span class="o">=</span><span class="s">"sitesearch"</span> <span class="na">value</span><span class="o">=</span><span class="s">"%s"</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>    
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-<span class="c">&lt;!-- End of custom search --&gt;</span>
-""" % SITE_URL
-</code></pre>
-
-
-<p><strong>Notes</strong>
-- You may find that <code>conf.py</code> uses Glyphicon, but Bootstrap 4+ uses <a href="https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration">FontAwesome</a> instead. 
-- For Bootstrap 4+, change <code>form-group</code> to <code>input-group</code>.
-- More configurations with <a href="https://www.codeply.com/go/ioPsDfyCBc">Bootstrap 4 demo Icon inputs</a>.</p>
-<h3>Disqus</h3>
-<ul>
-<li>Create an account on <a href="https://disqus.com/">Disqus</a>.</li>
-<li>On Disqus, <em>create a new site</em>.</li>
-<li>Choose a <code>disqus_shortname</code>, e.g. <code>github_user_name</code>. I recommend not to use <code>&lt;user_name&gt;.github.io</code>
-</li>
-<li>Add your blog site <code>&lt;user_name&gt;.github.io</code>.</li>
-<li>Chose <em>Basic Plan</em> </li>
-<li>Skip instructions in the  <em>Select Platform</em> section.</li>
-<li>Add the following </li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="n">COMMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">"disqus"</span>
-<span class="n">COMMENT_SYSTEM_ID</span> <span class="o">=</span> <span class="s2">"&lt;disqus_shortname&gt;"</span>
-</code></pre>
-
-
-<h3>Config the sticky menu</h3>
-<p>You can set the navigation bar sticks on the top as you scroll down the page.</p>
-<ul>
-<li>Copy the parent base template</li>
-</ul>
-<pre class="code literal-block"><span></span><code>nikola theme --copy-template<span class="o">=</span>base.tmpl
-</code></pre>
-
-
-<ul>
-<li>Move it to <code>/themes/themeBlog/templates/</code> and add the following as follows</li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="c">&lt;!-- Menubar --&gt;</span>
-<span class="p">&lt;</span><span class="nt">nav</span> <span class="na">class</span><span class="o">=</span><span class="s">"navbar</span> <span class="na">navbar-expand-md</span> <span class="na">sticky-top</span> <span class="na">mb-4</span>
-<span class="err">...</span>
-</code></pre>
-
-
-<h3>Adding Prism</h3>
-<p>By default, Nikola uses Pygments for code highlighting.</p>
-<ul>
-<li>For Markdown and Jupyter Notebook.</li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="err">    ```python</span>
-<span class="err">    def fn()</span>
-<span class="err">    pass:</span>
-<span class="err">    print('hello world')</span>
-<span class="err">    ```</span>
-</code></pre>
-
-
-<ul>
-<li>In rST.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>    <span class="p">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">python</span>
-
-        <span class="n">def</span> <span class="n">fn</span><span class="p">()</span>
-        <span class="n">pass</span><span class="p">:</span>
-        <span class="n">print</span><span class="p">(</span><span class="s1">'hello world'</span><span class="p">)</span>
-</code></pre>
-
-
-<p>Alternatively, I like to use <a href="https://prismjs.com/">Prism</a> due its JSONP Highlight plugin that allows to import external code hosted on GitHub or some other place.</p>
-<ul>
-<li>Select the <a href="https://prismjs.com/download.html">Minifed version</a> with all Languages. </li>
-<li>You can add any plugins.
-<img alt="Prism plugins" src="../images/selected_prism_plugins.png">.</li>
-<li>Download the JS and CSS files.</li>
-<li>Save them in <code>/themes/themeBlog/assets/css/prism.css</code> and <code>/themes/themeBlog/assets/js/prism.js</code>
-</li>
-<li>Add the following into the <code>conf.py</code>
-</li>
-</ul>
-<pre class="code literal-block"><span></span><code>EXTRA_HEAD_DATA = '''
-  ...
-  <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../assets/css/prism.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="p">/&gt;</span>
-'''
-...
-
-BODY_END = '''
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"../../assets/js/prism.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-'''
-</code></pre>
-
-
-<ul>
-<li>Also, add the <code>prism.css</code> into the <code>post_ipynb.tmpl</code>
-</li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="err">&lt;</span>%block name="extra_head"&gt;
-    ...
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../assets/css/prism.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="p">/&gt;</span>
-<span class="err">&lt;</span>/%block&gt;
-</code></pre>
-
-
-<ul>
-<li>Done!. Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight a code file.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>    <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file_location&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-</code></pre>
-
-
-<ul>
-<li>In rST.</li>
-</ul>
-<pre class="code literal-block"><span></span><code>    .. raw:: html
-
-        <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file_location&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-</code></pre>
-
-
-<ul>
-<li>Check <a href="https://prismjs.com/#plugins">Prism Plugins</a> for usage examples.</li>
-</ul>
-<h2>Latex with Mathjax</h2>
-<pre class="code literal-block"><span></span><code># If you want support for the $.$ syntax (which may conflict with running
-# text!), just use this config:
-MATHJAX_CONFIG = """
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/x-mathjax-config"</span><span class="p">&gt;</span>
-<span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">'$'</span><span class="p">,</span><span class="s1">'$'</span><span class="p">],</span> <span class="p">[</span><span class="s2">"\\\("</span><span class="p">,</span><span class="s2">"\\\)"</span><span class="p">]</span> <span class="p">],</span>
-        <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">'$$'</span><span class="p">,</span><span class="s1">'$$'</span><span class="p">],</span> <span class="p">[</span><span class="s2">"\\\["</span><span class="p">,</span><span class="s2">"\\\]"</span><span class="p">]</span> <span class="p">],</span>
-        <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="nx">displayAlign</span><span class="o">:</span> <span class="s1">'center'</span><span class="p">,</span> <span class="c1">// Change this to 'left' if you want left-aligned equations.</span>
-    <span class="s2">"HTML-CSS"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">styles</span><span class="o">:</span> <span class="p">{</span><span class="s1">'.MathJax_Display'</span><span class="o">:</span> <span class="p">{</span><span class="s2">"margin"</span><span class="o">:</span> <span class="mi">0</span><span class="p">}}</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-"""
-</code></pre>
-
-
-<h2>GitHub pages</h2>
-<ul>
-<li>Initialize Git</li>
-</ul>
-<pre class="code literal-block"><span></span><code>git init .
-git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.github.io
-</code></pre>
-
-
-<ul>
-<li>Edit <code>conf.py</code>
-</li>
-</ul>
-<pre class="code literal-block"><span></span><code><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'src'</span>
-<span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
-<span class="n">GITHUB_REMOTE_NAME</span> <span class="o">=</span> <span class="s1">'origin'</span>
-<span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="kc">True</span>
-</code></pre>
-
-
-<h2>Configure VSCode</h2>
-<ul>
-<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Python extension</a>
-</li>
-<li>Make sure <code>Python › Data Science: Allow Import From Notebook</code> is enabled.</li>
-</ul>
-<h2>Recommendations</h2>
-<ul>
-<li>Install WSL2 for better integration.</li>
-<li>Install Windows Terminal for better console scripting.</li>
-</ul>
-<h2>Notes</h2>
-<ul>
-<li>Python extension does not handle Markdown embedded html ToC code very well in a Markdown cell when you open a .ipynb file. </li>
-</ul>
-<h2>Extras</h2>
-<ul>
-<li>Install Windows Terminal</li>
-<li>Install Power Shell 7.0</li>
-</ul>
-</div>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Least-square_nonlinearity/" class="u-url">Least-square model identification of static nonlinearity</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Least-square_nonlinearity/" class="u-url">Least-square model identification of static nonlinearity</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Paulo Loma Marconi
@@ -1322,6 +652,72 @@ git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.git
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Source code on <a href="https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus">GitHub</a></p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Foraging_Aggregation_V-rep_e-puck/" class="u-url">Simple foraging and random aggregation strategy for swarm robotics without communication</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Paulo Loma Marconi
+            </span></p>
+            <p class="dateline">
+            <a href="Foraging_Aggregation_V-rep_e-puck/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-08-31T17:47:09-04:00" itemprop="datePublished" title="2020-08-31">2020-08-31</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="Foraging_Aggregation_V-rep_e-puck/#disqus_thread" data-disqus-identifier="cache/posts/Foraging_Aggregation_V-rep_e-puck.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The following proposes a strategy using a Mealy Deterministic Finite State Machine (DFSM) that switches between five states with two different algorithms. The Rebound avoider/follower strategy through proximity sensors, and the search blob/ePuck approach using the 2D image processing of the ePuck embedded camera. Simulation is implemented on <a href="https://www.coppeliarobotics.com/downloads">V-rep ProEdu v3.6</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-formulation">Problem formulation<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Problem-formulation">¶</a>
+</h2>
+<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/master/V-rep_assignment_only.pdf" width="100%" height="800px"> 
+    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/master/V-rep_assignment_only.pdf">download the PDF.</a></p>  
+</object>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-proposed-solution">The proposed solution<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#The-proposed-solution">¶</a>
+</h2>
+<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/master/report/root.pdf" width="100%" height="800px"> 
+    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/master/report/root.pdf">download the PDF.</a></p>  
+</object>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Source code on <a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck">GitHub</a>.</p>
 
 </div>
 </div>
