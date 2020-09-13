@@ -1,6 +1,6 @@
 <!--
-.. title: draft nikola guida md
-.. slug: draft
+.. title: draft nikola guide md
+.. slug: draft-guide
 .. date: 2020-09-03 16:59:58 UTC-04:00
 .. tags: 
 .. category: 
