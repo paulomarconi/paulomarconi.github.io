@@ -39,7 +39,7 @@ div.text_cell_render {
   }
   
 .rendered_html pre, .rendered_html code {
-    background-color: #DDDDDD;
+    background-color: #eeeeee;
     margin: 1em 0em;
     font-size: 14px;
 }

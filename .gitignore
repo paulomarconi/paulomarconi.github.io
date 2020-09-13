@@ -1,6 +1,6 @@
 .vscode
-cache
 .doit.db*
+cache
 __pycache__
 output
 .ipynb_checkpoints
