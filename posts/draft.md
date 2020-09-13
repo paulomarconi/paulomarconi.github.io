@@ -8,7 +8,6 @@
 .. description: 
 .. type: text
 .. has_math:true
-.. status: draft
 -->
 
 
