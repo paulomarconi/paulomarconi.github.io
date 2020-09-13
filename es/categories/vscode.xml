@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Sep 2020 20:00:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/es/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Sep 2020 20:33:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/es/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt;, &lt;a href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican&lt;/a&gt;, and &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;Sphinx&lt;/a&gt;. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.&lt;/p&gt;
@@ -150,20 +150,23 @@ python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\ju
 &lt;h2 id="Create-a-Nikola-demo-site"&gt;Create a Nikola demo site&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-Nikola-demo-site"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Create a new folder called &lt;code&gt;blog&lt;/code&gt; anywhere you like except inside the &lt;code&gt;jmatlabNikola&lt;/code&gt; environment.&lt;/li&gt;
 &lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder.&lt;/li&gt;
-&lt;li&gt;Activate the environment. &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Activate the environment. 
+&lt;pre&gt;&lt;code&gt;activate jmatlabNikola&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Initialize a demo, and fill its content.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola init --demo
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Initialize a demo, and fill its content.
+&lt;pre&gt;&lt;code&gt;nikola init --demo&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Build (generate) the HTML files of the site.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola build
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Build (generate) the HTML files of the site.
+&lt;pre&gt;&lt;code&gt;nikola build&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;View on your browser. It will open the localhost on &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola serve -b
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;View on your browser. It will open the localhost on &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.
+&lt;pre&gt;&lt;code&gt;nikola serve -b&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Automatically &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; your site if you want to see all changes constantly (&lt;strong&gt;recommended&lt;/strong&gt;). &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola auto
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Automatically &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; your site if you want to see all changes constantly (&lt;strong&gt;recommended&lt;/strong&gt;). 
+&lt;pre&gt;&lt;code&gt;nikola auto&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Clean &lt;code&gt;output/&lt;/code&gt; content whenever you remove any of content manually from your &lt;code&gt;blog&lt;/code&gt; folder. Use it before &lt;code&gt;build&lt;/code&gt; command.
+&lt;pre&gt;&lt;code&gt;nikola check -f --clean-files&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Press &lt;code&gt;ctrl+c&lt;/code&gt; to stop the server.&lt;/li&gt;
 &lt;/ul&gt;
@@ -474,9 +477,28 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Output-location-of-files-folder"&gt;Output location of files folder&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Output-location-of-files-folder"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your documents saved in &lt;code&gt;files&lt;/code&gt; folder will be copied to &lt;code&gt;/output/files&lt;/code&gt; instead of the root folder, which is the default location.&lt;/p&gt;
+&lt;h3 id="Output-files-folder-location"&gt;Output &lt;code&gt;files&lt;/code&gt; folder location&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Output-files-folder-location"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your documents saved in &lt;code&gt;files&lt;/code&gt; folder will be copied to &lt;code&gt;/output/files&lt;/code&gt; instead of the root folder, which is the default location.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="Avoid-deploying-draft-posts"&gt;Avoid deploying draft posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Avoid-deploying-draft-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you don't want to deploy a draft post.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add to the metadata.
+&lt;pre&gt;&lt;code&gt;.. status: draft&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Set&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+It will be built and seen on your localhost but won't be deployed to GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By default the metadata has no &lt;code&gt;status&lt;/code&gt; line or is set to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.. status: published&lt;/code&gt;&lt;/pre&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

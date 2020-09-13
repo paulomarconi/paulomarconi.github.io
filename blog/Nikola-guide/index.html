@@ -317,20 +317,23 @@ python3    C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola\share\jupyter\ke
 <ul>
 <li>Create a new folder called <code>blog</code> anywhere you like except inside the <code>jmatlabNikola</code> environment.</li>
 <li>Open terminal inside your <code>blog</code> folder.</li>
-<li>Activate the environment. <div class="highlight"><pre><span></span>activate jmatlabNikola
-</pre></div>
+<li>Activate the environment. 
+<pre><code>activate jmatlabNikola</code></pre>
 </li>
-<li>Initialize a demo, and fill its content.<div class="highlight"><pre><span></span>nikola init --demo
-</pre></div>
+<li>Initialize a demo, and fill its content.
+<pre><code>nikola init --demo</code></pre>
 </li>
-<li>Build (generate) the HTML files of the site.<div class="highlight"><pre><span></span>nikola build
-</pre></div>
+<li>Build (generate) the HTML files of the site.
+<pre><code>nikola build</code></pre>
 </li>
-<li>View on your browser. It will open the localhost on <code>http://127.0.0.1:8000</code>.<div class="highlight"><pre><span></span>nikola serve -b
-</pre></div>
+<li>View on your browser. It will open the localhost on <code>http://127.0.0.1:8000</code>.
+<pre><code>nikola serve -b</code></pre>
 </li>
-<li>Automatically <code>build</code> and <code>serve</code> your site if you want to see all changes constantly (<strong>recommended</strong>). <div class="highlight"><pre><span></span>nikola auto
-</pre></div>
+<li>Automatically <code>build</code> and <code>serve</code> your site if you want to see all changes constantly (<strong>recommended</strong>). 
+<pre><code>nikola auto</code></pre>
+</li>
+<li>Clean <code>output/</code> content whenever you remove any of content manually from your <code>blog</code> folder. Use it before <code>build</code> command.
+<pre><code>nikola check -f --clean-files</code></pre>
 </li>
 <li>Press <code>ctrl+c</code> to stop the server.</li>
 </ul>
@@ -680,11 +683,34 @@ nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Output-location-of-files-folder">Output location of files folder<a class="anchor-link" href="#Output-location-of-files-folder">¶</a>
+<h3 id="Output-files-folder-location">Output <code>files</code> folder location<a class="anchor-link" href="#Output-files-folder-location">¶</a>
 </h3>
 <p>Your documents saved in <code>files</code> folder will be copied to <code>/output/files</code> instead of the root folder, which is the default location.</p>
 <div class="highlight"><pre><span></span><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span>
 </pre></div>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Avoid-deploying-draft-posts">Avoid deploying draft posts<a class="anchor-link" href="#Avoid-deploying-draft-posts">¶</a>
+</h3>
+<p>If you don't want to deploy a draft post.</p>
+<ul>
+<li>Add to the metadata.
+<pre><code>.. status: draft</code></pre>
+</li>
+<li>Set<div class="highlight"><pre><span></span><span class="n">DEPLOY_DRAFTS</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+It will be built and seen on your localhost but won't be deployed to GitHub.</li>
+</ul>
+<p>By default the metadata has no <code>status</code> line or is set to:</p>
+
+<pre><code>.. status: published</code></pre>
 
 </div>
 </div>
