@@ -98,7 +98,7 @@ DEFAULT_LANG = "en"
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
-    "es": "./es",
+    # "es": "./es",
 }
 
 # What will translated input files be named like?
@@ -141,7 +141,8 @@ NAVIGATION_LINKS = {
         ("/index.html", "Home"),
         ("/archive.html", "Blog"),
         ("/categories/", "Tags"),
-        ("/bio/index.html", "Bio"),                
+        ("/bio/index.html", "Bio"),
+        ("/cheatsheet/index.html", "Cheatsheet"),                
         ("/rss.xml", "RSS feed"),
     ),
 
