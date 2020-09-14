@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Sep 2020 20:33:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 14 Sep 2020 00:52:36 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt;, &lt;a href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican&lt;/a&gt;, and &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;Sphinx&lt;/a&gt;. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.&lt;/p&gt;
@@ -252,7 +252,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="p"&gt;),&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Add any other page, just make sure you add it in the navigation list, e.g. about-me, contact, etc.&lt;/li&gt;
+&lt;li&gt;Add any other page, just make sure to add them on the navigation list, e.g. about-me, contact, etc.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -308,7 +308,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;If you &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; the site, it will give you an error that &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; is missing. We'll create it on the next section.&lt;/li&gt;
+&lt;li&gt;If you &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; the site, it will give you an error of &lt;code&gt;"missing post_ipynb.tmpl"&lt;/code&gt;. We'll create it on the next section.&lt;/li&gt;
 &lt;li&gt;Change &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; to &lt;code&gt;post.tmpl&lt;/code&gt;, and run &lt;code&gt;nikola auto&lt;/code&gt; to see the default Jupyter Notebook style.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -319,14 +319,14 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Create-the-post_ipynb.tmpl-template"&gt;Create the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; template&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-post_ipynb.tmpl-template"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create a new theme.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --new&lt;span class="o"&gt;=&lt;/span&gt;themeBlog --parent&lt;span class="o"&gt;=&lt;/span&gt;bootstrap4 --engine&lt;span class="o"&gt;=&lt;/span&gt;mako
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Create a new theme.
+&lt;pre&gt;&lt;code&gt;nikola theme --new=themeBlog --parent=bootstrap4 --engine=mako&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Copy &lt;code&gt;post.tmpl&lt;/code&gt; template from the parent theme. &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;post.tmpl
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Copy &lt;code&gt;post.tmpl&lt;/code&gt; template from the parent theme. 
+&lt;pre&gt;&lt;code&gt;nikola theme --copy-template=post.tmpl&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Move it to the &lt;code&gt;/themes/themeBlog/templates/post_ipynb.tmpl&lt;/code&gt; folder and rename it as &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add the following in the extra head section.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+&lt;li&gt;Add the following on the extra head section.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
     ... 
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/post_ipynb.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
@@ -416,6 +416,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Change it at pleasure. In my case, among other minor changes, I set the &lt;code&gt;background-color: #ffffff&lt;/code&gt; to get rid off the left gray ribbon on each cell.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -440,7 +441,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;body-content&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
   &lt;span class="k"&gt;margin-right&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
   &lt;span class="k"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;750&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c"&gt;/* or 950px */&lt;/span&gt;
+  &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c"&gt;/* or 950px */&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="c"&gt;/* Widens image-containing divs so that image is full body width */&lt;/span&gt;
@@ -455,12 +456,13 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Use-your-custom-theme"&gt;Use your custom theme&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-your-custom-theme"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id="Use-your-custom-theme"&gt;Use your custom theme&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-your-custom-theme"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Once you are happy with the changes.&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Enable your theme.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"themeBlog"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Create a Jupyter Notebook post, and start editing with VSCode.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f ipynb --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"Jupyter-notebook-test"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Create a Jupyter Notebook post, and start editing with VSCode.
+&lt;pre&gt;&lt;code&gt;nikola new_post -f ipynb --title="Jupyter-notebook-test"&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -489,12 +491,12 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Avoid-deploying-draft-posts"&gt;Avoid deploying draft posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Avoid-deploying-draft-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you don't want to deploy a draft post.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Add to the metadata.
+&lt;li&gt;Add to the metadata post.
 &lt;pre&gt;&lt;code&gt;.. status: draft&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Set&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;li&gt;Set in &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-It will be built and seen on your localhost but won't be deployed to GitHub.&lt;/li&gt;
+It will be built and seen on your localhost but won't be deployed to GitHub. Also, when you run &lt;code&gt;nikola github_deploy&lt;/code&gt;, the draft post is removed from the &lt;code&gt;output&lt;/code&gt; folder.  &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;By default the metadata has no &lt;code&gt;status&lt;/code&gt; line or is set to:&lt;/p&gt;
 
@@ -625,13 +627,15 @@ It will be built and seen on your localhost but won't be deployed to GitHub.&lt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Disqus"&gt;Disqus&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Disqus"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create an account on &lt;a href="https://disqus.com/"&gt;Disqus&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;On Disqus, &lt;em&gt;'create a new site'&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Create an account on &lt;a href="https://disqus.com/"&gt;Disqus&lt;/a&gt;.&lt;ul&gt;
+&lt;li&gt;Create a new site.&lt;/li&gt;
 &lt;li&gt;Choose a &lt;code&gt;disqus_shortname&lt;/code&gt;, e.g. &lt;code&gt;github_user_name&lt;/code&gt;. I recommend not to use &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Add your blog site &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Chose &lt;em&gt;'Basic Plan'&lt;/em&gt; &lt;/li&gt;
-&lt;li&gt;Skip instructions in the  &lt;em&gt;'Select Platform'&lt;/em&gt; section.&lt;/li&gt;
-&lt;li&gt;Enable the following in &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMMENT_SYSTEM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"disqus"&lt;/span&gt;
+&lt;li&gt;Choose &lt;em&gt;'Basic Plan'&lt;/em&gt; &lt;/li&gt;
+&lt;li&gt;Skip instructions on the  &lt;em&gt;'Select Platform'&lt;/em&gt; section.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Finally, enable the following on the Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMMENT_SYSTEM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"disqus"&lt;/span&gt;
 &lt;span class="n"&gt;COMMENT_SYSTEM_ID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;disqus_shortname&amp;gt;"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
@@ -648,7 +652,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub.&lt;
 &lt;li&gt;Copy the parent base template.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;base.tmpl
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Move it to &lt;code&gt;/themes/themeBlog/templates/base.tmpl&lt;/code&gt; and add the following as follows.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- Menubar --&amp;gt;&lt;/span&gt;
+&lt;li&gt;Move it to &lt;code&gt;/themes/themeBlog/templates/base.tmpl&lt;/code&gt; and add the following.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- Menubar --&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;nav&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navbar&lt;/span&gt; &lt;span class="na"&gt;navbar-expand-md&lt;/span&gt; &lt;span class="na"&gt;sticky-top&lt;/span&gt; &lt;span class="na"&gt;mb-4&lt;/span&gt;
 &lt;span class="err"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -691,10 +695,10 @@ print('hello world')
 &lt;ul&gt;
 &lt;li&gt;Select the &lt;a href="https://prismjs.com/download.html"&gt;Minifed version&lt;/a&gt; and all available languages. &lt;/li&gt;
 &lt;li&gt;Add any plugins. My selection is as follows.
-&lt;img src="https://paulomarconi.github.io/images/selected_prism_plugins.png" alt="Prism plugins"&gt;&lt;/li&gt;
+&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png" alt="Prism plugins"&gt;&lt;/li&gt;
 &lt;li&gt;Download the JS and CSS files.&lt;/li&gt;
 &lt;li&gt;Save them on &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; and &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add the following inside &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
+&lt;li&gt;Add the following on the Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
 ...
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 '''
@@ -710,7 +714,7 @@ BODY_END = '''
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;Done!. &lt;/li&gt;
-&lt;li&gt;Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight a code file.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;li&gt;Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight an external code file.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;In rST.&lt;/p&gt;
@@ -728,7 +732,7 @@ BODY_END = '''
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Latex-with-Mathjax"&gt;Latex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Latex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax. If you want support for the &lt;code&gt;$...$&lt;/code&gt; inline LaTex syntax.&lt;/p&gt;
+&lt;h2 id="Latex-with-Mathjax"&gt;Latex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Latex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax. If you want support for the &lt;code&gt;$...$&lt;/code&gt; inline LaTex syntax, uncomment the following on Nikola &lt;code&gt;conf.py&lt;/code&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MATHJAX_CONFIG = """
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/x-mathjax-config"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="nx"&gt;MathJax&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Hub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Config&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
@@ -753,15 +757,9 @@ BODY_END = '''
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="GitHub-pages"&gt;GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Initialize Git.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
+&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub profile.&lt;/li&gt;
+&lt;li&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
 git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io
-&lt;/pre&gt;&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;Edit &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
-&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
-&lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'origin'&lt;/span&gt;
-&lt;span class="n"&gt;GITHUB_COMMIT_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.vscode
@@ -773,11 +771,17 @@ output
 */.ipynb_checkpoints/*
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
+&lt;li&gt;Edit Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'origin'&lt;/span&gt;
+&lt;span class="n"&gt;GITHUB_COMMIT_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
 &lt;li&gt;Deploy to GitHub.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;Select the &lt;code&gt;master&lt;/code&gt; branch on the GitHub Pages section located on the repository settings. &lt;/li&gt;
-&lt;li&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the result.&lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the results.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -790,7 +794,7 @@ output
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we need to run VSCode under our environment. If you run VSCode directly, it will show the kernels but they won't be available.&lt;/p&gt;
+&lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we will to run VSCode under our environment. If you run VSCode directly, it will show the kernels but they won't be available.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder&lt;/li&gt;
 &lt;li&gt;Activate the environment.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
@@ -799,12 +803,18 @@ output
 &lt;li&gt;Open VSCode&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Check if the kernels are available. They are double listed because one means that the paths is correct, and the other means it's available. Perhaps it's a bug, not sure. 
-&lt;img src="https://paulomarconi.github.io/images/VSCode_available_kernels.png" alt="VSCode kernels"&gt;&lt;/li&gt;
+&lt;li&gt;Check if the kernels are available. 
+&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" alt="VSCode kernels"&gt;
+They are double listed because one means that the paths is correct, and the other means it's available. Perhaps it's a bug, I'm not sure. &lt;/li&gt;
 &lt;li&gt;Alternatively, activate &lt;code&gt;jmatlabNikola&lt;/code&gt; and run VSCode with Anaconda Navigator.&lt;/li&gt;
 &lt;li&gt;Every time you need it, remember to switch the &lt;strong&gt;Matlab and Python kernels&lt;/strong&gt; for each cell.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Now that everything is set, let's do some testing with both kernels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If you use the native Jupyter Notebook editor on your browser, you won't see double listed kernels.
+&lt;img src="https://paulomarconi.github.io/images/Jupyter_kernels.png" alt="Jupyter kernels"&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1061,8 +1071,43 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas
-$$ f(x) = x^{2i}$$&lt;/p&gt;
+&lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas. Inline example, &lt;code&gt;$ f(x) = x^{2}$&lt;/code&gt; $ f(x) = x^{2}$.&lt;/p&gt;
+&lt;p&gt;Some others&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="sb"&gt;$$&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;
+&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
+&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
+&lt;span class="nv"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
+&lt;span class="nb"&gt;        Px              &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;        P_u &lt;/span&gt;&lt;span class="nv"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;} K &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; P_x             &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; P_u &lt;/span&gt;&lt;span class="nv"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;} K &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt;           &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt;           &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
+&lt;span class="nb"&gt;    }^{&lt;/span&gt;&lt;span class="nv"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{M}}&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;B K&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;B K&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\vdots&lt;/span&gt;&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;B K&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^{n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
+&lt;span class="nb"&gt;}_{P_{x_N}}&lt;/span&gt;
+&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;N|k}&lt;/span&gt;
+&lt;span class="nv"&gt;\leq&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nv"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
+&lt;span class="nb"&gt;    q_x    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    q_u    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    q_x    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    q_u    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\vdots&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
+&lt;span class="nb"&gt;}_{q_{x_N}}&lt;/span&gt;
+&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
+&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
+&lt;span class="s"&gt;$$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
 $$ 
 \begin{equation}
 \begin{aligned}
@@ -1096,7 +1141,20 @@ $$
 }_{q_{x_N}}
 \end{aligned}
 \end{equation}
-$$$$
+$$&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="sb"&gt;$$&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
+&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{cases}&lt;/span&gt;
+&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
+&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &lt;/span&gt;&lt;span class="nv"&gt;\left&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt; y_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;  C &lt;/span&gt;&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="nv"&gt;\right&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    e_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}       &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\left&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;I&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} C &lt;/span&gt;&lt;span class="nv"&gt;\right&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt; e_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &lt;/span&gt;&lt;span class="nv"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}   &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}       &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}C~P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k}                                        &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
+&lt;span class="nb"&gt;    K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}           &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} C^&lt;/span&gt;&lt;span class="nv"&gt;\intercal&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;C P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} C^&lt;/span&gt;&lt;span class="nv"&gt;\intercal&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;R_z&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^{&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
+&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{cases}&lt;/span&gt;
+&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
+&lt;span class="s"&gt;$$&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+$$
 \begin{equation}
 \begin{cases}
 \begin{aligned}
