@@ -21,7 +21,16 @@
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="MPC with feed forward Steady-State Target Optimization (SSTO)">
 <meta property="og:url" content="https://paulomarconi.github.io/blog/MPC-SSTO/">
-<meta property="og:description" content="MPC with feed forward Steady-State Target Optimization (SSTO)¶The following presents a constrained Linear Quadratic Model Predictive Control (LQ-MPC) with offset-free tracking and disturbance rejectio">
+<meta property="og:description" content="In [3]:
+
+    
+%%file 'C:/Users/zurit/OneDrive/PROJECTS/DEVELOPING/blog/files/fnc.m'
+
+function c = multi_line_func(a,b)
+    % in-file comments can be added like this
+    a = a+1;
+    b = b+2;
+    c = a">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-08-31T13:39:47-04:00">
 <meta property="article:tag" content="control systems">
@@ -125,6 +134,301 @@ navbar-dark bg-dark
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> 'C:/Users/zurit/OneDrive/PROJECTS/DEVELOPING/blog/files/fnc.m'
+
+<span class="n">function</span> <span class="n">c</span> <span class="o">=</span> <span class="n">multi_line_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
+    <span class="o">%</span> <span class="ow">in</span><span class="o">-</span><span class="n">file</span> <span class="n">comments</span> <span class="n">can</span> <span class="n">be</span> <span class="n">added</span> <span class="n">like</span> <span class="n">this</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+<span class="n">end</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Created file 'C:\Users\zurit\OneDrive\PROJECTS\DEVELOPING\blog\files\fnc.m'.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="s1">'C:/Users/zurit/OneDrive/PROJECTS/DEVELOPING/blog/files'</span>
+<span class="o">%</span> <span class="n">output</span> <span class="o">=</span> <span class="n">fnc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">format</span> <span class="n">compact</span>
+<span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+    <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">=</span> <span class="n">fnc</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">end</span>
+
+<span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>c =
+     6     6     6     6     6     6     6     6     6     6
+c =
+     6     8     8     8     8     8     8     8     8     8
+c =
+     6     8    10    10    10    10    10    10    10    10
+c =
+     6     8    10    12    12    12    12    12    12    12
+c =
+     6     8    10    12    14    14    14    14    14    14
+c =
+     6     8    10    12    14    16    16    16    16    16
+c =
+     6     8    10    12    14    16    18    18    18    18
+c =
+     6     8    10    12    14    16    18    20    20    20
+c =
+     6     8    10    12    14    16    18    20    22    22
+c =
+     6     8    10    12    14    16    18    20    22    24
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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nXfekVhPY2NjQkLCl19+6ff7S0tLp06d+tVXX0msp/3D0OfzzZw50/jdVVdX33777efPn5dYWweskIKroKDg4sWLq1evDtxZtmyZw+GQVc+ECROee+65hx56KDEx8dixY6mpqXfffbesYtRkt9ufffbZxYsX33bbbWVlZRkZGXI/hHTttddu3br16aefzsvLM14lLP2zsW1tbRcuXEhISJBbRkB8fPzatWsXL148adKk8vLyhQsXLly4UGI90dHRv/71r3/yk59MmjTpX//619atW6V/sDrAYrFs3rz5ySefjI2NLS8vz87OHjVqlOyivmPaD8aiG21tbR6P5/rrr5e7GaWytra2lpaWoUOHKrJFJoT43//+d9111/EruxrjVxYREaHIX5HP5/v666+HDx8uu5CuXbp0Sal/3gYCCQCgBLXiEQAQtggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEv4/HiaEFmPfJ/wAAAAASUVORK5CYII=">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clear</span> <span class="n">variables</span><span class="p">;</span> <span class="n">close</span> <span class="nb">all</span><span class="p">;</span> <span class="n">clc</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Global</span> <span class="n">constants</span>
+<span class="o">%</span> <span class="n">generate</span> <span class="n">N</span> <span class="n">random</span> <span class="n">numbers</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">interval</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">.*</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">;</span> <span class="mi">1</span><span class="p">];</span>
+<span class="n">nk</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>       <span class="o">%</span> <span class="n">simulation</span> <span class="n">steps</span>
+<span class="n">Ts</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>       <span class="o">%</span> <span class="n">sampling</span> <span class="n">time</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Ts</span><span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">nk</span><span class="p">);</span>  <span class="o">%</span> <span class="n">time</span> <span class="n">simulation</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>     <span class="o">%</span> <span class="n">Horizon</span> <span class="n">increase</span> <span class="n">N</span> <span class="ow">and</span> <span class="n">cost</span> <span class="n">value</span> <span class="n">J</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="n">reduced</span> <span class="p">(</span><span class="n">better</span> <span class="n">performance</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">System</span> 
+
+<span class="o">%</span> <span class="n">sys</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">s</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
+<span class="p">[</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">Cc</span><span class="p">,</span><span class="n">Dc</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf2ss</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span><span class="p">]);</span>
+<span class="n">Bdc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">0</span><span class="p">];</span> <span class="n">Ddc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">sysc</span> <span class="o">=</span> <span class="n">ss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,[</span><span class="n">Bc</span> <span class="n">Bdc</span><span class="p">],</span><span class="n">Cc</span><span class="p">,[</span><span class="n">Dc</span> <span class="n">Ddc</span><span class="p">]);</span>
+
+<span class="n">sysd</span> <span class="o">=</span> <span class="n">c2d</span><span class="p">(</span><span class="n">sysc</span><span class="p">,</span><span class="n">Ts</span><span class="p">);</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">A</span><span class="p">;</span> 
+<span class="n">B</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> 
+<span class="n">Bd</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span> 
+<span class="n">C</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">C</span><span class="p">;</span> 
+<span class="n">D</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">D</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> 
+<span class="o">%</span> <span class="n">Dd</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">d</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Cost</span> <span class="n">matrices</span>                 
+<span class="n">Q</span> <span class="o">=</span> <span class="mf">1e6</span><span class="o">*</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="o">%</span> <span class="n">Q</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">R</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">System</span> <span class="n">Dimensions</span>
+<span class="n">n</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="o">%</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">State</span> <span class="n">variables</span>
+<span class="n">m</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>    <span class="o">%</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Input</span> <span class="n">variables</span>
+<span class="n">p</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="o">%</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Output</span> <span class="n">measurments</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="o">===</span> <span class="n">K</span> <span class="n">LQR</span> <span class="o">==============================================================</span>
+<span class="n">K_lqr</span> <span class="o">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Constraints</span>
+<span class="o">%</span> <span class="n">Input</span> <span class="n">constraints</span>
+<span class="n">u_max</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">u_min</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">Pu</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">qu</span> <span class="o">=</span> <span class="p">[</span><span class="n">u_max</span><span class="p">;</span> <span class="n">u_min</span><span class="p">];</span> 
+<span class="n">U</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">Pu</span><span class="p">,</span><span class="n">qu</span><span class="p">);</span>
+<span class="o">%</span> <span class="n">U</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'LineStyle'</span><span class="p">,</span><span class="s1">'--'</span><span class="p">);</span>
+
+<span class="o">%</span> <span class="n">State</span> <span class="n">constraints</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">x_min</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">Px</span> <span class="o">=</span> <span class="p">[</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="o">-</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)];</span>
+<span class="n">qx</span> <span class="o">=</span> <span class="p">[</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x_max</span><span class="p">;</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x_min</span><span class="p">];</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">Px</span><span class="p">,</span><span class="n">qx</span><span class="p">);</span>
+<span class="o">%</span> <span class="n">X</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="s1">'LineStyle'</span><span class="p">,</span><span class="s1">'--'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Deadbeat</span> <span class="n">Terminal</span> <span class="n">Inequality</span> <span class="n">State</span> <span class="n">constraints</span> <span class="p">(</span><span class="k">with</span> <span class="n">deadbet</span> <span class="n">mode</span><span class="o">-</span><span class="mi">2</span> <span class="n">gain</span> <span class="ow">or</span> <span class="nb">any</span> <span class="n">gain</span> <span class="n">K</span><span class="p">)</span>
+<span class="o">%</span> <span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="n">acker</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]);</span> 
+<span class="o">%</span> <span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="n">place</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">]);</span> <span class="o">%</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">work</span> <span class="k">with</span> <span class="n">place</span>
+<span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">);</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="n">N</span><span class="p">;</span>
+<span class="n">Maux</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span><span class="n">nn</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">Maux</span> <span class="o">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
+<span class="n">end</span> 
+<span class="n">Mm</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="n">nn</span><span class="p">),[</span><span class="n">Px</span><span class="p">;</span> <span class="n">Pu</span><span class="o">*</span><span class="n">K</span><span class="p">]);</span>
+
+<span class="o">%</span> <span class="n">regulation</span>
+<span class="n">PxN</span> <span class="o">=</span> <span class="n">Mm</span><span class="o">*</span><span class="n">Maux</span><span class="p">;</span> 
+<span class="n">qxN</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span><span class="mi">1</span><span class="p">),[</span><span class="n">qx</span><span class="p">;</span> <span class="n">qu</span><span class="p">]);</span><span class="o">%</span> <span class="n">deadbeat</span> <span class="n">terminal</span> <span class="n">inequality</span> <span class="n">constraints</span>
+<span class="n">Xf</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">PxN</span><span class="p">,</span><span class="n">qxN</span><span class="p">);</span>
+<span class="o">%</span> <span class="n">figure</span><span class="p">,</span><span class="n">Xf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [ ]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">MPT3</span> <span class="o">-</span> <span class="n">Control</span> <span class="n">Invariant</span> <span class="n">Set</span> <span class="p">(</span><span class="n">CIS</span><span class="p">)</span>
+<span class="o">%</span> <span class="n">computes</span> <span class="n">a</span> <span class="n">control</span> <span class="n">invariant</span> <span class="nb">set</span> <span class="k">for</span> <span class="n">LTI</span> <span class="n">system</span> <span class="n">x</span><span class="o">^+</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">u</span>
+<span class="o">%</span> <span class="n">When</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">an</span> <span class="n">autonomous</span> <span class="n">system</span> <span class="p">,</span> <span class="n">the</span> <span class="n">method</span> <span class="n">computes</span> <span class="n">the</span> <span class="n">maximal</span> <span class="n">positively</span> <span class="n">invariant</span> <span class="nb">set</span><span class="o">.</span> 
+<span class="o">%</span> <span class="n">When</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">autonomous</span> <span class="n">system</span><span class="p">,</span> <span class="n">the</span> <span class="n">maximal</span> <span class="n">control</span> <span class="n">invariant</span> <span class="nb">set</span> <span class="ow">is</span> <span class="n">computed</span><span class="o">.</span> 
+<span class="n">system</span> <span class="o">=</span> <span class="n">LTISystem</span><span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
+<span class="n">system</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">x_min</span><span class="p">;</span> <span class="o">-</span><span class="n">x_min</span><span class="p">];</span>
+<span class="n">system</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_max</span><span class="p">;</span> <span class="n">x_max</span><span class="p">];</span>
+<span class="n">system</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="o">-</span><span class="n">u_min</span><span class="p">;</span>
+<span class="n">system</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">u_max</span><span class="p">;</span>
+<span class="n">InvSet</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">invariantSet</span><span class="p">();</span> <span class="o">%</span> <span class="n">XN</span> <span class="o">=</span> <span class="n">Control</span> <span class="n">Invariant</span> <span class="n">Set</span>
+<span class="n">Pxx</span> <span class="o">=</span> <span class="n">InvSet</span><span class="o">.</span><span class="n">A</span><span class="p">;</span> <span class="n">qxx</span> <span class="o">=</span> <span class="n">InvSet</span><span class="o">.</span><span class="n">b</span><span class="p">;</span>
+<span class="n">InvSet</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'color'</span><span class="p">,</span><span class="s1">'lightblue'</span><span class="p">)</span>
+<span class="n">XN</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">InvSet</span><span class="o">.</span><span class="n">A</span><span class="p">,</span><span class="n">InvSet</span><span class="o">.</span><span class="n">b</span><span class="p">);</span>
+<span class="n">figure</span><span class="p">,</span><span class="n">XN</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'color'</span><span class="p">,</span><span class="s1">'lightblue'</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
