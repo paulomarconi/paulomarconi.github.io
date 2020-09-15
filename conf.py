@@ -1456,3 +1456,9 @@ GLOBAL_CONTEXT_FILLER = []
 # Ir your theme supports it, the titles will not be shown.
 TYPES_TO_HIDE_TITLE = []
 
+
+
+
+
+
+

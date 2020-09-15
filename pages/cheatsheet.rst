@@ -104,7 +104,7 @@ LaTex
 
 Inline syntax ``$e^{ix} = \cos x + i\sin x$`` -> $e^{ix} = \cos x + i\sin x$
 
-Complex LaTex.
+Complex formulas.
 
 .. code-block:: LaTex
 
