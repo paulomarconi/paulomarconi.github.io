@@ -23,6 +23,10 @@ https://getnikola.com/handbook.html
     nikola github_deploy
     nikola check -f --clean-files
 
+Jupyter line and cell magic commands
+====================================
+https://metakernel.readthedocs.io/en/latest/source/README.html
+
 
 reStructuredText
 ================

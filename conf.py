@@ -1305,6 +1305,7 @@ EXTRA_HEAD_DATA = '''
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
   <link href="../../assets/css/prism.css" rel="stylesheet" />
+  <script src="../../assets/js/csi.min.js"></script>
 '''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
