@@ -16,7 +16,7 @@
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <link href="../../assets/css/prism.css" rel="stylesheet">
-<meta name="author" content="Paulo Loma Marconi">
+<script src="../../assets/js/csi.min.js"></script><meta name="author" content="Paulo Loma Marconi">
 <link rel="next" href="../MPC-SSTO/" title="MPC with feed forward Steady-State Target Optimization (SSTO)" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Blog with Nikola, Jupyter, Matlab, and GitHub pages">
@@ -1066,7 +1066,7 @@ output
 <img src="../../images/Nikola_guide/VSCode_available_kernels.png" alt="VSCode kernels">
 They are double listed because one means that the paths is correct, and the other means it's available. Perhaps it's a bug, I'm not sure. </li>
 <li>Alternatively, activate <code>jmatlabNikola</code> and run VSCode with Anaconda Navigator.</li>
-<li>Every time you need it, remember to switch the <strong>Matlab and Python kernels</strong> for each cell.</li>
+<li>Remember to switch the <strong>Matlab and Python kernels</strong> for each cell.</li>
 </ul>
 <p>Now that everything is set, let's do some testing with both kernels.</p>
 <p><strong>Notes</strong></p>
@@ -1093,7 +1093,10 @@ They are double listed because one means that the paths is correct, and the othe
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">print</span><span class="p">(</span><span class="s">'hello world'</span><span class="p">)</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s">'hello world'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">"i="</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1111,38 +1114,7 @@ They are double listed because one means that the paths is correct, and the othe
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>hello world
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="k">for</span> <span class="nb">i</span> <span class="n">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">print</span><span class="p">(</span><span class="s">"i="</span><span class="p">,</span><span class="nb">i</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>i= 0
+i= 0
 i= 2
 i= 4
 i= 6
@@ -1170,13 +1142,14 @@ i= 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">format</span> <span class="s">compact</span>
-<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">)</span>
+<span class="n">format</span> <span class="n">compact</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span>
     <span class="n">i</span>
-<span class="s">end</span>
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -1193,7 +1166,8 @@ i= 10
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>i =
+<pre>hello world
+i =
      0
 i =
      2
@@ -1219,6 +1193,123 @@ i =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matlab-functions">Matlab functions<a class="anchor-link" href="#Matlab-functions">¶</a>
+</h3>
+<p>The Matlab-kernel does not support inline functions so you need to save them in files.</p>
+<ul>
+<li>For the Jupyter Notebook browser, use the magic command <code>%%file /files/&lt;file&gt;.m</code>. It will save it in <code>/blog/files</code>
+</li>
+<li>But for VSCode use <code>c:/&lt;absolute_path&gt;/&lt;file&gt;.m</code>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'</span>
+
+<span class="k">function</span><span class="w"> </span>c <span class="p">=</span><span class="w"> </span><span class="nf">multi_line_func</span><span class="p">(</span>a,b<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">% in-file comments can be added like this</span>
+    <span class="n">a</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+    <span class="n">b</span> <span class="p">=</span> <span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
+    <span class="n">c</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+<span class="k">end</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Created file 'C:\Users\zurit\OneDrive\blog\files\fnc.m'.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To make sure it uses the <code>fnc.m</code>, open the folder with the Matlab command <code>cd c:/&lt;absolute_path&gt;/&lt;file&gt;.m</code> before. Save some space using <code>format compact</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files'</span>
+
+<span class="n">format</span> <span class="n">compact</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+    <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">fnc</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.2432    2.0411    3.7206    5.6570    6.9894    7.4121    7.4560    8.0000    9.4634   11.4202
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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w95DKikp2bVrV3V1texBRGFhYUVFRXp6emNjY3x8fFlZWWxsrMR5nnvuuXfffTc9Pf3gwYP33nvv6tWrJQ7TkdPpXLhw4XPPPTd37ly5k/z+97/fvHlz8I9p69atM2fOlDiPw+FYu3ZtZmZmS0tLbGzsK6+80vFgeITt3bv3scceC770er1LliwpKCiQNU9AWVnZSy+9lJmZWVdXl5GRUVhYKHeeZ5555s033/zhD39YV1e3YMGC3NxcicN0ejPcs2fPb3/728zMzMOHD999991r1qyROFtnfsPxeDyPPfbYlClTZs6cKXsWf319/fXXX+/xeAIvFyxY8Kc//UniPI2NjcF5/v3vf6empp49e1biPEEXLly46667brnllr/97W+yZ/H/4he/+OMf/yh7im998803M2bM2L9/f+DlHXfc8e6778odKai6unrWrFnBv96y+Hy+tLS0xsZGv9//xRdfpKWl1dfXS5zno48+uv7660+dOuX3+71eb1ZW1kcffSRlkq5vht98882UKVM+/vhjv99/9uzZyZMnNzc3S5mtWwa8h7RlyxaLxfLUU0/JHkQIIcxmc2lpqdlsDrxMSko6deqUxHmSk5PffPPNwDxXXHGFz+e7ePGixHmCNm/efOutt06YMEH2IEIIUV9fn5yc7Ha7VfjNcTgcY8eODT4W8+2331bkkMP58+fXrl1bWFgY/Ostkd/vj4uLE0IMGzbMZDJduHBB4jBOp/Pmm29OSEgQQsTGxqanp9vtdimTdH0z7PbJ1FJm65YB7yHl5+ebTKbAsVnpEhISAn8vhRAtLS2VlZXZ2dkS5zGZTCkpKT6f7/XXX9+5c+fDDz98zTXXSJwn4MCBA/v373/jjTdUuH7o8/k++eST3/zmN263u62t7Z577pF7/cfj8YwbNy4/P/+tt96KiYl5+OGHH3zwQYnzBL344osTJ05U4TatyWRav359Tk7O3Llza2pqli5dOnnyZInzxMbGfvrpp8GX586dk3WJteubYT+fTC2LAVdIEi+v9+LMmTOrVq3KyclR4Y6r2+3++uuvR48e/cEHH7S1tckd5ty5c/n5+Zs3b5Y7RtCZM2fmzp37u9/9rqamprKysrq6eteuXRLncTqddrt90qRJR48e3bVr17Zt21T4J+3XX39dVlb285//XPYg3zp06NDw4cNHjRplNpubmprOnz8vcZjMzMwzZ84888wzBw4c2LFjx7Fjx2Q9/bnrm6HiT6ZW8b3beOrq6hYuXLhixQq5y6OgUaNGrVix4sUXX4yLi9uxY4fcYZ5++um0tLSWlhaHw+F2u48fPy73U5bHjBmzdevWMWPGCCGuueaaefPmHT58WOI811577fjx45cuXSqEsFqt8+bNe+eddyTOE/DXv/513LhxN9xwg+xBhBCioqLiyJEjO3fuvO+++0pLS4UQL7/8ssR5zGbzH/7wh5aWlq1bt/7nP/+566675O5j6kjxJ1MrNIpR1dTUrFmzZsOGDfPnz5c9izh58mRNTc39998fePn973//s88+kzvSqFGj6uvrd+7cKYT49NNPHQ7HVVddJXE3aktLy8GDBxcvXhx4eeHChZiYGFnDCCGuvvrqji8VuQDgcDjmzZsne4pveTyeCRMmBP+Yxo8f39raKnGe//73v19++WVxcXHgZXZ2tvSNo0Fdn0z94x//WOI8ncneVREuVVVVKuyy++STT6ZMmVJRUXHhf7755huJ8zQ2NqalpTU1Nfn9/s8//zwzM/Pvf/+7xHk6+dnPfiZ9l90///nPtLS0wDakzz77LDMzs7q6WuI8Fy5cuOmmmyoqKvx+/9mzZ2fNmvWPf/xD4jwBM2bMqKqqkj3Ft+rr62+88cbA3+ovvvjijjvueP311yXOc+rUqbS0tM8++8zv99fW1mZkZHzxxRcS5+n4Zujz+WbOnBn4s2tsbLzxxhs///xzibN1wgopvHbu3Pnll18+9NBDwe8sX748Pz9f1jzXXXfdE088cc8996Snpx8+fDg7O3vOnDmyhlGT1Wpdt27dkiVLbrjhhrq6ury8PLmHkK644ori4uJHH320tLTU6XQ+8MAD0s/Gtre3nz17Ni0tTe4YQampqY8//viSJUsmTZp0/PjxRYsWLVq0SOI8CQkJv/rVr370ox9NmjTpX//6V3FxsfSD1UEmk2nTpk3BJ1Nv3Lhx5MiRsof6jmEPxqIX7e3tbrd7xIgRci9Gqay9vd3r9cbFxSlyiUwI8dVXX33ve9/jj6wngT+y2NhYRX6LfD7f119/PXz4cNmDdO/8+fNK/fUOIEgAACWolUcAQNQiSAAAJRAkAIASCBIAQAkECQCgBIIEAFACQQIAKIEgAQCUQJAAAEogSAAAJRAkAIASCBIAQAkECQCgBIIEAFACQQIAKIEgAQCUQJAAAEogSAAAJRAkAIASCBIAQAkECQCgBIIEAFACQQIAKIEgAQCUQJAAAEr4f4t0OnGYHSx0AAAAAElFTkSuQmCC">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3D-plotting">3D plotting<a class="anchor-link" href="#3D-plotting">¶</a>
 </h3>
 <p>Let's use <code>%plot inline</code> magic command.</p>
@@ -1231,14 +1322,14 @@ i =
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
 <span class="n">ty</span> <span class="p">=</span> <span class="n">tx</span><span class="p">;</span>
 <span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">);</span>
 <span class="n">r</span> <span class="p">=</span> <span class="nb">sqrt</span> <span class="p">(</span><span class="n">xx</span> <span class="o">.^</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">.^</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">eps</span><span class="p">;</span>
 <span class="n">tz</span> <span class="p">=</span> <span class="nb">sin</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">./</span> <span class="n">r</span><span class="p">;</span>
 
 <span class="c">%plot inline</span>
-<span class="n">mesh</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
+<span class="nb">mesh</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1284,7 +1375,7 @@ i =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-optimization-solver">Matlab optimization solver<a class="anchor-link" href="#Matlab-optimization-solver">¶</a>
 </h3>
-<p>We can also call Matlab solvers.</p>
+<p>We can also call the Matlab solvers.</p>
 
 </div>
 </div>
@@ -1294,7 +1385,7 @@ i =
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
     <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span>
     <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
 <span class="n">f</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="o">-</span><span class="mi">3</span><span class="p">;</span><span class="mi">1</span><span class="p">];</span>
@@ -1501,7 +1592,7 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Embedded-.pdf">Embedded <code>.pdf</code><a class="anchor-link" href="#Embedded-.pdf">¶</a>
 </h2>
-<p>To embed a local or external <code>.pdf</code> document, you can use the Google Drive viewer.</p>
+<p>To embed a local or external <code>.pdf</code> document, you can use the Google Drive viewer in html code with Markdown.</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"800px"</span><span class="p">&gt;</span> 
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span><span class="p">&gt;</span>download the PDF.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  
 <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
@@ -1519,7 +1610,41 @@ $$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Well, that's it for now. Let me know if you find some problems. Thanks for reading.</p>
+<h2 id="Incorrect-cell-code-highlighting-with-two-kernels">Incorrect cell code highlighting with two kernels<a class="anchor-link" href="#Incorrect-cell-code-highlighting-with-two-kernels">¶</a>
+</h2>
+<p>The cell code highlighting has some problems when you have double kernels in your Notebook, which is a problema of the Jupyter Notebook metadata.</p>
+<p>Example of poor code highlighting.
+<img src="../../images/Nikola_guide/cell_code_highlighting_no.png" alt="Poor cell code highlighting"></p>
+<p>My <strong>partial solution</strong> is to add the following to the <code>.ipynb</code> metadata (raw data)</p>
+
+<pre><code>"metadata": {
+  ...
+  "language_info": {
+    ...
+    "pygments_lexer": "octave"
+    },
+},</code></pre>
+<p>It's done only once but you have to edit the Notebook with VSCode. If you edit it with the Jupyter Notebook browser GUI, it will change the metadata content every time you switch the kernel. Try it for yourself!.</p>
+<ul>
+<li>With <code>"pygments_lexer": "octave"</code>.
+<img src="../../images/Nikola_guide/cell_code_highlighting_octave.png" alt="Octave cell code highlighting">
+</li>
+<li>With <code>"pygments_lexer": "ipython3"</code> Pygments.
+<img src="../../images/Nikola_guide/cell_code_highlighting_ipython3.png" alt="ipython3 cell code highlighting">
+</li>
+</ul>
+<p><strong>Extra</strong></p>
+<p>If you want to try multiple languages, it's worth trying <a href="https://vatlab.github.io/blog/post/sos-notebook/">SoS Notebook</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Well, that's it for now. Thanks for reading.</p>
 
 </div>
 </div>

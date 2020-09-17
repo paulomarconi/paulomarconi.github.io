@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-09-14T09:51:00Z</lastmod>
+  <lastmod>2020-09-17T10:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-09-15T03:22:00Z</lastmod>
+  <lastmod>2020-09-17T00:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
@@ -28,6 +28,26 @@
  <url>
   <loc>https://paulomarconi.github.io/blog/Nikola-guide/</loc>
   <lastmod>2020-09-11T03:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-notebook/</loc>
+  <lastmod>2020-09-15T06:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-pdf2html/</loc>
+  <lastmod>2020-09-17T10:48:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/test-pdf2html/test.html</loc>
+  <lastmod>2020-09-17T20:50:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/testomatlab/</loc>
+  <lastmod>2020-09-15T06:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/testsetsetsetsetset/</loc>
+  <lastmod>2020-09-15T07:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
@@ -82,6 +102,22 @@
   <lastmod>2020-09-11T03:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/files/pdf2htmlEX/out/test.html</loc>
+  <lastmod>2020-09-17T10:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/pdf2htmlEX/test.html</loc>
+  <lastmod>2020-09-17T20:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/test.html</loc>
+  <lastmod>2020-09-17T10:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/testtt.html</loc>
+  <lastmod>2020-09-17T10:32:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/galleries/</loc>
   <lastmod>2020-08-27T16:06:00Z</lastmod>
  </url>
@@ -91,6 +127,6 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/test.py.html</loc>
-  <lastmod>2020-09-14T00:52:00Z</lastmod>
+  <lastmod>2020-09-17T10:21:00Z</lastmod>
  </url>
 </urlset>

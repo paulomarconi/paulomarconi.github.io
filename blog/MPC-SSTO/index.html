@@ -16,21 +16,20 @@
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <link href="../../assets/css/prism.css" rel="stylesheet">
-<meta name="author" content="Paulo Loma Marconi">
+<script src="../../assets/js/csi.min.js"></script><meta name="author" content="Paulo Loma Marconi">
 <link rel="prev" href="../Nikola-guide/" title="Blog with Nikola, Jupyter, Matlab, and GitHub pages" type="text/html">
+<link rel="next" href="../test-pdf2html/" title="test pdf2html" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="MPC with feed forward Steady-State Target Optimization (SSTO)">
 <meta property="og:url" content="https://paulomarconi.github.io/blog/MPC-SSTO/">
-<meta property="og:description" content="In [3]:
+<meta property="og:description" content="In [6]:
 
     
-%%file 'C:/Users/zurit/OneDrive/PROJECTS/DEVELOPING/blog/files/fnc.m'
+%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/constraint_mats.m'
 
-function c = multi_line_func(a,b)
-    % in-file comments can be added like this
-    a = a+1;
-    b = b+2;
-    c = a">
+function [Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] = constraint_mats(F,G,Pu,qu,Px,qx,Pxf,qxf)
+    %
+  ">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-08-31T13:39:47-04:00">
 <meta property="article:tag" content="control systems">
@@ -136,17 +135,90 @@ navbar-dark bg-dark
     <div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%file</span> 'C:/Users/zurit/OneDrive/PROJECTS/DEVELOPING/blog/files/fnc.m'
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/constraint_mats.m'</span>
 
-<span class="n">function</span> <span class="n">c</span> <span class="o">=</span> <span class="n">multi_line_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span>
-    <span class="o">%</span> <span class="ow">in</span><span class="o">-</span><span class="n">file</span> <span class="n">comments</span> <span class="n">can</span> <span class="n">be</span> <span class="n">added</span> <span class="n">like</span> <span class="n">this</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
-<span class="n">end</span>
+<span class="k">function</span><span class="w"> </span>[Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] <span class="p">=</span><span class="w"> </span><span class="nf">constraint_mats</span><span class="p">(</span>F,G,Pu,qu,Px,qx,Pxf,qxf<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">%</span>
+    <span class="c">% CONSTRAINTS_MATS.M returns the MPC constraints matrices for a system that</span>
+    <span class="c">% is subject to constraints</span>
+    <span class="c">%</span>
+    <span class="c">%    Pu*u(k+j|k) &lt;= qu</span>
+    <span class="c">%    Px*x(k+j|k) &lt;= qx</span>
+    <span class="c">%    Pxf*x(k+N|k) &lt;= qxf</span>
+    <span class="c">%</span>
+    <span class="c">% That is, the matrices Pc, qc and Sc from</span>
+    <span class="c">%</span>
+    <span class="c">%   Pc*U(k) &lt;= qc + Sc*x(k)</span>
+    <span class="c">%</span>
+    <span class="c">% USAGE:</span>
+    <span class="c">%</span>
+    <span class="c">%   [Pc,qc,Sc] = constraint_mats(F,G,umin,umax,xmin,xmax,xNmin,xNmax)</span>
+    <span class="c">%</span>
+    <span class="c">% where F, G are the prediction matrices obtained from PREDICT_MATS.M</span>
+    <span class="c">%</span>
+    <span class="c">% P. Trodden, 2017.</span>
+
+    <span class="c">% input dimension</span>
+    <span class="n">m</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">Pu</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c">% state dimension</span>
+    <span class="n">n</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c">% horizon length</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+
+    <span class="c">% number of input constraints</span>
+    <span class="n">ncu</span> <span class="p">=</span> <span class="nb">numel</span><span class="p">(</span><span class="n">qu</span><span class="p">);</span>
+
+    <span class="c">% number of state constraints</span>
+    <span class="n">ncx</span> <span class="p">=</span> <span class="nb">numel</span><span class="p">(</span><span class="n">qx</span><span class="p">);</span>
+
+    <span class="c">% number of terminal constraints</span>
+    <span class="n">ncf</span> <span class="p">=</span> <span class="nb">numel</span><span class="p">(</span><span class="n">qxf</span><span class="p">);</span>
+
+    <span class="c">% if state constraints exist, but terminal ones do not, then extend the</span>
+    <span class="c">% former to the latter</span>
+    <span class="k">if</span> <span class="n">ncf</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">ncx</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">Pxf</span> <span class="p">=</span> <span class="n">Px</span><span class="p">;</span>
+        <span class="n">qxf</span> <span class="p">=</span> <span class="n">qx</span><span class="p">;</span>
+        <span class="n">ncf</span> <span class="p">=</span> <span class="n">ncx</span><span class="p">;</span>
+    <span class="k">end</span>
+
+    <span class="c">%% Input constraints</span>
+
+    <span class="c">% Build "tilde" (stacked) matrices for constraints over horizon</span>
+    <span class="n">Pu_tilde</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">Pu</span><span class="p">);</span>
+    <span class="n">qu_tilde</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">qu</span><span class="p">);</span>
+    <span class="n">Scu</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">ncu</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+
+    <span class="c">%% State constraints</span>
+
+    <span class="c">% Build "tilde" (stacked) matrices for constraints over horizon</span>
+    <span class="n">Px0_tilde</span> <span class="p">=</span> <span class="p">[</span><span class="n">Px</span><span class="p">;</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">ncx</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">ncf</span><span class="p">,</span><span class="n">n</span><span class="p">)];</span>
+    <span class="k">if</span> <span class="n">ncx</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">Px_tilde</span> <span class="p">=</span> <span class="p">[</span><span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">Px</span><span class="p">)</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">ncx</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">n</span><span class="p">)];</span>
+    <span class="k">else</span>
+        <span class="n">Px_tilde</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">ncx</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">);</span>
+    <span class="k">end</span>
+    <span class="n">Pxf_tilde</span> <span class="p">=</span> <span class="p">[</span><span class="nb">zeros</span><span class="p">(</span><span class="n">ncf</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="n">Pxf</span><span class="p">];</span>
+    <span class="n">Px_tilde</span> <span class="p">=</span> <span class="p">[</span><span class="nb">zeros</span><span class="p">(</span><span class="n">ncx</span><span class="p">,</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">);</span> <span class="n">Px_tilde</span><span class="p">;</span> <span class="n">Pxf_tilde</span><span class="p">];</span>
+    <span class="n">qx_tilde</span> <span class="p">=</span> <span class="p">[</span><span class="nb">kron</span><span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">qx</span><span class="p">);</span> <span class="n">qxf</span><span class="p">];</span>
+
+    <span class="c">%% Final stack</span>
+    <span class="k">if</span> <span class="nb">isempty</span><span class="p">(</span><span class="n">Px_tilde</span><span class="p">)</span>
+        <span class="n">Pc</span> <span class="p">=</span> <span class="n">Pu_tilde</span><span class="p">;</span>
+        <span class="n">qc</span> <span class="p">=</span> <span class="n">qu_tilde</span><span class="p">;</span>
+        <span class="n">Sc</span> <span class="p">=</span> <span class="n">Scu</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="c">% eliminate x for final form</span>
+        <span class="n">Pc</span> <span class="p">=</span> <span class="p">[</span><span class="n">Pu_tilde</span><span class="p">;</span> <span class="n">Px_tilde</span><span class="o">*</span><span class="n">G</span><span class="p">];</span>
+        <span class="n">qc</span> <span class="p">=</span> <span class="p">[</span><span class="n">qu_tilde</span><span class="p">;</span> <span class="n">qx_tilde</span><span class="p">];</span>
+        <span class="n">Sc</span> <span class="p">=</span> <span class="p">[</span><span class="n">Scu</span><span class="p">;</span> <span class="o">-</span><span class="n">Px0_tilde</span> <span class="o">-</span> <span class="n">Px_tilde</span><span class="o">*</span><span class="n">F</span><span class="p">];</span>
+    <span class="k">end</span>
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -163,7 +235,7 @@ navbar-dark bg-dark
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Created file 'C:\Users\zurit\OneDrive\PROJECTS\DEVELOPING\blog\files\fnc.m'.
+<pre>Created file 'C:\Users\zurit\OneDrive\blog\files\MPC-SSTO\constraint_mats.m'.
 </pre>
 </div>
 </div>
@@ -174,18 +246,52 @@ navbar-dark bg-dark
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [29]:</div>
+<div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="s1">'C:/Users/zurit/OneDrive/PROJECTS/DEVELOPING/blog/files'</span>
-<span class="o">%</span> <span class="n">output</span> <span class="o">=</span> <span class="n">fnc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/cost_mats.m'</span>
 
-<span class="nb">format</span> <span class="n">compact</span>
-<span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-    <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">:</span><span class="mi">10</span><span class="p">)</span> <span class="o">=</span> <span class="n">fnc</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">end</span>
+<span class="k">function</span><span class="w"> </span>[H,L,M] <span class="p">=</span><span class="w"> </span><span class="nf">cost_mats</span><span class="p">(</span>F,G,Q,R,P<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">%</span>
+    <span class="c">% COST_MATS.M returns the MPC cost matrices for a system</span>
+    <span class="c">%</span>
+    <span class="c">%	X = F*x + G*U</span>
+    <span class="c">%</span>
+    <span class="c">% with finite-horizon objective function</span>
+    <span class="c">%</span>
+    <span class="c">%	J = 0.5*sum_{j=0}^{N-1} x(j)'*Q*x(j) + u(j)'*R*u(j) + x(N)'*P*x(N)</span>
+    <span class="c">%</span>
+    <span class="c">% That is, the matrices H, L and M in</span>
+    <span class="c">%</span>
+    <span class="c">%	J = 0.5*U'*H*U + x'*L'*U + x'*M*x</span>
+    <span class="c">%</span>
+    <span class="c">% USAGE:</span>
+    <span class="c">%</span>
+    <span class="c">% 	[H,L,M] = cost_mats(F,G,Q,R,P)</span>
+    <span class="c">%</span>
+    <span class="c">% P. Trodden, 2015.</span>
 
-<span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+    <span class="c">% get dimensions</span>
+    <span class="n">n</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">N</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
+
+    <span class="c">% diagonalize Q and R</span>
+    <span class="n">Qd</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">Q</span><span class="p">);</span>
+    <span class="n">Qd</span> <span class="p">=</span> <span class="nb">blkdiag</span><span class="p">(</span><span class="n">Qd</span><span class="p">,</span><span class="n">P</span><span class="p">);</span>
+    <span class="n">Rd</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">R</span><span class="p">);</span>
+
+    <span class="c">% Hessian</span>
+    <span class="n">H</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">G</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Rd</span><span class="p">;</span>
+
+    <span class="c">% Linear term</span>
+    <span class="n">L</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">F</span><span class="p">;</span>
+
+    <span class="c">% Constant term</span>
+    <span class="n">M</span> <span class="p">=</span> <span class="n">F</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">F</span> <span class="o">+</span> <span class="n">Q</span><span class="p">;</span>
+
+    <span class="c">% make sure the Hessian is symmetric</span>
+    <span class="n">H</span><span class="p">=(</span><span class="n">H</span><span class="o">+</span><span class="n">H</span><span class="o">'</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -202,26 +308,1054 @@ navbar-dark bg-dark
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>c =
-     6     6     6     6     6     6     6     6     6     6
-c =
-     6     8     8     8     8     8     8     8     8     8
-c =
-     6     8    10    10    10    10    10    10    10    10
-c =
-     6     8    10    12    12    12    12    12    12    12
-c =
-     6     8    10    12    14    14    14    14    14    14
-c =
-     6     8    10    12    14    16    16    16    16    16
-c =
-     6     8    10    12    14    16    18    18    18    18
-c =
-     6     8    10    12    14    16    18    20    20    20
-c =
-     6     8    10    12    14    16    18    20    22    22
-c =
-     6     8    10    12    14    16    18    20    22    24
+<pre>Created file 'C:\Users\zurit\OneDrive\blog\files\MPC-SSTO\cost_mats.m'.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In [8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/predict_mats.m'</span>
+
+<span class="k">function</span><span class="w"> </span>[F,G] <span class="p">=</span><span class="w"> </span><span class="nf">predict_mats</span><span class="p">(</span>A,B,N<span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">%</span>
+    <span class="c">% PREDICT_MATS.M returns the MPC prediction matrices for a system</span>
+    <span class="c">%</span>
+    <span class="c">%	x^+ = A*x + B*u</span>
+    <span class="c">%</span>
+    <span class="c">% That is, the matrices F and G from the equation</span>
+    <span class="c">%</span>
+    <span class="c">%	X = F*x + G*U</span>
+    <span class="c">%</span>
+    <span class="c">% USAGE:</span>
+    <span class="c">%</span>
+    <span class="c">% 	[F,G] = predict_mats(A,B,N)</span>
+    <span class="c">%</span>
+    <span class="c">% where N is prediction horizon length.</span>
+    <span class="c">%</span>
+    <span class="c">% P. Trodden, 2015.</span>
+
+    <span class="c">% dimensions</span>
+    <span class="n">n</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">m</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c">% allocate</span>
+    <span class="n">F</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">G</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+
+    <span class="c">% form row by row</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
+    <span class="c">%  F</span>
+    <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span>^<span class="n">i</span><span class="p">;</span>
+    
+    <span class="c">% G</span>
+    <span class="c">% form element by element</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span>
+        <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span>^<span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+    <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Created file 'C:\Users\zurit\OneDrive\blog\files\MPC-SSTO\predict_mats.m'.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered celltag_outputPrepend">
+<div class="input">
+<div class="prompt input_prompt">In [9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/'</span>
+
+<span class="n">clear</span> <span class="n">variables</span><span class="p">;</span> <span class="nb">close</span> <span class="nb">all</span><span class="p">;</span> <span class="nb">clc</span><span class="p">;</span>
+<span class="c">% path('ACS6116_mcode',path); % temporal</span>
+
+<span class="nb">mode</span> <span class="p">=</span> <span class="s">'trk'</span><span class="p">;</span> <span class="c">%regulation=reg, tracking=trk</span>
+
+<span class="c">%% Global variables</span>
+<span class="n">x0</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">r</span> <span class="p">=</span> <span class="mf">0.3</span><span class="p">;</span> <span class="c">% reference</span>
+
+<span class="n">model_d</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c">% model with disturbance, 1=yes, 0=no</span>
+<span class="n">d</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c">% init value of the perturbation value</span>
+
+<span class="n">N</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c">% Horizon increase N and cost value J(k) is reduced</span>
+<span class="n">nk</span> <span class="p">=</span> <span class="mi">80</span><span class="p">;</span> <span class="c">% simulation steps</span>
+
+<span class="n">rho</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c">% SSTO optimization</span>
+
+<span class="n">Qdesign</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">Rdesign</span> <span class="p">=</span> <span class="p">.</span><span class="mi">08</span><span class="p">;</span> <span class="c">% Q and R for tunning</span>
+<span class="c">%% System continuos+discrete</span>
+
+<span class="n">Msys</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">Dsys</span> <span class="p">=</span> <span class="mf">0.8</span><span class="p">;</span> <span class="n">Rsys</span> <span class="p">=</span> <span class="mf">0.1</span><span class="p">;</span> <span class="n">Tt</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span> <span class="n">Tg</span> <span class="p">=</span> <span class="mf">0.2</span><span class="p">;</span>
+
+<span class="n">Ac</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="n">Dsys</span><span class="o">/</span><span class="n">Msys</span>       <span class="mi">1</span><span class="o">/</span><span class="n">Msys</span>        <span class="mi">0</span>   <span class="p">;</span>
+          <span class="mi">0</span>            <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">Tt</span>        <span class="mi">1</span><span class="o">/</span><span class="n">Tt</span> <span class="p">;</span>
+     <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">Rsys</span><span class="o">*</span><span class="n">Tg</span><span class="p">)</span>        <span class="mi">0</span>         <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">Tg</span>  <span class="p">];</span>
+<span class="n">Bc</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="o">/</span><span class="n">Tg</span><span class="p">];</span>
+
+<span class="k">if</span> <span class="n">model_d</span><span class="o">==</span><span class="mi">1</span> <span class="c">% don't change it</span>
+    <span class="n">Bd</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">Msys</span><span class="p">;</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">;];</span> <span class="c">% Bd=disturbance matrix</span>
+<span class="k">else</span>
+    <span class="n">Bd</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">];</span>
+<span class="k">end</span>
+
+<span class="n">C</span> <span class="p">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">D</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Ts</span> <span class="p">=</span> <span class="mf">0.1</span><span class="p">;</span> <span class="c">%sampling time</span>
+
+<span class="c">% Continuos + disturbance</span>
+<span class="n">sys</span> <span class="p">=</span> <span class="n">idss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Bd</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span> 
+
+<span class="c">% Converting to discrete model</span>
+<span class="n">sysd</span> <span class="p">=</span> <span class="n">c2d</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span><span class="n">Ts</span><span class="p">);</span>
+<span class="n">A</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">A</span><span class="p">;</span> 
+<span class="n">B</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">B</span><span class="p">;</span> 
+<span class="n">C</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">C</span><span class="p">;</span> 
+<span class="n">D</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">D</span><span class="p">;</span> 
+<span class="n">Bd</span> <span class="p">=</span> <span class="o">-</span><span class="n">sysd</span><span class="p">.</span><span class="n">K</span><span class="p">;</span> 
+
+<span class="k">if</span> <span class="n">model_d</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="n">Dd</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">else</span> 
+    <span class="n">Dd</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">end</span>
+
+
+
+<span class="c">%% System Dimensions</span>
+<span class="c">% n  = size(A, 1); % Number of State variables</span>
+<span class="c">% m  = size(B, 2); % Number of Input variables</span>
+<span class="c">% q = size(Bd, 2); % Number of Disturbance Inputs</span>
+<span class="c">% p  = size(C, 1); % Number of Output measurments </span>
+<span class="c">% nPx = size(Px);   % Dimensions of State Constrains</span>
+<span class="c">% mPu = size(Pu);   % Dimensions of Input Constrains</span>
+
+<span class="c">%% Constraints</span>
+<span class="c">% Input constraints</span>
+<span class="n">u_max</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span> <span class="n">u_min</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="n">Pu</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">qu</span> <span class="p">=</span> <span class="p">[</span><span class="n">u_max</span><span class="p">;</span> <span class="n">u_min</span><span class="p">];</span> 
+<span class="c">% State constraints</span>
+<span class="n">y_max</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span> <span class="n">y_min</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span>
+<span class="n">Px</span> <span class="p">=</span> <span class="p">[</span><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.*</span><span class="n">C</span><span class="p">;</span> <span class="o">-</span><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.*</span><span class="n">C</span><span class="p">];</span>
+<span class="n">qx</span> <span class="p">=</span> <span class="p">[</span><span class="nb">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">y_max</span><span class="p">;</span> <span class="nb">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">y_min</span><span class="p">];</span>
+<span class="c">% Terminal State constraints</span>
+<span class="n">Pxf</span> <span class="p">=</span> <span class="n">Px</span><span class="p">;</span>
+<span class="n">qxf</span> <span class="p">=</span> <span class="n">qx</span><span class="p">;</span>
+
+
+<span class="c">%% Part II: Target equilibrium pairs and optimization under constraints</span>
+<span class="c">% Target</span>
+<span class="n">T</span> <span class="p">=</span> <span class="p">[</span><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">,</span> <span class="o">-</span><span class="n">B</span><span class="p">;</span> <span class="n">C</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">Tinv</span> <span class="p">=</span> <span class="n">T</span><span class="o">\</span><span class="p">[</span><span class="n">Bd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span> <span class="n">r</span><span class="o">-</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="p">];</span>   
+<span class="n">xss</span> <span class="p">=</span> <span class="n">Tinv</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">uss</span> <span class="p">=</span> <span class="n">Tinv</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c">% Optimization problem</span>
+<span class="n">x_optVect</span> <span class="p">=</span> <span class="p">[</span><span class="n">xss</span><span class="p">;</span> <span class="n">uss</span><span class="p">];</span> <span class="c">% vector x for optimization problem A*x&lt;b</span>
+
+<span class="n">fun</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x_optVect</span><span class="p">)</span>  <span class="p">(</span> <span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x_optVect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="n">r</span> <span class="p">)</span> <span class="o">+</span> <span class="n">rho</span><span class="o">*</span><span class="n">x_optVect</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">;</span>  
+<span class="n">x0_opt</span> <span class="p">=</span> <span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span> <span class="c">% init values</span>
+
+<span class="c">% Equality constraints</span>
+<span class="n">Aeq</span> <span class="p">=</span> <span class="n">T</span><span class="p">;</span> 
+<span class="n">beq</span> <span class="p">=</span> <span class="p">[</span><span class="n">Bd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span> <span class="n">r</span><span class="o">-</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="p">];</span>
+<span class="c">% Inequality constraints</span>
+<span class="n">Aopt</span> <span class="p">=</span> <span class="p">[</span><span class="n">Px</span><span class="p">,</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">Pu</span><span class="p">];</span> 
+<span class="n">bopt</span> <span class="p">=</span> <span class="p">[</span><span class="n">qx</span><span class="p">;</span> <span class="n">qu</span><span class="p">];</span>
+
+<span class="c">% Minimization </span>
+<span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">fval</span><span class="p">]</span> <span class="p">=</span> <span class="n">fmincon</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span><span class="n">x0_opt</span><span class="p">,</span><span class="n">Aopt</span><span class="p">,</span><span class="n">bopt</span><span class="p">,</span><span class="n">Aeq</span><span class="p">,</span><span class="n">beq</span><span class="p">);</span>
+<span class="n">xss</span> <span class="p">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)</span><span class="o">'</span><span class="p">;</span>
+<span class="n">uss</span> <span class="p">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+<span class="n">yss</span> <span class="p">=</span> <span class="n">C</span><span class="o">*</span><span class="n">xss</span><span class="o">+</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span>
+
+<span class="c">%% Part II: Constraints for SSTO model</span>
+<span class="c">% Input constraints</span>
+<span class="n">Pu_ssto</span> <span class="p">=</span> <span class="n">Pu</span><span class="p">;</span>
+<span class="n">qu_ssto</span> <span class="p">=</span> <span class="n">qu</span><span class="o">-</span><span class="n">Pu</span><span class="o">*</span><span class="n">uss</span><span class="p">;</span> 
+<span class="c">% State constraints</span>
+<span class="n">Px_ssto</span> <span class="p">=</span> <span class="n">Px</span><span class="p">;</span> <span class="c">%</span>
+<span class="n">qx_ssto</span> <span class="p">=</span> <span class="n">qx</span><span class="o">-</span><span class="n">Px</span><span class="o">*</span><span class="n">xss</span><span class="p">;</span>
+
+<span class="c">% Cost matrices</span>
+<span class="n">Q</span> <span class="p">=</span> <span class="p">(</span><span class="n">C</span><span class="o">'*</span><span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">Qdesign</span><span class="p">;</span> <span class="c">% Q^(1/2)</span>
+<span class="n">R</span> <span class="p">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">Rdesign</span><span class="p">;</span>
+
+<span class="c">% Deadbeat Terminal Inequality State constraints</span>
+<span class="c">% K  = -acker(A,B,[0,0,0]);  </span>
+<span class="n">K</span> <span class="p">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">);</span>
+<span class="c">% K = [K(1) 0 0];</span>
+
+<span class="n">Maux</span> <span class="p">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="n">i</span> <span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
+    <span class="n">Maux</span> <span class="p">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span>^<span class="p">(</span><span class="n">i</span><span class="p">)];</span>
+<span class="k">end</span> 
+<span class="n">Mm</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),[</span><span class="n">Px</span><span class="p">;</span> <span class="n">Pu</span><span class="o">*</span><span class="n">K</span><span class="p">]);</span>
+
+<span class="c">% regulation</span>
+<span class="n">PxN</span> <span class="p">=</span> <span class="n">Mm</span><span class="o">*</span><span class="n">Maux</span><span class="p">;</span> 
+<span class="n">qxN</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),[</span><span class="n">qx</span><span class="p">;</span> <span class="n">qu</span><span class="p">]);</span><span class="c">% deadbeat terminal inequality constraints</span>
+<span class="c">% tracking</span>
+<span class="n">PxN_ssto</span> <span class="p">=</span> <span class="n">Mm</span><span class="o">*</span><span class="n">Maux</span><span class="p">;</span> 
+<span class="n">qxN_ssto</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),[</span><span class="n">qx</span><span class="o">-</span><span class="n">Px</span><span class="o">*</span><span class="n">xss</span><span class="p">;</span> <span class="n">qu</span><span class="o">-</span><span class="n">Pu</span><span class="o">*</span><span class="n">uss</span><span class="p">]);</span><span class="c">% deadbeat terminal inequality constraints</span>
+
+
+<span class="c">%% Prediction, Constraint and Cost matrices</span>
+<span class="c">% Prediction matrices</span>
+<span class="p">[</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">]</span> <span class="p">=</span> <span class="n">predict_mats</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">N</span><span class="p">);</span>
+
+<span class="c">% Constructing Constraint matrices</span>
+<span class="p">[</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="p">,</span><span class="n">Sc</span><span class="p">]</span> <span class="p">=</span> <span class="n">constraint_mats</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">Pu</span><span class="p">,</span><span class="n">qu</span><span class="p">,</span><span class="n">Px</span><span class="p">,</span><span class="n">qx</span><span class="p">,</span><span class="n">PxN</span><span class="p">,</span><span class="n">qxN</span><span class="p">);</span>
+<span class="p">[</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="p">,</span><span class="n">Sc_ssto</span><span class="p">]</span> <span class="p">=</span> <span class="n">constraint_mats</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">Pu_ssto</span><span class="p">,</span><span class="n">qu_ssto</span><span class="p">,</span><span class="n">Px_ssto</span><span class="p">,</span><span class="n">qx_ssto</span><span class="p">,</span><span class="n">PxN_ssto</span><span class="p">,</span><span class="n">qxN_ssto</span><span class="p">);</span>
+
+<span class="c">% % Cost matrices</span>
+<span class="c">% Q = C'*C; % Q^(1/2)</span>
+<span class="c">% R = 1;</span>
+
+<span class="c">%% Dead-beat controller K for mode-2 </span>
+<span class="c">% K = -acker(A,B,[0,0,0]);</span>
+
+<span class="c">% Closed-loop</span>
+<span class="n">Acl</span> <span class="p">=</span> <span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">;</span>
+<span class="c">% Check if it's stable</span>
+<span class="n">eigVal</span> <span class="p">=</span> <span class="nb">eig</span><span class="p">(</span><span class="n">Acl</span><span class="p">);</span>
+<span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="nb">real</span><span class="p">(</span><span class="n">eigVal</span><span class="p">))</span> <span class="o">&lt;</span><span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nb">disp</span><span class="p">(</span><span class="s">'Mode-2 CL system x(k+1) = (A+B*K)*x(k) is stable!'</span><span class="p">);</span>    
+<span class="k">else</span><span class="p">;</span> <span class="nb">disp</span><span class="p">(</span><span class="s">'Mode-2 CL system x(k+1) = (A+B*K)*x(k) is unstable!'</span><span class="p">);</span> <span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">'eigen values:'</span><span class="p">);</span> <span class="nb">disp</span><span class="p">(</span><span class="n">eigVal</span><span class="p">);</span>
+
+<span class="c">%% Calculate the terminal cost matrix P</span>
+<span class="n">Phi</span> <span class="p">=</span> <span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">;</span>
+<span class="n">S</span> <span class="p">=</span> <span class="n">Q</span><span class="o">+</span><span class="n">K</span><span class="o">'*</span><span class="n">R</span><span class="o">*</span><span class="n">K</span><span class="p">;</span>
+<span class="n">P</span> <span class="p">=</span> <span class="n">dlyap</span><span class="p">(</span><span class="n">Phi</span><span class="o">'</span><span class="p">,</span><span class="n">S</span><span class="p">);</span>
+
+<span class="c">% Cost matrices</span>
+<span class="p">[</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">M</span><span class="p">]</span> <span class="p">=</span> <span class="n">cost_mats</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">P</span><span class="p">);</span>
+
+<span class="c">%% Constrained - Closed-loop states (xs) and inputs (us) predictions</span>
+<span class="c">% initialize</span>
+<span class="n">x</span> <span class="p">=</span> <span class="n">x0</span><span class="p">;</span>
+
+<span class="n">n</span> <span class="p">=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">m</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">xs</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">us</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
+    
+    <span class="c">% Function to call perturbation at specific time steps    </span>
+    <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">30</span>
+        <span class="n">d</span> <span class="p">=</span> <span class="mf">0.6</span><span class="p">;</span>
+    <span class="k">elseif</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">60</span>
+        <span class="n">d</span> <span class="p">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">;</span>
+    <span class="k">else</span> 
+        <span class="n">d</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="k">end</span>
+    <span class="n">ref</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">r</span><span class="p">;</span> 
+    
+    
+    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>       
+        <span class="c">% Optimization problem</span>
+        <span class="n">fun</span> <span class="p">=</span> <span class="p">@(</span><span class="n">x_optVect2</span><span class="p">)</span>  <span class="p">(</span> <span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x_optVect2</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="o">-</span><span class="n">r</span> <span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rho</span><span class="o">*</span><span class="n">x_optVect2</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="p">;</span>  
+        <span class="n">x0_opt</span> <span class="p">=</span> <span class="p">[</span><span class="n">x</span><span class="p">;</span><span class="n">us</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)];</span>
+
+        <span class="c">% Equality constraints</span>
+        <span class="n">Aeq</span> <span class="p">=</span> <span class="p">[</span><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">,</span> <span class="o">-</span><span class="n">B</span> <span class="p">;</span><span class="n">C</span> <span class="mi">0</span><span class="p">];</span> 
+        <span class="n">beq</span> <span class="p">=</span> <span class="p">[</span><span class="n">Bd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span> <span class="n">r</span><span class="o">-</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="p">];</span>
+
+        <span class="c">% Minimization </span>
+        <span class="p">[</span><span class="n">f</span><span class="p">,</span><span class="n">fval</span><span class="p">]</span> <span class="p">=</span> <span class="n">fmincon</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span><span class="n">x0_opt</span><span class="p">,</span><span class="n">Aopt</span><span class="p">,</span><span class="n">bopt</span><span class="p">,</span><span class="n">Aeq</span><span class="p">,</span><span class="n">beq</span><span class="p">);</span>
+        <span class="n">xss</span> <span class="p">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">uss</span> <span class="p">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="n">yss</span> <span class="p">=</span> <span class="n">C</span><span class="o">*</span><span class="n">xss</span><span class="o">+</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span>
+        <span class="n">x_optVect2</span> <span class="p">=</span> <span class="p">[</span><span class="n">xss</span><span class="p">;</span><span class="n">uss</span><span class="p">];</span> <span class="c">% vector x for optimization problem A*x&lt;b </span>
+
+        <span class="c">% SSTO states</span>
+        <span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">x</span><span class="o">-</span><span class="n">xss</span><span class="p">;</span>
+        <span class="n">nu</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">us</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">uss</span><span class="p">;</span>
+
+        <span class="c">% input constraints</span>
+        <span class="n">qu_ssto</span> <span class="p">=</span> <span class="n">qu</span><span class="o">-</span><span class="n">Pu</span><span class="o">*</span><span class="n">uss</span><span class="p">;</span>
+        <span class="c">% state constraints</span>
+        <span class="n">qx_ssto</span> <span class="p">=</span> <span class="n">qx</span><span class="o">-</span><span class="n">Px</span><span class="o">*</span><span class="n">xss</span><span class="p">;</span>
+        <span class="c">% deadbeat terminal inequality constraints</span>
+        <span class="n">qxN_ssto</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">ones</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),[</span><span class="n">qx</span><span class="o">-</span><span class="n">Px</span><span class="o">*</span><span class="n">xss</span><span class="p">;</span> <span class="n">qu</span><span class="o">-</span><span class="n">Pu</span><span class="o">*</span><span class="n">uss</span><span class="p">]);</span>
+        <span class="c">% Constraint matrices</span>
+        <span class="p">[</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="p">,</span><span class="n">Sc_ssto</span><span class="p">]</span> <span class="p">=</span> <span class="n">constraint_mats</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">Pu_ssto</span><span class="p">,</span><span class="n">qu_ssto</span><span class="p">,</span><span class="n">Px_ssto</span><span class="p">,</span><span class="n">qx_ssto</span><span class="p">,</span><span class="n">PxN_ssto</span><span class="p">,</span><span class="n">qxN_ssto</span><span class="p">);</span>
+    <span class="k">end</span>
+   
+    <span class="c">% States</span>
+    <span class="n">xs</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="c">% Measurement</span>
+    <span class="n">y</span> <span class="p">=</span> <span class="n">C</span><span class="o">*</span><span class="n">xs</span><span class="o">+</span><span class="n">Dd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span>
+<span class="c">%     y1(k,:) = C*x+Dd*d; % violates y constraint |y|&lt;0.5</span>
+    
+    
+    <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k        </span>
+    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+        <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span> 
+    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+        <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span> 
+    <span class="k">end</span>
+    <span class="c">% check feasibility</span>
+    <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span> 
+        <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
+        <span class="k">break</span><span class="p">;</span>    
+    <span class="k">end</span>
+    
+    <span class="c">% store input</span>
+    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+        <span class="c">%us_C(:,k) = Ustar(1:3,1);</span>
+        <span class="n">us</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">Ustar</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+        <span class="n">us</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">NUstar</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">uss</span><span class="p">;</span>    
+    <span class="k">end</span>   
+    
+    <span class="c">% Feedback x(k+1)=A*x(k)+B*u(k)</span>
+    <span class="n">x</span> <span class="p">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">us</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">)</span><span class="o">+</span><span class="n">Bd</span><span class="o">*</span><span class="n">d</span><span class="p">;</span>      
+    
+    
+    
+    <span class="c">% Cost Value </span>
+    <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+        <span class="n">J</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">Ustar</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">,:)</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="o">*</span><span class="n">Ustar</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">,:)</span><span class="o">+</span><span class="p">(</span><span class="n">xs</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="n">Ustar</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">,:)</span><span class="o">+</span><span class="p">...</span>
+                  <span class="p">(</span><span class="n">xs</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="n">xs</span><span class="p">(:,</span><span class="n">k</span><span class="p">);</span>
+    <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+        <span class="n">J</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">NUstar</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">,:)</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="o">*</span><span class="n">NUstar</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">,:)</span><span class="o">+</span><span class="p">(</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="n">NUstar</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="p">,:)</span><span class="o">+</span><span class="p">...</span>
+                  <span class="p">(</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">'</span><span class="p">)</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">);</span>
+    <span class="k">end</span>
+    
+<span class="k">end</span>
+<span class="c">% Predicted states for ploting and for value function</span>
+<span class="n">xs_aux</span> <span class="p">=</span> <span class="n">xs</span><span class="o">'</span><span class="p">;</span>
+<span class="n">xs1</span> <span class="p">=</span> <span class="n">xs_aux</span><span class="p">(:,</span><span class="mi">1</span><span class="p">)</span><span class="o">'</span><span class="p">;</span>
+<span class="n">xs2</span> <span class="p">=</span> <span class="n">xs_aux</span><span class="p">(:,</span><span class="mi">2</span><span class="p">)</span><span class="o">'</span><span class="p">;</span>
+<span class="n">xs3</span> <span class="p">=</span> <span class="n">xs_aux</span><span class="p">(:,</span><span class="mi">3</span><span class="p">)</span><span class="o">'</span><span class="p">;</span>
+
+<span class="c">%% Plotting</span>
+<span class="n">t</span> <span class="p">=</span> <span class="n">Ts</span><span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">nk</span><span class="p">);</span> <span class="c">% time simulation</span>
+
+<span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> 
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+<span class="c">%     stairs(0:N-1,us_U); % unconstrained open-loop    </span>
+<span class="c">%     stairs(0:nk-1,us(1,1:end-1)'); % unconstrained closed-loop</span>
+    <span class="nb">stairs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">us</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">)</span><span class="o">'</span><span class="p">);</span> <span class="c">% constrained closed-loop    </span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'Input u for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step k [s]'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'u(k)'</span><span class="p">);</span>
+<span class="c">%     ylabel('u(0+j|0)/u(k)');</span>
+<span class="c">%     legend('u(0+j|0)','us(k)','us C(k)');</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> 
+    <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+<span class="c">%     plot(1:N,x1,1:N,x2); % unconstrained open-loop  </span>
+<span class="c">%     plot(1:nk,xs1,1:nk,xs2); % unconstrained closed-loop</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xs1</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">xs2</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">xs3</span><span class="p">);</span> <span class="c">% constrained closed-loop      </span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'States for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step k [s]'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'States'</span><span class="p">);</span> 
+    <span class="nb">legend</span><span class="p">(</span><span class="s">'x1(k)'</span><span class="p">,</span><span class="s">'x2(k)'</span><span class="p">,</span><span class="s">'x3(k)'</span><span class="p">,</span><span class="s">'Location'</span><span class="p">,</span><span class="s">'Southeast'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span> 
+    <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">xs1</span><span class="p">,</span><span class="n">xs2</span><span class="p">,</span><span class="s">'-o'</span><span class="p">);</span>
+<span class="c">%     plot3(xs1_C,xs2_C,xs3_C);</span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'phase-plot for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'x1(k)'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'x2(k)'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+    
+    
+    
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span> 
+    <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">xs1</span><span class="p">,</span><span class="n">xs3</span><span class="p">,</span><span class="s">'-o'</span><span class="p">);</span>
+<span class="c">%     plot3(xs1_C,xs2_C,xs3_C);</span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'phase-plot for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'x1(k)'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'x3(k)'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+    
+    
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span> 
+    <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">xs2</span><span class="p">,</span><span class="n">xs3</span><span class="p">,</span><span class="s">'-o'</span><span class="p">);</span>
+<span class="c">%     plot3(xs1_C,xs2_C,xs3_C);</span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'phase-plot for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'x2(k)'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'x3(k)'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+    
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">);</span> 
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">ref</span><span class="p">);</span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'Output y for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step k [s]'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'y(k)'</span><span class="p">);</span>    
+    <span class="nb">legend</span><span class="p">(</span><span class="s">'y(k)'</span><span class="p">,</span><span class="s">'r(k)'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+
+    <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">);</span> 
+    <span class="nb">hold</span> <span class="n">on</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">J</span><span class="p">);</span>
+    <span class="nb">title</span><span class="p">([</span><span class="s">'Value function for N='</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">N</span><span class="p">)]);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step k [s]'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'J(k)'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>ation completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Local minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
+
+Minimum found that satisfies the constraints.
+
+Optimization completed because the objective function is non-decreasing in 
+feasible directions, to within the default value of the optimality tolerance,
+and constraints are satisfied to within the default value of the constraint tolerance.
+
+
+
 
 </pre>
 </div>
@@ -235,7 +1369,7 @@ c =
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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nXfekVhPY2NjQkLCl19+6ff7S0tLp06d+tVXX0msp/3D0OfzzZw50/jdVVdX33777efPn5dYWweskIKroKDg4sWLq1evDtxZtmyZw+GQVc+ECROee+65hx56KDEx8dixY6mpqXfffbesYtRkt9ufffbZxYsX33bbbWVlZRkZGXI/hHTttddu3br16aefzsvLM14lLP2zsW1tbRcuXEhISJBbRkB8fPzatWsXL148adKk8vLyhQsXLly4UGI90dHRv/71r3/yk59MmjTpX//619atW6V/sDrAYrFs3rz5ySefjI2NLS8vz87OHjVqlOyivmPaD8aiG21tbR6P5/rrr5e7GaWytra2lpaWoUOHKrJFJoT43//+d9111/EruxrjVxYREaHIX5HP5/v666+HDx8uu5CuXbp0Sal/3gYCCQCgBLXiEQAQtggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEggkAIASCCQAgBIIJACAEv4/HiaEFmPfJ/wAAAAASUVORK5CYII=">
+<img src="data:image/png;base64,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XLiws7MTAOLi4j777DM+nx8dHZ2dna1ynvLy8tdee+3KlStnz54NCwuTyWToZTY7O1uhUKi3vXv37tq1a999912BQLBy5cojR45oG2F2dvbatWuJX88u+zXUlbFosFgxysjl8mXLltXW1kokksjISLlcDgCenp4//vij8gsBABw9ejQkJES5RFlS7u7uHR0d9+/f7+V4uszt+/XXX8fFxSETLgCkpaUtWLDgq6++6mW/JgDPkAyGUCg8duyYk5MThUKpra1NTU0FgNmzZ9+8ebOpqammpub48eMAsGLFigULFrz00ksUyl9vA7du3Ro3bhzKSXP+/PknT54sX75827ZtW7duzc/PV28LAGKx+NixYzQa7eWXX54/f/7SpUuVT4jIzc398ssvDx8+rC23inq/jo6ORrk6FgsWK2by5MmRkZEfffTR06dP33rrrcmTJ8Pf140QYrFYJpMpLxCqS2rcuHF37txBk62eUVNT8/7776O1K/TnJ598cuLECQCIiIiYMGGCh4fHihUrOjs7KRTKyZMn2Wy2r68vg8F4/Phxjzs1GVghGQwajebk5AQA9vb2Q4cORYUjR46Uy+UFBQW1tbXEeubTp09ramqYTCbRdtasWV9//fX06dNnzpz5yiuvKN/TGtsCwJQpU9BrFzpPeXm5yl3+9OnT+Pj4RYsW6cj0paNfDAKLFQMAcXFxL7/88oABA2JiYrTVuX///pgxY4g/NUqqf//+t27dWrRoke7uqqqqiBsPAMrKysaOHYuOUW5fIh8HkU4XAFA63eXLl9vY2KAMUi+++OL777/PYrEePXq0Y8eOnnxz04IVksFQf5MloFKpU6dOVXa56d+/v3KFgQMHZmdnl5aWFhQUbNy4cdOmTQsWLNDRVigUKq+6d3R0uLq6qnRqZ2f3448/RkREhIWFTZs2TePAdPSLQWCxYgBAJBJJpdKGhoby8nJta3v9+vV78uQJ8adGSXV2dqr7QKrj5ub2xRdfvP32205OTpcuXWpvbycUUrdy+7q7ux86dKitrc1SArbiNSRTMGvWrMLCQgqFQqPRHj16NH/+fJWfubS0tG3bto0fP/7NN9988cUXHz16hMo7Ojq0tb1x48aDBw8AID8/f8iQIepvwfb29kwm86OPPtq0aVNzc7PGgWnrF6MPWKx9hM7OzrVr1yYkJCQkJKxdu7ajo0Nj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">
 </div>
 
 </div>
@@ -249,179 +1383,7 @@ c =
 <div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clear</span> <span class="n">variables</span><span class="p">;</span> <span class="n">close</span> <span class="nb">all</span><span class="p">;</span> <span class="n">clc</span><span class="p">;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Global</span> <span class="n">constants</span>
-<span class="o">%</span> <span class="n">generate</span> <span class="n">N</span> <span class="n">random</span> <span class="n">numbers</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">interval</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span> <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">.*</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">;</span> <span class="mi">1</span><span class="p">];</span>
-<span class="n">nk</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>       <span class="o">%</span> <span class="n">simulation</span> <span class="n">steps</span>
-<span class="n">Ts</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>       <span class="o">%</span> <span class="n">sampling</span> <span class="n">time</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Ts</span><span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">nk</span><span class="p">);</span>  <span class="o">%</span> <span class="n">time</span> <span class="n">simulation</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>     <span class="o">%</span> <span class="n">Horizon</span> <span class="n">increase</span> <span class="n">N</span> <span class="ow">and</span> <span class="n">cost</span> <span class="n">value</span> <span class="n">J</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="ow">is</span> <span class="n">reduced</span> <span class="p">(</span><span class="n">better</span> <span class="n">performance</span><span class="p">)</span>
-<span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">System</span> 
-
-<span class="o">%</span> <span class="n">sys</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">s</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>
-<span class="p">[</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">Cc</span><span class="p">,</span><span class="n">Dc</span><span class="p">]</span> <span class="o">=</span> <span class="n">tf2ss</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span><span class="p">]);</span>
-<span class="n">Bdc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span><span class="mi">0</span><span class="p">];</span> <span class="n">Ddc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">sysc</span> <span class="o">=</span> <span class="n">ss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,[</span><span class="n">Bc</span> <span class="n">Bdc</span><span class="p">],</span><span class="n">Cc</span><span class="p">,[</span><span class="n">Dc</span> <span class="n">Ddc</span><span class="p">]);</span>
-
-<span class="n">sysd</span> <span class="o">=</span> <span class="n">c2d</span><span class="p">(</span><span class="n">sysc</span><span class="p">,</span><span class="n">Ts</span><span class="p">);</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">A</span><span class="p">;</span> 
-<span class="n">B</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> 
-<span class="n">Bd</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span> 
-<span class="n">C</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">C</span><span class="p">;</span> 
-<span class="n">D</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">D</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> 
-<span class="o">%</span> <span class="n">Dd</span> <span class="o">=</span> <span class="n">sysd</span><span class="o">.</span><span class="n">d</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Cost</span> <span class="n">matrices</span>                 
-<span class="n">Q</span> <span class="o">=</span> <span class="mf">1e6</span><span class="o">*</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="o">%</span> <span class="n">Q</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> 
-<span class="n">R</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">System</span> <span class="n">Dimensions</span>
-<span class="n">n</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="o">%</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">State</span> <span class="n">variables</span>
-<span class="n">m</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>    <span class="o">%</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Input</span> <span class="n">variables</span>
-<span class="n">p</span>  <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="o">%</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Output</span> <span class="n">measurments</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="o">===</span> <span class="n">K</span> <span class="n">LQR</span> <span class="o">==============================================================</span>
-<span class="n">K_lqr</span> <span class="o">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Constraints</span>
-<span class="o">%</span> <span class="n">Input</span> <span class="n">constraints</span>
-<span class="n">u_max</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">u_min</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="n">Pu</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">;</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-<span class="n">qu</span> <span class="o">=</span> <span class="p">[</span><span class="n">u_max</span><span class="p">;</span> <span class="n">u_min</span><span class="p">];</span> 
-<span class="n">U</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">Pu</span><span class="p">,</span><span class="n">qu</span><span class="p">);</span>
-<span class="o">%</span> <span class="n">U</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'LineStyle'</span><span class="p">,</span><span class="s1">'--'</span><span class="p">);</span>
-
-<span class="o">%</span> <span class="n">State</span> <span class="n">constraints</span>
-<span class="n">x_max</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">x_min</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
-<span class="n">Px</span> <span class="o">=</span> <span class="p">[</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="o">-</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)];</span>
-<span class="n">qx</span> <span class="o">=</span> <span class="p">[</span><span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x_max</span><span class="p">;</span> <span class="n">ones</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x_min</span><span class="p">];</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">Px</span><span class="p">,</span><span class="n">qx</span><span class="p">);</span>
-<span class="o">%</span> <span class="n">X</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="s1">'LineStyle'</span><span class="p">,</span><span class="s1">'--'</span><span class="p">);</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">Deadbeat</span> <span class="n">Terminal</span> <span class="n">Inequality</span> <span class="n">State</span> <span class="n">constraints</span> <span class="p">(</span><span class="k">with</span> <span class="n">deadbet</span> <span class="n">mode</span><span class="o">-</span><span class="mi">2</span> <span class="n">gain</span> <span class="ow">or</span> <span class="nb">any</span> <span class="n">gain</span> <span class="n">K</span><span class="p">)</span>
-<span class="o">%</span> <span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="n">acker</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]);</span> 
-<span class="o">%</span> <span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="n">place</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">]);</span> <span class="o">%</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">work</span> <span class="k">with</span> <span class="n">place</span>
-<span class="n">K</span> <span class="o">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">);</span>
-<span class="n">nn</span> <span class="o">=</span> <span class="n">N</span><span class="p">;</span>
-<span class="n">Maux</span> <span class="o">=</span> <span class="p">[];</span>
-<span class="k">for</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">:</span><span class="n">nn</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">Maux</span> <span class="o">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
-<span class="n">end</span> 
-<span class="n">Mm</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">eye</span><span class="p">(</span><span class="n">nn</span><span class="p">),[</span><span class="n">Px</span><span class="p">;</span> <span class="n">Pu</span><span class="o">*</span><span class="n">K</span><span class="p">]);</span>
-
-<span class="o">%</span> <span class="n">regulation</span>
-<span class="n">PxN</span> <span class="o">=</span> <span class="n">Mm</span><span class="o">*</span><span class="n">Maux</span><span class="p">;</span> 
-<span class="n">qxN</span> <span class="o">=</span> <span class="n">kron</span><span class="p">(</span><span class="n">ones</span><span class="p">(</span><span class="n">nn</span><span class="p">,</span><span class="mi">1</span><span class="p">),[</span><span class="n">qx</span><span class="p">;</span> <span class="n">qu</span><span class="p">]);</span><span class="o">%</span> <span class="n">deadbeat</span> <span class="n">terminal</span> <span class="n">inequality</span> <span class="n">constraints</span>
-<span class="n">Xf</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">PxN</span><span class="p">,</span><span class="n">qxN</span><span class="p">);</span>
-<span class="o">%</span> <span class="n">figure</span><span class="p">,</span><span class="n">Xf</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span> <span class="n">MPT3</span> <span class="o">-</span> <span class="n">Control</span> <span class="n">Invariant</span> <span class="n">Set</span> <span class="p">(</span><span class="n">CIS</span><span class="p">)</span>
-<span class="o">%</span> <span class="n">computes</span> <span class="n">a</span> <span class="n">control</span> <span class="n">invariant</span> <span class="nb">set</span> <span class="k">for</span> <span class="n">LTI</span> <span class="n">system</span> <span class="n">x</span><span class="o">^+</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">u</span>
-<span class="o">%</span> <span class="n">When</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">an</span> <span class="n">autonomous</span> <span class="n">system</span> <span class="p">,</span> <span class="n">the</span> <span class="n">method</span> <span class="n">computes</span> <span class="n">the</span> <span class="n">maximal</span> <span class="n">positively</span> <span class="n">invariant</span> <span class="nb">set</span><span class="o">.</span> 
-<span class="o">%</span> <span class="n">When</span> <span class="n">applied</span> <span class="n">to</span> <span class="n">a</span> <span class="n">non</span><span class="o">-</span><span class="n">autonomous</span> <span class="n">system</span><span class="p">,</span> <span class="n">the</span> <span class="n">maximal</span> <span class="n">control</span> <span class="n">invariant</span> <span class="nb">set</span> <span class="ow">is</span> <span class="n">computed</span><span class="o">.</span> 
-<span class="n">system</span> <span class="o">=</span> <span class="n">LTISystem</span><span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
-<span class="n">system</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">x_min</span><span class="p">;</span> <span class="o">-</span><span class="n">x_min</span><span class="p">];</span>
-<span class="n">system</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="p">[</span><span class="n">x_max</span><span class="p">;</span> <span class="n">x_max</span><span class="p">];</span>
-<span class="n">system</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">min</span> <span class="o">=</span> <span class="o">-</span><span class="n">u_min</span><span class="p">;</span>
-<span class="n">system</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="n">u_max</span><span class="p">;</span>
-<span class="n">InvSet</span> <span class="o">=</span> <span class="n">system</span><span class="o">.</span><span class="n">invariantSet</span><span class="p">();</span> <span class="o">%</span> <span class="n">XN</span> <span class="o">=</span> <span class="n">Control</span> <span class="n">Invariant</span> <span class="n">Set</span>
-<span class="n">Pxx</span> <span class="o">=</span> <span class="n">InvSet</span><span class="o">.</span><span class="n">A</span><span class="p">;</span> <span class="n">qxx</span> <span class="o">=</span> <span class="n">InvSet</span><span class="o">.</span><span class="n">b</span><span class="p">;</span>
-<span class="n">InvSet</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'color'</span><span class="p">,</span><span class="s1">'lightblue'</span><span class="p">)</span>
-<span class="n">XN</span> <span class="o">=</span> <span class="n">Polyhedron</span><span class="p">(</span><span class="n">InvSet</span><span class="o">.</span><span class="n">A</span><span class="p">,</span><span class="n">InvSet</span><span class="o">.</span><span class="n">b</span><span class="p">);</span>
-<span class="n">figure</span><span class="p">,</span><span class="n">XN</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">'alpha'</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="s1">'color'</span><span class="p">,</span><span class="s1">'lightblue'</span><span class="p">);</span>
+<div class=" highlight hl-octave"><pre><span></span>
 </pre></div>
 
     </div>
@@ -488,6 +1450,9 @@ c =
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../Nikola-guide/" rel="prev" title="Blog with Nikola, Jupyter, Matlab, and GitHub pages">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../test-pdf2html/" rel="next" title="test pdf2html">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
