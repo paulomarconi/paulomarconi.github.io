@@ -150,3 +150,26 @@ Embedded pdf
     <object data="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/<user_name/<repository_name>/master/<file_name>.pdf" width="100%" height="800px"> 
         <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/<user_name/<repository_name>/master/<file_name>.pdf">download the PDF.</a></p>  
     </object> 
+
+Images with defined size
+------------------------
+
+.. code-block:: html 
+
+    <img src="/image.png" alt="drawing" width="100%"/> 
+
+
+
+Git
+---
+
+https://docs.github.com/en/github/using-git/
+
+.. code-block:: bash
+
+    git init
+    git remote -v
+    git remote rm <remote_name>
+    git remote add origin https://github.com/<user_name>/<repo_name>.git
+    git push <remote_name> <branch_name>
+    git push origin master
