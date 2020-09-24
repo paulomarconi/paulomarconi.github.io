@@ -15,8 +15,8 @@
 <link rel="icon" href="../files/blogFavicon.ico" sizes="128x128">
 <!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
-<link href="../css/prism.css" rel="stylesheet">
-<script src="../js/csi.min.js"></script><meta name="author" content="Paulo Loma Marconi">
+<link rel="stylesheet" href="../css/prism.css">
+<meta name="author" content="Paulo Loma Marconi">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Cheatsheet">
 <meta property="og:url" content="https://paulomarconi.github.io/cheatsheet/">
@@ -121,13 +121,13 @@ navbar-dark bg-dark
 <div class="section" id="nikola">
 <h2>Nikola</h2>
 <p><a class="reference external" href="https://getnikola.com/handbook.html">https://getnikola.com/handbook.html</a></p>
-<pre class="code bash"><a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-1"></a>nikola serve --browser
-<a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-2"></a>nikola serve
-<a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-3"></a>nikola build
-<a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-4"></a>nikola auto
-<a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-5"></a>nikola new_post -f ipynb
-<a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-6"></a>nikola github_deploy
-<a name="rest_code_0cdd6cf2d3d44c83a263320b1b9bf49e-7"></a>nikola check -f --clean-files
+<pre class="code bash"><a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-1"></a>nikola serve --browser
+<a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-2"></a>nikola serve
+<a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-3"></a>nikola build
+<a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-4"></a>nikola auto
+<a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-5"></a>nikola new_post -f ipynb
+<a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-6"></a>nikola github_deploy
+<a name="rest_code_5ea7cbf9e12840df804d734bf65718ad-7"></a>nikola check -f --clean-files
 </pre>
 </div>
 <div class="section" id="jupyter-line-and-cell-magic-commands">
@@ -140,51 +140,51 @@ navbar-dark bg-dark
 <div class="section" id="latex">
 <h3>LaTex</h3>
 <p>Inline syntax <code class="docutils literal"><span class="pre">:math:`e^{ix}</span> = \cos x + i\sin x`</code> -&gt; <span class="math">\(e^{ix} = \cos x + i\sin x\)</span></p>
-<pre class="code LaTex"><a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-1"></a>.. math::
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-2"></a>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-3"></a><span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-4"></a><span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-5"></a>    <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k+1<span class="nb">}</span> <span class="nb">&amp;</span> = <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> + <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\left</span>( y<span class="nb">_{</span>k+1<span class="nb">}</span> -  C <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> <span class="k">\right</span>) <span class="k">\\</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-6"></a>    e<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = <span class="k">\left</span>(I-<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> C <span class="k">\right</span>) e<span class="nb">_{</span>k+1|k<span class="nb">}</span> -<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\nu</span><span class="nb">_{</span>k+1<span class="nb">}</span>   <span class="k">\\</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-7"></a>    P<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> - <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span>C~P<span class="nb">_{</span>k+1|k<span class="nb">}</span>                                        <span class="k">\\</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-8"></a>    K<span class="nb">_{</span>k+1<span class="nb">}</span>           <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span> (C P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span>+R<span class="nb">_</span>z)<span class="nb">^{</span>-1<span class="nb">}</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-9"></a><span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
-<a name="rest_code_5e730878306f4c2f801a38e4ddb54dea-10"></a><span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+<pre class="code LaTex"><a name="rest_code_02809e375c1a47168fd392ff727066e3-1"></a>.. math::
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-2"></a>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-3"></a><span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-4"></a><span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-5"></a>    <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k+1<span class="nb">}</span> <span class="nb">&amp;</span> = <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> + <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\left</span>( y<span class="nb">_{</span>k+1<span class="nb">}</span> -  C <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> <span class="k">\right</span>) <span class="k">\\</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-6"></a>    e<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = <span class="k">\left</span>(I-<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> C <span class="k">\right</span>) e<span class="nb">_{</span>k+1|k<span class="nb">}</span> -<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\nu</span><span class="nb">_{</span>k+1<span class="nb">}</span>   <span class="k">\\</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-7"></a>    P<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> - <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span>C~P<span class="nb">_{</span>k+1|k<span class="nb">}</span>                                        <span class="k">\\</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-8"></a>    K<span class="nb">_{</span>k+1<span class="nb">}</span>           <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span> (C P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span>+R<span class="nb">_</span>z)<span class="nb">^{</span>-1<span class="nb">}</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-9"></a><span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<a name="rest_code_02809e375c1a47168fd392ff727066e3-10"></a><span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
 </pre>
 </div>
 <div class="section" id="code-highlighting">
 <h3>Code highlighting</h3>
-<pre class="code octave"><a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-1"></a><span class="p">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">octave</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-2"></a>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-3"></a>    <span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-4"></a>        <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-5"></a>        <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-6"></a>            <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-7"></a>        <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-8"></a>            <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-9"></a>        <span class="k">end</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-10"></a>        <span class="c">% check feasibility</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-11"></a>        <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-12"></a>            <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-13"></a>            <span class="k">break</span><span class="p">;</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-14"></a>        <span class="k">end</span>
-<a name="rest_code_b63b51b3b14349b3aba7ab6fdd826477-15"></a>    <span class="k">end</span>
+<pre class="code octave"><a name="rest_code_86ef012259a2485792d6264ac78d558e-1"></a><span class="p">..</span> <span class="n">code</span><span class="o">-</span><span class="n">block</span><span class="p">::</span> <span class="n">octave</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-2"></a>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-3"></a>    <span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-4"></a>        <span class="c">% Constrained MPC control law (RH-FH) LQ-MPC at every step k</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-5"></a>        <span class="k">if</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'reg'</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-6"></a>            <span class="p">[</span><span class="n">Ustar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="n">Pc</span><span class="p">,</span><span class="n">qc</span><span class="o">+</span><span class="n">Sc</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-7"></a>        <span class="k">elseif</span> <span class="nb">mode</span> <span class="o">==</span> <span class="s">'trk'</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-8"></a>            <span class="p">[</span><span class="n">NUstar</span><span class="p">,</span><span class="n">fval</span><span class="p">,</span><span class="nb">flag</span><span class="p">]</span> <span class="p">=</span> <span class="n">quadprog</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">),</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="o">+</span><span class="n">Sc_ssto</span><span class="o">*</span><span class="n">epsilon</span><span class="p">(:,</span><span class="n">k</span><span class="p">));</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-9"></a>        <span class="k">end</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-10"></a>        <span class="c">% check feasibility</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-11"></a>        <span class="k">if</span> <span class="nb">flag</span> <span class="o">&lt;</span> <span class="mi">1</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-12"></a>            <span class="nb">disp</span><span class="p">([</span><span class="s">'Optimization is infeasible at k = '</span><span class="p">,</span><span class="n">num2str</span><span class="p">(</span><span class="n">k</span><span class="p">)]);</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-13"></a>            <span class="k">break</span><span class="p">;</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-14"></a>        <span class="k">end</span>
+<a name="rest_code_86ef012259a2485792d6264ac78d558e-15"></a>    <span class="k">end</span>
 </pre>
 </div>
 <div class="section" id="prism-import">
 <h3>Prism import</h3>
-<pre class="code html"><a name="rest_code_323ce8268ed348e8b1da79b0bdfe900e-1"></a>.. raw:: html
-<a name="rest_code_323ce8268ed348e8b1da79b0bdfe900e-2"></a>
-<a name="rest_code_323ce8268ed348e8b1da79b0bdfe900e-3"></a>    <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<pre class="code html"><a name="rest_code_3bb9bc0bc14745848636eb3e888ad653-1"></a>.. raw:: html
+<a name="rest_code_3bb9bc0bc14745848636eb3e888ad653-2"></a>
+<a name="rest_code_3bb9bc0bc14745848636eb3e888ad653-3"></a>    <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </pre>
 </div>
 <div class="section" id="embedded-pdf">
 <h3>Embedded pdf</h3>
-<pre class="code html"><a name="rest_code_07eab0446c774349959e715d43dceb84-1"></a>.. raw:: html
-<a name="rest_code_07eab0446c774349959e715d43dceb84-2"></a>
-<a name="rest_code_07eab0446c774349959e715d43dceb84-3"></a>    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"800px"</span><span class="p">&gt;</span>
-<a name="rest_code_07eab0446c774349959e715d43dceb84-4"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span><span class="p">&gt;</span>download the PDF.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a name="rest_code_07eab0446c774349959e715d43dceb84-5"></a>    <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+<pre class="code html"><a name="rest_code_4b39c1191de54f84a07b7c564735d54c-1"></a>.. raw:: html
+<a name="rest_code_4b39c1191de54f84a07b7c564735d54c-2"></a>
+<a name="rest_code_4b39c1191de54f84a07b7c564735d54c-3"></a>    <span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"800px"</span><span class="p">&gt;</span>
+<a name="rest_code_4b39c1191de54f84a07b7c564735d54c-4"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span><span class="p">&gt;</span>download the PDF.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a name="rest_code_4b39c1191de54f84a07b7c564735d54c-5"></a>    <span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
 </pre>
 </div>
 </div>
@@ -195,37 +195,53 @@ navbar-dark bg-dark
 <h3>LaTex</h3>
 <p>Inline syntax <code class="docutils literal"><span class="pre">$e^{ix}</span> = \cos x + i\sin x$</code> -&gt; $e^{ix} = cos x + isin x$</p>
 <p>Complex formulas.</p>
-<pre class="code LaTex"><a name="rest_code_8e0a6d438f0540b195c0898783331075-1"></a><span class="sb">$$</span><span class="nb"></span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-2"></a><span class="nv">\begin</span><span class="nb">{cases}</span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-3"></a><span class="nv">\begin</span><span class="nb">{aligned}</span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-4"></a><span class="nb">    </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">} &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">+</span><span class="nb"> </span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> y_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="o">-</span><span class="nb">  C </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-5"></a><span class="nb">    e_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">}       &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb">I</span><span class="o">-</span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} C </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> e_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">-</span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="nv">\nu</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}   </span><span class="nv">\\</span><span class="nb"></span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-6"></a><span class="nb">    P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">}       &amp; </span><span class="o">=</span><span class="nb"> P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">-</span><span class="nb"> </span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}C~P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k}                                        </span><span class="nv">\\</span><span class="nb"></span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-7"></a><span class="nb">    K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}           &amp; </span><span class="o">=</span><span class="nb"> P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} C^</span><span class="nv">\intercal</span><span class="nb"> </span><span class="o">(</span><span class="nb">C P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} C^</span><span class="nv">\intercal</span><span class="o">+</span><span class="nb">R_z</span><span class="o">)</span><span class="nb">^{</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-8"></a><span class="nv">\end</span><span class="nb">{aligned}</span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-9"></a><span class="nv">\end</span><span class="nb">{cases}</span>
-<a name="rest_code_8e0a6d438f0540b195c0898783331075-10"></a><span class="s">$$</span>
+<pre class="code LaTex"><a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-1"></a><span class="sb">$$</span><span class="nb"></span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-2"></a><span class="nv">\begin</span><span class="nb">{cases}</span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-3"></a><span class="nv">\begin</span><span class="nb">{aligned}</span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-4"></a><span class="nb">    </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">} &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">+</span><span class="nb"> </span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> y_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="o">-</span><span class="nb">  C </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-5"></a><span class="nb">    e_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">}       &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb">I</span><span class="o">-</span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} C </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> e_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">-</span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="nv">\nu</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}   </span><span class="nv">\\</span><span class="nb"></span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-6"></a><span class="nb">    P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">}       &amp; </span><span class="o">=</span><span class="nb"> P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">-</span><span class="nb"> </span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}C~P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k}                                        </span><span class="nv">\\</span><span class="nb"></span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-7"></a><span class="nb">    K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}           &amp; </span><span class="o">=</span><span class="nb"> P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} C^</span><span class="nv">\intercal</span><span class="nb"> </span><span class="o">(</span><span class="nb">C P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} C^</span><span class="nv">\intercal</span><span class="o">+</span><span class="nb">R_z</span><span class="o">)</span><span class="nb">^{</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-8"></a><span class="nv">\end</span><span class="nb">{aligned}</span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-9"></a><span class="nv">\end</span><span class="nb">{cases}</span>
+<a name="rest_code_2d101179f4cc4f93b82b9818ee1da0f9-10"></a><span class="s">$$</span>
 </pre>
 <p>Alternatively, for <code class="docutils literal"><span class="pre">\text{...}</span></code> LaTex command.</p>
-<pre class="code text"><a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-1"></a>&lt;div class="math"&gt;
-<a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-2"></a>    \begin{aligned}
-<a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-3"></a>    \bar{\gamma} &gt; \gamma_c,&amp;~ \bar{\nu} &gt; \nu_c \\
-<a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-4"></a>    \text{s.t.}~~
-<a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-5"></a>    1-\dfrac{1}{max_i~|\lambda^u_i(A)|^2} \leq \gamma_c,&amp;~\nu_c \leq 1-\dfrac{1}{\prod_i~|\lambda^u_i(A)|^2}
-<a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-6"></a>    \end{aligned}
-<a name="rest_code_f31ea0cad972454ba1235d150bf49ec6-7"></a>&lt;/div&gt;
+<pre class="code text"><a name="rest_code_e19799c5384847408a27151e7ce5d367-1"></a>&lt;div class="math"&gt;
+<a name="rest_code_e19799c5384847408a27151e7ce5d367-2"></a>    \begin{aligned}
+<a name="rest_code_e19799c5384847408a27151e7ce5d367-3"></a>    \bar{\gamma} &gt; \gamma_c,&amp;~ \bar{\nu} &gt; \nu_c \\
+<a name="rest_code_e19799c5384847408a27151e7ce5d367-4"></a>    \text{s.t.}~~
+<a name="rest_code_e19799c5384847408a27151e7ce5d367-5"></a>    1-\dfrac{1}{max_i~|\lambda^u_i(A)|^2} \leq \gamma_c,&amp;~\nu_c \leq 1-\dfrac{1}{\prod_i~|\lambda^u_i(A)|^2}
+<a name="rest_code_e19799c5384847408a27151e7ce5d367-6"></a>    \end{aligned}
+<a name="rest_code_e19799c5384847408a27151e7ce5d367-7"></a>&lt;/div&gt;
 </pre>
 </div>
 <div class="section" id="id2">
 <h3>Prism import</h3>
-<pre class="code html"><a name="rest_code_2850ca16403244e7ba5893e3af1df5b5-1"></a><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<pre class="code html"><a name="rest_code_ccc6d4b5c17d4ec084bb513425a6c446-1"></a><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </pre>
 </div>
 <div class="section" id="id3">
 <h3>Embedded pdf</h3>
-<pre class="code html"><a name="rest_code_d12c699a4ee84fdbae210b24ec6dc198-1"></a><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"800px"</span><span class="p">&gt;</span>
-<a name="rest_code_d12c699a4ee84fdbae210b24ec6dc198-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span><span class="p">&gt;</span>download the PDF.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a name="rest_code_d12c699a4ee84fdbae210b24ec6dc198-3"></a><span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+<pre class="code html"><a name="rest_code_3a79ec628ac3471fba4b87b9a43974d6-1"></a><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"800px"</span><span class="p">&gt;</span>
+<a name="rest_code_3a79ec628ac3471fba4b87b9a43974d6-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span><span class="p">&gt;</span>download the PDF.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a name="rest_code_3a79ec628ac3471fba4b87b9a43974d6-3"></a><span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+</pre>
+</div>
+<div class="section" id="images-with-defined-size">
+<h3>Images with defined size</h3>
+<pre class="code html"><a name="rest_code_52d535d0465848d8844560cb5e14c7fe-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"/image.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"drawing"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span><span class="p">/&gt;</span>
+</pre>
+</div>
+<div class="section" id="git">
+<h3>Git</h3>
+<p><a class="reference external" href="https://docs.github.com/en/github/using-git/">https://docs.github.com/en/github/using-git/</a></p>
+<pre class="code bash"><a name="rest_code_6e5080ccbf4b41f6a871eafff8fd0a60-1"></a>git init
+<a name="rest_code_6e5080ccbf4b41f6a871eafff8fd0a60-2"></a>git remote -v
+<a name="rest_code_6e5080ccbf4b41f6a871eafff8fd0a60-3"></a>git remote rm &lt;remote_name&gt;
+<a name="rest_code_6e5080ccbf4b41f6a871eafff8fd0a60-4"></a>git remote add origin https://github.com/&lt;user_name&gt;/&lt;repo_name&gt;.git
+<a name="rest_code_6e5080ccbf4b41f6a871eafff8fd0a60-5"></a>git push &lt;remote_name&gt; &lt;branch_name&gt;
+<a name="rest_code_6e5080ccbf4b41f6a871eafff8fd0a60-6"></a>git push origin master
 </pre>
 </div>
 </div>

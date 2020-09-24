@@ -3,7 +3,163 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 17 Sep 2020 10:20:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>test pdf2html</title><link>https://paulomarconi.github.io/blog/test-pdf2html/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div data-include="test.html"&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/blog/test-pdf2html/</guid><pubDate>Thu, 17 Sep 2020 00:19:26 GMT</pubDate></item><item><title>MPC with feed forward Steady-State Target Optimization (SSTO)</title><link>https://paulomarconi.github.io/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 24 Sep 2020 10:49:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>test_html</title><link>https://paulomarconi.github.io/blog/test_html/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/ACS6116_assignment_only.pdf" width="100%" height="2400px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/ACS6116_assignment_only.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
+&lt;/object&gt;</description><guid>https://paulomarconi.github.io/blog/test_html/</guid><pubDate>Thu, 24 Sep 2020 09:11:16 GMT</pubDate></item><item><title>MPC on Jupyter Notebook with Matlab-kernel</title><link>https://paulomarconi.github.io/blog/MPC/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Simple-Model-Predictive-Control-(MPC)-on-Jupyter-Notebook-with-Matlab-kernel"&gt;Simple Model Predictive Control (MPC) on Jupyter Notebook with Matlab-kernel&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC/#Simple-Model-Predictive-Control-(MPC)-on-Jupyter-Notebook-with-Matlab-kernel"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following presents a constrained and unconstrained Linear Quadratic Model Predictive Control (LQ-MPC) simulation on Matlab-kernel for Jupyter Notebook. The code files also can be used in Matlab natively.&lt;/p&gt;
+&lt;h2 id="Pre-requisites"&gt;Pre-requisites&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC/#Pre-requisites"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Knowledge in Control Systems theory.&lt;/li&gt;
+&lt;li&gt;Convex quadratic optimization theory.&lt;/li&gt;
+&lt;li&gt;Jupyter Notebook with Matlab-kernel.&lt;/li&gt;
+&lt;li&gt;Matlab.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/blog/MPC/</guid><pubDate>Wed, 23 Sep 2020 23:17:08 GMT</pubDate></item><item><title>MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following presents a constrained Linear Quadratic Model Predictive Control (LQ-MPC) with offset-free tracking and disturbance rejection using the feed-forward Steady-State Target Optimization (SSTO) approach.&lt;/p&gt;
+&lt;h3 id="Pre-requisites"&gt;Pre-requisites&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Pre-requisites"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Knowledge in Control Systems theory.&lt;/li&gt;
+&lt;li&gt;MPC theory.&lt;/li&gt;
+&lt;li&gt;Convex quadratic optimization theory.&lt;/li&gt;
+&lt;li&gt;Matlab or Jupyter Notebook with Matlab-kernel.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="Objective-of-this-Notebook"&gt;Objective of this Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Objective-of-this-Notebook"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The objective is to describe step-by-step the basic MPC-SSTO methodology using the Jupyter Matlab-kernel.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="MPC-SSTO-block-diagram"&gt;MPC-SSTO block diagram&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#MPC-SSTO-block-diagram"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="https://paulomarconi.github.io/images/MPC-SSTO/MPC-SSTO.png" alt="drawing" width="50%"&gt;&lt;/p&gt;
+&lt;p&gt;For the Discrete Linear Time-Invariant (DLTI) state-space system,
+$$
+\begin{equation}
+\begin{aligned}
+x(k+1) &amp;amp;= A~x(k)+B~u(k)+B_d~d(k)\\
+y(k) &amp;amp;= C~x(k)+D_d~d(k), \quad k=0,1,2,\dots
+\end{aligned}
+\end{equation}
+$$
+where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, $y\in\mathbb{R}^p$, and $d\in\mathbb{R}^q$ are the states, input, output, and disturbance vectors respectively. $A,B,C,$ are the state, input, and output matrices, and $B_d,D_d$ are the disturbance matrices in the input, and in the output. $k$ is the sampling time.&lt;/p&gt;
+&lt;p&gt;Given the reference $r$, and the disturbance $d$. The idea is to compute,
+$$ x \rightarrow x_{ss}, \quad u \rightarrow u_{ss} $$
+defining two auxiliar variables as,
+$$ \xi \approx x - x_{ss}, \quad v \approx u - u_{ss} $$&lt;/p&gt;
+&lt;p&gt;Therefore, the objective is to regulate,
+$$ \xi \rightarrow 0, \quad v \rightarrow 0 $$
+where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Cost-function"&gt;Cost function&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Cost-function"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The problem ${\rm I\!P}_N$ is to minimize $v(k)$ given the following cost function,
+$$
+\begin{align}
+    {\rm I\!P}_N (v(k)) : \min_{v(k)}\sum_{j=0}^{N-1} &amp;amp; (\xi^\intercal(k+j|k)~Q~\xi(k+j|k) + v^\intercal(k+j|k)~R~v(k+j|k)) + \xi^\intercal(k+N|k)~P~\xi(k+N|k) \\
+    \text{subject to, for } j = 0, 1, 2, \dots, N-1 \\  
+    \xi(k+1+j|k) &amp;amp;= A~\xi(k+j|k)+B~v(k+j|k) \\
+    \xi(k|k) &amp;amp;= \xi(k) \\
+    P_x ( \xi(k+j|k) + x_{ss} )&amp;amp;\leq q_x  \\
+    P_u ( v(k+j|k) + u_{ss} )&amp;amp;\leq q_u  \\
+    P_{x_N}~\xi(k+N|k) &amp;amp;\leq \tilde{q}_{x_N}\\   
+\end{align}
+$$
+where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. $q_x$ and $q_u$ are the states and input inequality constraints respectively, which are explained in &lt;strong&gt;Section C&lt;/strong&gt; of the &lt;em&gt;Proposed Solution&lt;/em&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Deadbeat-mode-2-terminal-inequality-constraints"&gt;Deadbeat mode-2 terminal inequality constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Deadbeat-mode-2-terminal-inequality-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;It worth describing a litte more (8).
+$$ 
+\begin{equation}
+\begin{aligned}
+\underbrace{
+    \overbrace{
+        \begin{bmatrix}
+        P_x             &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
+        P_u~K_\infty    &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
+        0               &amp;amp; P_x             &amp;amp; \dots &amp;amp; 0     \\
+        0               &amp;amp; P_u~K_\infty    &amp;amp; \dots &amp;amp; 0     \\
+        \dots           &amp;amp; \dots           &amp;amp; \dots &amp;amp; \dots
+        \end{bmatrix}
+    }^{\mathcal{M}}
+    \begin{bmatrix}
+    (A+B K_\infty)^0     \\
+    (A+B K_\infty)^1     \\
+    \vdots        \\
+    (A+B K_\infty)^{N-1}
+    \end{bmatrix}
+}_{P_{x_N}}
+\xi(k+N|k)
+\leq
+\underbrace{
+    \bf{1}_{n \times 1} \otimes
+    \begin{bmatrix}
+    q_x - P_x~x_{ss}\\
+    q_u - P_u~u_{ss}
+    \end{bmatrix}
+}_{\tilde{q}_{x_N}}
+\end{aligned}
+\end{equation}
+$$&lt;/p&gt;
+&lt;p&gt;where 
+$ 
+\mathcal{M} = \bf{I}_{n \times n} \otimes 
+\begin{bmatrix}
+    P_x \\
+    P_u~K_\infty 
+\end{bmatrix} 
+$
+, and $K_\infty$ is a Linear Quadratic Regulator (LGR) gain.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="The-system-problem,-and-the-design-requirements"&gt;The system problem, and the design requirements&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#The-system-problem,-and-the-design-requirements"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/ACS6116_assignment_only.pdf" width="100%" height="800px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/ACS6116_assignment_only.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
+&lt;/object&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="The-proposed-solution"&gt;The proposed solution&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#The-proposed-solution"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px"&gt; 
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
+&lt;/object&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h3 id="The-code-has-regulation-mode-which-is-explained-in-a-previous-post-of-MPC"&gt;The code has regulation mode which is explained in a previous post of MPC&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#The-code-has-regulation-mode-which-is-explained-in-a-previous-post-of-MPC"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
 &lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
@@ -265,9 +421,9 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/'&lt;/span&gt;
 
 &lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;close&lt;/span&gt; &lt;span class="nb"&gt;all&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nb"&gt;clc&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="c"&gt;% path('ACS6116_mcode',path); % temporal&lt;/span&gt;
 
-&lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'trk'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="c"&gt;%regulation=reg, tracking=trk&lt;/span&gt;
+&lt;span class="c"&gt;% regulation=reg, tracking=trk&lt;/span&gt;
+&lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'trk'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
 
 &lt;span class="c"&gt;%% Global variables&lt;/span&gt;
 &lt;span class="n"&gt;x0&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
@@ -1248,45 +1404,6 @@ and constraints are satisfied to within the default value of the constraint tole
 &lt;/div&gt;
 
 &lt;/div&gt;
-&lt;div class="cell border-box-sizing code_cell rendered"&gt;
-&lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
-&lt;div class="inner_cell"&gt;
-    &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="MPC-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;MPC with feed forward Steady-State Target Optimization (SSTO)&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#MPC-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The following presents a constrained Linear Quadratic Model Predictive Control (LQ-MPC) with offset-free tracking and disturbance rejection using the feed-forward Steady-State Target Optimization (SSTO) approach for an isolated power system. The MPC control law uses Finite-Receding-Horizon method in dual-mode.&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="System-and-design-requirements"&gt;System and design requirements&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#System-and-design-requirements"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/ACS6116_assignment_only.pdf" width="100%" height="800px"&gt; 
-    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/ACS6116_assignment_only.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
-&lt;/object&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
-&lt;/div&gt;&lt;div class="inner_cell"&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="The-proposed-solution"&gt;The proposed solution&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#The-proposed-solution"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="800px"&gt; 
-    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
-&lt;/object&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
@@ -2095,7 +2212,7 @@ output
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
 &lt;li&gt;Check if the kernels are available. 
-&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" alt="VSCode kernels"&gt;
+&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" alt="drawing" width="80%"&gt; 
 They are double listed because one means that the paths is correct, and the other means it's available. Perhaps it's a bug, I'm not sure. &lt;/li&gt;
 &lt;li&gt;Alternatively, activate &lt;code&gt;jmatlabNikola&lt;/code&gt; and run VSCode with Anaconda Navigator.&lt;/li&gt;
 &lt;li&gt;Remember to switch the &lt;strong&gt;Matlab and Python kernels&lt;/strong&gt; for each cell.&lt;/li&gt;
@@ -2604,7 +2721,7 @@ $$
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Incorrect-cell-code-highlighting-with-two-kernels"&gt;Incorrect cell code highlighting with two kernels&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Incorrect-cell-code-highlighting-with-two-kernels"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The cell code highlighting has some problems when you have double kernels in your Notebook, which is a problema of the Jupyter Notebook metadata.&lt;/p&gt;
 &lt;p&gt;Example of poor code highlighting.
-&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" alt="Poor cell code highlighting"&gt;&lt;/p&gt;
+&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" alt="drawing" width="40%"&gt;&lt;/p&gt;
 &lt;p&gt;My &lt;strong&gt;partial solution&lt;/strong&gt; is to add the following to the &lt;code&gt;.ipynb&lt;/code&gt; metadata (raw data)&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;"metadata": {
@@ -2617,12 +2734,12 @@ $$
 &lt;p&gt;It's done only once but you have to edit the Notebook with VSCode. If you edit it with the Jupyter Notebook browser GUI, it will change the metadata content every time you switch the kernel. Try it for yourself!.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;With &lt;code&gt;"pygments_lexer": "octave"&lt;/code&gt;.
-&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" alt="Octave cell code highlighting"&gt; &lt;/li&gt;
+&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" alt="drawing" width="40%"&gt;&lt;/li&gt;
 &lt;li&gt;With &lt;code&gt;"pygments_lexer": "ipython3"&lt;/code&gt; Pygments.
-&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" alt="ipython3 cell code highlighting"&gt; &lt;/li&gt;
+&lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" alt="drawing" width="40%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you want to try multiple languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to do multiple languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
