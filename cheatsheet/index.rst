@@ -147,7 +147,7 @@ Embedded pdf
 
 .. code-block:: html 
 
-    <object data="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/<user_name/<repository_name>/master/<file_name>.pdf" width="100%" height="800px"> 
+    <object data="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/<user_name/<repository_name>/master/<file_name>.pdf" width="100%" height="1200px"> 
         <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/<user_name/<repository_name>/master/<file_name>.pdf">download the PDF.</a></p>  
     </object> 
 
