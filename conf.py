@@ -138,10 +138,10 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/index.html", "Home"),
+        # ("/index.html", "Home"),
         ("/archive.html", "Blog"),
         ("/categories/", "Tags"),
-        ("/bio/index.html", "Bio"),
+        # ("/bio/index.html", "Bio"),
         ("/cheatsheet/index.html", "Cheatsheet"),                
         ("/rss.xml", "RSS feed"),
     ),
@@ -1132,7 +1132,7 @@ DEPLOY_DRAFTS = False
 MATHJAX_CONFIG = """
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-    tex2jax: {
+    tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
         inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
         processEscapes: true
@@ -1141,18 +1141,12 @@ MathJax.Hub.Config({
     "HTML-CSS": {
         styles: {'.MathJax_Display': {"margin": 0}}
     },
-    TeX: { 
+    TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
         equationNumbers: { 
-            autoNumber: "all", // AMS, all, none            
-            useLabelIds: true,             
+            autoNumber: "none" // AMS, all, none                       
         } 
     }
 });
-MathJax.Hub.Queue(
-  ["resetEquationNumbers", MathJax.InputJax.TeX],
-  ["PreProcess", MathJax.Hub],
-  ["Reprocess", MathJax.Hub]
-);
 </script>
 """
 

@@ -1,0 +1,53 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc} %encoding multi-byte 
+\usepackage[T1]{fontenc} %para los separación de palabras "can-ción"
+\usepackage{mathptmx}
+% -----------------------------------------------------------------------------
+\usepackage{amsmath,amssymb,amsfonts,latexsym,textcomp} %paquetes matematicos
+\usepackage{array,multirow,booktabs,tabulary} %tablas y arrays
+\usepackage{graphicx}   
+\usepackage{caption,float,subfigure} %float=figuras flotantes.
+\usepackage{verbatim}  %texto raw 
+\usepackage[ampersand]{easylist}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table,x11names]{xcolor} 
+\usepackage{multicol}
+
+%font for mathcal using mathalfa
+\usepackage[cal=cm]{mathalfa} 
+
+
+% --- Algorithms2e ---------------------------------------------------------
+\usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e} %probar vlined o lined
+% \SetKwProg{Prog}{Title}{is}{end} 
+\SetKwProg{Config}{config}{}{end} 
+\SetKwProg{Def}{def}{}{end} 
+\SetKwProg{Fn}{Function}{}{end} 
+\SetKwProg{Main}{main}{}{end} 
+
+\begin{document}
+	
+\begin{algorithm}[H]
+	\caption{Unconstrained MPC with Kalman Filter}
+	\KwData{$x(0),~Q,~R,~Ts,~N$}
+	\KwResult{$u^*(k)$}
+	Compute prediction matrices $F,~G$, and $H,~L,~M$\;
+	Compute $P$ using the mode-2 gain $K$ to guarantee stability\;
+	Compute $K_{N}$\;
+	Compute the Kalman Filter gain $L_{KF}$\;
+	Initialize $x(0)\leftarrow x_0$\;
+	\For{$k=0:nk$}{
+		Measure the current noisy output: $y(k)\leftarrow C~x(k)+v(k)$\;		
+		Aapply the first control input to the current state: $u^*(k)\leftarrow K_N x(k)$\;
+		Estimate the state $\hat{x}(k)$, and close the loop: $x(k)\leftarrow A~x(k)+B~u^*(k)+L_{KF}(y(k)-C~x(k))+w(k) $\; 
+		Set the noisy state $x(k+1)$ for the next iteration\;
+		Wait one time step\;
+		Increment $k$\;
+	}
+\end{algorithm}
+
+\end{document}
+
+
+
+
