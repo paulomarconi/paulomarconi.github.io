@@ -7,58 +7,70 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/anaconda.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-09-27T23:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/awgn.xml</loc>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/control-systems.xml</loc>
-  <lastmod>2020-09-27T04:06:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/github.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-09-27T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/jupyter.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-09-27T23:22:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/kalman-filter.xml</loc>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
-  <lastmod>2020-09-27T04:06:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nikola.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-09-27T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/optimization.xml</loc>
-  <lastmod>2020-09-27T04:06:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/python.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-09-27T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/ssto.xml</loc>
-  <lastmod>2020-09-27T04:06:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/unconstrained.xml</loc>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/vscode.xml</loc>
-  <lastmod>2020-09-24T10:59:00Z</lastmod>
+  <lastmod>2020-09-27T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
-  <lastmod>2020-09-27T09:38:00Z</lastmod>
+  <lastmod>2020-09-28T05:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2020-09-27T09:38:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-09-27T09:38:00Z</lastmod>
+  <lastmod>2020-10-01T05:12:00Z</lastmod>
  </sitemap>
 </sitemapindex>

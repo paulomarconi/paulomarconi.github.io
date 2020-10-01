@@ -1,20 +1,5 @@
 
 function [F,G] = predict_mats(A,B,N)
-    %
-    % PREDICT_MATS.M returns the MPC prediction matrices for a system
-    %
-    %	x^+ = A*x + B*u
-    %
-    % That is, the matrices F and G from the equation
-    %
-    %	X = F*x + G*U
-    %
-    % USAGE:
-    %
-    % 	[F,G] = predict_mats(A,B,N)
-    %
-    % where N is prediction horizon length.
-    %
     % P. Trodden, 2015.
 
     % dimensions

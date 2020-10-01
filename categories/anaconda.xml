@@ -3,7 +3,15 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 24 Sep 2020 10:59:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 27 Sep 2020 23:22:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Introduction" data-toc-modified-id="Introduction-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Configure-VSCode" data-toc-modified-id="Configure-VSCode-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Configure VSCode&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-environment-with-Anaconda-or-Conda" data-toc-modified-id="Create-a-new-environment-with-Anaconda-or-Conda-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Create a new environment with Anaconda or Conda&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Install-Jupyter-Notebook,-Nikola-and-jmatlab" data-toc-modified-id="Install-Jupyter-Notebook,-Nikola-and-jmatlab-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Install Jupyter Notebook, Nikola and jmatlab&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Config-Matlab" data-toc-modified-id="Config-Matlab-5.1"&gt;&lt;span class="toc-item-num"&gt;5.1  &lt;/span&gt;Config Matlab&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-Nikola-demo-site" data-toc-modified-id="Create-a-Nikola-demo-site-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Create a Nikola demo site&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-post-and-new-page" data-toc-modified-id="Create-a-new-post-and-new-page-6.1"&gt;&lt;span class="toc-item-num"&gt;6.1  &lt;/span&gt;Create a new post and new page&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-clean-Nikola-site" data-toc-modified-id="Create-a-clean-Nikola-site-6.2"&gt;&lt;span class="toc-item-num"&gt;6.2  &lt;/span&gt;Create a clean Nikola site&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Nikola-directories" data-toc-modified-id="Nikola-directories-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;Nikola directories&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Configure-a-non-blog-Nikola-site" data-toc-modified-id="Configure-a-non-blog-Nikola-site-8"&gt;&lt;span class="toc-item-num"&gt;8  &lt;/span&gt;Configure a non-blog Nikola site&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-index-page-and-bio-page" data-toc-modified-id="Create-the-index-page-and-bio-page-8.1"&gt;&lt;span class="toc-item-num"&gt;8.1  &lt;/span&gt;Create the index page and bio page&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-Jupyter-Notebooks" data-toc-modified-id="Use-Jupyter-Notebooks-8.2"&gt;&lt;span class="toc-item-num"&gt;8.2  &lt;/span&gt;Use Jupyter Notebooks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-post_ipynb.tmpl-template" data-toc-modified-id="Create-the-post_ipynb.tmpl-template-8.3"&gt;&lt;span class="toc-item-num"&gt;8.3  &lt;/span&gt;Create the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; template&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-the-post_ipynb.css" data-toc-modified-id="Create-the-post_ipynb.css-8.4"&gt;&lt;span class="toc-item-num"&gt;8.4  &lt;/span&gt;Create the &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Clean-version-of-post_ipynb.css" data-toc-modified-id="Clean-version-of-post_ipynb.css-8.5"&gt;&lt;span class="toc-item-num"&gt;8.5  &lt;/span&gt;Clean version of &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Use-your-custom-theme" data-toc-modified-id="Use-your-custom-theme-8.6"&gt;&lt;span class="toc-item-num"&gt;8.6  &lt;/span&gt;Use your custom theme&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Extra-configurations" data-toc-modified-id="Extra-configurations-9"&gt;&lt;span class="toc-item-num"&gt;9  &lt;/span&gt;Extra configurations&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Output-files-folder-location" data-toc-modified-id="Output-files-folder-location-9.1"&gt;&lt;span class="toc-item-num"&gt;9.1  &lt;/span&gt;Output &lt;code&gt;files&lt;/code&gt; folder location&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Avoid-deploying-draft-posts" data-toc-modified-id="Avoid-deploying-draft-posts-9.2"&gt;&lt;span class="toc-item-num"&gt;9.2  &lt;/span&gt;Avoid deploying draft posts&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Enable-single-Archive" data-toc-modified-id="Enable-single-Archive-9.3"&gt;&lt;span class="toc-item-num"&gt;9.3  &lt;/span&gt;Enable single Archive&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Favicon" data-toc-modified-id="Favicon-9.4"&gt;&lt;span class="toc-item-num"&gt;9.4  &lt;/span&gt;Favicon&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#License" data-toc-modified-id="License-9.5"&gt;&lt;span class="toc-item-num"&gt;9.5  &lt;/span&gt;License&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Header" data-toc-modified-id="Header-9.6"&gt;&lt;span class="toc-item-num"&gt;9.6  &lt;/span&gt;Header&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Footer" data-toc-modified-id="Footer-9.7"&gt;&lt;span class="toc-item-num"&gt;9.7  &lt;/span&gt;Footer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Google-search" data-toc-modified-id="Google-search-9.8"&gt;&lt;span class="toc-item-num"&gt;9.8  &lt;/span&gt;Google search&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Disqus" data-toc-modified-id="Disqus-9.9"&gt;&lt;span class="toc-item-num"&gt;9.9  &lt;/span&gt;Disqus&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Config-the-sticky-menu" data-toc-modified-id="Config-the-sticky-menu-9.10"&gt;&lt;span class="toc-item-num"&gt;9.10  &lt;/span&gt;Config the sticky menu&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Code-highlighting" data-toc-modified-id="Code-highlighting-9.11"&gt;&lt;span class="toc-item-num"&gt;9.11  &lt;/span&gt;Code highlighting&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Adding-Prism" data-toc-modified-id="Adding-Prism-9.12"&gt;&lt;span class="toc-item-num"&gt;9.12  &lt;/span&gt;Adding Prism&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Latex-with-Mathjax" data-toc-modified-id="Latex-with-Mathjax-10"&gt;&lt;span class="toc-item-num"&gt;10  &lt;/span&gt;Latex with Mathjax&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#GitHub-pages" data-toc-modified-id="GitHub-pages-11"&gt;&lt;span class="toc-item-num"&gt;11  &lt;/span&gt;GitHub pages&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook" data-toc-modified-id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook-12"&gt;&lt;span class="toc-item-num"&gt;12  &lt;/span&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Python-test" data-toc-modified-id="Python-test-13"&gt;&lt;span class="toc-item-num"&gt;13  &lt;/span&gt;Python test&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-test" data-toc-modified-id="Matlab-test-14"&gt;&lt;span class="toc-item-num"&gt;14  &lt;/span&gt;Matlab test&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-functions" data-toc-modified-id="Matlab-functions-14.1"&gt;&lt;span class="toc-item-num"&gt;14.1  &lt;/span&gt;Matlab functions&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#3D-plotting" data-toc-modified-id="3D-plotting-14.2"&gt;&lt;span class="toc-item-num"&gt;14.2  &lt;/span&gt;3D plotting&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-optimization-solver" data-toc-modified-id="Matlab-optimization-solver-14.3"&gt;&lt;span class="toc-item-num"&gt;14.3  &lt;/span&gt;Matlab optimization solver&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing" data-toc-modified-id="LaTex-testing-15"&gt;&lt;span class="toc-item-num"&gt;15  &lt;/span&gt;LaTex testing&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Code-Highlighting-testing" data-toc-modified-id="Code-Highlighting-testing-16"&gt;&lt;span class="toc-item-num"&gt;16  &lt;/span&gt;Code Highlighting testing&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Embedded-.pdf" data-toc-modified-id="Embedded-.pdf-17"&gt;&lt;span class="toc-item-num"&gt;17  &lt;/span&gt;Embedded &lt;code&gt;.pdf&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Example" data-toc-modified-id="Example-17.1"&gt;&lt;span class="toc-item-num"&gt;17.1  &lt;/span&gt;Example&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/#Incorrect-cell-code-highlighting-with-two-kernels" data-toc-modified-id="Incorrect-cell-code-highlighting-with-two-kernels-18"&gt;&lt;span class="toc-item-num"&gt;18  &lt;/span&gt;Incorrect cell code highlighting with two kernels&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt;, &lt;a href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican&lt;/a&gt;, and &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;Sphinx&lt;/a&gt;. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.&lt;/p&gt;
@@ -69,16 +77,14 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;p&gt;So, I want to write a post:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → it switches to Python 3.6 (you can check with &lt;code&gt;python --version&lt;/code&gt;). 
-&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;
-(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
+&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
 Python 3.6.10 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
 Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available. &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;If I want to work with OpenCV:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Run &lt;code&gt;activate openCV_TF&lt;/code&gt; → it switches to Python 3.7. The kernel and libraries of &lt;code&gt;jmatlabNikola&lt;/code&gt; are not available and won't get mixed with this environment.
-&lt;pre&gt;&lt;code&gt;(openCV_TF) C:\Users\&amp;lt;user_name&amp;gt;\ML_project&amp;gt;
-(openCV_TF) C:\Users\&amp;lt;user_name&amp;gt;\ML_project&amp;gt;python --version
+&lt;pre&gt;&lt;code&gt;(openCV_TF) C:\Users\&amp;lt;user_name&amp;gt;\ML_project&amp;gt;python --version
 Python 3.7.6 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -105,8 +111,23 @@ Python 3.7.6 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
 &lt;li&gt;With pip.
 &lt;pre&gt;&lt;code&gt;pip install notebook&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Run Jupyter Notebook in your browser to check it was installed correctly.
+&lt;li&gt;Install the &lt;a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"&gt;&lt;code&gt;nbextensions&lt;/code&gt;&lt;/a&gt;.
+&lt;pre&gt;&lt;code&gt;pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Install the Jupyter nbextension configurator
+&lt;pre&gt;&lt;code&gt;pip install jupyter_nbextensions_configurator
+jupyter nbextensions_configurator enable --user&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;Run Jupyter Notebook by command line to check it was installed correctly with the nbextensions. 
 &lt;pre&gt;&lt;code&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;
+It will open the browser in &lt;a href="http://localhost:8888"&gt;http://localhost:8888&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I recommend to enable the nbextensions&lt;ul&gt;
+&lt;li&gt;(some) LaTex environments for Jupyter&lt;/li&gt;
+&lt;li&gt;Equation Auto Numbering&lt;/li&gt;
+&lt;li&gt;CodeMirror mode extensions -&amp;gt; Matlab/Octave highlighting&lt;/li&gt;
+&lt;li&gt;Table of Contents (2) -&amp;gt; auto ToC&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -732,11 +753,11 @@ BODY_END = '''
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Latex-with-Mathjax"&gt;Latex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Latex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax. If you want support for the &lt;code&gt;$...$&lt;/code&gt; inline LaTex syntax, uncomment the following on Nikola &lt;code&gt;conf.py&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="LaTex-with-Mathjax"&gt;LaTex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax, and with the Jupyter nbextensions &lt;code&gt;\begin{align}...\end{align}&lt;/code&gt; or others LaTex environments can be used. But, if you want support for the &lt;code&gt;$...$&lt;/code&gt; inline or &lt;code&gt;$$...$$&lt;/code&gt; paragraph syntax LaTex, uncomment the following on Nikola &lt;code&gt;conf.py&lt;/code&gt;. Also, you can add &lt;code&gt;Tex&lt;/code&gt; commands for the auto numbering equations. More options at &lt;a href="https://docs.mathjax.org/en/v2.7-latest/options/"&gt;MathJax docs&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MATHJAX_CONFIG = """
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/x-mathjax-config"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="nx"&gt;MathJax&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Hub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Config&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
-    &lt;span class="nx"&gt;tex2jax&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;tex2jax&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="c1"&gt;// https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html&lt;/span&gt;
         &lt;span class="nx"&gt;inlineMath&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'$'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"\\\("&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"\\\)"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt;
         &lt;span class="nx"&gt;displayMath&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'$$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;'$$'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"\\\["&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s2"&gt;"\\\]"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt;
         &lt;span class="nx"&gt;processEscapes&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
@@ -744,6 +765,11 @@ BODY_END = '''
     &lt;span class="nx"&gt;displayAlign&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'center'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// Change this to 'left' if you want left-aligned equations.&lt;/span&gt;
     &lt;span class="s2"&gt;"HTML-CSS"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
         &lt;span class="nx"&gt;styles&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'.MathJax_Display'&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"margin"&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}}&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nx"&gt;TeX&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="c1"&gt;// https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html&lt;/span&gt;
+        &lt;span class="nx"&gt;equationNumbers&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; 
+            &lt;span class="nx"&gt;autoNumber&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"AMS"&lt;/span&gt; &lt;span class="c1"&gt;// AMS, all, none                        &lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt; 
     &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;span class="p"&gt;});&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -831,10 +857,10 @@ They are double listed because one means that the paths is correct, and the othe
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello world'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello world'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"i="&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;for&lt;/span&gt; &lt;span class="s"&gt;i&lt;/span&gt; &lt;span class="s"&gt;in&lt;/span&gt; &lt;span class="s"&gt;range(0,12,2):&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"i="&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -879,11 +905,11 @@ i= 10
 &lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"hello world"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;compact&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"hello world"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="s"&gt;compact&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
     &lt;span class="n"&gt;i&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="s"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -928,7 +954,7 @@ i =
 &lt;h3 id="Matlab-functions"&gt;Matlab functions&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-functions"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Matlab-kernel does not support inline functions so you need to save them in files.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;For the Jupyter Notebook browser, use the magic command &lt;code&gt;%%file /files/&amp;lt;file&amp;gt;.m&lt;/code&gt;. It will save it in &lt;code&gt;/blog/files&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;But for VSCode use &lt;code&gt;c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;But for VSCode use &lt;code&gt;%%file 'c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m'&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -939,14 +965,14 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'&lt;/span&gt;
 
 &lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;c &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;multi_line_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a,b&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% in-file comments can be added like this&lt;/span&gt;
     &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -985,14 +1011,14 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files'&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files'&lt;/span&gt;
 
-&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;compact&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
-    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fnc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="k"&gt;end&lt;/span&gt;
-&lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="nb"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="s"&gt;compact&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fnc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;end&lt;/span&gt;
+&lt;span class="s"&gt;disp(c)&lt;/span&gt;
+&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1045,14 +1071,14 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;linspace&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;linspace&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;ty&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;xx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yy&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;meshgrid&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sqrt&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xx&lt;/span&gt; &lt;span class="o"&gt;.^&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;yy&lt;/span&gt; &lt;span class="o"&gt;.^&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;eps&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;tz&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sin&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 &lt;span class="c"&gt;%plot inline&lt;/span&gt;
-&lt;span class="nb"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1104,7 +1130,7 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
     &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
     &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
@@ -1155,44 +1181,41 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas. Inline example, &lt;code&gt;$ f(x) = x^{2}$&lt;/code&gt; $ f(x) = x^{2}$.&lt;/p&gt;
+&lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas. Inline example, &lt;code&gt;$ f(x) = x^{2}$&lt;/code&gt; $ f(x) = x^{2}$. Remember that you can still use &lt;code&gt;$$...$$&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Some others&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="sb"&gt;$$&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;
-&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
-&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
-&lt;span class="nv"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
-&lt;span class="nb"&gt;        Px              &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;        P_u &lt;/span&gt;&lt;span class="nv"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;} K &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; P_x             &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;               &amp;amp; P_u &lt;/span&gt;&lt;span class="nv"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="nv"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;} K &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt;           &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt;           &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt; &amp;amp; &lt;/span&gt;&lt;span class="nv"&gt;\dots&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
-&lt;span class="nb"&gt;    }^{&lt;/span&gt;&lt;span class="nv"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{M}}&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;B K&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;B K&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;     &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\vdots&lt;/span&gt;&lt;span class="nb"&gt;        &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;B K&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^{n&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
-&lt;span class="nb"&gt;}_{P_{x_N}}&lt;/span&gt;
-&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;N|k}&lt;/span&gt;
-&lt;span class="nv"&gt;\leq&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nv"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
-&lt;span class="nb"&gt;    q_x    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    q_u    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    q_x    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    q_u    &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\vdots&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{bmatrix}&lt;/span&gt;
-&lt;span class="nb"&gt;}_{q_{x_N}}&lt;/span&gt;
-&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
-&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
-&lt;span class="s"&gt;$$&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+        &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+        Px              &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+        P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+        0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;x             &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+        0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+        &lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;
+        &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+    &lt;span class="nb"&gt;}^{&lt;/span&gt;&lt;span class="k"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;M&lt;span class="nb"&gt;}}&lt;/span&gt;
+    &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+    (A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;0     &lt;span class="k"&gt;\\&lt;/span&gt;
+    (A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;1     &lt;span class="k"&gt;\\&lt;/span&gt;
+    &lt;span class="k"&gt;\vdots&lt;/span&gt;        &lt;span class="k"&gt;\\&lt;/span&gt;
+    (A+B K)&lt;span class="nb"&gt;^{&lt;/span&gt;n-1&lt;span class="nb"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}_{&lt;/span&gt;P&lt;span class="nb"&gt;_{&lt;/span&gt;x&lt;span class="nb"&gt;_&lt;/span&gt;N&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+N|k&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\leq&lt;/span&gt;
+&lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+    q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
+    q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
+    q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
+    q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
+    &lt;span class="k"&gt;\vdots&lt;/span&gt;
+    &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;}_{&lt;/span&gt;q&lt;span class="nb"&gt;_{&lt;/span&gt;x&lt;span class="nb"&gt;_&lt;/span&gt;N&lt;span class="nb"&gt;}}&lt;/span&gt;
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-$$ 
 \begin{equation}
 \begin{aligned}
 \underbrace{
@@ -1224,22 +1247,18 @@ $$
     \end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
-\end{equation}
-$$&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="sb"&gt;$$&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
-&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{cases}&lt;/span&gt;
-&lt;span class="nv"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
-&lt;span class="nb"&gt;    &lt;/span&gt;&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &lt;/span&gt;&lt;span class="nv"&gt;\left&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt; y_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;  C &lt;/span&gt;&lt;span class="nv"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{x}_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="nv"&gt;\right&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    e_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}       &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\left&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;I&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} C &lt;/span&gt;&lt;span class="nv"&gt;\right&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt; e_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} &lt;/span&gt;&lt;span class="nv"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}   &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}       &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} &lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="nv"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;} K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}C~P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k}                                        &lt;/span&gt;&lt;span class="nv"&gt;\\&lt;/span&gt;&lt;span class="nb"&gt;&lt;/span&gt;
-&lt;span class="nb"&gt;    K_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}           &amp;amp; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt; P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} C^&lt;/span&gt;&lt;span class="nv"&gt;\intercal&lt;/span&gt;&lt;span class="nb"&gt; &lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;C P_{k&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;|k} C^&lt;/span&gt;&lt;span class="nv"&gt;\intercal&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;R_z&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;span class="nb"&gt;^{&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt;
-&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{aligned}&lt;/span&gt;
-&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{cases}&lt;/span&gt;
-&lt;span class="nv"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{equation}&lt;/span&gt;
-&lt;span class="s"&gt;$$&lt;/span&gt;
+\end{equation}&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;cases&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
+    &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; + &lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\left&lt;/span&gt;( y&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; -  C &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\right&lt;/span&gt;) &lt;span class="k"&gt;\\&lt;/span&gt;
+    e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\left&lt;/span&gt;(I-&lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; C &lt;span class="k"&gt;\right&lt;/span&gt;) e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; -&lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;   &lt;span class="k"&gt;\\&lt;/span&gt;
+    P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; - &lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;C~P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt;                                        &lt;span class="k"&gt;\\&lt;/span&gt;
+    K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt; (C P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt;+R&lt;span class="nb"&gt;_&lt;/span&gt;z)&lt;span class="nb"&gt;^{&lt;/span&gt;-1&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;cases&lt;span class="nb"&gt;}&lt;/span&gt;
+&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-$$
-\begin{equation}
+\begin{equation*}
 \begin{cases}
 \begin{aligned}
     \hat{x}_{k+1|k+1} &amp;amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
@@ -1248,8 +1267,7 @@ $$
     K_{k+1}           &amp;amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
 \end{aligned}
 \end{cases}
-\end{equation}
-$$
+\end{equation*}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1331,7 +1349,7 @@ $$
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" alt="drawing" width="40%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you want to do multiple languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to post with multiple languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

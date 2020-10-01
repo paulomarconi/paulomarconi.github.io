@@ -17,11 +17,12 @@
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <link rel="stylesheet" href="../../assets/css/prism.css">
 <meta name="author" content="Paulo Loma Marconi">
-<link rel="next" href="../MPC-SSTO/" title="MPC with feed-forward SSTO" type="text/html">
+<link rel="next" href="../MPCu/" title="Unconstrained MPC in Jupyter Notebook" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Blog with Nikola, Jupyter, Matlab, and GitHub pages">
 <meta property="og:url" content="https://paulomarconi.github.io/blog/Nikola-guide/">
-<meta property="og:description" content="Introduction¶Nikola is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, Hugo, Pelican, and Sphinx. After reviewing their pros and c">
+<meta property="og:description" content="Table of Contents
+1  Introduction2  Pre-requisites3  Configure VSCode4  Create a new environment with Anaconda or Conda5  Install Jupyter Notebook, Nikola and jmatlab5.1  Config Matlab6  Create a Niko">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-08-21T19:25:13-04:00">
 <meta property="article:tag" content="Anaconda">
@@ -55,16 +56,10 @@ navbar-dark bg-dark
         <div class="collapse navbar-collapse" id="bs-navbar">
             <ul class="navbar-nav mr-auto">
 <li class="nav-item">
-<a href="../../index.html" class="nav-link">Home</a>
-                </li>
-<li class="nav-item">
 <a href="../../archive.html" class="nav-link">Blog</a>
                 </li>
 <li class="nav-item">
 <a href="../../categories/" class="nav-link">Tags</a>
-                </li>
-<li class="nav-item">
-<a href="../../bio/index.html" class="nav-link">Bio</a>
                 </li>
 <li class="nav-item">
 <a href="../../cheatsheet/index.html" class="nav-link">Cheatsheet</a>
@@ -128,6 +123,76 @@ navbar-dark bg-dark
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<h2>Table of Contents<span class="tocSkip"></span>
+</h2>
+<div class="toc"><ul class="toc-item">
+<li><span><a href="#Introduction" data-toc-modified-id="Introduction-1"><span class="toc-item-num">1  </span>Introduction</a></span></li>
+<li><span><a href="#Pre-requisites" data-toc-modified-id="Pre-requisites-2"><span class="toc-item-num">2  </span>Pre-requisites</a></span></li>
+<li><span><a href="#Configure-VSCode" data-toc-modified-id="Configure-VSCode-3"><span class="toc-item-num">3  </span>Configure VSCode</a></span></li>
+<li><span><a href="#Create-a-new-environment-with-Anaconda-or-Conda" data-toc-modified-id="Create-a-new-environment-with-Anaconda-or-Conda-4"><span class="toc-item-num">4  </span>Create a new environment with Anaconda or Conda</a></span></li>
+<li>
+<span><a href="#Install-Jupyter-Notebook,-Nikola-and-jmatlab" data-toc-modified-id="Install-Jupyter-Notebook,-Nikola-and-jmatlab-5"><span class="toc-item-num">5  </span>Install Jupyter Notebook, Nikola and jmatlab</a></span><ul class="toc-item"><li><span><a href="#Config-Matlab" data-toc-modified-id="Config-Matlab-5.1"><span class="toc-item-num">5.1  </span>Config Matlab</a></span></li></ul>
+</li>
+<li>
+<span><a href="#Create-a-Nikola-demo-site" data-toc-modified-id="Create-a-Nikola-demo-site-6"><span class="toc-item-num">6  </span>Create a Nikola demo site</a></span><ul class="toc-item">
+<li><span><a href="#Create-a-new-post-and-new-page" data-toc-modified-id="Create-a-new-post-and-new-page-6.1"><span class="toc-item-num">6.1  </span>Create a new post and new page</a></span></li>
+<li><span><a href="#Create-a-clean-Nikola-site" data-toc-modified-id="Create-a-clean-Nikola-site-6.2"><span class="toc-item-num">6.2  </span>Create a clean Nikola site</a></span></li>
+</ul>
+</li>
+<li><span><a href="#Nikola-directories" data-toc-modified-id="Nikola-directories-7"><span class="toc-item-num">7  </span>Nikola directories</a></span></li>
+<li>
+<span><a href="#Configure-a-non-blog-Nikola-site" data-toc-modified-id="Configure-a-non-blog-Nikola-site-8"><span class="toc-item-num">8  </span>Configure a non-blog Nikola site</a></span><ul class="toc-item">
+<li><span><a href="#Create-the-index-page-and-bio-page" data-toc-modified-id="Create-the-index-page-and-bio-page-8.1"><span class="toc-item-num">8.1  </span>Create the index page and bio page</a></span></li>
+<li><span><a href="#Use-Jupyter-Notebooks" data-toc-modified-id="Use-Jupyter-Notebooks-8.2"><span class="toc-item-num">8.2  </span>Use Jupyter Notebooks</a></span></li>
+<li><span><a href="#Create-the-post_ipynb.tmpl-template" data-toc-modified-id="Create-the-post_ipynb.tmpl-template-8.3"><span class="toc-item-num">8.3  </span>Create the <code>post_ipynb.tmpl</code> template</a></span></li>
+<li><span><a href="#Create-the-post_ipynb.css" data-toc-modified-id="Create-the-post_ipynb.css-8.4"><span class="toc-item-num">8.4  </span>Create the <code>post_ipynb.css</code></a></span></li>
+<li><span><a href="#Clean-version-of-post_ipynb.css" data-toc-modified-id="Clean-version-of-post_ipynb.css-8.5"><span class="toc-item-num">8.5  </span>Clean version of <code>post_ipynb.css</code></a></span></li>
+<li><span><a href="#Use-your-custom-theme" data-toc-modified-id="Use-your-custom-theme-8.6"><span class="toc-item-num">8.6  </span>Use your custom theme</a></span></li>
+</ul>
+</li>
+<li>
+<span><a href="#Extra-configurations" data-toc-modified-id="Extra-configurations-9"><span class="toc-item-num">9  </span>Extra configurations</a></span><ul class="toc-item">
+<li><span><a href="#Output-files-folder-location" data-toc-modified-id="Output-files-folder-location-9.1"><span class="toc-item-num">9.1  </span>Output <code>files</code> folder location</a></span></li>
+<li><span><a href="#Avoid-deploying-draft-posts" data-toc-modified-id="Avoid-deploying-draft-posts-9.2"><span class="toc-item-num">9.2  </span>Avoid deploying draft posts</a></span></li>
+<li><span><a href="#Enable-single-Archive" data-toc-modified-id="Enable-single-Archive-9.3"><span class="toc-item-num">9.3  </span>Enable single Archive</a></span></li>
+<li><span><a href="#Favicon" data-toc-modified-id="Favicon-9.4"><span class="toc-item-num">9.4  </span>Favicon</a></span></li>
+<li><span><a href="#License" data-toc-modified-id="License-9.5"><span class="toc-item-num">9.5  </span>License</a></span></li>
+<li><span><a href="#Header" data-toc-modified-id="Header-9.6"><span class="toc-item-num">9.6  </span>Header</a></span></li>
+<li><span><a href="#Footer" data-toc-modified-id="Footer-9.7"><span class="toc-item-num">9.7  </span>Footer</a></span></li>
+<li><span><a href="#Google-search" data-toc-modified-id="Google-search-9.8"><span class="toc-item-num">9.8  </span>Google search</a></span></li>
+<li><span><a href="#Disqus" data-toc-modified-id="Disqus-9.9"><span class="toc-item-num">9.9  </span>Disqus</a></span></li>
+<li><span><a href="#Config-the-sticky-menu" data-toc-modified-id="Config-the-sticky-menu-9.10"><span class="toc-item-num">9.10  </span>Config the sticky menu</a></span></li>
+<li><span><a href="#Code-highlighting" data-toc-modified-id="Code-highlighting-9.11"><span class="toc-item-num">9.11  </span>Code highlighting</a></span></li>
+<li><span><a href="#Adding-Prism" data-toc-modified-id="Adding-Prism-9.12"><span class="toc-item-num">9.12  </span>Adding Prism</a></span></li>
+</ul>
+</li>
+<li><span><a href="#Latex-with-Mathjax" data-toc-modified-id="Latex-with-Mathjax-10"><span class="toc-item-num">10  </span>Latex with Mathjax</a></span></li>
+<li><span><a href="#GitHub-pages" data-toc-modified-id="GitHub-pages-11"><span class="toc-item-num">11  </span>GitHub pages</a></span></li>
+<li><span><a href="#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook" data-toc-modified-id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook-12"><span class="toc-item-num">12  </span>Testing Python and Matlab kernel on Jupyter Notebook</a></span></li>
+<li><span><a href="#Python-test" data-toc-modified-id="Python-test-13"><span class="toc-item-num">13  </span>Python test</a></span></li>
+<li>
+<span><a href="#Matlab-test" data-toc-modified-id="Matlab-test-14"><span class="toc-item-num">14  </span>Matlab test</a></span><ul class="toc-item">
+<li><span><a href="#Matlab-functions" data-toc-modified-id="Matlab-functions-14.1"><span class="toc-item-num">14.1  </span>Matlab functions</a></span></li>
+<li><span><a href="#3D-plotting" data-toc-modified-id="3D-plotting-14.2"><span class="toc-item-num">14.2  </span>3D plotting</a></span></li>
+<li><span><a href="#Matlab-optimization-solver" data-toc-modified-id="Matlab-optimization-solver-14.3"><span class="toc-item-num">14.3  </span>Matlab optimization solver</a></span></li>
+</ul>
+</li>
+<li><span><a href="#LaTex-testing" data-toc-modified-id="LaTex-testing-15"><span class="toc-item-num">15  </span>LaTex testing</a></span></li>
+<li><span><a href="#Code-Highlighting-testing" data-toc-modified-id="Code-Highlighting-testing-16"><span class="toc-item-num">16  </span>Code Highlighting testing</a></span></li>
+<li>
+<span><a href="#Embedded-.pdf" data-toc-modified-id="Embedded-.pdf-17"><span class="toc-item-num">17  </span>Embedded <code>.pdf</code></a></span><ul class="toc-item"><li><span><a href="#Example" data-toc-modified-id="Example-17.1"><span class="toc-item-num">17.1  </span>Example</a></span></li></ul>
+</li>
+<li><span><a href="#Incorrect-cell-code-highlighting-with-two-kernels" data-toc-modified-id="Incorrect-cell-code-highlighting-with-two-kernels-18"><span class="toc-item-num">18  </span>Incorrect cell code highlighting with two kernels</a></span></li>
+</ul></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -220,16 +285,14 @@ navbar-dark bg-dark
 <p>So, I want to write a post:</p>
 <ul>
 <li>Run <code>activate jmatlabNikola</code> → it switches to Python 3.6 (you can check with <code>python --version</code>). 
-<pre><code>(jmatlabNikola) C:\Users\&lt;user_name&gt;\blog&gt;
-(jmatlabNikola) C:\Users\&lt;user_name&gt;\blog&gt;python --version
+<pre><code>(jmatlabNikola) C:\Users\&lt;user_name&gt;\blog&gt;python --version
 Python 3.6.10 :: Anaconda, Inc.</code></pre>
 Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available. </li>
 </ul>
 <p>If I want to work with OpenCV:</p>
 <ul>
 <li>Run <code>activate openCV_TF</code> → it switches to Python 3.7. The kernel and libraries of <code>jmatlabNikola</code> are not available and won't get mixed with this environment.
-<pre><code>(openCV_TF) C:\Users\&lt;user_name&gt;\ML_project&gt;
-(openCV_TF) C:\Users\&lt;user_name&gt;\ML_project&gt;python --version
+<pre><code>(openCV_TF) C:\Users\&lt;user_name&gt;\ML_project&gt;python --version
 Python 3.7.6 :: Anaconda, Inc.</code></pre>
 </li>
 </ul>
@@ -260,8 +323,24 @@ Python 3.7.6 :: Anaconda, Inc.</code></pre>
 <li>With pip.
 <pre><code>pip install notebook</code></pre>
 </li>
-<li>Run Jupyter Notebook in your browser to check it was installed correctly.
+<li>Install the <a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"><code>nbextensions</code></a>.
+<pre><code>pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user</code></pre>
+</li>
+<li>Install the Jupyter nbextension configurator
+<pre><code>pip install jupyter_nbextensions_configurator
+jupyter nbextensions_configurator enable --user</code></pre>
+</li>
+<li>Run Jupyter Notebook by command line to check it was installed correctly with the nbextensions. 
 <pre><code>jupyter notebook</code></pre>
+It will open the browser in <a href="http://localhost:8888">http://localhost:8888</a>
+</li>
+<li>I recommend to enable the nbextensions<ul>
+<li>(some) LaTex environments for Jupyter</li>
+<li>Equation Auto Numbering</li>
+<li>CodeMirror mode extensions -&gt; Matlab/Octave highlighting</li>
+<li>Table of Contents (2) -&gt; auto ToC</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -982,13 +1061,13 @@ BODY_END = '''
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Latex-with-Mathjax">Latex with Mathjax<a class="anchor-link" href="#Latex-with-Mathjax">¶</a>
+<h2 id="LaTex-with-Mathjax">LaTex with Mathjax<a class="anchor-link" href="#LaTex-with-Mathjax">¶</a>
 </h2>
-<p>By default Nikola uses MathJax. If you want support for the <code>$...$</code> inline LaTex syntax, uncomment the following on Nikola <code>conf.py</code>.</p>
+<p>By default Nikola uses MathJax, and with the Jupyter nbextensions <code>\begin{align}...\end{align}</code> or others LaTex environments can be used. But, if you want support for the <code>$...$</code> inline or <code>$$...$$</code> paragraph syntax LaTex, uncomment the following on Nikola <code>conf.py</code>. Also, you can add <code>Tex</code> commands for the auto numbering equations. More options at <a href="https://docs.mathjax.org/en/v2.7-latest/options/">MathJax docs</a>.</p>
 <div class="highlight"><pre><span></span>MATHJAX_CONFIG = """
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/x-mathjax-config"</span><span class="p">&gt;</span>
 <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html</span>
         <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">'$'</span><span class="p">,</span><span class="s1">'$'</span><span class="p">],</span> <span class="p">[</span><span class="s2">"\\\("</span><span class="p">,</span><span class="s2">"\\\)"</span><span class="p">]</span> <span class="p">],</span>
         <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[</span> <span class="p">[</span><span class="s1">'$$'</span><span class="p">,</span><span class="s1">'$$'</span><span class="p">],</span> <span class="p">[</span><span class="s2">"\\\["</span><span class="p">,</span><span class="s2">"\\\]"</span><span class="p">]</span> <span class="p">],</span>
         <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span>
@@ -996,6 +1075,11 @@ BODY_END = '''
     <span class="nx">displayAlign</span><span class="o">:</span> <span class="s1">'center'</span><span class="p">,</span> <span class="c1">// Change this to 'left' if you want left-aligned equations.</span>
     <span class="s2">"HTML-CSS"</span><span class="o">:</span> <span class="p">{</span>
         <span class="nx">styles</span><span class="o">:</span> <span class="p">{</span><span class="s1">'.MathJax_Display'</span><span class="o">:</span> <span class="p">{</span><span class="s2">"margin"</span><span class="o">:</span> <span class="mi">0</span><span class="p">}}</span>
+    <span class="p">},</span>
+    <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html</span>
+        <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> 
+            <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">"AMS"</span> <span class="c1">// AMS, all, none                        </span>
+        <span class="p">}</span> 
     <span class="p">}</span>
 <span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
@@ -1093,10 +1177,10 @@ They are double listed because one means that the paths is correct, and the othe
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s">'hello world'</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">print</span><span class="p">(</span><span class="s">'hello world'</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s">"i="</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+<span class="n">for</span> <span class="s">i</span> <span class="s">in</span> <span class="s">range(0,12,2):</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">"i="</span><span class="p">,</span><span class="nb">i</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1145,11 +1229,11 @@ i= 10
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">)</span>
-<span class="n">format</span> <span class="n">compact</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">)</span>
+<span class="n">format</span> <span class="s">compact</span>
+<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span>
     <span class="n">i</span>
-<span class="k">end</span>
+<span class="s">end</span>
 </pre></div>
 
     </div>
@@ -1199,7 +1283,7 @@ i =
 <ul>
 <li>For the Jupyter Notebook browser, use the magic command <code>%%file /files/&lt;file&gt;.m</code>. It will save it in <code>/blog/files</code>
 </li>
-<li>But for VSCode use <code>c:/&lt;absolute_path&gt;/&lt;file&gt;.m</code>
+<li>But for VSCode use <code>%%file 'c:/&lt;absolute_path&gt;/&lt;file&gt;.m'</code>
 </li>
 </ul>
 </div>
@@ -1210,14 +1294,14 @@ i =
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'</span>
 
 <span class="k">function</span><span class="w"> </span>c <span class="p">=</span><span class="w"> </span><span class="nf">multi_line_func</span><span class="p">(</span>a,b<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c">% in-file comments can be added like this</span>
     <span class="n">a</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
     <span class="n">b</span> <span class="p">=</span> <span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
     <span class="n">c</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-<span class="k">end</span>
+<span class="n">end</span>
 </pre></div>
 
     </div>
@@ -1258,14 +1342,14 @@ i =
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files'</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files'</span>
 
-<span class="n">format</span> <span class="n">compact</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-    <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">fnc</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-<span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<span class="nb">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">format</span> <span class="s">compact</span>
+<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+    <span class="n">c</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">fnc</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="nb">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">end</span>
+<span class="s">disp(c)</span>
+<span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1322,14 +1406,14 @@ i =
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
 <span class="n">ty</span> <span class="p">=</span> <span class="n">tx</span><span class="p">;</span>
 <span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">);</span>
 <span class="n">r</span> <span class="p">=</span> <span class="nb">sqrt</span> <span class="p">(</span><span class="n">xx</span> <span class="o">.^</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">.^</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">eps</span><span class="p">;</span>
 <span class="n">tz</span> <span class="p">=</span> <span class="nb">sin</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">./</span> <span class="n">r</span><span class="p">;</span>
 
 <span class="c">%plot inline</span>
-<span class="nb">mesh</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
+<span class="n">mesh</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -1385,7 +1469,7 @@ i =
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
     <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span>
     <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
 <span class="n">f</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="o">-</span><span class="mi">3</span><span class="p">;</span><span class="mi">1</span><span class="p">];</span>
@@ -1440,44 +1524,41 @@ x =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="LaTex-testing">LaTex testing<a class="anchor-link" href="#LaTex-testing">¶</a>
 </h2>
-<p>Some LaTex formulas. Inline example, <code>$ f(x) = x^{2}$</code> $ f(x) = x^{2}$.</p>
+<p>Some LaTex formulas. Inline example, <code>$ f(x) = x^{2}$</code> $ f(x) = x^{2}$. Remember that you can still use <code>$$...$$</code>.</p>
 <p>Some others</p>
-<div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"> </span>
-<span class="nv">\begin</span><span class="nb">{equation}</span>
-<span class="nv">\begin</span><span class="nb">{aligned}</span>
-<span class="nv">\underbrace</span><span class="nb">{</span>
-<span class="nb">    </span><span class="nv">\overbrace</span><span class="nb">{</span>
-<span class="nb">        </span><span class="nv">\begin</span><span class="nb">{bmatrix}</span>
-<span class="nb">        Px              &amp; </span><span class="m">0</span><span class="nb">               &amp; </span><span class="nv">\dots</span><span class="nb"> &amp; </span><span class="m">0</span><span class="nb">     </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">        P_u </span><span class="nv">\bar</span><span class="nb">{</span><span class="nv">\nu</span><span class="nb">} K &amp; </span><span class="m">0</span><span class="nb">               &amp; </span><span class="nv">\dots</span><span class="nb"> &amp; </span><span class="m">0</span><span class="nb">     </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">        </span><span class="m">0</span><span class="nb">               &amp; P_x             &amp; </span><span class="nv">\dots</span><span class="nb"> &amp; </span><span class="m">0</span><span class="nb">     </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">        </span><span class="m">0</span><span class="nb">               &amp; P_u </span><span class="nv">\bar</span><span class="nb">{</span><span class="nv">\nu</span><span class="nb">} K &amp; </span><span class="nv">\dots</span><span class="nb"> &amp; </span><span class="m">0</span><span class="nb">     </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">        </span><span class="nv">\dots</span><span class="nb">           &amp; </span><span class="nv">\dots</span><span class="nb">           &amp; </span><span class="nv">\dots</span><span class="nb"> &amp; </span><span class="nv">\dots</span><span class="nb"></span>
-<span class="nb">        </span><span class="nv">\end</span><span class="nb">{bmatrix}</span>
-<span class="nb">    }^{</span><span class="nv">\mathcal</span><span class="nb">{M}}</span>
-<span class="nb">    </span><span class="nv">\begin</span><span class="nb">{bmatrix}</span>
-<span class="nb">    </span><span class="o">(</span><span class="nb">A</span><span class="o">+</span><span class="nb">B K</span><span class="o">)</span><span class="nb">^</span><span class="m">0</span><span class="nb">     </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    </span><span class="o">(</span><span class="nb">A</span><span class="o">+</span><span class="nb">B K</span><span class="o">)</span><span class="nb">^</span><span class="m">1</span><span class="nb">     </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    </span><span class="nv">\vdots</span><span class="nb">        </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    </span><span class="o">(</span><span class="nb">A</span><span class="o">+</span><span class="nb">B K</span><span class="o">)</span><span class="nb">^{n</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span>
-<span class="nb">    </span><span class="nv">\end</span><span class="nb">{bmatrix}</span>
-<span class="nb">}_{P_{x_N}}</span>
-<span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="nb">N|k}</span>
-<span class="nv">\leq</span><span class="nb"></span>
-<span class="nv">\underbrace</span><span class="nb">{</span>
-<span class="nb">    </span><span class="nv">\begin</span><span class="nb">{bmatrix}</span>
-<span class="nb">    q_x    </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    q_u    </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    q_x    </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    q_u    </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    </span><span class="nv">\vdots</span><span class="nb"></span>
-<span class="nb">    </span><span class="nv">\end</span><span class="nb">{bmatrix}</span>
-<span class="nb">}_{q_{x_N}}</span>
-<span class="nv">\end</span><span class="nb">{aligned}</span>
-<span class="nv">\end</span><span class="nb">{equation}</span>
-<span class="s">$$</span>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<span class="k">\underbrace</span><span class="nb">{</span>
+    <span class="k">\overbrace</span><span class="nb">{</span>
+        <span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+        Px              <span class="nb">&amp;</span> 0               <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+        P<span class="nb">_</span>u <span class="k">\bar</span><span class="nb">{</span><span class="k">\nu</span><span class="nb">}</span> K <span class="nb">&amp;</span> 0               <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+        0               <span class="nb">&amp;</span> P<span class="nb">_</span>x             <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+        0               <span class="nb">&amp;</span> P<span class="nb">_</span>u <span class="k">\bar</span><span class="nb">{</span><span class="k">\nu</span><span class="nb">}</span> K <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+        <span class="k">\dots</span>           <span class="nb">&amp;</span> <span class="k">\dots</span>           <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> <span class="k">\dots</span>
+        <span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+    <span class="nb">}^{</span><span class="k">\mathcal</span><span class="nb">{</span>M<span class="nb">}}</span>
+    <span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+    (A+B K)<span class="nb">^</span>0     <span class="k">\\</span>
+    (A+B K)<span class="nb">^</span>1     <span class="k">\\</span>
+    <span class="k">\vdots</span>        <span class="k">\\</span>
+    (A+B K)<span class="nb">^{</span>n-1<span class="nb">}</span>
+    <span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+<span class="nb">}_{</span>P<span class="nb">_{</span>x<span class="nb">_</span>N<span class="nb">}}</span>
+<span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+N|k<span class="nb">}</span>
+<span class="k">\leq</span>
+<span class="k">\underbrace</span><span class="nb">{</span>
+    <span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+    q<span class="nb">_</span>x    <span class="k">\\</span>
+    q<span class="nb">_</span>u    <span class="k">\\</span>
+    q<span class="nb">_</span>x    <span class="k">\\</span>
+    q<span class="nb">_</span>u    <span class="k">\\</span>
+    <span class="k">\vdots</span>
+    <span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+<span class="nb">}_{</span>q<span class="nb">_{</span>x<span class="nb">_</span>N<span class="nb">}}</span>
+<span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
 </pre></div>
-$$ 
 \begin{equation}
 \begin{aligned}
 \underbrace{
@@ -1509,22 +1590,18 @@ $$
     \end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
-\end{equation}
-$$<div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
-<span class="nv">\begin</span><span class="nb">{equation}</span>
-<span class="nv">\begin</span><span class="nb">{cases}</span>
-<span class="nv">\begin</span><span class="nb">{aligned}</span>
-<span class="nb">    </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">} &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">+</span><span class="nb"> </span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> y_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="o">-</span><span class="nb">  C </span><span class="nv">\hat</span><span class="nb">{x}_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    e_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">}       &amp; </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb">I</span><span class="o">-</span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} C </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> e_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">-</span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} </span><span class="nv">\nu</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}   </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k</span><span class="o">+</span><span class="m">1</span><span class="nb">}       &amp; </span><span class="o">=</span><span class="nb"> P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} </span><span class="o">-</span><span class="nb"> </span><span class="nv">\gamma</span><span class="nb">_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">} K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}C~P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k}                                        </span><span class="nv">\\</span><span class="nb"></span>
-<span class="nb">    K_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">}           &amp; </span><span class="o">=</span><span class="nb"> P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} C^</span><span class="nv">\intercal</span><span class="nb"> </span><span class="o">(</span><span class="nb">C P_{k</span><span class="o">+</span><span class="m">1</span><span class="nb">|k} C^</span><span class="nv">\intercal</span><span class="o">+</span><span class="nb">R_z</span><span class="o">)</span><span class="nb">^{</span><span class="o">-</span><span class="m">1</span><span class="nb">}</span>
-<span class="nv">\end</span><span class="nb">{aligned}</span>
-<span class="nv">\end</span><span class="nb">{cases}</span>
-<span class="nv">\end</span><span class="nb">{equation}</span>
-<span class="s">$$</span>
+\end{equation}<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation*<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
+    <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k+1<span class="nb">}</span> <span class="nb">&amp;</span> = <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> + <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\left</span>( y<span class="nb">_{</span>k+1<span class="nb">}</span> -  C <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> <span class="k">\right</span>) <span class="k">\\</span>
+    e<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = <span class="k">\left</span>(I-<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> C <span class="k">\right</span>) e<span class="nb">_{</span>k+1|k<span class="nb">}</span> -<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\nu</span><span class="nb">_{</span>k+1<span class="nb">}</span>   <span class="k">\\</span>
+    P<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> - <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span>C~P<span class="nb">_{</span>k+1|k<span class="nb">}</span>                                        <span class="k">\\</span>
+    K<span class="nb">_{</span>k+1<span class="nb">}</span>           <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span> (C P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span>+R<span class="nb">_</span>z)<span class="nb">^{</span>-1<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>equation*<span class="nb">}</span>
 </pre></div>
-$$
-\begin{equation}
+\begin{equation*}
 \begin{cases}
 \begin{aligned}
     \hat{x}_{k+1|k+1} &amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
@@ -1533,8 +1610,7 @@ $$
     K_{k+1}           &amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
 \end{aligned}
 \end{cases}
-\end{equation}
-$$
+\end{equation*}
 </div>
 </div>
 </div>
@@ -1634,7 +1710,7 @@ $$
 </li>
 </ul>
 <p><strong>Extra</strong></p>
-<p>If you want to do multiple languages, it's worth trying <a href="https://vatlab.github.io/blog/post/sos-notebook/">SoS Notebook</a>.</p>
+<p>If you want to post with multiple languages, it's worth trying <a href="https://vatlab.github.io/blog/post/sos-notebook/">SoS Notebook</a>.</p>
 
 </div>
 </div>
@@ -1662,7 +1738,7 @@ $$
         </ul>
 <ul class="pager hidden-print">
 <li class="next">
-                <a href="../MPC-SSTO/" rel="next" title="MPC with feed-forward SSTO">Next post</a>
+                <a href="../MPCu/" rel="next" title="Unconstrained MPC in Jupyter Notebook">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -1688,7 +1764,7 @@ $$
 
         </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-    tex2jax: {
+    tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
         processEscapes: true
@@ -1697,18 +1773,12 @@ MathJax.Hub.Config({
     "HTML-CSS": {
         styles: {'.MathJax_Display': {"margin": 0}}
     },
-    TeX: { 
+    TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
         equationNumbers: { 
-            autoNumber: "all", // AMS, all, none            
-            useLabelIds: true,             
+            autoNumber: "none" // AMS, all, none                       
         } 
     }
 });
-MathJax.Hub.Queue(
-  ["resetEquationNumbers", MathJax.InputJax.TeX],
-  ["PreProcess", MathJax.Hub],
-  ["Reprocess", MathJax.Hub]
-);
 </script></article><script>var disqus_shortname="paulomarconi";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"><div class="text-center">
     <p>
         <span class="fa-stack fa-2x">

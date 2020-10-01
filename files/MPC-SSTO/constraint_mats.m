@@ -1,23 +1,5 @@
 
 function [Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] = constraint_mats(F,G,Pu,qu,Px,qx,Pxf,qxf)
-    %
-    % CONSTRAINTS_MATS.M returns the MPC constraints matrices for a system that
-    % is subject to constraints
-    %
-    %    Pu*u(k+j|k) <= qu
-    %    Px*x(k+j|k) <= qx
-    %    Pxf*x(k+N|k) <= qxf
-    %
-    % That is, the matrices Pc, qc and Sc from
-    %
-    %   Pc*U(k) <= qc + Sc*x(k)
-    %
-    % USAGE:
-    %
-    %   [Pc,qc,Sc] = constraint_mats(F,G,umin,umax,xmin,xmax,xNmin,xNmax)
-    %
-    % where F, G are the prediction matrices obtained from PREDICT_MATS.M
-    %
     % P. Trodden, 2017.
 
     % input dimension

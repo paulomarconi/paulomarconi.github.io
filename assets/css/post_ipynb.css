@@ -5,7 +5,7 @@ div.prompt {
     margin-right: 0em;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
-    border-radius: 3px;
+    border-radius: 3px; 
 }
   
 div.output_prompt {
@@ -13,7 +13,7 @@ div.output_prompt {
     margin: 0 5px 0 0px;
 }
   
-  div.output_area pre {
+div.output_area pre {
     font-size: 13px;
 }
   
@@ -59,6 +59,10 @@ div.text_cell_render {
 div.input  {
     border: none;
     background-color: none;
+}
+
+div.input_area pre {
+    font-size: 14px;
 }
 
 /* set a max-width for horizontal fluid layout and make it centered */
