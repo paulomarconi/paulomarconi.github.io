@@ -1023,7 +1023,7 @@ CONTENT_FOOTER = '''
         </span>
     </p>
     <p>
-        {license} Contents &copy; {date}  <a href="mailto:{email}">{author}</a> - Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> 
+        Contents &copy; {date}  <a href="mailto:{email}">{author}</a> {license} 
     </p>
 </div>
 '''
