@@ -864,7 +864,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Header">Header<a class="anchor-link" href="#Header">¶</a>
 </h3>
-<p>Add <a href="fontawesome.com/">FontAwesone</a> and <a href="https://jpswalsh.github.io/academicons/">Academic Icons</a> to use in the footer.</p>
+<p>Add <a href="fontawesome.com/">FontAwesone</a> and <a href="https://jpswalsh.github.io/academicons/">Academic Icons</a> to use in the footer content.</p>
 <div class="highlight"><pre><span></span>EXTRA_HEAD_DATA = '''
   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"</span><span class="p">&gt;</span>
@@ -1038,7 +1038,7 @@ print('hello world')
 <p>Alternatively, I like to use <a href="https://prismjs.com/">Prism</a> due its <strong>JSONP Highlight plugin</strong> which allows you to import external code hosted on GitHub or some other place.</p>
 <ul>
 <li>Select the <a href="https://prismjs.com/download.html">Minifed version</a> and all available languages. </li>
-<li>Add any plugins. My selection is as follows.
+<li>Add any plugin. My selection is as follows.
 <img src="../../images/Nikola_guide/selected_prism_plugins.png" alt="Prism plugins">
 </li>
 <li>Download the JS and CSS files.</li>
@@ -1082,7 +1082,7 @@ BODY_END = '''
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="LaTex-with-Mathjax">LaTex with Mathjax<a class="anchor-link" href="#LaTex-with-Mathjax">¶</a>
 </h2>
-<p>By default Nikola uses MathJax, and with the Jupyter nbextensions <code>\begin{align}...\end{align}</code> or others LaTex environments can be used. But, if you want support for the <code>$...$</code> inline or <code>$$...$$</code> paragraph syntax LaTex, uncomment the following on Nikola <code>conf.py</code>. Also, you can add <code>Tex</code> commands for the auto numbering equations. More options at <a href="https://docs.mathjax.org/en/v2.7-latest/options/">MathJax docs</a>.</p>
+<p>By default Nikola uses MathJax, and with the Jupyter nbextensions, environments such as <code>\begin{align}...\end{align}</code> and others LaTex environments can be used. But, if you want support for the <code>$...$</code> inline or <code>$$...$$</code> paragraph syntax LaTex, uncomment the following on Nikola <code>conf.py</code>. Also, you can add <code>Tex</code> commands for the auto numbering equations. More options at <a href="https://docs.mathjax.org/en/v2.7-latest/options/">MathJax docs</a>.</p>
 <div class="highlight"><pre><span></span>MATHJAX_CONFIG = """
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/x-mathjax-config"</span><span class="p">&gt;</span>
 <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
@@ -1116,7 +1116,7 @@ BODY_END = '''
 <h2 id="GitHub-pages">GitHub pages<a class="anchor-link" href="#GitHub-pages">¶</a>
 </h2>
 <ul>
-<li>Create a new repository named <code>&lt;user_name&gt;.github.io</code>on your GitHub profile.</li>
+<li>Create a new repository named <code>&lt;user_name&gt;.github.io</code>on your GitHub account.</li>
 <li>Initialize Git and add origin inside the <code>blog</code> folder of your local drive.<div class="highlight"><pre><span></span>git init .
 git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.github.io
 </pre></div>
@@ -1156,9 +1156,9 @@ output
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook">Testing Python and Matlab kernel on Jupyter Notebook<a class="anchor-link" href="#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook">¶</a>
 </h2>
-<p>For this section, we will to run VSCode under our environment. If you run VSCode directly, it will show the kernels but they won't be available.</p>
+<p>For this section, we will to run VSCode under our environment. If you run VSCode directly, it will show the kernels but the Matlab-kernel won't be available.</p>
 <ul>
-<li>Open terminal inside your <code>blog</code> folder</li>
+<li>Open terminal inside your root folder</li>
 <li>Activate the environment.<div class="highlight"><pre><span></span>activate jmatlabNikola
 </pre></div>
 </li>
@@ -1300,9 +1300,9 @@ i =
 </h3>
 <p>The Matlab-kernel does not support inline functions so you need to save them in files.</p>
 <ul>
-<li>For the Jupyter Notebook browser, use the magic command <code>%%file /files/&lt;file&gt;.m</code>. It will save it in <code>/blog/files</code>
+<li>For the Jupyter Notebook editor on your browser, use the magic command <code>%%file /files/&lt;file&gt;.m</code>. It will save it in <code>/blog/files</code>
 </li>
-<li>But for VSCode use <code>%%file 'c:/&lt;absolute_path&gt;/&lt;file&gt;.m'</code>
+<li>But for VSCode, use <code>%%file 'c:/&lt;absolute_path&gt;/&lt;file&gt;.m'</code>
 </li>
 </ul>
 </div>
@@ -1544,7 +1544,7 @@ x =
 <h2 id="LaTex-testing">LaTex testing<a class="anchor-link" href="#LaTex-testing">¶</a>
 </h2>
 <p>Some LaTex formulas. Inline example, <code>$ f(x) = x^{2}$</code> $ f(x) = x^{2}$. Remember that you can still use <code>$$...$$</code>.</p>
-<p>Some others</p>
+<p>Examples.</p>
 <div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
 <span class="k">\underbrace</span><span class="nb">{</span>
@@ -1710,7 +1710,7 @@ x =
 <p>The cell code highlighting has some problems when you have double kernels in your Notebook, which is a problema of the Jupyter Notebook metadata.</p>
 <p>Example of poor code highlighting.
 <img src="../../images/Nikola_guide/cell_code_highlighting_no.png" alt="drawing" width="40%"></p>
-<p>My <strong>partial solution</strong> is to add the following to the <code>.ipynb</code> metadata (raw data)</p>
+<p>My <strong>partial solution</strong> is to add the following to the <code>.ipynb</code> metadata (raw data) of the Notebook post.</p>
 
 <pre><code>"metadata": {
   ...
@@ -1729,7 +1729,7 @@ x =
 </li>
 </ul>
 <p><strong>Extra</strong></p>
-<p>If you want to post with multiple languages, it's worth trying <a href="https://vatlab.github.io/blog/post/sos-notebook/">SoS Notebook</a>.</p>
+<p>If you want to post with multiple kernels and programming languages, it's worth trying <a href="https://vatlab.github.io/blog/post/sos-notebook/">SoS Notebook</a>.</p>
 
 </div>
 </div>

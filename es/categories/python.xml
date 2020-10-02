@@ -3,11 +3,11 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 12:02:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/es/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 14:23:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog con Nikola, Jupyter, Matlab y GitHub pages</title><link>https://paulomarconi.github.io/es/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Tabla de Contenido&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
-&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Introduction" data-toc-modified-id="Introduction-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configure-VSCode" data-toc-modified-id="Configure-VSCode-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Configure VSCode&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-new-environment-with-Anaconda-or-Conda" data-toc-modified-id="Create-a-new-environment-with-Anaconda-or-Conda-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Create a new environment with Anaconda or Conda&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Install-Jupyter-Notebook,-Nikola-and-jmatlab" data-toc-modified-id="Install-Jupyter-Notebook,-Nikola-and-jmatlab-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Install Jupyter Notebook, Nikola and jmatlab&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Config-Matlab" data-toc-modified-id="Config-Matlab-5.1"&gt;&lt;span class="toc-item-num"&gt;5.1  &lt;/span&gt;Config Matlab&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-Nikola-demo-site" data-toc-modified-id="Create-a-Nikola-demo-site-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Create a Nikola demo site&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-new-post-and-new-page" data-toc-modified-id="Create-a-new-post-and-new-page-6.1"&gt;&lt;span class="toc-item-num"&gt;6.1  &lt;/span&gt;Create a new post and new page&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-clean-Nikola-site" data-toc-modified-id="Create-a-clean-Nikola-site-6.2"&gt;&lt;span class="toc-item-num"&gt;6.2  &lt;/span&gt;Create a clean Nikola site&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Nikola-directories" data-toc-modified-id="Nikola-directories-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;Nikola directories&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configure-a-non-blog-Nikola-site" data-toc-modified-id="Configure-a-non-blog-Nikola-site-8"&gt;&lt;span class="toc-item-num"&gt;8  &lt;/span&gt;Configure a non-blog Nikola site&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-the-index-page-and-bio-page" data-toc-modified-id="Create-the-index-page-and-bio-page-8.1"&gt;&lt;span class="toc-item-num"&gt;8.1  &lt;/span&gt;Create the index page and bio page&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Use-Jupyter-Notebooks" data-toc-modified-id="Use-Jupyter-Notebooks-8.2"&gt;&lt;span class="toc-item-num"&gt;8.2  &lt;/span&gt;Use Jupyter Notebooks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-the-post_ipynb.tmpl-template" data-toc-modified-id="Create-the-post_ipynb.tmpl-template-8.3"&gt;&lt;span class="toc-item-num"&gt;8.3  &lt;/span&gt;Create the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; template&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-the-post_ipynb.css" data-toc-modified-id="Create-the-post_ipynb.css-8.4"&gt;&lt;span class="toc-item-num"&gt;8.4  &lt;/span&gt;Create the &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Clean-version-of-post_ipynb.css" data-toc-modified-id="Clean-version-of-post_ipynb.css-8.5"&gt;&lt;span class="toc-item-num"&gt;8.5  &lt;/span&gt;Clean version of &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Use-your-custom-theme" data-toc-modified-id="Use-your-custom-theme-8.6"&gt;&lt;span class="toc-item-num"&gt;8.6  &lt;/span&gt;Use your custom theme&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Extra-configurations" data-toc-modified-id="Extra-configurations-9"&gt;&lt;span class="toc-item-num"&gt;9  &lt;/span&gt;Extra configurations&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Output-files-folder-location" data-toc-modified-id="Output-files-folder-location-9.1"&gt;&lt;span class="toc-item-num"&gt;9.1  &lt;/span&gt;Output &lt;code&gt;files&lt;/code&gt; folder location&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Avoid-deploying-draft-posts" data-toc-modified-id="Avoid-deploying-draft-posts-9.2"&gt;&lt;span class="toc-item-num"&gt;9.2  &lt;/span&gt;Avoid deploying draft posts&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Enable-single-Archive" data-toc-modified-id="Enable-single-Archive-9.3"&gt;&lt;span class="toc-item-num"&gt;9.3  &lt;/span&gt;Enable single Archive&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Favicon" data-toc-modified-id="Favicon-9.4"&gt;&lt;span class="toc-item-num"&gt;9.4  &lt;/span&gt;Favicon&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#License" data-toc-modified-id="License-9.5"&gt;&lt;span class="toc-item-num"&gt;9.5  &lt;/span&gt;License&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Header" data-toc-modified-id="Header-9.6"&gt;&lt;span class="toc-item-num"&gt;9.6  &lt;/span&gt;Header&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Footer" data-toc-modified-id="Footer-9.7"&gt;&lt;span class="toc-item-num"&gt;9.7  &lt;/span&gt;Footer&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Google-search" data-toc-modified-id="Google-search-9.8"&gt;&lt;span class="toc-item-num"&gt;9.8  &lt;/span&gt;Google search&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Disqus" data-toc-modified-id="Disqus-9.9"&gt;&lt;span class="toc-item-num"&gt;9.9  &lt;/span&gt;Disqus&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Config-the-sticky-menu" data-toc-modified-id="Config-the-sticky-menu-9.10"&gt;&lt;span class="toc-item-num"&gt;9.10  &lt;/span&gt;Config the sticky menu&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Code-highlighting" data-toc-modified-id="Code-highlighting-9.11"&gt;&lt;span class="toc-item-num"&gt;9.11  &lt;/span&gt;Code highlighting&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Adding-Prism" data-toc-modified-id="Adding-Prism-9.12"&gt;&lt;span class="toc-item-num"&gt;9.12  &lt;/span&gt;Adding Prism&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Latex-with-Mathjax" data-toc-modified-id="Latex-with-Mathjax-10"&gt;&lt;span class="toc-item-num"&gt;10  &lt;/span&gt;Latex with Mathjax&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#GitHub-pages" data-toc-modified-id="GitHub-pages-11"&gt;&lt;span class="toc-item-num"&gt;11  &lt;/span&gt;GitHub pages&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook" data-toc-modified-id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook-12"&gt;&lt;span class="toc-item-num"&gt;12  &lt;/span&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Python-test" data-toc-modified-id="Python-test-13"&gt;&lt;span class="toc-item-num"&gt;13  &lt;/span&gt;Python test&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Matlab-test" data-toc-modified-id="Matlab-test-14"&gt;&lt;span class="toc-item-num"&gt;14  &lt;/span&gt;Matlab test&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Matlab-functions" data-toc-modified-id="Matlab-functions-14.1"&gt;&lt;span class="toc-item-num"&gt;14.1  &lt;/span&gt;Matlab functions&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#3D-plotting" data-toc-modified-id="3D-plotting-14.2"&gt;&lt;span class="toc-item-num"&gt;14.2  &lt;/span&gt;3D plotting&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Matlab-optimization-solver" data-toc-modified-id="Matlab-optimization-solver-14.3"&gt;&lt;span class="toc-item-num"&gt;14.3  &lt;/span&gt;Matlab optimization solver&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#LaTex-testing" data-toc-modified-id="LaTex-testing-15"&gt;&lt;span class="toc-item-num"&gt;15  &lt;/span&gt;LaTex testing&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Code-Highlighting-testing" data-toc-modified-id="Code-Highlighting-testing-16"&gt;&lt;span class="toc-item-num"&gt;16  &lt;/span&gt;Code Highlighting testing&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Embedded-.pdf" data-toc-modified-id="Embedded-.pdf-17"&gt;&lt;span class="toc-item-num"&gt;17  &lt;/span&gt;Embedded &lt;code&gt;.pdf&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Example" data-toc-modified-id="Example-17.1"&gt;&lt;span class="toc-item-num"&gt;17.1  &lt;/span&gt;Example&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Incorrect-cell-code-highlighting-with-two-kernels" data-toc-modified-id="Incorrect-cell-code-highlighting-with-two-kernels-18"&gt;&lt;span class="toc-item-num"&gt;18  &lt;/span&gt;Incorrect cell code highlighting with two kernels&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Introducci%C3%B3n" data-toc-modified-id="Introducción-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Introducción&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Pre-requisitos" data-toc-modified-id="Pre-requisitos-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisitos&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configurar-VSCode" data-toc-modified-id="Configurar-VSCode-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Configurar VSCode&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-un-nuevo-entorno-con--Anaconda-o-Conda" data-toc-modified-id="Crea-un-nuevo-entorno-con--Anaconda-o-Conda-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Crea un nuevo entorno con  Anaconda o Conda&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab" data-toc-modified-id="Instalación-de-Jupyter-Notebook,-Nikola-y-jmatlab-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Instalación de Jupyter Notebook, Nikola y jmatlab&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configurar-Matlab" data-toc-modified-id="Configurar-Matlab-5.1"&gt;&lt;span class="toc-item-num"&gt;5.1  &lt;/span&gt;Configurar Matlab&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-un-sitio-demo-de-Nikola" data-toc-modified-id="Crea-un-sitio-demo-de-Nikola-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Crea un sitio demo de Nikola&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina" data-toc-modified-id="Crear-un-nuevo-post-y-una-nueva-página-6.1"&gt;&lt;span class="toc-item-num"&gt;6.1  &lt;/span&gt;Crear un nuevo post y una nueva página&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-un-sitio-limpio-de-Nikola" data-toc-modified-id="Crear-un-sitio-limpio-de-Nikola-6.2"&gt;&lt;span class="toc-item-num"&gt;6.2  &lt;/span&gt;Crear un sitio limpio de Nikola&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Directorios-de-Nikola" data-toc-modified-id="Directorios-de-Nikola-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;Directorios de Nikola&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configurar-un-website-Nikola-(no-un-blog)" data-toc-modified-id="Configurar-un-website-Nikola-(no-un-blog)-8"&gt;&lt;span class="toc-item-num"&gt;8  &lt;/span&gt;Configurar un website Nikola (no un blog)&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-las-p%C3%A1ginas-index-y-bio" data-toc-modified-id="Crear-las-páginas-index-y-bio-8.1"&gt;&lt;span class="toc-item-num"&gt;8.1  &lt;/span&gt;Crear las páginas index y bio&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Usar-Jupyter-Notebooks" data-toc-modified-id="Usar-Jupyter-Notebooks-8.2"&gt;&lt;span class="toc-item-num"&gt;8.2  &lt;/span&gt;Usar Jupyter Notebooks&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-el-template-post_ipynb.tmpl" data-toc-modified-id="Crear-el-template-post_ipynb.tmpl-8.3"&gt;&lt;span class="toc-item-num"&gt;8.3  &lt;/span&gt;Crear el template &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-el-post_ipynb.css" data-toc-modified-id="Crea-el-post_ipynb.css-8.4"&gt;&lt;span class="toc-item-num"&gt;8.4  &lt;/span&gt;Crea el &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Versi%C3%B3n-limpia-de-post_ipynb.css" data-toc-modified-id="Versión-limpia-de-post_ipynb.css-8.5"&gt;&lt;span class="toc-item-num"&gt;8.5  &lt;/span&gt;Versión limpia de &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Usa-tu-tema-personalizado" data-toc-modified-id="Usa-tu-tema-personalizado-8.6"&gt;&lt;span class="toc-item-num"&gt;8.6  &lt;/span&gt;Usa tu tema personalizado&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configuraciones-extras" data-toc-modified-id="Configuraciones-extras-9"&gt;&lt;span class="toc-item-num"&gt;9  &lt;/span&gt;Configuraciones extras&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ubicaci%C3%B3n-del-folder-de-salida-files" data-toc-modified-id="Ubicación-del-folder-de-salida-files-9.1"&gt;&lt;span class="toc-item-num"&gt;9.1  &lt;/span&gt;Ubicación del folder de salida &lt;code&gt;files&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Evita-publicar-borrardores-de-los-posts" data-toc-modified-id="Evita-publicar-borrardores-de-los-posts-9.2"&gt;&lt;span class="toc-item-num"&gt;9.2  &lt;/span&gt;Evita publicar borrardores de los posts&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Habilitar-una-sola-lista-de-los-posts" data-toc-modified-id="Habilitar-una-sola-lista-de-los-posts-9.3"&gt;&lt;span class="toc-item-num"&gt;9.3  &lt;/span&gt;Habilitar una sola lista de los posts&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Favicon" data-toc-modified-id="Favicon-9.4"&gt;&lt;span class="toc-item-num"&gt;9.4  &lt;/span&gt;Favicon&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Licencia" data-toc-modified-id="Licencia-9.5"&gt;&lt;span class="toc-item-num"&gt;9.5  &lt;/span&gt;Licencia&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Header-(Encabezado)" data-toc-modified-id="Header-(Encabezado)-9.6"&gt;&lt;span class="toc-item-num"&gt;9.6  &lt;/span&gt;Header (Encabezado)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Footer-(Pi%C3%A9-de-p%C3%A1gina)" data-toc-modified-id="Footer-(Pié-de-página)-9.7"&gt;&lt;span class="toc-item-num"&gt;9.7  &lt;/span&gt;Footer (Pié de página)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Barra-de-b%C3%BAsqueda-de-Google" data-toc-modified-id="Barra-de-búsqueda-de-Google-9.8"&gt;&lt;span class="toc-item-num"&gt;9.8  &lt;/span&gt;Barra de búsqueda de Google&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Comentarios-Disqus" data-toc-modified-id="Comentarios-Disqus-9.9"&gt;&lt;span class="toc-item-num"&gt;9.9  &lt;/span&gt;Comentarios Disqus&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configura-la-barra-del-menu" data-toc-modified-id="Configura-la-barra-del-menu-9.10"&gt;&lt;span class="toc-item-num"&gt;9.10  &lt;/span&gt;Configura la barra del menu&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Formateo-de-c%C3%B3digos" data-toc-modified-id="Formateo-de-códigos-9.11"&gt;&lt;span class="toc-item-num"&gt;9.11  &lt;/span&gt;Formateo de códigos&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Agregando-Prism" data-toc-modified-id="Agregando-Prism-9.12"&gt;&lt;span class="toc-item-num"&gt;9.12  &lt;/span&gt;Agregando Prism&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#LaTex-con-Mathjax" data-toc-modified-id="LaTex-con-Mathjax-10"&gt;&lt;span class="toc-item-num"&gt;10  &lt;/span&gt;LaTex con Mathjax&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Alojar-tu-sitio-en-GitHub-pages" data-toc-modified-id="Alojar-tu-sitio-en-GitHub-pages-11"&gt;&lt;span class="toc-item-num"&gt;11  &lt;/span&gt;Alojar tu sitio en GitHub pages&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Probando-Python-y-el-Matlab-kernel-en-Jupyter-Notebook" data-toc-modified-id="Probando-Python-y-el-Matlab-kernel-en-Jupyter-Notebook-12"&gt;&lt;span class="toc-item-num"&gt;12  &lt;/span&gt;Probando Python y el Matlab kernel en Jupyter Notebook&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Prueba-Python" data-toc-modified-id="Prueba-Python-13"&gt;&lt;span class="toc-item-num"&gt;13  &lt;/span&gt;Prueba Python&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Prueba-Matlab" data-toc-modified-id="Prueba-Matlab-14"&gt;&lt;span class="toc-item-num"&gt;14  &lt;/span&gt;Prueba Matlab&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Funciones-de-Matlab" data-toc-modified-id="Funciones-de-Matlab-14.1"&gt;&lt;span class="toc-item-num"&gt;14.1  &lt;/span&gt;Funciones de Matlab&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ploteo-3D" data-toc-modified-id="Ploteo-3D-14.2"&gt;&lt;span class="toc-item-num"&gt;14.2  &lt;/span&gt;Ploteo 3D&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Optimizador-de-Matlab" data-toc-modified-id="Optimizador-de-Matlab-14.3"&gt;&lt;span class="toc-item-num"&gt;14.3  &lt;/span&gt;Optimizador de Matlab&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Prueba-LaTex" data-toc-modified-id="Prueba-LaTex-15"&gt;&lt;span class="toc-item-num"&gt;15  &lt;/span&gt;Prueba LaTex&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Formateo-de-c%C3%B3digo" data-toc-modified-id="Formateo-de-código-16"&gt;&lt;span class="toc-item-num"&gt;16  &lt;/span&gt;Formateo de código&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Adjuntar-.pdf" data-toc-modified-id="Adjuntar-.pdf-17"&gt;&lt;span class="toc-item-num"&gt;17  &lt;/span&gt;Adjuntar &lt;code&gt;.pdf&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ejemplo" data-toc-modified-id="Ejemplo-17.1"&gt;&lt;span class="toc-item-num"&gt;17.1  &lt;/span&gt;Ejemplo&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels" data-toc-modified-id="Incorrecto-formateo-de-código-en-las-celdas-con-dos-kernels-18"&gt;&lt;span class="toc-item-num"&gt;18  &lt;/span&gt;Incorrecto formateo de código en las celdas con dos kernels&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -339,15 +339,15 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-the-post_ipynb.tmpl-template"&gt;Create the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; template&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-the-post_ipynb.tmpl-template"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create a new theme.
+&lt;h3 id="Crear-el-template-post_ipynb.tmpl"&gt;Crear el template &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-el-template-post_ipynb.tmpl"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Crea un nuevo tema.
 &lt;pre&gt;&lt;code&gt;nikola theme --new=themeBlog --parent=bootstrap4 --engine=mako&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Copy &lt;code&gt;post.tmpl&lt;/code&gt; template from the parent theme. 
+&lt;li&gt;Copia &lt;code&gt;post.tmpl&lt;/code&gt; del directorio del original de bootstrap4.
 &lt;pre&gt;&lt;code&gt;nikola theme --copy-template=post.tmpl&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Move it to the &lt;code&gt;/themes/themeBlog/templates/post_ipynb.tmpl&lt;/code&gt; folder and rename it as &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add the following on the extra head section.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+&lt;li&gt;Muevelo al folder &lt;code&gt;/themes/themeBlog/templates/post_ipynb.tmpl&lt;/code&gt; y renombralo como &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Agrega lo siguiente a la sección &lt;code&gt;extra head&lt;/code&gt; del &lt;code&gt;.tmpl&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
     ... 
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/post_ipynb.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
@@ -361,7 +361,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-the-post_ipynb.css"&gt;Create the &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-the-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create the file inside &lt;code&gt;/themes/themeBlog/assets/css/post_ipynb.css&lt;/code&gt; folder and copy the following.&lt;/p&gt;
+&lt;h3 id="Crea-el-post_ipynb.css"&gt;Crea el &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-el-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Crea el documento en &lt;code&gt;/themes/themeBlog/assets/css/post_ipynb.css&lt;/code&gt; y copia lo siguiente en su contenido.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mf"&gt;0.6&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -437,7 +437,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Change it at pleasure. In my case, among other minor changes, I set the &lt;code&gt;background-color: #ffffff&lt;/code&gt; to get rid off the left gray ribbon on each cell.&lt;/p&gt;
+&lt;p&gt;Personaliza a placer. En mi caso, entre otros cambios, puse &lt;code&gt;background-color: #ffffff&lt;/code&gt; para eliminar la barra lateral gris de las celdas de Jupyter Notebook.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -445,7 +445,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Clean-version-of-post_ipynb.css"&gt;Clean version of &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Clean-version-of-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;h3 id="Versión-limpia-de-post_ipynb.css"&gt;Versión limpia de &lt;code&gt;post_ipynb.css&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Versi%C3%B3n-limpia-de-post_ipynb.css"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;prompt&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="k"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
 
@@ -477,12 +477,12 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Use-your-custom-theme"&gt;Use your custom theme&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Use-your-custom-theme"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Once you are happy with the changes.&lt;/p&gt;
+&lt;h3 id="Usa-tu-tema-personalizado"&gt;Usa tu tema personalizado&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Usa-tu-tema-personalizado"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Una ves estés conforme con los cambios.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Enable your theme.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"themeBlog"&lt;/span&gt;
+&lt;li&gt;Habilita el tema.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"themeBlog"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Create a Jupyter Notebook post, and start editing with VSCode.
+&lt;li&gt;Crea un post de Jupyter Notebook y empieza a editar con VSCode.
 &lt;pre&gt;&lt;code&gt;nikola new_post -f ipynb --title="Jupyter-notebook-test"&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -493,14 +493,14 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Extra-configurations"&gt;Extra configurations&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Extra-configurations"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Configuraciones-extras"&gt;Configuraciones extras&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configuraciones-extras"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Output-files-folder-location"&gt;Output &lt;code&gt;files&lt;/code&gt; folder location&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Output-files-folder-location"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your documents saved in &lt;code&gt;files&lt;/code&gt; folder will be copied to &lt;code&gt;/output/files&lt;/code&gt; instead of the root folder, which is the default location.&lt;/p&gt;
+&lt;h3 id="Ubicación-del-folder-de-salida-files"&gt;Ubicación del folder de salida &lt;code&gt;files&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ubicaci%C3%B3n-del-folder-de-salida-files"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tus documentos guardados en el folder &lt;code&gt;files&lt;/code&gt; serán copiados a &lt;code&gt;/output/files&lt;/code&gt; en vez de la raíz, que es su ubicación por defecto.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -510,16 +510,16 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Avoid-deploying-draft-posts"&gt;Avoid deploying draft posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Avoid-deploying-draft-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you don't want to deploy a draft post.&lt;/p&gt;
+&lt;h3 id="Evita-publicar-borrardores-de-los-posts"&gt;Evita publicar borrardores de los posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Evita-publicar-borrardores-de-los-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Si no deseas publicarlos.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Add to the metadata post.
+&lt;li&gt;Agrega los siguiente al metadata del post.
 &lt;pre&gt;&lt;code&gt;.. status: draft&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Set in &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;li&gt;Configura lo siguiente en &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-It will be built and seen on your localhost but won't be deployed to GitHub. Also, when you run &lt;code&gt;nikola github_deploy&lt;/code&gt;, the draft post is removed from the &lt;code&gt;output&lt;/code&gt; folder.  &lt;/li&gt;
+Será compilado y visto en tu &lt;code&gt;localhost&lt;/code&gt; pero no será publicado en GitHub. También, cuando corras &lt;code&gt;nikola github_deploy&lt;/code&gt;, el post borrador es removido del folder &lt;code&gt;output&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;By default the metadata has no &lt;code&gt;status&lt;/code&gt; line or is set to:&lt;/p&gt;
+&lt;p&gt;Por defecto la metadata no tiene la linea &lt;code&gt;status&lt;/code&gt;, agrégalo.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;.. status: published&lt;/code&gt;&lt;/pre&gt;
 
@@ -529,7 +529,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Enable-single-Archive"&gt;Enable single Archive&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Enable-single-Archive"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Create one large archive instead of per-year.&lt;/p&gt;
+&lt;h3 id="Habilitar-una-sola-lista-de-los-posts"&gt;Habilitar una sola lista de los posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Habilitar-una-sola-lista-de-los-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Crea una sola lista grande de los posts en vez de una por año.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;CREATE_SINGLE_ARCHIVE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -539,7 +539,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Favicon"&gt;Favicon&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Favicon"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add a favicon to your site.&lt;/p&gt;
+&lt;h3 id="Favicon"&gt;Favicon&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Favicon"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Agrega tu favicon al sitio&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FAVICONS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"icon"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"/files/blogFavicon.ico"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"128x128"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
 &lt;span class="p"&gt;)&lt;/span&gt;
@@ -551,7 +551,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="License"&gt;License&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#License"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add a license to your content.&lt;/p&gt;
+&lt;h3 id="Licencia"&gt;Licencia&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Licencia"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Agrega una licencia a tu contenido.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;LICENSE = """
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"license"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://creativecommons.org/licenses/by-nc-sa/4.0/"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;img&lt;/span&gt; &lt;span class="na"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"Creative Commons License BY-NC-SA"&lt;/span&gt;
@@ -565,7 +565,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Header"&gt;Header&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Header"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add &lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/fontawesome.com/"&gt;FontAwesone&lt;/a&gt; and &lt;a href="https://jpswalsh.github.io/academicons/"&gt;Academic Icons&lt;/a&gt; to use in the footer.&lt;/p&gt;
+&lt;h3 id="Header-(Encabezado)"&gt;Header (Encabezado)&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Header-(Encabezado)"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Agrega &lt;a href="https://paulomarconi.github.io/es/blog/Nikola-guide/fontawesome.com/"&gt;FontAwesone&lt;/a&gt; y &lt;a href="https://jpswalsh.github.io/academicons/"&gt;Academic Icons&lt;/a&gt; para usarlos en el contenido del pie de los posts.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -578,7 +578,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Footer"&gt;Footer&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Footer"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Customize the footer as you like. A good way is to show your social network profiles.&lt;/p&gt;
+&lt;h3 id="Footer-(Pié-de-página)"&gt;Footer (Pié de página)&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Footer-(Pi%C3%A9-de-p%C3%A1gina)"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Personaliza el footer como desees. Una buena forma es mostrar tus perfiles de redes sociales.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;CONTENT_FOOTER = '''
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text-center"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -618,7 +618,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Google-search"&gt;Google search&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Google-search"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Enable Google search.&lt;/p&gt;
+&lt;h3 id="Barra-de-búsqueda-de-Google"&gt;Barra de búsqueda de Google&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Barra-de-b%C3%BAsqueda-de-Google"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Habilitalo según lo siguiente.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;SEARCH_FORM = """
 &lt;span class="c"&gt;&amp;lt;!-- Google custom search --&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;method&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"get"&lt;/span&gt; &lt;span class="na"&gt;action&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://www.google.com/search"&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navbar-form navbar-right"&lt;/span&gt; &lt;span class="na"&gt;role&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"search"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -633,12 +633,12 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;span class="c"&gt;&amp;lt;!-- End of custom search --&amp;gt;&lt;/span&gt;
 """ % SITE_URL
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notas&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;You may find that &lt;code&gt;conf.py&lt;/code&gt; uses &lt;a href="https://www.glyphicons.com"&gt;Glyphicon&lt;/a&gt;, but recently Bootstrap 4+ changed it to &lt;a href="https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration"&gt;FontAwesome&lt;/a&gt;, so Glyphicon is not available anymore.&lt;/li&gt;
-&lt;li&gt;Change &lt;code&gt;form-group&lt;/code&gt; to &lt;code&gt;input-group&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;More configurations with &lt;a href="https://www.codeply.com/go/ioPsDfyCBc"&gt;Bootstrap 4 demo Icon inputs&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://duckduckgo.com/"&gt;Duckduckgo&lt;/a&gt; is also available.&lt;/li&gt;
+&lt;li&gt;Puede que encuentres que &lt;code&gt;conf.py&lt;/code&gt; usa &lt;a href="https://www.glyphicons.com"&gt;Glyphicon&lt;/a&gt;, pero recientemente Bootstrap 4+ cambió a &lt;a href="https://stackoverflow.com/questions/32612690/bootstrap-4-glyphicons-migration"&gt;FontAwesome&lt;/a&gt;, así que Glyphicon ya está disponible.&lt;/li&gt;
+&lt;li&gt;Cambia el &lt;code&gt;form-group&lt;/code&gt; a &lt;code&gt;input-group&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Más configuraciones en &lt;a href="https://www.codeply.com/go/ioPsDfyCBc"&gt;Bootstrap 4 demo Icon inputs&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;El buscador de &lt;a href="https://duckduckgo.com/"&gt;Duckduckgo&lt;/a&gt; también está disponbile.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -647,16 +647,16 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Disqus"&gt;Disqus&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Disqus"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create an account on &lt;a href="https://disqus.com/"&gt;Disqus&lt;/a&gt;.&lt;ul&gt;
-&lt;li&gt;Create a new site.&lt;/li&gt;
-&lt;li&gt;Choose a &lt;code&gt;disqus_shortname&lt;/code&gt;, e.g. &lt;code&gt;github_user_name&lt;/code&gt;. I recommend not to use &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add your blog site &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Choose &lt;em&gt;'Basic Plan'&lt;/em&gt; &lt;/li&gt;
-&lt;li&gt;Skip instructions on the  &lt;em&gt;'Select Platform'&lt;/em&gt; section.&lt;/li&gt;
+&lt;h3 id="Comentarios-Disqus"&gt;Comentarios Disqus&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Comentarios-Disqus"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Crea una cuenta en &lt;a href="https://disqus.com/"&gt;Disqus&lt;/a&gt;.&lt;ul&gt;
+&lt;li&gt;Crea un nuevo sitio.&lt;/li&gt;
+&lt;li&gt;Elige un &lt;code&gt;disqus_shortname&lt;/code&gt;, e.g. &lt;code&gt;github_user_name&lt;/code&gt;. Yo recomiendo no usar &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Agrega tu blog &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Escoge el &lt;em&gt;'Plan Básico'&lt;/em&gt; &lt;/li&gt;
+&lt;li&gt;Salta las instrucciones en la sección &lt;em&gt;'Escoge Plataforma'&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Finally, enable the following on the Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMMENT_SYSTEM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"disqus"&lt;/span&gt;
+&lt;li&gt;Finalmente, habilita lo siguiente en &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMMENT_SYSTEM&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"disqus"&lt;/span&gt;
 &lt;span class="n"&gt;COMMENT_SYSTEM_ID&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"&amp;lt;disqus_shortname&amp;gt;"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
@@ -668,12 +668,12 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Config-the-sticky-menu"&gt;Config the sticky menu&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Config-the-sticky-menu"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;You can set the navigation bar sticks on the top as you scroll down the page.&lt;/p&gt;
+&lt;h3 id="Configura-la-barra-del-menu"&gt;Configura la barra del menu&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configura-la-barra-del-menu"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Puedes configurar que la barra del menu se mantenga pegado en la parte superior mientras te deslizas en la página.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Copy the parent base template.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;base.tmpl
+&lt;li&gt;Copia el template base.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola theme --copy-template&lt;span class="o"&gt;=&lt;/span&gt;base.tmpl
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Move it to &lt;code&gt;/themes/themeBlog/templates/base.tmpl&lt;/code&gt; and add the following.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- Menubar --&amp;gt;&lt;/span&gt;
+&lt;li&gt;Muévelo a &lt;code&gt;/themes/themeBlog/templates/base.tmpl&lt;/code&gt; y agrega lo siguiente.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- Menubar --&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;nav&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"navbar&lt;/span&gt; &lt;span class="na"&gt;navbar-expand-md&lt;/span&gt; &lt;span class="na"&gt;sticky-top&lt;/span&gt; &lt;span class="na"&gt;mb-4&lt;/span&gt;
 &lt;span class="err"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -686,9 +686,9 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Code-highlighting"&gt;Code highlighting&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Code-highlighting"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;By default, Nikola uses &lt;a href="https://pygments.org"&gt;Pygments&lt;/a&gt; for code highlighting.&lt;/p&gt;
+&lt;h3 id="Formateo-de-códigos"&gt;Formateo de códigos&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Formateo-de-c%C3%B3digos"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Por defecto, Nikola usa &lt;a href="https://pygments.org"&gt;Pygments&lt;/a&gt; para formatear los códigos.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;For Markdown and Jupyter Notebook.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Para Markdown y Jupyter Notebook.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;```python
 def fn()
@@ -696,7 +696,7 @@ pass:
 print('hello world')
 ```&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;With rST.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Para rST.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;.. code-block:: python
 
@@ -712,14 +712,14 @@ print('hello world')
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Adding-Prism"&gt;Adding Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Adding-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternatively, I like to use &lt;a href="https://prismjs.com/"&gt;Prism&lt;/a&gt; due its &lt;strong&gt;JSONP Highlight plugin&lt;/strong&gt; which allows you to import external code hosted on GitHub or some other place.&lt;/p&gt;
+&lt;h3 id="Agregando-Prism"&gt;Agregando Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Agregando-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternativamente, me gusta usar &lt;a href="https://prismjs.com/"&gt;Prism&lt;/a&gt; due its &lt;strong&gt;JSONP Highlight plugin&lt;/strong&gt; que permite importar código externo alojado en cualquier servidor como GitHub.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Select the &lt;a href="https://prismjs.com/download.html"&gt;Minifed version&lt;/a&gt; and all available languages. &lt;/li&gt;
-&lt;li&gt;Add any plugins. My selection is as follows.
+&lt;li&gt;Escoge la versión &lt;a href="https://prismjs.com/download.html"&gt;Minifed&lt;/a&gt; con todos los lenguajes.&lt;/li&gt;
+&lt;li&gt;Agrega cualquier plugin. Mi selección fue la siguiente.
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png" alt="Prism plugins"&gt;&lt;/li&gt;
-&lt;li&gt;Download the JS and CSS files.&lt;/li&gt;
-&lt;li&gt;Save them on &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; and &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Add the following on the Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
+&lt;li&gt;Descarga los archivos JS y CSS.&lt;/li&gt;
+&lt;li&gt;Guárdalos en &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; y &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Agrega los siguiente al documento de Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
 ...
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 '''
@@ -728,23 +728,23 @@ BODY_END = '''
 '''
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Also, add the &lt;code&gt;prism.css&lt;/code&gt; into the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+&lt;li&gt;También, agerga &lt;code&gt;prism.css&lt;/code&gt; en &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
     ...
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Done!. &lt;/li&gt;
-&lt;li&gt;Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight an external code file.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;li&gt;Listo!. &lt;/li&gt;
+&lt;li&gt;Ahora, usa el siguiente código en Markdown y Jupyter Notebook para poder importar código externo.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In rST.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;En rST.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.. raw:: html
 
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Check &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; for usage examples.&lt;/li&gt;
+&lt;li&gt;Revisa &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; para más ejemplos de uso.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -753,7 +753,7 @@ BODY_END = '''
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="LaTex-with-Mathjax"&gt;LaTex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#LaTex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax, and with the Jupyter nbextensions &lt;code&gt;\begin{align}...\end{align}&lt;/code&gt; or others LaTex environments can be used. But, if you want support for the &lt;code&gt;$...$&lt;/code&gt; inline or &lt;code&gt;$$...$$&lt;/code&gt; paragraph syntax LaTex, uncomment the following on Nikola &lt;code&gt;conf.py&lt;/code&gt;. Also, you can add &lt;code&gt;Tex&lt;/code&gt; commands for the auto numbering equations. More options at &lt;a href="https://docs.mathjax.org/en/v2.7-latest/options/"&gt;MathJax docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="LaTex-con-Mathjax"&gt;LaTex con Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#LaTex-con-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Por defecto, Nikola usa MathJax, y con las Jupyter nbextensions, el comando &lt;code&gt;\begin{align}...\end{align}&lt;/code&gt; y otros comandos de LaTex pueden usarse. Pero si deseas soporte para usar &lt;code&gt;$...$&lt;/code&gt; o &lt;code&gt;$$...$$&lt;/code&gt;, decomenta lo siguiente en Nikola &lt;code&gt;conf.py&lt;/code&gt;. También, puedes agregar comandos &lt;code&gt;Tex&lt;/code&gt; para auto-numeración de ecuaciones. Más opciones en &lt;a href="https://docs.mathjax.org/en/v2.7-latest/options/"&gt;MathJax docs&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MATHJAX_CONFIG = """
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/x-mathjax-config"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="nx"&gt;MathJax&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Hub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Config&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
@@ -782,13 +782,13 @@ BODY_END = '''
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="GitHub-pages"&gt;GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub profile.&lt;/li&gt;
-&lt;li&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
+&lt;h2 id="Alojar-tu-sitio-en-GitHub-pages"&gt;Alojar tu sitio en GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Alojar-tu-sitio-en-GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Crear un nuevo repositorio llamado &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; en tu cuenta de GitHub.&lt;/li&gt;
+&lt;li&gt;Inicializa el Git y agrega el origen dentro el folder &lt;code&gt;blog&lt;/code&gt; en tu disco interno.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
 git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.vscode
+&lt;li&gt;Crea un &lt;code&gt;.gitignore&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.vscode
 .doit.db*
 cache
 __pycache__
@@ -797,21 +797,21 @@ output
 */.ipynb_checkpoints/*
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Edit Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
+&lt;li&gt;Edita Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'origin'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_COMMIT_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Deploy to GitHub.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
+&lt;li&gt;Súbelo a GitHub.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Select the &lt;code&gt;master&lt;/code&gt; branch on the GitHub Pages section located on the repository settings. &lt;/li&gt;
-&lt;li&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the results.&lt;/li&gt;
+&lt;li&gt;Selecciona la rama &lt;code&gt;master&lt;/code&gt; en la sección de GitHub Pages localizado en la configuración del repositorio.&lt;/li&gt;
+&lt;li&gt;Abre &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; para ver los resultados.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notas&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Nikola creates two branches, &lt;code&gt;master&lt;/code&gt; has the content of the output folder, and &lt;code&gt;src&lt;/code&gt; has the actual content of your posts and pages. &lt;/li&gt;
+&lt;li&gt;Nikola crea dos ramas, &lt;code&gt;master&lt;/code&gt; aloja el contenido de la carpeta &lt;code&gt;output&lt;/code&gt;, y &lt;code&gt;src&lt;/code&gt; tiene el contenido original de los posts y página.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -820,25 +820,25 @@ output
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we will to run VSCode under our environment. If you run VSCode directly, it will show the kernels but they won't be available.&lt;/p&gt;
+&lt;h2 id="Probando-Python-y-el-Matlab-kernel-en-Jupyter-Notebook"&gt;Probando Python y el Matlab kernel en Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Probando-Python-y-el-Matlab-kernel-en-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para esta sección, correremos nuestro entorno en VSCode. Si corres VSCode directamente, este te mostrará los kernels pero no estará disponible el Matlab-kernel.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder&lt;/li&gt;
-&lt;li&gt;Activate the environment.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
+&lt;li&gt;Abre la terminal en tu folder raíz.&lt;/li&gt;
+&lt;li&gt;Activa el entorno.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Open VSCode&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code
+&lt;li&gt;Abre VSCode&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Check if the kernels are available. 
+&lt;li&gt;Revisa si los kernels están disponibles.
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" alt="drawing" width="80%"&gt; 
-They are double listed because one means that the paths is correct, and the other means it's available. Perhaps it's a bug, I'm not sure. &lt;/li&gt;
-&lt;li&gt;Alternatively, activate &lt;code&gt;jmatlabNikola&lt;/code&gt; and run VSCode with Anaconda Navigator.&lt;/li&gt;
-&lt;li&gt;Remember to switch the &lt;strong&gt;Matlab and Python kernels&lt;/strong&gt; for each cell.&lt;/li&gt;
+Están doblemente listados porque uno indica que la ubicación es correcta y el otro indica que está disponible. Tal vez es un bug, no estoy seguro.&lt;/li&gt;
+&lt;li&gt;Alternativamente, activa &lt;code&gt;jmatlabNikola&lt;/code&gt; y corre VSCode con el navegador de Anaconda.&lt;/li&gt;
+&lt;li&gt;Recuerda cambiar los &lt;strong&gt;kernels de Matlab y Python kernels&lt;/strong&gt; para cada celda que lo necesites.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Now that everything is set, let's do some testing with both kernels.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Ahora todo está configurado, probemos ambos kernels.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notas&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;If you use the native Jupyter Notebook editor on your browser, you won't see double listed kernels.
+&lt;li&gt;Si usas el editor nativo de Jupyter Notebook en tu navegador, no verás la doble lista.
 &lt;img src="https://paulomarconi.github.io/images/Jupyter_kernels.png" alt="Jupyter kernels"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -848,7 +848,7 @@ They are double listed because one means that the paths is correct, and the othe
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Python-test"&gt;Python test&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Python-test"&gt;¶&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id="Prueba-Python"&gt;Prueba Python&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Prueba-Python"&gt;¶&lt;/a&gt;&lt;/h2&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -857,10 +857,10 @@ They are double listed because one means that the paths is correct, and the othe
 &lt;div class="prompt input_prompt"&gt;In [1]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello world'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'hello world'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 
-&lt;span class="n"&gt;for&lt;/span&gt; &lt;span class="s"&gt;i&lt;/span&gt; &lt;span class="s"&gt;in&lt;/span&gt; &lt;span class="s"&gt;range(0,12,2):&lt;/span&gt;
-    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"i="&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"i="&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -895,7 +895,7 @@ i= 10
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Matlab-test"&gt;Matlab test&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Matlab-test"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;See more examples &lt;a href="https://am111.readthedocs.io/en/latest/jmatlab_use.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="Prueba-Matlab"&gt;Prueba Matlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Prueba-Matlab"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para más ejemplos &lt;a href="https://am111.readthedocs.io/en/latest/jmatlab_use.html"&gt;acá&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -905,11 +905,11 @@ i= 10
 &lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"hello world"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="s"&gt;compact&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;"hello world"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;compact&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
     &lt;span class="n"&gt;i&lt;/span&gt;
-&lt;span class="s"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -951,10 +951,10 @@ i =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-functions"&gt;Matlab functions&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Matlab-functions"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Matlab-kernel does not support inline functions so you need to save them in files.&lt;/p&gt;
+&lt;h3 id="Funciones-de-Matlab"&gt;Funciones de Matlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Funciones-de-Matlab"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;El Matlab-kernel no soporta las funciones referenciadas en el mismo código, así que necesitamos guardarlos externamente.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;For the Jupyter Notebook browser, use the magic command &lt;code&gt;%%file /files/&amp;lt;file&amp;gt;.m&lt;/code&gt;. It will save it in &lt;code&gt;/blog/files&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;But for VSCode use &lt;code&gt;%%file 'c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;En el editor de Jupyter Notebook en el navegador, usa el magic command &lt;code&gt;%%file /files/&amp;lt;file&amp;gt;.m&lt;/code&gt;. Lo guardará en &lt;code&gt;/blog/files&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Pero para VSCode, usa &lt;code&gt;%%file 'c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m'&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -965,14 +965,14 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'&lt;/span&gt;
+&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'&lt;/span&gt;
 
 &lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;c &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;multi_line_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;a,b&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% in-file comments can be added like this&lt;/span&gt;
     &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="nb"&gt;sin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;end&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1001,7 +1001,7 @@ i =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;To make sure it uses the &lt;code&gt;fnc.m&lt;/code&gt;, open the folder with the Matlab command &lt;code&gt;cd c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m&lt;/code&gt; before. Save some space using &lt;code&gt;format compact&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para asegurarse de usar &lt;code&gt;fnc.m&lt;/code&gt;, abre el folder con el comando de Matlab &lt;code&gt;cd c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m&lt;/code&gt;. Recupera algo de espacio usando &lt;code&gt;format compact&lt;/code&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1011,14 +1011,14 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files'&lt;/span&gt;
+&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files'&lt;/span&gt;
 
-&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="s"&gt;compact&lt;/span&gt;
-&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
-    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fnc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="n"&gt;end&lt;/span&gt;
-&lt;span class="s"&gt;disp(c)&lt;/span&gt;
-&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;format&lt;/span&gt; &lt;span class="n"&gt;compact&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;
+    &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;fnc&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="k"&gt;end&lt;/span&gt;
+&lt;span class="nb"&gt;disp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1061,7 +1061,7 @@ i =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="3D-plotting"&gt;3D plotting&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#3D-plotting"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Let's use &lt;code&gt;%plot inline&lt;/code&gt; magic command.&lt;/p&gt;
+&lt;h3 id="Ploteo-3D"&gt;Ploteo 3D&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ploteo-3D"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Usemos el magi command &lt;code&gt;%plot inline&lt;/code&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1071,14 +1071,14 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;linspace&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;linspace&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;41&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;ty&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;xx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;yy&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;meshgrid&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sqrt&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xx&lt;/span&gt; &lt;span class="o"&gt;.^&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;yy&lt;/span&gt; &lt;span class="o"&gt;.^&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;eps&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;tz&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sin&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;./&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 &lt;span class="c"&gt;%plot inline&lt;/span&gt;
-&lt;span class="n"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nb"&gt;mesh&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tx&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;ty&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;tz&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
     &lt;/div&gt;
@@ -1120,7 +1120,7 @@ i =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-optimization-solver"&gt;Matlab optimization solver&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Matlab-optimization-solver"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;We can also call the Matlab solvers.&lt;/p&gt;
+&lt;h3 id="Optimizador-de-Matlab"&gt;Optimizador de Matlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Optimizador-de-Matlab"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;También podemos llamar algunos solucionadores de Matlab.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1130,7 +1130,7 @@ i =
 &lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
     &lt;div class="input_area"&gt;
-&lt;div class=" highlight hl-matlab"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;H&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
     &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
     &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
 &lt;span class="n"&gt;f&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
@@ -1181,8 +1181,8 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas. Inline example, &lt;code&gt;$ f(x) = x^{2}$&lt;/code&gt; $ f(x) = x^{2}$. Remember that you can still use &lt;code&gt;$$...$$&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Some others&lt;/p&gt;
+&lt;h2 id="Prueba-LaTex"&gt;Prueba LaTex&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Prueba-LaTex"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Algunas fórmulas de LaTex. Ejemplo, &lt;code&gt;$ f(x) = x^{2}$&lt;/code&gt; $ f(x) = x^{2}$. Recuerda que también puedes usar &lt;code&gt;$$...$$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ejemplos.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
@@ -1274,8 +1274,8 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Code-Highlighting-testing"&gt;Code Highlighting testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Code-Highlighting-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;With Pygments.&lt;/p&gt;
+&lt;h2 id="Formateo-de-código"&gt;Formateo de código&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Formateo-de-c%C3%B3digo"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Con Pygments.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;nk&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; 
       &lt;span class="c"&gt;% Constrained MPC control law (RH-FH) LQ-MPC at every step k        &lt;/span&gt;
       &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;mode&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;'reg'&lt;/span&gt;
@@ -1291,7 +1291,7 @@ x =
   &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;With Prism.&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;Con Prism.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="language-matlab"&gt;
   for k = 1:nk+1 
       % Constrained MPC control law (RH-FH) LQ-MPC at every step k        
@@ -1315,12 +1315,12 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Embedded-.pdf"&gt;Embedded &lt;code&gt;.pdf&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Embedded-.pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To embed a local or external &lt;code&gt;.pdf&lt;/code&gt; document, you can use the Google Drive viewer in html code with Markdown.&lt;/p&gt;
+&lt;h2 id="Adjuntar-.pdf"&gt;Adjuntar &lt;code&gt;.pdf&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Adjuntar-.pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para adjuntar un documento &lt;code&gt;.pdf&lt;/code&gt; local o externo, puedes usar el visor de Google Drive en html con Markdown.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt; &lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100%"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"1200px"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;download the PDF.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;  
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id="Example"&gt;Example&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Example"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="1200px"&gt; 
+&lt;h3 id="Ejemplo"&gt;Ejemplo&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ejemplo"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" width="100%" height="1200px"&gt; 
     &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;  
 &lt;/object&gt;
 &lt;/div&gt;
@@ -1329,10 +1329,10 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Incorrect-cell-code-highlighting-with-two-kernels"&gt;Incorrect cell code highlighting with two kernels&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Incorrect-cell-code-highlighting-with-two-kernels"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The cell code highlighting has some problems when you have double kernels in your Notebook, which is a problema of the Jupyter Notebook metadata.&lt;/p&gt;
-&lt;p&gt;Example of poor code highlighting.
+&lt;h2 id="Incorrecto-formateo-de-código-en-las-celdas-con-dos-kernels"&gt;Incorrecto formateo de código en las celdas con dos kernels&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El formateo de código en las celdas tiene problemas cuando tienes dos kernels en tu Notebook, el cuál es un problema del metada de Jupyter Notebook.&lt;/p&gt;
+&lt;p&gt;Ejemplo de formateo de código incompleto.
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" alt="drawing" width="40%"&gt;&lt;/p&gt;
-&lt;p&gt;My &lt;strong&gt;partial solution&lt;/strong&gt; is to add the following to the &lt;code&gt;.ipynb&lt;/code&gt; metadata (raw data)&lt;/p&gt;
+&lt;p&gt;Mi &lt;strong&gt;solución parcial&lt;/strong&gt; es agregar la siguiente línea al metadata (raw data) del Notebook del post.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;"metadata": {
   ...
@@ -1341,7 +1341,7 @@ x =
     "pygments_lexer": "octave"
     },
 },&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;It's done only once but you have to edit the Notebook with VSCode. If you edit it with the Jupyter Notebook browser GUI, it will change the metadata content every time you switch the kernel. Try it for yourself!.&lt;/p&gt;
+&lt;p&gt;Se hace solo una vez pero debes editar el Notebook con VSCode. Si lo editas con el editor Jupyter Notebook en el navegador, este cambiará el metadata cada vez que cambies de kernel. Inténtalo!.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;With &lt;code&gt;"pygments_lexer": "octave"&lt;/code&gt;.
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" alt="drawing" width="40%"&gt;&lt;/li&gt;
@@ -1349,7 +1349,7 @@ x =
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" alt="drawing" width="40%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you want to post with multiple languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Se deseas postear con múltiples kernels de diferentes lenguajes, vale la pena revisar &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1357,7 +1357,7 @@ x =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;Well, that's it for now. Thanks for reading.&lt;/p&gt;
+&lt;p&gt;Bueno, es todo por ahora. Gracias por leer.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

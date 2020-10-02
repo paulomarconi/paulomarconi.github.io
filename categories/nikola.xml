@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 08:42:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 14:23:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -565,7 +565,7 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Header"&gt;Header&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Header"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add &lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/fontawesome.com/"&gt;FontAwesone&lt;/a&gt; and &lt;a href="https://jpswalsh.github.io/academicons/"&gt;Academic Icons&lt;/a&gt; to use in the footer.&lt;/p&gt;
+&lt;h3 id="Header"&gt;Header&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Header"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Add &lt;a href="https://paulomarconi.github.io/blog/Nikola-guide/fontawesome.com/"&gt;FontAwesone&lt;/a&gt; and &lt;a href="https://jpswalsh.github.io/academicons/"&gt;Academic Icons&lt;/a&gt; to use in the footer content.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
@@ -715,7 +715,7 @@ print('hello world')
 &lt;h3 id="Adding-Prism"&gt;Adding Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Adding-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternatively, I like to use &lt;a href="https://prismjs.com/"&gt;Prism&lt;/a&gt; due its &lt;strong&gt;JSONP Highlight plugin&lt;/strong&gt; which allows you to import external code hosted on GitHub or some other place.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Select the &lt;a href="https://prismjs.com/download.html"&gt;Minifed version&lt;/a&gt; and all available languages. &lt;/li&gt;
-&lt;li&gt;Add any plugins. My selection is as follows.
+&lt;li&gt;Add any plugin. My selection is as follows.
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png" alt="Prism plugins"&gt;&lt;/li&gt;
 &lt;li&gt;Download the JS and CSS files.&lt;/li&gt;
 &lt;li&gt;Save them on &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; and &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
@@ -753,7 +753,7 @@ BODY_END = '''
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="LaTex-with-Mathjax"&gt;LaTex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax, and with the Jupyter nbextensions &lt;code&gt;\begin{align}...\end{align}&lt;/code&gt; or others LaTex environments can be used. But, if you want support for the &lt;code&gt;$...$&lt;/code&gt; inline or &lt;code&gt;$$...$$&lt;/code&gt; paragraph syntax LaTex, uncomment the following on Nikola &lt;code&gt;conf.py&lt;/code&gt;. Also, you can add &lt;code&gt;Tex&lt;/code&gt; commands for the auto numbering equations. More options at &lt;a href="https://docs.mathjax.org/en/v2.7-latest/options/"&gt;MathJax docs&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="LaTex-with-Mathjax"&gt;LaTex with Mathjax&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-with-Mathjax"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;By default Nikola uses MathJax, and with the Jupyter nbextensions, environments such as &lt;code&gt;\begin{align}...\end{align}&lt;/code&gt; and others LaTex environments can be used. But, if you want support for the &lt;code&gt;$...$&lt;/code&gt; inline or &lt;code&gt;$$...$$&lt;/code&gt; paragraph syntax LaTex, uncomment the following on Nikola &lt;code&gt;conf.py&lt;/code&gt;. Also, you can add &lt;code&gt;Tex&lt;/code&gt; commands for the auto numbering equations. More options at &lt;a href="https://docs.mathjax.org/en/v2.7-latest/options/"&gt;MathJax docs&lt;/a&gt;.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;MATHJAX_CONFIG = """
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"text/x-mathjax-config"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="nx"&gt;MathJax&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Hub&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;Config&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
@@ -783,7 +783,7 @@ BODY_END = '''
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="GitHub-pages"&gt;GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub profile.&lt;/li&gt;
+&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub account.&lt;/li&gt;
 &lt;li&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
 git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io
 &lt;/pre&gt;&lt;/div&gt;
@@ -820,9 +820,9 @@ output
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we will to run VSCode under our environment. If you run VSCode directly, it will show the kernels but they won't be available.&lt;/p&gt;
+&lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we will to run VSCode under our environment. If you run VSCode directly, it will show the kernels but the Matlab-kernel won't be available.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder&lt;/li&gt;
+&lt;li&gt;Open terminal inside your root folder&lt;/li&gt;
 &lt;li&gt;Activate the environment.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
@@ -953,8 +953,8 @@ i =
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Matlab-functions"&gt;Matlab functions&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Matlab-functions"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Matlab-kernel does not support inline functions so you need to save them in files.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;For the Jupyter Notebook browser, use the magic command &lt;code&gt;%%file /files/&amp;lt;file&amp;gt;.m&lt;/code&gt;. It will save it in &lt;code&gt;/blog/files&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;But for VSCode use &lt;code&gt;%%file 'c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;For the Jupyter Notebook editor on your browser, use the magic command &lt;code&gt;%%file /files/&amp;lt;file&amp;gt;.m&lt;/code&gt;. It will save it in &lt;code&gt;/blog/files&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;But for VSCode, use &lt;code&gt;%%file 'c:/&amp;lt;absolute_path&amp;gt;/&amp;lt;file&amp;gt;.m'&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -1182,7 +1182,7 @@ x =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="LaTex-testing"&gt;LaTex testing&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#LaTex-testing"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Some LaTex formulas. Inline example, &lt;code&gt;$ f(x) = x^{2}$&lt;/code&gt; $ f(x) = x^{2}$. Remember that you can still use &lt;code&gt;$$...$$&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Some others&lt;/p&gt;
+&lt;p&gt;Examples.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
@@ -1332,7 +1332,7 @@ x =
 &lt;h2 id="Incorrect-cell-code-highlighting-with-two-kernels"&gt;Incorrect cell code highlighting with two kernels&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Incorrect-cell-code-highlighting-with-two-kernels"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The cell code highlighting has some problems when you have double kernels in your Notebook, which is a problema of the Jupyter Notebook metadata.&lt;/p&gt;
 &lt;p&gt;Example of poor code highlighting.
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" alt="drawing" width="40%"&gt;&lt;/p&gt;
-&lt;p&gt;My &lt;strong&gt;partial solution&lt;/strong&gt; is to add the following to the &lt;code&gt;.ipynb&lt;/code&gt; metadata (raw data)&lt;/p&gt;
+&lt;p&gt;My &lt;strong&gt;partial solution&lt;/strong&gt; is to add the following to the &lt;code&gt;.ipynb&lt;/code&gt; metadata (raw data) of the Notebook post.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;"metadata": {
   ...
@@ -1349,7 +1349,7 @@ x =
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" alt="drawing" width="40%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;If you want to post with multiple languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to post with multiple kernels and programming languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
