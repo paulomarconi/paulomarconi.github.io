@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MPC with feed-forward SSTO | PauLoMarconi</title>
+<title>Constrained MPC with feed-forward SSTO | PauLoMarconi</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -17,9 +17,10 @@
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <link rel="stylesheet" href="../../assets/css/prism.css">
 <meta name="author" content="Paulo Loma Marconi">
-<link rel="prev" href="../MPCu/" title="Unconstrained MPC regulator with Kalman filter in Jupyter Notebook" type="text/html">
+<link rel="prev" href="../MPCu/" title="Unconstrained MPC regulator with Kalman filter" type="text/html">
+<link rel="next" href="../MPCc/" title="Constrained MPC regulator with Kalman Filter" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
-<meta property="og:title" content="MPC with feed-forward SSTO">
+<meta property="og:title" content="Constrained MPC with feed-forward SSTO">
 <meta property="og:url" content="https://paulomarconi.github.io/blog/MPC-SSTO/">
 <meta property="og:description" content="Constrained Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)¶A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking an">
 <meta property="og:type" content="article">
@@ -95,7 +96,7 @@ navbar-dark bg-dark
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">MPC with feed-forward SSTO</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Constrained MPC with feed-forward SSTO</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -883,14 +884,14 @@ K =
 
     <span class="c">% form row by row</span>
     <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
-    <span class="c">%  F</span>
-    <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span>^<span class="n">i</span><span class="p">;</span>
-    
-    <span class="c">% G</span>
-    <span class="c">% form element by element</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span>
-        <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span>^<span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
-    <span class="k">end</span>
+        <span class="c">%  F</span>
+        <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span>^<span class="n">i</span><span class="p">;</span>
+        
+        <span class="c">% G</span>
+        <span class="c">% form element by element</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span>
+            <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span>^<span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+        <span class="k">end</span>
     <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
@@ -923,7 +924,7 @@ K =
 <div class="prompt input_prompt">In [65]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/'</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO'</span>
 <span class="c">% Prediction matrices</span>
 <span class="p">[</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">]</span> <span class="p">=</span> <span class="n">predict_mats</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
 </pre></div>
@@ -1075,7 +1076,7 @@ G =
 <div class="prompt input_prompt">In [67]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/'</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO'</span>
 <span class="c">% Constructing Constraint matrices</span>
 <span class="p">[</span><span class="n">Pc_ssto</span><span class="p">,</span><span class="n">qc_ssto</span><span class="p">,</span><span class="n">Sc_ssto</span><span class="p">]</span> <span class="p">=</span> <span class="n">constraint_mats</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">Pu_ssto</span><span class="p">,</span><span class="n">qu_ssto</span><span class="p">,</span><span class="n">Px_ssto</span><span class="p">,</span><span class="n">qx_ssto</span><span class="p">,</span><span class="n">PxN_ssto</span><span class="p">,</span><span class="n">qxN_ssto</span><span class="p">)</span>
 </pre></div>
@@ -1264,7 +1265,7 @@ Sc_ssto =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Dead-beat-controller-K-for-mode-2">Dead-beat controller K for mode-2<a class="anchor-link" href="#Dead-beat-controller-K-for-mode-2">¶</a>
+<h3 id="Check-if-closed-loop-system-is-stable">Check if closed-loop system is stable<a class="anchor-link" href="#Check-if-closed-loop-system-is-stable">¶</a>
 </h3>
 </div>
 </div>
@@ -1430,7 +1431,7 @@ P =
 <div class="prompt input_prompt">In [71]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/'</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO'</span>
 <span class="c">% Cost matrices</span>
 <span class="p">[</span><span class="n">H</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">M</span><span class="p">]</span> <span class="p">=</span> <span class="n">cost_mats</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">P</span><span class="p">)</span>
 </pre></div>
@@ -1885,19 +1886,6 @@ on Advanced Control of Chemical Processes, June 2015.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-octave"><pre><span></span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
@@ -1908,7 +1896,10 @@ on Advanced Control of Chemical Processes, June 2015.</p>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../MPCu/" rel="prev" title="Unconstrained MPC regulator with Kalman filter in Jupyter Notebook">Previous post</a>
+                <a href="../MPCu/" rel="prev" title="Unconstrained MPC regulator with Kalman filter">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../MPCc/" rel="next" title="Constrained MPC regulator with Kalman Filter">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -1917,7 +1908,7 @@ on Advanced Control of Chemical Processes, June 2015.</p>
         <script>
         var disqus_shortname ="paulomarconi",
             disqus_url="https://paulomarconi.github.io/blog/MPC-SSTO/",
-        disqus_title="MPC with feed-forward SSTO",
+        disqus_title="Constrained MPC with feed-forward SSTO",
         disqus_identifier="cache/posts/MPC-SSTO.html",
         disqus_config = function () {
             this.language = "en";
