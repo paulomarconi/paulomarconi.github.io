@@ -98,7 +98,7 @@ DEFAULT_LANG = "en"
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
-    # "es": "./es",
+    "es": "./es",
 }
 
 # What will translated input files be named like?
@@ -142,14 +142,17 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Blog"),
         ("/categories/", "Tags"),
         # ("/bio/index.html", "Bio"),
-        ("/cheatsheet/index.html", "Cheatsheet"),                
+        ("/cheatsheet/index.html", "Cheatsheet"),
+        ("https://apuntesdeelectronicaycontrol.blogspot.com", "Old Blog"),                
         ("/rss.xml", "RSS feed"),
-        ("https://apuntesdeelectronicaycontrol.blogspot.com", "Old Site"),
+        
     ),
 
     "es": (
         ("/es/archive.html", "Blog"),
         ("/es/categories/", "Etiquetas"),
+        ("/cheatsheet/index.html", "Cheatsheet"),
+        ("https://apuntesdeelectronicaycontrol.blogspot.com", "Antiguo Blog"),
         ("/es/rss.xml", "Canal RSS"),
     ),
 }
@@ -1310,13 +1313,20 @@ SEARCH_FORM = """
 EXTRA_HEAD_DATA = '''
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  
+  <!-- Prism -->
   <link rel="stylesheet" href="../../assets/css/prism.css">
+  <!-- for /es/blog/... posts-->
+  <link rel="stylesheet" href="../../../assets/css/prism.css">
 '''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
 BODY_END = '''
-    <script src="../../assets/js/prism.js"></script>
+  <!-- Prism -->
+  <script src="../../assets/js/prism.js"></script>
+  <!-- for /es/blog/... posts-->
+  <script src="../../../assets/js/prism.js"></script>
 '''
 
 # The possibility to extract metadata from the filename by using a
