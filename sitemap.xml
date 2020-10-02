@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://paulomarconi.github.io/</loc>
-  <lastmod>2020-09-14T06:49:00Z</lastmod>
+  <lastmod>2020-10-02T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-02T01:13:00Z</lastmod>
+  <lastmod>2020-10-02T07:19:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-10-01T05:42:00Z</lastmod>
+  <lastmod>2020-10-02T07:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
@@ -111,6 +111,6 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/test.py.html</loc>
-  <lastmod>2020-09-28T05:00:00Z</lastmod>
+  <lastmod>2020-10-02T03:50:00Z</lastmod>
  </url>
 </urlset>

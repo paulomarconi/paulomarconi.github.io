@@ -54,6 +54,7 @@ https://docs.github.com/en/github/using-git/
     git remote add origin https://github.com/<user_name>/<repo_name>.git
     git push <remote_name> <branch_name>
     git push origin master
+    git push -f origin master
 
 
 Images with defined size
