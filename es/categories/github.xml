@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 09:56:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/es/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 12:02:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/es/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Tabla de Contenido&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -48,7 +48,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Configurar-VSCode"&gt;Configurar VSCode&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configurar-VSCode"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Instalar &lt;a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python"&gt;Python extension&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Asegúrate que esté habilitado &lt;code&gt;Python › Data Science: Allow Import From Notebook&lt;/code&gt; en configuración.&lt;/li&gt;
+&lt;li&gt;Asegúrate que esté habilitado &lt;code&gt;Python › Data Science: Allow Import From Notebook&lt;/code&gt; en configuración de la extensión.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -57,10 +57,10 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Crea-un-nuevo-environment-con--Anaconda-o-Conda"&gt;Crea un nuevo environment con  Anaconda o Conda&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-un-nuevo-environment-con--Anaconda-o-Conda"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="Crea-un-nuevo-entorno-con--Anaconda-o-Conda"&gt;Crea un nuevo entorno con  Anaconda o Conda&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-un-nuevo-entorno-con--Anaconda-o-Conda"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Descarga e instala &lt;a href="https://www.anaconda.com/products/individual#Downloads"&gt;Anaconda&lt;/a&gt; o &lt;a href="https://repo.anaconda.com/miniconda/"&gt;Miniconda&lt;/a&gt;. Es tu decisión.&lt;/li&gt;
 &lt;li&gt;Asegúrate que &lt;code&gt;C:\ProgramData\Anaconda3&lt;/code&gt; y &lt;code&gt;C:\ProgramData\Anaconda3\Scripts&lt;/code&gt; estén listado &lt;code&gt;path variables&lt;/code&gt; de Windows.&lt;/li&gt;
-&lt;li&gt;En el navegador de Anaconda, crea un environment llamado &lt;code&gt;jmatlabNikola&lt;/code&gt; con &lt;code&gt;Python 3.6&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;En el navegador de Anaconda, crea un entorno llamado &lt;code&gt;jmatlabNikola&lt;/code&gt; con &lt;code&gt;Python 3.6&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;O abre la terminal y corre,
 &lt;pre&gt;&lt;code&gt;  conda create -n jmatlabNikola python=3.6&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
@@ -68,31 +68,31 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;¿Por qué Python 3.6?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Porque el &lt;a href="https://www.mathworks.com/help/matlab/matlab-engine-for-python.html"&gt;Matlab engine&lt;/a&gt; es compatible solo con Python 2.7, 3.6, y 3.7. La versión 3.7 es para Matlab 2019+, y la versión 3.6 es para Matlab 2018+. También, Python 3.6 es conocido como la versión más estable.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Why a new environment?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Anaconda (conda) is a powerful &lt;strong&gt;package management platform&lt;/strong&gt; that allows you to install any &lt;strong&gt;self-contained&lt;/strong&gt; workspace (environment) with different kernels and libraries. For example, let's say I have two environments:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;¿Por qué un entorno?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Anaconda (conda) es una potente &lt;strong&gt;plataforma de administración de paquetes&lt;/strong&gt; que te permite instalar espacio de trabajo &lt;strong&gt;auto-contenidos&lt;/strong&gt; (entorno) con diferentes kernels y librerías. Por ejemplo, digamos que tengo dos entornos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;jmatlabNikola&lt;/code&gt;: composed by Python 3.6, Jupyter Notebook, jmatlab, and Nikola.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;openCV_TF&lt;/code&gt;: composed by Python 3.7, OpenCV, and TensorFlow.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;jmatlabNikola&lt;/code&gt;: compuesto por Python 3.6, Jupyter Notebook, jmatlab, y Nikola.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;openCV_TF&lt;/code&gt;: compuesto por Python 3.7, OpenCV, y TensorFlow.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;So, I want to write a post:&lt;/p&gt;
+&lt;p&gt;Entonces, si quiero escribir un post:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → it switches to Python 3.6 (you can check with &lt;code&gt;python --version&lt;/code&gt;). 
+&lt;li&gt;Corro &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → cambia a Python 3.6 (puedes verificar con &lt;code&gt;python --version&lt;/code&gt;). 
 &lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
 Python 3.6.10 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
-Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available. &lt;/li&gt;
+Cualquier post que escriba será compilado solamente en este entorno. Ninguna de las librerías del otro entorno(s) estará disponible. &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;If I want to work with OpenCV:&lt;/p&gt;
+&lt;p&gt;Si quiero trabajar con OpenCV:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;activate openCV_TF&lt;/code&gt; → it switches to Python 3.7. The kernel and libraries of &lt;code&gt;jmatlabNikola&lt;/code&gt; are not available and won't get mixed with this environment.
+&lt;li&gt;Corro &lt;code&gt;activate openCV_TF&lt;/code&gt; → cambia a Python 3.7. El kernel y las librerías de &lt;code&gt;jmatlabNikola&lt;/code&gt; no están disponibles y no se mezclarán con este entorno.
 &lt;pre&gt;&lt;code&gt;(openCV_TF) C:\Users\&amp;lt;user_name&amp;gt;\ML_project&amp;gt;python --version
 Python 3.7.6 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notas&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Don't use the &lt;code&gt;base&lt;/code&gt; environment of Anaconda if you want to test packages. Use it as a reference because it's the default environment for your OS.&lt;/li&gt;
-&lt;li&gt;If you already have Python installed, you can still use Anaconda without any problems. Just make sure the &lt;code&gt;Anaconda python path&lt;/code&gt; is configured in VSCode. &lt;/li&gt;
-&lt;li&gt;Your work files and folders could be anywhere on your hard drive, but don't create them inside the environment folders.&lt;/li&gt;
+&lt;li&gt;No uses el entorno &lt;code&gt;base&lt;/code&gt; de Anaconda si quieres probar paquetes. Úsalo como referencia porque es el entorno por defecto para tu sistema operativo.&lt;/li&gt;
+&lt;li&gt;Si ya tienes instalado Python, puedes usar Anaconda sin problema. Solo asegúrate que el &lt;code&gt;Anaconda python path&lt;/code&gt; esté configurado en VSCode. &lt;/li&gt;
+&lt;li&gt;Tus documentos y carpetas de trabajo pueden estar en cualquier ubicación de tu disco duro, pero no los crees dentro las carpetas de los entornos.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -101,28 +101,28 @@ Python 3.7.6 :: Anaconda, Inc.&lt;/code&gt;&lt;/pre&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Install-Jupyter-Notebook,-Nikola-and-jmatlab"&gt;Install Jupyter Notebook, Nikola and jmatlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Install-Jupyter-Notebook,-Nikola-and-jmatlab"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Open terminal in &lt;code&gt;cd "C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola"&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Install Jupyter Notebook:&lt;ul&gt;
-&lt;li&gt;Jupyter Notebook is installed by default when you create a new environment with Anaconda Navigator.&lt;/li&gt;
-&lt;li&gt;With conda.
+&lt;h2 id="Instalación-de-Jupyter-Notebook,-Nikola-y-jmatlab"&gt;Instalación de Jupyter Notebook, Nikola y jmatlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Abre el terminal en &lt;code&gt;cd "C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Instala Jupyter Notebook:&lt;ul&gt;
+&lt;li&gt;Jupyter Notebook es instaladon por defecto cuando creas un entorno usando el navegador de Anaconda.&lt;/li&gt;
+&lt;li&gt;Con conda.
 &lt;pre&gt;&lt;code&gt;conda install -c conda-forge notebook&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;With pip.
+&lt;li&gt;Con pip.
 &lt;pre&gt;&lt;code&gt;pip install notebook&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Install the &lt;a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"&gt;&lt;code&gt;nbextensions&lt;/code&gt;&lt;/a&gt;.
+&lt;li&gt;Instala las &lt;a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"&gt;&lt;code&gt;nbextensions&lt;/code&gt;&lt;/a&gt;.
 &lt;pre&gt;&lt;code&gt;pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Install the Jupyter nbextension configurator
+&lt;li&gt;Instala el Jupyter nbextension configurator.
 &lt;pre&gt;&lt;code&gt;pip install jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Run Jupyter Notebook by command line to check it was installed correctly with the nbextensions. 
+&lt;li&gt;Corre Jupyter Notebook por línea de comando para verificar que está instalado correctamente junto con las nbextensions. 
 &lt;pre&gt;&lt;code&gt;jupyter notebook&lt;/code&gt;&lt;/pre&gt;
-It will open the browser in &lt;a href="http://localhost:8888"&gt;http://localhost:8888&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;I recommend to enable the nbextensions&lt;ul&gt;
+Abrirá tu navegador en &lt;a href="http://localhost:8888"&gt;http://localhost:8888&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Recomiendo habilitar las siguientes nbextensions&lt;ul&gt;
 &lt;li&gt;(some) LaTex environments for Jupyter&lt;/li&gt;
 &lt;li&gt;Equation Auto Numbering&lt;/li&gt;
 &lt;li&gt;CodeMirror mode extensions -&amp;gt; Matlab/Octave highlighting&lt;/li&gt;
@@ -131,35 +131,35 @@ It will open the browser in &lt;a href="http://localhost:8888"&gt;http://localho
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Install Nikola.
+&lt;li&gt;Instala Nikola.
 &lt;pre&gt;&lt;code&gt;pip install Nikola[extras]&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Install Matlab-kernel.
+&lt;li&gt;Instala Matlab-kernel.
 &lt;pre&gt;&lt;code&gt;pip install matlab_kernel&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Check installed kernels. 
+&lt;li&gt;Verifica los kernels instalados. 
 &lt;pre&gt;&lt;code&gt;jupyter kernelspec list&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;You'll see something like this.
+&lt;li&gt;Verás algo parecido.
 &lt;pre&gt;&lt;code&gt;Available kernels:
 matlab     C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\jupyter\kernels\matlab
 python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\jupyter\kernels\python3&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="Config-Matlab"&gt;Config Matlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Config-Matlab"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Open terminal as &lt;strong&gt;administrator&lt;/strong&gt;
+&lt;h3 id="Configurar-Matlab"&gt;Configurar Matlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configurar-Matlab"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Abre la terminal como &lt;strong&gt;administrador&lt;/strong&gt;
 &lt;pre&gt;&lt;code&gt;activate jmatlabNikola&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Go to &lt;code&gt;cd "C:\Program Files\MATLAB\R2018b\extern\engines\python"&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Install the Python engine.
+&lt;li&gt;Ve a  &lt;code&gt;cd "C:\Program Files\MATLAB\R2018b\extern\engines\python"&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Instala el Python engine.
 &lt;pre&gt;&lt;code&gt;python setup.py install&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Done!, now you have everything what it's needed in your environment.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Listo!, ahora ya tienes todo lo que necesita tu entorno.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Notas&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Make sure you activate &lt;code&gt;jmatlabNikola&lt;/code&gt; environment with admin rights only to install &lt;code&gt;matlab_kernel&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;If you have doubts about the Python kernel, check with &lt;code&gt;python --version&lt;/code&gt; every time you activate an environment.&lt;/li&gt;
+&lt;li&gt;Asegúrate que activaste el entorno &lt;code&gt;jmatlabNikola&lt;/code&gt; como administrador solo para instalar el &lt;code&gt;matlab_kernel&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Si tienes dudas sobre el kernel de Python, verifica con &lt;code&gt;python --version&lt;/code&gt; cuando actives un entorno.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -168,28 +168,28 @@ python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\ju
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Create-a-Nikola-demo-site"&gt;Create a Nikola demo site&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-Nikola-demo-site"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Create a new folder called &lt;code&gt;blog&lt;/code&gt; anywhere you like except inside the &lt;code&gt;jmatlabNikola&lt;/code&gt; environment.&lt;/li&gt;
-&lt;li&gt;Open terminal inside your &lt;code&gt;blog&lt;/code&gt; folder.&lt;/li&gt;
-&lt;li&gt;Activate the environment. 
+&lt;h2 id="Crea-un-sitio-demo-de-Nikola"&gt;Crea un sitio demo de Nikola&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crea-un-sitio-demo-de-Nikola"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Crea un nuevo folder llamado &lt;code&gt;blog&lt;/code&gt; donde quieras excepto dentro la carpeta del entorno &lt;code&gt;jmatlabNikola&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Abre la terminal dentro tu carpeta &lt;code&gt;blog&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Activa el entorno. 
 &lt;pre&gt;&lt;code&gt;activate jmatlabNikola&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Initialize a demo, and fill its content.
+&lt;li&gt;Inicializa el demo y llena su contenido.
 &lt;pre&gt;&lt;code&gt;nikola init --demo&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Build (generate) the HTML files of the site.
+&lt;li&gt;Construye (genera) los documentos HTML del sitio.
 &lt;pre&gt;&lt;code&gt;nikola build&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;View on your browser. It will open the localhost on &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.
+&lt;li&gt;Revísalo en tu navegador. Abrirá el localhost en &lt;code&gt;http://127.0.0.1:8000&lt;/code&gt;.
 &lt;pre&gt;&lt;code&gt;nikola serve -b&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Automatically &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; your site if you want to see all changes constantly (&lt;strong&gt;recommended&lt;/strong&gt;). 
+&lt;li&gt;Automaticamente &lt;code&gt;build&lt;/code&gt; y &lt;code&gt;serve&lt;/code&gt; tu sitio si deseas ver los cambios de tu sitio constantemente (&lt;strong&gt;recomendado&lt;/strong&gt;). 
 &lt;pre&gt;&lt;code&gt;nikola auto&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Clean &lt;code&gt;output/&lt;/code&gt; content whenever you remove any of content manually from your &lt;code&gt;blog&lt;/code&gt; folder. Use it before &lt;code&gt;build&lt;/code&gt; command.
+&lt;li&gt;Limpia el contenido de la carpeta &lt;code&gt;/output/&lt;/code&gt; cada vez que remuevas documentos manualmente de la carpeta &lt;code&gt;blog&lt;/code&gt;. Úsalo antes del comando &lt;code&gt;build&lt;/code&gt;.
 &lt;pre&gt;&lt;code&gt;nikola check -f --clean-files&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Press &lt;code&gt;ctrl+c&lt;/code&gt; to stop the server.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ctrl+c&lt;/code&gt; para detener el servidor.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -198,12 +198,12 @@ python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\ju
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-a-new-post-and-new-page"&gt;Create a new post and new page&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-new-post-and-new-page"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create a new post and new page. By default, they are created in &lt;code&gt;.rst&lt;/code&gt; format.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post
+&lt;h3 id="Crear-un-nuevo-post-y-una-nueva-página"&gt;Crear un nuevo post y una nueva página&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Por defecto, ambos son creados en formato &lt;code&gt;.rst&lt;/code&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post
 nikola new_page
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Other posts on different formats (&lt;code&gt;-f ipynb&lt;/code&gt; needs extra configuration, you'll see that later).&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f md
+&lt;li&gt;Otros formatos diferentes (&lt;code&gt;-f ipynb&lt;/code&gt; necesita configuración extra, lo veremos más adelante).&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f md
 nikola new_post -f rst
 nikola new_post -f html
 nikola new_post -f ipynb
@@ -217,8 +217,8 @@ nikola new_post -f ipynb
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-a-clean-Nikola-site"&gt;Create a clean Nikola site&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-a-clean-Nikola-site"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Same as before but run &lt;code&gt;nikola init&lt;/code&gt; instead of &lt;code&gt;nikola init --demo&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;That's it!. Navigate through the files and see what Nikola has done with the demo, or the clean version.&lt;/p&gt;
+&lt;h3 id="Crear-un-sitio-limpio-de-Nikola"&gt;Crear un sitio limpio de Nikola&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-un-sitio-limpio-de-Nikola"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Lo mismo que en la anterior sección pero corre &lt;code&gt;nikola init&lt;/code&gt; en vez de &lt;code&gt;nikola init --demo&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Listo!. Navega a través de los documentos y archivos para ver que hizo Nikola en el demo y la versión limpia.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -226,11 +226,11 @@ nikola new_post -f ipynb
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Nikola-directories"&gt;Nikola directories&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Nikola-directories"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Although, most of them are self-explained, they can be categorized in three types:&lt;/p&gt;
+&lt;h2 id="Directorios-de-Nikola"&gt;Directorios de Nikola&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Directorios-de-Nikola"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Aunque muchos de ellos se explican solos, pueden categorizarse en tres tipos:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Content: &lt;code&gt;files&lt;/code&gt;, &lt;code&gt;galleries&lt;/code&gt;, &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;listings&lt;/code&gt;, &lt;code&gt;pages&lt;/code&gt;, &lt;code&gt;posts&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Customization: &lt;code&gt;plugins&lt;/code&gt;, &lt;code&gt;templates&lt;/code&gt;, &lt;code&gt;themes&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Visible output: &lt;code&gt;output&lt;/code&gt;. Here, all your content is parsed to &lt;code&gt;.html&lt;/code&gt; to be visible in any web hosting service such as GitHub pages.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;../__pycache__
+&lt;li&gt;Contenido: &lt;code&gt;files&lt;/code&gt;, &lt;code&gt;galleries&lt;/code&gt;, &lt;code&gt;images&lt;/code&gt;, &lt;code&gt;listings&lt;/code&gt;, &lt;code&gt;pages&lt;/code&gt;, &lt;code&gt;posts&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Personalización: &lt;code&gt;plugins&lt;/code&gt;, &lt;code&gt;templates&lt;/code&gt;, &lt;code&gt;themes&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Salida visible: &lt;code&gt;output&lt;/code&gt;. Acá, todo el contenido es convertido a &lt;code&gt;.html&lt;/code&gt; para ser visible en cualquier servicio de alojamiento de páginas web como GitHub pages.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;../__pycache__
 ../cache     
 ../files      &lt;span class="c1"&gt;# all the files of your blog, e.g. pdf, videos, etc.&lt;/span&gt;
 ../galleries  &lt;span class="c1"&gt;# galleries of images.&lt;/span&gt;
@@ -252,7 +252,7 @@ nikola new_post -f ipynb
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Configure-a-non-blog-Nikola-site"&gt;Configure a non-blog Nikola site&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configure-a-non-blog-Nikola-site"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;From now on, we will configure Nikola using &lt;code&gt;conf.py&lt;/code&gt;, located in your root directory.&lt;/p&gt;
+&lt;h2 id="Configurar-un-website-Nikola-(no-un-blog)"&gt;Configurar un website Nikola (no un blog)&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Configurar-un-website-Nikola-(no-un-blog)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Desde esta sección, configuraremos Nikola usando &lt;code&gt;conf.py&lt;/code&gt; que está localizado en la raíz de tu directorio.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -260,12 +260,12 @@ nikola new_post -f ipynb
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Create-the-index-page-and-bio-page"&gt;Create the index page and bio page&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Create-the-index-page-and-bio-page"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;First, create both pages using the terminal.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"index"&lt;/span&gt;
+&lt;h3 id="Crear-las-páginas-index-y-bio"&gt;Crear las páginas index y bio&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Crear-las-p%C3%A1ginas-index-y-bio"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Primero, creamos ambas páginas usando la termina.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"index"&lt;/span&gt;
 nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"bio"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Add them to the navigation links.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;NAVIGATION_LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;li&gt;Los agregamos a la lista de navegación.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;NAVIGATION_LINKS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;DEFAULT_LANG&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/index.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Home"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
         &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"/bio/index.html"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Bio"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -273,7 +273,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="p"&gt;),&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Add any other page, just make sure to add them on the navigation list, e.g. about-me, contact, etc.&lt;/li&gt;
+&lt;li&gt;Agrega otra página que desees, solo asegúrate añadirlos a la lista, e.g. about-me, contact, etc.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
@@ -282,8 +282,8 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Use-Jupyter-Notebooks"&gt;Use Jupyter Notebooks&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Use-Jupyter-Notebooks"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;By default, Nikola uses the &lt;strong&gt;blog&lt;/strong&gt; configuration.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;h3 id="Usar-Jupyter-Notebooks"&gt;Usar Jupyter Notebooks&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Usar-Jupyter-Notebooks"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Por defecto, Nikola usa la configuración &lt;strong&gt;blog&lt;/strong&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.rst"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"posts"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.md"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"posts"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.txt"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"posts"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -299,7 +299,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Change it to the &lt;a href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html"&gt;&lt;strong&gt;non-blog&lt;/strong&gt; configuration&lt;/a&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;li&gt;Cámbialo a la &lt;a href="https://getnikola.com/creating-a-site-not-a-blog-with-nikola.html"&gt;&lt;strong&gt;configuración no blog&lt;/strong&gt;&lt;/a&gt;.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;POSTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.rst"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.md"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
     &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"posts/*.txt"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"post.tmpl"&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
@@ -317,7 +317,7 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
 &lt;span class="n"&gt;INDEX_PATH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"blog"&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Check if &lt;code&gt;.ipynb&lt;/code&gt; is listed in the compilers section.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMPILERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;li&gt;Verifica si &lt;code&gt;.ipynb&lt;/code&gt; está listado como compilador.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;COMPILERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="s2"&gt;"rest"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.rst'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.txt'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
     &lt;span class="s2"&gt;"markdown"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.md'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.mdown'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'.markdown'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
     &lt;span class="s2"&gt;"textile"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'.textile'&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
@@ -329,8 +329,8 @@ nikola new_page --title&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&g
     &lt;span class="o"&gt;...&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;If you &lt;code&gt;build&lt;/code&gt; and &lt;code&gt;serve&lt;/code&gt; the site, it will give you an error of &lt;code&gt;"missing post_ipynb.tmpl"&lt;/code&gt;. We'll create it on the next section.&lt;/li&gt;
-&lt;li&gt;Change &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; to &lt;code&gt;post.tmpl&lt;/code&gt;, and run &lt;code&gt;nikola auto&lt;/code&gt; to see the default Jupyter Notebook style.&lt;/li&gt;
+&lt;li&gt;Si usas &lt;code&gt;build&lt;/code&gt; y &lt;code&gt;serve&lt;/code&gt; en el sitio, este te dará un error de &lt;code&gt;"missing post_ipynb.tmpl"&lt;/code&gt;, lo crearemos en la siguiente sección.&lt;/li&gt;
+&lt;li&gt;Cambia &lt;code&gt;post_ipynb.tmpl&lt;/code&gt; a &lt;code&gt;post.tmpl&lt;/code&gt;, y corre &lt;code&gt;nikola auto&lt;/code&gt; para ver el estílo por defecto de Jupyter Notebook.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
