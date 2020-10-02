@@ -144,6 +144,7 @@ NAVIGATION_LINKS = {
         # ("/bio/index.html", "Bio"),
         ("/cheatsheet/index.html", "Cheatsheet"),                
         ("/rss.xml", "RSS feed"),
+        ("https://apuntesdeelectronicaycontrol.blogspot.com", "Old Site"),
     ),
 
     "es": (
