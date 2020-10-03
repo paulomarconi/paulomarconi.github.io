@@ -27,24 +27,26 @@
 
 \begin{document}
 	
+
 \begin{algorithm}[H]
-	\caption{Unconstrained MPC with Kalman Filter}
+	\caption{Constrained MPC with Kalman Filter}
 	\KwData{$x(0),~Q,~R,~Ts,~N$}
 	\KwResult{$u^*(k)$}
-	Compute prediction matrices $F,~G$, and $H,~L,~M$\;
-	Compute $P$ using the mode-2 gain $K$ to guarantee stability\;
-	Compute $K_{N}$\;
-	Compute the Kalman Filter gain $L_{KF}$\;
+	Compute prediction matrices $F,~G$, mode-2 gain $K$, $P$, and $H,~L,~M$\;
+	Using $K$, compute the deadbeat mode-2 terminal constraint $\mathcal{X}_f$ to guarantee stability (8)\;
+	Compute the gain $L_{KF}$\;
+	Compute the prediction matrices $P_c,~q_c,~S_c$ (5)\;
 	Initialize $x(0)\leftarrow x_0$\;
 	\For{$k=0:nk$}{
-		Measure the current noisy output: $y(k)\leftarrow C~x(k)+v(k)$\;		
-		Aapply the first control input to the current state: $u^*(k)\leftarrow K_N x(k)$\;
-		Estimate the state $\hat{x}(k)$, and close the loop: $x(k)\leftarrow A~x(k)+B~u^*(k)+L_{KF}(y(k)-C~x(k))+w(k) $\; 
+		Measure the current noisy output: $y(k)\leftarrow C~x(k)+v(k)$\;
+		For the current $x(k)$, solve the constrained optimization problem (6)\;		
+		Apply the first control input $u^*(k)$, and close the loop: $x(k)\leftarrow A~x(k)+B~u^*(k)+L_{KF}(y(k)-C~x(k))+w(k)$\; 
 		Set the noisy state $x(k+1)$ for the next iteration\;
 		Wait one time step\;
 		Increment $k$\;
 	}
 \end{algorithm}
+
 
 \end{document}
 
