@@ -20,6 +20,7 @@
 <!-- for /es/blog/... posts--><link rel="stylesheet" href="../../../assets/css/prism.css">
 <meta name="author" content="Paulo Loma Marconi">
 <link rel="prev" href="../MPC-SSTO/" title="Constrained MPC with feed-forward SSTO" type="text/html">
+<link rel="next" href="../Phase-lead_phase-lag/" title="Phase-lead and phase-lag compensator by Bode and root-locus" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Simple foraging and random aggregation strategy for swarm robotics wit">
 <meta property="og:url" content="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/">
@@ -226,7 +227,7 @@ Each trial should last <strong>​60 seconds</strong> of simulation time. Show �
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Foraging-and-Random-Aggregation">Foraging and Random Aggregation<a class="anchor-link" href="#Foraging-and-Random-Aggregation">¶</a>
 </h2>
-<p>The DFSM diagram in Fig. 1, which is defined by (1) and (2), starts in the Behaviour state where the robot is set as $\textit{avoider}$ while the time simulation is $t\leq 60[s]$. During that time, the Foraging state looks for the green blobs with the Search blob/ePuck algorithm while avoiding obstacles using the Rebound algorithm. Moreover, a Random Movement state is used to introduce randomness to the system so the agent can take different paths if there is no blob or obstacle detection. For $60&lt;t\leq 120$, the Behaviour of the robot is set to $\textit{follower}$ and switches to Random Aggregation state where it uses both algorithms, the Rebound to follow ePucks with the proximity sensors and the Search to look for the closest ePuck wheels. For both algorithms, the output is the angle of attack $\alpha_n$, where $n$ depends on the current state.</p>
+<p>The DFSM diagram in Fig. 1, which is defined by (1) and (2), starts in the Behaviour state where the robot is set as $\textit{avoider}$ while the simulation time is $t\leq 60[s]$. During that time, the Foraging state looks for the green blobs with the Search blob/ePuck algorithm while avoiding obstacles using the Rebound algorithm. Moreover, a Random Movement state is used to introduce randomness to the system so the agent can take different paths if there is no blob or obstacle detection. For $60&lt;t\leq 120$, the Behaviour of the robot is set to $\textit{follower}$ and switches to Random Aggregation state where it uses both algorithms, the Rebound to follow ePucks with the proximity sensors and the Search to look for the closest ePuck wheels. For both algorithms, the output is the angle of attack $\alpha_n$, where $n$ depends on the current state.</p>
 \begin{align*}
 S&amp;=\lbrace B,F,R,A,Ra \rbrace  \tag{1}\\    
 \varSigma&amp;= \lbrace t\leq 60,60&lt;t\leq 120,bl~\exists,bl~\nexists,ob~\exists,ob~\nexists,eP~\exists, eP~\nexists \rbrace \tag{2}\\
@@ -468,6 +469,9 @@ v_l&amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../MPC-SSTO/" rel="prev" title="Constrained MPC with feed-forward SSTO">Publicación anterior</a>
+            </li>
+            <li class="next">
+                <a href="../Phase-lead_phase-lag/" rel="next" title="Phase-lead and phase-lag compensator by Bode and root-locus">Siguiente publicación</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         

@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-05T16:31:00Z</lastmod>
+  <lastmod>2020-10-05T20:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -43,8 +43,12 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://paulomarconi.github.io/es/blog/Nikola-guide/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/blog/Phase-lead_phase-lag/</loc>
+  <lastmod>2020-10-05T18:48:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-10-05T16:31:00Z</lastmod>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -57,6 +61,14 @@
  <url>
   <loc>https://paulomarconi.github.io/categories/awgn/</loc>
   <lastmod>2020-09-29T08:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/bode/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/compensator/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/control-systems/</loc>
@@ -99,8 +111,20 @@
   <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/phase-lag/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/phase-lead/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/python/</loc>
   <lastmod>2020-09-03T18:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/root-locus/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/ssto/</loc>
@@ -132,7 +156,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-10-05T16:31:00Z</lastmod>
+  <lastmod>2020-10-05T20:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -168,8 +192,13 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nikola-guide/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</loc>
+  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/" />
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-05T16:31:00Z</lastmod>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -182,6 +211,14 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/awgn/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/bode/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/compensator/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/control-systems/</loc>
@@ -224,8 +261,20 @@
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/phase-lag/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/phase-lead/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/python/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/root-locus/</loc>
+  <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/ssto/</loc>
