@@ -1139,7 +1139,8 @@ MathJax.Hub.Config({
     tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
         inlineMath: [ ['$','$'], ["\\\(","\\\)"] ],
         displayMath: [ ['$$','$$'], ["\\\[","\\\]"] ],
-        processEscapes: true
+        processEscapes: true,
+        processEnvironments: true
     },
     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
     "HTML-CSS": {
@@ -1147,7 +1148,7 @@ MathJax.Hub.Config({
     },
     TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
         equationNumbers: { 
-            autoNumber: "none" // AMS, all, none                       
+            autoNumber: "AMS" // AMS, all, none                       
         } 
     }
 });
