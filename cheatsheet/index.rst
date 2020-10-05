@@ -57,13 +57,20 @@ https://docs.github.com/en/github/using-git/
     git push -f origin master
 
 
-Images with defined size
-========================
+Images with defined size and caption
+====================================
 
 .. code-block:: html 
 
-    <img src="/image.png" alt="drawing" width="100%"/> 
+    <img src="/image.png" alt="drawing" width="100%"/>
 
+
+.. code-block:: html 
+
+    <figure>
+        <img src="/images/image.png" alt="drawing" width="100%"/>
+        <center><figcaption>Fig.1 - caption</figcaption></center>
+    </figure> 
 
 
 
@@ -92,7 +99,7 @@ Complex formulas.
     \end{cases}
 
 
-Alternatively, for ``\text{...}`` LaTex command use `math class` if it's not compiled correctly.
+Alternatively, use `<div class="math">...</div>` for ``\text{...}`` and other commands if they are not compiled correctly usign `\begin{enviornment}...\end{enviornment}` or `$$...$$`
 
 .. code-block::
 
@@ -122,7 +129,7 @@ md + Prism import
 
 .. code-block:: html 
 
-    <pre class="lang-markup" data-jsonp="https://api.github.com/repos/<user_name>/<repository_name>/contents/<file>"></pre>
+    <pre class="lang-css line-numbers" data-jsonp="https://api.github.com/repos/<user_name>/<repository_name>/contents/<file>"></pre>
 
 md + Embedded pdf
 -----------------
@@ -190,7 +197,7 @@ rST + Prism import
 
         .. raw:: html
 
-            <pre class="lang-markup" data-jsonp="https://api.github.com/repos/<user_name>/<repository_name>/contents/<file>"></pre>
+            <pre class="lang-css line-numbers" data-jsonp="https://api.github.com/repos/<user_name>/<repository_name>/contents/<file>"></pre>
 
 rST + Embedded pdf
 ------------------

@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 03 Oct 2020 14:28:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unconstrained MPC regulator with Kalman filter</title><link>https://paulomarconi.github.io/blog/MPCu/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 05 Oct 2020 16:24:07 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Unconstrained MPC regulator with Kalman filter</title><link>https://paulomarconi.github.io/blog/MPCu/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -36,8 +36,10 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Unconstrained-MPC"&gt;Unconstrained MPC&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Unconstrained-MPC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img src="https://paulomarconi.github.io/images/MPCu/MPCu.png" alt="drawing" width="40%"&gt;&lt;/p&gt;
-&lt;p&gt;Consider the following discrete-time LTI state-space system,
+&lt;h2 id="Unconstrained-MPC"&gt;Unconstrained MPC&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Unconstrained-MPC"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;figure&gt;
+    &lt;img src="https://paulomarconi.github.io/images/MPCu/MPCu.png" alt="MPCu" width="40%"&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.1 - Unconstrained MPC&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;&lt;p&gt;Consider the following discrete-time LTI state-space system,
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;amp;= A~x(k)+B~u(k)+w(k)\\
@@ -53,26 +55,26 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Problem-Formulation"&gt;Problem Formulation&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Problem-Formulation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,&lt;/p&gt;
-\begin{align}\tag{1}
+\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align}&lt;p&gt;subject to,&lt;/p&gt;
-\begin{align}\tag{2}
+\end{align*}&lt;p&gt;subject to,&lt;/p&gt;
+\begin{align*}\tag{2}
 x(k+1+j|k) &amp;amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;amp;= x(k) 
-\end{align}&lt;p&gt;for $ j=0,1,2,\dots,N-1$.&lt;/p&gt;
+\end{align*}&lt;p&gt;for $ j=0,1,2,\dots,N-1$.&lt;/p&gt;
 &lt;p&gt;Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$.&lt;/p&gt;
 &lt;p&gt;With the value function defined as,
-\begin{align}
+\begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
-\end{align}
+\end{align*}
 the optimal control sequence is,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
 &amp;amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
 \end{aligned}
-\end{equation}&lt;/p&gt;
+\end{equation*}&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -103,7 +105,7 @@ x(k+2|k) &amp;amp;= A~x(k+1|k)+B~u(k+1|k) \\
 x(k+N|k) &amp;amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
                  &amp;amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
 \end{align*}&lt;p&gt;stacking,&lt;/p&gt;
-\begin{aligned}
+\begin{align*}
 {\underbrace{
     \begin{bmatrix}
     x(k+1|k) \\
@@ -138,7 +140,7 @@ x(k+N|k) &amp;amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
     u(k+N-1|k)
     \end{bmatrix}}_{\mathbf{u}(k)}
 }
-\end{aligned}&lt;p&gt;the predicted equality constraint is,&lt;/p&gt;
+\end{align*}&lt;p&gt;the predicted equality constraint is,&lt;/p&gt;
 \begin{equation}\tag{3}
 \mathbf{x}(k) = F~x(k)+G~\mathbf{u}(k)
 \end{equation}&lt;p&gt;where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.&lt;/p&gt;
@@ -277,10 +279,10 @@ H~\mathbf{u}^*(k)+c &amp;amp;= 0 \\
     0      &amp;amp; 0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; I
 \end{bmatrix}
 (-H^{-1}~L)x(k)
-\end{align*}\begin{align}
-u^*(k) &amp;amp;= K_N~x(k) \tag{7} \\
+\end{align*}\begin{align*}\tag{7}
+u^*(k) &amp;amp;= K_N~x(k)  \\
 K_N &amp;amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
-\end{align}&lt;p&gt;Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.&lt;/p&gt;
+\end{align*}&lt;p&gt;Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1031,11 +1033,9 @@ KN =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="References"&gt;References&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#References"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;[1] James B. Rawlings and Mayne David Q. &lt;em&gt;Model Predictive Control Theory and
-Design&lt;/em&gt;. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.&lt;/p&gt;
-&lt;p&gt;[2] Jan Maciejowski. &lt;em&gt;Predictive Control with Constraints&lt;/em&gt;. Prentice Hall, 2000. ISBN:
-978-0201398236.&lt;/p&gt;
+&lt;h2 id="References"&gt;References&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#References"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;[1] James B. Rawlings and Mayne David Q. &lt;em&gt;Model Predictive Control Theory and Design&lt;/em&gt;. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.&lt;/p&gt;
+&lt;p&gt;[2] Jan Maciejowski. &lt;em&gt;Predictive Control with Constraints&lt;/em&gt;. Prentice Hall, 2000. ISBN: 978-0201398236.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>AWGN</category><category>control systems</category><category>Kalman filter</category><category>Matlab</category><category>MPC</category><category>optimization</category><category>unconstrained</category><guid>https://paulomarconi.github.io/blog/MPCu/</guid><pubDate>Fri, 28 Aug 2020 23:17:08 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>AWGN</category><category>control systems</category><category>Kalman filter</category><category>Matlab</category><category>MPC</category><category>optimization</category><category>unconstrained</category><guid>https://paulomarconi.github.io/blog/MPCu/</guid><pubDate>Mon, 24 Aug 2020 23:17:08 GMT</pubDate></item></channel></rss>

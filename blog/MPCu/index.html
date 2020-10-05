@@ -27,7 +27,7 @@
 <meta property="og:description" content="Table of Contents
 1  Unconstrained Model Predictive Control (MPC) regulator with Kalman filter2  Pre-requisites3  Background Theory4  Unconstrained MPC5  Problem Formulation6  The Quadratic Problem (Q">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-08-28T19:17:08-04:00">
+<meta property="article:published_time" content="2020-08-24T19:17:08-04:00">
 <meta property="article:tag" content="AWGN">
 <meta property="article:tag" content="control systems">
 <meta property="article:tag" content="Kalman filter">
@@ -123,7 +123,7 @@ navbar-dark bg-dark
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2020-08-28T19:17:08-04:00" itemprop="datePublished" title="2020-08-28">2020-08-28</time></a>
+            <time class="published dt-published" datetime="2020-08-24T19:17:08-04:00" itemprop="datePublished" title="2020-08-24">2020-08-24</time></a>
             </p>
                 <p class="commentline">
         
@@ -227,8 +227,8 @@ navbar-dark bg-dark
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Unconstrained-MPC">Unconstrained MPC<a class="anchor-link" href="#Unconstrained-MPC">¶</a>
 </h2>
-<p><img src="../../images/MPCu/MPCu.png" alt="drawing" width="40%"></p>
-<p>Consider the following discrete-time LTI state-space system,
+<figure><img src="../../images/MPCu/MPCu.png" alt="MPCu" width="40%"><center><figcaption>Fig.1 - Unconstrained MPC</figcaption></center>
+</figure><p>Consider the following discrete-time LTI state-space system,
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;= A~x(k)+B~u(k)+w(k)\\
@@ -248,26 +248,26 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 <h2 id="Problem-Formulation">Problem Formulation<a class="anchor-link" href="#Problem-Formulation">¶</a>
 </h2>
 <p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,</p>
-\begin{align}\tag{1}
+\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align}<p>subject to,</p>
-\begin{align}\tag{2}
+\end{align*}<p>subject to,</p>
+\begin{align*}\tag{2}
 x(k+1+j|k) &amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;= x(k) 
-\end{align}<p>for $ j=0,1,2,\dots,N-1$.</p>
+\end{align*}<p>for $ j=0,1,2,\dots,N-1$.</p>
 <p>Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$.</p>
 <p>With the value function defined as,
-\begin{align}
+\begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
-\end{align}
+\end{align*}
 the optimal control sequence is,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
 &amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
 \end{aligned}
-\end{equation}</p>
+\end{equation*}</p>
 
 </div>
 </div>
@@ -305,7 +305,7 @@ x(k+2|k) &amp;= A~x(k+1|k)+B~u(k+1|k) \\
 x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
                  &amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
 \end{align*}<p>stacking,</p>
-\begin{aligned}
+\begin{align*}
 {\underbrace{
     \begin{bmatrix}
     x(k+1|k) \\
@@ -340,7 +340,7 @@ x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
     u(k+N-1|k)
     \end{bmatrix}}_{\mathbf{u}(k)}
 }
-\end{aligned}<p>the predicted equality constraint is,</p>
+\end{align*}<p>the predicted equality constraint is,</p>
 \begin{equation}\tag{3}
 \mathbf{x}(k) = F~x(k)+G~\mathbf{u}(k)
 \end{equation}<p>where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.</p>
@@ -498,10 +498,10 @@ H~\mathbf{u}^*(k)+c &amp;= 0 \\
     0      &amp; 0      &amp; 0      &amp; \dots  &amp; I
 \end{bmatrix}
 (-H^{-1}~L)x(k)
-\end{align*}\begin{align}
-u^*(k) &amp;= K_N~x(k) \tag{7} \\
+\end{align*}\begin{align*}\tag{7}
+u^*(k) &amp;= K_N~x(k)  \\
 K_N &amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
-\end{align}<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
+\end{align*}<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
 
 </div>
 </div>
@@ -1304,10 +1304,8 @@ KN =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="#References">¶</a>
 </h2>
-<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and
-Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
-<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN:
-978-0201398236.</p>
+<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
+<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN: 978-0201398236.</p>
 
 </div>
 </div>
@@ -1357,7 +1355,8 @@ MathJax.Hub.Config({
     tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
+        processEscapes: true,
+        processEnvironments: true
     },
     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
     "HTML-CSS": {
@@ -1365,7 +1364,7 @@ MathJax.Hub.Config({
     },
     TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
         equationNumbers: { 
-            autoNumber: "none" // AMS, all, none                       
+            autoNumber: "AMS" // AMS, all, none                       
         } 
     }
 });

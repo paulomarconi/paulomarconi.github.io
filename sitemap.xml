@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-03T14:28:00Z</lastmod>
+  <lastmod>2020-10-05T16:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,7 +19,11 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-10-02T07:59:00Z</lastmod>
+  <lastmod>2020-10-04T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
+  <lastmod>2020-10-04T18:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
@@ -40,7 +44,11 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-09-29T08:29:00Z</lastmod>
+  <lastmod>2020-10-05T16:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/anaconda/</loc>
@@ -53,6 +61,14 @@
  <url>
   <loc>https://paulomarconi.github.io/categories/control-systems/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/e-puck/</loc>
+  <lastmod>2020-10-05T16:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/foraging/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/github/</loc>
@@ -91,8 +107,16 @@
   <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/swarm-robotics/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/unconstrained/</loc>
   <lastmod>2020-09-29T08:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/v-rep/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/vscode/</loc>
@@ -108,7 +132,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-10-03T14:28:00Z</lastmod>
+  <lastmod>2020-10-05T16:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -116,7 +140,12 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2020-10-04T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
+  <lastmod>2020-10-04T18:44:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/MPC-SSTO/</loc>
@@ -140,7 +169,11 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-02T08:43:00Z</lastmod>
+  <lastmod>2020-10-05T16:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/anaconda/</loc>
@@ -153,6 +186,14 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/control-systems/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/e-puck/</loc>
+  <lastmod>2020-10-05T16:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/foraging/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/github/</loc>
@@ -191,8 +232,16 @@
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/swarm-robotics/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/unconstrained/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/v-rep/</loc>
+  <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/vscode/</loc>
@@ -207,6 +256,14 @@
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/files/Foraging_Aggregation_V-rep_e-puck/Foraging_Aggregation_V-rep_e-puck.html</loc>
+  <lastmod>2020-10-05T12:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/MPC-SSTO/MPC-SSTO.html</loc>
+  <lastmod>2020-10-03T16:14:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/galleries/</loc>
   <lastmod>2020-08-27T16:06:00Z</lastmod>
  </url>
@@ -216,6 +273,6 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/test.py.html</loc>
-  <lastmod>2020-10-02T09:41:00Z</lastmod>
+  <lastmod>2020-10-04T16:24:00Z</lastmod>
  </url>
 </urlset>

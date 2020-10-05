@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simple foraging and random aggregation strategy for swarm robotics without communication | PauLoMarconi</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
+<link rel="canonical" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/">
+<link rel="icon" href="../../files/blogFavicon.ico" sizes="128x128">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+<!-- Prism --><link rel="stylesheet" href="../../assets/css/prism.css">
+<!-- for /es/blog/... posts--><link rel="stylesheet" href="../../css/prism.css">
+<meta name="author" content="Paulo Loma Marconi">
+<link rel="prev" href="../MPC-SSTO/" title="Constrained MPC with feed-forward SSTO" type="text/html">
+<meta property="og:site_name" content="PauLoMarconi">
+<meta property="og:title" content="Simple foraging and random aggregation strategy for swarm robotics wit">
+<meta property="og:url" content="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/">
+<meta property="og:description" content="Table of Contents
+1  Simple Foraging and Random Aggregation Strategy for swarm robotics without communication2  Pre-requisites3  Source code4  Problem formulation5  Foraging and Random Aggregation6  U">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2020-09-06T17:47:09-04:00">
+<meta property="article:tag" content="aggregation">
+<meta property="article:tag" content="e-puck">
+<meta property="article:tag" content="foraging">
+<meta property="article:tag" content="swarm robotics">
+<meta property="article:tag" content="V-rep">
+<link rel="alternate" hreflang="es" href="../../es/blog/Foraging_Aggregation_V-rep_e-puck/">
+<!-- Prism --><link rel="stylesheet" href="../../assets/css/post_ipynb.css">
+<link rel="stylesheet" href="../../assets/css/prism.css">
+<!-- for /es/blog/... posts--><link rel="stylesheet" href="../../css/post_ipynb.css">
+<link rel="stylesheet" href="../../css/prism.css">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<!-- <nav class="navbar navbar-expand-md static-top mb-4 -->
+<nav class="navbar navbar-expand-md sticky-top mb-4
+navbar-dark bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href="../../">
+
+            <span id="blog-title">PauLoMarconi</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="../../archive.html" class="nav-link">Blog</a>
+                </li>
+<li class="nav-item">
+<a href="../../categories/" class="nav-link">Tags</a>
+                </li>
+<li class="nav-item">
+<a href="../../cheatsheet/index.html" class="nav-link">Cheatsheet</a>
+                </li>
+<li class="nav-item">
+<a href="https://apuntesdeelectronicaycontrol.blogspot.com" class="nav-link">Old Blog</a>
+                </li>
+<li class="nav-item">
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
+
+                
+            </li>
+</ul>
+<!-- Google custom search --><form method="get" action="https://www.google.com/search" class="navbar-form navbar-right" role="search">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search"><button type="submit" class="btn btn-secondary">
+            <i class="fa fa-search"></i>
+        </button>
+        <input type="hidden" name="sitesearch" value="https://paulomarconi.github.io/">
+</div>    
+</form>
+<!-- End of custom search -->
+
+
+            <ul class="navbar-nav navbar-right">
+<li>
+            </li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
+
+                
+                    
+    
+    <li class="nav-item">
+    <a href="index.ipynb" id="sourcelink" class="nav-link">Source</a>
+    </li>
+
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Simple foraging and random aggregation strategy for swarm robotics without communication</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    Paulo Loma Marconi
+            </span></p>
+            <p class="dateline">
+            <a href="." rel="bookmark">
+            <time class="published dt-published" datetime="2020-09-06T17:47:09-04:00" itemprop="datePublished" title="2020-09-06">2020-09-06</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/Foraging_Aggregation_V-rep_e-puck.html">Comments</a>
+
+
+            
+        </p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<h2>Table of Contents<span class="tocSkip"></span>
+</h2>
+<div class="toc"><ul class="toc-item">
+<li><span><a href="#Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication" data-toc-modified-id="Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication-1"><span class="toc-item-num">1  </span>Simple Foraging and Random Aggregation Strategy for swarm robotics without communication</a></span></li>
+<li><span><a href="#Pre-requisites" data-toc-modified-id="Pre-requisites-2"><span class="toc-item-num">2  </span>Pre-requisites</a></span></li>
+<li><span><a href="#Source-code" data-toc-modified-id="Source-code-3"><span class="toc-item-num">3  </span>Source code</a></span></li>
+<li><span><a href="#Problem-formulation" data-toc-modified-id="Problem-formulation-4"><span class="toc-item-num">4  </span>Problem formulation</a></span></li>
+<li><span><a href="#Foraging-and-Random-Aggregation" data-toc-modified-id="Foraging-and-Random-Aggregation-5"><span class="toc-item-num">5  </span>Foraging and Random Aggregation</a></span></li>
+<li><span><a href="#Unicycle-model" data-toc-modified-id="Unicycle-model-6"><span class="toc-item-num">6  </span>Unicycle model</a></span></li>
+<li><span><a href="#Rebound-avoider/follower-algorithm" data-toc-modified-id="Rebound-avoider/follower-algorithm-7"><span class="toc-item-num">7  </span>Rebound avoider/follower algorithm</a></span></li>
+<li><span><a href="#Search-blob/ePuck-algorithm" data-toc-modified-id="Search-blob/ePuck-algorithm-8"><span class="toc-item-num">8  </span>Search blob/ePuck algorithm</a></span></li>
+<li><span><a href="#Results-and-discussion" data-toc-modified-id="Results-and-discussion-9"><span class="toc-item-num">9  </span>Results and discussion</a></span></li>
+<li>
+<span><a href="#Lua-code-of-the-algorithm" data-toc-modified-id="Lua-code-of-the-algorithm-10"><span class="toc-item-num">10  </span>Lua code of the algorithm</a></span><ul class="toc-item">
+<li><span><a href="#Edit-the-controller" data-toc-modified-id="Edit-the-controller-10.1"><span class="toc-item-num">10.1  </span>Edit the controller</a></span></li>
+<li><span><a href="#Save-the-output-data" data-toc-modified-id="Save-the-output-data-10.2"><span class="toc-item-num">10.2  </span>Save the output data</a></span></li>
+</ul>
+</li>
+<li><span><a href="#References" data-toc-modified-id="References-11"><span class="toc-item-num">11  </span>References</a></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication">Simple Foraging and Random Aggregation Strategy for swarm robotics without communication<a class="anchor-link" href="#Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication">¶</a>
+</h2>
+<p>In swarm robotics Foraging and Aggregation are basic tasks yet that can be challenging when there is no communication between the robots. This paper proposes a strategy using a Mealy Deterministic Finite State Machine (DFSM) that switches between five states with two different algorithms, the Rebound avoider/follower through proximity sensors, and the Search blob/ePuck using the 2D image processing of the ePuck embedded camera. Ten trials for each scenario are simulated on V-rep in order to analyse the performance of the strategy in terms of the mean and standard deviation.</p>
+<h2 id="Pre-requisites">Pre-requisites<a class="anchor-link" href="#Pre-requisites">¶</a>
+</h2>
+<ul>
+<li>Basic robotics theory.</li>
+<li>Finite State Machine theory.</li>
+<li><a href="https://www.coppeliarobotics.com/download">V-rep proEdu v3.6</a></li>
+<li>Knowledge in Lua progamming language.</li>
+</ul>
+<h2 id="Source-code">Source code<a class="anchor-link" href="#Source-code">¶</a>
+</h2>
+<p>Version <a href="https://raw.githubusercontent.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/master/report/root.pdf">PDF</a>/<a href="../../files/Foraging_Aggregation_V-rep_e-puck/Foraging_Aggregation_V-rep_e-puck.html">HTML</a>. V-rep and LaTex source code on <a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck">GitHub</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-formulation">Problem formulation<a class="anchor-link" href="#Problem-formulation">¶</a>
+</h2>
+<p>The task is to design a control strategy​ for e-puck robots that do the following:</p>
+<ul>
+<li>Explore the given environment to collect resources (​foraging​);</li>
+<li>While foraging, avoid collisions between robots and with the environment boundary.</li>
+</ul>
+<p>For an object to be collected, a robot's centre must be within ​5 cm ​of the object's centre. There won't be any collisions between the robot and the object.
+For the evaluation of this task, two foraging scenarios will be considered:</p>
+<ul>
+<li>With a​ <strong>single robot</strong>​;</li>
+<li>With a​ <strong>group of 5 robots​</strong> (all with an identical controller).</li>
+</ul>
+<p>The controller used for both scenarios ​MUST ​be the same.</p>
+<p>To assess the foraging performance of the strategy, it's expected to conduct <strong>​10 trials</strong> per scenario.
+Each trial should last <strong>​60 seconds</strong> of simulation time. Show ​the <strong>number of objects collected in total over time</strong> (average and standard deviation over 10 trials). Include ​one plot for each scenario​.</p>
+<p>Important:</p>
+<ul>
+<li>Do not use wheel speeds the e-puck cannot achieve. That is, when using function <code>sim.setJointTargetVelocity(.,.)</code>, ​make sure the velocity argument is bounded by <code>[-6.24, 6.24]​</code>.</li>
+<li>You should use the sensors available on the e-puck platform (e.g. camera, proximity). You may implement additional sensors, however, these must not provide any global information (e.g. absolute position or orientation).</li>
+</ul>
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/scenario.png" alt="scenario" width="40%"><center><figcaption>Simulation environment</figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Foraging-and-Random-Aggregation">Foraging and Random Aggregation<a class="anchor-link" href="#Foraging-and-Random-Aggregation">¶</a>
+</h2>
+<p>The DFSM diagram in Fig. 1, which is defined by (1) and (2), starts in the Behaviour state where the robot is set as $\textit{avoider}$ while the time simulation is $t\leq 60[s]$. During that time, the Foraging state looks for the green blobs with the Search blob/ePuck algorithm while avoiding obstacles using the Rebound algorithm. Moreover, a Random Movement state is used to introduce randomness to the system so the agent can take different paths if there is no blob or obstacle detection. For $60&lt;t\leq 120$, the Behaviour of the robot is set to $\textit{follower}$ and switches to Random Aggregation state where it uses both algorithms, the Rebound to follow ePucks with the proximity sensors and the Search to look for the closest ePuck wheels. For both algorithms, the output is the angle of attack $\alpha_n$, where $n$ depends on the current state.</p>
+\begin{align*}
+S&amp;=\lbrace B,F,R,A,Ra \rbrace  \tag{1}\\    
+\varSigma&amp;= \lbrace t\leq 60,60&lt;t\leq 120,bl~\exists,bl~\nexists,ob~\exists,ob~\nexists,eP~\exists, eP~\nexists \rbrace \tag{2}\\
+s_0&amp;=\lbrace B \rbrace \\
+\end{align*}<p>where, $S$ is the finite set of states, $\varSigma$ is the input alphabet, $\delta:S\times\varSigma$ is the state transition function, Table 1, $s_0$ is the initial state, $\exists$ and $\nexists$ mean detection and no detection respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<center>Table 1: State transition function $\delta$
+<table>
+<thead><tr>
+<th style="text-align:center">Input</th>
+<th style="text-align:center">Current State</th>
+<th style="text-align:center">Next State</th>
+<th style="text-align:center">Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">$t ≤ 60$</td>
+<td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">avoider</td>
+</tr>
+<tr>
+<td style="text-align:center">$60 &lt; t ≤ 120$</td>
+<td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">follower</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\exists$</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">$\alpha_C$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\nexists$</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+<td style="text-align:center">$\alpha_{C_r}$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\exists$</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">$\alpha_e$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\nexists$</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+<td style="text-align:center">$\alpha_{e_r}$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"><center><figcaption>Fig.1 Mealy DFSM of the controller.</figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Unicycle-model">Unicycle model<a class="anchor-link" href="#Unicycle-model">¶</a>
+</h2>
+<p>The Unicycle model in Fig. 2a [1] controls the angular velocities of the right and left wheels, $v_r$ and $v_l$ as follows,</p>
+\begin{align}
+v_r&amp;= \dfrac{2~V_x+\omega~L}{2~R} \tag{3}\\
+v_l&amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
+\end{align}<p>where, $V_x$ is the linear velocity of the robot, $L$ is the distance between the wheels, $R$ is the radius of each wheel, and $\omega$ is the angular velocity of the robot. Using $\alpha_n$ and the simulation sampling period $T$, the control variable for the simulation is $\omega=\alpha_n/T$, refer to code line 24, 197, and 215.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Rebound-avoider/follower-algorithm">Rebound avoider/follower algorithm<a class="anchor-link" href="#Rebound-avoider/follower-algorithm">¶</a>
+</h2>
+<p>The Rebound algorithm [2] calculates the Rebound angle $\alpha_R$ to avoid/follow an obstacle/objective given $\alpha_0=\pi/N$ and $\alpha_i=i~\alpha_0$,</p>
+\begin{align}\tag{5}
+\alpha_R&amp;=\dfrac{\sum_{i=-N/2}^{N/2}~\alpha_i~D_i}{\sum_{i=-N/2}^{N/2}~D_i}
+\end{align}<p>where, $\alpha_0$ is the uniformly distributed angular pace, $N$ is the number of sensors, $\alpha_i$ is the angular information per pace $\alpha_i~\epsilon\left[-\frac{N}{2},\frac{N}{2}\right]$, and $D_i$ is the distance value obtained by the proximity sensors, refer to code line 18 and 139.</p>
+<p>The weight vector given by $\alpha_i$ sets the robot behaviour for each corresponding mapped sensor $\lbrace s_1,s_2,s_3,s_4,s_5,s_6\rbrace$. For the $\textit{avoider}$ is $\lbrace -3,-2,-1,1,2,3 \rbrace$, and for the $\textit{follower}$ is $\lbrace 3,2,1,-1,-2,-3 \rbrace$. Fig. 2b and Fig. 2c show an example of $\alpha_R$ with the Vector Field Histogram (VFH) for the $\textit{avoider}$ case. Refer to code line 128 and 132.</p>
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"><center><figcaption>Fig. 2 - Unicycle model, Rebound and Search angle</figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Search-blob/ePuck-algorithm">Search blob/ePuck algorithm<a class="anchor-link" href="#Search-blob/ePuck-algorithm">¶</a>
+</h2>
+<p>The ePuck embedded camera on V-rep is a vision sensor that filters the RGB colours of the blobs and other ePucks. Not collected Blobs are mapped as green and collected ones as red, and the ePuck wheels are also mapped because they have green and red parts, refer to code line 97. The data of interest that this sensor outputs are the size, centroid's 2D position, and orientation of the detected objects. Therefore, when objects are detected by the camera, a simple routine finds the biggest one which is the closest relative to the ePuck, and using (6) and (7), it can be calculated the angle of attack $\alpha_C$ or $\alpha_e$ for the blobs and ePucks respectively, refer to Fig. 2d and code line 150. The orientation value is used to differentiate between objects, for blobs is $=0$ and for ePuck wheels is $\neq 0$, refer to code line 105.</p>
+\begin{align}
+\alpha_C &amp;= \arctan \dfrac{x_b-x_o}{y_b-y_o} \tag{6}\\
+\alpha_e &amp;= \arctan \dfrac{x_e-x_o}{y_e-y_o} \tag{7}
+\end{align}<p>where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) ared modified with a random value $w$ with a probability function $P$,</p>
+\begin{align}
+\alpha_{C_r} &amp;= \alpha_C~w \tag{8}\\
+\alpha_{e_r} &amp;= \alpha_e~w \tag{9}
+\end{align}<p>where, $P(\lbrace w~\epsilon~\Omega:X(w)=1/3 \rbrace)$ and $\Omega=\lbrace -1,0,1 \rbrace$, refer to code line 158 and 205.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Results-and-discussion">Results and discussion<a class="anchor-link" href="#Results-and-discussion">¶</a>
+</h2>
+<p>For both Scenarios, 4 Rounds of 10 trials each are simulated. Each Round has different initial positions of the robots, Fig. 3b and Fig. 3d, and each trial stops at $t=60$. In Scenario 1, Fig. 3a shows that Round 4 has the best performance because $68\%$ of the time the robot will forage between 13 and 15 blobs. For Scenario 2, Fig. 3b shows that Round 1 hast the best performance, $68\%$ of the time the swarm will forage between 37 and 39 blobs. For the Aggregation case, that is simulated only in Scenario 2 Fig. 3e and Fig. 3f, Round 2 shows the best results, $68\%$ of the time between 2 and 4 agents aggregate at some random point.</p>
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/result_a.png" alt="result_a" width="50%"><img src="../../images/Foraging_Aggregation_V-rep_e-puck/result_b.png" alt="result_b" width="50%"><img src="../../images/Foraging_Aggregation_V-rep_e-puck/result_c.png" alt="result_c" width="50%"><center><figcaption>Fig. 3: Simulation results </figcaption></center>
+</figure><figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/foraging.gif" alt="foraging" width="auto%"><center><figcaption>Trial: Scenario 2 (5 robots) - Foraging for $1 \le t \leq 60$ </figcaption></center>
+</figure><figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/aggregation.gif" alt="aggregation" width="auto%"><center><figcaption>Trial: Scenario 2 (5 robots) - Random Aggregation for $60 \le t \leq 120$ </figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lua-code-of-the-algorithm">Lua code of the algorithm<a class="anchor-link" href="#Lua-code-of-the-algorithm">¶</a>
+</h2>
+<pre class="lang-lua line-numbers" data-jsonp="https://api.github.com/repos/paulomarconi/Foraging_Aggregation_V-rep_e-puck/contents/report/vrep.lua"></pre>
+<h3 id="Edit-the-controller">Edit the controller<a class="anchor-link" href="#Edit-the-controller">¶</a>
+</h3>
+<p>To edit the controller for all the ePuck, open V-rep and load the scene  <code>sim_5_Robots.ttt</code>, and edit the ePuck file.</p>
+<p><img src="../../images/Foraging_Aggregation_V-rep_e-puck/controller_location.png" alt="controller_location" width="auto"></p>
+<h3 id="Save-the-output-data">Save the output data<a class="anchor-link" href="#Save-the-output-data">¶</a>
+</h3>
+<p>To edit the location of the output data, open the <code>disc file</code>.</p>
+<p><img src="../../images/Foraging_Aggregation_V-rep_e-puck/output_location.png" alt="output_location" width="auto"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">¶</a>
+</h2>
+<p>[1] Jawhar Ghommam, Maarouf Saad, and Faical Mnif. “Formation path following control of unicycle-type mobile robots”. In: 2008 IEEE International Conference on Robotics and Automation. IEEE, 2008. DOI: 10.1109/robot.2008.4543495.</p>
+<p>[2] I. Susnea et al. “The bubble rebound obstacle avoidance algorithm for mobile robots”. In: IEEE ICCA 2010. IEEE, 2010. DOI: 10.1109/icca.2010.5524302.</p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/aggregation/" rel="tag">aggregation</a></li>
+            <li><a class="tag p-category" href="../../categories/e-puck/" rel="tag">e-puck</a></li>
+            <li><a class="tag p-category" href="../../categories/foraging/" rel="tag">foraging</a></li>
+            <li><a class="tag p-category" href="../../categories/swarm-robotics/" rel="tag">swarm robotics</a></li>
+            <li><a class="tag p-category" href="../../categories/v-rep/" rel="tag">V-rep</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../MPC-SSTO/" rel="prev" title="Constrained MPC with feed-forward SSTO">Previous post</a>
+            </li>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
+        
+        
+        <div id="disqus_thread"></div>
+        <script>
+        var disqus_shortname ="paulomarconi",
+            disqus_url="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/",
+        disqus_title="Simple foraging and random aggregation strategy for swarm robotics without communication",
+        disqus_identifier="cache/posts/Foraging_Aggregation_V-rep_e-puck.html",
+        disqus_config = function () {
+            this.language = "en";
+        };
+        (function() {
+            var dsq = document.createElement('script'); dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+    <a href="https://disqus.com" class="dsq-brlink" rel="nofollow">Comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </section><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        processEnvironments: true
+    },
+    displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
+    "HTML-CSS": {
+        styles: {'.MathJax_Display': {"margin": 0}}
+    },
+    TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
+        equationNumbers: { 
+            autoNumber: "AMS" // AMS, all, none                       
+        } 
+    }
+});
+</script></article><script>var disqus_shortname="paulomarconi";(function(){var a=document.createElement("script");a.async=true;a.src="https://"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(a)}());</script><!--End of body content--><footer id="footer"><div class="text-center">
+    <p>
+        <span class="fa-stack fa-2x">
+        <a href="https://github.com/paulomarconi">
+            <i class="fa fa-github-square fa-stack-2x"></i>
+        </a>
+        </span>
+        <!--
+        <span class="fa-stack fa-2x">
+        <a href="https://scholar.google.com/citations?user=ID">
+            <i class="ai ai-google-scholar-square ai-2x"></i>
+        </a>
+        </span>
+        -->
+        <span class="fa-stack fa-2x">
+        <a href="https://www.linkedin.com/in/paulomarconi">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>
+        <span class="fa-stack fa-2x">
+        <a href="mailto:prlomarconi@gmail.com">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>
+    </p>
+    <p>
+        Contents © 2020  <a href="mailto:prlomarconi@gmail.com">Paulo Loma Marconi</a> 
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> 
+    </p>
+</div>
+
+            
+            
+        </footer>
+</div>
+</div>
+
+
+        <script src="../../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element) {
+            return element.getElementsByTagName('img')[0].alt;
+    }});
+    </script><!-- Prism --><script src="../../assets/js/prism.js"></script><!-- for /es/blog/... posts--><script src="../../js/prism.js"></script>
+</body>
+</html>

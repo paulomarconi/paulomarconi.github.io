@@ -20,12 +20,13 @@
 <!-- for /es/blog/... posts--><link rel="stylesheet" href="../../../assets/css/prism.css">
 <meta name="author" content="Paulo Loma Marconi">
 <link rel="prev" href="../MPCc/" title="Constrained MPC regulator with Kalman filter" type="text/html">
+<link rel="next" href="../Foraging_Aggregation_V-rep_e-puck/" title="Simple foraging and random aggregation strategy for swarm robotics without communication" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Constrained MPC with feed-forward SSTO">
 <meta property="og:url" content="https://paulomarconi.github.io/es/blog/MPC-SSTO/">
 <meta property="og:description" content="Constrained Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)¶A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking an">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-09-30T13:39:47-04:00">
+<meta property="article:published_time" content="2020-09-02T13:39:47-04:00">
 <meta property="article:tag" content="control systems">
 <meta property="article:tag" content="MPC">
 <meta property="article:tag" content="optimization">
@@ -118,7 +119,7 @@ navbar-dark bg-dark
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2020-09-30T13:39:47-04:00" itemprop="datePublished" title="2020-09-30">2020-09-30</time></a>
+            <time class="published dt-published" datetime="2020-09-02T13:39:47-04:00" itemprop="datePublished" title="2020-09-02">2020-09-02</time></a>
             </p>
                 <p class="commentline">
         
@@ -154,7 +155,7 @@ navbar-dark bg-dark
 </ul>
 <h2 id="Source-code">Source code<a class="anchor-link" href="#Source-code">¶</a>
 </h2>
-<p>You can find the Matlab and LaTex source code on my <a href="https://github.com/paulomarconi/MPC-SSTO">GitHub repository</a>.</p>
+<p>Version <a href="https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf">PDF</a>/<a href="../../files/MPC-SSTO/MPC-SSTO.html">HTML</a>. Matlab and LaTex source code on <a href="https://github.com/paulomarconi/MPC-SSTO">GitHub</a>.</p>
 
 </div>
 </div>
@@ -166,10 +167,9 @@ navbar-dark bg-dark
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Isolated-power-system">Isolated power system<a class="anchor-link" href="#Isolated-power-system">¶</a>
 </h2>
-<p>The operation of an isolated power system under primary frequency control is modelled by
-the following block diagram.
-<img src="../../../images/MPC-SSTO/plant.png" alt="drawing" width="60%"></p>
-<p>In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&gt;0$ is the regulation factor.</p>
+<p>The operation of an isolated power system under primary frequency control is modelled by the following block diagram.</p>
+<figure><img src="../../../images/MPC-SSTO/plant.png" alt="plant" width="60%"><center><figcaption>Fig.1 - Isolated Power System </figcaption></center>
+</figure><p>In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&gt;0$ is the regulation factor.</p>
 <p>The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design
 a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.</p>
 
@@ -184,7 +184,7 @@ a secondary frequency control loop that will adjust the reference power $\Delta 
 <h2 id="State-space-model-of-the-system">State-space model of the system<a class="anchor-link" href="#State-space-model-of-the-system">¶</a>
 </h2>
 <p>The isolated power system to be studied is a linear Single-Input Single-Output (SISO) model with the addition of the disturbance in the output. The linear continuous-time state-space model is,,</p>
-\begin{align}\tag{1}
+\begin{align*}\tag{1}
 \begin{bmatrix}
     \Delta\dot{\omega} \\
     \Delta\dot{p}^m \\   
@@ -226,7 +226,7 @@ a secondary frequency control loop that will adjust the reference power $\Delta 
 \end{bmatrix}
 + 
 \Delta p^d
-\end{align}<p>In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are:
+\end{align*}<p>In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are:
 $$ 
 M = 10,~D=0.8,~R=0.1,~T^t=0.5,~T^g=0.2
 $$</p>
@@ -262,13 +262,13 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="MPC-SSTO-tracking-problem-formulation">MPC-SSTO tracking problem formulation<a class="anchor-link" href="#MPC-SSTO-tracking-problem-formulation">¶</a>
 </h2>
-<p>The Feedfoward tracking approach by SSTO requires a target optimizer that calculates the steady-state values for the states $x_{ss}$ and the input $u_{ss}$ given a reference $r$ in the presence of a disturbance $d$.
-<img src="../../../images/MPC-SSTO/MPC-SSTO.png" alt="drawing" width="50%"></p>
-<p>For the Discrete Linear Time-Invariant (DLTI) state-space system,
-\begin{align}\tag{2}
+<p>The Feedfoward tracking approach by SSTO requires a target optimizer that calculates the steady-state values for the states $x_{ss}$ and the input $u_{ss}$ given a reference $r$ in the presence of a disturbance $d$.</p>
+<figure><img src="../../../images/MPC-SSTO/MPC-SSTO.png" alt="MPC-SSTO" width="50%"><center><figcaption>Fig.2 - MPC and SSTO model</figcaption></center>
+</figure><p>For the Discrete Linear Time-Invariant (DLTI) state-space system,
+\begin{align*}\tag{2}
 x(k+1) &amp;= A~x(k)+B~u(k)+B_d~d(k)\\
 y(k) &amp;= C~x(k)+D_d~d(k), \quad k=0,1,2,\dots
-\end{align}
+\end{align*}
 where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, $y\in\mathbb{R}^p$, and $d\in\mathbb{R}^q$ are the states, input, output, and disturbance vectors respectively. $A,B,C,$ are the state, input, and output matrices, and $B_d,D_d$ are the disturbance matrices in the input, and in the output. $k$ is the sampling time.</p>
 <p>The idea is to compute,
 $$ x \rightarrow x_{ss}, \quad u \rightarrow u_{ss} $$
@@ -293,13 +293,13 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
     {\rm I\!P}_N (v(k)) : \min_{v(k)}\sum_{j=0}^{N-1} &amp; (\xi^\intercal(k+j|k)~Q~\xi(k+j|k) + v^\intercal(k+j|k)~R~v(k+j|k)) + \xi^\intercal(k+N|k)~P~\xi(k+N|k) \\
 \end{align}</p>
 <p>subject to,</p>
-\begin{align}
+\begin{align*}
     \xi(k+1+j|k) &amp;= A~\xi(k+j|k)+B~v(k+j|k) \\
     \xi(k|k) &amp;= \xi(k) \\
     P_x ( \xi(k+j|k) + x_{ss} )&amp;\leq q_x \\
     P_u ( v(k+j|k) + u_{ss} )&amp;\leq q_u  \\
     P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\   
-\end{align}<p>for $j = 0, 1, 2, \dots, N-1$.</p>
+\end{align*}<p>for $j = 0, 1, 2, \dots, N-1$.</p>
 <p>Where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.</p>
 
 </div>
@@ -423,7 +423,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
     \min_{\left\lbrace x_{ss},u_{ss} \right\rbrace } \|C~x_{ss}+D_d~d-r\|+\rho \|u_{ss}\|
 \end{align}</p>
 <p>subject to,</p>
-\begin{align}
+\begin{align*}
 {\underbrace{
     \begin{bmatrix}
         I-A &amp; -B\\
@@ -465,7 +465,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
         q_u
         \end{bmatrix}}_{b_{neq}}
 }
-\end{align}<p>where $\rho$ is a penalty constant.</p>
+\end{align*}<p>where $\rho$ is a penalty constant.</p>
 
 </div>
 </div>
@@ -511,9 +511,9 @@ but the real control input applied to the system is
 <h2 id="Stability">Stability<a class="anchor-link" href="#Stability">¶</a>
 </h2>
 <p>In order to ensure stability it is necessary to compute a terminal cost matrix $P$ that satisfies the Lyapunov equation 
-\begin{equation}
+\begin{equation*}
     (A+B~K)^\intercal P(A+B~K)-P+(Q+K^\intercal R~K)=0
-\end{equation}
+\end{equation*}
 which solution can be computed numerically. A good approach is to use a deadbeat mode-2 control gain $K$ that converges the states to the origin $x=0$ as long as $(A+BK)$ is stable, which means that the eigenvalues $\lambda$ are inside the unit circle, $|\lambda| &lt; 1$.</p>
 
 </div>
@@ -1892,14 +1892,10 @@ M =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="#References">¶</a>
 </h2>
-<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and
-Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
-<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN:
-978-0201398236.</p>
+<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
+<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN: 978-0201398236.</p>
 <p>[3] P. Trodden, Lecture Notes ACS616 2018/19</p>
-<p>[4] S. Dughman, J.A. Rossiter, <em>A survey of guaranteeing feasibility and
-stability in MPC during target changes</em> 9th International Symposium
-on Advanced Control of Chemical Processes, June 2015.</p>
+<p>[4] S. Dughman, J.A. Rossiter, <em>A survey of guaranteeing feasibility and stability in MPC during target changes</em> 9th International Symposium on Advanced Control of Chemical Processes, June 2015.</p>
 
 </div>
 </div>
@@ -1915,6 +1911,9 @@ on Advanced Control of Chemical Processes, June 2015.</p>
 <ul class="pager hidden-print">
 <li class="previous">
                 <a href="../MPCc/" rel="prev" title="Constrained MPC regulator with Kalman filter">Publicación anterior</a>
+            </li>
+            <li class="next">
+                <a href="../Foraging_Aggregation_V-rep_e-puck/" rel="next" title="Simple foraging and random aggregation strategy for swarm robotics without communication">Siguiente publicación</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         
@@ -1943,7 +1942,8 @@ MathJax.Hub.Config({
     tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
+        processEscapes: true,
+        processEnvironments: true
     },
     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
     "HTML-CSS": {
@@ -1951,7 +1951,7 @@ MathJax.Hub.Config({
     },
     TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
         equationNumbers: { 
-            autoNumber: "none" // AMS, all, none                       
+            autoNumber: "AMS" // AMS, all, none                       
         } 
     }
 });

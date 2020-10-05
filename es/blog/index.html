@@ -94,14 +94,354 @@ navbar-dark bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="MPC-SSTO/" class="u-url">Constrained MPC with feed-forward SSTO</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Foraging_Aggregation_V-rep_e-puck/" class="u-url">Simple foraging and random aggregation strategy for swarm robotics without communication</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Paulo Loma Marconi
+            </span></p>
+            <p class="dateline">
+            <a href="Foraging_Aggregation_V-rep_e-puck/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-09-06T17:47:09-04:00" itemprop="datePublished" title="2020-09-06">2020-09-06</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="Foraging_Aggregation_V-rep_e-puck/#disqus_thread" data-disqus-identifier="cache/posts/Foraging_Aggregation_V-rep_e-puck.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<h2>Table of Contents<span class="tocSkip"></span>
+</h2>
+<div class="toc"><ul class="toc-item">
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication" data-toc-modified-id="Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication-1"><span class="toc-item-num">1  </span>Simple Foraging and Random Aggregation Strategy for swarm robotics without communication</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"><span class="toc-item-num">2  </span>Pre-requisites</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Source-code" data-toc-modified-id="Source-code-3"><span class="toc-item-num">3  </span>Source code</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Problem-formulation" data-toc-modified-id="Problem-formulation-4"><span class="toc-item-num">4  </span>Problem formulation</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Foraging-and-Random-Aggregation" data-toc-modified-id="Foraging-and-Random-Aggregation-5"><span class="toc-item-num">5  </span>Foraging and Random Aggregation</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Unicycle-model" data-toc-modified-id="Unicycle-model-6"><span class="toc-item-num">6  </span>Unicycle model</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Rebound-avoider/follower-algorithm" data-toc-modified-id="Rebound-avoider/follower-algorithm-7"><span class="toc-item-num">7  </span>Rebound avoider/follower algorithm</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Search-blob/ePuck-algorithm" data-toc-modified-id="Search-blob/ePuck-algorithm-8"><span class="toc-item-num">8  </span>Search blob/ePuck algorithm</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Results-and-discussion" data-toc-modified-id="Results-and-discussion-9"><span class="toc-item-num">9  </span>Results and discussion</a></span></li>
+<li>
+<span><a href="Foraging_Aggregation_V-rep_e-puck/#Lua-code-of-the-algorithm" data-toc-modified-id="Lua-code-of-the-algorithm-10"><span class="toc-item-num">10  </span>Lua code of the algorithm</a></span><ul class="toc-item">
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Edit-the-controller" data-toc-modified-id="Edit-the-controller-10.1"><span class="toc-item-num">10.1  </span>Edit the controller</a></span></li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#Save-the-output-data" data-toc-modified-id="Save-the-output-data-10.2"><span class="toc-item-num">10.2  </span>Save the output data</a></span></li>
+</ul>
+</li>
+<li><span><a href="Foraging_Aggregation_V-rep_e-puck/#References" data-toc-modified-id="References-11"><span class="toc-item-num">11  </span>References</a></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication">Simple Foraging and Random Aggregation Strategy for swarm robotics without communication<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication">¶</a>
+</h2>
+<p>In swarm robotics Foraging and Aggregation are basic tasks yet that can be challenging when there is no communication between the robots. This paper proposes a strategy using a Mealy Deterministic Finite State Machine (DFSM) that switches between five states with two different algorithms, the Rebound avoider/follower through proximity sensors, and the Search blob/ePuck using the 2D image processing of the ePuck embedded camera. Ten trials for each scenario are simulated on V-rep in order to analyse the performance of the strategy in terms of the mean and standard deviation.</p>
+<h2 id="Pre-requisites">Pre-requisites<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Pre-requisites">¶</a>
+</h2>
+<ul>
+<li>Basic robotics theory.</li>
+<li>Finite State Machine theory.</li>
+<li><a href="https://www.coppeliarobotics.com/download">V-rep proEdu v3.6</a></li>
+<li>Knowledge in Lua progamming language.</li>
+</ul>
+<h2 id="Source-code">Source code<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Source-code">¶</a>
+</h2>
+<p>Version <a href="https://raw.githubusercontent.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/master/report/root.pdf">PDF</a>/<a href="../files/Foraging_Aggregation_V-rep_e-puck/Foraging_Aggregation_V-rep_e-puck.html">HTML</a>. V-rep and LaTex source code on <a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck">GitHub</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Problem-formulation">Problem formulation<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Problem-formulation">¶</a>
+</h2>
+<p>The task is to design a control strategy​ for e-puck robots that do the following:</p>
+<ul>
+<li>Explore the given environment to collect resources (​foraging​);</li>
+<li>While foraging, avoid collisions between robots and with the environment boundary.</li>
+</ul>
+<p>For an object to be collected, a robot's centre must be within ​5 cm ​of the object's centre. There won't be any collisions between the robot and the object.
+For the evaluation of this task, two foraging scenarios will be considered:</p>
+<ul>
+<li>With a​ <strong>single robot</strong>​;</li>
+<li>With a​ <strong>group of 5 robots​</strong> (all with an identical controller).</li>
+</ul>
+<p>The controller used for both scenarios ​MUST ​be the same.</p>
+<p>To assess the foraging performance of the strategy, it's expected to conduct <strong>​10 trials</strong> per scenario.
+Each trial should last <strong>​60 seconds</strong> of simulation time. Show ​the <strong>number of objects collected in total over time</strong> (average and standard deviation over 10 trials). Include ​one plot for each scenario​.</p>
+<p>Important:</p>
+<ul>
+<li>Do not use wheel speeds the e-puck cannot achieve. That is, when using function <code>sim.setJointTargetVelocity(.,.)</code>, ​make sure the velocity argument is bounded by <code>[-6.24, 6.24]​</code>.</li>
+<li>You should use the sensors available on the e-puck platform (e.g. camera, proximity). You may implement additional sensors, however, these must not provide any global information (e.g. absolute position or orientation).</li>
+</ul>
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/scenario.png" alt="scenario" width="40%"><center><figcaption>Simulation environment</figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Foraging-and-Random-Aggregation">Foraging and Random Aggregation<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Foraging-and-Random-Aggregation">¶</a>
+</h2>
+<p>The DFSM diagram in Fig. 1, which is defined by (1) and (2), starts in the Behaviour state where the robot is set as $\textit{avoider}$ while the time simulation is $t\leq 60[s]$. During that time, the Foraging state looks for the green blobs with the Search blob/ePuck algorithm while avoiding obstacles using the Rebound algorithm. Moreover, a Random Movement state is used to introduce randomness to the system so the agent can take different paths if there is no blob or obstacle detection. For $60&lt;t\leq 120$, the Behaviour of the robot is set to $\textit{follower}$ and switches to Random Aggregation state where it uses both algorithms, the Rebound to follow ePucks with the proximity sensors and the Search to look for the closest ePuck wheels. For both algorithms, the output is the angle of attack $\alpha_n$, where $n$ depends on the current state.</p>
+\begin{align*}
+S&amp;=\lbrace B,F,R,A,Ra \rbrace  \tag{1}\\    
+\varSigma&amp;= \lbrace t\leq 60,60&lt;t\leq 120,bl~\exists,bl~\nexists,ob~\exists,ob~\nexists,eP~\exists, eP~\nexists \rbrace \tag{2}\\
+s_0&amp;=\lbrace B \rbrace \\
+\end{align*}<p>where, $S$ is the finite set of states, $\varSigma$ is the input alphabet, $\delta:S\times\varSigma$ is the state transition function, Table 1, $s_0$ is the initial state, $\exists$ and $\nexists$ mean detection and no detection respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p>
+<center>Table 1: State transition function $\delta$
+<table>
+<thead><tr>
+<th style="text-align:center">Input</th>
+<th style="text-align:center">Current State</th>
+<th style="text-align:center">Next State</th>
+<th style="text-align:center">Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">$t ≤ 60$</td>
+<td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">avoider</td>
+</tr>
+<tr>
+<td style="text-align:center">$60 &lt; t ≤ 120$</td>
+<td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">follower</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\exists$</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">$\alpha_C$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\nexists$</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+<td style="text-align:center">$\alpha_{C_r}$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">
+<strong>F</strong>oraging</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+<td style="text-align:center">
+<strong>R</strong>ebound</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\exists$</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">$\alpha_e$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\nexists$</td>
+<td style="text-align:center">
+<strong>A</strong>ggregation</td>
+<td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+<td style="text-align:center">$\alpha_{e_r}$</td>
+</tr>
+</tbody>
+</table>
+</center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"><center><figcaption>Fig.1 Mealy DFSM of the controller.</figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Unicycle-model">Unicycle model<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Unicycle-model">¶</a>
+</h2>
+<p>The Unicycle model in Fig. 2a [1] controls the angular velocities of the right and left wheels, $v_r$ and $v_l$ as follows,</p>
+\begin{align}
+v_r&amp;= \dfrac{2~V_x+\omega~L}{2~R} \tag{3}\\
+v_l&amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
+\end{align}<p>where, $V_x$ is the linear velocity of the robot, $L$ is the distance between the wheels, $R$ is the radius of each wheel, and $\omega$ is the angular velocity of the robot. Using $\alpha_n$ and the simulation sampling period $T$, the control variable for the simulation is $\omega=\alpha_n/T$, refer to code line 24, 197, and 215.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Rebound-avoider/follower-algorithm">Rebound avoider/follower algorithm<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Rebound-avoider/follower-algorithm">¶</a>
+</h2>
+<p>The Rebound algorithm [2] calculates the Rebound angle $\alpha_R$ to avoid/follow an obstacle/objective given $\alpha_0=\pi/N$ and $\alpha_i=i~\alpha_0$,</p>
+\begin{align}\tag{5}
+\alpha_R&amp;=\dfrac{\sum_{i=-N/2}^{N/2}~\alpha_i~D_i}{\sum_{i=-N/2}^{N/2}~D_i}
+\end{align}<p>where, $\alpha_0$ is the uniformly distributed angular pace, $N$ is the number of sensors, $\alpha_i$ is the angular information per pace $\alpha_i~\epsilon\left[-\frac{N}{2},\frac{N}{2}\right]$, and $D_i$ is the distance value obtained by the proximity sensors, refer to code line 18 and 139.</p>
+<p>The weight vector given by $\alpha_i$ sets the robot behaviour for each corresponding mapped sensor $\lbrace s_1,s_2,s_3,s_4,s_5,s_6\rbrace$. For the $\textit{avoider}$ is $\lbrace -3,-2,-1,1,2,3 \rbrace$, and for the $\textit{follower}$ is $\lbrace 3,2,1,-1,-2,-3 \rbrace$. Fig. 2b and Fig. 2c show an example of $\alpha_R$ with the Vector Field Histogram (VFH) for the $\textit{avoider}$ case. Refer to code line 128 and 132.</p>
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"><center><figcaption>Fig. 2 - Unicycle model, Rebound and Search angle</figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Search-blob/ePuck-algorithm">Search blob/ePuck algorithm<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Search-blob/ePuck-algorithm">¶</a>
+</h2>
+<p>The ePuck embedded camera on V-rep is a vision sensor that filters the RGB colours of the blobs and other ePucks. Not collected Blobs are mapped as green and collected ones as red, and the ePuck wheels are also mapped because they have green and red parts, refer to code line 97. The data of interest that this sensor outputs are the size, centroid's 2D position, and orientation of the detected objects. Therefore, when objects are detected by the camera, a simple routine finds the biggest one which is the closest relative to the ePuck, and using (6) and (7), it can be calculated the angle of attack $\alpha_C$ or $\alpha_e$ for the blobs and ePucks respectively, refer to Fig. 2d and code line 150. The orientation value is used to differentiate between objects, for blobs is $=0$ and for ePuck wheels is $\neq 0$, refer to code line 105.</p>
+\begin{align}
+\alpha_C &amp;= \arctan \dfrac{x_b-x_o}{y_b-y_o} \tag{6}\\
+\alpha_e &amp;= \arctan \dfrac{x_e-x_o}{y_e-y_o} \tag{7}
+\end{align}<p>where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) ared modified with a random value $w$ with a probability function $P$,</p>
+\begin{align}
+\alpha_{C_r} &amp;= \alpha_C~w \tag{8}\\
+\alpha_{e_r} &amp;= \alpha_e~w \tag{9}
+\end{align}<p>where, $P(\lbrace w~\epsilon~\Omega:X(w)=1/3 \rbrace)$ and $\Omega=\lbrace -1,0,1 \rbrace$, refer to code line 158 and 205.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Results-and-discussion">Results and discussion<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Results-and-discussion">¶</a>
+</h2>
+<p>For both Scenarios, 4 Rounds of 10 trials each are simulated. Each Round has different initial positions of the robots, Fig. 3b and Fig. 3d, and each trial stops at $t=60$. In Scenario 1, Fig. 3a shows that Round 4 has the best performance because $68\%$ of the time the robot will forage between 13 and 15 blobs. For Scenario 2, Fig. 3b shows that Round 1 hast the best performance, $68\%$ of the time the swarm will forage between 37 and 39 blobs. For the Aggregation case, that is simulated only in Scenario 2 Fig. 3e and Fig. 3f, Round 2 shows the best results, $68\%$ of the time between 2 and 4 agents aggregate at some random point.</p>
+<figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/result_a.png" alt="result_a" width="50%"><img src="../../images/Foraging_Aggregation_V-rep_e-puck/result_b.png" alt="result_b" width="50%"><img src="../../images/Foraging_Aggregation_V-rep_e-puck/result_c.png" alt="result_c" width="50%"><center><figcaption>Fig. 3: Simulation results </figcaption></center>
+</figure><figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/foraging.gif" alt="foraging" width="auto%"><center><figcaption>Trial: Scenario 2 (5 robots) - Foraging for $1 \le t \leq 60$ </figcaption></center>
+</figure><figure><img src="../../images/Foraging_Aggregation_V-rep_e-puck/aggregation.gif" alt="aggregation" width="auto%"><center><figcaption>Trial: Scenario 2 (5 robots) - Random Aggregation for $60 \le t \leq 120$ </figcaption></center>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lua-code-of-the-algorithm">Lua code of the algorithm<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Lua-code-of-the-algorithm">¶</a>
+</h2>
+<pre class="lang-lua line-numbers" data-jsonp="https://api.github.com/repos/paulomarconi/Foraging_Aggregation_V-rep_e-puck/contents/report/vrep.lua"></pre>
+<h3 id="Edit-the-controller">Edit the controller<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Edit-the-controller">¶</a>
+</h3>
+<p>To edit the controller for all the ePuck, open V-rep and load the scene  <code>sim_5_Robots.ttt</code>, and edit the ePuck file.</p>
+<p><img src="../../images/Foraging_Aggregation_V-rep_e-puck/controller_location.png" alt="controller_location" width="auto"></p>
+<h3 id="Save-the-output-data">Save the output data<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#Save-the-output-data">¶</a>
+</h3>
+<p>To edit the location of the output data, open the <code>disc file</code>.</p>
+<p><img src="../../images/Foraging_Aggregation_V-rep_e-puck/output_location.png" alt="output_location" width="auto"></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="Foraging_Aggregation_V-rep_e-puck/#References">¶</a>
+</h2>
+<p>[1] Jawhar Ghommam, Maarouf Saad, and Faical Mnif. “Formation path following control of unicycle-type mobile robots”. In: 2008 IEEE International Conference on Robotics and Automation. IEEE, 2008. DOI: 10.1109/robot.2008.4543495.</p>
+<p>[2] I. Susnea et al. “The bubble rebound obstacle avoidance algorithm for mobile robots”. In: IEEE ICCA 2010. IEEE, 2010. DOI: 10.1109/icca.2010.5524302.</p>
+
+</div>
+</div>
+</div>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="MPC-SSTO/" class="u-url">Constrained MPC with feed-forward SSTO</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Paulo Loma Marconi
             </span></p>
             <p class="dateline">
             <a href="MPC-SSTO/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-09-30T13:39:47-04:00" itemprop="datePublished" title="2020-09-30">2020-09-30</time></a>
+            <time class="published dt-published" datetime="2020-09-02T13:39:47-04:00" itemprop="datePublished" title="2020-09-02">2020-09-02</time></a>
             </p>
                 <p class="commentline">
         
@@ -132,7 +472,7 @@ navbar-dark bg-dark
 </ul>
 <h2 id="Source-code">Source code<a class="anchor-link" href="MPC-SSTO/#Source-code">¶</a>
 </h2>
-<p>You can find the Matlab and LaTex source code on my <a href="https://github.com/paulomarconi/MPC-SSTO">GitHub repository</a>.</p>
+<p>Version <a href="https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf">PDF</a>/<a href="../files/MPC-SSTO/MPC-SSTO.html">HTML</a>. Matlab and LaTex source code on <a href="https://github.com/paulomarconi/MPC-SSTO">GitHub</a>.</p>
 
 </div>
 </div>
@@ -144,10 +484,9 @@ navbar-dark bg-dark
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Isolated-power-system">Isolated power system<a class="anchor-link" href="MPC-SSTO/#Isolated-power-system">¶</a>
 </h2>
-<p>The operation of an isolated power system under primary frequency control is modelled by
-the following block diagram.
-<img src="../../images/MPC-SSTO/plant.png" alt="drawing" width="60%"></p>
-<p>In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&gt;0$ is the regulation factor.</p>
+<p>The operation of an isolated power system under primary frequency control is modelled by the following block diagram.</p>
+<figure><img src="../../images/MPC-SSTO/plant.png" alt="plant" width="60%"><center><figcaption>Fig.1 - Isolated Power System </figcaption></center>
+</figure><p>In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&gt;0$ is the regulation factor.</p>
 <p>The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design
 a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.</p>
 
@@ -162,7 +501,7 @@ a secondary frequency control loop that will adjust the reference power $\Delta 
 <h2 id="State-space-model-of-the-system">State-space model of the system<a class="anchor-link" href="MPC-SSTO/#State-space-model-of-the-system">¶</a>
 </h2>
 <p>The isolated power system to be studied is a linear Single-Input Single-Output (SISO) model with the addition of the disturbance in the output. The linear continuous-time state-space model is,,</p>
-\begin{align}\tag{1}
+\begin{align*}\tag{1}
 \begin{bmatrix}
     \Delta\dot{\omega} \\
     \Delta\dot{p}^m \\   
@@ -204,7 +543,7 @@ a secondary frequency control loop that will adjust the reference power $\Delta 
 \end{bmatrix}
 + 
 \Delta p^d
-\end{align}<p>In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are:
+\end{align*}<p>In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are:
 $$ 
 M = 10,~D=0.8,~R=0.1,~T^t=0.5,~T^g=0.2
 $$</p>
@@ -240,13 +579,13 @@ $$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="MPC-SSTO-tracking-problem-formulation">MPC-SSTO tracking problem formulation<a class="anchor-link" href="MPC-SSTO/#MPC-SSTO-tracking-problem-formulation">¶</a>
 </h2>
-<p>The Feedfoward tracking approach by SSTO requires a target optimizer that calculates the steady-state values for the states $x_{ss}$ and the input $u_{ss}$ given a reference $r$ in the presence of a disturbance $d$.
-<img src="../../images/MPC-SSTO/MPC-SSTO.png" alt="drawing" width="50%"></p>
-<p>For the Discrete Linear Time-Invariant (DLTI) state-space system,
-\begin{align}\tag{2}
+<p>The Feedfoward tracking approach by SSTO requires a target optimizer that calculates the steady-state values for the states $x_{ss}$ and the input $u_{ss}$ given a reference $r$ in the presence of a disturbance $d$.</p>
+<figure><img src="../../images/MPC-SSTO/MPC-SSTO.png" alt="MPC-SSTO" width="50%"><center><figcaption>Fig.2 - MPC and SSTO model</figcaption></center>
+</figure><p>For the Discrete Linear Time-Invariant (DLTI) state-space system,
+\begin{align*}\tag{2}
 x(k+1) &amp;= A~x(k)+B~u(k)+B_d~d(k)\\
 y(k) &amp;= C~x(k)+D_d~d(k), \quad k=0,1,2,\dots
-\end{align}
+\end{align*}
 where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, $y\in\mathbb{R}^p$, and $d\in\mathbb{R}^q$ are the states, input, output, and disturbance vectors respectively. $A,B,C,$ are the state, input, and output matrices, and $B_d,D_d$ are the disturbance matrices in the input, and in the output. $k$ is the sampling time.</p>
 <p>The idea is to compute,
 $$ x \rightarrow x_{ss}, \quad u \rightarrow u_{ss} $$
@@ -271,13 +610,13 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
     {\rm I\!P}_N (v(k)) : \min_{v(k)}\sum_{j=0}^{N-1} &amp; (\xi^\intercal(k+j|k)~Q~\xi(k+j|k) + v^\intercal(k+j|k)~R~v(k+j|k)) + \xi^\intercal(k+N|k)~P~\xi(k+N|k) \\
 \end{align}</p>
 <p>subject to,</p>
-\begin{align}
+\begin{align*}
     \xi(k+1+j|k) &amp;= A~\xi(k+j|k)+B~v(k+j|k) \\
     \xi(k|k) &amp;= \xi(k) \\
     P_x ( \xi(k+j|k) + x_{ss} )&amp;\leq q_x \\
     P_u ( v(k+j|k) + u_{ss} )&amp;\leq q_u  \\
     P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\   
-\end{align}<p>for $j = 0, 1, 2, \dots, N-1$.</p>
+\end{align*}<p>for $j = 0, 1, 2, \dots, N-1$.</p>
 <p>Where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.</p>
 
 </div>
@@ -401,7 +740,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
     \min_{\left\lbrace x_{ss},u_{ss} \right\rbrace } \|C~x_{ss}+D_d~d-r\|+\rho \|u_{ss}\|
 \end{align}</p>
 <p>subject to,</p>
-\begin{align}
+\begin{align*}
 {\underbrace{
     \begin{bmatrix}
         I-A &amp; -B\\
@@ -443,7 +782,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
         q_u
         \end{bmatrix}}_{b_{neq}}
 }
-\end{align}<p>where $\rho$ is a penalty constant.</p>
+\end{align*}<p>where $\rho$ is a penalty constant.</p>
 
 </div>
 </div>
@@ -489,9 +828,9 @@ but the real control input applied to the system is
 <h2 id="Stability">Stability<a class="anchor-link" href="MPC-SSTO/#Stability">¶</a>
 </h2>
 <p>In order to ensure stability it is necessary to compute a terminal cost matrix $P$ that satisfies the Lyapunov equation 
-\begin{equation}
+\begin{equation*}
     (A+B~K)^\intercal P(A+B~K)-P+(Q+K^\intercal R~K)=0
-\end{equation}
+\end{equation*}
 which solution can be computed numerically. A good approach is to use a deadbeat mode-2 control gain $K$ that converges the states to the origin $x=0$ as long as $(A+BK)$ is stable, which means that the eigenvalues $\lambda$ are inside the unit circle, $|\lambda| &lt; 1$.</p>
 
 </div>
@@ -1870,14 +2209,10 @@ M =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="MPC-SSTO/#References">¶</a>
 </h2>
-<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and
-Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
-<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN:
-978-0201398236.</p>
+<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
+<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN: 978-0201398236.</p>
 <p>[3] P. Trodden, Lecture Notes ACS616 2018/19</p>
-<p>[4] S. Dughman, J.A. Rossiter, <em>A survey of guaranteeing feasibility and
-stability in MPC during target changes</em> 9th International Symposium
-on Advanced Control of Chemical Processes, June 2015.</p>
+<p>[4] S. Dughman, J.A. Rossiter, <em>A survey of guaranteeing feasibility and stability in MPC during target changes</em> 9th International Symposium on Advanced Control of Chemical Processes, June 2015.</p>
 
 </div>
 </div>
@@ -1891,7 +2226,7 @@ on Advanced Control of Chemical Processes, June 2015.</p>
             </span></p>
             <p class="dateline">
             <a href="MPCc/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-09-01T01:34:32-04:00" itemprop="datePublished" title="2020-09-01">2020-09-01</time></a>
+            <time class="published dt-published" datetime="2020-08-28T01:34:32-04:00" itemprop="datePublished" title="2020-08-28">2020-08-28</time></a>
             </p>
                 <p class="commentline">
         
@@ -1992,8 +2327,8 @@ on Advanced Control of Chemical Processes, June 2015.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Constrained-MPC">Constrained MPC<a class="anchor-link" href="MPCc/#Constrained-MPC">¶</a>
 </h2>
-<p><img src="../../images/MPCc/MPCc.png" alt="drawing" width="40%"></p>
-<p>Consider the following discrete-time LTI state-space system,
+<figure><img src="../../images/MPCc/MPCc.png" alt="MPCc" width="40%"><center><figcaption>Fig.1 - Constrained MPC</figcaption></center>
+</figure><p>Consider the following discrete-time LTI state-space system,
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;= A~x(k)+B~u(k)+w(k)\\
@@ -2013,29 +2348,29 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 <h2 id="Problem-Formulation">Problem Formulation<a class="anchor-link" href="MPCc/#Problem-Formulation">¶</a>
 </h2>
 <p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,</p>
-\begin{align}\tag{1}
+\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align}<p>subject to,</p>
-\begin{align}\tag{2}
+\end{align*}<p>subject to,</p>
+\begin{align*}\tag{2}
 x(k+1+j|k) &amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;= x(k) \\
 P_x~x(k+j|k) &amp;\leq q_x \\
 P_u~u(k+j|k) &amp;\leq q_u  \\
 P_{x_N}~x(k+N|k) &amp;\leq q_{x_N}
-\end{align}<p>for $ j=0,1,2,\dots,N-1$.</p>
+\end{align*}<p>for $ j=0,1,2,\dots,N-1$.</p>
 <p>Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$. $P_x$, $P_u$, and $P_{x_N}$ are the states, input, and terminal state inequality constraints.</p>
 <p>With the value function defined as,
-\begin{align}
+\begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
-\end{align}
+\end{align*}
 the optimal control sequence is,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
 &amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
 \end{aligned}
-\end{equation}</p>
+\end{equation*}</p>
 
 </div>
 </div>
@@ -2048,7 +2383,7 @@ the optimal control sequence is,
 <h2 id="State-constraints">State constraints<a class="anchor-link" href="MPCc/#State-constraints">¶</a>
 </h2>
 <p>Let's define $P_x$ as box constraints,
-\begin{align}
+\begin{align*}
 \underbrace{
     \begin{bmatrix}
     +\textbf{I}_{n\times n}\\
@@ -2063,7 +2398,7 @@ x(k+j|k)
     -x_{min}
     \end{bmatrix}
 }_{q_x}
-\end{align}</p>
+\end{align*}</p>
 <p>formulate it with $P_{x_N}$ and $q_{x_N}$ (they will be defined in the stability section), 
 \begin{align*}
 \begin{cases}
@@ -2130,7 +2465,7 @@ results in,
 <h2 id="Input-constraints">Input constraints<a class="anchor-link" href="MPCc/#Input-constraints">¶</a>
 </h2>
 <p>Let's define $P_u$ as box constraints,
-\begin{align}
+\begin{align*}
 \underbrace{
     \begin{bmatrix}
     +\textbf{I}_{m\times m}\\
@@ -2145,7 +2480,7 @@ u(k+j|k)
     -u_{min}
     \end{bmatrix}
 }_{q_x}
-\end{align}</p>
+\end{align*}</p>
 <p>then,
 \begin{align*}
 P_u~u(k+j|k)\leq q_u
@@ -2209,7 +2544,7 @@ using \eqref{eq:PredictionEqConstraint} to eliminate $\mathbf{x}(k)$,
 \tilde{P_x}~G~\mathbf{u}(k) &amp;\leq \tilde{q_x}+(-\tilde{P}_{x_0}-\tilde{P_x}~F)~x(k)
 \end{align*}
 stacking,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \underbrace{
     \begin{bmatrix}
@@ -2234,7 +2569,7 @@ stacking,
 }_{S_c}
 x(k)
 \end{aligned}
-\end{equation}
+\end{equation*}
 therefore,
 \begin{align}\tag{5}
 P_c~\mathbf{u}(k) \leq q_c+S_c~x(k)
@@ -2255,11 +2590,11 @@ P_c~\mathbf{u}(k) \leq q_c+S_c~x(k)
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{\mathbf{u}(k)}~\frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}(k)+\alpha
 \end{align}
 subject to,
-\begin{align}
+\begin{align*}
 P_c~\mathbf{u}(k) &amp;\leq q_c+S_c~x(k) 
-\end{align}
+\end{align*}
 where the optimal solution can be defined as,</p>
-\begin{align}
+\begin{align*}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~ 
 \left.
     \begin{cases} 
@@ -2268,7 +2603,7 @@ where the optimal solution can be defined as,</p>
 \right\}
 \\
 &amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
-\end{align}<p></p>
+\end{align*}<p></p>
 <p>with the same definitions of $H,~L$ and $\alpha$ of the unconstrained MPC case.</p>
 <p>Applying the RH principle leads to the implicit nonlinear time-variant control law,
 \begin{align}\tag{7}
@@ -2276,25 +2611,25 @@ u^*(k|k) = \kappa_N \left( x(k) \right)
 \end{align}
 and it is defined for $x(k)\in \mathcal{X}_N$, where $\mathcal{X}_N$ is the feasibility region.</p>
 <p>The feasibility region $\mathcal{X}_N$ is the set of states for which the cost function  has a solution, and is defined as,
-\begin{align}
+\begin{align*}
 \mathcal{X}_N = \{x(k):\mathcal{U}_N(x(k)) \neq 0\}
-\end{align}
+\end{align*}
 where the feasible set $\mathcal{U}_N$ is,
-\begin{align}
+\begin{align*}
 \mathcal{U}_N(x(k)) &amp;= \{ \mathbf{u}(k) : P_c~\mathbf{u}(k) \leq q_c+S_c~x(k) \}
-\end{align}
+\end{align*}
 Also, the input constraint set is,
-\begin{align}
+\begin{align*}
 \mathcal{U} &amp;=\{ u(k) : P_u~u(k)\leq q_u \} \subseteq \mathbb{R}^m\\
-\end{align}
+\end{align*}
 the state constraint set is,
-\begin{align}
+\begin{align*}
 \mathcal{X} &amp;=\{ x(k) : P_x~x(k)\leq q_x \} \subseteq \mathbb{R}^n\\
-\end{align}
+\end{align*}
 and the terminal constraint set is,
-\begin{align}
+\begin{align*}
 \mathcal{X}_f &amp;=\{ x(k) : P_{x_N}~x(k)\leq q_{x_N} \} \subseteq \mathbb{R}^n
-\end{align}</p>
+\end{align*}</p>
 
 </div>
 </div>
@@ -2307,21 +2642,21 @@ and the terminal constraint set is,
 <h2 id="Stability">Stability<a class="anchor-link" href="MPCc/#Stability">¶</a>
 </h2>
 <p>To guarantee stability, the aim is to construct a terminal constraint set $\mathcal{X}_f$ such that feasibility of the problem for $x(k)$ satisfies constraints for mode-2,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 x(k+N+j|k) &amp;\in \mathcal{X},~j=1,2,...\\
 u(k+N+j|k) &amp;\in \mathcal{U},~j=1,2,...
 \end{aligned}  
-\end{equation}</p>
+\end{equation*}</p>
 <p>An approach is to use <strong>deadbeat mode-2</strong> constraints as terminal constraints. For $j=N,\dots,N+n-1$ in,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 x(k+j|k) &amp;= (A+B~K)^j~x(k+N|k)\\
 u(k+j|k) &amp;= K(A+B~K)^j~x(k+N|k)
 \end{aligned}
-\end{equation}
+\end{equation*}
 that is, extending the constraints for $n$ steps beyond mode-1, 
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \underbrace{
     \overbrace{
@@ -2352,9 +2687,9 @@ x(k+N|k)
     \end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
-\end{equation}
+\end{equation*}
 where, 
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
     \mathcal{M} = \textbf{I}_{n\times n} 
     \otimes
@@ -2369,7 +2704,7 @@ where,
     q_u
     \end{bmatrix}
 \end{aligned}
-\end{equation}
+\end{equation*}
 Therefore, for any $x(k+N|k) \in \mathcal{X}_f$ 
 \begin{align}\tag{8}
 \mathcal{X}_f = \{ x(k+N|k) \in \mathbb{R}^n : P_{x_N}~x(k+N|k) \leq q_{x_N} \}
@@ -2451,7 +2786,7 @@ u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U}
 <p>Constraints,
 \begin{align*}
         |x| \leq 2, \quad |u| \leq 7
-    \end{align*}</p>
+\end{align*}</p>
 
 </div>
 </div>
@@ -3522,10 +3857,8 @@ M =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="MPCc/#References">¶</a>
 </h2>
-<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and
-Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
-<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN:
-978-0201398236.</p>
+<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
+<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN: 978-0201398236.</p>
 
 </div>
 </div>
@@ -3539,7 +3872,7 @@ Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
             </span></p>
             <p class="dateline">
             <a href="MPCu/" rel="bookmark">
-            <time class="published dt-published" datetime="2020-08-28T19:17:08-04:00" itemprop="datePublished" title="2020-08-28">2020-08-28</time></a>
+            <time class="published dt-published" datetime="2020-08-24T19:17:08-04:00" itemprop="datePublished" title="2020-08-24">2020-08-24</time></a>
             </p>
                 <p class="commentline">
         
@@ -3638,8 +3971,8 @@ Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Unconstrained-MPC">Unconstrained MPC<a class="anchor-link" href="MPCu/#Unconstrained-MPC">¶</a>
 </h2>
-<p><img src="../../images/MPCu/MPCu.png" alt="drawing" width="40%"></p>
-<p>Consider the following discrete-time LTI state-space system,
+<figure><img src="../../images/MPCu/MPCu.png" alt="MPCu" width="40%"><center><figcaption>Fig.1 - Unconstrained MPC</figcaption></center>
+</figure><p>Consider the following discrete-time LTI state-space system,
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;= A~x(k)+B~u(k)+w(k)\\
@@ -3659,26 +3992,26 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 <h2 id="Problem-Formulation">Problem Formulation<a class="anchor-link" href="MPCu/#Problem-Formulation">¶</a>
 </h2>
 <p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,</p>
-\begin{align}\tag{1}
+\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align}<p>subject to,</p>
-\begin{align}\tag{2}
+\end{align*}<p>subject to,</p>
+\begin{align*}\tag{2}
 x(k+1+j|k) &amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;= x(k) 
-\end{align}<p>for $ j=0,1,2,\dots,N-1$.</p>
+\end{align*}<p>for $ j=0,1,2,\dots,N-1$.</p>
 <p>Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$.</p>
 <p>With the value function defined as,
-\begin{align}
+\begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
-\end{align}
+\end{align*}
 the optimal control sequence is,
-\begin{equation}
+\begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
 &amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
 \end{aligned}
-\end{equation}</p>
+\end{equation*}</p>
 
 </div>
 </div>
@@ -3716,7 +4049,7 @@ x(k+2|k) &amp;= A~x(k+1|k)+B~u(k+1|k) \\
 x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
                  &amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
 \end{align*}<p>stacking,</p>
-\begin{aligned}
+\begin{align*}
 {\underbrace{
     \begin{bmatrix}
     x(k+1|k) \\
@@ -3751,7 +4084,7 @@ x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
     u(k+N-1|k)
     \end{bmatrix}}_{\mathbf{u}(k)}
 }
-\end{aligned}<p>the predicted equality constraint is,</p>
+\end{align*}<p>the predicted equality constraint is,</p>
 \begin{equation}\tag{3}
 \mathbf{x}(k) = F~x(k)+G~\mathbf{u}(k)
 \end{equation}<p>where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.</p>
@@ -3909,10 +4242,10 @@ H~\mathbf{u}^*(k)+c &amp;= 0 \\
     0      &amp; 0      &amp; 0      &amp; \dots  &amp; I
 \end{bmatrix}
 (-H^{-1}~L)x(k)
-\end{align*}\begin{align}
-u^*(k) &amp;= K_N~x(k) \tag{7} \\
+\end{align*}\begin{align*}\tag{7}
+u^*(k) &amp;= K_N~x(k)  \\
 K_N &amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
-\end{align}<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
+\end{align*}<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
 
 </div>
 </div>
@@ -4715,10 +5048,8 @@ KN =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="MPCu/#References">¶</a>
 </h2>
-<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and
-Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
-<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN:
-978-0201398236.</p>
+<p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
+<p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN: 978-0201398236.</p>
 
 </div>
 </div>
@@ -6358,7 +6689,8 @@ MathJax.Hub.Config({
     tex2jax: { // https://docs.mathjax.org/en/v2.7-latest/options/preprocessors/tex2jax.html
         inlineMath: [ ['$','$'], ["\\(","\\)"] ],
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
+        processEscapes: true,
+        processEnvironments: true
     },
     displayAlign: 'center', // Change this to 'left' if you want left-aligned equations.
     "HTML-CSS": {
@@ -6366,7 +6698,7 @@ MathJax.Hub.Config({
     },
     TeX: { // https://docs.mathjax.org/en/v2.7-latest/options/input-processors/TeX.html
         equationNumbers: { 
-            autoNumber: "none" // AMS, all, none                       
+            autoNumber: "AMS" // AMS, all, none                       
         } 
     }
 });
