@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 02 Oct 2020 14:23:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 06 Oct 2020 16:27:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -14,7 +14,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as, &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt;, &lt;a href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican&lt;/a&gt;, and &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;Sphinx&lt;/a&gt;. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.&lt;/p&gt;
+&lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;a href="https://getnikola.com/"&gt;Nikola&lt;/a&gt; is a good way to build a static website/blog. It's versatile, powerful and open-source. There are other options such as &lt;a href="https://gohugo.io/"&gt;Hugo&lt;/a&gt;, &lt;a href="https://docs.getpelican.com/en/stable/quickstart.html"&gt;Pelican&lt;/a&gt;, and &lt;a href="https://github.com/sphinx-doc/sphinx"&gt;Sphinx&lt;/a&gt;. After reviewing their pros and cons, I decided to use Nikola mainly because of its Jupyter and Matlab-kernel integration.&lt;/p&gt;
 &lt;p&gt;There is a lot of good material on the internet about installing and using Nikola, but I thought it will be useful to show my methodology from the perspective of someone who has never used Anaconda, Jupyter and Nikola.&lt;/p&gt;
 &lt;p&gt;Nevertheless, here is a list of the official documentation and good tutorials I recommend:&lt;/p&gt;
 &lt;ul&gt;
