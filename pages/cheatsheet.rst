@@ -22,7 +22,7 @@ https://getnikola.com/handbook.html
     nikola github_deploy
     nikola check -f --clean-files
 
-Jupyter line and cell magic commands
+Jupyter line/cell magic commands
 ====================================
 https://metakernel.readthedocs.io/en/latest/source/README.html
 
@@ -99,7 +99,7 @@ Complex formulas.
     \end{cases}
 
 
-Alternatively, use `<div class="math">...</div>` for ``\text{...}`` and other commands if they are not compiled correctly usign `\begin{enviornment}...\end{enviornment}` or `$$...$$`
+Alternatively, use `<div class="math">...</div>` for ``\text{...}`` and other commands if they are not compiled correctly using `\begin{enviornment}...\end{enviornment}` or `$$...$$`
 
 .. code-block::
 
