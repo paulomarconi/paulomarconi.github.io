@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-08T22:40:00Z</lastmod>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -43,12 +43,16 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://paulomarconi.github.io/es/blog/Nikola-guide/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</loc>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/blog/Phase-lead_phase-lag/</loc>
   <lastmod>2020-10-05T18:48:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-10-08T14:24:00Z</lastmod>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -73,6 +77,10 @@
  <url>
   <loc>https://paulomarconi.github.io/categories/control-systems/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/deadbeat/</loc>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/e-puck/</loc>
@@ -160,7 +168,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-10-08T22:40:00Z</lastmod>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -196,13 +204,18 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nikola-guide/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</loc>
+  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/" />
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-08T14:24:00Z</lastmod>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -227,6 +240,10 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/control-systems/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/deadbeat/</loc>
+  <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/e-puck/</loc>
@@ -319,6 +336,10 @@
  <url>
   <loc>https://paulomarconi.github.io/files/MPC-SSTO/MPC-SSTO.html</loc>
   <lastmod>2020-10-03T16:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/Phase-lead_deadbeat/Phase-lead_deadbeat.html</loc>
+  <lastmod>2020-10-08T22:58:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/files/Phase-lead_phase-lag/Phase-lead_phase-lag.html</loc>

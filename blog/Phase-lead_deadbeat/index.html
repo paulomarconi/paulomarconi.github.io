@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
-" lang="es">
+" lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Digital phase-lead and deadbeat compensators | PauLoMarconi</title>
-<link href="../../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
-<link href="../../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
+<link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
-<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../rss.xml">
-<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../../rss.xml">
-<link rel="canonical" href="https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/">
-<link rel="icon" href="../../../files/blogFavicon.ico" sizes="128x128">
-<!--[if lt IE 9]><script src="../../../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
+<link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
+<link rel="canonical" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/">
+<link rel="icon" href="../../files/blogFavicon.ico" sizes="128x128">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
 <!-- Prism --><link rel="stylesheet" href="../../assets/css/prism.css">
-<!-- for /es/blog/... posts--><link rel="stylesheet" href="../../../assets/css/prism.css">
+<!-- for /es/blog/... posts--><link rel="stylesheet" href="../../css/prism.css">
 <meta name="author" content="Paulo Loma Marconi">
 <link rel="prev" href="../Phase-lead_phase-lag/" title="Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Digital phase-lead and deadbeat compensators">
-<meta property="og:url" content="https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/">
+<meta property="og:url" content="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/">
 <meta property="og:description" content="Table of Contents
 1  Digital phase-lead and deadbeat controller2  Pre-requisites3  Source code4  Digital phase-lead controller4.1  Matlab script: closed-loop step response and Bode diagram4.2  Phase-L">
 <meta property="og:type" content="article">
@@ -31,14 +31,14 @@
 <meta property="article:tag" content="control systems">
 <meta property="article:tag" content="deadbeat">
 <meta property="article:tag" content="phase-lead">
-<link rel="alternate" hreflang="en" href="../../../blog/Phase-lead_deadbeat/">
+<link rel="alternate" hreflang="es" href="../../es/blog/Phase-lead_deadbeat/">
 <!-- Prism --><link rel="stylesheet" href="../../assets/css/post_ipynb.css">
 <link rel="stylesheet" href="../../assets/css/prism.css">
-<!-- for /es/blog/... posts--><link rel="stylesheet" href="../../../assets/css/post_ipynb.css">
-<link rel="stylesheet" href="../../../assets/css/prism.css">
+<!-- for /es/blog/... posts--><link rel="stylesheet" href="../../css/post_ipynb.css">
+<link rel="stylesheet" href="../../css/prism.css">
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">Ir al contenido principal</a>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
@@ -61,16 +61,16 @@ navbar-dark bg-dark
 <a href="../../archive.html" class="nav-link">Blog</a>
                 </li>
 <li class="nav-item">
-<a href="../../categories/" class="nav-link">Etiquetas</a>
+<a href="../../categories/" class="nav-link">Tags</a>
                 </li>
 <li class="nav-item">
-<a href="../../../cheatsheet/index.html" class="nav-link">Cheatsheet</a>
+<a href="../../cheatsheet/index.html" class="nav-link">Cheatsheet</a>
                 </li>
 <li class="nav-item">
-<a href="https://apuntesdeelectronicaycontrol.blogspot.com" class="nav-link">Antiguo Blog</a>
+<a href="https://apuntesdeelectronicaycontrol.blogspot.com" class="nav-link">Old Blog</a>
                 </li>
 <li class="nav-item">
-<a href="../../rss.xml" class="nav-link">Canal RSS</a>
+<a href="../../rss.xml" class="nav-link">RSS feed</a>
 
                 
             </li>
@@ -89,13 +89,13 @@ navbar-dark bg-dark
             <ul class="navbar-nav navbar-right">
 <li>
             </li>
-<li class="nav-item"><a href="../../../" rel="alternate" hreflang="en" class="nav-link">English</a></li>
+<li class="nav-item"><a href="../../es/" rel="alternate" hreflang="es" class="nav-link">Español</a></li>
 
                 
                     
     
     <li class="nav-item">
-    <a href="index.ipynb" id="sourcelink" class="nav-link">Código fuente</a>
+    <a href="index.ipynb" id="sourcelink" class="nav-link">Source</a>
     </li>
 
 
@@ -123,12 +123,12 @@ navbar-dark bg-dark
             </p>
                 <p class="commentline">
         
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/Phase-lead_deadbeat.html">Comentarios</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/Phase-lead_deadbeat.html">Comments</a>
 
 
             
         </p>
-<p class="sourceline"><a href="index.ipynb" class="sourcelink">Código fuente</a></p>
+<p class="sourceline"><a href="index.ipynb" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -907,19 +907,19 @@ G_{cz} &amp;= \dfrac{18.288 (z-1) (z-0.3392) (z^2 - 1.783z + 0.8187)^2}{z (z-0.3
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../Phase-lead_phase-lag/" rel="prev" title="Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches">Publicación anterior</a>
+                <a href="../Phase-lead_phase-lag/" rel="prev" title="Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches">Previous post</a>
             </li>
-        </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
+        </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
         
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="paulomarconi",
-            disqus_url="https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/",
+            disqus_url="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/",
         disqus_title="Digital phase-lead and deadbeat compensators",
         disqus_identifier="cache/posts/Phase-lead_deadbeat.html",
         disqus_config = function () {
-            this.language = "es_ES";
+            this.language = "en";
         };
         (function() {
             var dsq = document.createElement('script'); dsq.async = true;
@@ -990,12 +990,12 @@ MathJax.Hub.Config({
 </div>
 
 
-        <script src="../../../assets/js/all-nocdn.js"></script><script>
+        <script src="../../assets/js/all-nocdn.js"></script><script>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element) {
             return element.getElementsByTagName('img')[0].alt;
     }});
-    </script><!-- Prism --><script src="../../assets/js/prism.js"></script><!-- for /es/blog/... posts--><script src="../../../assets/js/prism.js"></script>
+    </script><!-- Prism --><script src="../../assets/js/prism.js"></script><!-- for /es/blog/... posts--><script src="../../js/prism.js"></script>
 </body>
 </html>
