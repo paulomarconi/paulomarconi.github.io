@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 06 Oct 2020 16:27:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/es/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 08 Oct 2020 22:40:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/es/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Constrained-Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;Constrained Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Constrained-Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking and disturbance rejection using the Feedforward Steady-State Target Optimization (SSTO) approach is presented in this paper. The MPC control law uses Finite-Receding-Horizon method in dual-mode. The stability and recursive feasibility are guaranteed by off-line dual-mode and on-line optimization. The results are presented by simulation.&lt;/p&gt;
@@ -1922,7 +1922,7 @@ Constructing inequality constraints in a compact form,
     \tilde{P_x}~\mathbf{x}(k) &amp;amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
 \end{cases}
 \end{align*}
-using \eqref{eq:PredictionEqConstraint} to eliminate $\mathbf{x}(k)$,
+using the predicted equality constraints $\mathbf{x}(k)=F~x(k)+G~\mathbf{u}(k)$ (rev previous post of &lt;a href="https://paulomarconi.github.io/blog/MPCu/"&gt;Unconstrained MPC&lt;/a&gt;),
 \begin{align*}
 \tilde{P_x}(F~x(k)+G~\mathbf{u}(k)) &amp;amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)\\
 \tilde{P_x}~G~\mathbf{u}(k) &amp;amp;\leq \tilde{q_x}+(-\tilde{P}_{x_0}-\tilde{P_x}~F)~x(k)

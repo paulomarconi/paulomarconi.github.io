@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/awgn.xml</loc>
-  <lastmod>2020-10-05T16:24:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/bode.xml</loc>
@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/control-systems.xml</loc>
-  <lastmod>2020-10-08T16:33:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/e-puck.xml</loc>
@@ -47,15 +47,15 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/kalman-filter.xml</loc>
-  <lastmod>2020-10-05T16:24:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nikola.xml</loc>
@@ -63,7 +63,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/optimization.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/phase-lag.xml</loc>
@@ -115,7 +115,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/awgn.xml</loc>
-  <lastmod>2020-10-05T16:24:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/bode.xml</loc>
@@ -127,7 +127,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/control-systems.xml</loc>
-  <lastmod>2020-10-08T16:33:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/e-puck.xml</loc>
@@ -147,15 +147,15 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/kalman-filter.xml</loc>
-  <lastmod>2020-10-05T16:24:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/mpc.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nikola.xml</loc>
@@ -163,7 +163,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/optimization.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/phase-lag.xml</loc>
@@ -211,7 +211,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
-  <lastmod>2020-10-08T16:33:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
@@ -219,10 +219,10 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2020-10-08T16:33:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-10-08T16:33:00Z</lastmod>
+  <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
 </sitemapindex>

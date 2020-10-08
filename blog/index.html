@@ -4773,7 +4773,7 @@ Constructing inequality constraints in a compact form,
     \tilde{P_x}~\mathbf{x}(k) &amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
 \end{cases}
 \end{align*}
-using \eqref{eq:PredictionEqConstraint} to eliminate $\mathbf{x}(k)$,
+using the predicted equality constraints $\mathbf{x}(k)=F~x(k)+G~\mathbf{u}(k)$ (rev previous post of <a href="MPCu/">Unconstrained MPC</a>),
 \begin{align*}
 \tilde{P_x}(F~x(k)+G~\mathbf{u}(k)) &amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)\\
 \tilde{P_x}~G~\mathbf{u}(k) &amp;\leq \tilde{q_x}+(-\tilde{P}_{x_0}-\tilde{P_x}~F)~x(k)
