@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-07T23:02:00Z</lastmod>
+  <lastmod>2020-10-08T14:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -48,7 +48,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2020-10-08T14:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -119,6 +119,10 @@
   <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/pre-filter/</loc>
+  <lastmod>2020-10-08T14:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/python/</loc>
   <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
@@ -156,7 +160,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-10-07T23:02:00Z</lastmod>
+  <lastmod>2020-10-08T14:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -198,7 +202,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2020-10-08T14:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -269,6 +273,10 @@
   <lastmod>2020-10-05T18:49:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/pre-filter/</loc>
+  <lastmod>2020-10-08T14:24:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/python/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
@@ -311,6 +319,10 @@
  <url>
   <loc>https://paulomarconi.github.io/files/MPC-SSTO/MPC-SSTO.html</loc>
   <lastmod>2020-10-03T16:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/Phase-lead_phase-lag/Phase-lead_phase-lag.html</loc>
+  <lastmod>2020-10-08T14:14:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/galleries/</loc>

@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre root-locus)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/root-locus.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about pre-filter)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/pre-filter.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 08 Oct 2020 14:24:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches</title><link>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 08 Oct 2020 14:24:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches</title><link>https://paulomarconi.github.io/blog/Phase-lead_phase-lag/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
-&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-lead-and-Phase-lag-compensator-with-pre-filters" data-toc-modified-id="Phase-lead-and-Phase-lag-compensator-with-pre-filters-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Phase-lead and Phase-lag compensator with pre-filters&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Source-code" data-toc-modified-id="Source-code-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Source code&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-lead-compensator" data-toc-modified-id="Phase-lead-compensator-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Phase-lead compensator&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Determine-the-gain-%24K%24-for-a-step-response-overshoot-no-more-than-10%" data-toc-modified-id="Determine-the-gain-$K$-for-a-step-response-overshoot-no-more-than-10%-4.1"&gt;&lt;span class="toc-item-num"&gt;4.1  &lt;/span&gt;Determine the gain $K$ for a step response overshoot no more than 10%&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-4.2"&gt;&lt;span class="toc-item-num"&gt;4.2  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Design-of-the-Phase-lead-compensator" data-toc-modified-id="Design-of-the-Phase-lead-compensator-4.3"&gt;&lt;span class="toc-item-num"&gt;4.3  &lt;/span&gt;Design of the Phase-lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-Lead-compensator-Matlab-script" data-toc-modified-id="Phase-Lead-compensator-Matlab-script-4.4"&gt;&lt;span class="toc-item-num"&gt;4.4  &lt;/span&gt;Phase-Lead compensator Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-of-the-compensated-system-to-a-unit-ramp-input" data-toc-modified-id="Evaluation-of-the-compensated-system-to-a-unit-ramp-input-4.5"&gt;&lt;span class="toc-item-num"&gt;4.5  &lt;/span&gt;Evaluation of the compensated system to a unit ramp input&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-the-performance-of-the-compensated-system" data-toc-modified-id="Evaluation-the-performance-of-the-compensated-system-4.6"&gt;&lt;span class="toc-item-num"&gt;4.6  &lt;/span&gt;Evaluation the performance of the compensated system&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-4.7"&gt;&lt;span class="toc-item-num"&gt;4.7  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Conclusion" data-toc-modified-id="Conclusion-4.8"&gt;&lt;span class="toc-item-num"&gt;4.8  &lt;/span&gt;Conclusion&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-lead-and-phase-lag-compensator" data-toc-modified-id="Phase-lead-and-phase-lag-compensator-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Phase-lead and phase-lag compensator&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Determine-the-location-of-closed-loop-dominant-poles" data-toc-modified-id="Determine-the-location-of-closed-loop-dominant-poles-5.1"&gt;&lt;span class="toc-item-num"&gt;5.1  &lt;/span&gt;Determine the location of closed-loop dominant poles&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-5.2"&gt;&lt;span class="toc-item-num"&gt;5.2  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus" data-toc-modified-id="Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus-5.3"&gt;&lt;span class="toc-item-num"&gt;5.3  &lt;/span&gt;Demonstrate the desired poles do not belong to the root-locus&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lead-compensator" data-toc-modified-id="Design-of-the-Phase-Lead-compensator-5.4"&gt;&lt;span class="toc-item-num"&gt;5.4  &lt;/span&gt;Design of the Phase-Lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-5.5"&gt;&lt;span class="toc-item-num"&gt;5.5  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Adding-a-Pre-filter" data-toc-modified-id="Adding-a-Pre-filter-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Adding a Pre-filter&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.1"&gt;&lt;span class="toc-item-num"&gt;6.1  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lag-compensator" data-toc-modified-id="Design-of-the-Phase-Lag-compensator-6.2"&gt;&lt;span class="toc-item-num"&gt;6.2  &lt;/span&gt;Design of the Phase-Lag compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.3"&gt;&lt;span class="toc-item-num"&gt;6.3  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance" data-toc-modified-id="Evaluation-of-the-performance-6.4"&gt;&lt;span class="toc-item-num"&gt;6.4  &lt;/span&gt;Evaluation of the performance&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.5"&gt;&lt;span class="toc-item-num"&gt;6.5  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Performance-results" data-toc-modified-id="Performance-results-6.6"&gt;&lt;span class="toc-item-num"&gt;6.6  &lt;/span&gt;Performance results&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#New-Phase-Lead-compensator" data-toc-modified-id="New-Phase-Lead-compensator-6.7"&gt;&lt;span class="toc-item-num"&gt;6.7  &lt;/span&gt;New Phase-Lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator" data-toc-modified-id="Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator-6.8"&gt;&lt;span class="toc-item-num"&gt;6.8  &lt;/span&gt;Evaluation of the performance with the second Phase-Lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.9"&gt;&lt;span class="toc-item-num"&gt;6.9  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Performance-results" data-toc-modified-id="Performance-results-6.10"&gt;&lt;span class="toc-item-num"&gt;6.10  &lt;/span&gt;Performance results&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Conclusion" data-toc-modified-id="Conclusion-6.11"&gt;&lt;span class="toc-item-num"&gt;6.11  &lt;/span&gt;Conclusion&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-and-Phase-lag-compensator-with-pre-filters" data-toc-modified-id="Phase-lead-and-Phase-lag-compensator-with-pre-filters-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Phase-lead and Phase-lag compensator with pre-filters&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Source-code" data-toc-modified-id="Source-code-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Source code&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-compensator" data-toc-modified-id="Phase-lead-compensator-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Phase-lead compensator&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Determine-the-gain-%24K%24-for-a-step-response-overshoot-no-more-than-10%" data-toc-modified-id="Determine-the-gain-$K$-for-a-step-response-overshoot-no-more-than-10%-4.1"&gt;&lt;span class="toc-item-num"&gt;4.1  &lt;/span&gt;Determine the gain $K$ for a step response overshoot no more than 10%&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-4.2"&gt;&lt;span class="toc-item-num"&gt;4.2  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-lead-compensator" data-toc-modified-id="Design-of-the-Phase-lead-compensator-4.3"&gt;&lt;span class="toc-item-num"&gt;4.3  &lt;/span&gt;Design of the Phase-lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-Lead-compensator-Matlab-script" data-toc-modified-id="Phase-Lead-compensator-Matlab-script-4.4"&gt;&lt;span class="toc-item-num"&gt;4.4  &lt;/span&gt;Phase-Lead compensator Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-compensated-system-to-a-unit-ramp-input" data-toc-modified-id="Evaluation-of-the-compensated-system-to-a-unit-ramp-input-4.5"&gt;&lt;span class="toc-item-num"&gt;4.5  &lt;/span&gt;Evaluation of the compensated system to a unit ramp input&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-the-performance-of-the-compensated-system" data-toc-modified-id="Evaluation-the-performance-of-the-compensated-system-4.6"&gt;&lt;span class="toc-item-num"&gt;4.6  &lt;/span&gt;Evaluation the performance of the compensated system&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-4.7"&gt;&lt;span class="toc-item-num"&gt;4.7  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Conclusion" data-toc-modified-id="Conclusion-4.8"&gt;&lt;span class="toc-item-num"&gt;4.8  &lt;/span&gt;Conclusion&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-and-phase-lag-compensator" data-toc-modified-id="Phase-lead-and-phase-lag-compensator-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Phase-lead and phase-lag compensator&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Determine-the-location-of-closed-loop-dominant-poles" data-toc-modified-id="Determine-the-location-of-closed-loop-dominant-poles-5.1"&gt;&lt;span class="toc-item-num"&gt;5.1  &lt;/span&gt;Determine the location of closed-loop dominant poles&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-5.2"&gt;&lt;span class="toc-item-num"&gt;5.2  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus" data-toc-modified-id="Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus-5.3"&gt;&lt;span class="toc-item-num"&gt;5.3  &lt;/span&gt;Demonstrate the desired poles do not belong to the root-locus&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lead-compensator" data-toc-modified-id="Design-of-the-Phase-Lead-compensator-5.4"&gt;&lt;span class="toc-item-num"&gt;5.4  &lt;/span&gt;Design of the Phase-Lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-5.5"&gt;&lt;span class="toc-item-num"&gt;5.5  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Adding-a-Pre-filter" data-toc-modified-id="Adding-a-Pre-filter-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Adding a Pre-filter&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.1"&gt;&lt;span class="toc-item-num"&gt;6.1  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lag-compensator" data-toc-modified-id="Design-of-the-Phase-Lag-compensator-6.2"&gt;&lt;span class="toc-item-num"&gt;6.2  &lt;/span&gt;Design of the Phase-Lag compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.3"&gt;&lt;span class="toc-item-num"&gt;6.3  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance" data-toc-modified-id="Evaluation-of-the-performance-6.4"&gt;&lt;span class="toc-item-num"&gt;6.4  &lt;/span&gt;Evaluation of the performance&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.5"&gt;&lt;span class="toc-item-num"&gt;6.5  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Performance-results" data-toc-modified-id="Performance-results-6.6"&gt;&lt;span class="toc-item-num"&gt;6.6  &lt;/span&gt;Performance results&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#New-Phase-Lead-compensator" data-toc-modified-id="New-Phase-Lead-compensator-6.7"&gt;&lt;span class="toc-item-num"&gt;6.7  &lt;/span&gt;New Phase-Lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator" data-toc-modified-id="Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator-6.8"&gt;&lt;span class="toc-item-num"&gt;6.8  &lt;/span&gt;Evaluation of the performance with the second Phase-Lead compensator&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script" data-toc-modified-id="Matlab-script-6.9"&gt;&lt;span class="toc-item-num"&gt;6.9  &lt;/span&gt;Matlab script&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Performance-results" data-toc-modified-id="Performance-results-6.10"&gt;&lt;span class="toc-item-num"&gt;6.10  &lt;/span&gt;Performance results&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Conclusion" data-toc-modified-id="Conclusion-6.11"&gt;&lt;span class="toc-item-num"&gt;6.11  &lt;/span&gt;Conclusion&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Phase-lead-and-Phase-lag-compensator-with-pre-filters"&gt;Phase-lead and Phase-lag compensator with pre-filters&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-lead-and-Phase-lag-compensator-with-pre-filters"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The first part is the design of a phase-lead compensator using the Bode analysis in the frequency domain. The second part is the design of a phase-lead compensator, and a phase-lag compensator in series with the first phase-lead compensator using root-locus approach.&lt;/p&gt;
-&lt;h2 id="Pre-requisites"&gt;Pre-requisites&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Pre-requisites"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id="Phase-lead-and-Phase-lag-compensator-with-pre-filters"&gt;Phase-lead and Phase-lag compensator with pre-filters&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-and-Phase-lag-compensator-with-pre-filters"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The first part is the design of a phase-lead compensator using the Bode analysis in the frequency domain. The second part is the design of a phase-lead compensator, and a phase-lag compensator in series with the first phase-lead compensator using root-locus approach.&lt;/p&gt;
+&lt;h2 id="Pre-requisites"&gt;Pre-requisites&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Pre-requisites"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Control Systems theory.&lt;/li&gt;
 &lt;li&gt;Bode and root-locus analysis theory&lt;/li&gt;
 &lt;li&gt;Jupyter Notebook with Matlab-kernel.&lt;/li&gt;
 &lt;li&gt;Matlab.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="Source-code"&gt;Source code&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Source-code"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Version &lt;a href="https://raw.githubusercontent.com/paulomarconi/Phase-lead_phase-lag/master/week4/week4.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/es/files/Phase-lead_phase-lag/Phase-lead_phase-lag.html"&gt;HTML&lt;/a&gt;. Matlab and LaTex source code on &lt;a href="https://github.com/paulomarconi/Phase-lead_phase-lag"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id="Source-code"&gt;Source code&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Source-code"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Version &lt;a href="https://raw.githubusercontent.com/paulomarconi/Phase-lead_phase-lag/master/week4/week4.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/files/Phase-lead_phase-lag/Phase-lead_phase-lag.html"&gt;HTML&lt;/a&gt;. Matlab and LaTex source code on &lt;a href="https://github.com/paulomarconi/Phase-lead_phase-lag"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -29,7 +29,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Phase-lead-compensator"&gt;Phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The aim of this task is to design a Phase-lead compensator using the Bode analysisin the frequency domain, and evaluate it in Matlab. Although the plant $G(s)$ is a third-order system (1), the design requirements can be approximated in terms of the natural frequency ($\omega_n$) and damping ratio ($\zeta$) of a second-order system.&lt;/p&gt;
+&lt;h2 id="Phase-lead-compensator"&gt;Phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The aim of this task is to design a Phase-lead compensator using the Bode analysisin the frequency domain, and evaluate it in Matlab. Although the plant $G(s)$ is a third-order system (1), the design requirements can be approximated in terms of the natural frequency ($\omega_n$) and damping ratio ($\zeta$) of a second-order system.&lt;/p&gt;
 \begin{align}
 G(s) &amp;amp; =\dfrac{K}{s(s+a)(s+b)} \tag{1}\\
 G(s) &amp;amp;= \dfrac{K}{s(s+2.5)(s+27)} \nonumber
@@ -41,7 +41,7 @@ G(s) &amp;amp;= \dfrac{K}{s(s+2.5)(s+27)} \nonumber
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Determine-the-gain-$K$-for-a-step-response-overshoot-no-more-than-10%"&gt;Determine the gain $K$ for a step response overshoot no more than 10%&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Determine-the-gain-%24K%24-for-a-step-response-overshoot-no-more-than-10%"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There are two steps to follow in order to obtain the required gain $K$, the first one uses the second-order performance approximation in the frequency domain, and the second step uses the gain and angle condition.&lt;/p&gt;
+&lt;h3 id="Determine-the-gain-$K$-for-a-step-response-overshoot-no-more-than-10%"&gt;Determine the gain $K$ for a step response overshoot no more than 10%&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Determine-the-gain-%24K%24-for-a-step-response-overshoot-no-more-than-10%"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;There are two steps to follow in order to obtain the required gain $K$, the first one uses the second-order performance approximation in the frequency domain, and the second step uses the gain and angle condition.&lt;/p&gt;
 &lt;p&gt;The relation between the Percentage Overshoot ($PO$) in response to a unity step input of a second-order system in the \textbf{time domain}, and the Phase Margin ($PM$) of the Bode analysis in the \textbf{frequency domain}, can be written as follows,
 \begin{align}
 PO &amp;amp;= 100~e^{-\zeta\pi/\sqrt{1-\zeta^2}} \tag{2} \\
@@ -94,7 +94,7 @@ therefore, the plant becomes,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the result below, the desired $PM_d = 60°$ is satisfied with the new gain, and step response has an $PO = 8.36$.&lt;/p&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In the result below, the desired $PM_d = 60°$ is satisfied with the new gain, and step response has an $PO = 8.36$.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -223,7 +223,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Design-of-the-Phase-lead-compensator"&gt;Design of the Phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Design-of-the-Phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function,
+&lt;h3 id="Design-of-the-Phase-lead-compensator"&gt;Design of the Phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function,
 \begin{align}
 Gc = \dfrac{s+z}{s+p} \tag{9}
 \end{align}
@@ -313,7 +313,7 @@ G_{ol} &amp;amp;= \dfrac{s+4.07}{s+44.78} \quad \dfrac{5596.80}{s(s+2.5)(s+27)} 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Phase-Lead-compensator-Matlab-script"&gt;Phase-Lead compensator Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-Lead-compensator-Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Phase-Lead-compensator-Matlab-script"&gt;Phase-Lead compensator Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-Lead-compensator-Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -393,7 +393,7 @@ K_new =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;Evaluation of the compensated system to a unit ramp input&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The unit ramp in the LaPlace domain has the following equation,
+&lt;h3 id="Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;Evaluation of the compensated system to a unit ramp input&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The unit ramp in the LaPlace domain has the following equation,
 \begin{align}
 R(s) &amp;amp;= \frac{1}{s^2} \tag{21}
 \end{align}
@@ -422,7 +422,7 @@ which is a relatively small steady-state error.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-the-performance-of-the-compensated-system"&gt;Evaluation the performance of the compensated system&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-the-performance-of-the-compensated-system"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Using the Matlab script below, we obtaint the Bode plot, the unit step response, and the unit ramp response, where you can see the desired $PM_d=60°$ and the $PO=10\%$ are satisfied, and the system has an improved the settling time to $t_s=1.04$.&lt;/p&gt;
+&lt;h3 id="Evaluation-the-performance-of-the-compensated-system"&gt;Evaluation the performance of the compensated system&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-the-performance-of-the-compensated-system"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Using the Matlab script below, we obtaint the Bode plot, the unit step response, and the unit ramp response, where you can see the desired $PM_d=60°$ and the $PO=10\%$ are satisfied, and the system has an improved the settling time to $t_s=1.04$.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -430,7 +430,7 @@ which is a relatively small steady-state error.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -614,7 +614,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Comparing the uncompensated system, and the Phase-Lead compensated system, the desired phase margin $PM_d=60°$ and the overshoot $PO\leq10 \%$ were satisfied. Moreover, the settling time $t_s$ was improved three times in the Phase-lead compensated, which demonstrates this compensator improves the transient response without altering the desired phase margin.&lt;/p&gt;
+&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Comparing the uncompensated system, and the Phase-Lead compensated system, the desired phase margin $PM_d=60°$ and the overshoot $PO\leq10 \%$ were satisfied. Moreover, the settling time $t_s$ was improved three times in the Phase-lead compensated, which demonstrates this compensator improves the transient response without altering the desired phase margin.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -622,7 +622,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Phase-lead-and-phase-lag-compensator"&gt;Phase-lead and phase-lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Phase-lead-and-phase-lag-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective of this task is to design a Phase-Lead compensator, and a Phase-Lag compensator in series with the first Phase-Lead compensator using two different approaches.&lt;/p&gt;
+&lt;h2 id="Phase-lead-and-phase-lag-compensator"&gt;Phase-lead and phase-lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-and-phase-lag-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective of this task is to design a Phase-Lead compensator, and a Phase-Lag compensator in series with the first Phase-Lead compensator using two different approaches.&lt;/p&gt;
 &lt;p&gt;The plant to be studied is,
 \begin{align}
 &amp;amp; G(s)=\dfrac{K}{s^2(s+a)(s+b)} \tag{24}\\
@@ -635,7 +635,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Determine-the-location-of-closed-loop-dominant-poles"&gt;Determine the location of closed-loop dominant poles&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Determine-the-location-of-closed-loop-dominant-poles"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The design requirements are the settling time $t_s\leq 2.9~ sec$, and the overshoot $PO\leq 20\%$. Although the plant is a fourth-order system, the compensator can be designed using the properties of a second-order system.&lt;/p&gt;
+&lt;h3 id="Determine-the-location-of-closed-loop-dominant-poles"&gt;Determine the location of closed-loop dominant poles&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Determine-the-location-of-closed-loop-dominant-poles"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The design requirements are the settling time $t_s\leq 2.9~ sec$, and the overshoot $PO\leq 20\%$. Although the plant is a fourth-order system, the compensator can be designed using the properties of a second-order system.&lt;/p&gt;
 &lt;p&gt;The settling time is,
 \begin{align}
 t_s &amp;amp;= \frac{4}{\zeta\omega_n} \tag{25}
@@ -657,7 +657,7 @@ r_{1,2} &amp;amp;= -1.38\pm j~2.73
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -708,7 +708,7 @@ r_{1,2} &amp;amp;= -1.38\pm j~2.73
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus"&gt;Demonstrate the desired poles do not belong to the root-locus&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In order to demonstrate that the desired dominant poles $r_{1,2}$ do not belong to the root locus of the plant $G(s)$, the angle condition must not be satisfied.&lt;/p&gt;
+&lt;h3 id="Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus"&gt;Demonstrate the desired poles do not belong to the root-locus&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Demonstrate-the-desired-poles-do-not-belong-to-the-root-locus"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In order to demonstrate that the desired dominant poles $r_{1,2}$ do not belong to the root locus of the plant $G(s)$, the angle condition must not be satisfied.&lt;/p&gt;
 &lt;p&gt;Choosing the pole, $r_1=-1.38\pm j~2.73$, 
 \begin{align}
 &amp;amp;\measuredangle(G(r_1)) = -180°  \tag{27}\\
@@ -728,7 +728,7 @@ if the second pole $r_2$ is evaluated,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Design-of-the-Phase-Lead-compensator"&gt;Design of the Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function,
+&lt;h3 id="Design-of-the-Phase-Lead-compensator"&gt;Design of the Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function,
 \begin{align}
 G_{lead} = \dfrac{s+z_{lead}}{s+p_{lead}}, \quad |z_{lead}| &amp;lt; |p_{lead}| \tag{28}
 \end{align}&lt;/p&gt;
@@ -769,7 +769,7 @@ G_{ol} &amp;amp;= \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -996,7 +996,7 @@ BW_lead =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Adding-a-Pre-filter"&gt;Adding a Pre-filter&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Adding-a-Pre-filter"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The use of a Pre-filter in series with the closed-loop systems can reduce the overshoot canceling the effect of the Phase-Lead's zero.&lt;/p&gt;
+&lt;h2 id="Adding-a-Pre-filter"&gt;Adding a Pre-filter&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Adding-a-Pre-filter"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The use of a Pre-filter in series with the closed-loop systems can reduce the overshoot canceling the effect of the Phase-Lead's zero.&lt;/p&gt;
 &lt;p&gt;The Pre-filter is written as follows,
 \begin{align}
 G_{pf} &amp;amp;= \dfrac{p}{s+p} \tag{31}
@@ -1017,7 +1017,7 @@ G_{lead+prefilter} &amp;amp;=  \dfrac{1}{s+1} ~\dfrac{10047~(s+1)}{(s+50)(s+13.0
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1147,7 +1147,7 @@ BW_lead_prefilter =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Design-of-the-Phase-Lag-compensator"&gt;Design of the Phase-Lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lag-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lag compensator has the following transfer function,
+&lt;h3 id="Design-of-the-Phase-Lag-compensator"&gt;Design of the Phase-Lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lag-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lag compensator has the following transfer function,
 \begin{align}
 G_{lag} = \dfrac{s+z_{lag}}{s+p_{lag}}, \quad |p_{lag}|&amp;lt; |z_{lag}| \tag{32}
 \end{align}&lt;/p&gt;
@@ -1200,7 +1200,7 @@ G_{lag} &amp;amp;= \dfrac{s+0.14}{s+0.0092} \nonumber
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1249,7 +1249,7 @@ G_{lag} &amp;amp;= \dfrac{s+0.14}{s+0.0092} \nonumber
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-of-the-performance"&gt;Evaluation of the performance&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Finally, the open-loop of the Phase-Lead compensator in series with the Phase-Lag compensator is written as follows,
+&lt;h3 id="Evaluation-of-the-performance"&gt;Evaluation of the performance&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Finally, the open-loop of the Phase-Lead compensator in series with the Phase-Lag compensator is written as follows,
 \begin{align}
 G_{ol1} &amp;amp;= G_{lag}~G_{lead} ~G(s) \tag{36} \\ 
 G_{ol1} &amp;amp;= \dfrac{s+0.14}{s+0.0092}~ \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
@@ -1266,7 +1266,7 @@ G_{lag+lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{10047(s+1)(s+0.14)}{(s+50)(s+13
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1526,7 +1526,7 @@ ess_parabolic =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Performance-results"&gt;Performance results&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Performance-results"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The step response plot of the system with and without the Pre-filter shows that the Pre-filter reduces the overshoot in both cases with good settling time. On the other hand, the root-locus plot shows that the desired dominant poles are slightly out of the target , it is recommended to add a second Phase-lead compensator in series in order correct that gap.&lt;/p&gt;
+&lt;h3 id="Performance-results"&gt;Performance results&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Performance-results"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The step response plot of the system with and without the Pre-filter shows that the Pre-filter reduces the overshoot in both cases with good settling time. On the other hand, the root-locus plot shows that the desired dominant poles are slightly out of the target , it is recommended to add a second Phase-lead compensator in series in order correct that gap.&lt;/p&gt;
 &lt;center&gt;Table 2: Performance results &lt;/center&gt;&lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
 &lt;th style="text-align:left"&gt;Quantity&lt;/th&gt;
@@ -1595,7 +1595,7 @@ ess_parabolic =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="New-Phase-Lead-compensator"&gt;New Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#New-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The previous root-locus plot demonstrates that the desired dominant closed-loop poles have moved slightly from the root-locus, therefore, a new Phase-Lead compensator is calculated to correct that shift.&lt;/p&gt;
+&lt;h3 id="New-Phase-Lead-compensator"&gt;New Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#New-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The previous root-locus plot demonstrates that the desired dominant closed-loop poles have moved slightly from the root-locus, therefore, a new Phase-Lead compensator is calculated to correct that shift.&lt;/p&gt;
 &lt;p&gt;This time, the location of the zero is exactly below the real part of the desired pole, $z_{lead~2}=1.38$. Applying the angle condition with the desired pole $r_1$ as follows,
 \begin{align}
 &amp;amp;\measuredangle \left( \dfrac{s+z_{lead~2}}{s+p_{lead~2}} \quad \dfrac{s+z_{lag}}{s+p_{lag}} \quad \dfrac{s+z_{lead}}{s+p_{lead}} \quad \dfrac{K}{s^2(s+a)(s+b)}  \right) = -180° \tag{38} \\
@@ -1686,7 +1686,7 @@ K_new =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;Evaluation of the performance with the second Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The open-loop of the new Phase-Lead compensator in series with the previous compensators is written as follows,
+&lt;h3 id="Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;Evaluation of the performance with the second Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The open-loop of the new Phase-Lead compensator in series with the previous compensators is written as follows,
 \begin{align}
 G_{ol2} &amp;amp;= G_{lead~2}~G_{lag}~G_{lead} ~G(s) \tag{40}\\ 
 G_{ol2} &amp;amp;= \dfrac{s+1.38}{s+1.48}\quad \dfrac{s+0.14}{s+0.0092} \quad \dfrac{s+1}{s+8.36} \quad \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber\\
@@ -1703,7 +1703,7 @@ G_{lag+lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{10047(s+1.38)(s+1)(s+0.14)}{(s+
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="Matlab-script"&gt;Matlab script&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Matlab-script"&gt;¶&lt;/a&gt;&lt;/h3&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1918,7 +1918,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Performance-results"&gt;Performance results&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Performance-results"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;From the root-locus plot, it can be seen that the desired closed-loop poles are exactly in the root locus. Also, the Bode plot shows that the $PM$ has changed a little with respect of the previous compensated system, from $36.60°$ to $39.50°$. On the other hand, the step response has been improved with the Pre-filter and the new Phase-Lead compensator, see Table 3.&lt;/p&gt;
+&lt;h3 id="Performance-results"&gt;Performance results&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Performance-results"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;From the root-locus plot, it can be seen that the desired closed-loop poles are exactly in the root locus. Also, the Bode plot shows that the $PM$ has changed a little with respect of the previous compensated system, from $36.60°$ to $39.50°$. On the other hand, the step response has been improved with the Pre-filter and the new Phase-Lead compensator, see Table 3.&lt;/p&gt;
 &lt;center&gt;Table 3: Performance results &lt;/center&gt;&lt;table&gt;
 &lt;thead&gt;&lt;tr&gt;
 &lt;th style="text-align:left"&gt;Quantity&lt;/th&gt;
@@ -2003,8 +2003,8 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The settling time requirement $t_s\leq2.9$ was satisfied by three of the six compensators, and only the last one with the Pre-filter achieved the desired overshoot $PO\leq 20 \%$. It is clear that the use of the Pre-filter reduces the overshoot drastically.&lt;/p&gt;
+&lt;h3 id="Conclusion"&gt;Conclusion&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Conclusion"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The settling time requirement $t_s\leq2.9$ was satisfied by three of the six compensators, and only the last one with the Pre-filter achieved the desired overshoot $PO\leq 20 \%$. It is clear that the use of the Pre-filter reduces the overshoot drastically.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</guid><pubDate>Thu, 10 Sep 2020 21:49:42 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;&lt;/div&gt;</description><category>Bode</category><category>compensator</category><category>control systems</category><category>phase-lag</category><category>phase-lead</category><category>pre-filter</category><category>root-locus</category><guid>https://paulomarconi.github.io/blog/Phase-lead_phase-lag/</guid><pubDate>Thu, 10 Sep 2020 21:49:42 GMT</pubDate></item></channel></rss>
