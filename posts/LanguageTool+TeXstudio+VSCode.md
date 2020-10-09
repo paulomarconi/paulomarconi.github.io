@@ -2,7 +2,7 @@
 .. title: LanguageTool + TeXstudio + VSCode
 .. slug: LanguageTool+TeXstudio+VSCode
 .. date: 2020-09-15 09:58:24 UTC-04:00
-.. tags: LanguageTool, Texstudio, VSCode
+.. tags: LanguageTool, TeXstudio, VSCode
 .. category: 
 .. link: 
 .. description: 
@@ -19,7 +19,7 @@
 
 
 # Introduction
-LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode I found some problems. 
+LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode, I found some problems. 
 
 The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. 
 
