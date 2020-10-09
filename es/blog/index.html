@@ -94,7 +94,87 @@ navbar-dark bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Phase-lead_deadbeat/" class="u-url">Digital phase-lead and deadbeat compensators</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="LanguageTool%2BTeXstudio%2BVSCode/" class="u-url">LanguageTool + TeXstudio + VSCode</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Paulo Loma Marconi
+            </span></p>
+            <p class="dateline">
+            <a href="LanguageTool%2BTeXstudio%2BVSCode/" rel="bookmark">
+            <time class="published dt-published" datetime="2020-09-15T09:58:24-04:00" itemprop="datePublished" title="2020-09-15">2020-09-15</time></a>
+            </p>
+                <p class="commentline">
+        
+    <a href="LanguageTool%2BTeXstudio%2BVSCode/#disqus_thread" data-disqus-identifier="cache/posts/LanguageTool+TeXstudio+VSCode.html">Comentarios</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <div>
+<ul>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#introduction">Introduction</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool">Download and configure LanguageTool</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#configure-texstudio">Configure TeXstudio</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-texstudio">Check LanguageTool is activated on TeXstudio</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-the-languagetool-linter-vscode-extension">Download and configure the LanguageTool Linter VSCode extension</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-vscode">Check LanguageTool is activated on VSCode</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio">Test the parallel working on VSCode and TeXstudio</a></li>
+</ul>
+<h2>Introduction</h2>
+<p>LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode I found some problems. </p>
+<p>The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. </p>
+<h2>Download and configure LanguageTool</h2>
+<ul>
+<li>Download <a href="https://languagetool.org/">LanguageTool desktop version for offline use</a>.</li>
+<li>Unzip the folder.</li>
+<li>Run <code>languagetool.jar</code>
+</li>
+<li>In <code>TexChecking &gt; Options</code> enable <code>Run as server on port 8081</code>
+  <img src="../../images/LanguageTool+TeXstudio+VSCode/LanguageTool.png" alt="LanguageTool" width="70%">
+</li>
+</ul>
+<h2>Configure TeXstudio</h2>
+<ul>
+<li>Go to <code>Options &gt; Configure TeXstudio &gt; Language Checking</code>
+</li>
+<li>Configure <code>Server URL</code>, <code>LT Path</code>, and <code>LT Arguments</code> as follows.
+  <img src="../../images/LanguageTool+TeXstudio+VSCode/TeXstudio_config.png" alt="TeXstudio_config" width="70%">
+</li>
+<li>Maybe you'll find that some users add <code>--allow-origin "*"</code> to <code>LT Arguments</code>. It's not necessary for TeXstudio because <code>--allow-origin "*"</code> is used to serve from the browser add-on, see <a href="https://dev.languagetool.org/http-server">official documentation</a>.</li>
+</ul>
+<h2>Check LanguageTool is activated on TeXstudio</h2>
+<ul>
+<li>Go to <code>Help &gt; Check LanguageTool</code>. The <code>LT Report.txt</code> will be opened showing <code>LT current status: working</code>.
+  <img src="../../images/LanguageTool+TeXstudio+VSCode/TeXstudio_check.png" alt="TeXstudio_check" width="50%">
+</li>
+</ul>
+<h2>Download and configure the LanguageTool Linter VSCode extension</h2>
+<ul>
+<li>Download <a href="https://marketplace.visualstudio.com/items?itemName=davidlday.languagetool-linter">LanguageTool Linter</a>.</li>
+<li>Go to the extesion configuration and set the <code>Class Path</code> and <code>Jar File</code> options as follows,
+  <img src="../../images/LanguageTool+TeXstudio+VSCode/VSCode_config.png" alt="VSCode_config" width="70%">
+</li>
+</ul>
+<h2>Check LanguageTool is activated on VSCode</h2>
+<ul>
+<li>Open the <code>OUTPUT</code> window and select LanguageTool Linter. You will see the following.
+  <img src="../../images/LanguageTool+TeXstudio+VSCode/VSCode_check.png" alt="VSCode_check" width="100%">
+</li>
+<li>Although I mentioned not to use <code>--allow-origin "*"</code>, we use on VSCode to force LanguageTool to open another port because <code>8081</code> is already used by TeXstudio</li>
+<li>A warning message will appear at the bottom to change it the default setting. I tried the suggestion but didn't work for me.</li>
+</ul>
+<h2>Test the parallel working on VSCode and TeXstudio</h2>
+<ul>
+<li>TeXstudio                                                                                            <br><img src="../../images/LanguageTool+TeXstudio+VSCode/TeXstudio_test.png" alt="TeXstudio_test" width="50%">
+</li>
+<li>VSCode<br><img src="../../images/LanguageTool+TeXstudio+VSCode/VSCode_test.png" alt="VSCode_test" width="100%">
+</li>
+</ul>
+<p>Done!. I hope it works for you as well.</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Phase-lead_deadbeat/" class="u-url">Digital phase-lead and deadbeat compensators</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Paulo Loma Marconi

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre LanguageTool)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/languagetool.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 Oct 2020 15:15:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#configure-texstudio"&gt;Configure TeXstudio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-texstudio"&gt;Check LanguageTool is activated on TeXstudio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-the-languagetool-linter-vscode-extension"&gt;Download and configure the LanguageTool Linter VSCode extension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-vscode"&gt;Check LanguageTool is activated on VSCode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio"&gt;Test the parallel working on VSCode and TeXstudio&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode I found some problems. &lt;/p&gt;
+&lt;p&gt;The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. &lt;/p&gt;
+&lt;h2&gt;Download and configure LanguageTool&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href="https://languagetool.org/"&gt;LanguageTool desktop version for offline use&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Unzip the folder.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;languagetool.jar&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In &lt;code&gt;TexChecking &amp;gt; Options&lt;/code&gt; enable &lt;code&gt;Run as server on port 8081&lt;/code&gt;
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/LanguageTool.png" alt="LanguageTool" width="70%"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Configure TeXstudio&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to &lt;code&gt;Options &amp;gt; Configure TeXstudio &amp;gt; Language Checking&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Configure &lt;code&gt;Server URL&lt;/code&gt;, &lt;code&gt;LT Path&lt;/code&gt;, and &lt;code&gt;LT Arguments&lt;/code&gt; as follows.
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/TeXstudio_config.png" alt="TeXstudio_config" width="70%"&gt;&lt;/li&gt;
+&lt;li&gt;Maybe you'll find that some users add &lt;code&gt;--allow-origin "*"&lt;/code&gt; to &lt;code&gt;LT Arguments&lt;/code&gt;. It's not necessary for TeXstudio because &lt;code&gt;--allow-origin "*"&lt;/code&gt; is used to serve from the browser add-on, see &lt;a href="https://dev.languagetool.org/http-server"&gt;official documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Check LanguageTool is activated on TeXstudio&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to &lt;code&gt;Help &amp;gt; Check LanguageTool&lt;/code&gt;. The &lt;code&gt;LT Report.txt&lt;/code&gt; will be opened showing &lt;code&gt;LT current status: working&lt;/code&gt;.
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/TeXstudio_check.png" alt="TeXstudio_check" width="50%"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Download and configure the LanguageTool Linter VSCode extension&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href="https://marketplace.visualstudio.com/items?itemName=davidlday.languagetool-linter"&gt;LanguageTool Linter&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Go to the extesion configuration and set the &lt;code&gt;Class Path&lt;/code&gt; and &lt;code&gt;Jar File&lt;/code&gt; options as follows,
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/VSCode_config.png" alt="VSCode_config" width="70%"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Check LanguageTool is activated on VSCode&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Open the &lt;code&gt;OUTPUT&lt;/code&gt; window and select LanguageTool Linter. You will see the following.
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/VSCode_check.png" alt="VSCode_check" width="100%"&gt;&lt;/li&gt;
+&lt;li&gt;Although I mentioned not to use &lt;code&gt;--allow-origin "*"&lt;/code&gt;, we use on VSCode to force LanguageTool to open another port because &lt;code&gt;8081&lt;/code&gt; is already used by TeXstudio&lt;/li&gt;
+&lt;li&gt;A warning message will appear at the bottom to change it the default setting. I tried the suggestion but didn't work for me.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Test the parallel working on VSCode and TeXstudio&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;TeXstudio                                                                                            &lt;br&gt;
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/TeXstudio_test.png" alt="TeXstudio_test" width="50%"&gt;&lt;/li&gt;
+&lt;li&gt;VSCode&lt;br&gt;
+  &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/VSCode_test.png" alt="VSCode_test" width="100%"&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Done!. I hope it works for you as well.&lt;/p&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</guid><pubDate>Tue, 15 Sep 2020 13:58:24 GMT</pubDate></item></channel></rss>

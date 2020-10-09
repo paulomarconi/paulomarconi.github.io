@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-08T23:15:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,11 +19,15 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-10-04T18:44:00Z</lastmod>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
   <lastmod>2020-10-04T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</loc>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
@@ -52,7 +56,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-10-08T23:01:00Z</lastmod>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -103,6 +107,10 @@
   <lastmod>2020-09-29T08:29:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/languagetool/</loc>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/matlab/</loc>
   <lastmod>2020-09-03T18:32:00Z</lastmod>
  </url>
@@ -147,6 +155,10 @@
   <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/texstudio/</loc>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/unconstrained/</loc>
   <lastmod>2020-09-29T08:29:00Z</lastmod>
  </url>
@@ -168,7 +180,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-10-08T23:15:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -176,12 +188,17 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-10-04T18:44:00Z</lastmod>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
   <lastmod>2020-10-04T18:44:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/" />
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</loc>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/MPC-SSTO/</loc>
@@ -215,7 +232,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-08T23:01:00Z</lastmod>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -266,6 +283,10 @@
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/languagetool/</loc>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/matlab/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
@@ -308,6 +329,10 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics/</loc>
   <lastmod>2020-10-04T19:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/texstudio/</loc>
+  <lastmod>2020-10-09T14:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/unconstrained/</loc>

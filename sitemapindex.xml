@@ -54,6 +54,10 @@
   <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/languagetool.xml</loc>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
   <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
@@ -98,6 +102,10 @@
   <lastmod>2020-10-05T18:54:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/texstudio.xml</loc>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/categories/unconstrained.xml</loc>
   <lastmod>2020-10-05T16:24:00Z</lastmod>
  </sitemap>
@@ -107,7 +115,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/vscode.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/aggregation.xml</loc>
@@ -158,6 +166,10 @@
   <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/languagetool.xml</loc>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
   <lastmod>2020-10-08T22:40:00Z</lastmod>
  </sitemap>
@@ -202,6 +214,10 @@
   <lastmod>2020-10-05T18:54:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/texstudio.xml</loc>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/unconstrained.xml</loc>
   <lastmod>2020-10-05T16:24:00Z</lastmod>
  </sitemap>
@@ -211,7 +227,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/vscode.xml</loc>
-  <lastmod>2020-10-06T16:27:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/galleries/rss.xml</loc>
@@ -219,7 +235,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
-  <lastmod>2020-10-08T23:15:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
@@ -227,10 +243,10 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2020-10-08T23:15:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-10-08T23:15:00Z</lastmod>
+  <lastmod>2020-10-09T15:15:00Z</lastmod>
  </sitemap>
 </sitemapindex>
