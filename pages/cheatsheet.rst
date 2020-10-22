@@ -99,7 +99,7 @@ Complex formulas.
     \end{cases}
 
 
-I recommend to use `<div class="math">...</div>` is you copy directly from LaTex. I useful for ``\text{...}``, ``\align{...}`` and other commands which are not compiled correctly, even if you use `$$...$$`. Also, works good with ``\label{eq:equation1}`` and ``\eqref{eq:equation1}``, without the need to use ``tag{eq1}`` it is used on Jupyter Notebook.
+I recommend to use `<div class="math">...</div>` if you copy code directly from LaTex. It's useful for ``\text{...}``, ``\align{...}``, and other commands which are not compiled correctly, even if you use `$$...$$`. Also, works good with ``\label{eq:equation1}`` and ``\eqref{eq:equation1}``, without the need to use ``tag{eq1}`` it is used on Jupyter Notebook.
 
 .. code-block::
 
