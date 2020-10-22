@@ -8,7 +8,7 @@
 .. description: 
 .. type: text
 -->
-
+<h1>Table of Contents<span class="tocSkip"></span></h1>
 - [Introduction](#introduction)
 - [Download and configure LanguageTool](#download-and-configure-languagetool)
 - [Configure TeXstudio](#configure-texstudio)

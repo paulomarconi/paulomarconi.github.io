@@ -3,16 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 Oct 2020 15:18:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#configure-texstudio"&gt;Configure TeXstudio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-texstudio"&gt;Check LanguageTool is activated on TeXstudio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-the-languagetool-linter-vscode-extension"&gt;Download and configure the LanguageTool Linter VSCode extension&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-vscode"&gt;Check LanguageTool is activated on VSCode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio"&gt;Test the parallel working on VSCode and TeXstudio&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 22 Oct 2020 20:42:20 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode, I found some problems. &lt;/p&gt;
 &lt;p&gt;The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. &lt;/p&gt;
 &lt;h2&gt;Download and configure LanguageTool&lt;/h2&gt;

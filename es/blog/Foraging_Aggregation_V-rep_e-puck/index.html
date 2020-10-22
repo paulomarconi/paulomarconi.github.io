@@ -20,7 +20,7 @@
 <!-- for /es/blog/... posts--><link rel="stylesheet" href="../../../assets/css/prism.css">
 <meta name="author" content="Paulo Loma Marconi">
 <link rel="prev" href="../MPC-SSTO/" title="Constrained MPC with feed-forward SSTO" type="text/html">
-<link rel="next" href="../Phase-lead_phase-lag/" title="Phase-lead and phase-lag compensator by Bode and root-locus" type="text/html">
+<link rel="next" href="../Phase-lead_phase-lag/" title="Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Simple foraging and random aggregation strategy for swarm robotics wit">
 <meta property="og:url" content="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/">
@@ -351,7 +351,7 @@ s_0&amp;=\lbrace B \rbrace \\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<figure><img src="../../../images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"><center><figcaption>Fig.1 Mealy DFSM of the controller.</figcaption></center>
+<figure><img src="../../../images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"><center><figcaption>Fig.1 Mealy DFSM of the controller. <a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/blob/master/report/tikz/DFSM.tex">[Tikz version]</a> </figcaption></center>
 </figure>
 </div>
 </div>
@@ -384,7 +384,7 @@ v_l&amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 \alpha_R&amp;=\dfrac{\sum_{i=-N/2}^{N/2}~\alpha_i~D_i}{\sum_{i=-N/2}^{N/2}~D_i}
 \end{align}<p>where, $\alpha_0$ is the uniformly distributed angular pace, $N$ is the number of sensors, $\alpha_i$ is the angular information per pace $\alpha_i~\epsilon\left[-\frac{N}{2},\frac{N}{2}\right]$, and $D_i$ is the distance value obtained by the proximity sensors, refer to code line 18 and 139.</p>
 <p>The weight vector given by $\alpha_i$ sets the robot behaviour for each corresponding mapped sensor $\lbrace s_1,s_2,s_3,s_4,s_5,s_6\rbrace$. For the $\textit{avoider}$ is $\lbrace -3,-2,-1,1,2,3 \rbrace$, and for the $\textit{follower}$ is $\lbrace 3,2,1,-1,-2,-3 \rbrace$. Fig. 2b and Fig. 2c show an example of $\alpha_R$ with the Vector Field Histogram (VFH) for the $\textit{avoider}$ case. Refer to code line 128 and 132.</p>
-<figure><img src="../../../images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"><center><figcaption>Fig. 2 - Unicycle model, Rebound and Search angle</figcaption></center>
+<figure><img src="../../../images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"><center><figcaption>Fig. 2 - Unicycle model, Rebound and Search angle. <a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/tree/master/report/tikz">[Tikz version]</a> </figcaption></center>
 </figure>
 </div>
 </div>
@@ -400,7 +400,7 @@ v_l&amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 \begin{align}
 \alpha_C &amp;= \arctan \dfrac{x_b-x_o}{y_b-y_o} \tag{6}\\
 \alpha_e &amp;= \arctan \dfrac{x_e-x_o}{y_e-y_o} \tag{7}
-\end{align}<p>where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) ared modified with a random value $w$ with a probability function $P$,</p>
+\end{align}<p>where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) are modified with a random value $w$ with a probability function $P$,</p>
 \begin{align}
 \alpha_{C_r} &amp;= \alpha_C~w \tag{8}\\
 \alpha_{e_r} &amp;= \alpha_e~w \tag{9}
@@ -471,7 +471,7 @@ v_l&amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
                 <a href="../MPC-SSTO/" rel="prev" title="Constrained MPC with feed-forward SSTO">Publicación anterior</a>
             </li>
             <li class="next">
-                <a href="../Phase-lead_phase-lag/" rel="next" title="Phase-lead and phase-lag compensator by Bode and root-locus">Siguiente publicación</a>
+                <a href="../Phase-lead_phase-lag/" rel="next" title="Phase-lead and phase-lag compensators with pre-fiter usign Bode and root-locus approaches">Siguiente publicación</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comentarios</h2>
         

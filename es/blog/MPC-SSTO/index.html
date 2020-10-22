@@ -24,7 +24,8 @@
 <meta property="og:site_name" content="PauLoMarconi">
 <meta property="og:title" content="Constrained MPC with feed-forward SSTO">
 <meta property="og:url" content="https://paulomarconi.github.io/es/blog/MPC-SSTO/">
-<meta property="og:description" content="Constrained Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)¶A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking an">
+<meta property="og:description" content="Table of Contents
+1  Introduction2  Pre-requisites3  Source code4  Isolated power system5  State-space model of the system6  Design requirements7  MPC-SSTO tracking problem formulation8  Cost function">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-09-02T13:39:47-04:00">
 <meta property="article:tag" content="control systems">
@@ -140,9 +141,49 @@ navbar-dark bg-dark
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Constrained-Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)">Constrained Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)<a class="anchor-link" href="#Constrained-Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)">¶</a>
+<p></p>
+<h2>Table of Contents<span class="tocSkip"></span>
 </h2>
-<p>A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking and disturbance rejection using the Feedforward Steady-State Target Optimization (SSTO) approach is presented in this paper. The MPC control law uses Finite-Receding-Horizon method in dual-mode. The stability and recursive feasibility are guaranteed by off-line dual-mode and on-line optimization. The results are presented by simulation.</p>
+<div class="toc"><ul class="toc-item">
+<li><span><a href="#Introduction" data-toc-modified-id="Introduction-1"><span class="toc-item-num">1  </span>Introduction</a></span></li>
+<li><span><a href="#Pre-requisites" data-toc-modified-id="Pre-requisites-2"><span class="toc-item-num">2  </span>Pre-requisites</a></span></li>
+<li><span><a href="#Source-code" data-toc-modified-id="Source-code-3"><span class="toc-item-num">3  </span>Source code</a></span></li>
+<li><span><a href="#Isolated-power-system" data-toc-modified-id="Isolated-power-system-4"><span class="toc-item-num">4  </span>Isolated power system</a></span></li>
+<li><span><a href="#State-space-model-of-the-system" data-toc-modified-id="State-space-model-of-the-system-5"><span class="toc-item-num">5  </span>State-space model of the system</a></span></li>
+<li><span><a href="#Design-requirements" data-toc-modified-id="Design-requirements-6"><span class="toc-item-num">6  </span>Design requirements</a></span></li>
+<li><span><a href="#MPC-SSTO-tracking-problem-formulation" data-toc-modified-id="MPC-SSTO-tracking-problem-formulation-7"><span class="toc-item-num">7  </span>MPC-SSTO tracking problem formulation</a></span></li>
+<li><span><a href="#Cost-function" data-toc-modified-id="Cost-function-8"><span class="toc-item-num">8  </span>Cost function</a></span></li>
+<li><span><a href="#Defining-the-inequality-constraints" data-toc-modified-id="Defining-the-inequality-constraints-9"><span class="toc-item-num">9  </span>Defining the inequality constraints</a></span></li>
+<li><span><a href="#Target-equilibrium-optimization-under-constraints-(SSTO)" data-toc-modified-id="Target-equilibrium-optimization-under-constraints-(SSTO)-10"><span class="toc-item-num">10  </span>Target equilibrium optimization under constraints (SSTO)</a></span></li>
+<li><span><a href="#Solving-the-LQ-MPC-optimization-problem" data-toc-modified-id="Solving-the-LQ-MPC-optimization-problem-11"><span class="toc-item-num">11  </span>Solving the LQ-MPC optimization problem</a></span></li>
+<li><span><a href="#Stability" data-toc-modified-id="Stability-12"><span class="toc-item-num">12  </span>Stability</a></span></li>
+<li><span><a href="#Algorithm" data-toc-modified-id="Algorithm-13"><span class="toc-item-num">13  </span>Algorithm</a></span></li>
+<li>
+<span><a href="#Simulation" data-toc-modified-id="Simulation-14"><span class="toc-item-num">14  </span>Simulation</a></span><ul class="toc-item">
+<li><span><a href="#Init" data-toc-modified-id="Init-14.1"><span class="toc-item-num">14.1  </span>Init</a></span></li>
+<li><span><a href="#System:-continuos-to-discrete" data-toc-modified-id="System:-continuos-to-discrete-14.2"><span class="toc-item-num">14.2  </span>System: continuos to discrete</a></span></li>
+<li><span><a href="#Constraints" data-toc-modified-id="Constraints-14.3"><span class="toc-item-num">14.3  </span>Constraints</a></span></li>
+<li><span><a href="#Target-equilibrium-pairs-and-optimization-under-constraints" data-toc-modified-id="Target-equilibrium-pairs-and-optimization-under-constraints-14.4"><span class="toc-item-num">14.4  </span>Target equilibrium pairs and optimization under constraints</a></span></li>
+<li><span><a href="#Constraints-for-SSTO-model" data-toc-modified-id="Constraints-for-SSTO-model-14.5"><span class="toc-item-num">14.5  </span>Constraints for SSTO model</a></span></li>
+<li><span><a href="#Prediction,-Constraint-and-Cost-matrices" data-toc-modified-id="Prediction,-Constraint-and-Cost-matrices-14.6"><span class="toc-item-num">14.6  </span>Prediction, Constraint and Cost matrices</a></span></li>
+<li><span><a href="#Check-if-closed-loop-system-is-stable" data-toc-modified-id="Check-if-closed-loop-system-is-stable-14.7"><span class="toc-item-num">14.7  </span>Check if closed-loop system is stable</a></span></li>
+<li><span><a href="#Calculate-the-terminal-cost-matrix-P" data-toc-modified-id="Calculate-the-terminal-cost-matrix-P-14.8"><span class="toc-item-num">14.8  </span>Calculate the terminal cost matrix P</a></span></li>
+<li><span><a href="#For-loop" data-toc-modified-id="For-loop-14.9"><span class="toc-item-num">14.9  </span>For loop</a></span></li>
+</ul>
+</li>
+<li><span><a href="#References" data-toc-modified-id="References-15"><span class="toc-item-num">15  </span>References</a></span></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a>
+</h2>
+<p>A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking and disturbance rejection using the feed-forward Steady-State Target Optimization (SSTO) approach is presented in this paper. The MPC control law uses Finite-Receding-Horizon method in dual-mode. The stability and recursive feasibility are guaranteed by off-line dual-mode and on-line optimization. The results are presented by simulation.</p>
 <h2 id="Pre-requisites">Pre-requisites<a class="anchor-link" href="#Pre-requisites">¶</a>
 </h2>
 <ul>
@@ -170,8 +211,7 @@ navbar-dark bg-dark
 <p>The operation of an isolated power system under primary frequency control is modelled by the following block diagram.</p>
 <figure><img src="../../../images/MPC-SSTO/plant.png" alt="plant" width="60%"><center><figcaption>Fig.1 - Isolated Power System </figcaption></center>
 </figure><p>In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&gt;0$ is the regulation factor.</p>
-<p>The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design
-a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.</p>
+<p>The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.</p>
 
 </div>
 </div>

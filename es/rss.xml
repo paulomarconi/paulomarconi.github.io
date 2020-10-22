@@ -3,16 +3,369 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 Oct 2020 15:18:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#configure-texstudio"&gt;Configure TeXstudio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-texstudio"&gt;Check LanguageTool is activated on TeXstudio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-the-languagetool-linter-vscode-extension"&gt;Download and configure the LanguageTool Linter VSCode extension&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-vscode"&gt;Check LanguageTool is activated on VSCode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio"&gt;Test the parallel working on VSCode and TeXstudio&lt;/a&gt;&lt;/li&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 22 Oct 2020 21:04:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dynamics model of a DC motor with gear train</title><link>https://paulomarconi.github.io/es/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#source-code"&gt;Source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#free-body-diagram-analysis"&gt;Free-body diagram analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#dynamic-system"&gt;Dynamic system&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#state-space-equations"&gt;State-space equations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#equilibrium-point-mathbfx_0"&gt;Equilibrium point $\mathbf{x_0}$&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#references"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2&gt;Source code&lt;/h2&gt;
+&lt;p&gt;Version &lt;a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/es/files/DCmotor/DCmotor.html"&gt;HTML&lt;/a&gt;. Matlab and LaTex source code on &lt;a href="https://github.com/paulomarconi/DCmotor"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The objective is to model the dynamics of a DC servo motor with gear train, Fig. 1, and to deduce two equilibrium points.&lt;/p&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.1 - DC servo motor with gear train.&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;Free-body diagram analysis&lt;/h2&gt;
+&lt;p&gt;The system can be decomposed in two sections: a rotational mechanical, and an electronmechanical. The rotational mechanical can be derived as follows,&lt;/p&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.2 - Rotational mechanical free-body diagram.&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;where $\theta$ is the angular displacement, $\omega$ is the angular speed, $B$ is the rotational viscous-damping coefficient, $K$ is the stiffness coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, and $r$ is the gear radius.&lt;/p&gt;
+&lt;p&gt;The electromechanical section (DC motor) is&lt;/p&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Electromechanical_free-body.png" alt="Electromechanical_free-body" width="35%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.3 - Electromechanical free-body diagram.&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;where $R_F$ is the field resistance, $L_F$ is the field inductance, $E_F$ is the applied constant field voltage, and $i_F$ is the input field current. $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, and $e_m$ is the induced voltage, $i_A$ is the input stationary current, and $e_i(t)$ is the applied armature voltage, and $\tau_e$ is the electromechanical driving torque exerted on the rotor. &lt;/p&gt;
+&lt;p&gt;If the flux density $\mathcal{B}$ is&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    \mathcal{B} &amp;amp; = \frac{\phi(i_F)}{A}           
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;the torque on the rotor is&lt;/p&gt;
+&lt;div class="math"&gt;s
+\begin{align}
+    \tau_e      &amp;amp; = \mathcal{B} l a~i_A \nonumber \\
+    \tau_e      &amp;amp; = \frac{l a}{A} \phi(i_F) i_A \label{eq:tau_e}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;where $\phi(i_F)$ is the flux induced by $i_F$, $A$ is the cross-sectional area of the flux path in the air gap between the rotor and stator, $l$ is the total length of the armature conductors within the magnetic field, and $a$ is the radius of the armature.&lt;/p&gt;
+&lt;p&gt;Also, the voltage induced in the armature $e_m$ can be written as&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    e_m &amp;amp; = \frac{l a}{A} \phi(i_F) \omega
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;where both, $\tau_e$ and $e_m$, depend on the geometry of the DC motor. &lt;/p&gt;
+&lt;h2&gt;Dynamic system&lt;/h2&gt;
+&lt;p&gt;We begin applying D'Alembert's law (restatement of Newton's law) to the rotational mechanical section.&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    \sum \tau_{all}                                          &amp;amp; = 0 \nonumber                 \\
+    J_1 \dot{\omega}_1 + B_1 \omega_1 + r_1 f_c              &amp;amp; = \tau_e(t)   \label{eq:Rot1} \\
+    J_2 \dot{\omega}_2 + B_2 \omega_2 + K_2 \theta - r_2 f_c &amp;amp; = \tau_L(t)   \label{eq:Rot2}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;where $\tau_{all}$ are the torques acting on a body, $K\theta$ is the stiffness torque, $B\omega$ is the viscous-frictional torque, $J\dot{\omega}$ is the inertial torque, $\tau_e(t)$ is the driving torque,  $\tau_L(t)$ is the load torque, and $r f_c$ is the contact torque.&lt;/p&gt;
+&lt;p&gt;Due to the relation between gears,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    \theta_1       &amp;amp; = N \theta_2       \\
+    \omega_1       &amp;amp; = N \omega_2       \\
+    \dot{\omega}_1 &amp;amp; = N \dot{\omega}_2 \\
+    N              &amp;amp; = \frac{r_2}{r_1}
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;where $N$ is the gear radius relation. We solve \eqref{eq:Rot1} and \eqref{eq:Rot2} in terms of $\omega_2$ and $\theta_2$,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    (J_2+N^2 J_1)\dot{\omega}_2+(B_2+N^2 B_1)\omega_1+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0 \nonumber 
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;defining the relations&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    J_{eq} &amp;amp; = J_2+N^2 J_1 \\
+    B_{eq} &amp;amp; = B_2+B^2 B_1
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;it becomes in&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}   
+    J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0 \label{eq:Rot3}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;Now, let us derive the equations of the electromechanical section using Kirchoff's law.&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    \sum V_{all}            &amp;amp; = 0       \nonumber             \\
+    e_m+V_{L_{A}}+V_{R_{A}} &amp;amp; = e_i(t)  \label{eq:Elec1}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;where $V_{all}$ are the induced voltages on the rotor and stator, $V_{L_{A}}$ is the stationary resistance voltage, $V_{R_{A}}$ is the stationary inductance voltage.  &lt;/p&gt;
+&lt;p&gt;If $i_F$ is defined as constant, then \eqref{eq:tau_e} is&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    \tau_e(t) &amp;amp; = \left( \frac{l a}{A} \phi(i_F) \right) i_A(t) \nonumber \\
+    \tau_e(t) &amp;amp; = \alpha i_A(t)
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;where $\alpha$ is the internal parameters of the DC motor.&lt;/p&gt;
+&lt;p&gt;Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is, &lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e - \tau_L &amp;amp; = 0 \\
+    L_A \dot{i}_A + R_A i_A + \alpha \omega_1 - e_i                      &amp;amp; = 0
+\end{align}
+&lt;/div&gt;
+
+&lt;h2&gt;State-space equations&lt;/h2&gt;
+&lt;p&gt;Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    J_{eq} \ddot{\theta}_2+B_{eq} \dot{\theta}_2+K_2 \theta_2-N \alpha i_A-\tau_L &amp;amp; = 0 \\
+    L_A \dot{i}_A + R_A i_A + \alpha \omega_1 - e_i                               &amp;amp; = 0                              
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;reordering,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    \ddot{\theta}_2 &amp;amp; = -\frac{B_{eq}}{J_{eq}} \dot{\theta}_2 - \frac{K_2}{J_{eq}} \theta_2 + \frac{N \alpha}{J_{eq}} i_A - \frac{1}{J_{eq}} \tau_L \\\
+    \dot{i}_A       &amp;amp; = -\frac{R_A}{L_A} i_A -\frac{N \alpha}{L_A} \dot{\theta}_2 + \frac{1}{L_A} e_i
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;defining the states as&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    \begin{cases}
+        x_1 &amp;amp; = \theta_2, \quad \dot{x}_1 = \dot{\theta}_2 = x_2                                                                                                                  \\\
+        x_2 &amp;amp; = \dot{\theta}_2, \quad \dot{x}_2  = \ddot{\theta}_2 =  -\frac{B_{eq}}{J_{eq}} x_2 - \frac{K_2}{J_{eq}} x_1 + \frac{N \alpha}{J_{eq}} x_3 - \frac{1}{J_{eq}} \tau_L \\\
+        x_3 &amp;amp; = i_A, \quad \dot{x}_3 = \dot{i}_A = -\frac{R_A}{L_A} x_3 -\frac{N \alpha}{L_A} x_2 + \frac{1}{L_A} e_i
+    \end{cases} 
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;then&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+\begin{bmatrix}
+    \dot{x}_1 \\
+    \dot{x}_2 \\
+    \dot{x}_3
+\end{bmatrix}
+&amp;amp;=
+\underbrace{
+    \begin{bmatrix}
+        0                   &amp;amp; 1                      &amp;amp; 0                       \\
+        -\frac{K_2}{J_{eq}} &amp;amp; -\frac{B_{eq}}{J_{eq}} &amp;amp; \frac{N \alpha}{J_{eq}} \\
+        0                   &amp;amp; -\frac{N \alpha}{L_A}  &amp;amp; -\frac{R_A}{L_A}
+    \end{bmatrix}
+}_A
+\underbrace{
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{bmatrix}
+}_\mathbf{x}
++
+\underbrace{
+    \begin{bmatrix}
+        0 &amp;amp; 0               &amp;amp; 0             \\
+        0 &amp;amp; -\frac{1}{J_eq} &amp;amp; 0             \\
+        0 &amp;amp; 0               &amp;amp; \frac{1}{L_A}
+    \end{bmatrix}
+}_B
+\underbrace{
+    \begin{bmatrix}
+        0      \\
+        \tau_L \\
+        e_i
+    \end{bmatrix}
+}_\mathbf{u}
+\\
+\mathbf{\dot{x}} &amp;amp;= A \mathbf{x} + B \mathbf{u} \label{eq:sys1}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;The output $y=\dot{\omega}_2$ can be defined as&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+y &amp;amp;=
+\underbrace{
+    \begin{bmatrix}
+        0 &amp;amp; 1 &amp;amp; 0
+    \end{bmatrix}
+}_C
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3
+\end{bmatrix}
++
+\underbrace{
+    \begin{bmatrix}
+        0 &amp;amp; 0 &amp;amp; 0
+    \end{bmatrix}
+}_D
+e_i
+\\
+y &amp;amp;= C \mathbf{\dot{x}}
+\end{align}
+&lt;/div&gt;
+
+&lt;h2&gt;Equilibrium point $\mathbf{x_0}$&lt;/h2&gt;
+&lt;p&gt;Using $\mathbf{\dot{x}}=0$ in \eqref{eq:sys1}, the equilibrium point $\mathbf{x_0}$ can be calculated as &lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    0            &amp;amp; = A \mathbf{x_0} +B \mathbf{u} \\
+    \mathbf{x_0} &amp;amp; = - A^{-1} B \mathbf{u} \\
+    \begin{bmatrix}
+        x_{1_0} \\
+        x_{2_0} \\
+        x_{3_0}
+    \end{bmatrix}
+    &amp;amp; = - 
+    \begin{bmatrix}
+        0                   &amp;amp; 1                      &amp;amp; 0                       \\
+        -\frac{K_2}{J_{eq}} &amp;amp; -\frac{B_{eq}}{J_{eq}} &amp;amp; \frac{N \alpha}{J_{eq}} \\
+        0                   &amp;amp; -\frac{N \alpha}{L_A}  &amp;amp; -\frac{R_A}{L_A}
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        0 &amp;amp; 0               &amp;amp; 0             \\
+        0 &amp;amp; -\frac{1}{J_eq} &amp;amp; 0             \\
+        0 &amp;amp; 0               &amp;amp; \frac{1}{L_A}
+    \end{bmatrix}
+    \begin{bmatrix}
+        0      \\
+        \tau_L \\
+        e_i
+    \end{bmatrix}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;Solving for no external torque $\tau_L=0$, constant applied armatrue voltage $e_i=E_0$, and $K_2 \neq 0$,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    0 &amp;amp; = x_{2_0}                                                                                      \\
+    0 &amp;amp; = -\frac{K_2}{J_{eq}} x_{1_0} -\frac{B_{eq}}{J_{eq}} x_{2_0} + \frac{N \alpha}{J_{eq}} x_{3_0} \\
+    0 &amp;amp; = -\frac{N \alpha}{L_A}  x_{2_0} -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;due to $x_{2_0}=0$, we have&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    0 &amp;amp; = -\frac{K_2}{J_{eq}} x_{1_0} + \frac{N \alpha}{J_{eq}} x_{3_0} \\
+    0 &amp;amp; = -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0
+\end{align*}
+then
+\begin{align*}
+    x_{1_0} &amp;amp; = \frac{N \alpha}{K_2 R_A} E_0 \\
+    x_{3_0} &amp;amp; = \frac{1}{R_A} E_0
+\end{align*}
+therefore the equilibrium point is
+\begin{align}
+    \mathbf{x_0} &amp;amp;= 
+    \begin{bmatrix}
+        x_{1_0} \\
+        x_{2_0} \\
+        x_{3_0}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \frac{N \alpha}{K_2 R_A} \\
+        0 \\
+        \frac{1}{R_A}
+    \end{bmatrix}
+    E_0
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;This equilibrium point indicates that a $\textbf{constant angular displacement (twist)}$ produced by $x_{1_0}=\theta_{2_0}$ is sufficient to balance the constant applied armature voltage $e_i=E_0$.&lt;/p&gt;
+&lt;p&gt;On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is,&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align*}
+    \begin{bmatrix}
+        x_{1_0} \\
+        x_{2_0} \\
+        x_{3_0}
+    \end{bmatrix}
+    &amp;amp; = - 
+    \begin{bmatrix}
+        0 &amp;amp; 1                      &amp;amp; 0                       \\
+        0 &amp;amp; -\frac{B_{eq}}{J_{eq}} &amp;amp; \frac{N \alpha}{J_{eq}} \\
+        0 &amp;amp; -\frac{N \alpha}{L_A}  &amp;amp; -\frac{R_A}{L_A}
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        0 &amp;amp; 0               &amp;amp; 0             \\
+        0 &amp;amp; -\frac{1}{J_eq} &amp;amp; 0             \\
+        0 &amp;amp; 0               &amp;amp; \frac{1}{L_A}
+    \end{bmatrix}
+    \begin{bmatrix}
+        0   \\
+        0   \\
+        E_0
+    \end{bmatrix}
+\end{align*}
+&lt;/div&gt;
+
+&lt;p&gt;if we eliminate $x_{1_0}$ because the first column of $A^{-1}$ has zeros, the problem reduces to&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    \begin{bmatrix}
+        x_{2_0} \\
+        x_{3_0}
+    \end{bmatrix}
+    &amp;amp; = - 
+    \begin{bmatrix}
+        -\frac{B_{eq}}{J_{eq}} &amp;amp; \frac{N \alpha}{J_{eq}} \\
+        -\frac{N \alpha}{L_A}  &amp;amp; -\frac{R_A}{L_A}
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+        -\frac{1}{J_eq} &amp;amp; 0             \\
+        0               &amp;amp; \frac{1}{L_A}
+    \end{bmatrix}
+    \begin{bmatrix}
+        0   \\
+        E_0
+    \end{bmatrix}
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;solving, we have&lt;/p&gt;
+&lt;div class="math"&gt;
+\begin{align}
+    \begin{bmatrix}
+        x_{2_0} \\
+        x_{3_0}
+    \end{bmatrix}
+    &amp;amp; = 
+    \begin{bmatrix}
+        \frac{N \alpha}{B_{eq} R_A+(N \alpha)^2}\\
+        \frac{-B_{eq}}{B_{eq} R_A+(N \alpha)^2}
+    \end{bmatrix}
+    E_0
+\end{align}
+&lt;/div&gt;
+
+&lt;p&gt;which indicates that a $\textbf{constant angular speed}$ produced by $x_{2_0}=\dot{\theta_{2_0}}$ is needed to balance the constant applied armature voltage $e_i=E_0$.&lt;/p&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode, I found some problems. &lt;/p&gt;
 &lt;p&gt;The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. &lt;/p&gt;
 &lt;h2&gt;Download and configure LanguageTool&lt;/h2&gt;
@@ -3010,7 +3363,7 @@ s_0&amp;amp;=\lbrace B \rbrace \\
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;figure&gt;
   &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"&gt;
-  &lt;center&gt;&lt;figcaption&gt;Fig.1 Mealy DFSM of the controller.&lt;/figcaption&gt;&lt;/center&gt;
+  &lt;center&gt;&lt;figcaption&gt;Fig.1 Mealy DFSM of the controller. &lt;a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/blob/master/report/tikz/DFSM.tex"&gt;[Tikz version]&lt;/a&gt; &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3037,7 +3390,7 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 &lt;p&gt;The weight vector given by $\alpha_i$ sets the robot behaviour for each corresponding mapped sensor $\lbrace s_1,s_2,s_3,s_4,s_5,s_6\rbrace$. For the $\textit{avoider}$ is $\lbrace -3,-2,-1,1,2,3 \rbrace$, and for the $\textit{follower}$ is $\lbrace 3,2,1,-1,-2,-3 \rbrace$. Fig. 2b and Fig. 2c show an example of $\alpha_R$ with the Vector Field Histogram (VFH) for the $\textit{avoider}$ case. Refer to code line 128 and 132.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"&gt;   
-    &lt;center&gt;&lt;figcaption&gt;Fig. 2 - Unicycle model, Rebound and Search angle&lt;/figcaption&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig. 2 - Unicycle model, Rebound and Search angle. &lt;a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/tree/master/report/tikz"&gt;[Tikz version]&lt;/a&gt; &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -3049,7 +3402,7 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 \begin{align}
 \alpha_C &amp;amp;= \arctan \dfrac{x_b-x_o}{y_b-y_o} \tag{6}\\
 \alpha_e &amp;amp;= \arctan \dfrac{x_e-x_o}{y_e-y_o} \tag{7}
-\end{align}&lt;p&gt;where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) ared modified with a random value $w$ with a probability function $P$,&lt;/p&gt;
+\end{align}&lt;p&gt;where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) are modified with a random value $w$ with a probability function $P$,&lt;/p&gt;
 \begin{align}
 \alpha_{C_r} &amp;amp;= \alpha_C~w \tag{8}\\
 \alpha_{e_r} &amp;amp;= \alpha_e~w \tag{9}
@@ -3099,7 +3452,15 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 &lt;/div&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</guid><pubDate>Sun, 06 Sep 2020 21:47:09 GMT</pubDate></item><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/es/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Constrained-Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;Constrained Model Predictive Control (MPC) with feed-forward Steady-State Target Optimization (SSTO)&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Constrained-Model-Predictive-Control-(MPC)-with-feed-forward-Steady-State-Target-Optimization-(SSTO)"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking and disturbance rejection using the Feedforward Steady-State Target Optimization (SSTO) approach is presented in this paper. The MPC control law uses Finite-Receding-Horizon method in dual-mode. The stability and recursive feasibility are guaranteed by off-line dual-mode and on-line optimization. The results are presented by simulation.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Introduction" data-toc-modified-id="Introduction-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Source-code" data-toc-modified-id="Source-code-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Source code&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Isolated-power-system" data-toc-modified-id="Isolated-power-system-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Isolated power system&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#State-space-model-of-the-system" data-toc-modified-id="State-space-model-of-the-system-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;State-space model of the system&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Design-requirements" data-toc-modified-id="Design-requirements-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Design requirements&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#MPC-SSTO-tracking-problem-formulation" data-toc-modified-id="MPC-SSTO-tracking-problem-formulation-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;MPC-SSTO tracking problem formulation&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Cost-function" data-toc-modified-id="Cost-function-8"&gt;&lt;span class="toc-item-num"&gt;8  &lt;/span&gt;Cost function&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Defining-the-inequality-constraints" data-toc-modified-id="Defining-the-inequality-constraints-9"&gt;&lt;span class="toc-item-num"&gt;9  &lt;/span&gt;Defining the inequality constraints&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Target-equilibrium-optimization-under-constraints-(SSTO)" data-toc-modified-id="Target-equilibrium-optimization-under-constraints-(SSTO)-10"&gt;&lt;span class="toc-item-num"&gt;10  &lt;/span&gt;Target equilibrium optimization under constraints (SSTO)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Solving-the-LQ-MPC-optimization-problem" data-toc-modified-id="Solving-the-LQ-MPC-optimization-problem-11"&gt;&lt;span class="toc-item-num"&gt;11  &lt;/span&gt;Solving the LQ-MPC optimization problem&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Stability" data-toc-modified-id="Stability-12"&gt;&lt;span class="toc-item-num"&gt;12  &lt;/span&gt;Stability&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Algorithm" data-toc-modified-id="Algorithm-13"&gt;&lt;span class="toc-item-num"&gt;13  &lt;/span&gt;Algorithm&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Simulation" data-toc-modified-id="Simulation-14"&gt;&lt;span class="toc-item-num"&gt;14  &lt;/span&gt;Simulation&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Init" data-toc-modified-id="Init-14.1"&gt;&lt;span class="toc-item-num"&gt;14.1  &lt;/span&gt;Init&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#System:-continuos-to-discrete" data-toc-modified-id="System:-continuos-to-discrete-14.2"&gt;&lt;span class="toc-item-num"&gt;14.2  &lt;/span&gt;System: continuos to discrete&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Constraints" data-toc-modified-id="Constraints-14.3"&gt;&lt;span class="toc-item-num"&gt;14.3  &lt;/span&gt;Constraints&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Target-equilibrium-pairs-and-optimization-under-constraints" data-toc-modified-id="Target-equilibrium-pairs-and-optimization-under-constraints-14.4"&gt;&lt;span class="toc-item-num"&gt;14.4  &lt;/span&gt;Target equilibrium pairs and optimization under constraints&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Constraints-for-SSTO-model" data-toc-modified-id="Constraints-for-SSTO-model-14.5"&gt;&lt;span class="toc-item-num"&gt;14.5  &lt;/span&gt;Constraints for SSTO model&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Prediction,-Constraint-and-Cost-matrices" data-toc-modified-id="Prediction,-Constraint-and-Cost-matrices-14.6"&gt;&lt;span class="toc-item-num"&gt;14.6  &lt;/span&gt;Prediction, Constraint and Cost matrices&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Check-if-closed-loop-system-is-stable" data-toc-modified-id="Check-if-closed-loop-system-is-stable-14.7"&gt;&lt;span class="toc-item-num"&gt;14.7  &lt;/span&gt;Check if closed-loop system is stable&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Calculate-the-terminal-cost-matrix-P" data-toc-modified-id="Calculate-the-terminal-cost-matrix-P-14.8"&gt;&lt;span class="toc-item-num"&gt;14.8  &lt;/span&gt;Calculate the terminal cost matrix P&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#For-loop" data-toc-modified-id="For-loop-14.9"&gt;&lt;span class="toc-item-num"&gt;14.9  &lt;/span&gt;For loop&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#References" data-toc-modified-id="References-15"&gt;&lt;span class="toc-item-num"&gt;15  &lt;/span&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;h2 id="Introduction"&gt;Introduction&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Introduction"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;A constrained Linear Quadratic Model Predictive Model Control (LQ-MPC) with offset-free tracking and disturbance rejection using the feed-forward Steady-State Target Optimization (SSTO) approach is presented in this paper. The MPC control law uses Finite-Receding-Horizon method in dual-mode. The stability and recursive feasibility are guaranteed by off-line dual-mode and on-line optimization. The results are presented by simulation.&lt;/p&gt;
 &lt;h2 id="Pre-requisites"&gt;Pre-requisites&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Pre-requisites"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Control Systems theory.&lt;/li&gt;
 &lt;li&gt;MPC theory.&lt;/li&gt;
@@ -3121,8 +3482,7 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
     &lt;img src="https://paulomarconi.github.io/images/MPC-SSTO/plant.png" alt="plant" width="60%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.1 - Isolated Power System &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;&lt;p&gt;In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&amp;gt;0$ is the regulation factor.&lt;/p&gt;
-&lt;p&gt;The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design
-a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.&lt;/p&gt;
+&lt;p&gt;The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;

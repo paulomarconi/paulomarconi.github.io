@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 05 Oct 2020 18:54:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple foraging and random aggregation strategy for swarm robotics without communication</title><link>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 14 Oct 2020 16:01:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple foraging and random aggregation strategy for swarm robotics without communication</title><link>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -152,7 +152,7 @@ s_0&amp;amp;=\lbrace B \rbrace \\
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;figure&gt;
   &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"&gt;
-  &lt;center&gt;&lt;figcaption&gt;Fig.1 Mealy DFSM of the controller.&lt;/figcaption&gt;&lt;/center&gt;
+  &lt;center&gt;&lt;figcaption&gt;Fig.1 Mealy DFSM of the controller. &lt;a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/blob/master/report/tikz/DFSM.tex"&gt;[Tikz version]&lt;/a&gt; &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -179,7 +179,7 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 &lt;p&gt;The weight vector given by $\alpha_i$ sets the robot behaviour for each corresponding mapped sensor $\lbrace s_1,s_2,s_3,s_4,s_5,s_6\rbrace$. For the $\textit{avoider}$ is $\lbrace -3,-2,-1,1,2,3 \rbrace$, and for the $\textit{follower}$ is $\lbrace 3,2,1,-1,-2,-3 \rbrace$. Fig. 2b and Fig. 2c show an example of $\alpha_R$ with the Vector Field Histogram (VFH) for the $\textit{avoider}$ case. Refer to code line 128 and 132.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"&gt;   
-    &lt;center&gt;&lt;figcaption&gt;Fig. 2 - Unicycle model, Rebound and Search angle&lt;/figcaption&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig. 2 - Unicycle model, Rebound and Search angle. &lt;a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/tree/master/report/tikz"&gt;[Tikz version]&lt;/a&gt; &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -191,7 +191,7 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 \begin{align}
 \alpha_C &amp;amp;= \arctan \dfrac{x_b-x_o}{y_b-y_o} \tag{6}\\
 \alpha_e &amp;amp;= \arctan \dfrac{x_e-x_o}{y_e-y_o} \tag{7}
-\end{align}&lt;p&gt;where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) ared modified with a random value $w$ with a probability function $P$,&lt;/p&gt;
+\end{align}&lt;p&gt;where, $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) are modified with a random value $w$ with a probability function $P$,&lt;/p&gt;
 \begin{align}
 \alpha_{C_r} &amp;amp;= \alpha_C~w \tag{8}\\
 \alpha_{e_r} &amp;amp;= \alpha_e~w \tag{9}

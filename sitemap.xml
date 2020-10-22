@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-10-09T15:18:00Z</lastmod>
+  <lastmod>2020-10-22T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,7 +19,11 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/DCmotor/</loc>
+  <lastmod>2020-10-22T19:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
@@ -56,7 +60,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2020-10-22T19:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -87,8 +91,20 @@
   <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/differential-equations/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/dynamics-model/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/e-puck/</loc>
   <lastmod>2020-10-05T16:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/equilibrium-point/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/foraging/</loc>
@@ -151,6 +167,10 @@
   <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/state-space/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/swarm-robotics/</loc>
   <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
@@ -180,7 +200,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-10-09T15:18:00Z</lastmod>
+  <lastmod>2020-10-22T21:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -188,7 +208,12 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/DCmotor/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/DCmotor/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
@@ -232,7 +257,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -263,8 +288,20 @@
   <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/differential-equations/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/dynamics-model/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/e-puck/</loc>
   <lastmod>2020-10-05T16:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/equilibrium-point/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/foraging/</loc>
@@ -327,6 +364,10 @@
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/state-space/</loc>
+  <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics/</loc>
   <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
@@ -353,6 +394,10 @@
  <url>
   <loc>https://paulomarconi.github.io/es/galleries/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/DCmotor/DCmotor.html</loc>
+  <lastmod>2020-10-22T21:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/files/Foraging_Aggregation_V-rep_e-puck/Foraging_Aggregation_V-rep_e-puck.html</loc>
