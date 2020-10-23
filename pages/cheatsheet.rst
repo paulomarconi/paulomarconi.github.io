@@ -83,7 +83,7 @@ https://www.markdownguide.org/basic-syntax/
 md + LaTex
 ----------
 
-Inline syntax ``$e^{ix} = \cos x + i\sin x$`` -> $e^{ix} = \cos x + i\sin x$
+Inline syntax ``$e^{ix} = \cos x + i\sin x$`` outputs $e^{ix} = \cos x + i\sin x$
 
 Complex formulas.
 
@@ -99,7 +99,7 @@ Complex formulas.
     \end{cases}
 
 
-I recommend to use `<div class="math">...</div>` if you copy code directly from LaTex. It's useful for ``\text{...}``, ``\align{...}``, and other commands which are not compiled correctly, even if you use `$$...$$`. Also, works good with ``\label{eq:equation1}`` and ``\eqref{eq:equation1}``, without the need to use ``tag{eq1}`` it is used on Jupyter Notebook.
+I recommend to use `<div class="math">...</div>` if you copy the code directly from LaTex. It's useful for ``\text{...}``, ``\align{...}``, and other commands which are not compiled correctly, even if you use ``$$...$$``. Also, works good with ``\label{eq:equation1}`` and ``\eqref{eq:equation1}``, without the need to use ``tag{eq1}`` on Jupyter Notebook.
 
 .. code-block::
 
@@ -121,8 +121,9 @@ md + referencing equations
     a &= ... 
     \end{align}
 
+    See `([1](#mjx-eqn-eq1))`
 
-See `([1](#mjx-eqn-eq1))`
+
 
 md + Prism import
 -----------------
@@ -152,7 +153,7 @@ https://getnikola.com/quickstart.html
 rST + LaTex 
 -----------
 
-Inline syntax ``:math:`e^{ix} = \cos x + i\sin x``` -> :math:`e^{ix} = \cos x + i\sin x`
+Inline syntax ``:math:`e^{ix} = \cos x + i\sin x``` outputs :math:`e^{ix} = \cos x + i\sin x`
 
 .. code-block:: LaTex
 
