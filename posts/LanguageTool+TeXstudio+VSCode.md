@@ -8,7 +8,8 @@
 .. description: 
 .. type: text
 -->
-<h1>Table of Contents<span class="tocSkip"></span></h1>
+
+<h1>Table of Contents</h1>
 - [Introduction](#introduction)
 - [Download and configure LanguageTool](#download-and-configure-languagetool)
 - [Configure TeXstudio](#configure-texstudio)
@@ -57,4 +58,4 @@ The objective of this brief tutorial is to configure TeXstudio and VSCode to wor
 - VSCode  
   <img src="/images/LanguageTool+TeXstudio+VSCode/VSCode_test.png" alt="VSCode_test" width="100%"/>
 
-Done!. I hope it works for you as well.
+Done!. I hope it works for you too.
