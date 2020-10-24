@@ -373,7 +373,7 @@ G_c = K_c~\dfrac{s+z}{s+p},\quad |z|\leq|p| \tag{3}
 where $\omega_c^\prime$ is the new crossover frequency for the desired phase margin $PM_d=60°$.</p>
 <p>Using the bode plot of $G_p$, the logarithm gain at $-120°$ is $-8.02~dB$, so the gain $K$ can be calculated as follows,
 \begin{align}
-20\log_{10} K &amp;= |-8.02| \tag{5}
+20\log_{10} K &amp;= |-8.02| \tag{5} \\
 K &amp;= 2.52 \nonumber
 \end{align}</p>
 <p>Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is,
@@ -458,7 +458,7 @@ G_{p1} &amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
 </h4>
 <p>The digital uncompensated $G_{z1}$ plant of $G_{p1}$ can be calculated using a zero-order holder with a sampling time $T_s=0.01$.
 \begin{align}
-G_{z1} &amp;= 1.01\cdot10^{-3}\frac{z-0.99}{z^2-1.99z+0.99} \tag{7}
+G_{z1} &amp;= 1.01 \times 10^{-3}\frac{z-0.99}{z^2-1.99z+0.99} \tag{7}
 \end{align}</p>
 
 </div>
@@ -692,8 +692,8 @@ and using <code>getGainCrossover</code> command in Matlab,
 </h4>
 <p>Determining the zero of the controller,
 \begin{align}
-\omega_c &amp;= \sqrt{\beta z^2} \tag{11}
-z &amp;= 1.26 \nonumber\\
+\omega_c &amp;= \sqrt{\beta z^2} \tag{11} \\
+z &amp;= 1.26 \nonumber
 \end{align}
 therefore, the compensator in continuous time can be written as follows,
 \begin{align}

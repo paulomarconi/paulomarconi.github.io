@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 08 Oct 2020 23:15:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 24 Oct 2020 00:31:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -192,7 +192,7 @@ G_c = K_c~\dfrac{s+z}{s+p},\quad |z|\leq|p| \tag{3}
 where $\omega_c^\prime$ is the new crossover frequency for the desired phase margin $PM_d=60°$.&lt;/p&gt;
 &lt;p&gt;Using the bode plot of $G_p$, the logarithm gain at $-120°$ is $-8.02~dB$, so the gain $K$ can be calculated as follows,
 \begin{align}
-20\log_{10} K &amp;amp;= |-8.02| \tag{5}
+20\log_{10} K &amp;amp;= |-8.02| \tag{5} \\
 K &amp;amp;= 2.52 \nonumber
 \end{align}&lt;/p&gt;
 &lt;p&gt;Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is,
@@ -271,7 +271,7 @@ G_{p1} &amp;amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Step-2"&gt;Step 2&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/#Step-2"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The digital uncompensated $G_{z1}$ plant of $G_{p1}$ can be calculated using a zero-order holder with a sampling time $T_s=0.01$.
 \begin{align}
-G_{z1} &amp;amp;= 1.01\cdot10^{-3}\frac{z-0.99}{z^2-1.99z+0.99} \tag{7}
+G_{z1} &amp;amp;= 1.01 \times 10^{-3}\frac{z-0.99}{z^2-1.99z+0.99} \tag{7}
 \end{align}&lt;/p&gt;
 
 &lt;/div&gt;
@@ -491,8 +491,8 @@ and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab,
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h4 id="Step-5"&gt;Step 5&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/#Step-5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Determining the zero of the controller,
 \begin{align}
-\omega_c &amp;amp;= \sqrt{\beta z^2} \tag{11}
-z &amp;amp;= 1.26 \nonumber\\
+\omega_c &amp;amp;= \sqrt{\beta z^2} \tag{11} \\
+z &amp;amp;= 1.26 \nonumber
 \end{align}
 therefore, the compensator in continuous time can be written as follows,
 \begin{align}
@@ -1974,7 +1974,8 @@ K_{a_d} &amp;amp;= 40 \nonumber
 \end{align}
 and again, with $A=1$ and $G=G_{ol}$ from (30), the $\textbf{actual}$ acceleration error constant $K_{a_{act}}$ is,
 \begin{align}
-K_{a_{act}} &amp;amp;= \lim\limits_{s\rightarrow 0} s^2~ G_{ol} = K_{a_{act}} = 2.67 \nonumber
+K_{a_{act}} &amp;amp;= \lim\limits_{s\rightarrow 0} s^2~ G_{ol} \\
+K_{a_{act}} &amp;amp;= 2.67 \nonumber
 \end{align}&lt;/p&gt;
 &lt;p&gt;The relation between the zero $z_{lag}$ and the pole $p_{lag}$ of the Phase-Lag compensator can be written as follows,
 \begin{align}

@@ -112,8 +112,7 @@ navbar-dark bg-dark
 </div>
     </header><div class="e-content entry-content">
     <div>
-<h2>Table of Contents<span class="tocSkip"></span>
-</h2>
+<h2>Table of Contents</h2>
 
 <ul>
 <li><a href="DCmotor/#source-code">Source code</a></li>
@@ -487,6 +486,17 @@ therefore the equilibrium point is
 </div>
     </header><div class="e-content entry-content">
     <div>
+<h2>Table of Contents</h2>
+
+<ul>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#introduction">Introduction</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool">Download and configure LanguageTool</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#configure-texstudio">Configure TeXstudio</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-texstudio">Check LanguageTool is activated on TeXstudio</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-the-languagetool-linter-vscode-extension">Download and configure the LanguageTool Linter VSCode extension</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-vscode">Check LanguageTool is activated on VSCode</a></li>
+<li><a href="LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio">Test the parallel working on VSCode and TeXstudio</a></li>
+</ul>
 <h2>Introduction</h2>
 <p>LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode, I found some problems. </p>
 <p>The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. </p>
@@ -537,7 +547,7 @@ therefore the equilibrium point is
 <li>VSCode<br><img src="../../images/LanguageTool+TeXstudio+VSCode/VSCode_test.png" alt="VSCode_test" width="100%">
 </li>
 </ul>
-<p>Done!. I hope it works for you as well.</p>
+<p>Done!. I hope it works for you too.</p>
 </div>
     </div>
     </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="Phase-lead_deadbeat/" class="u-url">Digital phase-lead and deadbeat compensators</a></h1>
@@ -795,7 +805,7 @@ G_c = K_c~\dfrac{s+z}{s+p},\quad |z|\leq|p| \tag{3}
 where $\omega_c^\prime$ is the new crossover frequency for the desired phase margin $PM_d=60°$.</p>
 <p>Using the bode plot of $G_p$, the logarithm gain at $-120°$ is $-8.02~dB$, so the gain $K$ can be calculated as follows,
 \begin{align}
-20\log_{10} K &amp;= |-8.02| \tag{5}
+20\log_{10} K &amp;= |-8.02| \tag{5} \\
 K &amp;= 2.52 \nonumber
 \end{align}</p>
 <p>Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is,
@@ -880,7 +890,7 @@ G_{p1} &amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
 </h4>
 <p>The digital uncompensated $G_{z1}$ plant of $G_{p1}$ can be calculated using a zero-order holder with a sampling time $T_s=0.01$.
 \begin{align}
-G_{z1} &amp;= 1.01\cdot10^{-3}\frac{z-0.99}{z^2-1.99z+0.99} \tag{7}
+G_{z1} &amp;= 1.01 \times 10^{-3}\frac{z-0.99}{z^2-1.99z+0.99} \tag{7}
 \end{align}</p>
 
 </div>
@@ -1114,8 +1124,8 @@ and using <code>getGainCrossover</code> command in Matlab,
 </h4>
 <p>Determining the zero of the controller,
 \begin{align}
-\omega_c &amp;= \sqrt{\beta z^2} \tag{11}
-z &amp;= 1.26 \nonumber\\
+\omega_c &amp;= \sqrt{\beta z^2} \tag{11} \\
+z &amp;= 1.26 \nonumber
 \end{align}
 therefore, the compensator in continuous time can be written as follows,
 \begin{align}
@@ -2759,7 +2769,8 @@ K_{a_d} &amp;= 40 \nonumber
 \end{align}
 and again, with $A=1$ and $G=G_{ol}$ from (30), the $\textbf{actual}$ acceleration error constant $K_{a_{act}}$ is,
 \begin{align}
-K_{a_{act}} &amp;= \lim\limits_{s\rightarrow 0} s^2~ G_{ol} = K_{a_{act}} = 2.67 \nonumber
+K_{a_{act}} &amp;= \lim\limits_{s\rightarrow 0} s^2~ G_{ol} \\
+K_{a_{act}} &amp;= 2.67 \nonumber
 \end{align}</p>
 <p>The relation between the zero $z_{lag}$ and the pole $p_{lag}$ of the Phase-Lag compensator can be written as follows,
 \begin{align}

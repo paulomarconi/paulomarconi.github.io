@@ -10,7 +10,7 @@
 .. has_math: true
 -->
 
-<h1>Table of Contents<span class="tocSkip"></span></h1>
+<h1>Table of Contents</h1>
 - [Source code](#source-code)
 - [Introduction](#introduction)
 - [Free-body diagram analysis](#free-body-diagram-analysis)
