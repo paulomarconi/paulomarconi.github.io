@@ -99,7 +99,7 @@ Complex formulas.
     \end{cases}
 
 
-I recommend to use `<div class="math">...</div>` if you copy the code directly from LaTex. It's useful for ``\text{...}``, ``\align{...}``, and other commands which are not compiled correctly, even if you use ``$$...$$``. Also, works good with ``\label{eq:equation1}`` and ``\eqref{eq:equation1}``, without the need to use ``tag{eq1}`` on Jupyter Notebook.
+I recommend to use `<div class="math">...</div>` if you copy the code directly from LaTex. It's useful for ``\text{...}``, ``\align{...}``, and other commands which are not compiled correctly, even if you use ``$$...$$``. Also, works good with ``\label{eq:equation1}`` and ``\eqref{eq:equation1}``, without the need to use ``tag{eq1}``.
 
 .. code-block::
 
@@ -113,6 +113,7 @@ I recommend to use `<div class="math">...</div>` if you copy the code directly f
 
 md + referencing equations
 --------------------------
+Although  ``\label{eq:equation1}`` and ``\eqref{eq:equation1}`` works good with `<div class="math">...</div>`, the alternative is to use tags in Jupyter Notebook.
 
 .. code-block:: octave
 
@@ -121,7 +122,7 @@ md + referencing equations
     a &= ... 
     \end{align}
 
-    See `([1](#mjx-eqn-eq1))`
+    See ([1](#mjx-eqn-eq1))
 
 
 

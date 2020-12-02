@@ -32,7 +32,7 @@ The objective is to model the dynamics of a DC servo motor with gear train, Fig.
 </figure>
 
 # Free-body diagram analysis
-The system can be decomposed in two sections: a rotational mechanical, and an electronmechanical. The rotational mechanical can be derived as follows,
+The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows,
 
 <figure>
     <center><img src="/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"/></center>
@@ -44,9 +44,9 @@ The electromechanical section (DC motor) is
 
 <figure>
     <center><img src="/images/DCmotor/Electromechanical_free-body.png" alt="Electromechanical_free-body" width="35%"/></center>
-    <center><figcaption>Fig.3 - Electromechanical free-body diagram.</figcaption></center>
+    <center><figcaption>Fig.3 - Electro-mechanical free-body diagram.</figcaption></center>
 </figure>
-where $R_F$ is the field resistance, $L_F$ is the field inductance, $E_F$ is the applied constant field voltage, and $i_F$ is the input field current. $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, and $e_m$ is the induced voltage, $i_A$ is the input stationary current, and $e_i(t)$ is the applied armature voltage, and $\tau_e$ is the electromechanical driving torque exerted on the rotor. 
+where $R_F$ is the field resistance, $L_F$ is the field inductance, $E_F$ is the applied constant field voltage, and $i_F$ is the input field current. $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, and $e_m$ is the induced voltage, $i_A$ is the input stationary current, and $e_i(t)$ is the applied armature voltage, and $\tau_e$ is the electro-mechanical driving torque exerted on the rotor. 
 
 If the flux density $\mathcal{B}$ is
 
@@ -127,7 +127,7 @@ it becomes in
 \end{align}
 </div>
 
-Now, let us derive the equations of the electromechanical section using Kirchoff's law.
+Now, let us derive the equations of the electro-mechanical section using Kirchoff's law.
 
 <div class="math">
 \begin{align}
