@@ -1329,6 +1329,15 @@ BODY_END = '''
   <script src="../../assets/js/prism.js"></script>
   <!-- for /es/blog/... posts-->
   <script src="../../../assets/js/prism.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJLGYD48QT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RJLGYD48QT');
+  </script>
 '''
 
 # The possibility to extract metadata from the filename by using a
