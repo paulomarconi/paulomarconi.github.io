@@ -924,9 +924,9 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Google-search">Google search<a class="anchor-link" href="#Google-search">¶</a>
+<h3 id="Google-search-form-(button)">Google search form (button)<a class="anchor-link" href="#Google-search-form-(button)">¶</a>
 </h3>
-<p>Enable Google search.</p>
+<p>Add the following</p>
 <div class="highlight"><pre><span></span>SEARCH_FORM = """
 <span class="c">&lt;!-- Google custom search --&gt;</span>
 <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">"get"</span> <span class="na">action</span><span class="o">=</span><span class="s">"https://www.google.com/search"</span> <span class="na">class</span><span class="o">=</span><span class="s">"navbar-form navbar-right"</span> <span class="na">role</span><span class="o">=</span><span class="s">"search"</span><span class="p">&gt;</span>
@@ -947,8 +947,64 @@ It will be built and seen on your localhost but won't be deployed to GitHub. Als
 <li>Change <code>form-group</code> to <code>input-group</code>.</li>
 <li>More configurations with <a href="https://www.codeply.com/go/ioPsDfyCBc">Bootstrap 4 demo Icon inputs</a>.</li>
 <li>
-<a href="https://duckduckgo.com/">Duckduckgo</a> is also available.</li>
+<a href="https://duckduckgo.com/">Duckduckgo</a> is also available in the <code>conf.py</code> file.</li>
 </ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Index-your-site-using-Google-Search-Console">Index your site using Google Search Console<a class="anchor-link" href="#Index-your-site-using-Google-Search-Console">¶</a>
+</h3>
+<p>To make sure your site can be find through Google, index it with Google Search Console. You can also do it using your Google Analytics account if you have one, but the easiest way is using HTML meta tag, <a href="https://support.google.com/webmasters/answer/9008080#html_verification">official documentation</a>.</p>
+<ul>
+<li>Go to <a href="https://search.google.com/search-console/about">Google Search Console website</a>.</li>
+<li>Select <code>URL prefix</code> as property type, and introduce your url <code>https://&lt;github_username&gt;.github.io</code>
+<img src="../../images/Nikola_guide/google_search_console_url.png" alt="Google Search Console url" width="60%">
+</li>
+<li>On the Verify ownership window, select HTML tag
+<img src="../../images/Nikola_guide/google_search_console_html-tag.png" alt="Google Search Console tag" width="50%">
+</li>
+<li>Copy the <strong>unique</strong> given code to<div class="highlight"><pre><span></span>EXTRA_HEAD_DATA = '''
+...
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">"google-site-verification"</span> <span class="na">content</span><span class="o">=</span><span class="s">"FvPotVuMyeh_tpN7AvA8uZBWgDSyNfoHe6HrnEFiKTE"</span> <span class="p">/&gt;</span>
+'''
+</pre></div>
+</li>
+<li>Build and deploy your site.</li>
+<li>Select <code>Verify</code>, and you will see
+<img src="../../images/Nikola_guide/google_search_console_verifed.png" alt="Google Search Console verifed" width="60%">
+</li>
+<li>Finally, add your <code>sitemap.xml</code> by going to <strong>Google Search Console menu/Sitemaps</strong>, and <strong>Submit</strong> <code>https://&lt;github_username&gt;.github.io/sitemap.xml</code>. You can verify this file is generated automatically with Nikola, and is located inside the output folder.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Google-Analytics">Google Analytics<a class="anchor-link" href="#Google-Analytics">¶</a>
+</h3>
+<p>Enable Google Analytics adding the following</p>
+<div class="highlight"><pre><span></span>BODY_END = '''
+  ...
+
+  <span class="c">&lt;!-- Global site tag (gtag.js) - Google Analytics --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">async</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">dataLayer</span> <span class="o">||</span> <span class="p">[];</span>
+    <span class="kd">function</span> <span class="nx">gtag</span><span class="p">(){</span><span class="nx">dataLayer</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);}</span>
+    <span class="nx">gtag</span><span class="p">(</span><span class="s1">'js'</span><span class="p">,</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+    <span class="nx">gtag</span><span class="p">(</span><span class="s1">'config'</span><span class="p">,</span> <span class="err">'</span><span class="nx">GA_MEASUREMENT_ID</span><span class="p">);</span>
+  <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+'''
+</pre></div>
+
 </div>
 </div>
 </div>
@@ -1040,7 +1096,7 @@ print('hello world')
 <ul>
 <li>Select the <a href="https://prismjs.com/download.html">Minifed version</a> and all available languages. </li>
 <li>Add any plugin. My selection is as follows.
-<img src="../../images/Nikola_guide/selected_prism_plugins.png" alt="Prism plugins">
+<img src="../../images/Nikola_guide/selected_prism_plugins.png" alt="Prism plugins" width="70%">
 </li>
 <li>Download the JS and CSS files.</li>
 <li>Save them on <code>/themes/themeBlog/assets/css/prism.css</code> and <code>/themes/themeBlog/assets/js/prism.js</code>
@@ -1639,7 +1695,7 @@ x =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Code-Highlighting-testing">Code Highlighting testing<a class="anchor-link" href="#Code-Highlighting-testing">¶</a>
+<h2 id="Code-Highlighting-tes">Code Highlighting tes<a class="anchor-link" href="#Code-Highlighting-tes">¶</a>
 </h2>
 <ul>
 <li>

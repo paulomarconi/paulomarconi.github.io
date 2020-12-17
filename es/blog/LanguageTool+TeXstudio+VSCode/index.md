@@ -58,4 +58,4 @@ The objective of this brief tutorial is to configure TeXstudio and VSCode to wor
 - VSCode  
   <img src="/images/LanguageTool+TeXstudio+VSCode/VSCode_test.png" alt="VSCode_test" width="100%"/>
 
-Done!. I hope it works for you too.
+Done! I hope it works for you too.
