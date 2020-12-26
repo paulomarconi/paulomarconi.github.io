@@ -8742,14 +8742,16 @@ KN =
 <li><span><a href="Nikola-guide/#License" data-toc-modified-id="License-9.5"><span class="toc-item-num">9.5  </span>License</a></span></li>
 <li><span><a href="Nikola-guide/#Header" data-toc-modified-id="Header-9.6"><span class="toc-item-num">9.6  </span>Header</a></span></li>
 <li><span><a href="Nikola-guide/#Footer" data-toc-modified-id="Footer-9.7"><span class="toc-item-num">9.7  </span>Footer</a></span></li>
-<li><span><a href="Nikola-guide/#Google-search" data-toc-modified-id="Google-search-9.8"><span class="toc-item-num">9.8  </span>Google search</a></span></li>
-<li><span><a href="Nikola-guide/#Disqus" data-toc-modified-id="Disqus-9.9"><span class="toc-item-num">9.9  </span>Disqus</a></span></li>
-<li><span><a href="Nikola-guide/#Config-the-sticky-menu" data-toc-modified-id="Config-the-sticky-menu-9.10"><span class="toc-item-num">9.10  </span>Config the sticky menu</a></span></li>
-<li><span><a href="Nikola-guide/#Code-highlighting" data-toc-modified-id="Code-highlighting-9.11"><span class="toc-item-num">9.11  </span>Code highlighting</a></span></li>
-<li><span><a href="Nikola-guide/#Adding-Prism" data-toc-modified-id="Adding-Prism-9.12"><span class="toc-item-num">9.12  </span>Adding Prism</a></span></li>
+<li><span><a href="Nikola-guide/#Google-search-form-(button)" data-toc-modified-id="Google-search-form-(button)-9.8"><span class="toc-item-num">9.8  </span>Google search form (button)</a></span></li>
+<li><span><a href="Nikola-guide/#Index-your-site-using-Google-Search-Console" data-toc-modified-id="Index-your-site-using-Google-Search-Console-9.9"><span class="toc-item-num">9.9  </span>Index your site using Google Search Console</a></span></li>
+<li><span><a href="Nikola-guide/#Google-Analytics" data-toc-modified-id="Google-Analytics-9.10"><span class="toc-item-num">9.10  </span>Google Analytics</a></span></li>
+<li><span><a href="Nikola-guide/#Disqus" data-toc-modified-id="Disqus-9.11"><span class="toc-item-num">9.11  </span>Disqus</a></span></li>
+<li><span><a href="Nikola-guide/#Config-the-sticky-menu" data-toc-modified-id="Config-the-sticky-menu-9.12"><span class="toc-item-num">9.12  </span>Config the sticky menu</a></span></li>
+<li><span><a href="Nikola-guide/#Code-highlighting" data-toc-modified-id="Code-highlighting-9.13"><span class="toc-item-num">9.13  </span>Code highlighting</a></span></li>
+<li><span><a href="Nikola-guide/#Adding-Prism" data-toc-modified-id="Adding-Prism-9.14"><span class="toc-item-num">9.14  </span>Adding Prism</a></span></li>
 </ul>
 </li>
-<li><span><a href="Nikola-guide/#Latex-with-Mathjax" data-toc-modified-id="Latex-with-Mathjax-10"><span class="toc-item-num">10  </span>Latex with Mathjax</a></span></li>
+<li><span><a href="Nikola-guide/#LaTex-with-Mathjax" data-toc-modified-id="LaTex-with-Mathjax-10"><span class="toc-item-num">10  </span>LaTex with Mathjax</a></span></li>
 <li><span><a href="Nikola-guide/#GitHub-pages" data-toc-modified-id="GitHub-pages-11"><span class="toc-item-num">11  </span>GitHub pages</a></span></li>
 <li><span><a href="Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook" data-toc-modified-id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook-12"><span class="toc-item-num">12  </span>Testing Python and Matlab kernel on Jupyter Notebook</a></span></li>
 <li><span><a href="Nikola-guide/#Python-test" data-toc-modified-id="Python-test-13"><span class="toc-item-num">13  </span>Python test</a></span></li>
@@ -8761,7 +8763,7 @@ KN =
 </ul>
 </li>
 <li><span><a href="Nikola-guide/#LaTex-testing" data-toc-modified-id="LaTex-testing-15"><span class="toc-item-num">15  </span>LaTex testing</a></span></li>
-<li><span><a href="Nikola-guide/#Code-Highlighting-testing" data-toc-modified-id="Code-Highlighting-testing-16"><span class="toc-item-num">16  </span>Code Highlighting testing</a></span></li>
+<li><span><a href="Nikola-guide/#Code-Highlighting-tes" data-toc-modified-id="Code-Highlighting-tes-16"><span class="toc-item-num">16  </span>Code Highlighting tes</a></span></li>
 <li>
 <span><a href="Nikola-guide/#Embedded-.pdf" data-toc-modified-id="Embedded-.pdf-17"><span class="toc-item-num">17  </span>Embedded <code>.pdf</code></a></span><ul class="toc-item"><li><span><a href="Nikola-guide/#Example" data-toc-modified-id="Example-17.1"><span class="toc-item-num">17.1  </span>Example</a></span></li></ul>
 </li>
@@ -9820,10 +9822,10 @@ They are double listed because one means that the paths is correct, and the othe
 <div class="prompt input_prompt">In [1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">print</span><span class="p">(</span><span class="s">'hello world'</span><span class="p">)</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s">'hello world'</span><span class="p">)</span>
 
-<span class="n">for</span> <span class="s">i</span> <span class="s">in</span> <span class="s">range(0,12,2):</span>
-    <span class="n">print</span><span class="p">(</span><span class="s">"i="</span><span class="p">,</span><span class="nb">i</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="n">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">"i="</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -9872,11 +9874,11 @@ i= 10
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">)</span>
-<span class="n">format</span> <span class="s">compact</span>
-<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">)</span>
+<span class="n">format</span> <span class="n">compact</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span>
     <span class="n">i</span>
-<span class="s">end</span>
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -9937,14 +9939,14 @@ i =
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/fnc.m'</span>
 
 <span class="k">function</span><span class="w"> </span>c <span class="p">=</span><span class="w"> </span><span class="nf">multi_line_func</span><span class="p">(</span>a,b<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c">% in-file comments can be added like this</span>
     <span class="n">a</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
     <span class="n">b</span> <span class="p">=</span> <span class="n">b</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span>
     <span class="n">c</span> <span class="p">=</span> <span class="n">a</span><span class="o">+</span><span class="nb">sin</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
-<span class="n">end</span>
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -9985,14 +9987,14 @@ i =
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files'</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files'</span>
 
-<span class="n">format</span> <span class="s">compact</span>
-<span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
-    <span class="n">c</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">fnc</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span><span class="nb">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">end</span>
-<span class="s">disp(c)</span>
-<span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+<span class="n">format</span> <span class="n">compact</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span>
+    <span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">fnc</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="k">end</span>
+<span class="nb">disp</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -10049,14 +10051,14 @@ i =
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">tx</span> <span class="p">=</span> <span class="nb">linspace</span> <span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">41</span><span class="p">);</span>
 <span class="n">ty</span> <span class="p">=</span> <span class="n">tx</span><span class="p">;</span>
 <span class="p">[</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">]</span> <span class="p">=</span> <span class="nb">meshgrid</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">);</span>
 <span class="n">r</span> <span class="p">=</span> <span class="nb">sqrt</span> <span class="p">(</span><span class="n">xx</span> <span class="o">.^</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">yy</span> <span class="o">.^</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="nb">eps</span><span class="p">;</span>
 <span class="n">tz</span> <span class="p">=</span> <span class="nb">sin</span> <span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">./</span> <span class="n">r</span><span class="p">;</span>
 
 <span class="c">%plot inline</span>
-<span class="n">mesh</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
+<span class="nb">mesh</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">ty</span><span class="p">,</span> <span class="n">tz</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -10112,7 +10114,7 @@ i =
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+<div class=" highlight hl-octave"><pre><span></span><span class="n">H</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
     <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span>
     <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
 <span class="n">f</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">;</span><span class="o">-</span><span class="mi">3</span><span class="p">;</span><span class="mi">1</span><span class="p">];</span>
