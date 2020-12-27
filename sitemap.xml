@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2020-12-26T20:17:00Z</lastmod>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -51,6 +51,10 @@
   <xhtml:link rel="alternate" hreflang="es" href="https://paulomarconi.github.io/es/blog/Nikola-guide/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</loc>
+  <lastmod>2020-12-27T00:42:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</loc>
   <lastmod>2020-10-08T23:01:00Z</lastmod>
  </url>
@@ -60,7 +64,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-10-22T19:00:00Z</lastmod>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
@@ -85,6 +89,10 @@
  <url>
   <loc>https://paulomarconi.github.io/categories/control-systems/</loc>
   <lastmod>2020-08-31T22:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/categories/dc-motor/</loc>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/deadbeat/</loc>
@@ -139,6 +147,10 @@
   <lastmod>2020-08-27T20:01:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/nonlinear/</loc>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/optimization/</loc>
   <lastmod>2020-08-31T07:46:00Z</lastmod>
  </url>
@@ -171,6 +183,10 @@
   <lastmod>2020-10-22T18:59:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/categories/stiction/</loc>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/categories/swarm-robotics/</loc>
   <lastmod>2020-10-04T19:03:00Z</lastmod>
  </url>
@@ -200,7 +216,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2020-12-26T20:17:00Z</lastmod>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -246,6 +262,11 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nikola-guide/" />
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</loc>
+  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/" />
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/" />
@@ -257,7 +278,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -282,6 +303,10 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/control-systems/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/dc-motor/</loc>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/deadbeat/</loc>
@@ -336,6 +361,10 @@
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/nonlinear/</loc>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/optimization/</loc>
   <lastmod>2020-10-02T08:42:00Z</lastmod>
  </url>
@@ -366,6 +395,10 @@
  <url>
   <loc>https://paulomarconi.github.io/es/categories/state-space/</loc>
   <lastmod>2020-10-22T18:59:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/stiction/</loc>
+  <lastmod>2020-12-27T01:53:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics/</loc>
@@ -406,6 +439,10 @@
  <url>
   <loc>https://paulomarconi.github.io/files/MPC-SSTO/MPC-SSTO.html</loc>
   <lastmod>2020-10-03T16:14:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/files/Nonlinear_DCmotor/asst02_2017.html</loc>
+  <lastmod>2020-12-27T01:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/files/Phase-lead_deadbeat/Phase-lead_deadbeat.html</loc>
