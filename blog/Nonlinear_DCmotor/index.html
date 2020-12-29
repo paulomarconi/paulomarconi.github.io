@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nonlinear DC motor with continuous reversing mode | PauLoMarconi</title>
+<title>Nonlinear DC motor with thermal model and Coulomb friction (stiction) | PauLoMarconi</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -22,12 +22,13 @@
 <meta name="author" content="Paulo Loma Marconi">
 <link rel="prev" href="../DCmotor/" title="Dynamics model of a DC motor with gear train" type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
-<meta property="og:title" content="Nonlinear DC motor with continuous reversing mode">
+<meta property="og:title" content="Nonlinear DC motor with thermal model and Coulomb friction (stiction)">
 <meta property="og:url" content="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/">
 <meta property="og:description" content="Table of Contents
 1  Introduction2  Pre-requisites3  Source code4  Nonlinear model5  Matlab scripts5.1  ODE solver ode45m5.2  ODE solver eufix15.3  Nonlinear model5.4  Main6  Simulation Scenarios7  Si">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-11-20T17:48:34-04:00">
+<meta property="article:tag" content="Coulomb friction">
 <meta property="article:tag" content="DC motor">
 <meta property="article:tag" content="differential equations">
 <meta property="article:tag" content="dynamics model">
@@ -35,6 +36,7 @@
 <meta property="article:tag" content="Matlab">
 <meta property="article:tag" content="nonlinear">
 <meta property="article:tag" content="stiction">
+<meta property="article:tag" content="thermal model">
 <link rel="alternate" hreflang="es" href="../../es/blog/Nonlinear_DCmotor/">
 <!-- Prism --><link rel="stylesheet" href="../../assets/css/post_ipynb.css">
 <link rel="stylesheet" href="../../assets/css/prism.css">
@@ -115,7 +117,7 @@ navbar-dark bg-dark
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Nonlinear DC motor with continuous reversing mode</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Nonlinear DC motor with thermal model and Coulomb friction (stiction)</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -964,13 +966,15 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 </div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/dc-motor/" rel="tag">DC motor</a></li>
+<li><a class="tag p-category" href="../../categories/coulomb-friction/" rel="tag">Coulomb friction</a></li>
+            <li><a class="tag p-category" href="../../categories/dc-motor/" rel="tag">DC motor</a></li>
             <li><a class="tag p-category" href="../../categories/differential-equations/" rel="tag">differential equations</a></li>
             <li><a class="tag p-category" href="../../categories/dynamics-model/" rel="tag">dynamics model</a></li>
             <li><a class="tag p-category" href="../../categories/jupyter/" rel="tag">Jupyter</a></li>
             <li><a class="tag p-category" href="../../categories/matlab/" rel="tag">Matlab</a></li>
             <li><a class="tag p-category" href="../../categories/nonlinear/" rel="tag">nonlinear</a></li>
             <li><a class="tag p-category" href="../../categories/stiction/" rel="tag">stiction</a></li>
+            <li><a class="tag p-category" href="../../categories/thermal-model/" rel="tag">thermal model</a></li>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
@@ -983,7 +987,7 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
         <script>
         var disqus_shortname ="paulomarconi",
             disqus_url="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/",
-        disqus_title="Nonlinear DC motor with continuous reversing mode",
+        disqus_title="Nonlinear DC motor with thermal model and Coulomb friction (stiction)",
         disqus_identifier="cache/posts/Nonlinear_DCmotor.html",
         disqus_config = function () {
             this.language = "en";

@@ -30,8 +30,12 @@
   <lastmod>2020-12-02T20:46:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/coulomb-friction.xml</loc>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/categories/dc-motor.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/deadbeat.xml</loc>
@@ -39,11 +43,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/differential-equations.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/dynamics-model.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/e-puck.xml</loc>
@@ -63,7 +67,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/jupyter.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/kalman-filter.xml</loc>
@@ -75,7 +79,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
@@ -87,7 +91,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nonlinear.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/optimization.xml</loc>
@@ -123,7 +127,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/stiction.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/swarm-robotics.xml</loc>
@@ -132,6 +136,10 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/texstudio.xml</loc>
   <lastmod>2020-12-16T18:53:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/thermal-model.xml</loc>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/unconstrained.xml</loc>
@@ -170,8 +178,12 @@
   <lastmod>2020-12-02T20:46:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/coulomb-friction.xml</loc>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/dc-motor.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/deadbeat.xml</loc>
@@ -179,11 +191,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/differential-equations.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/dynamics-model.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/e-puck.xml</loc>
@@ -203,7 +215,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/jupyter.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/kalman-filter.xml</loc>
@@ -215,7 +227,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/mpc.xml</loc>
@@ -227,7 +239,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nonlinear.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/optimization.xml</loc>
@@ -263,7 +275,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/stiction.xml</loc>
-  <lastmod>2020-12-27T02:00:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics.xml</loc>
@@ -272,6 +284,10 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/texstudio.xml</loc>
   <lastmod>2020-12-16T18:53:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/thermal-model.xml</loc>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/unconstrained.xml</loc>
@@ -291,7 +307,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
@@ -299,10 +315,10 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:56:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2020-12-27T02:07:00Z</lastmod>
+  <lastmod>2020-12-29T03:57:00Z</lastmod>
  </sitemap>
 </sitemapindex>
