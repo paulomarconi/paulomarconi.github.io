@@ -76,6 +76,7 @@ Images with defined size and caption
 pdf2htmlEX
 ==========
 pdf2htmlEX --zoom 1.3 test.pdf
+
 pdf2htmlEX --embed cfijo --dest-dir out test.pdf
 
 
