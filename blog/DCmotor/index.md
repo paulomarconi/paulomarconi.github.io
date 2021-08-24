@@ -1,5 +1,5 @@
 <!--
-.. title: Dynamics model of a DC motor with gear train
+.. title: Dynamic model of a DC motor with gear train
 .. slug: DCmotor
 .. date: 2020-10-22 14:29:38 UTC-04:00
 .. tags: dynamics model, state-space, equilibrium point, differential equations, DC motor
