@@ -115,7 +115,7 @@ defining the relations
 <div class="math">
 \begin{align*}
 	J_{eq} & = J_2+N^2 J_1 \\
-	B_{eq} & = B_2+B^2 B_1
+	B_{eq} & = B_2+N^2 B_1
 \end{align*}
 </div>
 

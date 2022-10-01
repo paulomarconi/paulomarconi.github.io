@@ -128,7 +128,7 @@ navbar-dark bg-dark
             <time class="published dt-published" datetime="2020-11-20T17:48:34-04:00" itemprop="datePublished" title="2020-11-20">2020-11-20</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/Nonlinear_DCmotor.html">Comments</a>
 
 
@@ -140,13 +140,11 @@ navbar-dark bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p></p>
 <h2>Table of Contents<span class="tocSkip"></span>
 </h2>
 <div class="toc"><ul class="toc-item">
@@ -170,6 +168,7 @@ navbar-dark bg-dark
 </ul>
 </li>
 </ul></div>
+
 </div>
 </div>
 </div>
@@ -247,7 +246,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/Nonlinear_DCmotor/ode45m.m'</span>
 
-<span class="k">function</span><span class="w"> </span>[tout, yout] <span class="p">=</span><span class="w"> </span><span class="nf">ode45m</span><span class="p">(</span>ypfun, t0, tfinal, y0, tol, trace<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">[tout, yout] = ode45m</span><span class="p">(</span>ypfun, t0, tfinal, y0, tol, trace<span class="p">)</span><span class="w"></span>
 <span class="c">%ODE45	Solve differential equations, higher order method.</span>
 <span class="c">%	ODE45 integrates a system of ordinary differential equations using</span>
 <span class="c">%	4th and 5th order Runge-Kutta formulas.</span>
@@ -398,7 +397,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/Nonlinear_DCmotor/eufix1.m'</span>
 
-<span class="k">function</span><span class="w"> </span>[tout, xout] <span class="p">=</span><span class="w"> </span><span class="nf">eufix1</span><span class="p">(</span>dxfun, tspan, x0, stp, trace<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">[tout, xout] = eufix1</span><span class="p">(</span>dxfun, tspan, x0, stp, trace<span class="p">)</span><span class="w"></span>
 <span class="c">%EUFIX1	Solve ordinary state-vector differential equations, low order method.</span>
 <span class="c">%	EUFIX1 integrates a set of ODEs xdot = f(x,t) using the most</span>
 <span class="c">%	elementary Euler algorithm, without step-size control.</span>
@@ -506,7 +505,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/Nonlinear_DCmotor/asst02_2017.m'</span>
 
-<span class="k">function</span><span class="w"> </span>xdot <span class="p">=</span><span class="w"> </span><span class="nf">asst02_2017</span><span class="p">(</span>t,x<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>xdot<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">asst02_2017</span><span class="p">(</span>t,x<span class="p">)</span><span class="w"></span>
 <span class="k">global</span> <span class="n">E_0</span> <span class="n">Tau_L0</span> <span class="n">T_Amb</span> <span class="n">B_2C</span> 
 
 <span class="c">% motor parameters, Nachtigal, Table 16.5 p. 663</span>
@@ -823,58 +822,17 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 </h2>
 <p>Two types of scenarios are simulated. The first one is submitted to a constant input, low stiction, and two step sizes. The second scenario is more interesting because we study the behaviour due to a sinusoidal input which emulates the reversing mode of the motor at $5[Hz]$ with higher stiction. Both scenarios have load torque at $t=0.2[s]$.</p>
 <center>Table 1: Scenario 1 and 2 </center>
-<table>
-<thead><tr>
-<th style="text-align:center"></th>
-<th style="text-align:left">Scenario 1</th>
-<th style="text-align:left">Scenario 2</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:center">
-<code>ode45m</code> step size</td>
-<td style="text-align:left">$1\times 10^{-3}$ and $1\times 10^{-4}$</td>
-<td style="text-align:left">$1\times 10^{-4}$</td>
-</tr>
-<tr>
-<td style="text-align:center">
-<code>eufix1</code> step size</td>
-<td style="text-align:left">$1\times 10^{-3}$ and $1\times 10^{-4}$</td>
-<td style="text-align:left">$1\times 10^{-4}$</td>
-</tr>
-<tr>
-<td style="text-align:center">
-<code>ode45</code> step size</td>
-<td style="text-align:left">auto</td>
-<td style="text-align:left">auto</td>
-</tr>
-<tr>
-<td style="text-align:center">$e_i$</td>
-<td style="text-align:left">$E_0$</td>
-<td style="text-align:left">$E_0 \sin[5(2\pi)(t-0.05)]$</td>
-</tr>
-<tr>
-<td style="text-align:center">$E_0$</td>
-<td style="text-align:left">$120~[V]$</td>
-<td style="text-align:left">$120~[V]$</td>
-</tr>
-<tr>
-<td style="text-align:center">$\tau_{L}$</td>
-<td style="text-align:left">$80~[N m]$ at $t=0.2[s]$}</td>
-<td style="text-align:left">$80~[N m]$ at $t=0.2[s]$</td>
-</tr>
-<tr>
-<td style="text-align:center">$\theta_A$</td>
-<td style="text-align:left">$18~[°C]$</td>
-<td style="text-align:left">$18~[°C]$</td>
-</tr>
-<tr>
-<td style="text-align:center">$B_{2C}$</td>
-<td style="text-align:left">$80~[N]$</td>
-<td style="text-align:left">$300~[N]$</td>
-</tr>
-</tbody>
-</table>
+<p>|  		| Scenario 1 	| Scenario 2 |
+|:-----:|:-------------|:----------|
+|<code>ode45m</code> step size | $1\times 10^{-3}$ and $1\times 10^{-4}$ | $1\times 10^{-4}$ |
+|<code>eufix1</code> step size | $1\times 10^{-3}$ and $1\times 10^{-4}$ | $1\times 10^{-4}$ |
+|<code>ode45</code> step size | auto | auto |
+| $e_i$ | $E_0$ | $E_0 \sin[5(2\pi)(t-0.05)]$ |
+| $E_0$ | $120~[V]$ | $120~[V]$ |
+| $\tau_{L}$ | $80~[N m]$ at $t=0.2[s]$} | $80~[N m]$ at $t=0.2[s]$ |
+| $\theta_A$ | $18~[°C]$ | $18~[°C]$ |
+| $B_{2C}$ | $80~[N]$ | $300~[N]$ |</p>
+
 </div>
 </div>
 </div>
@@ -891,28 +849,10 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <figure><img src="../../images/Nonlinear_DCmotor/E0_ode45-ode45m-eufix1_1e-3.png" alt="Fig1" width="70%"><center><figcaption>Fig. 1 - Scenario 1: step size $1\times 10^{-3}$</figcaption></center>
 </figure><p>The time simulation of each solver indicates that <code>ode45</code> is 10 times slower than <code>ode45m</code> and 30 times slower than <code>eufix1</code>.</p>
 <center>Table 2: Scenario 1: simulation time and number of steps. </center>
-<table>
-<thead><tr>
-<th style="text-align:center"></th>
-<th style="text-align:center"><code>ode45</code></th>
-<th style="text-align:center"><code>ode45m</code></th>
-<th style="text-align:center"><code>eufix1</code></th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:center">simulation time [s]</td>
-<td style="text-align:center">$0.267$</td>
-<td style="text-align:center">$0.025$</td>
-<td style="text-align:center">$0.009$</td>
-</tr>
-<tr>
-<td style="text-align:center">number of time steps</td>
-<td style="text-align:center">$71769$</td>
-<td style="text-align:center">$15133$</td>
-<td style="text-align:center">$80001$</td>
-</tr>
-</tbody>
-</table>
+<p>|  		                | <code>ode45</code> 	 | <code>ode45m</code> | <code>eufix1</code> |
+|:---------------------:|:----------:|:--------:|:--------:|
+| simulation time [s]   | $0.267$    | $0.025$  | $0.009$  |			
+| number of time steps  | $71769$    | $15133$  | $80001$  |</p>
 <p>The temperature of the motor $\theta_M$ increases linearly and reaches steady-state at $45[s]$ approximately, which indicates that the motor won't reach unsafe temperatures.</p>
 <figure><img src="../../images/Nonlinear_DCmotor/thetaM_ode45-ode45m-eufix1_1e-3.png" alt="Fig2" width="60%"><center><figcaption>Fig. 2 - Scenario 1: $\theta_M$ over $80[s]$ </figcaption></center>
 </figure><p>Although, <code>eufix1</code> is the fastest solver, with step size of $1\times 10^{-3}$, <code>eufix1</code> outputs the worst performance. The result can be improved if the steps size is decreased to $1\times 10^{-4}$. Fig. 3 and Fig. 4 show the relative error at max current and max angular velocity between <code>ode45</code> and <code>eufix1</code>.</p>
@@ -931,28 +871,10 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 </h3>
 <p>In this scenario we submitted the DC motor to high stiction $B_{2C}=300$ and sinsusoidal input at $5[Hz]$ which simulates the reversing mode. Table 3 shows the output for the three solvers showing that <code>ode45</code> is the slowest by far.</p>
 <center>Table 3: Scenario 2: simulation time and number of steps. </center>
-<table>
-<thead><tr>
-<th style="text-align:center"></th>
-<th style="text-align:center"><code>ode45</code></th>
-<th style="text-align:center"><code>ode45m</code></th>
-<th style="text-align:center"><code>eufix1</code></th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:center">simulation time [s]</td>
-<td style="text-align:center">$517.798$</td>
-<td style="text-align:center">$3.463$</td>
-<td style="text-align:center">$0.093$</td>
-</tr>
-<tr>
-<td style="text-align:center">number of time steps</td>
-<td style="text-align:center">$13559913$</td>
-<td style="text-align:center">$9647$</td>
-<td style="text-align:center">$3002$</td>
-</tr>
-</tbody>
-</table>
+<p>|  		                | <code>ode45</code> 	 | <code>ode45m</code> | <code>eufix1</code> |
+|:---------------------:|:----------:|:--------:|:--------:|
+| simulation time [s]   | $517.798$  | $3.463$  | $0.093$  |			
+| number of time steps  | $13559913$ | $9647$   | $3002$   |</p>
 <p>Fig. 5 shows the simulation output. The relevant result is the behavior of the system around the (nonlinear) stiction. $\omega_2$ sticks at $0.15[s]$ and $0.25[s]$ due to $B_{2C}$.</p>
 <figure><img src="../../images/Nonlinear_DCmotor/sinE0_ode45-ode45m-eufix1_1e-4.png" alt="Fig5" width="70%"><center><figcaption>Fig. 5 - Scenario 2: reversing mode. </figcaption></center>
 </figure><p>Even though the solvers were able to solve the dynamics with stiction, <code>ode45</code> took too much time to overcome this nonlinearity. Fig. 6 shows the stiction with three different zoom levels for each solver. The fastest but with more integration step error is <code>eufix1</code>. <code>ode45m</code> has less error $\pm 0.01$, and finally <code>ode45</code> solves with the minimum error, around $\pm 10\times 10^{-5}$. In conclusion, <code>ode45m</code> is the best choice against the rest because it can obtain the solution with low error and with decent speed.</p>
@@ -960,7 +882,6 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 </figure><p>The motor temperature $\theta_M$ in reversing mode reaches the steady-state at $45[s]$ approximately which indicates the motor won't suffer overheat due to stiction.</p>
 <figure><img src="../../images/Nonlinear_DCmotor/sinE0_thetaM_ode45-ode45m-eufix1_1e-4.png" alt="Fig7" width="60%"><center><figcaption>Fig. 7 - Scenario 2: motor temperature. </figcaption></center>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -982,7 +903,7 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="paulomarconi",
@@ -1048,7 +969,7 @@ MathJax.Hub.Config({
         </span>
     </p>
     <p>
-        Contents © 2021  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
+        Contents © 2022  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> 
     </p>

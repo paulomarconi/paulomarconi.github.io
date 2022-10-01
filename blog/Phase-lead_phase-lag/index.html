@@ -127,7 +127,7 @@ navbar-dark bg-dark
             <time class="published dt-published" datetime="2020-09-10T17:49:42-04:00" itemprop="datePublished" title="2020-09-10">2020-09-10</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/Phase-lead_phase-lag.html">Comments</a>
 
 
@@ -139,13 +139,11 @@ navbar-dark bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p></p>
 <h2>Table of Contents<span class="tocSkip"></span>
 </h2>
 <div class="toc"><ul class="toc-item">
@@ -191,6 +189,7 @@ navbar-dark bg-dark
 </ul>
 </li>
 </ul></div>
+
 </div>
 </div>
 </div>
@@ -248,8 +247,7 @@ G(s) &amp;= \dfrac{K}{s(s+2.5)(s+27)}
 \begin{align}
 G(s) &amp; =\dfrac{K}{s(s+a)(s+b)} \tag{1}\\
 G(s) &amp;= \dfrac{K}{s(s+2.5)(s+27)} \nonumber
-\end{align}<p></p>
-
+\end{align}
 </div>
 </div>
 </div>
@@ -258,7 +256,7 @@ G(s) &amp;= \dfrac{K}{s(s+2.5)(s+27)} \nonumber
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Determine-the-gain-$K$-for-a-step-response-overshoot-no-more-than-10%">Determine the gain $K$ for a step response overshoot no more than 10%<a class="anchor-link" href="#Determine-the-gain-%24K%24-for-a-step-response-overshoot-no-more-than-10%">¶</a>
+<h3 id="Determine-the-gain-$K$-for-a-step-response-overshoot-no-more-than-10%25">Determine the gain $K$ for a step response overshoot no more than 10%<a class="anchor-link" href="#Determine-the-gain-%24K%24-for-a-step-response-overshoot-no-more-than-10%25">¶</a>
 </h3>
 <p>There are two steps to follow in order to obtain the required gain $K$, the first one uses the second-order performance approximation in the frequency domain, and the second step uses the gain and angle condition.</p>
 <p>The relation between the Percentage Overshoot ($PO$) in response to a unity step input of a second-order system in the $\textbf{time domain}$, and the Phase Margin ($PM$) of the Bode analysis in the $\textbf{frequency domain}$, can be written as follows,
@@ -268,7 +266,7 @@ PM &amp;\approx 100 ~\zeta \tag{3}
 \end{align}
 applying the requirement of $PO\leq10\%$,
 \begin{align}
-\zeta &amp;= \dfrac{ \ln\left(\frac{100}{P.O.}\right) }{\sqrt{\pi^2+\left[ \ln \left(  \frac{100}{P.O.}\right)\right]}} \tag{4} \\
+\zeta &amp;= \dfrac{ \ln\left(\frac{100}{P.O.}\right) }{\sqrt{\pi^2+\left[ \ln \left(  \frac{100}{P.O.}\right)\right]}}	\tag{4} \\
 \zeta &amp;= 0.59 \approx 0.60 \nonumber
 \end{align}</p>
 <p>Using (3), the desired Phase Margin ($PM_d$) the system should have in order to satisfy the $PO$ is defined as,
@@ -299,7 +297,7 @@ solving the quadratic equation with the corresponding values $a$, $b$, and $PM_d
 applying into the plant $G$ (1), and replacing the values,
 \begin{align*}
 &amp;\dfrac{K}{\omega_c^\prime \sqrt{\omega_c^{\prime 2}+a^2} \sqrt{\omega_c^{\prime 2}+b^2 }} = 1 \\
-&amp; K = \omega_c^\prime \sqrt{\omega_c^{\prime 2}+a^2} \sqrt{\omega_c^{\prime 2}+b^2 } \\
+&amp; K	= \omega_c^\prime \sqrt{\omega_c^{\prime 2}+a^2} \sqrt{\omega_c^{\prime 2}+b^2 } \\
 &amp; K = 97.96 \nonumber
 \end{align*}
 therefore, the plant becomes,
@@ -325,24 +323,24 @@ therefore, the plant becomes,
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Paulo Loma Marconi</span>
-<span class="n">clear</span> <span class="s">variables</span><span class="p">;</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Paulo Loma Marconi</span><span class="w"></span>
+<span class="nb">clear</span><span class="w"> </span><span class="n">variables</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% plant G parameters</span>
-<span class="n">s</span> <span class="p">=</span> <span class="n">tf</span><span class="p">(</span><span class="s">'s'</span><span class="p">);</span>
-<span class="n">a</span> <span class="p">=</span> <span class="mf">2.5</span><span class="p">;</span> <span class="n">b</span> <span class="p">=</span> <span class="mi">27</span><span class="p">;</span>
+<span class="c">% plant G parameters</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tf</span><span class="p">(</span><span class="s">'s'</span><span class="p">);</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">27</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">%% a) Gain K for PO=10</span>
-<span class="n">PO</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c">% percentage overshoot</span>
-<span class="n">zeta</span> <span class="p">=</span> <span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">pi</span>^<span class="mi">2</span><span class="o">+</span> <span class="p">(</span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">))</span>^<span class="mi">2</span> <span class="p">);</span> <span class="c">% damping ratio</span>
-<span class="n">PM_d</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">zeta</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="c">% PM desired at the nearest round value</span>
-<span class="n">h</span> <span class="p">=</span> <span class="nb">tand</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="mi">90</span><span class="o">-</span><span class="n">PM_d</span><span class="p">);</span> 
-<span class="n">omega_c</span> <span class="p">=</span> <span class="n">roots</span><span class="p">([</span><span class="mi">1</span> <span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">h</span> <span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">]);</span> <span class="c">% new omega_c</span>
-<span class="n">K</span> <span class="p">=</span> <span class="n">omega_c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">a</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span><span class="p">);</span> <span class="c">% new gain K</span>
-<span class="n">G</span> <span class="p">=</span> <span class="n">K</span><span class="o">/</span><span class="p">(</span> <span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="p">);</span> <span class="c">% Plant G</span>
+<span class="c">%% a) Gain K for PO=10</span><span class="w"></span>
+<span class="n">PO</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="c">% percentage overshoot</span><span class="w"></span>
+<span class="n">zeta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">pi</span>^<span class="mi">2</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">))</span>^<span class="mi">2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c">% damping ratio</span><span class="w"></span>
+<span class="n">PM_d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">zeta</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c">% PM desired at the nearest round value</span><span class="w"></span>
+<span class="n">h</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">tand</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="mi">90</span><span class="o">-</span><span class="n">PM_d</span><span class="p">);</span><span class="w"> </span>
+<span class="n">omega_c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">roots</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">h</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">]);</span><span class="w"> </span><span class="c">% new omega_c</span><span class="w"></span>
+<span class="n">K</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">omega_c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">a</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c">% new gain K</span><span class="w"></span>
+<span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c">% Plant G</span><span class="w"></span>
 
-<span class="n">figure</span><span class="p">;</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">G</span><span class="p">);</span>
+<span class="nb">figure</span><span class="p">;</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">G</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -386,9 +384,9 @@ therefore, the plant becomes,
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">figure</span><span class="p">;</span>
-<span class="n">step</span><span class="p">(</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
-<span class="n">stepinfo</span><span class="p">(</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="nb">figure</span><span class="p">;</span><span class="w"></span>
+<span class="nb">step</span><span class="p">(</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+<span class="n">stepinfo</span><span class="p">(</span><span class="n">feedback</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -560,44 +558,44 @@ G_{ol} &amp;= \dfrac{s+4.07}{s+44.78} \quad \dfrac{5596.80}{s(s+2.5)(s+27)} \non
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% b) Phase-lead compensator</span>
-<span class="n">Kv</span> <span class="p">=</span> <span class="mi">25</span><span class="p">;</span> <span class="c">% velocity error</span>
-<span class="n">Kg</span> <span class="p">=</span> <span class="n">Kv</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">;</span> <span class="c">% loop gain to satisfy Kv</span>
-<span class="n">G</span> <span class="p">=</span> <span class="n">Kg</span><span class="o">/</span><span class="p">(</span> <span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">b</span><span class="p">)</span> <span class="p">);</span> <span class="c">% Plant G</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% b) Phase-lead compensator</span><span class="w"></span>
+<span class="n">Kv</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span><span class="w"> </span><span class="c">% velocity error</span><span class="w"></span>
+<span class="n">Kg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Kv</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c">% loop gain to satisfy Kv</span><span class="w"></span>
+<span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Kg</span><span class="o">/</span><span class="p">(</span><span class="w"> </span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c">% Plant G</span><span class="w"></span>
 
-<span class="c">% omega_c for the uncompensated system</span>
-<span class="n">omega_c</span> <span class="p">=</span> <span class="nb">real</span><span class="p">(</span> <span class="nb">sqrt</span><span class="p">(</span> <span class="n">roots</span><span class="p">([</span><span class="mi">1</span> <span class="n">a</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span> <span class="n">a</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b</span>^<span class="mi">2</span> <span class="o">-</span><span class="n">Kg</span>^<span class="mi">2</span><span class="p">])</span> <span class="p">)</span> <span class="p">);</span>
+<span class="c">% omega_c for the uncompensated system</span><span class="w"></span>
+<span class="n">omega_c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">real</span><span class="p">(</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="w"> </span><span class="nb">roots</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="n">a</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span><span class="w"> </span><span class="n">a</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b</span>^<span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="n">Kg</span>^<span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% obtaining actual PM</span>
-<span class="n">PM_act</span> <span class="p">=</span> <span class="mi">180</span><span class="o">-</span><span class="mi">90</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">b</span><span class="p">);</span>
+<span class="c">% obtaining actual PM</span><span class="w"></span>
+<span class="n">PM_act</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">180</span><span class="o">-</span><span class="mi">90</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">omega_c</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% additional phase angle from the compensator PM</span>
-<span class="n">theta</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c">% factor of correction</span>
-<span class="n">PM_c</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">PM_d</span><span class="o">+</span><span class="n">theta</span><span class="o">-</span><span class="n">PM_act</span><span class="p">);</span>
+<span class="c">% additional phase angle from the compensator PM</span><span class="w"></span>
+<span class="n">theta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="c">% factor of correction</span><span class="w"></span>
+<span class="n">PM_c</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">round</span><span class="p">(</span><span class="n">PM_d</span><span class="o">+</span><span class="n">theta</span><span class="o">-</span><span class="n">PM_act</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% calculating alpha</span>
-<span class="n">alpha</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span> <span class="p">(</span><span class="nb">sind</span><span class="p">(</span><span class="n">PM_c</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="nb">sind</span><span class="p">(</span><span class="n">PM_c</span><span class="p">))</span> <span class="p">);</span>
+<span class="c">% calculating alpha</span><span class="w"></span>
+<span class="nb">alpha</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">round</span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="nb">sind</span><span class="p">(</span><span class="n">PM_c</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="nb">sind</span><span class="p">(</span><span class="n">PM_c</span><span class="p">))</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Determine the new cross over frequency</span>
-<span class="n">omega_c_new</span> <span class="p">=</span> <span class="nb">real</span><span class="p">(</span> <span class="nb">sqrt</span><span class="p">(</span> <span class="n">roots</span><span class="p">([</span><span class="mi">1</span> <span class="n">a</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span> <span class="n">a</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b</span>^<span class="mi">2</span> <span class="o">-</span><span class="n">Kg</span>^<span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="p">])</span> <span class="p">)</span> <span class="p">);</span>
+<span class="c">% Determine the new cross over frequency</span><span class="w"></span>
+<span class="n">omega_c_new</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">real</span><span class="p">(</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="w"> </span><span class="nb">roots</span><span class="p">([</span><span class="mi">1</span><span class="w"> </span><span class="n">a</span>^<span class="mi">2</span><span class="o">+</span><span class="n">b</span>^<span class="mi">2</span><span class="w"> </span><span class="n">a</span>^<span class="mi">2</span><span class="o">*</span><span class="n">b</span>^<span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="n">Kg</span>^<span class="mi">2</span><span class="o">*</span><span class="nb">alpha</span><span class="p">])</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Calculating the zero of the compensator</span>
-<span class="n">z</span> <span class="p">=</span> <span class="n">omega_c_new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">alpha</span><span class="p">);</span>
+<span class="c">% Calculating the zero of the compensator</span><span class="w"></span>
+<span class="n">z</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">omega_c_new</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">alpha</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Calculating the pole of the compensator</span>
-<span class="n">p</span> <span class="p">=</span> <span class="n">alpha</span><span class="o">*</span><span class="n">z</span><span class="p">;</span>
+<span class="c">% Calculating the pole of the compensator</span><span class="w"></span>
+<span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">alpha</span><span class="o">*</span><span class="n">z</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% lead compensator</span>
-<span class="n">Gc</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p</span><span class="p">);</span>
+<span class="c">% lead compensator</span><span class="w"></span>
+<span class="n">Gc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% new gain of the compensated system</span>
-<span class="n">K_new</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">Kg</span>
+<span class="c">% new gain of the compensated system</span><span class="w"></span>
+<span class="n">K_new</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">Kg</span><span class="w"></span>
 
-<span class="c">% compensated open-loop </span>
-<span class="n">Gol</span> <span class="p">=</span> <span class="n">K_new</span><span class="o">*</span><span class="n">Gc</span><span class="o">*</span><span class="n">G</span><span class="o">/</span><span class="n">Kg</span><span class="p">;</span>
+<span class="c">% compensated open-loop </span><span class="w"></span>
+<span class="n">Gol</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">K_new</span><span class="o">*</span><span class="n">Gc</span><span class="o">*</span><span class="n">G</span><span class="o">/</span><span class="n">Kg</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% closed-loop </span>
-<span class="n">Gcl</span> <span class="p">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">Gol</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% closed-loop </span><span class="w"></span>
+<span class="n">Gcl</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">feedback</span><span class="p">(</span><span class="n">Gol</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -688,9 +686,9 @@ which is a relatively small steady-state error.</p>
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% c) evaluating the system to unit step and unit ramp</span>
-<span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gol</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% c) evaluating the system to unit step and unit ramp</span><span class="w"></span>
+<span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gol</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -734,28 +732,28 @@ which is a relatively small steady-state error.</p>
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">step</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">;</span> <span class="c">% step input</span>
-<span class="n">impulse</span><span class="p">(</span><span class="n">step</span><span class="p">,</span><span class="n">Gcl</span><span class="o">*</span><span class="n">step</span><span class="p">);</span> 
-<span class="n">title</span><span class="p">(</span><span class="s">'Step response'</span><span class="p">);</span>
-<span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">ramp</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">s</span>^<span class="mi">2</span><span class="p">;</span> <span class="c">% ramp input</span>
-<span class="n">impulse</span><span class="p">(</span><span class="n">ramp</span><span class="p">,</span><span class="n">Gcl</span><span class="o">*</span><span class="n">ramp</span><span class="p">);</span>
-<span class="n">title</span><span class="p">(</span><span class="s">'Ramp response'</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="nb">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="nb">step</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">;</span><span class="w"> </span><span class="c">% step input</span><span class="w"></span>
+<span class="n">impulse</span><span class="p">(</span><span class="nb">step</span><span class="p">,</span><span class="n">Gcl</span><span class="o">*</span><span class="nb">step</span><span class="p">);</span><span class="w"> </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">'Step response'</span><span class="p">);</span><span class="w"></span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="n">ramp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">s</span>^<span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">% ramp input</span><span class="w"></span>
+<span class="n">impulse</span><span class="p">(</span><span class="n">ramp</span><span class="p">,</span><span class="n">Gcl</span><span class="o">*</span><span class="n">ramp</span><span class="p">);</span><span class="w"></span>
+<span class="nb">title</span><span class="p">(</span><span class="s">'Ramp response'</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% evaluating Kv for the new compensated system</span>
-<span class="n">Kv_new</span> <span class="p">=</span> <span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">K_new</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">);</span>
+<span class="c">% evaluating Kv for the new compensated system</span><span class="w"></span>
+<span class="n">Kv_new</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">K_new</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% steady-state error to a unity ramp</span>
-<span class="n">ess_ramp</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Kv_new</span><span class="p">;</span>
-<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gcl</span><span class="p">)</span>
+<span class="c">% steady-state error to a unity ramp</span><span class="w"></span>
+<span class="n">ess_ramp</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">Kv_new</span><span class="p">;</span><span class="w"></span>
+<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gcl</span><span class="p">)</span><span class="w"></span>
 
-<span class="c">% bandwidth of Gcl</span>
-<span class="n">BW</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gcl</span><span class="p">);</span>
+<span class="c">% bandwidth of Gcl</span><span class="w"></span>
+<span class="n">BW</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gcl</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% resonant frequency</span>
-<span class="n">omega_r</span> <span class="p">=</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mf">0.6</span><span class="o">*</span><span class="mf">1.03</span><span class="p">)</span> <span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.6</span>^<span class="mi">2</span><span class="p">);</span>
+<span class="c">% resonant frequency</span><span class="w"></span>
+<span class="n">omega_r</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mf">0.6</span><span class="o">*</span><span class="mf">1.03</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.6</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -814,50 +812,18 @@ ans =
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>Table 1: Performance evaluation </center>
-<table>
-<thead><tr>
-<th style="text-align:left">Quantity</th>
-<th style="text-align:center">Value</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:left">Steady state error to a unit ramp</td>
-<td style="text-align:center">0.13</td>
-</tr>
-<tr>
-<td style="text-align:left">Rise Time</td>
-<td style="text-align:center">0.24</td>
-</tr>
-<tr>
-<td style="text-align:left">Settling Time</td>
-<td style="text-align:center">1.04</td>
-</tr>
-<tr>
-<td style="text-align:left">Percentage Overshoot</td>
-<td style="text-align:center">10.38</td>
-</tr>
-<tr>
-<td style="text-align:left">Phase Margin</td>
-<td style="text-align:center">60.20</td>
-</tr>
-<tr>
-<td style="text-align:left">Gain Margin</td>
-<td style="text-align:center">22.90</td>
-</tr>
-<tr>
-<td style="text-align:left">Bandwidth</td>
-<td style="text-align:center">8.19</td>
-</tr>
-<tr>
-<td style="text-align:left">Peak Magnitude</td>
-<td style="text-align:center">0.57</td>
-</tr>
-<tr>
-<td style="text-align:left">Resonant frequency</td>
-<td style="text-align:center">3.42</td>
-</tr>
-</tbody>
-</table>
+<p>| Quantity                          | Value   | 
+|:----------------------------------|:-------:|
+| Steady state error to a unit ramp |    0.13 |
+| Rise Time                         |    0.24 |
+| Settling Time                     |    1.04 |
+| Percentage Overshoot              |   10.38 |
+| Phase Margin                      |   60.20 |
+| Gain Margin                       |   22.90 |
+| Bandwidth                         |    8.19 |
+| Peak Magnitude                    |    0.57 |
+| Resonant frequency                |    3.42 |</p>
+
 </div>
 </div>
 </div>
@@ -892,7 +858,7 @@ ans =
 </li>
 <li>Demonstrate analytically that the desired poles do not belong to the uncompensated root-locus.</li>
 <li>Use the root-locus approach to design a cascaded phase-lead compensator with the zero placed in $-1$, to yield the desired specifications. If specifications are not met, perform additional design iterations.</li>
-<li>Design a phase-lag compensator in series with the previous phase-lead compensator such that the steady-state error for a parabolic input $0.5~At^2$ is less than $2.5%$ of $A$. </li>
+<li>Design a phase-lag compensator in series with the previous phase-lead compensator such that the steady-state error for a parabolic input $0.5~At^2$ is less than $2.5%$ of $A$.</li>
 <li>Evaluate the performance of your final design in the time and frequency domain.</li>
 </ul>
 </div>
@@ -956,20 +922,20 @@ r_{1,2} &amp;= -1.38\pm j~2.73
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">clear</span> <span class="s">variables</span><span class="p">;</span>
-<span class="c">%% plant G parameters</span>
-<span class="n">s</span> <span class="p">=</span> <span class="n">tf</span><span class="p">(</span><span class="s">'s'</span><span class="p">);</span>
-<span class="n">a</span> <span class="p">=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">b</span> <span class="p">=</span> <span class="mi">50</span><span class="p">;</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="nb">clear</span><span class="w"> </span><span class="n">variables</span><span class="p">;</span><span class="w"></span>
+<span class="c">%% plant G parameters</span><span class="w"></span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tf</span><span class="p">(</span><span class="s">'s'</span><span class="p">);</span><span class="w"></span>
+<span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">%% a) Location of the dominant poles for PO=20 and ts=2.9</span>
-<span class="n">PO</span> <span class="p">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c">% percentage overshoot</span>
-<span class="n">ts</span> <span class="p">=</span> <span class="mf">2.9</span><span class="p">;</span> <span class="c">% settling time</span>
-<span class="n">zeta</span> <span class="p">=</span> <span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">pi</span>^<span class="mi">2</span><span class="o">+</span> <span class="p">(</span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">))</span>^<span class="mi">2</span> <span class="p">);</span> <span class="c">% damping ratio</span>
-<span class="n">zeta</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mf">0.01</span><span class="p">;</span>
-<span class="n">omega_n</span> <span class="p">=</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">zeta</span><span class="o">*</span><span class="n">ts</span><span class="p">);</span>
+<span class="c">%% a) Location of the dominant poles for PO=20 and ts=2.9</span><span class="w"></span>
+<span class="n">PO</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="c">% percentage overshoot</span><span class="w"></span>
+<span class="n">ts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.9</span><span class="p">;</span><span class="w"> </span><span class="c">% settling time</span><span class="w"></span>
+<span class="n">zeta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">pi</span>^<span class="mi">2</span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">))</span>^<span class="mi">2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="c">% damping ratio</span><span class="w"></span>
+<span class="n">zeta</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">round</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mf">0.01</span><span class="p">;</span><span class="w"></span>
+<span class="n">omega_n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">zeta</span><span class="o">*</span><span class="n">ts</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% desired location of dominant poles</span>
-<span class="n">s1</span> <span class="p">=</span> <span class="o">-</span><span class="n">omega_n</span><span class="o">*</span><span class="n">zeta</span><span class="o">+</span><span class="n">omega_n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">;</span>
+<span class="c">% desired location of dominant poles</span><span class="w"></span>
+<span class="n">s1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="n">omega_n</span><span class="o">*</span><span class="n">zeta</span><span class="o">+</span><span class="n">omega_n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span>1<span class="nb">i</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1079,25 +1045,25 @@ G_{ol} &amp;= \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% c) Phase lead compensator</span>
-<span class="n">z_lead</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c">% location of the desired zero</span>
-<span class="c">% using the angle condition to determine the location of the pole</span>
-<span class="n">x</span> <span class="p">=</span> <span class="o">-</span><span class="nb">real</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span> <span class="n">y</span> <span class="p">=</span> <span class="nb">imag</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span>
-<span class="n">h</span> <span class="p">=</span> <span class="mi">180</span> <span class="o">+</span> <span class="mi">180</span> <span class="o">-</span> <span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lead</span><span class="p">))</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span> <span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="c">...</span>
-<span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">x</span><span class="p">));</span>
-<span class="n">p_lead</span> <span class="p">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">tand</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">;</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% c) Phase lead compensator</span><span class="w"></span>
+<span class="n">z_lead</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="c">% location of the desired zero</span><span class="w"></span>
+<span class="c">% using the angle condition to determine the location of the pole</span><span class="w"></span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="nb">real</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">imag</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span><span class="w"></span>
+<span class="n">h</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lead</span><span class="p">))</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="w"> </span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="k">...</span><span class="w"></span>
+<span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">x</span><span class="p">));</span><span class="w"></span>
+<span class="n">p_lead</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">y</span><span class="o">/</span><span class="nb">tand</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Gc compensator TF</span>
-<span class="n">Gc_lead</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p_lead</span><span class="p">);</span>
+<span class="c">% Gc compensator TF</span><span class="w"></span>
+<span class="n">Gc_lead</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p_lead</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% obtaining the gain K with the gain condition equation</span>
-<span class="n">K</span> <span class="p">=</span> <span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="c">...</span>
-<span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">);</span>
+<span class="c">% obtaining the gain K with the gain condition equation</span><span class="w"></span>
+<span class="n">K</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="k">...</span><span class="w"></span>
+<span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% the open-loop system</span>
-<span class="n">G</span> <span class="p">=</span> <span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">s</span>^<span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">b</span><span class="p">));</span><span class="c">% plant G</span>
-<span class="n">Gol_lead</span> <span class="p">=</span> <span class="n">Gc_lead</span><span class="o">*</span><span class="n">G</span><span class="p">;</span> <span class="c">% open-loop with the Lead compensator</span>
-<span class="n">Gcl_lead</span> <span class="p">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">Gol_lead</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c">% closed-loop with the Lead compensator</span>
+<span class="c">% the open-loop system</span><span class="w"></span>
+<span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">s</span>^<span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">b</span><span class="p">));</span><span class="c">% plant G</span><span class="w"></span>
+<span class="n">Gol_lead</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Gc_lead</span><span class="o">*</span><span class="n">G</span><span class="p">;</span><span class="w"> </span><span class="c">% open-loop with the Lead compensator</span><span class="w"></span>
+<span class="n">Gcl_lead</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">feedback</span><span class="p">(</span><span class="n">Gol_lead</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span><span class="c">% closed-loop with the Lead compensator</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1128,14 +1094,14 @@ G_{ol} &amp;= \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">rlocus</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">);</span>
-<span class="n">hold</span><span class="p">;</span>
-<span class="c">% ploting the s1 and zeta in the rlocus</span>
-<span class="n">n</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">160</span><span class="p">;</span> <span class="n">m</span> <span class="p">=</span> <span class="n">n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zeta</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">));</span>
-<span class="n">axis</span> <span class="p">([</span> <span class="o">-</span><span class="mi">4</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">4</span> <span class="mi">4</span><span class="p">]);</span>
-<span class="n">plot</span> <span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s">'--'</span><span class="p">);</span> <span class="c">% zeta</span>
-<span class="n">plot</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'rd'</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">rlocus</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">);</span><span class="w"></span>
+<span class="nb">hold</span><span class="p">;</span><span class="w"></span>
+<span class="c">% ploting the s1 and zeta in the rlocus</span><span class="w"></span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">160</span><span class="p">;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zeta</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="nb">axis</span><span class="w"> </span><span class="p">([</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">4</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s">'--'</span><span class="p">);</span><span class="w"> </span><span class="c">% zeta</span><span class="w"></span>
+<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'rd'</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1180,9 +1146,9 @@ G_{ol} &amp;= \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">step</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">);</span>
-<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="nb">step</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">);</span><span class="w"></span>
+<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1240,9 +1206,9 @@ ans =
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">);</span>
-<span class="n">BW_lead</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">)</span> <span class="c">% bandwidth</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">);</span><span class="w"></span>
+<span class="n">BW_lead</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">)</span><span class="w"> </span><span class="c">% bandwidth</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1336,13 +1302,13 @@ G_{lead+prefilter} &amp;=  \dfrac{1}{s+1} ~\dfrac{10047~(s+1)}{(s+50)(s+13.07)(s
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Using prefilter to reduce the overshoot</span>
-<span class="n">pf</span> <span class="p">=</span> <span class="n">z_lead</span><span class="p">;</span> <span class="c">% selecting the zero of the lead compensator (z_lead)</span>
-<span class="n">Gpf</span> <span class="p">=</span> <span class="n">pf</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">pf</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Using prefilter to reduce the overshoot</span><span class="w"></span>
+<span class="n">pf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">z_lead</span><span class="p">;</span><span class="w"> </span><span class="c">% selecting the zero of the lead compensator (z_lead)</span><span class="w"></span>
+<span class="n">Gpf</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">pf</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">pf</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="n">step</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">);</span>
-<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">)</span>
+<span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="nb">step</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">);</span><span class="w"></span>
+<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1400,9 +1366,9 @@ ans =
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">);</span>
-<span class="n">BW_lead_prefilter</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">)</span> <span class="c">% bandwidth</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">);</span><span class="w"></span>
+<span class="n">BW_lead_prefilter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">)</span><span class="w"> </span><span class="c">% bandwidth</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1529,18 +1495,18 @@ G_{lag} &amp;= \dfrac{s+0.14}{s+0.0092} \nonumber
 <div class="prompt input_prompt">In [14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% d) Phase-lag compensator</span>
-<span class="n">ess_a</span> <span class="p">=</span> <span class="mf">0.025</span><span class="p">;</span> <span class="c">% steady-state error for a parabolic input 0.5At^2</span>
-<span class="n">Ka_d</span> <span class="p">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">ess_a</span><span class="p">;</span> <span class="c">% Ka desired</span>
-<span class="n">Ka_act</span> <span class="p">=</span> <span class="p">(</span><span class="n">z_lead</span><span class="o">/</span><span class="n">p_lead</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">));</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% d) Phase-lag compensator</span><span class="w"></span>
+<span class="n">ess_a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.025</span><span class="p">;</span><span class="w"> </span><span class="c">% steady-state error for a parabolic input 0.5At^2</span><span class="w"></span>
+<span class="n">Ka_d</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="n">ess_a</span><span class="p">;</span><span class="w"> </span><span class="c">% Ka desired</span><span class="w"></span>
+<span class="n">Ka_act</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">z_lead</span><span class="o">/</span><span class="n">p_lead</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">));</span><span class="w"></span>
 
-<span class="c">% calculating the zero and pole of the compensator</span>
-<span class="n">alpha</span> <span class="p">=</span> <span class="n">Ka_d</span><span class="o">/</span><span class="n">Ka_act</span><span class="p">;</span>
-<span class="n">z_lag</span> <span class="p">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
-<span class="n">p_lag</span> <span class="p">=</span> <span class="n">z_lag</span><span class="o">/</span><span class="n">alpha</span><span class="p">;</span>
+<span class="c">% calculating the zero and pole of the compensator</span><span class="w"></span>
+<span class="nb">alpha</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ka_d</span><span class="o">/</span><span class="n">Ka_act</span><span class="p">;</span><span class="w"></span>
+<span class="n">z_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="n">p_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">z_lag</span><span class="o">/</span><span class="nb">alpha</span><span class="p">;</span><span class="w"></span>
 
-<span class="c">% Gc phase-lag compensator</span>
-<span class="n">Gc_lag</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z_lag</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p_lag</span><span class="p">);</span>
+<span class="c">% Gc phase-lag compensator</span><span class="w"></span>
+<span class="n">Gc_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z_lag</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p_lag</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1602,18 +1568,18 @@ G_{lag+lead+prefilter} &amp;= G_{pf}~ \dfrac{10047(s+1)(s+0.14)}{(s+50)(s+13.05)
 <div class="prompt input_prompt">In [15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Evaluating the performance with the phase-lead, phase-lag and prefilter</span>
-<span class="n">Gol_lead_lag</span> <span class="p">=</span> <span class="n">Gc_lead</span><span class="o">*</span><span class="n">Gc_lag</span><span class="o">*</span><span class="n">G</span><span class="p">;</span>
-<span class="n">Gcl_lead_lag</span> <span class="p">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">Gol_lead_lag</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Evaluating the performance with the phase-lead, phase-lag and prefilter</span><span class="w"></span>
+<span class="n">Gol_lead_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Gc_lead</span><span class="o">*</span><span class="n">Gc_lag</span><span class="o">*</span><span class="n">G</span><span class="p">;</span><span class="w"></span>
+<span class="n">Gcl_lead_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">feedback</span><span class="p">(</span><span class="n">Gol_lead_lag</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 
-<span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> 
-<span class="n">rlocus</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span>
-<span class="n">hold</span><span class="p">;</span>
-<span class="c">% ploting the s1 and zeta in the rlocus</span>
-<span class="n">n</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">160</span><span class="p">;</span> <span class="n">m</span> <span class="p">=</span> <span class="n">n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zeta</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">));</span>
-<span class="n">axis</span> <span class="p">([</span> <span class="o">-</span><span class="mi">4</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">4</span> <span class="mi">4</span><span class="p">]);</span>
-<span class="n">plot</span> <span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s">'--'</span><span class="p">);</span> <span class="c">% zeta</span>
-<span class="n">plot</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'rd'</span><span class="p">);</span>
+<span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span>
+<span class="n">rlocus</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span><span class="w"></span>
+<span class="nb">hold</span><span class="p">;</span><span class="w"></span>
+<span class="c">% ploting the s1 and zeta in the rlocus</span><span class="w"></span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">160</span><span class="p">;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zeta</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="nb">axis</span><span class="w"> </span><span class="p">([</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">4</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s">'--'</span><span class="p">);</span><span class="w"> </span><span class="c">% zeta</span><span class="w"></span>
+<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'rd'</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1658,11 +1624,11 @@ G_{lag+lead+prefilter} &amp;= G_{pf}~ \dfrac{10047(s+1)(s+0.14)}{(s+50)(s+13.05)
 <div class="prompt input_prompt">In [16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
-<span class="n">step</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gcl_lead_lag</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="s">'Lead'</span><span class="p">,</span><span class="s">'Pre-filter + Lead'</span><span class="p">,</span><span class="s">'Lead + Lag'</span><span class="p">,</span><span class="s">'Pre-filter + Lead + Lag'</span><span class="c">...</span>
-<span class="p">,</span><span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">);</span>
-<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+<span class="nb">step</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gcl_lead_lag</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">)</span><span class="w"></span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">'Lead'</span><span class="p">,</span><span class="s">'Pre-filter + Lead'</span><span class="p">,</span><span class="s">'Lead + Lag'</span><span class="p">,</span><span class="s">'Pre-filter + Lead + Lag'</span><span class="k">...</span><span class="w"></span>
+<span class="p">,</span><span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">);</span><span class="w"></span>
+<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1720,9 +1686,9 @@ ans =
 <div class="prompt input_prompt">In [17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span>
-<span class="n">BW_lead_lag</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span> <span class="c">% bandwidth</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span><span class="w"></span>
+<span class="n">BW_lead_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span><span class="w"> </span><span class="c">% bandwidth</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1766,9 +1732,9 @@ ans =
 <div class="prompt input_prompt">In [18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span>
-<span class="n">BW_lead_lag_prefilter</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">);</span> <span class="c">% bandwidth</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead_lag</span><span class="p">);</span><span class="w"></span>
+<span class="n">BW_lead_lag_prefilter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">);</span><span class="w"> </span><span class="c">% bandwidth</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1812,9 +1778,9 @@ ans =
 <div class="prompt input_prompt">In [19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Verifing Ka = 40</span>
-<span class="n">Ka</span> <span class="p">=</span> <span class="p">(</span><span class="n">z_lag</span><span class="o">/</span><span class="n">p_lag</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">z_lead</span><span class="o">/</span><span class="n">p_lead</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span> <span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span> <span class="p">)</span>
-<span class="n">ess_parabolic</span> <span class="p">=</span> <span class="n">a</span><span class="o">/</span><span class="n">Ka</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Verifing Ka = 40</span><span class="w"></span>
+<span class="n">Ka</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">z_lag</span><span class="o">/</span><span class="n">p_lag</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">z_lead</span><span class="o">/</span><span class="n">p_lead</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">ess_parabolic</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="o">/</span><span class="n">Ka</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -1859,66 +1825,16 @@ ess_parabolic =
 </h3>
 <p>The step response plot of the system with and without the Pre-filter shows that the Pre-filter reduces the overshoot in both cases with good settling time. On the other hand, the root-locus plot shows that the desired dominant poles are slightly out of the target , it is recommended to add a second Phase-lead compensator in series in order correct that gap.</p>
 <center>Table 2: Performance results </center>
-<table>
-<thead><tr>
-<th style="text-align:left">Quantity</th>
-<th style="text-align:center">Lead</th>
-<th style="text-align:center">Prefilter+Lead</th>
-<th style="text-align:center">Lead+Lag</th>
-<th style="text-align:center">Prefilter+Lead+Lag</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:left">Rise Time</td>
-<td style="text-align:center">0.37</td>
-<td style="text-align:center">1.00</td>
-<td style="text-align:center">0.36</td>
-<td style="text-align:center">0.94</td>
-</tr>
-<tr>
-<td style="text-align:left">Settling Time</td>
-<td style="text-align:center">2.79</td>
-<td style="text-align:center">3.08</td>
-<td style="text-align:center">3.59</td>
-<td style="text-align:center">3.31</td>
-</tr>
-<tr>
-<td style="text-align:left">Percentage Overshoot</td>
-<td style="text-align:center">51.46</td>
-<td style="text-align:center">0.07</td>
-<td style="text-align:center">57.96</td>
-<td style="text-align:center">1.79</td>
-</tr>
-<tr>
-<td style="text-align:left">Phase Margin</td>
-<td style="text-align:center">40.80</td>
-<td style="text-align:center">-180</td>
-<td style="text-align:center">36.60</td>
-<td style="text-align:center">36.60</td>
-</tr>
-<tr>
-<td style="text-align:left">Gain Margin</td>
-<td style="text-align:center">8.96</td>
-<td style="text-align:center">7.07</td>
-<td style="text-align:center">8.51</td>
-<td style="text-align:center">8.51</td>
-</tr>
-<tr>
-<td style="text-align:left">Bandwidth</td>
-<td style="text-align:center">4.87</td>
-<td style="text-align:center">2.31</td>
-<td style="text-align:center">4.89</td>
-<td style="text-align:center">2.58</td>
-</tr>
-<tr>
-<td style="text-align:left">Peak Magnitude</td>
-<td style="text-align:center">1.51</td>
-<td style="text-align:center">1.00</td>
-<td style="text-align:center">1.58</td>
-<td style="text-align:center">1.02</td>
-</tr>
-</tbody>
-</table>
+<p>| Quantity             | Lead      | Prefilter+Lead      | Lead+Lag      | Prefilter+Lead+Lag |
+|:---------------------|:---------:|:-------------------:|:-------------:|:------------------:|
+| Rise Time            | 0.37      | 1.00                | 0.36          | 0.94               |
+| Settling Time        | 2.79      | 3.08                | 3.59          | 3.31               |
+| Percentage Overshoot | 51.46     | 0.07                | 57.96         | 1.79               |
+| Phase Margin         | 40.80     | -180                | 36.60         | 36.60              |
+| Gain Margin          | 8.96      | 7.07                | 8.51          | 8.51               |
+| Bandwidth            | 4.87      | 2.31                | 4.89          | 2.58               |
+| Peak Magnitude       | 1.51      | 1.00                | 1.58          | 1.02               |</p>
+
 </div>
 </div>
 </div>
@@ -1967,26 +1883,26 @@ which means that the gain has not changed.</p>
 <div class="prompt input_prompt">In [20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% New phase-lead compensator</span>
-<span class="n">z_lead2</span> <span class="p">=</span> <span class="n">x</span><span class="p">;</span> <span class="c">% given zero lead right below the desired pole</span>
-<span class="n">f</span> <span class="p">=</span> <span class="mi">180</span> <span class="o">+</span> <span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lead2</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lag</span><span class="p">)))</span><span class="c">...</span>
-<span class="o">+</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lead</span><span class="p">)))</span> <span class="o">-</span> <span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">p_lag</span><span class="p">)))</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">p_lead</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="c">...</span>
-<span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">))</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">x</span><span class="p">));</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% New phase-lead compensator</span><span class="w"></span>
+<span class="n">z_lead2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c">% given zero lead right below the desired pole</span><span class="w"></span>
+<span class="n">f</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">180</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lead2</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lag</span><span class="p">)))</span><span class="k">...</span><span class="w"></span>
+<span class="o">+</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z_lead</span><span class="p">)))</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">p_lag</span><span class="p">)))</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">p_lead</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="k">...</span><span class="w"></span>
+<span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">180</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">x</span><span class="p">))</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">-</span><span class="nb">atand</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">x</span><span class="p">));</span><span class="w"></span>
 
-<span class="c">% p_lead2 = y/tand(180+f) - x;</span>
-<span class="n">p_lead2</span> <span class="p">=</span> <span class="n">y</span><span class="o">/</span><span class="nb">tand</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">;</span>
-<span class="n">Gc_lead2</span> <span class="p">=</span> <span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z_lead2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p_lead2</span><span class="p">);</span>
+<span class="c">% p_lead2 = y/tand(180+f) - x;</span><span class="w"></span>
+<span class="n">p_lead2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">y</span><span class="o">/</span><span class="nb">tand</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="n">Gc_lead2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">z_lead2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="n">p_lead2</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">% Calculating the new gain K with the lead 2 compensator</span>
-<span class="n">K_new</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lead2</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lag</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="c">...</span>
-<span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="c">...</span>
-<span class="p">(</span> <span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lag</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">K</span> <span class="p">)</span>
-<span class="n">Gol_lead2_lead_lag</span> <span class="p">=</span> <span class="n">K_new</span><span class="o">*</span><span class="n">Gc_lead2</span><span class="o">*</span><span class="n">Gol_lead_lag</span><span class="p">;</span>
-<span class="n">Gcl_lead2_lead_lag</span> <span class="p">=</span> <span class="n">feedback</span><span class="p">(</span><span class="n">Gol_lead2_lead_lag</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="c">% Calculating the new gain K with the lead 2 compensator</span><span class="w"></span>
+<span class="n">K_new</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lead2</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lag</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="k">...</span><span class="w"></span>
+<span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">p_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">a</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="k">...</span><span class="w"></span>
+<span class="p">(</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lag</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">((</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">z_lead</span><span class="p">)</span>^<span class="mi">2</span><span class="o">+</span><span class="n">y</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">K</span><span class="w"> </span><span class="p">)</span><span class="w"></span>
+<span class="n">Gol_lead2_lead_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">K_new</span><span class="o">*</span><span class="n">Gc_lead2</span><span class="o">*</span><span class="n">Gol_lead_lag</span><span class="p">;</span><span class="w"></span>
+<span class="n">Gcl_lead2_lead_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">feedback</span><span class="p">(</span><span class="n">Gol_lead2_lead_lag</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
 
-<span class="c">%% Verifing Ka = 40 </span>
-<span class="n">Ka_new</span> <span class="p">=</span> <span class="n">K_new</span><span class="o">*</span><span class="p">(</span><span class="n">z_lead2</span><span class="o">/</span><span class="n">p_lead2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z_lag</span><span class="o">/</span><span class="n">p_lag</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z_lead</span><span class="o">/</span><span class="n">p_lead</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">));</span>
-<span class="n">ess_parabolic_new</span> <span class="p">=</span> <span class="n">a</span><span class="o">/</span><span class="n">Ka_new</span><span class="p">;</span>
+<span class="c">%% Verifing Ka = 40 </span><span class="w"></span>
+<span class="n">Ka_new</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">K_new</span><span class="o">*</span><span class="p">(</span><span class="n">z_lead2</span><span class="o">/</span><span class="n">p_lead2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z_lag</span><span class="o">/</span><span class="n">p_lag</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">z_lead</span><span class="o">/</span><span class="n">p_lead</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">K</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">));</span><span class="w"></span>
+<span class="n">ess_parabolic_new</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="o">/</span><span class="n">Ka_new</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -2053,15 +1969,15 @@ G_{lag+lead+prefilter} &amp;= G_{pf}~ \dfrac{10047(s+1.38)(s+1)(s+0.14)}{(s+8.36
 <div class="prompt input_prompt">In [21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Comparing the new compensator of the previous designs.</span>
-<span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span>
-<span class="n">rlocus</span><span class="p">(</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">)</span>
-<span class="n">hold</span> <span class="s">on</span><span class="p">;</span>
-<span class="c">% ploting the s1 and zeta in the rlocus</span>
-<span class="n">n</span> <span class="p">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">160</span><span class="p">;</span> <span class="n">m</span> <span class="p">=</span> <span class="n">n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zeta</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">));</span>
-<span class="n">axis</span> <span class="p">([</span> <span class="o">-</span><span class="mi">4</span> <span class="mi">1</span> <span class="o">-</span><span class="mi">4</span> <span class="mi">4</span><span class="p">]);</span>
-<span class="n">plot</span> <span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s">'--'</span><span class="p">);</span> <span class="c">% zeta</span>
-<span class="n">plot</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'rd'</span><span class="p">);</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Comparing the new compensator of the previous designs.</span><span class="w"></span>
+<span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">9</span><span class="p">);</span><span class="w"></span>
+<span class="n">rlocus</span><span class="p">(</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">)</span><span class="w"></span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="p">;</span><span class="w"></span>
+<span class="c">% ploting the s1 and zeta in the rlocus</span><span class="w"></span>
+<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">160</span><span class="p">;</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">n</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zeta</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">zeta</span>^<span class="mi">2</span><span class="p">));</span><span class="w"></span>
+<span class="nb">axis</span><span class="w"> </span><span class="p">([</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">4</span><span class="w"> </span><span class="mi">4</span><span class="p">]);</span><span class="w"></span>
+<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s">'--'</span><span class="p">);</span><span class="w"> </span><span class="c">% zeta</span><span class="w"></span>
+<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">'rd'</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -2105,13 +2021,13 @@ G_{lag+lead+prefilter} &amp;= G_{pf}~ \dfrac{10047(s+1.38)(s+1)(s+0.14)}{(s+8.36
 <div class="prompt input_prompt">In [22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
-<span class="c">% step(Gcl_lead2_lead_lag,Gpf*Gcl_lead2_lead_lag)</span>
-<span class="n">step</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gcl_lead_lag</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">,</span><span class="c">...</span>
-<span class="n">Gcl_lead2_lead_lag</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">)</span>
-<span class="n">legend</span><span class="p">(</span><span class="s">'Lead'</span><span class="p">,</span><span class="s">'Pre-filter+Lead'</span><span class="p">,</span><span class="s">'Lead+Lag'</span><span class="p">,</span><span class="s">'Pre-filter+Lead+Lag'</span><span class="c">...</span>
-<span class="p">,</span><span class="s">'Lead 2+Lead+Lag'</span><span class="p">,</span><span class="s">'Pre-filter+Lead2+Lead+Lag'</span><span class="p">,</span><span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">);</span>
-<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">)</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span><span class="w"></span>
+<span class="c">% step(Gcl_lead2_lead_lag,Gpf*Gcl_lead2_lead_lag)</span><span class="w"></span>
+<span class="nb">step</span><span class="p">(</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead</span><span class="p">,</span><span class="n">Gcl_lead_lag</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead_lag</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
+<span class="n">Gcl_lead2_lead_lag</span><span class="p">,</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">)</span><span class="w"></span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">'Lead'</span><span class="p">,</span><span class="s">'Pre-filter+Lead'</span><span class="p">,</span><span class="s">'Lead+Lag'</span><span class="p">,</span><span class="s">'Pre-filter+Lead+Lag'</span><span class="k">...</span><span class="w"></span>
+<span class="p">,</span><span class="s">'Lead 2+Lead+Lag'</span><span class="p">,</span><span class="s">'Pre-filter+Lead2+Lead+Lag'</span><span class="p">,</span><span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">);</span><span class="w"></span>
+<span class="n">stepinfo</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -2169,9 +2085,9 @@ ans =
 <div class="prompt input_prompt">In [23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span>
-<span class="n">BW_lead2_lead_lag</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span> <span class="c">% bandwidth</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span><span class="w"></span>
+<span class="n">BW_lead2_lead_lag</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span><span class="w"> </span><span class="c">% bandwidth</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -2215,9 +2131,9 @@ ans =
 <div class="prompt input_prompt">In [24]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span> <span class="p">=</span> <span class="n">figure</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
-<span class="n">margin</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span>
-<span class="n">BW_lead2_lead_lag_prefilter</span> <span class="p">=</span> <span class="n">bandwidth</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span> <span class="c">% bandwidth</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">fig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span><span class="w"></span>
+<span class="n">margin</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span><span class="w"></span>
+<span class="n">BW_lead2_lead_lag_prefilter</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">bandwidth</span><span class="p">(</span><span class="n">Gpf</span><span class="o">*</span><span class="n">Gcl_lead2_lead_lag</span><span class="p">);</span><span class="w"> </span><span class="c">% bandwidth</span><span class="w"></span>
 </pre></div>
 
     </div>
@@ -2265,82 +2181,16 @@ ans =
 </h3>
 <p>From the root-locus plot, it can be seen that the desired closed-loop poles are exactly in the root locus. Also, the Bode plot shows that the $PM$ has changed a little with respect of the previous compensated system, from $36.60°$ to $39.50°$. On the other hand, the step response has been improved with the Pre-filter and the new Phase-Lead compensator, see Table 3.</p>
 <center>Table 3: Performance results </center>
-<table>
-<thead><tr>
-<th style="text-align:left">Quantity</th>
-<th style="text-align:center">Lead</th>
-<th style="text-align:center">Prefilter+Lead</th>
-<th style="text-align:center">Lead+Lag</th>
-<th style="text-align:center">Prefilter+Lead+Lag</th>
-<th style="text-align:center">Lead_2+Lead+Lag</th>
-<th style="text-align:center">Prefilter+Lead_2+Lead+Lag</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:left">Rise Time</td>
-<td style="text-align:center">0.37</td>
-<td style="text-align:center">1.00</td>
-<td style="text-align:center">0.36</td>
-<td style="text-align:center">0.94</td>
-<td style="text-align:center">0.37</td>
-<td style="text-align:center">0.97</td>
-</tr>
-<tr>
-<td style="text-align:left">Settling Time</td>
-<td style="text-align:center">2.79</td>
-<td style="text-align:center">3.08</td>
-<td style="text-align:center">3.59</td>
-<td style="text-align:center">3.31</td>
-<td style="text-align:center">2.87</td>
-<td style="text-align:center">1.68</td>
-</tr>
-<tr>
-<td style="text-align:left">Percentage Overshoot</td>
-<td style="text-align:center">51.46</td>
-<td style="text-align:center">0.07</td>
-<td style="text-align:center">57.96</td>
-<td style="text-align:center">1.79</td>
-<td style="text-align:center">55.00</td>
-<td style="text-align:center">1.25</td>
-</tr>
-<tr>
-<td style="text-align:left">Phase Margin</td>
-<td style="text-align:center">40.80</td>
-<td style="text-align:center">-180</td>
-<td style="text-align:center">36.60</td>
-<td style="text-align:center">36.60</td>
-<td style="text-align:center">39.50</td>
-<td style="text-align:center">-180</td>
-</tr>
-<tr>
-<td style="text-align:left">Gain Margin</td>
-<td style="text-align:center">8.96</td>
-<td style="text-align:center">7.07</td>
-<td style="text-align:center">8.51</td>
-<td style="text-align:center">8.51</td>
-<td style="text-align:center">8.79</td>
-<td style="text-align:center">6.79</td>
-</tr>
-<tr>
-<td style="text-align:left">Bandwidth</td>
-<td style="text-align:center">4.87</td>
-<td style="text-align:center">2.31</td>
-<td style="text-align:center">4.89</td>
-<td style="text-align:center">2.58</td>
-<td style="text-align:center">4.88</td>
-<td style="text-align:center">2.42</td>
-</tr>
-<tr>
-<td style="text-align:left">Peak Magnitude</td>
-<td style="text-align:center">1.51</td>
-<td style="text-align:center">1.00</td>
-<td style="text-align:center">1.58</td>
-<td style="text-align:center">1.02</td>
-<td style="text-align:center">1.55</td>
-<td style="text-align:center">1.01</td>
-</tr>
-</tbody>
-</table>
+<p>| Quantity             | Lead   | Prefilter+Lead  | Lead+Lag   | Prefilter+Lead+Lag    | Lead_2+Lead+Lag     | Prefilter+Lead_2+Lead+Lag       |
+|:---------------------|:------:|:---------------:|:----------:|:---------------------:|:-------------------:|:-------------------------------:|
+| Rise Time            | 0.37   | 1.00            | 0.36       | 0.94                  | 0.37                | 0.97                            |<br>
+| Settling Time        | 2.79   | 3.08            | 3.59       | 3.31                  | 2.87                | 1.68                            |
+| Percentage Overshoot | 51.46  | 0.07            | 57.96      | 1.79                  | 55.00               | 1.25                            |
+| Phase Margin         | 40.80  | -180            | 36.60      | 36.60                 | 39.50               | -180                            |
+| Gain Margin          | 8.96   | 7.07            | 8.51       | 8.51                  | 8.79                | 6.79                            |
+| Bandwidth            | 4.87   | 2.31            | 4.89       | 2.58                  | 4.88                | 2.42                            |
+| Peak Magnitude       | 1.51   | 1.00            | 1.58       | 1.02                  | 1.55                | 1.01                            |</p>
+
 </div>
 </div>
 </div>
@@ -2353,7 +2203,6 @@ ans =
 </h3>
 <p>The settling time requirement $t_s\leq2.9$ was satisfied by three of the six compensators, and only the last one with the Pre-filter achieved the desired overshoot $PO\leq 20 \%$. It is clear that the use of the Pre-filter reduces the overshoot drastically.</p>
 
-</div>
 </div>
 </div>
 </div>
@@ -2376,7 +2225,7 @@ ans =
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="paulomarconi",
@@ -2442,7 +2291,7 @@ MathJax.Hub.Config({
         </span>
     </p>
     <p>
-        Contents © 2021  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
+        Contents © 2022  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> 
     </p>

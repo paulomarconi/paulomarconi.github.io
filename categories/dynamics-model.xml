@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about dynamics model)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/dynamics-model.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about dynamics model)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/dynamics-model.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 30 Jun 2021 14:58:19 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 Oct 2022 23:15:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
 &lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Introduction" data-toc-modified-id="Introduction-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Source-code" data-toc-modified-id="Source-code-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Source code&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Nonlinear-model" data-toc-modified-id="Nonlinear-model-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Nonlinear model&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Matlab-scripts" data-toc-modified-id="Matlab-scripts-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Matlab scripts&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#ODE-solver-ode45m" data-toc-modified-id="ODE-solver-ode45m-5.1"&gt;&lt;span class="toc-item-num"&gt;5.1  &lt;/span&gt;ODE solver &lt;code&gt;ode45m&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#ODE-solver-eufix1" data-toc-modified-id="ODE-solver-eufix1-5.2"&gt;&lt;span class="toc-item-num"&gt;5.2  &lt;/span&gt;ODE solver &lt;code&gt;eufix1&lt;/code&gt;&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Nonlinear-model" data-toc-modified-id="Nonlinear-model-5.3"&gt;&lt;span class="toc-item-num"&gt;5.3  &lt;/span&gt;Nonlinear model&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Main" data-toc-modified-id="Main-5.4"&gt;&lt;span class="toc-item-num"&gt;5.4  &lt;/span&gt;Main&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Simulation-Scenarios" data-toc-modified-id="Simulation-Scenarios-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Simulation Scenarios&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Simulation-Results" data-toc-modified-id="Simulation-Results-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;Simulation Results&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Scenario-1" data-toc-modified-id="Scenario-1-7.1"&gt;&lt;span class="toc-item-num"&gt;7.1  &lt;/span&gt;Scenario 1&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Scenario-2" data-toc-modified-id="Scenario-2-7.2"&gt;&lt;span class="toc-item-num"&gt;7.2  &lt;/span&gt;Scenario 2&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -68,7 +69,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/Nonlinear_DCmotor/ode45m.m'&lt;/span&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[tout, yout] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;ode45m&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ypfun, t0, tfinal, y0, tol, trace&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;[tout, yout] = ode45m&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;ypfun, t0, tfinal, y0, tol, trace&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="c"&gt;%ODE45	Solve differential equations, higher order method.&lt;/span&gt;
 &lt;span class="c"&gt;%	ODE45 integrates a system of ordinary differential equations using&lt;/span&gt;
 &lt;span class="c"&gt;%	4th and 5th order Runge-Kutta formulas.&lt;/span&gt;
@@ -216,7 +217,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/Nonlinear_DCmotor/eufix1.m'&lt;/span&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[tout, xout] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;eufix1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;dxfun, tspan, x0, stp, trace&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;[tout, xout] = eufix1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;dxfun, tspan, x0, stp, trace&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="c"&gt;%EUFIX1	Solve ordinary state-vector differential equations, low order method.&lt;/span&gt;
 &lt;span class="c"&gt;%	EUFIX1 integrates a set of ODEs xdot = f(x,t) using the most&lt;/span&gt;
 &lt;span class="c"&gt;%	elementary Euler algorithm, without step-size control.&lt;/span&gt;
@@ -320,7 +321,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/Nonlinear_DCmotor/asst02_2017.m'&lt;/span&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;xdot &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;asst02_2017&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;t,x&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;xdot&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;asst02_2017&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;t,x&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;global&lt;/span&gt; &lt;span class="n"&gt;E_0&lt;/span&gt; &lt;span class="n"&gt;Tau_L0&lt;/span&gt; &lt;span class="n"&gt;T_Amb&lt;/span&gt; &lt;span class="n"&gt;B_2C&lt;/span&gt; 
 
 &lt;span class="c"&gt;% motor parameters, Nachtigal, Table 16.5 p. 663&lt;/span&gt;
@@ -628,56 +629,17 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Simulation-Scenarios"&gt;Simulation Scenarios&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Simulation-Scenarios"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Two types of scenarios are simulated. The first one is submitted to a constant input, low stiction, and two step sizes. The second scenario is more interesting because we study the behaviour due to a sinusoidal input which emulates the reversing mode of the motor at $5[Hz]$ with higher stiction. Both scenarios have load torque at $t=0.2[s]$.&lt;/p&gt;
-&lt;center&gt;Table 1: Scenario 1 and 2 &lt;/center&gt;&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:left"&gt;Scenario 1&lt;/th&gt;
-&lt;th style="text-align:left"&gt;Scenario 2&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt; step size&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$1\times 10^{-3}$ and $1\times 10^{-4}$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$1\times 10^{-4}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt; step size&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$1\times 10^{-3}$ and $1\times 10^{-4}$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$1\times 10^{-4}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt; step size&lt;/td&gt;
-&lt;td style="text-align:left"&gt;auto&lt;/td&gt;
-&lt;td style="text-align:left"&gt;auto&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$e_i$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$E_0$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$E_0 \sin[5(2\pi)(t-0.05)]$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$E_0$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$120~[V]$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$120~[V]$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$\tau_{L}$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$80~[N m]$ at $t=0.2[s]$}&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$80~[N m]$ at $t=0.2[s]$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$\theta_A$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$18~[°C]$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$18~[°C]$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$B_{2C}$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$80~[N]$&lt;/td&gt;
-&lt;td style="text-align:left"&gt;$300~[N]$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;center&gt;Table 1: Scenario 1 and 2 &lt;/center&gt;
+&lt;p&gt;|  		| Scenario 1 	| Scenario 2 |
+|:-----:|:-------------|:----------|
+|&lt;code&gt;ode45m&lt;/code&gt; step size | $1\times 10^{-3}$ and $1\times 10^{-4}$ | $1\times 10^{-4}$ |
+|&lt;code&gt;eufix1&lt;/code&gt; step size | $1\times 10^{-3}$ and $1\times 10^{-4}$ | $1\times 10^{-4}$ |
+|&lt;code&gt;ode45&lt;/code&gt; step size | auto | auto |
+| $e_i$ | $E_0$ | $E_0 \sin[5(2\pi)(t-0.05)]$ |
+| $E_0$ | $120~[V]$ | $120~[V]$ |
+| $\tau_{L}$ | $80~[N m]$ at $t=0.2[s]$} | $80~[N m]$ at $t=0.2[s]$ |
+| $\theta_A$ | $18~[°C]$ | $18~[°C]$ |
+| $B_{2C}$ | $80~[N]$ | $300~[N]$ |&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -689,42 +651,28 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/E0_ode45-ode45m-eufix1_1e-3.png" alt="Fig1" width="70%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 1 - Scenario 1: step size $1\times 10^{-3}$&lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;p&gt;The time simulation of each solver indicates that &lt;code&gt;ode45&lt;/code&gt; is 10 times slower than &lt;code&gt;ode45m&lt;/code&gt; and 30 times slower than &lt;code&gt;eufix1&lt;/code&gt;.&lt;/p&gt;
-&lt;center&gt;Table 2: Scenario 1: simulation time and number of steps. &lt;/center&gt;&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;simulation time [s]&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$0.267$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$0.025$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$0.009$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;number of time steps&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$71769$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$15133$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$80001$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;/figure&gt;
+&lt;p&gt;The time simulation of each solver indicates that &lt;code&gt;ode45&lt;/code&gt; is 10 times slower than &lt;code&gt;ode45m&lt;/code&gt; and 30 times slower than &lt;code&gt;eufix1&lt;/code&gt;.&lt;/p&gt;
+&lt;center&gt;Table 2: Scenario 1: simulation time and number of steps. &lt;/center&gt;
+&lt;p&gt;|  		                | &lt;code&gt;ode45&lt;/code&gt; 	 | &lt;code&gt;ode45m&lt;/code&gt; | &lt;code&gt;eufix1&lt;/code&gt; |
+|:---------------------:|:----------:|:--------:|:--------:|
+| simulation time [s]   | $0.267$    | $0.025$  | $0.009$  |			
+| number of time steps  | $71769$    | $15133$  | $80001$  |&lt;/p&gt;
 &lt;p&gt;The temperature of the motor $\theta_M$ increases linearly and reaches steady-state at $45[s]$ approximately, which indicates that the motor won't reach unsafe temperatures.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/thetaM_ode45-ode45m-eufix1_1e-3.png" alt="Fig2" width="60%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 2 - Scenario 1: $\theta_M$ over $80[s]$ &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;p&gt;Although, &lt;code&gt;eufix1&lt;/code&gt; is the fastest solver, with step size of $1\times 10^{-3}$, &lt;code&gt;eufix1&lt;/code&gt; outputs the worst performance. The result can be improved if the steps size is decreased to $1\times 10^{-4}$. Fig. 3 and Fig. 4 show the relative error at max current and max angular velocity between &lt;code&gt;ode45&lt;/code&gt; and &lt;code&gt;eufix1&lt;/code&gt;.&lt;/p&gt;
+&lt;/figure&gt;
+&lt;p&gt;Although, &lt;code&gt;eufix1&lt;/code&gt; is the fastest solver, with step size of $1\times 10^{-3}$, &lt;code&gt;eufix1&lt;/code&gt; outputs the worst performance. The result can be improved if the steps size is decreased to $1\times 10^{-4}$. Fig. 3 and Fig. 4 show the relative error at max current and max angular velocity between &lt;code&gt;ode45&lt;/code&gt; and &lt;code&gt;eufix1&lt;/code&gt;.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/E0_ode45-ode45m-eufix1_1e-3_zoom.png" alt="Fig3" width="70%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 3 - Scenario 1: step size $1\times 10^{-3}$ &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;figure&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/E0_ode45-ode45m-eufix1_1e-4_zoom.png" alt="Fig4" width="70%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 4 - Scenario 1: step size $1\times 10^{-4}$ &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -732,46 +680,30 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Scenario-2"&gt;Scenario 2&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Scenario-2"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;In this scenario we submitted the DC motor to high stiction $B_{2C}=300$ and sinsusoidal input at $5[Hz]$ which simulates the reversing mode. Table 3 shows the output for the three solvers showing that &lt;code&gt;ode45&lt;/code&gt; is the slowest by far.&lt;/p&gt;
-&lt;center&gt;Table 3: Scenario 2: simulation time and number of steps. &lt;/center&gt;&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;simulation time [s]&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$517.798$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$3.463$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$0.093$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;number of time steps&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$13559913$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$9647$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$3002$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;center&gt;Table 3: Scenario 2: simulation time and number of steps. &lt;/center&gt;
+&lt;p&gt;|  		                | &lt;code&gt;ode45&lt;/code&gt; 	 | &lt;code&gt;ode45m&lt;/code&gt; | &lt;code&gt;eufix1&lt;/code&gt; |
+|:---------------------:|:----------:|:--------:|:--------:|
+| simulation time [s]   | $517.798$  | $3.463$  | $0.093$  |			
+| number of time steps  | $13559913$ | $9647$   | $3002$   |&lt;/p&gt;
 &lt;p&gt;Fig. 5 shows the simulation output. The relevant result is the behavior of the system around the (nonlinear) stiction. $\omega_2$ sticks at $0.15[s]$ and $0.25[s]$ due to $B_{2C}$.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/sinE0_ode45-ode45m-eufix1_1e-4.png" alt="Fig5" width="70%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 5 - Scenario 2: reversing mode. &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;p&gt;Even though the solvers were able to solve the dynamics with stiction, &lt;code&gt;ode45&lt;/code&gt; took too much time to overcome this nonlinearity. Fig. 6 shows the stiction with three different zoom levels for each solver. The fastest but with more integration step error is &lt;code&gt;eufix1&lt;/code&gt;. &lt;code&gt;ode45m&lt;/code&gt; has less error $\pm 0.01$, and finally &lt;code&gt;ode45&lt;/code&gt; solves with the minimum error, around $\pm 10\times 10^{-5}$. In conclusion, &lt;code&gt;ode45m&lt;/code&gt; is the best choice against the rest because it can obtain the solution with low error and with decent speed.&lt;/p&gt;
+&lt;/figure&gt;
+&lt;p&gt;Even though the solvers were able to solve the dynamics with stiction, &lt;code&gt;ode45&lt;/code&gt; took too much time to overcome this nonlinearity. Fig. 6 shows the stiction with three different zoom levels for each solver. The fastest but with more integration step error is &lt;code&gt;eufix1&lt;/code&gt;. &lt;code&gt;ode45m&lt;/code&gt; has less error $\pm 0.01$, and finally &lt;code&gt;ode45&lt;/code&gt; solves with the minimum error, around $\pm 10\times 10^{-5}$. In conclusion, &lt;code&gt;ode45m&lt;/code&gt; is the best choice against the rest because it can obtain the solution with low error and with decent speed.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/sinE0_ode45-ode45m-eufix1_1e-4_zoom.png" alt="Fig6" width="70%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 6 - Scenario 2: stiction behavior at $0.148\leq t \leq 0.157$. &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;p&gt;The motor temperature $\theta_M$ in reversing mode reaches the steady-state at $45[s]$ approximately which indicates the motor won't suffer overheat due to stiction.&lt;/p&gt;
+&lt;/figure&gt;
+&lt;p&gt;The motor temperature $\theta_M$ in reversing mode reaches the steady-state at $45[s]$ approximately which indicates the motor won't suffer overheat due to stiction.&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Nonlinear_DCmotor/sinE0_thetaM_ode45-ode45m-eufix1_1e-4.png" alt="Fig7" width="60%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig. 7 - Scenario 2: motor temperature. &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>Coulomb friction</category><category>DC motor</category><category>differential equations</category><category>dynamics model</category><category>Jupyter</category><category>Matlab</category><category>nonlinear</category><category>stiction</category><category>thermal model</category><guid>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</guid><pubDate>Fri, 20 Nov 2020 21:48:34 GMT</pubDate></item><item><title>Dynamic model of a DC motor with gear train</title><link>https://paulomarconi.github.io/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
 
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Coulomb friction</category><category>DC motor</category><category>differential equations</category><category>dynamics model</category><category>Jupyter</category><category>Matlab</category><category>nonlinear</category><category>stiction</category><category>thermal model</category><guid>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</guid><pubDate>Fri, 20 Nov 2020 21:48:34 GMT</pubDate></item><item><title>Dynamic model of a DC motor with gear train</title><link>https://paulomarconi.github.io/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#source-code"&gt;Source code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
@@ -796,14 +728,12 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.2 - Rotational mechanical free-body diagram.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-
 &lt;p&gt;where $\theta$ is the angular displacement, $\omega$ is the angular speed, $B$ is the rotational viscous-damping coefficient, $K$ is the stiffness coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, and $r$ is the gear radius.&lt;/p&gt;
 &lt;p&gt;The electromechanical section (DC motor) is&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Electromechanical_free-body.png" alt="Electromechanical_free-body" width="35%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.3 - Electro-mechanical free-body diagram.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-
 &lt;p&gt;where $R_F$ is the field resistance, $L_F$ is the field inductance, $E_F$ is the applied constant field voltage, and $i_F$ is the input field current. $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, and $e_m$ is the induced voltage, $i_A$ is the input stationary current, and $e_i(t)$ is the applied armature voltage, and $\tau_e$ is the electro-mechanical driving torque exerted on the rotor. &lt;/p&gt;
 &lt;p&gt;If the flux density $\mathcal{B}$ is&lt;/p&gt;
 &lt;div class="math"&gt;
@@ -861,7 +791,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;div class="math"&gt;
 \begin{align*}
     J_{eq} &amp;amp; = J_2+N^2 J_1 \\
-    B_{eq} &amp;amp; = B_2+B^2 B_1
+    B_{eq} &amp;amp; = B_2+N^2 B_1
 \end{align*}
 &lt;/div&gt;
 
@@ -1132,4 +1062,4 @@ therefore the equilibrium point is
 
 &lt;p&gt;which indicates that a $\textbf{constant angular speed}$ produced by $x_{2_0}=\dot{\theta_{2_0}}$ is needed to balance the constant applied armature voltage $e_i=E_0$.&lt;/p&gt;
 &lt;h2&gt;References&lt;/h2&gt;
-&lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;&lt;/div&gt;</description><category>DC motor</category><category>differential equations</category><category>dynamics model</category><category>equilibrium point</category><category>state-space</category><guid>https://paulomarconi.github.io/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item></channel></rss>
+&lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;</description><category>DC motor</category><category>differential equations</category><category>dynamics model</category><category>equilibrium point</category><category>state-space</category><guid>https://paulomarconi.github.io/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item></channel></rss>

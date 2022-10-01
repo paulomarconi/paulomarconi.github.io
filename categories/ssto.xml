@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about SSTO)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/ssto.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about SSTO)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/ssto.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Thu, 22 Oct 2020 21:04:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 Oct 2022 23:15:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
 &lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Introduction" data-toc-modified-id="Introduction-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Introduction&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Source-code" data-toc-modified-id="Source-code-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Source code&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Isolated-power-system" data-toc-modified-id="Isolated-power-system-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Isolated power system&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#State-space-model-of-the-system" data-toc-modified-id="State-space-model-of-the-system-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;State-space model of the system&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Design-requirements" data-toc-modified-id="Design-requirements-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Design requirements&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#MPC-SSTO-tracking-problem-formulation" data-toc-modified-id="MPC-SSTO-tracking-problem-formulation-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;MPC-SSTO tracking problem formulation&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Cost-function" data-toc-modified-id="Cost-function-8"&gt;&lt;span class="toc-item-num"&gt;8  &lt;/span&gt;Cost function&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Defining-the-inequality-constraints" data-toc-modified-id="Defining-the-inequality-constraints-9"&gt;&lt;span class="toc-item-num"&gt;9  &lt;/span&gt;Defining the inequality constraints&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Target-equilibrium-optimization-under-constraints-(SSTO)" data-toc-modified-id="Target-equilibrium-optimization-under-constraints-(SSTO)-10"&gt;&lt;span class="toc-item-num"&gt;10  &lt;/span&gt;Target equilibrium optimization under constraints (SSTO)&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Solving-the-LQ-MPC-optimization-problem" data-toc-modified-id="Solving-the-LQ-MPC-optimization-problem-11"&gt;&lt;span class="toc-item-num"&gt;11  &lt;/span&gt;Solving the LQ-MPC optimization problem&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Stability" data-toc-modified-id="Stability-12"&gt;&lt;span class="toc-item-num"&gt;12  &lt;/span&gt;Stability&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Algorithm" data-toc-modified-id="Algorithm-13"&gt;&lt;span class="toc-item-num"&gt;13  &lt;/span&gt;Algorithm&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Simulation" data-toc-modified-id="Simulation-14"&gt;&lt;span class="toc-item-num"&gt;14  &lt;/span&gt;Simulation&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Init" data-toc-modified-id="Init-14.1"&gt;&lt;span class="toc-item-num"&gt;14.1  &lt;/span&gt;Init&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#System:-continuos-to-discrete" data-toc-modified-id="System:-continuos-to-discrete-14.2"&gt;&lt;span class="toc-item-num"&gt;14.2  &lt;/span&gt;System: continuos to discrete&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Constraints" data-toc-modified-id="Constraints-14.3"&gt;&lt;span class="toc-item-num"&gt;14.3  &lt;/span&gt;Constraints&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Target-equilibrium-pairs-and-optimization-under-constraints" data-toc-modified-id="Target-equilibrium-pairs-and-optimization-under-constraints-14.4"&gt;&lt;span class="toc-item-num"&gt;14.4  &lt;/span&gt;Target equilibrium pairs and optimization under constraints&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Constraints-for-SSTO-model" data-toc-modified-id="Constraints-for-SSTO-model-14.5"&gt;&lt;span class="toc-item-num"&gt;14.5  &lt;/span&gt;Constraints for SSTO model&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Prediction,-Constraint-and-Cost-matrices" data-toc-modified-id="Prediction,-Constraint-and-Cost-matrices-14.6"&gt;&lt;span class="toc-item-num"&gt;14.6  &lt;/span&gt;Prediction, Constraint and Cost matrices&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Check-if-closed-loop-system-is-stable" data-toc-modified-id="Check-if-closed-loop-system-is-stable-14.7"&gt;&lt;span class="toc-item-num"&gt;14.7  &lt;/span&gt;Check if closed-loop system is stable&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#Calculate-the-terminal-cost-matrix-P" data-toc-modified-id="Calculate-the-terminal-cost-matrix-P-14.8"&gt;&lt;span class="toc-item-num"&gt;14.8  &lt;/span&gt;Calculate the terminal cost matrix P&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#For-loop" data-toc-modified-id="For-loop-14.9"&gt;&lt;span class="toc-item-num"&gt;14.9  &lt;/span&gt;For loop&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/blog/MPC-SSTO/#References" data-toc-modified-id="References-15"&gt;&lt;span class="toc-item-num"&gt;15  &lt;/span&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -35,7 +36,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/MPC-SSTO/plant.png" alt="plant" width="60%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.1 - Isolated Power System &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;p&gt;In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&amp;gt;0$ is the regulation factor.&lt;/p&gt;
+&lt;/figure&gt;
+&lt;p&gt;In this system, a steam turbine produces mechanical power, which is subsequently converted to electrical power via a synchronous generator connected to the grid. A change in power demand, $\Delta p^d$, causes the system frequency $f[Hz]$ to change. The control objective is to drive frequency deviations, $\Delta f$, to zero following a demand change, $\Delta p^d$. To aid this, a governor controls the steam flow input to the turbine in response to the error between the reference power $\Delta p^{ref}$ and the regulated frequency $\Delta\omega /R$, where $R&amp;gt;0$ is the regulation factor.&lt;/p&gt;
 &lt;p&gt;The primary frequency control loop present in the system is, unfortunately, unable to regulate the frequency error to zero following demand changes. Therefore, the aim is to design a secondary frequency control loop that will adjust the reference power $\Delta p_{ref}$ in response to frequency deviations $\Delta\omega$, in order to eliminate error and improve transient performance.&lt;/p&gt;
 
 &lt;/div&gt;
@@ -48,7 +50,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \begin{align*}\tag{1}
 \begin{bmatrix}
     \Delta\dot{\omega} \\
-    \Delta\dot{p}^m \\   
+    \Delta\dot{p}^m \\	 
     \Delta\dot{p}^v \\
 \end{bmatrix}
 &amp;amp;=
@@ -59,7 +61,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{bmatrix}
 \begin{bmatrix}
     \Delta \omega \\
-    \Delta p \\  
+    \Delta p \\	 
     \Delta p^v 
 \end{bmatrix}
 +
@@ -82,7 +84,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{bmatrix}
 \begin{bmatrix}
     \Delta \omega \\
-    \Delta p \\  
+    \Delta p \\	 
     \Delta p^v 
 \end{bmatrix}
 + 
@@ -103,13 +105,12 @@ $$&lt;/p&gt;
 &lt;li&gt;Maintains stability.&lt;/li&gt;
 &lt;li&gt;Frequency settles to $|\Delta f| \leq 0.01 [Hz]$ within 2 seconds of the disturbance initiation.&lt;/li&gt;
 &lt;li&gt;Exhibits zero steady-state error in the output.&lt;/li&gt;
-&lt;li&gt;Satisfies the constraints.
+&lt;li&gt;Satisfies the constraints.&lt;/li&gt;
+&lt;/ul&gt;
 \begin{align*}
 |\Delta p^{ref}| &amp;amp;\leq 0.5 \\
 |\Delta f| &amp;amp;\leq 0.5
-\end{align*}&lt;/li&gt;
-&lt;/ul&gt;
-
+\end{align*}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -120,7 +121,8 @@ $$&lt;/p&gt;
 &lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/MPC-SSTO/MPC-SSTO.png" alt="MPC-SSTO" width="50%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.2 - MPC and SSTO model&lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;p&gt;For the Discrete Linear Time-Invariant (DLTI) state-space system,
+&lt;/figure&gt;
+&lt;p&gt;For the Discrete Linear Time-Invariant (DLTI) state-space system,
 \begin{align*}\tag{2}
 x(k+1) &amp;amp;= A~x(k)+B~u(k)+B_d~d(k)\\
 y(k) &amp;amp;= C~x(k)+D_d~d(k), \quad k=0,1,2,\dots
@@ -150,7 +152,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
     \xi(k|k) &amp;amp;= \xi(k) \\
     P_x ( \xi(k+j|k) + x_{ss} )&amp;amp;\leq q_x \\
     P_u ( v(k+j|k) + u_{ss} )&amp;amp;\leq q_u  \\
-    P_{x_N}~\xi(k+N|k) &amp;amp;\leq \tilde{q}_{x_N}\\   
+    P_{x_N}~\xi(k+N|k) &amp;amp;\leq \tilde{q}_{x_N}\\	 
 \end{align*}&lt;p&gt;for $j = 0, 1, 2, \dots, N-1$.&lt;/p&gt;
 &lt;p&gt;Where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.&lt;/p&gt;
 
@@ -237,9 +239,9 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
     P_u~K_\infty
     \end{bmatrix}
     \begin{bmatrix}
-        (A+BK_\infty)^0\\
-        \vdots\\
-        (A+BK_\infty)^{N-1}
+    	(A+BK_\infty)^0\\
+    	\vdots\\
+    	(A+BK_\infty)^{N-1}
     \end{bmatrix}
 }_{P_{x_N}}
 }
@@ -248,8 +250,8 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 {\underbrace{
     \textbf{1}_n \otimes 
     \begin{bmatrix}
-        q_x-P_x~x_{ss}\\
-        q_u-P_u~u_{ss}
+    	q_x-P_x~x_{ss}\\
+    	q_u-P_u~u_{ss}
     \end{bmatrix}
 }_{\tilde{q}_{x_N}}
 }
@@ -270,44 +272,44 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 \begin{align*}
 {\underbrace{
     \begin{bmatrix}
-        I-A &amp;amp; -B\\
-        C &amp;amp; 0
+    	I-A &amp;amp; -B\\
+    	C &amp;amp; 0
     \end{bmatrix}}_{A_{eq}=T}
 }
 {\underbrace{
     \begin{bmatrix}
-        x_{ss}\\
-        u_{ss}
+    	x_{ss}\\
+    	u_{ss}
     \end{bmatrix}}_{x_{eq}}
 }
 &amp;amp;=
 {\underbrace{
     \begin{bmatrix}
-        B_d\\
-        r-D_d
+    	B_d\\
+    	r-D_d
     \end{bmatrix} 
     d 
-    }_{b_{eq}}  
+    }_{b_{eq}}	
 }
 \\
 {\underbrace{
-        \begin{bmatrix}
-        P_x &amp;amp; 0\\
-        0 &amp;amp; P_u
-        \end{bmatrix}}_{A_{neq}}
+    	\begin{bmatrix}
+    	P_x &amp;amp; 0\\
+    	0 &amp;amp; P_u
+    	\end{bmatrix}}_{A_{neq}}
 }
 {\underbrace{
-        \begin{bmatrix}
-        x_{ss}\\
-        u_{ss}
-        \end{bmatrix}}_{x_{neq}}
+    	\begin{bmatrix}
+    	x_{ss}\\
+    	u_{ss}
+    	\end{bmatrix}}_{x_{neq}}
 }
 &amp;amp;\leq
 {\underbrace{
-        \begin{bmatrix}
-        q_x\\
-        q_u
-        \end{bmatrix}}_{b_{neq}}
+    	\begin{bmatrix}
+    	q_x\\
+    	q_u
+    	\end{bmatrix}}_{b_{neq}}
 }
 \end{align*}&lt;p&gt;where $\rho$ is a penalty constant.&lt;/p&gt;
 
@@ -361,10 +363,10 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 &lt;h2 id="Algorithm"&gt;Algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Now that the solution of the LQ-MPC is established and the stability can be guaranteed, there are basic conditions to meet such as&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;$(A,B)$ is stabilizable which can be proved by the controllability, in Matlab &lt;code&gt;rank(ctrb(A,B))&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;$Q\succeq 0$, can be $C^\intercal C$  &lt;/li&gt;
+&lt;li&gt;$Q\succeq 0$, can be $C^\intercal C$&lt;/li&gt;
 &lt;li&gt;$R\succ 0$, changed later for tuning.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src="https://paulomarconi.github.io/images/MPC-SSTO/algorithm.png" alt="drawing" width="60%"&gt;&lt;/p&gt;
+&lt;img src="https://paulomarconi.github.io/images/MPC-SSTO/algorithm.png" alt="drawing" width="60%"&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -700,7 +702,7 @@ K =
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/predict_mats.m'&lt;/span&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[F,G] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;predict_mats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;A,B,N&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[F,G]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;predict_mats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;A,B,N&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% P. Trodden, 2015.&lt;/span&gt;
 
     &lt;span class="c"&gt;% dimensions&lt;/span&gt;
@@ -814,7 +816,7 @@ G =
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/constraint_mats.m'&lt;/span&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;constraint_mats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;F,G,Pu,qu,Px,qx,Pxf,qxf&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;[Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] = constraint_mats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;F,G,Pu,qu,Px,qx,Pxf,qxf&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% P. Trodden, 2017.&lt;/span&gt;
 
     &lt;span class="c"&gt;% input dimension&lt;/span&gt;
@@ -1200,7 +1202,7 @@ P =
     &lt;div class="input_area"&gt;
 &lt;div class=" highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/cost_mats.m'&lt;/span&gt;
 
-&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[H,L,M] &lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;cost_mats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;F,G,Q,R,P&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="k"&gt;function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;[H,L,M]&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;cost_mats&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;F,G,Q,R,P&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% P. Trodden, 2015.&lt;/span&gt;
 
     &lt;span class="c"&gt;% get dimensions&lt;/span&gt;
@@ -1697,4 +1699,4 @@ M =
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><category>control systems</category><category>MPC</category><category>optimization</category><category>SSTO</category><guid>https://paulomarconi.github.io/blog/MPC-SSTO/</guid><pubDate>Wed, 02 Sep 2020 17:39:47 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><category>control systems</category><category>MPC</category><category>optimization</category><category>SSTO</category><guid>https://paulomarconi.github.io/blog/MPC-SSTO/</guid><pubDate>Wed, 02 Sep 2020 17:39:47 GMT</pubDate></item></channel></rss>

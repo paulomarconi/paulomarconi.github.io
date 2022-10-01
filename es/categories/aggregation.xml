@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre aggregation)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/aggregation.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre aggregation)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/aggregation.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2022 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 14 Oct 2020 16:01:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple foraging and random aggregation strategy for swarm robotics without communication</title><link>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 Oct 2022 23:15:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple foraging and random aggregation strategy for swarm robotics without communication</title><link>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
+&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
 &lt;div class="toc"&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication" data-toc-modified-id="Simple-Foraging-and-Random-Aggregation-Strategy-for-swarm-robotics-without-communication-1"&gt;&lt;span class="toc-item-num"&gt;1  &lt;/span&gt;Simple Foraging and Random Aggregation Strategy for swarm robotics without communication&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"&gt;&lt;span class="toc-item-num"&gt;2  &lt;/span&gt;Pre-requisites&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Source-code" data-toc-modified-id="Source-code-3"&gt;&lt;span class="toc-item-num"&gt;3  &lt;/span&gt;Source code&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Problem-formulation" data-toc-modified-id="Problem-formulation-4"&gt;&lt;span class="toc-item-num"&gt;4  &lt;/span&gt;Problem formulation&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Foraging-and-Random-Aggregation" data-toc-modified-id="Foraging-and-Random-Aggregation-5"&gt;&lt;span class="toc-item-num"&gt;5  &lt;/span&gt;Foraging and Random Aggregation&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Unicycle-model" data-toc-modified-id="Unicycle-model-6"&gt;&lt;span class="toc-item-num"&gt;6  &lt;/span&gt;Unicycle model&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Rebound-avoider/follower-algorithm" data-toc-modified-id="Rebound-avoider/follower-algorithm-7"&gt;&lt;span class="toc-item-num"&gt;7  &lt;/span&gt;Rebound avoider/follower algorithm&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Search-blob/ePuck-algorithm" data-toc-modified-id="Search-blob/ePuck-algorithm-8"&gt;&lt;span class="toc-item-num"&gt;8  &lt;/span&gt;Search blob/ePuck algorithm&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Results-and-discussion" data-toc-modified-id="Results-and-discussion-9"&gt;&lt;span class="toc-item-num"&gt;9  &lt;/span&gt;Results and discussion&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Lua-code-of-the-algorithm" data-toc-modified-id="Lua-code-of-the-algorithm-10"&gt;&lt;span class="toc-item-num"&gt;10  &lt;/span&gt;Lua code of the algorithm&lt;/a&gt;&lt;/span&gt;&lt;ul class="toc-item"&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Edit-the-controller" data-toc-modified-id="Edit-the-controller-10.1"&gt;&lt;span class="toc-item-num"&gt;10.1  &lt;/span&gt;Edit the controller&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Save-the-output-data" data-toc-modified-id="Save-the-output-data-10.2"&gt;&lt;span class="toc-item-num"&gt;10.2  &lt;/span&gt;Save the output data&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;span&gt;&lt;a href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#References" data-toc-modified-id="References-11"&gt;&lt;span class="toc-item-num"&gt;11  &lt;/span&gt;References&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -52,6 +53,7 @@ Each trial should last &lt;strong&gt;​60 seconds&lt;/strong&gt; of simulation 
   &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/scenario.png" alt="scenario" width="40%"&gt;
   &lt;center&gt;&lt;figcaption&gt;Simulation environment&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -60,7 +62,7 @@ Each trial should last &lt;strong&gt;​60 seconds&lt;/strong&gt; of simulation 
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Foraging-and-Random-Aggregation"&gt;Foraging and Random Aggregation&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Foraging-and-Random-Aggregation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The DFSM diagram in Fig. 1, which is defined by (1) and (2), starts in the Behaviour state where the robot is set as $\textit{avoider}$ while the simulation time is $t\leq 60[s]$. During that time, the Foraging state looks for the green blobs with the Search blob/ePuck algorithm while avoiding obstacles using the Rebound algorithm. Moreover, a Random Movement state is used to introduce randomness to the system so the agent can take different paths if there is no blob or obstacle detection. For $60&amp;lt;t\leq 120$, the Behaviour of the robot is set to $\textit{follower}$ and switches to Random Aggregation state where it uses both algorithms, the Rebound to follow ePucks with the proximity sensors and the Search to look for the closest ePuck wheels. For both algorithms, the output is the angle of attack $\alpha_n$, where $n$ depends on the current state.&lt;/p&gt;
 \begin{align*}
-S&amp;amp;=\lbrace B,F,R,A,Ra \rbrace  \tag{1}\\    
+S&amp;amp;=\lbrace B,F,R,A,Ra \rbrace  \tag{1}\\ 	
 \varSigma&amp;amp;= \lbrace t\leq 60,60&amp;lt;t\leq 120,bl~\exists,bl~\nexists,ob~\exists,ob~\nexists,eP~\exists, eP~\nexists \rbrace \tag{2}\\
 s_0&amp;amp;=\lbrace B \rbrace \\
 \end{align*}&lt;p&gt;where, $S$ is the finite set of states, $\varSigma$ is the input alphabet, $\delta:S\times\varSigma$ is the state transition function, Table 1, $s_0$ is the initial state, $\exists$ and $\nexists$ mean detection and no detection respectively.&lt;/p&gt;
@@ -71,78 +73,19 @@ s_0&amp;amp;=\lbrace B \rbrace \\
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;/p&gt;&lt;center&gt;Table 1: State transition function $\delta$
-&lt;table&gt;
-&lt;thead&gt;&lt;tr&gt;
-&lt;th style="text-align:center"&gt;Input&lt;/th&gt;
-&lt;th style="text-align:center"&gt;Current State&lt;/th&gt;
-&lt;th style="text-align:center"&gt;Next State&lt;/th&gt;
-&lt;th style="text-align:center"&gt;Output&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$t ≤ 60$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;B&lt;/strong&gt;ehaviour&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;F&lt;/strong&gt;oraging&lt;/td&gt;
-&lt;td style="text-align:center"&gt;avoider&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;$60 &amp;lt; t ≤ 120$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;B&lt;/strong&gt;ehaviour&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;A&lt;/strong&gt;ggregation&lt;/td&gt;
-&lt;td style="text-align:center"&gt;follower&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;bl&lt;/strong&gt;ob $\exists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;F&lt;/strong&gt;oraging&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;F&lt;/strong&gt;oraging&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$\alpha_C$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;bl&lt;/strong&gt;ob $\nexists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;F&lt;/strong&gt;oraging&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;Ra&lt;/strong&gt;ndom Movement&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$\alpha_{C_r}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;ob&lt;/strong&gt;stacle $\exists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;F&lt;/strong&gt;oraging&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;R&lt;/strong&gt;ebound&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$\alpha_R$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;ob&lt;/strong&gt;stacle $\nexists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;R&lt;/strong&gt;ebound&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;F&lt;/strong&gt;oraging&lt;/td&gt;
-&lt;td style="text-align:center"&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;ob&lt;/strong&gt;stacle $\exists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;A&lt;/strong&gt;ggregation&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;R&lt;/strong&gt;ebound&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$\alpha_R$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;ob&lt;/strong&gt;stacle $\nexists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;R&lt;/strong&gt;ebound&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;A&lt;/strong&gt;ggregation&lt;/td&gt;
-&lt;td style="text-align:center"&gt;-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;eP&lt;/strong&gt;uck $\exists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;A&lt;/strong&gt;ggregation&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;A&lt;/strong&gt;ggregation&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$\alpha_e$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;eP&lt;/strong&gt;uck $\nexists$&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;A&lt;/strong&gt;ggregation&lt;/td&gt;
-&lt;td style="text-align:center"&gt;&lt;strong&gt;Ra&lt;/strong&gt;ndom Movement&lt;/td&gt;
-&lt;td style="text-align:center"&gt;$\alpha_{e_r}$&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;center&gt;Table 1: State transition function $\delta$
+&lt;p&gt;| Input | Current State | Next State | Output |
+|:-----:|:-------------:|:----------:|:------:|
+| $t ≤ 60$ | &lt;strong&gt;B&lt;/strong&gt;ehaviour | &lt;strong&gt;F&lt;/strong&gt;oraging | avoider |
+| $60 &amp;lt; t ≤ 120$ | &lt;strong&gt;B&lt;/strong&gt;ehaviour | &lt;strong&gt;A&lt;/strong&gt;ggregation | follower|
+| &lt;strong&gt;bl&lt;/strong&gt;ob $\exists$ | &lt;strong&gt;F&lt;/strong&gt;oraging | &lt;strong&gt;F&lt;/strong&gt;oraging | $\alpha_C$ |
+| &lt;strong&gt;bl&lt;/strong&gt;ob $\nexists$ | &lt;strong&gt;F&lt;/strong&gt;oraging | &lt;strong&gt;Ra&lt;/strong&gt;ndom Movement | $\alpha_{C_r}$ |
+| &lt;strong&gt;ob&lt;/strong&gt;stacle $\exists$ | &lt;strong&gt;F&lt;/strong&gt;oraging | &lt;strong&gt;R&lt;/strong&gt;ebound | $\alpha_R$ |
+| &lt;strong&gt;ob&lt;/strong&gt;stacle $\nexists$ | &lt;strong&gt;R&lt;/strong&gt;ebound | &lt;strong&gt;F&lt;/strong&gt;oraging | - |
+| &lt;strong&gt;ob&lt;/strong&gt;stacle $\exists$ | &lt;strong&gt;A&lt;/strong&gt;ggregation | &lt;strong&gt;R&lt;/strong&gt;ebound | $\alpha_R$ |
+| &lt;strong&gt;ob&lt;/strong&gt;stacle $\nexists$ | &lt;strong&gt;R&lt;/strong&gt;ebound | &lt;strong&gt;A&lt;/strong&gt;ggregation | - |
+| &lt;strong&gt;eP&lt;/strong&gt;uck $\exists$ | &lt;strong&gt;A&lt;/strong&gt;ggregation | &lt;strong&gt;A&lt;/strong&gt;ggregation | $\alpha_e$ |
+| &lt;strong&gt;eP&lt;/strong&gt;uck $\nexists$ | &lt;strong&gt;A&lt;/strong&gt;ggregation | &lt;strong&gt;Ra&lt;/strong&gt;ndom Movement | $\alpha_{e_r}$ |&lt;/p&gt;
 
 &lt;/center&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -154,6 +97,7 @@ s_0&amp;amp;=\lbrace B \rbrace \\
   &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/DFSM.png" alt="DFSM" width="40%"&gt;
   &lt;center&gt;&lt;figcaption&gt;Fig.1 Mealy DFSM of the controller. &lt;a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/blob/master/report/tikz/DFSM.tex"&gt;[Tikz version]&lt;/a&gt; &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -181,6 +125,7 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" alt="drawing" width="55%"&gt;   
     &lt;center&gt;&lt;figcaption&gt;Fig. 2 - Unicycle model, Rebound and Search angle. &lt;a href="https://github.com/paulomarconi/Foraging_Aggregation_V-rep_e-puck/tree/master/report/tikz"&gt;[Tikz version]&lt;/a&gt; &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -209,23 +154,27 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/result_b.png" alt="result_b" width="50%"&gt;   
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/result_c.png" alt="result_c" width="50%"&gt;   
     &lt;center&gt;&lt;figcaption&gt;Fig. 3: Simulation results &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;figure&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/foraging.gif" alt="foraging" width="auto%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Trial: Scenario 2 (5 robots) - Foraging for $1 \le t \leq 60$ &lt;/figcaption&gt;&lt;/center&gt;
-&lt;/figure&gt;&lt;figure&gt;
+&lt;/figure&gt;
+&lt;figure&gt;
     &lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/aggregation.gif" alt="aggregation" width="auto%"&gt;
     &lt;center&gt;&lt;figcaption&gt;Trial: Scenario 2 (5 robots) - Random Aggregation for $60 \le t \leq 120$ &lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
+
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Lua-code-of-the-algorithm"&gt;Lua code of the algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Lua-code-of-the-algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;pre class="lang-lua line-numbers" data-jsonp="https://api.github.com/repos/paulomarconi/Foraging_Aggregation_V-rep_e-puck/contents/report/vrep.lua"&gt;&lt;/pre&gt;&lt;h3 id="Edit-the-controller"&gt;Edit the controller&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Edit-the-controller"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To edit the controller for all the ePuck, open V-rep and load the scene  &lt;code&gt;sim_5_Robots.ttt&lt;/code&gt;, and edit the ePuck file.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/controller_location.png" alt="controller_location" width="auto"&gt;&lt;/p&gt;
+&lt;h2 id="Lua-code-of-the-algorithm"&gt;Lua code of the algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Lua-code-of-the-algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;pre class="lang-lua line-numbers" data-jsonp="https://api.github.com/repos/paulomarconi/Foraging_Aggregation_V-rep_e-puck/contents/report/vrep.lua"&gt;&lt;/pre&gt;
+&lt;h3 id="Edit-the-controller"&gt;Edit the controller&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Edit-the-controller"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To edit the controller for all the ePuck, open V-rep and load the scene  &lt;code&gt;sim_5_Robots.ttt&lt;/code&gt;, and edit the ePuck file.&lt;/p&gt;
+&lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/controller_location.png" alt="controller_location" width="auto"&gt;
 &lt;h3 id="Save-the-output-data"&gt;Save the output data&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/#Save-the-output-data"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To edit the location of the output data, open the &lt;code&gt;disc file&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/output_location.png" alt="output_location" width="auto"&gt;&lt;/p&gt;
+&lt;img src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/output_location.png" alt="output_location" width="auto"&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -238,4 +187,4 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</guid><pubDate>Sun, 06 Sep 2020 21:47:09 GMT</pubDate></item></channel></rss>
+&lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</guid><pubDate>Sun, 06 Sep 2020 21:47:09 GMT</pubDate></item></channel></rss>

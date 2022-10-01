@@ -25,7 +25,7 @@ LanguageTool is a proofreading open-source software written in Java that allows 
 The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. 
 
 # Download and configure LanguageTool
-- Download [LanguageTool desktop version for offline use](https://languagetool.org/).
+- Download [LanguageTool desktop version for offline use](https://languagetool.org/download/).
 - Unzip the folder.
 - Run `languagetool.jar`
 - In `TexChecking > Options` enable `Run as server on port 8081`

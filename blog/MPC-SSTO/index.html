@@ -124,7 +124,7 @@ navbar-dark bg-dark
             <time class="published dt-published" datetime="2020-09-02T13:39:47-04:00" itemprop="datePublished" title="2020-09-02">2020-09-02</time></a>
             </p>
                 <p class="commentline">
-        
+    
     <a href="#disqus_thread" data-disqus-identifier="cache/posts/MPC-SSTO.html">Comments</a>
 
 
@@ -136,13 +136,11 @@ navbar-dark bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div>
-<div class="cell border-box-sizing text_cell rendered">
+    <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p></p>
 <h2>Table of Contents<span class="tocSkip"></span>
 </h2>
 <div class="toc"><ul class="toc-item">
@@ -174,6 +172,7 @@ navbar-dark bg-dark
 </li>
 <li><span><a href="#References" data-toc-modified-id="References-15"><span class="toc-item-num">15  </span>References</a></span></li>
 </ul></div>
+
 </div>
 </div>
 </div>
@@ -228,7 +227,7 @@ navbar-dark bg-dark
 \begin{align*}\tag{1}
 \begin{bmatrix}
     \Delta\dot{\omega} \\
-    \Delta\dot{p}^m \\   
+    \Delta\dot{p}^m \\	 
     \Delta\dot{p}^v \\
 \end{bmatrix}
 &amp;=
@@ -239,7 +238,7 @@ navbar-dark bg-dark
 \end{bmatrix}
 \begin{bmatrix}
     \Delta \omega \\
-    \Delta p \\  
+    \Delta p \\	 
     \Delta p^v 
 \end{bmatrix}
 +
@@ -262,7 +261,7 @@ navbar-dark bg-dark
 \end{bmatrix}
 \begin{bmatrix}
     \Delta \omega \\
-    \Delta p \\  
+    \Delta p \\	 
     \Delta p^v 
 \end{bmatrix}
 + 
@@ -287,12 +286,12 @@ $$</p>
 <li>Maintains stability.</li>
 <li>Frequency settles to $|\Delta f| \leq 0.01 [Hz]$ within 2 seconds of the disturbance initiation.</li>
 <li>Exhibits zero steady-state error in the output.</li>
-<li>Satisfies the constraints.
+<li>Satisfies the constraints.</li>
+</ul>
 \begin{align*}
 |\Delta p^{ref}| &amp;\leq 0.5 \\
 |\Delta f| &amp;\leq 0.5
-\end{align*}</li>
-</ul>
+\end{align*}
 </div>
 </div>
 </div>
@@ -339,7 +338,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
     \xi(k|k) &amp;= \xi(k) \\
     P_x ( \xi(k+j|k) + x_{ss} )&amp;\leq q_x \\
     P_u ( v(k+j|k) + u_{ss} )&amp;\leq q_u  \\
-    P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\   
+    P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\	 
 \end{align*}<p>for $j = 0, 1, 2, \dots, N-1$.</p>
 <p>Where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.</p>
 
@@ -430,9 +429,9 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
     P_u~K_\infty
     \end{bmatrix}
     \begin{bmatrix}
-        (A+BK_\infty)^0\\
-        \vdots\\
-        (A+BK_\infty)^{N-1}
+    	(A+BK_\infty)^0\\
+    	\vdots\\
+    	(A+BK_\infty)^{N-1}
     \end{bmatrix}
 }_{P_{x_N}}
 }
@@ -441,8 +440,8 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 {\underbrace{
     \textbf{1}_n \otimes 
     \begin{bmatrix}
-        q_x-P_x~x_{ss}\\
-        q_u-P_u~u_{ss}
+    	q_x-P_x~x_{ss}\\
+    	q_u-P_u~u_{ss}
     \end{bmatrix}
 }_{\tilde{q}_{x_N}}
 }
@@ -467,44 +466,44 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 \begin{align*}
 {\underbrace{
     \begin{bmatrix}
-        I-A &amp; -B\\
-        C &amp; 0
+    	I-A &amp; -B\\
+    	C &amp; 0
     \end{bmatrix}}_{A_{eq}=T}
 }
 {\underbrace{
     \begin{bmatrix}
-        x_{ss}\\
-        u_{ss}
+    	x_{ss}\\
+    	u_{ss}
     \end{bmatrix}}_{x_{eq}}
 }
 &amp;=
 {\underbrace{
     \begin{bmatrix}
-        B_d\\
-        r-D_d
+    	B_d\\
+    	r-D_d
     \end{bmatrix} 
     d 
-    }_{b_{eq}}  
+    }_{b_{eq}}	
 }
 \\
 {\underbrace{
-        \begin{bmatrix}
-        P_x &amp; 0\\
-        0 &amp; P_u
-        \end{bmatrix}}_{A_{neq}}
+    	\begin{bmatrix}
+    	P_x &amp; 0\\
+    	0 &amp; P_u
+    	\end{bmatrix}}_{A_{neq}}
 }
 {\underbrace{
-        \begin{bmatrix}
-        x_{ss}\\
-        u_{ss}
-        \end{bmatrix}}_{x_{neq}}
+    	\begin{bmatrix}
+    	x_{ss}\\
+    	u_{ss}
+    	\end{bmatrix}}_{x_{neq}}
 }
 &amp;\leq
 {\underbrace{
-        \begin{bmatrix}
-        q_x\\
-        q_u
-        \end{bmatrix}}_{b_{neq}}
+    	\begin{bmatrix}
+    	q_x\\
+    	q_u
+    	\end{bmatrix}}_{b_{neq}}
 }
 \end{align*}<p>where $\rho$ is a penalty constant.</p>
 
@@ -570,11 +569,10 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 <p>Now that the solution of the LQ-MPC is established and the stability can be guaranteed, there are basic conditions to meet such as</p>
 <ul>
 <li>$(A,B)$ is stabilizable which can be proved by the controllability, in Matlab <code>rank(ctrb(A,B))</code>.</li>
-<li>$Q\succeq 0$, can be $C^\intercal C$  </li>
+<li>$Q\succeq 0$, can be $C^\intercal C$</li>
 <li>$R\succ 0$, changed later for tuning.</li>
 </ul>
-<p><img src="../../images/MPC-SSTO/algorithm.png" alt="drawing" width="60%"></p>
-
+<img src="../../images/MPC-SSTO/algorithm.png" alt="drawing" width="60%">
 </div>
 </div>
 </div>
@@ -930,7 +928,7 @@ K =
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/predict_mats.m'</span>
 
-<span class="k">function</span><span class="w"> </span>[F,G] <span class="p">=</span><span class="w"> </span><span class="nf">predict_mats</span><span class="p">(</span>A,B,N<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>[F,G]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">predict_mats</span><span class="p">(</span>A,B,N<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c">% P. Trodden, 2015.</span>
 
     <span class="c">% dimensions</span>
@@ -1044,7 +1042,7 @@ G =
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/constraint_mats.m'</span>
 
-<span class="k">function</span><span class="w"> </span>[Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] <span class="p">=</span><span class="w"> </span><span class="nf">constraint_mats</span><span class="p">(</span>F,G,Pu,qu,Px,qx,Pxf,qxf<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="nf">[Pc, qc, Sc, Pu_tilde, Px_tilde, qx_tilde, Px0_tilde] = constraint_mats</span><span class="p">(</span>F,G,Pu,qu,Px,qx,Pxf,qxf<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c">% P. Trodden, 2017.</span>
 
     <span class="c">% input dimension</span>
@@ -1436,7 +1434,7 @@ P =
     <div class="input_area">
 <div class=" highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/cost_mats.m'</span>
 
-<span class="k">function</span><span class="w"> </span>[H,L,M] <span class="p">=</span><span class="w"> </span><span class="nf">cost_mats</span><span class="p">(</span>F,G,Q,R,P<span class="p">)</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span>[H,L,M]<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">cost_mats</span><span class="p">(</span>F,G,Q,R,P<span class="p">)</span><span class="w"></span>
 <span class="w">    </span><span class="c">% P. Trodden, 2015.</span>
 
     <span class="c">% get dimensions</span>
@@ -1941,7 +1939,6 @@ M =
 </div>
 </div>
 </div>
-</div>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/control-systems/" rel="tag">control systems</a></li>
@@ -1958,7 +1955,7 @@ M =
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
-        
+    
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="paulomarconi",
@@ -2024,7 +2021,7 @@ MathJax.Hub.Config({
         </span>
     </p>
     <p>
-        Contents © 2021  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
+        Contents © 2022  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> 
     </p>

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about LanguageTool)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/languagetool.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about LanguageTool)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/languagetool.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 16 Dec 2020 18:53:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div&gt;&lt;h2&gt;Table of Contents&lt;/h2&gt;
-
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 01 Oct 2022 23:15:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/a&gt;&lt;/li&gt;
@@ -19,7 +18,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;p&gt;The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. &lt;/p&gt;
 &lt;h2&gt;Download and configure LanguageTool&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Download &lt;a href="https://languagetool.org/"&gt;LanguageTool desktop version for offline use&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Download &lt;a href="https://languagetool.org/download/"&gt;LanguageTool desktop version for offline use&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Unzip the folder.&lt;/li&gt;
 &lt;li&gt;Run &lt;code&gt;languagetool.jar&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;In &lt;code&gt;TexChecking &amp;gt; Options&lt;/code&gt; enable &lt;code&gt;Run as server on port 8081&lt;/code&gt;
@@ -57,4 +56,4 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;li&gt;VSCode&lt;br&gt;
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/VSCode_test.png" alt="VSCode_test" width="100%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Done! I hope it works for you too.&lt;/p&gt;&lt;/div&gt;</description><category>LanguageTool</category><category>TeXstudio</category><category>VSCode</category><guid>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</guid><pubDate>Tue, 15 Sep 2020 13:58:24 GMT</pubDate></item></channel></rss>
+&lt;p&gt;Done! I hope it works for you too.&lt;/p&gt;</description><category>LanguageTool</category><category>TeXstudio</category><category>VSCode</category><guid>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</guid><pubDate>Tue, 15 Sep 2020 13:58:24 GMT</pubDate></item></channel></rss>
