@@ -38,7 +38,7 @@ https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c68
 
 .. code-block:: bash
 
-    conda create -name <env_name> python=3.6
+    conda create --name <env_name> python=3.6
     conda env list
     conda env remove --name <env_name>
 
