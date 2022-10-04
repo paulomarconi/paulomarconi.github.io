@@ -7,442 +7,442 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://paulomarconi.github.io/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2022-10-02T20:42:00Z</lastmod>
+  <lastmod>2022-10-04T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
-  <lastmod>2020-09-11T03:33:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2022-10-01T21:48:00Z</lastmod>
+  <lastmod>2022-10-04T13:41:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/DCmotor/</loc>
-  <lastmod>2020-10-22T19:00:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
-  <lastmod>2020-10-04T18:44:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPC-SSTO/</loc>
-  <lastmod>2020-09-11T03:33:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPCc/</loc>
-  <lastmod>2020-10-01T05:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/MPCu/</loc>
-  <lastmod>2020-09-28T15:01:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Nikola-guide/</loc>
-  <lastmod>2020-09-11T03:33:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="es" href="https://paulomarconi.github.io/es/blog/Nikola-guide/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</loc>
-  <lastmod>2020-12-27T00:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</loc>
-  <lastmod>2020-10-08T23:01:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Phase-lead_phase-lag/</loc>
-  <lastmod>2020-10-05T18:48:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2020-12-29T03:56:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/aggregation/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/anaconda/</loc>
-  <lastmod>2020-09-03T18:32:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/awgn/</loc>
-  <lastmod>2020-09-29T08:29:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/bode/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/compensator/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/control-systems/</loc>
-  <lastmod>2020-08-31T22:26:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/coulomb-friction/</loc>
-  <lastmod>2020-12-29T03:56:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/dc-motor/</loc>
-  <lastmod>2020-12-27T01:53:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/deadbeat/</loc>
-  <lastmod>2020-10-08T23:01:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/differential-equations/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/dynamics-model/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/e-puck/</loc>
-  <lastmod>2020-10-05T16:31:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/equilibrium-point/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/foraging/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/github/</loc>
-  <lastmod>2020-09-03T18:32:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/jupyter/</loc>
-  <lastmod>2020-08-27T19:28:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/kalman-filter/</loc>
-  <lastmod>2020-09-29T08:29:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/languagetool/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/matlab/</loc>
-  <lastmod>2020-09-03T18:32:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/mpc/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/nikola/</loc>
-  <lastmod>2020-08-27T20:01:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/nonlinear/</loc>
-  <lastmod>2020-12-27T01:53:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/optimization/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/phase-lag/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/phase-lead/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/pre-filter/</loc>
-  <lastmod>2020-10-08T14:24:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/python/</loc>
-  <lastmod>2020-09-03T18:32:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/root-locus/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/ssto/</loc>
-  <lastmod>2020-08-31T07:46:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/state-space/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/stiction/</loc>
-  <lastmod>2020-12-27T01:53:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/swarm-robotics/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/texstudio/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/thermal-model/</loc>
-  <lastmod>2020-12-29T03:56:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/unconstrained/</loc>
-  <lastmod>2020-09-29T08:29:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/v-rep/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/vscode/</loc>
-  <lastmod>2020-09-03T18:32:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/cheatsheet/</loc>
-  <lastmod>2020-09-11T03:33:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2022-10-02T20:42:00Z</lastmod>
+  <lastmod>2022-10-04T14:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2020-12-02T21:41:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/DCmotor/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/DCmotor/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Foraging_Aggregation_V-rep_e-puck/</loc>
-  <lastmod>2020-10-04T18:44:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/MPC-SSTO/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/MPC-SSTO/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/MPCc/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/MPCc/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/MPCu/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/MPCu/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Nikola-guide/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nikola-guide/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2020-12-29T03:56:00Z</lastmod>
+  <lastmod>2022-10-04T13:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/anaconda/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/awgn/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/bode/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/compensator/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/control-systems/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/coulomb-friction/</loc>
-  <lastmod>2020-12-29T03:56:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/dc-motor/</loc>
-  <lastmod>2020-12-27T01:53:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/deadbeat/</loc>
-  <lastmod>2020-10-08T23:01:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/differential-equations/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/dynamics-model/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/e-puck/</loc>
-  <lastmod>2020-10-05T16:31:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/equilibrium-point/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/foraging/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/github/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/jupyter/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/kalman-filter/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/languagetool/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/matlab/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/mpc/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/nikola/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/nonlinear/</loc>
-  <lastmod>2020-12-27T01:53:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/optimization/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/phase-lag/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/phase-lead/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/pre-filter/</loc>
-  <lastmod>2020-10-08T14:24:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/python/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/root-locus/</loc>
-  <lastmod>2020-10-05T18:49:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/ssto/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/state-space/</loc>
-  <lastmod>2020-10-22T18:59:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/stiction/</loc>
-  <lastmod>2020-12-27T01:53:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/texstudio/</loc>
-  <lastmod>2020-10-09T14:21:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/thermal-model/</loc>
-  <lastmod>2020-12-29T03:56:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/unconstrained/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/v-rep/</loc>
-  <lastmod>2020-10-04T19:03:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/vscode/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/cheatsheet/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/galleries/</loc>
-  <lastmod>2020-10-02T08:42:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/files/DCmotor/DCmotor.html</loc>
@@ -470,14 +470,14 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/galleries/</loc>
-  <lastmod>2020-08-27T16:06:00Z</lastmod>
+  <lastmod>2022-10-04T13:00:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/</loc>
-  <lastmod>2020-08-28T07:36:00Z</lastmod>
+  <lastmod>2022-10-04T13:01:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/listings/test.py.html</loc>
-  <lastmod>2022-10-01T22:25:00Z</lastmod>
+  <lastmod>2022-10-04T14:03:00Z</lastmod>
  </url>
 </urlset>

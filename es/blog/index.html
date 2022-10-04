@@ -794,17 +794,58 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 </h2>
 <p>Two types of scenarios are simulated. The first one is submitted to a constant input, low stiction, and two step sizes. The second scenario is more interesting because we study the behaviour due to a sinusoidal input which emulates the reversing mode of the motor at $5[Hz]$ with higher stiction. Both scenarios have load torque at $t=0.2[s]$.</p>
 <center>Table 1: Scenario 1 and 2 </center>
-<p>|  		| Scenario 1 	| Scenario 2 |
-|:-----:|:-------------|:----------|
-|<code>ode45m</code> step size | $1\times 10^{-3}$ and $1\times 10^{-4}$ | $1\times 10^{-4}$ |
-|<code>eufix1</code> step size | $1\times 10^{-3}$ and $1\times 10^{-4}$ | $1\times 10^{-4}$ |
-|<code>ode45</code> step size | auto | auto |
-| $e_i$ | $E_0$ | $E_0 \sin[5(2\pi)(t-0.05)]$ |
-| $E_0$ | $120~[V]$ | $120~[V]$ |
-| $\tau_{L}$ | $80~[N m]$ at $t=0.2[s]$} | $80~[N m]$ at $t=0.2[s]$ |
-| $\theta_A$ | $18~[°C]$ | $18~[°C]$ |
-| $B_{2C}$ | $80~[N]$ | $300~[N]$ |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:center"></th>
+  <th style="text-align:left">Scenario 1 	</th>
+  <th style="text-align:left">Scenario 2</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+<code>ode45m</code> step size</td>
+  <td style="text-align:left">$1\times 10^{-3}$ and $1\times 10^{-4}$</td>
+  <td style="text-align:left">$1\times 10^{-4}$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<code>eufix1</code> step size</td>
+  <td style="text-align:left">$1\times 10^{-3}$ and $1\times 10^{-4}$</td>
+  <td style="text-align:left">$1\times 10^{-4}$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<code>ode45</code> step size</td>
+  <td style="text-align:left">auto</td>
+  <td style="text-align:left">auto</td>
+</tr>
+<tr>
+<td style="text-align:center">$e_i$</td>
+  <td style="text-align:left">$E_0$</td>
+  <td style="text-align:left">$E_0 \sin[5(2\pi)(t-0.05)]$</td>
+</tr>
+<tr>
+<td style="text-align:center">$E_0$</td>
+  <td style="text-align:left">$120~[V]$</td>
+  <td style="text-align:left">$120~[V]$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\tau_{L}$</td>
+  <td style="text-align:left">$80~[N m]$ at $t=0.2[s]$}</td>
+  <td style="text-align:left">$80~[N m]$ at $t=0.2[s]$</td>
+</tr>
+<tr>
+<td style="text-align:center">$\theta_A$</td>
+  <td style="text-align:left">$18~[°C]$</td>
+  <td style="text-align:left">$18~[°C]$</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_{2C}$</td>
+  <td style="text-align:left">$80~[N]$</td>
+  <td style="text-align:left">$300~[N]$</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -821,10 +862,30 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <figure><img src="../../images/Nonlinear_DCmotor/E0_ode45-ode45m-eufix1_1e-3.png" alt="Fig1" width="70%"><center><figcaption>Fig. 1 - Scenario 1: step size $1\times 10^{-3}$</figcaption></center>
 </figure><p>The time simulation of each solver indicates that <code>ode45</code> is 10 times slower than <code>ode45m</code> and 30 times slower than <code>eufix1</code>.</p>
 <center>Table 2: Scenario 1: simulation time and number of steps. </center>
-<p>|  		                | <code>ode45</code> 	 | <code>ode45m</code> | <code>eufix1</code> |
-|:---------------------:|:----------:|:--------:|:--------:|
-| simulation time [s]   | $0.267$    | $0.025$  | $0.009$  |			
-| number of time steps  | $71769$    | $15133$  | $80001$  |</p>
+<table>
+<thead><tr>
+<th style="text-align:center"></th>
+  <th style="text-align:center">
+<code>ode45</code> 	</th>
+  <th style="text-align:center"><code>ode45m</code></th>
+  <th style="text-align:center"><code>eufix1</code></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">simulation time [s]</td>
+  <td style="text-align:center">$0.267$</td>
+  <td style="text-align:center">$0.025$</td>
+  <td style="text-align:center">$0.009$</td>
+  <td></td>
+</tr>
+<tr>
+<td style="text-align:center">number of time steps</td>
+  <td style="text-align:center">$71769$</td>
+  <td style="text-align:center">$15133$</td>
+  <td style="text-align:center">$80001$</td>
+</tr>
+</tbody>
+</table>
 <p>The temperature of the motor $\theta_M$ increases linearly and reaches steady-state at $45[s]$ approximately, which indicates that the motor won't reach unsafe temperatures.</p>
 <figure><img src="../../images/Nonlinear_DCmotor/thetaM_ode45-ode45m-eufix1_1e-3.png" alt="Fig2" width="60%"><center><figcaption>Fig. 2 - Scenario 1: $\theta_M$ over $80[s]$ </figcaption></center>
 </figure><p>Although, <code>eufix1</code> is the fastest solver, with step size of $1\times 10^{-3}$, <code>eufix1</code> outputs the worst performance. The result can be improved if the steps size is decreased to $1\times 10^{-4}$. Fig. 3 and Fig. 4 show the relative error at max current and max angular velocity between <code>ode45</code> and <code>eufix1</code>.</p>
@@ -843,10 +904,30 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 </h3>
 <p>In this scenario we submitted the DC motor to high stiction $B_{2C}=300$ and sinsusoidal input at $5[Hz]$ which simulates the reversing mode. Table 3 shows the output for the three solvers showing that <code>ode45</code> is the slowest by far.</p>
 <center>Table 3: Scenario 2: simulation time and number of steps. </center>
-<p>|  		                | <code>ode45</code> 	 | <code>ode45m</code> | <code>eufix1</code> |
-|:---------------------:|:----------:|:--------:|:--------:|
-| simulation time [s]   | $517.798$  | $3.463$  | $0.093$  |			
-| number of time steps  | $13559913$ | $9647$   | $3002$   |</p>
+<table>
+<thead><tr>
+<th style="text-align:center"></th>
+  <th style="text-align:center">
+<code>ode45</code> 	</th>
+  <th style="text-align:center"><code>ode45m</code></th>
+  <th style="text-align:center"><code>eufix1</code></th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">simulation time [s]</td>
+  <td style="text-align:center">$517.798$</td>
+  <td style="text-align:center">$3.463$</td>
+  <td style="text-align:center">$0.093$</td>
+  <td></td>
+</tr>
+<tr>
+<td style="text-align:center">number of time steps</td>
+  <td style="text-align:center">$13559913$</td>
+  <td style="text-align:center">$9647$</td>
+  <td style="text-align:center">$3002$</td>
+</tr>
+</tbody>
+</table>
 <p>Fig. 5 shows the simulation output. The relevant result is the behavior of the system around the (nonlinear) stiction. $\omega_2$ sticks at $0.15[s]$ and $0.25[s]$ due to $B_{2C}$.</p>
 <figure><img src="../../images/Nonlinear_DCmotor/sinE0_ode45-ode45m-eufix1_1e-4.png" alt="Fig5" width="70%"><center><figcaption>Fig. 5 - Scenario 2: reversing mode. </figcaption></center>
 </figure><p>Even though the solvers were able to solve the dynamics with stiction, <code>ode45</code> took too much time to overcome this nonlinearity. Fig. 6 shows the stiction with three different zoom levels for each solver. The fastest but with more integration step error is <code>eufix1</code>. <code>ode45m</code> has less error $\pm 0.01$, and finally <code>ode45</code> solves with the minimum error, around $\pm 10\times 10^{-5}$. In conclusion, <code>ode45m</code> is the best choice against the rest because it can obtain the solution with low error and with decent speed.</p>
@@ -2849,18 +2930,50 @@ ans =
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>Table 1: Performance evaluation </center>
-<p>| Quantity                          | Value   | 
-|:----------------------------------|:-------:|
-| Steady state error to a unit ramp |    0.13 |
-| Rise Time                         |    0.24 |
-| Settling Time                     |    1.04 |
-| Percentage Overshoot              |   10.38 |
-| Phase Margin                      |   60.20 |
-| Gain Margin                       |   22.90 |
-| Bandwidth                         |    8.19 |
-| Peak Magnitude                    |    0.57 |
-| Resonant frequency                |    3.42 |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:left">Quantity</th>
+  <th style="text-align:center">Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">Steady state error to a unit ramp</td>
+  <td style="text-align:center">0.13</td>
+</tr>
+<tr>
+<td style="text-align:left">Rise Time</td>
+  <td style="text-align:center">0.24</td>
+</tr>
+<tr>
+<td style="text-align:left">Settling Time</td>
+  <td style="text-align:center">1.04</td>
+</tr>
+<tr>
+<td style="text-align:left">Percentage Overshoot</td>
+  <td style="text-align:center">10.38</td>
+</tr>
+<tr>
+<td style="text-align:left">Phase Margin</td>
+  <td style="text-align:center">60.20</td>
+</tr>
+<tr>
+<td style="text-align:left">Gain Margin</td>
+  <td style="text-align:center">22.90</td>
+</tr>
+<tr>
+<td style="text-align:left">Bandwidth</td>
+  <td style="text-align:center">8.19</td>
+</tr>
+<tr>
+<td style="text-align:left">Peak Magnitude</td>
+  <td style="text-align:center">0.57</td>
+</tr>
+<tr>
+<td style="text-align:left">Resonant frequency</td>
+  <td style="text-align:center">3.42</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -3862,16 +3975,66 @@ ess_parabolic =
 </h3>
 <p>The step response plot of the system with and without the Pre-filter shows that the Pre-filter reduces the overshoot in both cases with good settling time. On the other hand, the root-locus plot shows that the desired dominant poles are slightly out of the target , it is recommended to add a second Phase-lead compensator in series in order correct that gap.</p>
 <center>Table 2: Performance results </center>
-<p>| Quantity             | Lead      | Prefilter+Lead      | Lead+Lag      | Prefilter+Lead+Lag |
-|:---------------------|:---------:|:-------------------:|:-------------:|:------------------:|
-| Rise Time            | 0.37      | 1.00                | 0.36          | 0.94               |
-| Settling Time        | 2.79      | 3.08                | 3.59          | 3.31               |
-| Percentage Overshoot | 51.46     | 0.07                | 57.96         | 1.79               |
-| Phase Margin         | 40.80     | -180                | 36.60         | 36.60              |
-| Gain Margin          | 8.96      | 7.07                | 8.51          | 8.51               |
-| Bandwidth            | 4.87      | 2.31                | 4.89          | 2.58               |
-| Peak Magnitude       | 1.51      | 1.00                | 1.58          | 1.02               |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:left">Quantity</th>
+  <th style="text-align:center">Lead</th>
+  <th style="text-align:center">Prefilter+Lead</th>
+  <th style="text-align:center">Lead+Lag</th>
+  <th style="text-align:center">Prefilter+Lead+Lag</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">Rise Time</td>
+  <td style="text-align:center">0.37</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">0.36</td>
+  <td style="text-align:center">0.94</td>
+</tr>
+<tr>
+<td style="text-align:left">Settling Time</td>
+  <td style="text-align:center">2.79</td>
+  <td style="text-align:center">3.08</td>
+  <td style="text-align:center">3.59</td>
+  <td style="text-align:center">3.31</td>
+</tr>
+<tr>
+<td style="text-align:left">Percentage Overshoot</td>
+  <td style="text-align:center">51.46</td>
+  <td style="text-align:center">0.07</td>
+  <td style="text-align:center">57.96</td>
+  <td style="text-align:center">1.79</td>
+</tr>
+<tr>
+<td style="text-align:left">Phase Margin</td>
+  <td style="text-align:center">40.80</td>
+  <td style="text-align:center">-180</td>
+  <td style="text-align:center">36.60</td>
+  <td style="text-align:center">36.60</td>
+</tr>
+<tr>
+<td style="text-align:left">Gain Margin</td>
+  <td style="text-align:center">8.96</td>
+  <td style="text-align:center">7.07</td>
+  <td style="text-align:center">8.51</td>
+  <td style="text-align:center">8.51</td>
+</tr>
+<tr>
+<td style="text-align:left">Bandwidth</td>
+  <td style="text-align:center">4.87</td>
+  <td style="text-align:center">2.31</td>
+  <td style="text-align:center">4.89</td>
+  <td style="text-align:center">2.58</td>
+</tr>
+<tr>
+<td style="text-align:left">Peak Magnitude</td>
+  <td style="text-align:center">1.51</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">1.58</td>
+  <td style="text-align:center">1.02</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -4218,16 +4381,82 @@ ans =
 </h3>
 <p>From the root-locus plot, it can be seen that the desired closed-loop poles are exactly in the root locus. Also, the Bode plot shows that the $PM$ has changed a little with respect of the previous compensated system, from $36.60°$ to $39.50°$. On the other hand, the step response has been improved with the Pre-filter and the new Phase-Lead compensator, see Table 3.</p>
 <center>Table 3: Performance results </center>
-<p>| Quantity             | Lead   | Prefilter+Lead  | Lead+Lag   | Prefilter+Lead+Lag    | Lead_2+Lead+Lag     | Prefilter+Lead_2+Lead+Lag       |
-|:---------------------|:------:|:---------------:|:----------:|:---------------------:|:-------------------:|:-------------------------------:|
-| Rise Time            | 0.37   | 1.00            | 0.36       | 0.94                  | 0.37                | 0.97                            |<br>
-| Settling Time        | 2.79   | 3.08            | 3.59       | 3.31                  | 2.87                | 1.68                            |
-| Percentage Overshoot | 51.46  | 0.07            | 57.96      | 1.79                  | 55.00               | 1.25                            |
-| Phase Margin         | 40.80  | -180            | 36.60      | 36.60                 | 39.50               | -180                            |
-| Gain Margin          | 8.96   | 7.07            | 8.51       | 8.51                  | 8.79                | 6.79                            |
-| Bandwidth            | 4.87   | 2.31            | 4.89       | 2.58                  | 4.88                | 2.42                            |
-| Peak Magnitude       | 1.51   | 1.00            | 1.58       | 1.02                  | 1.55                | 1.01                            |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:left">Quantity</th>
+  <th style="text-align:center">Lead</th>
+  <th style="text-align:center">Prefilter+Lead</th>
+  <th style="text-align:center">Lead+Lag</th>
+  <th style="text-align:center">Prefilter+Lead+Lag</th>
+  <th style="text-align:center">Lead_2+Lead+Lag</th>
+  <th style="text-align:center">Prefilter+Lead_2+Lead+Lag</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">Rise Time</td>
+  <td style="text-align:center">0.37</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">0.36</td>
+  <td style="text-align:center">0.94</td>
+  <td style="text-align:center">0.37</td>
+  <td style="text-align:center">0.97</td>
+</tr>
+<tr>
+<td style="text-align:left">Settling Time</td>
+  <td style="text-align:center">2.79</td>
+  <td style="text-align:center">3.08</td>
+  <td style="text-align:center">3.59</td>
+  <td style="text-align:center">3.31</td>
+  <td style="text-align:center">2.87</td>
+  <td style="text-align:center">1.68</td>
+</tr>
+<tr>
+<td style="text-align:left">Percentage Overshoot</td>
+  <td style="text-align:center">51.46</td>
+  <td style="text-align:center">0.07</td>
+  <td style="text-align:center">57.96</td>
+  <td style="text-align:center">1.79</td>
+  <td style="text-align:center">55.00</td>
+  <td style="text-align:center">1.25</td>
+</tr>
+<tr>
+<td style="text-align:left">Phase Margin</td>
+  <td style="text-align:center">40.80</td>
+  <td style="text-align:center">-180</td>
+  <td style="text-align:center">36.60</td>
+  <td style="text-align:center">36.60</td>
+  <td style="text-align:center">39.50</td>
+  <td style="text-align:center">-180</td>
+</tr>
+<tr>
+<td style="text-align:left">Gain Margin</td>
+  <td style="text-align:center">8.96</td>
+  <td style="text-align:center">7.07</td>
+  <td style="text-align:center">8.51</td>
+  <td style="text-align:center">8.51</td>
+  <td style="text-align:center">8.79</td>
+  <td style="text-align:center">6.79</td>
+</tr>
+<tr>
+<td style="text-align:left">Bandwidth</td>
+  <td style="text-align:center">4.87</td>
+  <td style="text-align:center">2.31</td>
+  <td style="text-align:center">4.89</td>
+  <td style="text-align:center">2.58</td>
+  <td style="text-align:center">4.88</td>
+  <td style="text-align:center">2.42</td>
+</tr>
+<tr>
+<td style="text-align:left">Peak Magnitude</td>
+  <td style="text-align:center">1.51</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">1.58</td>
+  <td style="text-align:center">1.02</td>
+  <td style="text-align:center">1.55</td>
+  <td style="text-align:center">1.01</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -4367,19 +4596,104 @@ s_0&amp;=\lbrace B \rbrace \\
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>Table 1: State transition function $\delta$
-<p>| Input | Current State | Next State | Output |
-|:-----:|:-------------:|:----------:|:------:|
-| $t ≤ 60$ | <strong>B</strong>ehaviour | <strong>F</strong>oraging | avoider |
-| $60 &lt; t ≤ 120$ | <strong>B</strong>ehaviour | <strong>A</strong>ggregation | follower|
-| <strong>bl</strong>ob $\exists$ | <strong>F</strong>oraging | <strong>F</strong>oraging | $\alpha_C$ |
-| <strong>bl</strong>ob $\nexists$ | <strong>F</strong>oraging | <strong>Ra</strong>ndom Movement | $\alpha_{C_r}$ |
-| <strong>ob</strong>stacle $\exists$ | <strong>F</strong>oraging | <strong>R</strong>ebound | $\alpha_R$ |
-| <strong>ob</strong>stacle $\nexists$ | <strong>R</strong>ebound | <strong>F</strong>oraging | - |
-| <strong>ob</strong>stacle $\exists$ | <strong>A</strong>ggregation | <strong>R</strong>ebound | $\alpha_R$ |
-| <strong>ob</strong>stacle $\nexists$ | <strong>R</strong>ebound | <strong>A</strong>ggregation | - |
-| <strong>eP</strong>uck $\exists$ | <strong>A</strong>ggregation | <strong>A</strong>ggregation | $\alpha_e$ |
-| <strong>eP</strong>uck $\nexists$ | <strong>A</strong>ggregation | <strong>Ra</strong>ndom Movement | $\alpha_{e_r}$ |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:center">Input</th>
+  <th style="text-align:center">Current State</th>
+  <th style="text-align:center">Next State</th>
+  <th style="text-align:center">Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">$t ≤ 60$</td>
+  <td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">avoider</td>
+</tr>
+<tr>
+<td style="text-align:center">$60 &lt; t ≤ 120$</td>
+  <td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">follower</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\exists$</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">$\alpha_C$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\nexists$</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+  <td style="text-align:center">$\alpha_{C_r}$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\exists$</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">$\alpha_e$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\nexists$</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+  <td style="text-align:center">$\alpha_{e_r}$</td>
+</tr>
+</tbody>
+</table>
 </center>
 </div>
 </div>
@@ -9280,7 +9594,7 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducción">Introducción<a class="anchor-link" href="Nikola-guide/#Introducci%C3%B3n">¶</a>
+<h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="Nikola-guide/#Introducci%C3%B3n">¶</a>
 </h2>
 <p><a href="https://getnikola.com/">Nikola</a> es un buena forma de crear un sitio web/blog estático. Es versátil, potente y de código abierto. Existen otras alternativas como, <a href="https://gohugo.io/">Hugo</a>, <a href="https://docs.getpelican.com/en/stable/quickstart.html">Pelican</a>, y <a href="https://github.com/sphinx-doc/sphinx">Sphinx</a>. Después de revisar los pros y contras, decidí usar Nikola principalmente por su integración con Jupyter Notebook y el Matlab-kernel.</p>
 <p>Hay buen material en internet sobre la instalación y uso de Nikola, pero pensé que sería útil mostrar mi metodología desde la perspectiva de alguién que nunca usó Anaconda, Jupyter y Nikola.</p>
@@ -9392,7 +9706,7 @@ Python 3.7.6 :: Anaconda, Inc.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Instalación-de-Jupyter-Notebook,-Nikola-y-jmatlab">Instalación de Jupyter Notebook, Nikola y jmatlab<a class="anchor-link" href="Nikola-guide/#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab">¶</a>
+<h2 id="Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab">Instalación de Jupyter Notebook, Nikola y jmatlab<a class="anchor-link" href="Nikola-guide/#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab">¶</a>
 </h2>
 <ul>
 <li>Abre el terminal en <code>cd "C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola"</code>
@@ -9501,7 +9815,7 @@ python3    C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola\share\jupyter\ke
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Crear-un-nuevo-post-y-una-nueva-página">Crear un nuevo post y una nueva página<a class="anchor-link" href="Nikola-guide/#Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina">¶</a>
+<h3 id="Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina">Crear un nuevo post y una nueva página<a class="anchor-link" href="Nikola-guide/#Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina">¶</a>
 </h3>
 <ul>
 <li>Por defecto, ambos son creados en formato <code>.rst</code>.<div class="highlight"><pre><span></span>nikola new_post
@@ -9577,7 +9891,7 @@ nikola new_post -f ipynb
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Crear-las-páginas-index-y-bio">Crear las páginas index y bio<a class="anchor-link" href="Nikola-guide/#Crear-las-p%C3%A1ginas-index-y-bio">¶</a>
+<h3 id="Crear-las-p%C3%A1ginas-index-y-bio">Crear las páginas index y bio<a class="anchor-link" href="Nikola-guide/#Crear-las-p%C3%A1ginas-index-y-bio">¶</a>
 </h3>
 <ul>
 <li>Primero, creamos ambas páginas usando la termina.<div class="highlight"><pre><span></span>nikola new_page --title<span class="o">=</span><span class="s2">"index"</span>
@@ -9776,7 +10090,7 @@ nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Versión-limpia-de-post_ipynb.css">Versión limpia de <code>post_ipynb.css</code><a class="anchor-link" href="Nikola-guide/#Versi%C3%B3n-limpia-de-post_ipynb.css">¶</a>
+<h3 id="Versi%C3%B3n-limpia-de-post_ipynb.css">Versión limpia de <code>post_ipynb.css</code><a class="anchor-link" href="Nikola-guide/#Versi%C3%B3n-limpia-de-post_ipynb.css">¶</a>
 </h3>
 <div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
@@ -9841,7 +10155,7 @@ nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Ubicación-del-folder-de-salida-files">Ubicación del folder de salida <code>files</code><a class="anchor-link" href="Nikola-guide/#Ubicaci%C3%B3n-del-folder-de-salida-files">¶</a>
+<h3 id="Ubicaci%C3%B3n-del-folder-de-salida-files">Ubicación del folder de salida <code>files</code><a class="anchor-link" href="Nikola-guide/#Ubicaci%C3%B3n-del-folder-de-salida-files">¶</a>
 </h3>
 <p>Tus documentos guardados en el folder <code>files</code> serán copiados a <code>/output/files</code> en vez de la raíz, que es su ubicación por defecto.</p>
 <div class="highlight"><pre><span></span><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span>
@@ -9943,7 +10257,7 @@ Será compilado y visto en tu <code>localhost</code> pero no será publicado en 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Footer-(Pié-de-página)">Footer (Pié de página)<a class="anchor-link" href="Nikola-guide/#Footer-(Pi%C3%A9-de-p%C3%A1gina)">¶</a>
+<h3 id="Footer-(Pi%C3%A9-de-p%C3%A1gina)">Footer (Pié de página)<a class="anchor-link" href="Nikola-guide/#Footer-(Pi%C3%A9-de-p%C3%A1gina)">¶</a>
 </h3>
 <p>Personaliza el footer como desees. Una buena forma es mostrar tus perfiles de redes sociales.</p>
 <div class="highlight"><pre><span></span>CONTENT_FOOTER = '''
@@ -9987,7 +10301,7 @@ Será compilado y visto en tu <code>localhost</code> pero no será publicado en 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Barra-de-búsqueda-de-Google">Barra de búsqueda de Google<a class="anchor-link" href="Nikola-guide/#Barra-de-b%C3%BAsqueda-de-Google">¶</a>
+<h3 id="Barra-de-b%C3%BAsqueda-de-Google">Barra de búsqueda de Google<a class="anchor-link" href="Nikola-guide/#Barra-de-b%C3%BAsqueda-de-Google">¶</a>
 </h3>
 <p>Habilitalo según lo siguiente.</p>
 <div class="highlight"><pre><span></span>SEARCH_FORM = """
@@ -10065,7 +10379,7 @@ Será compilado y visto en tu <code>localhost</code> pero no será publicado en 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Formateo-de-códigos">Formateo de códigos<a class="anchor-link" href="Nikola-guide/#Formateo-de-c%C3%B3digos">¶</a>
+<h3 id="Formateo-de-c%C3%B3digos">Formateo de códigos<a class="anchor-link" href="Nikola-guide/#Formateo-de-c%C3%B3digos">¶</a>
 </h3>
 <p>Por defecto, Nikola usa <a href="https://pygments.org">Pygments</a> para formatear los códigos.</p>
 <ul>
@@ -10701,7 +11015,7 @@ x =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Formateo-de-código">Formateo de código<a class="anchor-link" href="Nikola-guide/#Formateo-de-c%C3%B3digo">¶</a>
+<h2 id="Formateo-de-c%C3%B3digo">Formateo de código<a class="anchor-link" href="Nikola-guide/#Formateo-de-c%C3%B3digo">¶</a>
 </h2>
 <ul>
 <li>
@@ -10768,7 +11082,7 @@ x =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Incorrecto-formateo-de-código-en-las-celdas-con-dos-kernels">Incorrecto formateo de código en las celdas con dos kernels<a class="anchor-link" href="Nikola-guide/#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">¶</a>
+<h2 id="Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">Incorrecto formateo de código en las celdas con dos kernels<a class="anchor-link" href="Nikola-guide/#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">¶</a>
 </h2>
 <p>El formateo de código en las celdas tiene problemas cuando tienes dos kernels en tu Notebook, el cuál es un problema del metada de Jupyter Notebook.</p>
 <p>Ejemplo de formateo de código incompleto.

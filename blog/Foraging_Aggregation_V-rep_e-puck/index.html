@@ -243,19 +243,104 @@ s_0&amp;=\lbrace B \rbrace \\
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>Table 1: State transition function $\delta$
-<p>| Input | Current State | Next State | Output |
-|:-----:|:-------------:|:----------:|:------:|
-| $t ≤ 60$ | <strong>B</strong>ehaviour | <strong>F</strong>oraging | avoider |
-| $60 &lt; t ≤ 120$ | <strong>B</strong>ehaviour | <strong>A</strong>ggregation | follower|
-| <strong>bl</strong>ob $\exists$ | <strong>F</strong>oraging | <strong>F</strong>oraging | $\alpha_C$ |
-| <strong>bl</strong>ob $\nexists$ | <strong>F</strong>oraging | <strong>Ra</strong>ndom Movement | $\alpha_{C_r}$ |
-| <strong>ob</strong>stacle $\exists$ | <strong>F</strong>oraging | <strong>R</strong>ebound | $\alpha_R$ |
-| <strong>ob</strong>stacle $\nexists$ | <strong>R</strong>ebound | <strong>F</strong>oraging | - |
-| <strong>ob</strong>stacle $\exists$ | <strong>A</strong>ggregation | <strong>R</strong>ebound | $\alpha_R$ |
-| <strong>ob</strong>stacle $\nexists$ | <strong>R</strong>ebound | <strong>A</strong>ggregation | - |
-| <strong>eP</strong>uck $\exists$ | <strong>A</strong>ggregation | <strong>A</strong>ggregation | $\alpha_e$ |
-| <strong>eP</strong>uck $\nexists$ | <strong>A</strong>ggregation | <strong>Ra</strong>ndom Movement | $\alpha_{e_r}$ |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:center">Input</th>
+  <th style="text-align:center">Current State</th>
+  <th style="text-align:center">Next State</th>
+  <th style="text-align:center">Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center">$t ≤ 60$</td>
+  <td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">avoider</td>
+</tr>
+<tr>
+<td style="text-align:center">$60 &lt; t ≤ 120$</td>
+  <td style="text-align:center">
+<strong>B</strong>ehaviour</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">follower</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\exists$</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">$\alpha_C$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>bl</strong>ob $\nexists$</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+  <td style="text-align:center">$\alpha_{C_r}$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">
+<strong>F</strong>oraging</td>
+  <td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\exists$</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">$\alpha_R$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>ob</strong>stacle $\nexists$</td>
+  <td style="text-align:center">
+<strong>R</strong>ebound</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\exists$</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">$\alpha_e$</td>
+</tr>
+<tr>
+<td style="text-align:center">
+<strong>eP</strong>uck $\nexists$</td>
+  <td style="text-align:center">
+<strong>A</strong>ggregation</td>
+  <td style="text-align:center">
+<strong>Ra</strong>ndom Movement</td>
+  <td style="text-align:center">$\alpha_{e_r}$</td>
+</tr>
+</tbody>
+</table>
 </center>
 </div>
 </div>

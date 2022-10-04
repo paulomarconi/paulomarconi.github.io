@@ -812,18 +812,50 @@ ans =
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <center>Table 1: Performance evaluation </center>
-<p>| Quantity                          | Value   | 
-|:----------------------------------|:-------:|
-| Steady state error to a unit ramp |    0.13 |
-| Rise Time                         |    0.24 |
-| Settling Time                     |    1.04 |
-| Percentage Overshoot              |   10.38 |
-| Phase Margin                      |   60.20 |
-| Gain Margin                       |   22.90 |
-| Bandwidth                         |    8.19 |
-| Peak Magnitude                    |    0.57 |
-| Resonant frequency                |    3.42 |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:left">Quantity</th>
+  <th style="text-align:center">Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">Steady state error to a unit ramp</td>
+  <td style="text-align:center">0.13</td>
+</tr>
+<tr>
+<td style="text-align:left">Rise Time</td>
+  <td style="text-align:center">0.24</td>
+</tr>
+<tr>
+<td style="text-align:left">Settling Time</td>
+  <td style="text-align:center">1.04</td>
+</tr>
+<tr>
+<td style="text-align:left">Percentage Overshoot</td>
+  <td style="text-align:center">10.38</td>
+</tr>
+<tr>
+<td style="text-align:left">Phase Margin</td>
+  <td style="text-align:center">60.20</td>
+</tr>
+<tr>
+<td style="text-align:left">Gain Margin</td>
+  <td style="text-align:center">22.90</td>
+</tr>
+<tr>
+<td style="text-align:left">Bandwidth</td>
+  <td style="text-align:center">8.19</td>
+</tr>
+<tr>
+<td style="text-align:left">Peak Magnitude</td>
+  <td style="text-align:center">0.57</td>
+</tr>
+<tr>
+<td style="text-align:left">Resonant frequency</td>
+  <td style="text-align:center">3.42</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1825,16 +1857,66 @@ ess_parabolic =
 </h3>
 <p>The step response plot of the system with and without the Pre-filter shows that the Pre-filter reduces the overshoot in both cases with good settling time. On the other hand, the root-locus plot shows that the desired dominant poles are slightly out of the target , it is recommended to add a second Phase-lead compensator in series in order correct that gap.</p>
 <center>Table 2: Performance results </center>
-<p>| Quantity             | Lead      | Prefilter+Lead      | Lead+Lag      | Prefilter+Lead+Lag |
-|:---------------------|:---------:|:-------------------:|:-------------:|:------------------:|
-| Rise Time            | 0.37      | 1.00                | 0.36          | 0.94               |
-| Settling Time        | 2.79      | 3.08                | 3.59          | 3.31               |
-| Percentage Overshoot | 51.46     | 0.07                | 57.96         | 1.79               |
-| Phase Margin         | 40.80     | -180                | 36.60         | 36.60              |
-| Gain Margin          | 8.96      | 7.07                | 8.51          | 8.51               |
-| Bandwidth            | 4.87      | 2.31                | 4.89          | 2.58               |
-| Peak Magnitude       | 1.51      | 1.00                | 1.58          | 1.02               |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:left">Quantity</th>
+  <th style="text-align:center">Lead</th>
+  <th style="text-align:center">Prefilter+Lead</th>
+  <th style="text-align:center">Lead+Lag</th>
+  <th style="text-align:center">Prefilter+Lead+Lag</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">Rise Time</td>
+  <td style="text-align:center">0.37</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">0.36</td>
+  <td style="text-align:center">0.94</td>
+</tr>
+<tr>
+<td style="text-align:left">Settling Time</td>
+  <td style="text-align:center">2.79</td>
+  <td style="text-align:center">3.08</td>
+  <td style="text-align:center">3.59</td>
+  <td style="text-align:center">3.31</td>
+</tr>
+<tr>
+<td style="text-align:left">Percentage Overshoot</td>
+  <td style="text-align:center">51.46</td>
+  <td style="text-align:center">0.07</td>
+  <td style="text-align:center">57.96</td>
+  <td style="text-align:center">1.79</td>
+</tr>
+<tr>
+<td style="text-align:left">Phase Margin</td>
+  <td style="text-align:center">40.80</td>
+  <td style="text-align:center">-180</td>
+  <td style="text-align:center">36.60</td>
+  <td style="text-align:center">36.60</td>
+</tr>
+<tr>
+<td style="text-align:left">Gain Margin</td>
+  <td style="text-align:center">8.96</td>
+  <td style="text-align:center">7.07</td>
+  <td style="text-align:center">8.51</td>
+  <td style="text-align:center">8.51</td>
+</tr>
+<tr>
+<td style="text-align:left">Bandwidth</td>
+  <td style="text-align:center">4.87</td>
+  <td style="text-align:center">2.31</td>
+  <td style="text-align:center">4.89</td>
+  <td style="text-align:center">2.58</td>
+</tr>
+<tr>
+<td style="text-align:left">Peak Magnitude</td>
+  <td style="text-align:center">1.51</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">1.58</td>
+  <td style="text-align:center">1.02</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -2181,16 +2263,82 @@ ans =
 </h3>
 <p>From the root-locus plot, it can be seen that the desired closed-loop poles are exactly in the root locus. Also, the Bode plot shows that the $PM$ has changed a little with respect of the previous compensated system, from $36.60°$ to $39.50°$. On the other hand, the step response has been improved with the Pre-filter and the new Phase-Lead compensator, see Table 3.</p>
 <center>Table 3: Performance results </center>
-<p>| Quantity             | Lead   | Prefilter+Lead  | Lead+Lag   | Prefilter+Lead+Lag    | Lead_2+Lead+Lag     | Prefilter+Lead_2+Lead+Lag       |
-|:---------------------|:------:|:---------------:|:----------:|:---------------------:|:-------------------:|:-------------------------------:|
-| Rise Time            | 0.37   | 1.00            | 0.36       | 0.94                  | 0.37                | 0.97                            |<br>
-| Settling Time        | 2.79   | 3.08            | 3.59       | 3.31                  | 2.87                | 1.68                            |
-| Percentage Overshoot | 51.46  | 0.07            | 57.96      | 1.79                  | 55.00               | 1.25                            |
-| Phase Margin         | 40.80  | -180            | 36.60      | 36.60                 | 39.50               | -180                            |
-| Gain Margin          | 8.96   | 7.07            | 8.51       | 8.51                  | 8.79                | 6.79                            |
-| Bandwidth            | 4.87   | 2.31            | 4.89       | 2.58                  | 4.88                | 2.42                            |
-| Peak Magnitude       | 1.51   | 1.00            | 1.58       | 1.02                  | 1.55                | 1.01                            |</p>
-
+<table>
+<thead><tr>
+<th style="text-align:left">Quantity</th>
+  <th style="text-align:center">Lead</th>
+  <th style="text-align:center">Prefilter+Lead</th>
+  <th style="text-align:center">Lead+Lag</th>
+  <th style="text-align:center">Prefilter+Lead+Lag</th>
+  <th style="text-align:center">Lead_2+Lead+Lag</th>
+  <th style="text-align:center">Prefilter+Lead_2+Lead+Lag</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left">Rise Time</td>
+  <td style="text-align:center">0.37</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">0.36</td>
+  <td style="text-align:center">0.94</td>
+  <td style="text-align:center">0.37</td>
+  <td style="text-align:center">0.97</td>
+</tr>
+<tr>
+<td style="text-align:left">Settling Time</td>
+  <td style="text-align:center">2.79</td>
+  <td style="text-align:center">3.08</td>
+  <td style="text-align:center">3.59</td>
+  <td style="text-align:center">3.31</td>
+  <td style="text-align:center">2.87</td>
+  <td style="text-align:center">1.68</td>
+</tr>
+<tr>
+<td style="text-align:left">Percentage Overshoot</td>
+  <td style="text-align:center">51.46</td>
+  <td style="text-align:center">0.07</td>
+  <td style="text-align:center">57.96</td>
+  <td style="text-align:center">1.79</td>
+  <td style="text-align:center">55.00</td>
+  <td style="text-align:center">1.25</td>
+</tr>
+<tr>
+<td style="text-align:left">Phase Margin</td>
+  <td style="text-align:center">40.80</td>
+  <td style="text-align:center">-180</td>
+  <td style="text-align:center">36.60</td>
+  <td style="text-align:center">36.60</td>
+  <td style="text-align:center">39.50</td>
+  <td style="text-align:center">-180</td>
+</tr>
+<tr>
+<td style="text-align:left">Gain Margin</td>
+  <td style="text-align:center">8.96</td>
+  <td style="text-align:center">7.07</td>
+  <td style="text-align:center">8.51</td>
+  <td style="text-align:center">8.51</td>
+  <td style="text-align:center">8.79</td>
+  <td style="text-align:center">6.79</td>
+</tr>
+<tr>
+<td style="text-align:left">Bandwidth</td>
+  <td style="text-align:center">4.87</td>
+  <td style="text-align:center">2.31</td>
+  <td style="text-align:center">4.89</td>
+  <td style="text-align:center">2.58</td>
+  <td style="text-align:center">4.88</td>
+  <td style="text-align:center">2.42</td>
+</tr>
+<tr>
+<td style="text-align:left">Peak Magnitude</td>
+  <td style="text-align:center">1.51</td>
+  <td style="text-align:center">1.00</td>
+  <td style="text-align:center">1.58</td>
+  <td style="text-align:center">1.02</td>
+  <td style="text-align:center">1.55</td>
+  <td style="text-align:center">1.01</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
