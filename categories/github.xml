@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 04 Oct 2022 23:38:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 04 Oct 2022 23:55:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Blog with Nikola, Jupyter, Matlab, and GitHub pages</title><link>https://paulomarconi.github.io/blog/Nikola-guide/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;p&gt;&lt;/p&gt;&lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -59,7 +59,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Create-a-new-environment-with-Anaconda-or-Conda"&gt;Create a new environment with Anaconda or Conda&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-environment-with-Anaconda-or-Conda"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Download and install &lt;a href="https://www.anaconda.com/products/individual#Downloads"&gt;Anaconda&lt;/a&gt; or &lt;a href="https://repo.anaconda.com/miniconda/"&gt;Miniconda&lt;/a&gt;. It's your choice.&lt;/li&gt;
-&lt;li&gt;After the installation is complete, make sure the following are listed in you Windows &lt;code&gt;system path variables&lt;/code&gt;:&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\c&lt;/span&gt;ondabin
+&lt;li&gt;After the installation is complete, make sure the following are listed in you Windows &lt;code&gt;system path variables&lt;/code&gt;:&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\&lt;/span&gt;
+C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\c&lt;/span&gt;ondabin
 C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\L&lt;/span&gt;ibrary
 C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\S&lt;/span&gt;cripts
 &lt;/pre&gt;&lt;/div&gt;
