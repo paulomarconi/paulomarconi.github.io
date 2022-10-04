@@ -217,7 +217,7 @@ navbar-dark bg-dark
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a>
+<h2 id="Introducción">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a>
 </h2>
 <p><a href="https://getnikola.com/">Nikola</a> es un buena forma de crear un sitio web/blog estático. Es versátil, potente y de código abierto. Existen otras alternativas como, <a href="https://gohugo.io/">Hugo</a>, <a href="https://docs.getpelican.com/en/stable/quickstart.html">Pelican</a>, y <a href="https://github.com/sphinx-doc/sphinx">Sphinx</a>. Después de revisar los pros y contras, decidí usar Nikola principalmente por su integración con Jupyter Notebook y el Matlab-kernel.</p>
 <p>Hay buen material en internet sobre la instalación y uso de Nikola, pero pensé que sería útil mostrar mi metodología desde la perspectiva de alguién que nunca usó Anaconda, Jupyter y Nikola.</p>
@@ -329,7 +329,7 @@ Python 3.7.6 :: Anaconda, Inc.</code></pre>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab">Instalación de Jupyter Notebook, Nikola y jmatlab<a class="anchor-link" href="#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab">¶</a>
+<h2 id="Instalación-de-Jupyter-Notebook,-Nikola-y-jmatlab">Instalación de Jupyter Notebook, Nikola y jmatlab<a class="anchor-link" href="#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab">¶</a>
 </h2>
 <ul>
 <li>Abre el terminal en <code>cd "C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola"</code>
@@ -438,7 +438,7 @@ python3    C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola\share\jupyter\ke
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina">Crear un nuevo post y una nueva página<a class="anchor-link" href="#Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina">¶</a>
+<h3 id="Crear-un-nuevo-post-y-una-nueva-página">Crear un nuevo post y una nueva página<a class="anchor-link" href="#Crear-un-nuevo-post-y-una-nueva-p%C3%A1gina">¶</a>
 </h3>
 <ul>
 <li>Por defecto, ambos son creados en formato <code>.rst</code>.<div class="highlight"><pre><span></span>nikola new_post
@@ -514,7 +514,7 @@ nikola new_post -f ipynb
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Crear-las-p%C3%A1ginas-index-y-bio">Crear las páginas index y bio<a class="anchor-link" href="#Crear-las-p%C3%A1ginas-index-y-bio">¶</a>
+<h3 id="Crear-las-páginas-index-y-bio">Crear las páginas index y bio<a class="anchor-link" href="#Crear-las-p%C3%A1ginas-index-y-bio">¶</a>
 </h3>
 <ul>
 <li>Primero, creamos ambas páginas usando la termina.<div class="highlight"><pre><span></span>nikola new_page --title<span class="o">=</span><span class="s2">"index"</span>
@@ -713,7 +713,7 @@ nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Versi%C3%B3n-limpia-de-post_ipynb.css">Versión limpia de <code>post_ipynb.css</code><a class="anchor-link" href="#Versi%C3%B3n-limpia-de-post_ipynb.css">¶</a>
+<h3 id="Versión-limpia-de-post_ipynb.css">Versión limpia de <code>post_ipynb.css</code><a class="anchor-link" href="#Versi%C3%B3n-limpia-de-post_ipynb.css">¶</a>
 </h3>
 <div class="highlight"><pre><span></span><span class="nt">div</span><span class="p">.</span><span class="nc">prompt</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span><span class="w"></span>
@@ -778,7 +778,7 @@ nikola new_page --title<span class="o">=</span><span class="s2">"bio"</span>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Ubicaci%C3%B3n-del-folder-de-salida-files">Ubicación del folder de salida <code>files</code><a class="anchor-link" href="#Ubicaci%C3%B3n-del-folder-de-salida-files">¶</a>
+<h3 id="Ubicación-del-folder-de-salida-files">Ubicación del folder de salida <code>files</code><a class="anchor-link" href="#Ubicaci%C3%B3n-del-folder-de-salida-files">¶</a>
 </h3>
 <p>Tus documentos guardados en el folder <code>files</code> serán copiados a <code>/output/files</code> en vez de la raíz, que es su ubicación por defecto.</p>
 <div class="highlight"><pre><span></span><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span>
@@ -880,7 +880,7 @@ Será compilado y visto en tu <code>localhost</code> pero no será publicado en 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Footer-(Pi%C3%A9-de-p%C3%A1gina)">Footer (Pié de página)<a class="anchor-link" href="#Footer-(Pi%C3%A9-de-p%C3%A1gina)">¶</a>
+<h3 id="Footer-(Pié-de-página)">Footer (Pié de página)<a class="anchor-link" href="#Footer-(Pi%C3%A9-de-p%C3%A1gina)">¶</a>
 </h3>
 <p>Personaliza el footer como desees. Una buena forma es mostrar tus perfiles de redes sociales.</p>
 <div class="highlight"><pre><span></span>CONTENT_FOOTER = '''
@@ -924,7 +924,7 @@ Será compilado y visto en tu <code>localhost</code> pero no será publicado en 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Barra-de-b%C3%BAsqueda-de-Google">Barra de búsqueda de Google<a class="anchor-link" href="#Barra-de-b%C3%BAsqueda-de-Google">¶</a>
+<h3 id="Barra-de-búsqueda-de-Google">Barra de búsqueda de Google<a class="anchor-link" href="#Barra-de-b%C3%BAsqueda-de-Google">¶</a>
 </h3>
 <p>Habilitalo según lo siguiente.</p>
 <div class="highlight"><pre><span></span>SEARCH_FORM = """
@@ -1002,7 +1002,7 @@ Será compilado y visto en tu <code>localhost</code> pero no será publicado en 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Formateo-de-c%C3%B3digos">Formateo de códigos<a class="anchor-link" href="#Formateo-de-c%C3%B3digos">¶</a>
+<h3 id="Formateo-de-códigos">Formateo de códigos<a class="anchor-link" href="#Formateo-de-c%C3%B3digos">¶</a>
 </h3>
 <p>Por defecto, Nikola usa <a href="https://pygments.org">Pygments</a> para formatear los códigos.</p>
 <ul>
@@ -1638,7 +1638,7 @@ x =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Formateo-de-c%C3%B3digo">Formateo de código<a class="anchor-link" href="#Formateo-de-c%C3%B3digo">¶</a>
+<h2 id="Formateo-de-código">Formateo de código<a class="anchor-link" href="#Formateo-de-c%C3%B3digo">¶</a>
 </h2>
 <ul>
 <li>
@@ -1705,7 +1705,7 @@ x =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">Incorrecto formateo de código en las celdas con dos kernels<a class="anchor-link" href="#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">¶</a>
+<h2 id="Incorrecto-formateo-de-código-en-las-celdas-con-dos-kernels">Incorrecto formateo de código en las celdas con dos kernels<a class="anchor-link" href="#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">¶</a>
 </h2>
 <p>El formateo de código en las celdas tiene problemas cuando tienes dos kernels en tu Notebook, el cuál es un problema del metada de Jupyter Notebook.</p>
 <p>Ejemplo de formateo de código incompleto.

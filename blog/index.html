@@ -9660,10 +9660,17 @@ KN =
 </h2>
 <ul>
 <li>Download and install <a href="https://www.anaconda.com/products/individual#Downloads">Anaconda</a> or <a href="https://repo.anaconda.com/miniconda/">Miniconda</a>. It's your choice.</li>
-<li>Make sure <code>C:\ProgramData\Anaconda3</code> and <code>C:\ProgramData\Anaconda3\Scripts</code> are listed in your Windows <code>path variables</code>.</li>
+<li>After the installation is complete, make sure the following are listed in you Windows <code>system path variables</code>:<div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\c</span>ondabin
+C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\L</span>ibrary
+C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\S</span>cripts
+</pre></div>
+</li>
+<li>To check where is installed anaconda, run the following:<div class="highlight"><pre><span></span>where conda
+</pre></div>
+</li>
 <li>In Anaconda Navigator, create a new environment named <code>jmatlabNikola</code> with <code>Python 3.8</code>.</li>
-<li>Or open terminal and run
-<pre><code>  conda create -n jmatlabNikola python=3.8</code></pre>
+<li>Or open terminal (<strong>recommended</strong>) and run
+<pre><code>  conda create --name jmatlabNikola python=3.8</code></pre>
 </li>
 <li>A new folder will be created inside <code>C:\Users\&lt;user_name&gt;\.conda\envs\</code>
 </li>
@@ -9678,14 +9685,14 @@ KN =
 <li>
 <code>openCV_TF</code>: composed by Python 3.7, OpenCV, and TensorFlow.</li>
 </ul>
-<p>So, I want to write a post:</p>
+<p>So, let's say I want to write a post, I should do the following:</p>
 <ul>
-<li>Run <code>activate jmatlabNikola</code> → it switches to Python 3.6 (you can check with <code>python --version</code>). 
+<li>Run <code>activate jmatlabNikola</code> → it switches to Python 3.8 (you can check with <code>python --version</code>). 
 <pre><code>(jmatlabNikola) C:\Users\&lt;user_name&gt;\blog&gt;python --version
 Python 3.8.13 :: Anaconda, Inc.</code></pre>
 Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available. </li>
 </ul>
-<p>If I want to work with OpenCV:</p>
+<p>But if I want to work with OpenCV:</p>
 <ul>
 <li>Run <code>activate openCV_TF</code> → it switches to Python 3.7. The kernel and libraries of <code>jmatlabNikola</code> are not available and won't get mixed with this environment.
 <pre><code>(openCV_TF) C:\Users\&lt;user_name&gt;\ML_project&gt;python --version
@@ -9739,7 +9746,8 @@ jupyter nbextensions_configurator enable --user</code></pre>
 <pre><code>pip install Nikola[extras]</code></pre>
 </li>
 <li>Install Matlab-kernel.
-<pre><code>pip install matlab_kernel</code></pre>
+<pre><code>pip install matlab_kernel
+python -m matlab_kernel install --user</code></pre>
 </li>
 <li>Check installed kernels. 
 <pre><code>jupyter kernelspec list</code></pre>
@@ -9800,6 +9808,9 @@ python3    C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola\share\jupyter\ke
 </li>
 <li>Press <code>ctrl+c</code> to stop the server.</li>
 </ul>
+<p><strong>Note</strong></p>
+<p>At this point you can deploy on <code>Github Pages</code>. Just go to the section <strong>Compile your website/blog and deploy on GitHub pages</strong> and follow the instructions.</p>
+
 </div>
 </div>
 </div>
@@ -9833,7 +9844,7 @@ nikola new_post -f ipynb
 <h3 id="Create-a-clean-Nikola-site">Create a clean Nikola site<a class="anchor-link" href="Nikola-guide/#Create-a-clean-Nikola-site">¶</a>
 </h3>
 <p>Same as before but run <code>nikola init</code> instead of <code>nikola init --demo</code>.</p>
-<p>That's it!. Navigate through the files and see what Nikola has done with the demo, or the clean version.</p>
+<p>That's it!. Navigate through the files and see what Nikola has done with the demo or the clean version.</p>
 
 </div>
 </div>
@@ -10555,17 +10566,14 @@ BODY_END = '''
 <ul>
 <li>Build the project site<div class="highlight"><pre><span></span>nikola build
 </pre></div>
-<ul>
-<li>If the following error appears<div class="highlight"><pre><span></span>ERROR: yapsy: Unable to import plugin: C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\.</span>conda<span class="se">\e</span>nvs<span class="se">\N</span>ikola<span class="se">\l</span>ib<span class="se">\s</span>ite-packages<span class="se">\n</span>ikola<span class="se">\p</span>lugins<span class="se">\c</span>ompile<span class="se">\i</span>pynb
-</pre></div>
-or <div class="highlight"><pre><span></span>Cannot find <span class="s1">'ipynb'</span> compiler<span class="p">;</span> it might require an extra plugin
-</pre></div>
-you must downgrade <code>nbconvert</code> to <code>5.6.1</code> with <code>pip install nbconvert==5.6.1</code> and make sure to reinstall <code>matlab_kernel</code> with <div class="highlight"><pre><span></span>pip install matlab_kernel
-python -m matlab_kernel install --user
-</pre></div>
 </li>
-</ul>
-</li>
+<li>If everthing was built correctly then check the results with <div class="highlight"><pre><span></span>nikola serve --browser
+</pre></div>
+otherwise see <strong>Notes</strong> for possible error solutions.    </li>
+<li>Install <a href="https://git-scm.com/">Git</a> and make the following are added to your <code>system path variables</code><div class="highlight"><pre><span></span>C:<span class="se">\P</span>rogram Files<span class="se">\G</span>it
+C:<span class="se">\P</span>rogram Files<span class="se">\G</span>it<span class="se">\c</span>md
+</pre></div>
+you can check the location with <code>where git</code> command.</li>
 <li>Create a new repository named <code>&lt;user_name&gt;.github.io</code>on your GitHub account.</li>
 <li>Initialize Git and add origin inside the <code>blog</code> folder of your local drive.<div class="highlight"><pre><span></span>git init .
 git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.github.io
@@ -10595,6 +10603,18 @@ output
 <p><strong>Notes</strong></p>
 <ul>
 <li>Nikola creates two branches, <code>master</code> has the content of the output folder, and <code>src</code> has the actual content of your posts and pages. </li>
+<li>If the following errors appear:<div class="highlight"><pre><span></span>ERROR: yapsy: Unable to import plugin: C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\.</span>conda<span class="se">\e</span>nvs<span class="se">\N</span>ikola<span class="se">\l</span>ib<span class="se">\s</span>ite-packages<span class="se">\n</span>ikola<span class="se">\p</span>lugins<span class="se">\c</span>ompile<span class="se">\i</span>pynb
+</pre></div>
+or <div class="highlight"><pre><span></span>Cannot find <span class="s1">'ipynb'</span> compiler<span class="p">;</span> it might require an extra plugin
+</pre></div>
+you must downgrade <code>nbconvert</code> to <code>5.6.1</code>. Do the following:<div class="highlight"><pre><span></span>pip uninstall nbconvert
+pip install <span class="nv">nbconvert</span><span class="o">==</span><span class="m">5</span>.6.1 
+conda install <span class="s2">"nbconvert=5.6.1"</span>
+</pre></div>
+make sure to reinstall <code>matlab_kernel</code> with <div class="highlight"><pre><span></span>pip install matlab_kernel
+python -m matlab_kernel install --user
+</pre></div>
+and erase <code>.doit.db.bak</code>, <code>.doit.db.dat</code> and <code>.doit.db.dir</code> from the root folder.</li>
 </ul>
 </div>
 </div>
