@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 04 Oct 2022 23:55:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 05 Oct 2022 00:07:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -3412,18 +3412,18 @@ KN =
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Create-a-new-environment-with-Anaconda-or-Conda"&gt;Create a new environment with Anaconda or Conda&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-environment-with-Anaconda-or-Conda"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Download and install &lt;a href="https://www.anaconda.com/products/individual#Downloads"&gt;Anaconda&lt;/a&gt; or &lt;a href="https://repo.anaconda.com/miniconda/"&gt;Miniconda&lt;/a&gt;. It's your choice.&lt;/li&gt;
-&lt;li&gt;After the installation is complete, make sure the following are listed in you Windows &lt;code&gt;system path variables&lt;/code&gt;:&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\&lt;/span&gt;
-C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\c&lt;/span&gt;ondabin
-C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\L&lt;/span&gt;ibrary
-C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\a&lt;/span&gt;naconda3&lt;span class="se"&gt;\S&lt;/span&gt;cripts
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;After the installation is complete, make sure the following are listed in you Windows &lt;code&gt;system path variables&lt;/code&gt;:
+&lt;pre&gt;&lt;code&gt;C:\Users\&amp;lt;user_name&amp;gt;\anaconda3\
+C:\Users\&amp;lt;user_name&amp;gt;\anaconda3\condabin
+C:\Users\&amp;lt;user_name&amp;gt;\anaconda3\Library
+C:\Users\&amp;lt;user_name&amp;gt;\anaconda3\Scripts&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;To check where is installed anaconda, run the following:&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;where conda
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;To check where is installed anaconda, run the following:
+&lt;pre&gt;&lt;code&gt;where conda&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;In Anaconda Navigator, create a new environment named &lt;code&gt;jmatlabNikola&lt;/code&gt; with &lt;code&gt;Python 3.8&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Or open terminal (&lt;strong&gt;recommended&lt;/strong&gt;) and run
-&lt;pre&gt;&lt;code&gt;  conda create --name jmatlabNikola python=3.8&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;conda create --name jmatlabNikola python=3.8&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;A new folder will be created inside &lt;code&gt;C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -3560,15 +3560,15 @@ python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\ju
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Create-a-new-post-and-new-page"&gt;Create a new post and new page&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Create-a-new-post-and-new-page"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;Create a new post and new page. By default, they are created in &lt;code&gt;.rst&lt;/code&gt; format.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post
-nikola new_page
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Create a new post and new page. By default, they are created in &lt;code&gt;.rst&lt;/code&gt; format.
+&lt;pre&gt;&lt;code&gt;nikola new_post
+nikola new_page&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Other posts on different formats (&lt;code&gt;-f ipynb&lt;/code&gt; needs extra configuration, you'll see that later).&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola new_post -f md
+&lt;li&gt;Other posts on different formats. For &lt;code&gt;-f ipynb&lt;/code&gt;, it is needed extra configuration, you'll see that later.
+&lt;pre&gt;&lt;code&gt;nikola new_post -f md
 nikola new_post -f rst
 nikola new_post -f html
-nikola new_post -f ipynb
-&lt;/pre&gt;&lt;/div&gt;
+nikola new_post -f ipynb&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -4200,29 +4200,29 @@ BODY_END = '''
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Compile-your-website/blog-and-deploy-on-GitHub-pages"&gt;Compile your website/blog and deploy on GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Compile-your-website/blog-and-deploy-on-GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Build the project site&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola build
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Build the project site
+&lt;pre&gt;&lt;code&gt;nikola build&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;If everthing was built correctly then check the results with &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola serve --browser
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;If everthing was built correctly then check the results with 
+&lt;pre&gt;&lt;code&gt;nikola serve --browser&lt;/code&gt;&lt;/pre&gt;
 otherwise see &lt;strong&gt;Notes&lt;/strong&gt; for possible error solutions.    &lt;/li&gt;
-&lt;li&gt;Install &lt;a href="https://git-scm.com/"&gt;Git&lt;/a&gt; and make the following are added to your &lt;code&gt;system path variables&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;C:&lt;span class="se"&gt;\P&lt;/span&gt;rogram Files&lt;span class="se"&gt;\G&lt;/span&gt;it
-C:&lt;span class="se"&gt;\P&lt;/span&gt;rogram Files&lt;span class="se"&gt;\G&lt;/span&gt;it&lt;span class="se"&gt;\c&lt;/span&gt;md
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Install &lt;a href="https://git-scm.com/"&gt;Git&lt;/a&gt; and make the following are added to your &lt;code&gt;system path variables&lt;/code&gt;
+&lt;pre&gt;&lt;code&gt;C:\Program Files\Git
+C:\Program Files\Git\cmd&lt;/code&gt;&lt;/pre&gt;
 you can check the location with &lt;code&gt;where git&lt;/code&gt; command.&lt;/li&gt;
 &lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub account.&lt;/li&gt;
-&lt;li&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git init .
-git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.
+&lt;pre&gt;&lt;code&gt;git init .
+git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.vscode
+&lt;li&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;
+&lt;pre&gt;&lt;code&gt;.vscode
 .doit.db*
 cache
 __pycache__
 output
 .ipynb_checkpoints
-*/.ipynb_checkpoints/*
-&lt;/pre&gt;&lt;/div&gt;
+*/.ipynb_checkpoints/*&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Edit Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
@@ -4230,8 +4230,8 @@ output
 &lt;span class="n"&gt;GITHUB_COMMIT_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Deploy to GitHub.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;nikola github_deploy
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Deploy to GitHub.
+&lt;pre&gt;&lt;code&gt;nikola github_deploy&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Select the &lt;code&gt;master&lt;/code&gt; branch on the GitHub Pages section located on the repository settings. &lt;/li&gt;
 &lt;li&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the results.&lt;/li&gt;
@@ -4239,17 +4239,17 @@ output
 &lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Nikola creates two branches, &lt;code&gt;master&lt;/code&gt; has the content of the output folder, and &lt;code&gt;src&lt;/code&gt; has the actual content of your posts and pages. &lt;/li&gt;
-&lt;li&gt;If the following errors appear:&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;ERROR: yapsy: Unable to import plugin: C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\&amp;lt;&lt;/span&gt;user_name&amp;gt;&lt;span class="se"&gt;\.&lt;/span&gt;conda&lt;span class="se"&gt;\e&lt;/span&gt;nvs&lt;span class="se"&gt;\N&lt;/span&gt;ikola&lt;span class="se"&gt;\l&lt;/span&gt;ib&lt;span class="se"&gt;\s&lt;/span&gt;ite-packages&lt;span class="se"&gt;\n&lt;/span&gt;ikola&lt;span class="se"&gt;\p&lt;/span&gt;lugins&lt;span class="se"&gt;\c&lt;/span&gt;ompile&lt;span class="se"&gt;\i&lt;/span&gt;pynb
-&lt;/pre&gt;&lt;/div&gt;
-or &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Cannot find &lt;span class="s1"&gt;'ipynb'&lt;/span&gt; compiler&lt;span class="p"&gt;;&lt;/span&gt; it might require an extra plugin
-&lt;/pre&gt;&lt;/div&gt;
-you must downgrade &lt;code&gt;nbconvert&lt;/code&gt; to &lt;code&gt;5.6.1&lt;/code&gt;. Do the following:&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip uninstall nbconvert
-pip install &lt;span class="nv"&gt;nbconvert&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.6.1 
-conda install &lt;span class="s2"&gt;"nbconvert=5.6.1"&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-make sure to reinstall &lt;code&gt;matlab_kernel&lt;/code&gt; with &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install matlab_kernel
-python -m matlab_kernel install --user
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;If the following errors appear:
+&lt;pre&gt;&lt;code&gt;ERROR: yapsy: Unable to import plugin: C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\Nikola\lib\site-packages\nikola\plugins\compile\ipynb&lt;/code&gt;&lt;/pre&gt;
+or 
+&lt;pre&gt;&lt;code&gt;Cannot find 'ipynb' compiler; it might require an extra plugin&lt;/code&gt;&lt;/pre&gt;
+you must downgrade &lt;code&gt;nbconvert&lt;/code&gt; to &lt;code&gt;5.6.1&lt;/code&gt;. Do the following:
+&lt;pre&gt;&lt;code&gt;pip uninstall nbconvert
+pip install nbconvert==5.6.1 
+conda install "nbconvert=5.6.1"&lt;/code&gt;&lt;/pre&gt;
+make sure to reinstall &lt;code&gt;matlab_kernel&lt;/code&gt; with 
+&lt;pre&gt;&lt;code&gt;pip install matlab_kernel
+python -m matlab_kernel install --user&lt;/code&gt;&lt;/pre&gt;
 and erase &lt;code&gt;.doit.db.bak&lt;/code&gt;, &lt;code&gt;.doit.db.dat&lt;/code&gt; and &lt;code&gt;.doit.db.dir&lt;/code&gt; from the root folder.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -4262,16 +4262,16 @@ and erase &lt;code&gt;.doit.db.bak&lt;/code&gt;, &lt;code&gt;.doit.db.dat&lt;/co
 &lt;h2 id="Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;Testing Python and Matlab kernel on Jupyter Notebook&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Testing-Python-and-Matlab-kernel-on-Jupyter-Notebook"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For this section, we will to run VSCode under our environment.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Open terminal inside the root folder&lt;/li&gt;
-&lt;li&gt;Activate the environment.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;activate jmatlabNikola
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Activate the environment.
+&lt;pre&gt;&lt;code&gt;activate jmatlabNikola&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Open VSCode&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;Open VSCode
+&lt;pre&gt;&lt;code&gt;code&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Check if the kernels are available. 
 &lt;img src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" alt="drawing" width="100%"&gt; &lt;/li&gt;
-&lt;li&gt;If the &lt;code&gt;matlab&lt;/code&gt; kernel is not listed then you must install again the &lt;code&gt;matlab_kernel&lt;/code&gt; with&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python -m matlab_kernel install --user
-&lt;/pre&gt;&lt;/div&gt;
+&lt;li&gt;If the &lt;code&gt;matlab&lt;/code&gt; kernel is not listed then you must install again the &lt;code&gt;matlab_kernel&lt;/code&gt; with
+&lt;pre&gt;&lt;code&gt;python -m matlab_kernel install --user&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;Alternatively, activate &lt;code&gt;jmatlabNikola&lt;/code&gt; and run VSCode with Anaconda Navigator.&lt;/li&gt;
 &lt;li&gt;Remember to switch the &lt;strong&gt;Matlab and Python kernels&lt;/strong&gt; for each cell.&lt;/li&gt;

@@ -9660,18 +9660,18 @@ KN =
 </h2>
 <ul>
 <li>Download and install <a href="https://www.anaconda.com/products/individual#Downloads">Anaconda</a> or <a href="https://repo.anaconda.com/miniconda/">Miniconda</a>. It's your choice.</li>
-<li>After the installation is complete, make sure the following are listed in you Windows <code>system path variables</code>:<div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\</span>
-C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\c</span>ondabin
-C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\L</span>ibrary
-C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\a</span>naconda3<span class="se">\S</span>cripts
-</pre></div>
+<li>After the installation is complete, make sure the following are listed in you Windows <code>system path variables</code>:
+<pre><code>C:\Users\&lt;user_name&gt;\anaconda3\
+C:\Users\&lt;user_name&gt;\anaconda3\condabin
+C:\Users\&lt;user_name&gt;\anaconda3\Library
+C:\Users\&lt;user_name&gt;\anaconda3\Scripts</code></pre>
 </li>
-<li>To check where is installed anaconda, run the following:<div class="highlight"><pre><span></span>where conda
-</pre></div>
+<li>To check where is installed anaconda, run the following:
+<pre><code>where conda</code></pre>
 </li>
 <li>In Anaconda Navigator, create a new environment named <code>jmatlabNikola</code> with <code>Python 3.8</code>.</li>
 <li>Or open terminal (<strong>recommended</strong>) and run
-<pre><code>  conda create --name jmatlabNikola python=3.8</code></pre>
+<pre><code>conda create --name jmatlabNikola python=3.8</code></pre>
 </li>
 <li>A new folder will be created inside <code>C:\Users\&lt;user_name&gt;\.conda\envs\</code>
 </li>
@@ -9823,15 +9823,15 @@ python3    C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola\share\jupyter\ke
 <h3 id="Create-a-new-post-and-new-page">Create a new post and new page<a class="anchor-link" href="Nikola-guide/#Create-a-new-post-and-new-page">¶</a>
 </h3>
 <ul>
-<li>Create a new post and new page. By default, they are created in <code>.rst</code> format.<div class="highlight"><pre><span></span>nikola new_post
-nikola new_page
-</pre></div>
+<li>Create a new post and new page. By default, they are created in <code>.rst</code> format.
+<pre><code>nikola new_post
+nikola new_page</code></pre>
 </li>
-<li>Other posts on different formats (<code>-f ipynb</code> needs extra configuration, you'll see that later).<div class="highlight"><pre><span></span>nikola new_post -f md
+<li>Other posts on different formats. For <code>-f ipynb</code>, it is needed extra configuration, you'll see that later.
+<pre><code>nikola new_post -f md
 nikola new_post -f rst
 nikola new_post -f html
-nikola new_post -f ipynb
-</pre></div>
+nikola new_post -f ipynb</code></pre>
 </li>
 </ul>
 </div>
@@ -10565,29 +10565,29 @@ BODY_END = '''
 <h2 id="Compile-your-website/blog-and-deploy-on-GitHub-pages">Compile your website/blog and deploy on GitHub pages<a class="anchor-link" href="Nikola-guide/#Compile-your-website/blog-and-deploy-on-GitHub-pages">¶</a>
 </h2>
 <ul>
-<li>Build the project site<div class="highlight"><pre><span></span>nikola build
-</pre></div>
+<li>Build the project site
+<pre><code>nikola build</code></pre>
 </li>
-<li>If everthing was built correctly then check the results with <div class="highlight"><pre><span></span>nikola serve --browser
-</pre></div>
+<li>If everthing was built correctly then check the results with 
+<pre><code>nikola serve --browser</code></pre>
 otherwise see <strong>Notes</strong> for possible error solutions.    </li>
-<li>Install <a href="https://git-scm.com/">Git</a> and make the following are added to your <code>system path variables</code><div class="highlight"><pre><span></span>C:<span class="se">\P</span>rogram Files<span class="se">\G</span>it
-C:<span class="se">\P</span>rogram Files<span class="se">\G</span>it<span class="se">\c</span>md
-</pre></div>
+<li>Install <a href="https://git-scm.com/">Git</a> and make the following are added to your <code>system path variables</code>
+<pre><code>C:\Program Files\Git
+C:\Program Files\Git\cmd</code></pre>
 you can check the location with <code>where git</code> command.</li>
 <li>Create a new repository named <code>&lt;user_name&gt;.github.io</code>on your GitHub account.</li>
-<li>Initialize Git and add origin inside the <code>blog</code> folder of your local drive.<div class="highlight"><pre><span></span>git init .
-git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.github.io
-</pre></div>
+<li>Initialize Git and add origin inside the <code>blog</code> folder of your local drive.
+<pre><code>git init .
+git remote add origin https://github.com/&lt;user_name&gt;/&lt;user_name&gt;.github.io</code></pre>
 </li>
-<li>Create a <code>.gitignore</code><div class="highlight"><pre><span></span>.vscode
+<li>Create a <code>.gitignore</code>
+<pre><code>.vscode
 .doit.db*
 cache
 __pycache__
 output
 .ipynb_checkpoints
-*/.ipynb_checkpoints/*
-</pre></div>
+*/.ipynb_checkpoints/*</code></pre>
 </li>
 <li>Edit Nikola <code>conf.py</code><div class="highlight"><pre><span></span><span class="n">GITHUB_SOURCE_BRANCH</span> <span class="o">=</span> <span class="s1">'src'</span>
 <span class="n">GITHUB_DEPLOY_BRANCH</span> <span class="o">=</span> <span class="s1">'master'</span>
@@ -10595,8 +10595,8 @@ output
 <span class="n">GITHUB_COMMIT_SOURCE</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </li>
-<li>Deploy to GitHub.<div class="highlight"><pre><span></span>nikola github_deploy
-</pre></div>
+<li>Deploy to GitHub.
+<pre><code>nikola github_deploy</code></pre>
 </li>
 <li>Select the <code>master</code> branch on the GitHub Pages section located on the repository settings. </li>
 <li>Open <code>https://&lt;user_name&gt;.github.io</code> to see the results.</li>
@@ -10604,17 +10604,17 @@ output
 <p><strong>Notes</strong></p>
 <ul>
 <li>Nikola creates two branches, <code>master</code> has the content of the output folder, and <code>src</code> has the actual content of your posts and pages. </li>
-<li>If the following errors appear:<div class="highlight"><pre><span></span>ERROR: yapsy: Unable to import plugin: C:<span class="se">\U</span>sers<span class="se">\&lt;</span>user_name&gt;<span class="se">\.</span>conda<span class="se">\e</span>nvs<span class="se">\N</span>ikola<span class="se">\l</span>ib<span class="se">\s</span>ite-packages<span class="se">\n</span>ikola<span class="se">\p</span>lugins<span class="se">\c</span>ompile<span class="se">\i</span>pynb
-</pre></div>
-or <div class="highlight"><pre><span></span>Cannot find <span class="s1">'ipynb'</span> compiler<span class="p">;</span> it might require an extra plugin
-</pre></div>
-you must downgrade <code>nbconvert</code> to <code>5.6.1</code>. Do the following:<div class="highlight"><pre><span></span>pip uninstall nbconvert
-pip install <span class="nv">nbconvert</span><span class="o">==</span><span class="m">5</span>.6.1 
-conda install <span class="s2">"nbconvert=5.6.1"</span>
-</pre></div>
-make sure to reinstall <code>matlab_kernel</code> with <div class="highlight"><pre><span></span>pip install matlab_kernel
-python -m matlab_kernel install --user
-</pre></div>
+<li>If the following errors appear:
+<pre><code>ERROR: yapsy: Unable to import plugin: C:\Users\&lt;user_name&gt;\.conda\envs\Nikola\lib\site-packages\nikola\plugins\compile\ipynb</code></pre>
+or 
+<pre><code>Cannot find 'ipynb' compiler; it might require an extra plugin</code></pre>
+you must downgrade <code>nbconvert</code> to <code>5.6.1</code>. Do the following:
+<pre><code>pip uninstall nbconvert
+pip install nbconvert==5.6.1 
+conda install "nbconvert=5.6.1"</code></pre>
+make sure to reinstall <code>matlab_kernel</code> with 
+<pre><code>pip install matlab_kernel
+python -m matlab_kernel install --user</code></pre>
 and erase <code>.doit.db.bak</code>, <code>.doit.db.dat</code> and <code>.doit.db.dir</code> from the root folder.</li>
 </ul>
 </div>
@@ -10630,17 +10630,17 @@ and erase <code>.doit.db.bak</code>, <code>.doit.db.dat</code> and <code>.doit.d
 <p>For this section, we will to run VSCode under our environment.</p>
 <ul>
 <li>Open terminal inside the root folder</li>
-<li>Activate the environment.<div class="highlight"><pre><span></span>activate jmatlabNikola
-</pre></div>
+<li>Activate the environment.
+<pre><code>activate jmatlabNikola</code></pre>
 </li>
-<li>Open VSCode<div class="highlight"><pre><span></span>code
-</pre></div>
+<li>Open VSCode
+<pre><code>code</code></pre>
 </li>
 <li>Check if the kernels are available. 
 <img src="../images/Nikola_guide/VSCode_available_kernels.png" alt="drawing" width="100%">
 </li>
-<li>If the <code>matlab</code> kernel is not listed then you must install again the <code>matlab_kernel</code> with<div class="highlight"><pre><span></span>python -m matlab_kernel install --user
-</pre></div>
+<li>If the <code>matlab</code> kernel is not listed then you must install again the <code>matlab_kernel</code> with
+<pre><code>python -m matlab_kernel install --user</code></pre>
 </li>
 <li>Alternatively, activate <code>jmatlabNikola</code> and run VSCode with Anaconda Navigator.</li>
 <li>Remember to switch the <strong>Matlab and Python kernels</strong> for each cell.</li>
