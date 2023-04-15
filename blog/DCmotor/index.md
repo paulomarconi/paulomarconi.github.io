@@ -292,7 +292,7 @@ Using $\mathbf{\dot{x}}=0$ in \eqref{eq:sys1}, the equilibrium point $\mathbf{x_
 \end{align}
 </div>
 
-Solving for no external torque $\tau_L=0$, constant applied armatrue voltage $e_i=E_0$, and $K_2 \neq 0$,
+Solving for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and $K_2 \neq 0$,
 
 <div class="math">
 \begin{align*}

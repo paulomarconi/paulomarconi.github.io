@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about state-space)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/state-space.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2023 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre ecuaciones diferenciales)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/ecuaciones-diferenciales.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2023 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 15 Apr 2023 19:41:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dynamic model of a DC motor with gear train</title><link>https://paulomarconi.github.io/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 15 Apr 2023 19:44:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modelo dinámico de un motor DC con tren de engranajes</title><link>https://paulomarconi.github.io/es/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Tabla de Contenidos&lt;/h2&gt;
+
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#source-code"&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#free-body-diagram-analysis"&gt;Free-body diagram analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#dynamic-system"&gt;Dynamic system&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#state-space-equations"&gt;State-space equations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#equilibrium-point-mathbfx_0"&gt;Equilibrium point $\mathbf{x_0}$&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#references"&gt;References&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#c%C3%B3digo-fuente-ingl%C3%A9s"&gt;Código Fuente (inglés)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#introducci%C3%B3n"&gt;Introducción&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#an%C3%A1lisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#sistema-din%C3%A1mico"&gt;Sistema dinámico&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#ecuaciones-en-espacio-de-estados"&gt;Ecuaciones en espacio de estados&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#punto-de-equilibrio-mathbfx_0"&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#referencias"&gt;Referencias&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Source code&lt;/h2&gt;
-&lt;p&gt;Version &lt;a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/files/DCmotor/DCmotor.html"&gt;HTML&lt;/a&gt;. LaTex source code on &lt;a href="https://github.com/paulomarconi/DCmotor"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The objective is to model the dynamics of a DC servo motor with gear train, Fig. 1, and to deduce two equilibrium points.&lt;/p&gt;
+&lt;h2&gt;Código Fuente (inglés)&lt;/h2&gt;
+&lt;p&gt;Versión &lt;a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/es/files/DCmotor/DCmotor.html"&gt;HTML&lt;/a&gt;. Código fuente en LaTex disponible en &lt;a href="https://github.com/paulomarconi/DCmotor"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
+&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;El objetivo es modelar la dinámica de un motor DC de servomotor con tren de engranajes, Fig. 1, y deducir dos puntos de equilibrio.&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"&gt;&lt;/center&gt;
-    &lt;center&gt;&lt;figcaption&gt;Fig.1 - DC servo motor with gear train.&lt;/figcaption&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.1 - Motor DC de servomotor con tren de engranajes.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;Free-body diagram analysis&lt;/h2&gt;
-&lt;p&gt;The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows,&lt;/p&gt;
+&lt;h2&gt;Análisis del Diagrama de Cuerpo Libre&lt;/h2&gt;
+&lt;p&gt;El sistema se puede descomponer en dos secciones: una mecánica rotacional y una electromecánica. La mecánica rotacional se puede derivar de la siguiente manera,&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"&gt;&lt;/center&gt;
-    &lt;center&gt;&lt;figcaption&gt;Fig.2 - Rotational mechanical free-body diagram.&lt;/figcaption&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.2 - Diagrama de cuerpo libre mecánico rotacional.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-&lt;p&gt;where $\theta$ is the angular displacement, $\omega$ is the angular speed, $B$ is the rotational viscous-damping coefficient, $K$ is the stiffness coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, and $r$ is the gear radius.&lt;/p&gt;
-&lt;p&gt;The electromechanical section (DC motor) is&lt;/p&gt;
+
+&lt;p&gt;donde $\theta$ es el desplazamiento angular, $\omega$ es la velocidad angular, $B$ es el coeficiente de amortiguamiento viscoso rotacional, $K$ es el coeficiente de rigidez, $J$ es el momento de inercia, $f_c$ es la fuerza de contacto entre dos engranajes y $r$ es el radio del engranaje.&lt;/p&gt;
+&lt;p&gt;La sección electromecánica (motor DC) es&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Electromechanical_free-body.png" alt="Electromechanical_free-body" width="35%"&gt;&lt;/center&gt;
-    &lt;center&gt;&lt;figcaption&gt;Fig.3 - Electro-mechanical free-body diagram.&lt;/figcaption&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Fig.3 - Diagrama de cuerpo libre electromecánico.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-&lt;p&gt;where $R_F$ is the field resistance, $L_F$ is the field inductance, $E_F$ is the applied constant field voltage, and $i_F$ is the input field current. $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, and $e_m$ is the induced voltage, $i_A$ is the input stationary current, and $e_i(t)$ is the applied armature voltage, and $\tau_e$ is the electro-mechanical driving torque exerted on the rotor. &lt;/p&gt;
-&lt;p&gt;If the flux density $\mathcal{B}$ is&lt;/p&gt;
+&lt;p&gt;donde $R_F$ es la resistencia del campo, $L_F$ es la inductancia del campo, $E_F$ es la tensión de campo constante aplicada, e $i_F$ es la corriente de campo de entrada. $R_A$ es la resistencia estacionaria, $L_A$ es la inductancia estacionaria, y $e_m$ es la tensión inducida, $i_A$ es la corriente estacionaria de entrada, y $e_i(t)$ es la tensión de armadura aplicada, y $\tau_e$ es el par electromecánico que impulsa el rotor.&lt;/p&gt;
+&lt;p&gt;Si la densidad de flujo $\mathcal{B}$ es&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     \mathcal{B} &amp;amp; = \frac{\phi(i_F)}{A}           
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;the torque on the rotor is&lt;/p&gt;
+&lt;p&gt;el par en el rotor es&lt;/p&gt;
 &lt;div class="math"&gt;s
 \begin{align}
     \tau_e      &amp;amp; = \mathcal{B} l a~i_A \nonumber \\
@@ -50,17 +52,17 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;where $\phi(i_F)$ is the flux induced by $i_F$, $A$ is the cross-sectional area of the flux path in the air gap between the rotor and stator, $l$ is the total length of the armature conductors within the magnetic field, and $a$ is the radius of the armature.&lt;/p&gt;
-&lt;p&gt;Also, the voltage induced in the armature $e_m$ can be written as&lt;/p&gt;
+&lt;p&gt;donde $\phi(i_F)$ es el flujo inducido por $i_F$, $A$ es el área transversal de la trayectoria de flujo en la brecha de aire entre el rotor y el estator, $l$ es la longitud total de los conductores de la armadura dentro del campo magnético, y $a$ es el radio de la armadura.&lt;/p&gt;
+&lt;p&gt;Además, la tensión inducida en la armadura $e_m$ puede escribirse como&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     e_m &amp;amp; = \frac{l a}{A} \phi(i_F) \omega
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;where both, $\tau_e$ and $e_m$, depend on the geometry of the DC motor. &lt;/p&gt;
-&lt;h2&gt;Dynamic system&lt;/h2&gt;
-&lt;p&gt;We begin applying D'Alembert's law (restatement of Newton's law) to the rotational mechanical section.&lt;/p&gt;
+&lt;p&gt;donde tanto $\tau_e$ como $e_m$ dependen de la geometría del motor DC.&lt;/p&gt;
+&lt;h2&gt;Sistema dinámico&lt;/h2&gt;
+&lt;p&gt;Comenzamos aplicando la ley de D'Alembert (reformulación de la ley de Newton) al sistema mecánico rotacional.&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     \sum \tau_{all}                                          &amp;amp; = 0 \nonumber                 \\
@@ -69,8 +71,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;where $\tau_{all}$ are the torques acting on a body, $K\theta$ is the stiffness torque, $B\omega$ is the viscous-frictional torque, $J\dot{\omega}$ is the inertial torque, $\tau_e(t)$ is the driving torque,  $\tau_L(t)$ is the load torque, and $r f_c$ is the contact torque.&lt;/p&gt;
-&lt;p&gt;Due to the relation between gears,&lt;/p&gt;
+&lt;p&gt;donde $\tau_{all}$ son los torques que actúan sobre un cuerpo, $K\theta$ es el torque de rigidez, $B\omega$ es el torque viscoso-friccional, $J\dot{\omega}$ es el torque inercial, $\tau_e(t)$ es el torque de conducción, $\tau_L(t)$ es el torque de carga y $r f_c$ es el torque de contacto.&lt;/p&gt;
+&lt;p&gt;Debido a la relación entre engranajes,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     \theta_1       &amp;amp; = N \theta_2       \\
@@ -80,14 +82,14 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;where $N$ is the gear radius relation. We solve \eqref{eq:Rot1} and \eqref{eq:Rot2} in terms of $\omega_2$ and $\theta_2$,&lt;/p&gt;
+&lt;p&gt;donde $N$ es la relación de radio de los engranajes. Resolvemos \eqref{eq:Rot1} y \eqref{eq:Rot2} en términos de $\omega_2$ y $\theta_2$,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     (J_2+N^2 J_1)\dot{\omega}_2+(B_2+N^2 B_1)\omega_1+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0 \nonumber 
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;defining the relations&lt;/p&gt;
+&lt;p&gt;definiendo las relaciones&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     J_{eq} &amp;amp; = J_2+N^2 J_1 \\
@@ -95,14 +97,14 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;it becomes in&lt;/p&gt;
+&lt;p&gt;se convierte en&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}   
     J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0 \label{eq:Rot3}
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;Now, let us derive the equations of the electro-mechanical section using Kirchoff's law.&lt;/p&gt;
+&lt;p&gt;Ahora, derivemos las ecuaciones de la sección electromecánica utilizando la ley de Kirchhoff.&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     \sum V_{all}            &amp;amp; = 0       \nonumber             \\
@@ -110,8 +112,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;where $V_{all}$ are the induced voltages on the rotor and stator, $V_{L_{A}}$ is the stationary resistance voltage, $V_{R_{A}}$ is the stationary inductance voltage.  &lt;/p&gt;
-&lt;p&gt;If $i_F$ is defined as constant, then \eqref{eq:tau_e} is&lt;/p&gt;
+&lt;p&gt;donde $V_{all}$ son las tensiones inducidas en el rotor y el estator, $V_{L_{A}}$ es la tensión de resistencia estacionaria, $V_{R_{A}}$ es la tensión de inductancia estacionaria. &lt;/p&gt;
+&lt;p&gt;Si $i_F$ está definido como constante, entonces \eqref{eq:tau_e} es&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     \tau_e(t) &amp;amp; = \left( \frac{l a}{A} \phi(i_F) \right) i_A(t) \nonumber \\
@@ -119,8 +121,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;where $\alpha$ is the internal parameters of the DC motor.&lt;/p&gt;
-&lt;p&gt;Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is, &lt;/p&gt;
+&lt;p&gt;donde $\alpha$ es el parámetro interno del motor DC.&lt;/p&gt;
+&lt;p&gt;Luego, simplificando y usando \eqref{eq:Rot3} y \eqref{eq:Elec1} el sistema dinámico es,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e - \tau_L &amp;amp; = 0 \\
@@ -128,8 +130,8 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;State-space equations&lt;/h2&gt;
-&lt;p&gt;Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system,&lt;/p&gt;
+&lt;h2&gt;Ecuaciones en espacio de estados&lt;/h2&gt;
+&lt;p&gt;Definamos las ecuaciones de espacio de estados parar $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. Del sistema dinámico,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     J_{eq} \ddot{\theta}_2+B_{eq} \dot{\theta}_2+K_2 \theta_2-N \alpha i_A-\tau_L &amp;amp; = 0 \\
@@ -137,7 +139,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;reordering,&lt;/p&gt;
+&lt;p&gt;reordenando,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     \ddot{\theta}_2 &amp;amp; = -\frac{B_{eq}}{J_{eq}} \dot{\theta}_2 - \frac{K_2}{J_{eq}} \theta_2 + \frac{N \alpha}{J_{eq}} i_A - \frac{1}{J_{eq}} \tau_L \\\
@@ -145,7 +147,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;defining the states as&lt;/p&gt;
+&lt;p&gt;definiendo los estados como&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     \begin{cases}
@@ -156,7 +158,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;then&lt;/p&gt;
+&lt;p&gt;entonces&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
 \begin{bmatrix}
@@ -199,7 +201,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;The output $y=\dot{\omega}_2$ can be defined as&lt;/p&gt;
+&lt;p&gt;La salida $y=\dot{\omega}_2$ se puede definir como&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
 y &amp;amp;=
@@ -225,8 +227,8 @@ y &amp;amp;= C \mathbf{\dot{x}}
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;Equilibrium point $\mathbf{x_0}$&lt;/h2&gt;
-&lt;p&gt;Using $\mathbf{\dot{x}}=0$ in \eqref{eq:sys1}, the equilibrium point $\mathbf{x_0}$ can be calculated as &lt;/p&gt;
+&lt;h2&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/h2&gt;
+&lt;p&gt;Usando $\mathbf{\dot{x}}=0$ en \eqref{eq:sys1}, el punto de equilibrio $\mathbf{x_0}$ puede calcularse como &lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     0            &amp;amp; = A \mathbf{x_0} +B \mathbf{u} \\
@@ -255,7 +257,7 @@ y &amp;amp;= C \mathbf{\dot{x}}
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;Solving for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and $K_2 \neq 0$,&lt;/p&gt;
+&lt;p&gt;Resolviendo para torque externo nulo $\tau_L=0$, voltaje de armadura aplicado cosntante $e_i=E_0$ y $K_2 \neq 0$,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     0 &amp;amp; = x_{2_0}                                                                                      \\
@@ -264,13 +266,13 @@ y &amp;amp;= C \mathbf{\dot{x}}
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;due to $x_{2_0}=0$, we have&lt;/p&gt;
+&lt;p&gt;dado que to $x_{2_0}=0$, tenemos que&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     0 &amp;amp; = -\frac{K_2}{J_{eq}} x_{1_0} + \frac{N \alpha}{J_{eq}} x_{3_0} \\
     0 &amp;amp; = -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0
 \end{align*}
-then
+entonces
 \begin{align*}
     x_{1_0} &amp;amp; = \frac{N \alpha}{K_2 R_A} E_0 \\
     x_{3_0} &amp;amp; = \frac{1}{R_A} E_0
@@ -293,8 +295,8 @@ therefore the equilibrium point is
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;This equilibrium point indicates that a $\textbf{constant angular displacement (twist)}$ produced by $x_{1_0}=\theta_{2_0}$ is sufficient to balance the constant applied armature voltage $e_i=E_0$.&lt;/p&gt;
-&lt;p&gt;On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is,&lt;/p&gt;
+&lt;p&gt;Este punto de equilibrio indica que una $\textbf{constante desplazamiento angular (giro)}$ producida por $x_{1_0}=\theta_{2_0}$ es suficiente para equilibrar la constante tensión de armadura aplicada $e_i=E_0$.&lt;/p&gt;
+&lt;p&gt;Por otro lado, si resolvemos para sin torque externo $\tau_L=0$, tensión de armadura aplicada constante $e_i=E_0$, y sin rigidez $K_2=0$. El problema es&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
     \begin{bmatrix}
@@ -321,7 +323,7 @@ therefore the equilibrium point is
 \end{align*}
 &lt;/div&gt;
 
-&lt;p&gt;if we eliminate $x_{1_0}$ because the first column of $A^{-1}$ has zeros, the problem reduces to&lt;/p&gt;
+&lt;p&gt;Si eliminamos $x_{1_0}$ porque la primera columna de $A^{-1}$ tiene ceros, el problema se reduce a&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     \begin{bmatrix}
@@ -344,7 +346,7 @@ therefore the equilibrium point is
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;solving, we have&lt;/p&gt;
+&lt;p&gt;resolviendo tenemos que&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
     \begin{bmatrix}
@@ -360,6 +362,6 @@ therefore the equilibrium point is
 \end{align}
 &lt;/div&gt;
 
-&lt;p&gt;which indicates that a $\textbf{constant angular speed}$ produced by $x_{2_0}=\dot{\theta_{2_0}}$ is needed to balance the constant applied armature voltage $e_i=E_0$.&lt;/p&gt;
-&lt;h2&gt;References&lt;/h2&gt;
-&lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;</description><category>DC motor</category><category>differential equations</category><category>dynamics model</category><category>equilibrium point</category><category>state-space</category><guid>https://paulomarconi.github.io/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item></channel></rss>
+&lt;p&gt;lo que indica que una $\textbf{velocidad angular constante}$ producida por $x_{2_0}=\dot{\theta_{2_0}}$ es necesaria para equilibrar la constante tensión de armadura aplicada $e_i=E_0$.&lt;/p&gt;
+&lt;h2&gt;Referencias&lt;/h2&gt;
+&lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;</description><category>ecuaciones diferenciales</category><category>espacio de estados</category><category>modelo dinámico</category><category>motor DC</category><category>punto de equilibrio</category><guid>https://paulomarconi.github.io/es/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item></channel></rss>
