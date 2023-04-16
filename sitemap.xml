@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2023-04-15T19:41:00Z</lastmod>
+  <lastmod>2023-04-16T20:17:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -45,6 +45,7 @@
  <url>
   <loc>https://paulomarconi.github.io/blog/MPCu/</loc>
   <lastmod>2023-03-22T13:56:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="es" href="https://paulomarconi.github.io/es/blog/MPCu/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/Nikola-guide/</loc>
@@ -225,7 +226,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2023-04-15T19:44:00Z</lastmod>
+  <lastmod>2023-04-16T20:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -287,7 +288,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
-  <lastmod>2023-04-13T13:31:00Z</lastmod>
+  <lastmod>2023-04-16T20:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/aggregation/</loc>
@@ -342,12 +343,12 @@
   <lastmod>2023-04-13T13:31:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/equilibrium-point/</loc>
-  <lastmod>2023-03-22T13:52:00Z</lastmod>
- </url>
- <url>
   <loc>https://paulomarconi.github.io/es/categories/espacio-de-estados/</loc>
   <lastmod>2023-04-13T13:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/filtro-de-kalman/</loc>
+  <lastmod>2023-04-16T20:29:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/foraging/</loc>
@@ -394,6 +395,10 @@
   <lastmod>2023-03-22T13:56:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/es/categories/optimizacion/</loc>
+  <lastmod>2023-04-16T20:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/es/categories/optimization/</loc>
   <lastmod>2023-03-22T13:56:00Z</lastmod>
  </url>
@@ -422,12 +427,16 @@
   <lastmod>2023-03-22T13:56:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/ssto/</loc>
-  <lastmod>2023-03-22T13:56:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/sin-restricciones/</loc>
+  <lastmod>2023-04-16T20:29:00Z</lastmod>
  </url>
  <url>
-  <loc>https://paulomarconi.github.io/es/categories/state-space/</loc>
-  <lastmod>2023-03-22T13:52:00Z</lastmod>
+  <loc>https://paulomarconi.github.io/es/categories/sistemas-de-control/</loc>
+  <lastmod>2023-04-16T20:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/categories/ssto/</loc>
+  <lastmod>2023-03-22T13:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/stiction/</loc>

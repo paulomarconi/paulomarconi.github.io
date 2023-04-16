@@ -1339,7 +1339,7 @@ therefore the equilibrium point is
 <li><a href="LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio">Test the parallel working on VSCode and TeXstudio</a></li>
 </ul>
 <h2>Introduction</h2>
-<p>LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents, but when I tried to use in parallel with VSCode, I found some problems. </p>
+<p>LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents but when I tried to use in parallel with VSCode I found some problems. </p>
 <p>The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. </p>
 <h2>Download and configure LanguageTool</h2>
 <ul>
@@ -8274,7 +8274,7 @@ M =
 </div>
 </div>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="MPCu/" class="u-url">Unconstrained MPC regulator with Kalman filter</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="MPCu/" class="u-url">MPC regulador con filtro de Kalman</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Paulo Loma Marconi
@@ -8296,48 +8296,48 @@ M =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2>Table of Contents<span class="tocSkip"></span>
+<p></p>
+<h2>Tabla de Contenido<span class="tocSkip"></span>
 </h2>
 <div class="toc"><ul class="toc-item">
-<li><span><a href="MPCu/#Unconstrained-Model-Predictive-Control-(MPC)-regulator-with-Kalman-filter" data-toc-modified-id="Unconstrained-Model-Predictive-Control-(MPC)-regulator-with-Kalman-filter-1"><span class="toc-item-num">1  </span>Unconstrained Model Predictive Control (MPC) regulator with Kalman filter</a></span></li>
-<li><span><a href="MPCu/#Pre-requisites" data-toc-modified-id="Pre-requisites-2"><span class="toc-item-num">2  </span>Pre-requisites</a></span></li>
-<li><span><a href="MPCu/#Background-Theory" data-toc-modified-id="Background-Theory-3"><span class="toc-item-num">3  </span>Background Theory</a></span></li>
-<li><span><a href="MPCu/#Unconstrained-MPC" data-toc-modified-id="Unconstrained-MPC-4"><span class="toc-item-num">4  </span>Unconstrained MPC</a></span></li>
-<li><span><a href="MPCu/#Problem-Formulation" data-toc-modified-id="Problem-Formulation-5"><span class="toc-item-num">5  </span>Problem Formulation</a></span></li>
-<li><span><a href="MPCu/#The-Quadratic-Problem-(QP)-approach" data-toc-modified-id="The-Quadratic-Problem-(QP)-approach-6"><span class="toc-item-num">6  </span>The Quadratic Problem (QP) approach</a></span></li>
-<li><span><a href="MPCu/#Prediction:-Predicted-Equality-Constraint" data-toc-modified-id="Prediction:-Predicted-Equality-Constraint-7"><span class="toc-item-num">7  </span>Prediction: Predicted Equality Constraint</a></span></li>
+<li><span><a href="MPCu/#Control-Predictivo-basado-en-Modelo-(MPC---Model-Predictive-Control)-tipo-regulador-sin-restricciones-con-filtro-de-Kalman" data-toc-modified-id="Control-Predictivo-basado-en-Modelo-(MPC---Model-Predictive-Control)-tipo-regulador-sin-restricciones-con-filtro-de-Kalman-1"><span class="toc-item-num">1  </span>Control Predictivo basado en Modelo (MPC - Model Predictive Control) tipo regulador sin restricciones con filtro de Kalman</a></span></li>
+<li><span><a href="MPCu/#Requisitos-previos" data-toc-modified-id="Requisitos-previos-2"><span class="toc-item-num">2  </span>Requisitos previos</a></span></li>
+<li><span><a href="MPCu/#Antecedentes" data-toc-modified-id="Antecedentes-3"><span class="toc-item-num">3  </span>Antecedentes</a></span></li>
+<li><span><a href="MPCu/#MPC-sin-restricciones" data-toc-modified-id="MPC-sin-restricciones-4"><span class="toc-item-num">4  </span>MPC sin restricciones</a></span></li>
+<li><span><a href="MPCu/#Formulaci%C3%B3n-del-problema" data-toc-modified-id="Formulación-del-problema-5"><span class="toc-item-num">5  </span>Formulación del problema</a></span></li>
+<li><span><a href="MPCu/#El-enfoque-del-Problema-Cuadr%C3%A1tico-(QP---Quadratic-Problem)" data-toc-modified-id="El-enfoque-del-Problema-Cuadrático-(QP---Quadratic-Problem)-6"><span class="toc-item-num">6  </span>El enfoque del Problema Cuadrático (QP - Quadratic Problem)</a></span></li>
+<li><span><a href="MPCu/#Predicci%C3%B3n:-Restricci%C3%B3n-de-Igualdad-Predecida" data-toc-modified-id="Predicción:-Restricción-de-Igualdad-Predecida-7"><span class="toc-item-num">7  </span>Predicción: Restricción de Igualdad Predecida</a></span></li>
 <li>
-<span><a href="MPCu/#Prediction:-Rewriting-the-Cost-Function" data-toc-modified-id="Prediction:-Rewriting-the-Cost-Function-8"><span class="toc-item-num">8  </span>Prediction: Rewriting the Cost Function</a></span><ul class="toc-item">
+<span><a href="MPCu/#Predicci%C3%B3n:-Reescribiendo-la-funci%C3%B3n-de-costo" data-toc-modified-id="Predicción:-Reescribiendo-la-función-de-costo-8"><span class="toc-item-num">8  </span>Predicción: Reescribiendo la función de costo</a></span><ul class="toc-item">
 <li><span><a href="MPCu/#Substituting-the-predicted-equality-constraint-(3)-into-the-Cost-Function-(4)" data-toc-modified-id="Substituting-the-predicted-equality-constraint-(3)-into-the-Cost-Function-(4)-8.1"><span class="toc-item-num">8.1  </span>Substituting the predicted equality constraint (3) into the Cost Function (4)</a></span></li>
-<li><span><a href="MPCu/#Cost-Function-in-QP-compact-form" data-toc-modified-id="Cost-Function-in-QP-compact-form-8.2"><span class="toc-item-num">8.2  </span>Cost Function in QP compact form</a></span></li>
+<li><span><a href="MPCu/#Funci%C3%B3n-de-costo-in-forma-quadr%C3%A1tica-compacta" data-toc-modified-id="Función-de-costo-in-forma-quadrática-compacta-8.2"><span class="toc-item-num">8.2  </span>Función de costo in forma quadrática compacta</a></span></li>
 </ul>
 </li>
-<li><span><a href="MPCu/#Optimization:-Explicit-solution-of-%24J_N(x(k)%24" data-toc-modified-id="Optimization:-Explicit-solution-of-$J_N(x(k)$-9"><span class="toc-item-num">9  </span>Optimization: Explicit solution of $J_N(x(k)$</a></span></li>
-<li><span><a href="MPCu/#Receding-Horizon" data-toc-modified-id="Receding-Horizon-10"><span class="toc-item-num">10  </span>Receding Horizon</a></span></li>
-<li><span><a href="MPCu/#Stability" data-toc-modified-id="Stability-11"><span class="toc-item-num">11  </span>Stability</a></span></li>
-<li><span><a href="MPCu/#Algorithm" data-toc-modified-id="Algorithm-12"><span class="toc-item-num">12  </span>Algorithm</a></span></li>
+<li><span><a href="MPCu/#Optimizaci%C3%B3n:-Soluci%C3%B3n-expl%C3%ADcita-de-%24J_N(x(k)%24" data-toc-modified-id="Optimización:-Solución-explícita-de-$J_N(x(k)$-9"><span class="toc-item-num">9  </span>Optimización: Solución explícita de $J_N(x(k)$</a></span></li>
+<li><span><a href="MPCu/#Horizonte-en-Retroceso" data-toc-modified-id="Horizonte-en-Retroceso-10"><span class="toc-item-num">10  </span>Horizonte en Retroceso</a></span></li>
+<li><span><a href="MPCu/#Estabilidad" data-toc-modified-id="Estabilidad-11"><span class="toc-item-num">11  </span>Estabilidad</a></span></li>
+<li><span><a href="MPCu/#Algorito" data-toc-modified-id="Algorito-12"><span class="toc-item-num">12  </span>Algorito</a></span></li>
 <li>
-<span><a href="MPCu/#Example" data-toc-modified-id="Example-13"><span class="toc-item-num">13  </span>Example</a></span><ul class="toc-item">
-<li><span><a href="MPCu/#Initial-definitions" data-toc-modified-id="Initial-definitions-13.1"><span class="toc-item-num">13.1  </span>Initial definitions</a></span></li>
-<li><span><a href="MPCu/#Kalman-Filter" data-toc-modified-id="Kalman-Filter-13.2"><span class="toc-item-num">13.2  </span>Kalman Filter</a></span></li>
-<li><span><a href="MPCu/#Creating-the-Predicted-Equality-constraints-%24F%24,-and-%24G%24" data-toc-modified-id="Creating-the-Predicted-Equality-constraints-$F$,-and-$G$-13.3"><span class="toc-item-num">13.3  </span>Creating the Predicted Equality constraints $F$, and $G$</a></span></li>
-<li><span><a href="MPCu/#Creating-the-Predicted-Cost-matrices-%24H%24,-%24L%24,-and-%24M%24" data-toc-modified-id="Creating-the-Predicted-Cost-matrices-$H$,-$L$,-and-$M$-13.4"><span class="toc-item-num">13.4  </span>Creating the Predicted Cost matrices $H$, $L$, and $M$</a></span></li>
-<li><span><a href="MPCu/#Obtaining-the-Receding-Horizon-(RH)-gain" data-toc-modified-id="Obtaining-the-Receding-Horizon-(RH)-gain-13.5"><span class="toc-item-num">13.5  </span>Obtaining the Receding Horizon (RH) gain</a></span></li>
+<span><a href="MPCu/#Ejemplo" data-toc-modified-id="Ejemplo-13"><span class="toc-item-num">13  </span>Ejemplo</a></span><ul class="toc-item">
+<li><span><a href="MPCu/#Definiciones-iniciales" data-toc-modified-id="Definiciones-iniciales-13.1"><span class="toc-item-num">13.1  </span>Definiciones iniciales</a></span></li>
+<li><span><a href="MPCu/#Filtro-de-Kalman" data-toc-modified-id="Filtro-de-Kalman-13.2"><span class="toc-item-num">13.2  </span>Filtro de Kalman</a></span></li>
+<li><span><a href="MPCu/#Creaci%C3%B3n-de-las-restricciones-de-igualdad-predecidas-%24F%24-y-%24G%24" data-toc-modified-id="Creación-de-las-restricciones-de-igualdad-predecidas-$F$-y-$G$-13.3"><span class="toc-item-num">13.3  </span>Creación de las restricciones de igualdad predecidas $F$ y $G$</a></span></li>
+<li><span><a href="MPCu/#Creaci%C3%B3n-de-las-matrices-de-costo-predecidas-%24H%24,-%24L%24-y-%24M%24" data-toc-modified-id="Creación-de-las-matrices-de-costo-predecidas-$H$,-$L$-y-$M$-13.4"><span class="toc-item-num">13.4  </span>Creación de las matrices de costo predecidas $H$, $L$ y $M$</a></span></li>
+<li><span><a href="MPCu/#Obteniendo-la-ganancia-de-Horizonte-en-Retroceso-(RH---Receding-Horizon)" data-toc-modified-id="Obteniendo-la-ganancia-de-Horizonte-en-Retroceso-(RH---Receding-Horizon)-13.5"><span class="toc-item-num">13.5  </span>Obteniendo la ganancia de Horizonte en Retroceso (RH - Receding Horizon)</a></span></li>
 <li><span><a href="MPCu/#For-loop" data-toc-modified-id="For-loop-13.6"><span class="toc-item-num">13.6  </span>For loop</a></span></li>
 </ul>
 </li>
 <li>
-<span><a href="MPCu/#Results" data-toc-modified-id="Results-14"><span class="toc-item-num">14  </span>Results</a></span><ul class="toc-item">
-<li><span><a href="MPCu/#Input" data-toc-modified-id="Input-14.1"><span class="toc-item-num">14.1  </span>Input</a></span></li>
-<li><span><a href="MPCu/#Output" data-toc-modified-id="Output-14.2"><span class="toc-item-num">14.2  </span>Output</a></span></li>
-<li><span><a href="MPCu/#States" data-toc-modified-id="States-14.3"><span class="toc-item-num">14.3  </span>States</a></span></li>
-<li><span><a href="MPCu/#Phase-plot" data-toc-modified-id="Phase-plot-14.4"><span class="toc-item-num">14.4  </span>Phase-plot</a></span></li>
-<li><span><a href="MPCu/#Cost-value" data-toc-modified-id="Cost-value-14.5"><span class="toc-item-num">14.5  </span>Cost value</a></span></li>
+<span><a href="MPCu/#Resultados" data-toc-modified-id="Resultados-14"><span class="toc-item-num">14  </span>Resultados</a></span><ul class="toc-item">
+<li><span><a href="MPCu/#Entradas-de-control" data-toc-modified-id="Entradas-de-control-14.1"><span class="toc-item-num">14.1  </span>Entradas de control</a></span></li>
+<li><span><a href="MPCu/#Se%C3%B1ales-de-salidas" data-toc-modified-id="Señales-de-salidas-14.2"><span class="toc-item-num">14.2  </span>Señales de salidas</a></span></li>
+<li><span><a href="MPCu/#Estados" data-toc-modified-id="Estados-14.3"><span class="toc-item-num">14.3  </span>Estados</a></span></li>
+<li><span><a href="MPCu/#Diagrama-de-fase" data-toc-modified-id="Diagrama-de-fase-14.4"><span class="toc-item-num">14.4  </span>Diagrama de fase</a></span></li>
+<li><span><a href="MPCu/#Valor-de-costo" data-toc-modified-id="Valor-de-costo-14.5"><span class="toc-item-num">14.5  </span>Valor de costo</a></span></li>
 </ul>
 </li>
-<li><span><a href="MPCu/#References" data-toc-modified-id="References-15"><span class="toc-item-num">15  </span>References</a></span></li>
+<li><span><a href="MPCu/#Referencias" data-toc-modified-id="Referencias-15"><span class="toc-item-num">15  </span>Referencias</a></span></li>
 </ul></div>
-
 </div>
 </div>
 </div>
@@ -8346,15 +8346,15 @@ M =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Unconstrained-Model-Predictive-Control-(MPC)-regulator-with-Kalman-filter">Unconstrained Model Predictive Control (MPC) regulator with Kalman filter<a class="anchor-link" href="MPCu/#Unconstrained-Model-Predictive-Control-(MPC)-regulator-with-Kalman-filter">¶</a>
+<h2 id="Control-Predictivo-basado-en-Modelo-(MPC---Model-Predictive-Control)-tipo-regulador-sin-restricciones-con-filtro-de-Kalman">Control Predictivo basado en Modelo (MPC - Model Predictive Control) tipo regulador sin restricciones con filtro de Kalman<a class="anchor-link" href="MPCu/#Control-Predictivo-basado-en-Modelo-(MPC---Model-Predictive-Control)-tipo-regulador-sin-restricciones-con-filtro-de-Kalman">¶</a>
 </h2>
-<p>The following presents an unconstrained Linear Quadratic Model Predictive Control (LQ-MPC) simulation using Matlab-kernel for Jupyter Notebook. The code files can be used in Matlab natively.</p>
-<h2 id="Pre-requisites">Pre-requisites<a class="anchor-link" href="MPCu/#Pre-requisites">¶</a>
+<p>Lo siguiente presenta una simulación de Control Predictivo basado en Modelo Cuadrático Lineal (LQ-MPC - Linear Quadractic-Model Predictive Control) no restringido usando el kernel de Matlab para Jupyter Notebook. Los archivos de código se pueden usar en Matlab de forma nativa.</p>
+<h2 id="Requisitos-previos">Requisitos previos<a class="anchor-link" href="MPCu/#Requisitos-previos">¶</a>
 </h2>
 <ul>
-<li>Knowledge in Control Systems theory.</li>
-<li>Convex quadratic optimization theory.</li>
-<li>Jupyter Notebook with Matlab-kernel.</li>
+<li>Conocimiento en teoría de sistemas de control.</li>
+<li>Teoría de optimización cuadrática convexa.</li>
+<li>Jupyter Notebook con kernel de Matlab.</li>
 <li>Matlab.</li>
 </ul>
 </div>
@@ -8365,9 +8365,9 @@ M =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Background-Theory">Background Theory<a class="anchor-link" href="MPCu/#Background-Theory">¶</a>
+<h2 id="Antecedentes">Antecedentes<a class="anchor-link" href="MPCu/#Antecedentes">¶</a>
 </h2>
-<p>MPC is an optimization-based control strategy that solves a Finite-Horizon Linear Quadratic (FH-LQ) problem subject to constraints. A model of predicted states based on the system dynamics is used to minimize an objective function that satisfies constraints given the actual state. The obtained solution is a sequence of open-loop controls from which only the first one is implemented on the system, inducing feedback. The rest of the sequence is discarded and the process is repeated for the next sampling time, this method is often called Receding-Horizon (RH) principle. Advantages of MPC against other control strategies are the handling of constraints, and non-linearities.</p>
+<p>MPC es una estrategia de control basada en la optimización que resuelve un problema de Horizonte Finito Lineal Cuadrático (FH-LQ - Finite Horizon Linear Quadratic) sujeto a restricciones. Se utiliza un modelo de estados predecidos basados en la dinámica del sistema para minimizar una función objetivo que satisface las restricciones dados los estados actuales. La solución obtenida es una secuencia de controles de lazo abierto, de los cuales solo se implementa el primero en el sistema, induciendo retroalimentación. El resto de la secuencia se descarta y el proceso se repite para el siguiente tiempo de muestreo, este método se llama a menudo principio de Horizonte en Retroceso (RH - Receding Horizon). Las ventajas del MPC sobre otras estrategias de control son el manejo de restricciones y no linealidades del sistema.</p>
 
 </div>
 </div>
@@ -8377,17 +8377,16 @@ M =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Unconstrained-MPC">Unconstrained MPC<a class="anchor-link" href="MPCu/#Unconstrained-MPC">¶</a>
+<h2 id="MPC-sin-restricciones">MPC sin restricciones<a class="anchor-link" href="MPCu/#MPC-sin-restricciones">¶</a>
 </h2>
-<figure><img src="../../images/MPCu/MPCu.png" alt="MPCu" width="40%"><center><figcaption>Fig.1 - Unconstrained MPC</figcaption></center>
-</figure><p>Consider the following discrete-time LTI state-space system,
+<figure><img src="../../images/MPCu/MPCu.png" alt="MPCu" width="40%"><center><figcaption>Fig.1 - MPC sin restricciones</figcaption></center>
+</figure><p>Considere el siguiente sistema en espacio de estados LTI en tiempo discreto</p>
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;= A~x(k)+B~u(k)+w(k)\\
 y(k) &amp;= C~x(k)+v(k),\quad k=0,1,2,\dots
 \end{aligned}
-\end{equation*}
-where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the states, input, and output vectors respectively. $A,~B,~C,$ are the state, input, and output matrices. $A,~B,~C$ are known, no uncertainties in the model, disturbances, and noise. $x(k)$ is available at each sampling time $k$. The process noise is $w(k)\sim \mathcal{N}(0,Q_w)$ with covariance $Q_w$, the measurement noise is $v(k)\sim \mathcal{N}(0,R_v)$ with covariance $R_v$, both are uncorrelated, and are in the form of Additive White Gaussian Noise (AWGN).</p>
+\end{equation*}<p>donde $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, y $y\in\mathbb{R}^p$, son los vectores de estados, entrada, y salida respectivamente. $A,~B,~C$ son las matrices de estados, entrada y salida. $A,~B,~C$ son conocidas, no hay incertidumbres en el modelo, perturbaciones ni ruido. $x(k)$ está disponible en cada tiempo de muestreo $k$. El ruido del proceso es $w(k)\sim \mathcal{N}(0,Q_w)$ con covarianza $Q_w$, el ruido de medición es $v(k)\sim \mathcal{N}(0,R_v)$ con covarianza $R_v$, ambos son no correlacionados, y están en forma de ruido blanco gaussiano aditivo (AWGN).</p>
 
 </div>
 </div>
@@ -8397,23 +8396,23 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Problem-Formulation">Problem Formulation<a class="anchor-link" href="MPCu/#Problem-Formulation">¶</a>
+<h2 id="Formulación-del-problema">Formulación del problema<a class="anchor-link" href="MPCu/#Formulaci%C3%B3n-del-problema">¶</a>
 </h2>
-<p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,</p>
+<p>El objetivo es regular $x\rightarrow 0$ a medida que $k\rightarrow \infty$ mientras se minimiza la siguiente función de costo</p>
 \begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align*}<p>subject to,</p>
+\end{align*}<p>sujeto a,</p>
 \begin{align*}\tag{2}
 x(k+1+j|k) &amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;= x(k) 
-\end{align*}<p>for $ j=0,1,2,\dots,N-1$.</p>
-<p>Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$.</p>
-<p>With the value function defined as,
+\end{align*}<p>para $ j=0,1,2,\dots,N-1$.</p>
+<p>Donde $Q\in\mathbb{R}^{n\times n}$ y $R\in\mathbb{R}^{m\times m}$ son las matrices de penalización de estado e input respectivamente. $P\in\mathbb{R}^{n\times n}$ es la matriz de costo terminal, $N \in\mathbb{N}$ es la longitud del horizonte, $k$ es el tiempo de muestreo, y $(k+j|k)$ se puede definir como el siguiente valor $(k+j)$ dado $k$.</p>
+<p>Con la función de valor definida como
 \begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
 \end{align*}
-the optimal control sequence is,
+la secuencia de control óptima es
 \begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
@@ -8429,14 +8428,14 @@ the optimal control sequence is,
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Quadratic-Problem-(QP)-approach">The Quadratic Problem (QP) approach<a class="anchor-link" href="MPCu/#The-Quadratic-Problem-(QP)-approach">¶</a>
+<h2 id="El-enfoque-del-Problema-Cuadrático-(QP---Quadratic-Problem)">El enfoque del Problema Cuadrático (QP - Quadratic Problem)<a class="anchor-link" href="MPCu/#El-enfoque-del-Problema-Cuadr%C3%A1tico-(QP---Quadratic-Problem)">¶</a>
 </h2>
-<p>It's divided in four sections</p>
+<p>Está dividido en cuatro secciones</p>
 <ul>
-<li>Prediction</li>
-<li>Optimization</li>
-<li>Receding Horizon</li>
-<li>Stability</li>
+<li>Predicción</li>
+<li>Optimización</li>
+<li>Horizonte Recesivo</li>
+<li>Estabilidad</li>
 </ul>
 </div>
 </div>
@@ -8446,17 +8445,17 @@ the optimal control sequence is,
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Prediction:-Predicted-Equality-Constraint">Prediction: Predicted Equality Constraint<a class="anchor-link" href="MPCu/#Prediction:-Predicted-Equality-Constraint">¶</a>
+<h2 id="Predicción:-Restricción-de-Igualdad-Predecida">Predicción: Restricción de Igualdad Predecida<a class="anchor-link" href="MPCu/#Predicci%C3%B3n:-Restricci%C3%B3n-de-Igualdad-Predecida">¶</a>
 </h2>
-<p>Setting $x(k)=x(k|k)$, and $u(k)=u(k|k)$ and applying the model recursively,</p>
+<p>Estableciendo $x(k)=x(k|k)$ y $u(k)=u(k|k)$, y aplicando el modelo recursivamente</p>
 \begin{align*}
 x(k+1|k) &amp;= A~x(k)+B~u(k) \\
 x(k+2|k) &amp;= A~x(k+1|k)+B~u(k+1|k) \\
-    			 &amp;= A^2~x(k)+AB~u(k|k)+B~u(k+1|k) \\
+                 &amp;= A^2~x(k)+AB~u(k|k)+B~u(k+1|k) \\
 \vdots \hspace{2em}  &amp;= \hspace{3em} \vdots \\
 x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
-    			 &amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
-\end{align*}<p>stacking,</p>
+                 &amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
+\end{align*}<p>agrupando</p>
 \begin{align*}
 {\underbrace{
     \begin{bmatrix}
@@ -8478,10 +8477,10 @@ x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
 +
 {\underbrace{
     \begin{bmatrix}
-    	B        &amp; 0        &amp; \dots  &amp; 0      \\
-    	AB       &amp; B        &amp; \dots  &amp; 0      \\
-    	\vdots   &amp; \vdots   &amp; \ddots &amp; \vdots \\
-    	A^{N-1}B &amp; A^{N-2}B &amp; \dots  &amp; B
+        B        &amp; 0        &amp; \dots  &amp; 0      \\
+        AB       &amp; B        &amp; \dots  &amp; 0      \\
+        \vdots   &amp; \vdots   &amp; \ddots &amp; \vdots \\
+        A^{N-1}B &amp; A^{N-2}B &amp; \dots  &amp; B
     \end{bmatrix}}_{G}
 }
 {\underbrace{
@@ -8492,10 +8491,10 @@ x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
     u(k+N-1|k)
     \end{bmatrix}}_{\mathbf{u}(k)}
 }
-\end{align*}<p>the predicted equality constraint is,</p>
+\end{align*}<p>la restricción de igualdad predecidahe predicted es</p>
 \begin{equation}\tag{3}
 \mathbf{x}(k) = F~x(k)+G~\mathbf{u}(k)
-\end{equation}<p>where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.</p>
+\end{equation}<p>donde $\mathbf{x}(k)$ y $\mathbf{u}(k)$ son los estados, predicciones de entradad sobre todos los pasos $j=0,1,2,\dots,N$.</p>
 
 </div>
 </div>
@@ -8505,9 +8504,9 @@ x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Prediction:-Rewriting-the-Cost-Function">Prediction: Rewriting the Cost Function<a class="anchor-link" href="MPCu/#Prediction:-Rewriting-the-Cost-Function">¶</a>
+<h2 id="Predicción:-Reescribiendo-la-función-de-costo">Predicción: Reescribiendo la función de costo<a class="anchor-link" href="MPCu/#Predicci%C3%B3n:-Reescribiendo-la-funci%C3%B3n-de-costo">¶</a>
 </h2>
-<p>Rewriting the cost function as,</p>
+<p>Reescribiendo la función de costo tal que</p>
 \begin{aligned}
 x^\intercal(k|k)~Q~x(k|k)
 &amp;+
@@ -8519,10 +8518,10 @@ x^\intercal(k|k)~Q~x(k|k)
 \end{bmatrix}^\intercal
 {\underbrace{
     \begin{bmatrix}
-    	Q      &amp; 0      &amp; \dots  &amp; 0      \\
-    	0      &amp; Q      &amp; \ddots &amp; \vdots \\
-    	\vdots &amp; \ddots &amp; Q      &amp; 0      \\
-    	0      &amp; \dots  &amp; 0      &amp; P
+        Q      &amp; 0      &amp; \dots  &amp; 0      \\
+        0      &amp; Q      &amp; \ddots &amp; \vdots \\
+        \vdots &amp; \ddots &amp; Q      &amp; 0      \\
+        0      &amp; \dots  &amp; 0      &amp; P
     \end{bmatrix}}_{\tilde{Q}}
 }
 \begin{bmatrix}
@@ -8545,7 +8544,7 @@ x^\intercal(k|k)~Q~x(k|k)
     0      &amp; R      &amp; \ddots &amp; \vdots \\
     \vdots &amp; \ddots &amp; R      &amp; 0      \\
     0      &amp; \dots  &amp; 0      &amp; R
-    	\end{bmatrix}}_{\tilde{R}}
+        \end{bmatrix}}_{\tilde{R}}
 }
 \begin{bmatrix}
     u(k|k) \\
@@ -8553,10 +8552,10 @@ x^\intercal(k|k)~Q~x(k|k)
     \vdots \\
     u(k+N-1|k)
 \end{bmatrix}
-\end{aligned}<p>Therefore, with $x(k|k)=x(k)$, now the problem is to minimize,</p>
+\end{aligned}<p>Entonces, con $x(k|k)=x(k)$ ahora el problema es minimizar</p>
 \begin{align}\tag{4}
 J_N(x(k),\mathbf{u}(k)) &amp;=  x^\intercal(k)~Q~x(k) + \mathbf{x}^\intercal(k)~\tilde{Q}~\mathbf{x}(k) + \mathbf{u}^\intercal(k)~\tilde{R}~\mathbf{u}(k)
-\end{align}<p>subject to,</p>
+\end{align}<p>sujeto a,</p>
 \begin{align*}
 \mathbf{x}(k) &amp;= F~x(k)+G~\mathbf{u}(k)
 \end{align*}
@@ -8591,10 +8590,10 @@ J_N(x(k),\mathbf{u}(k)) &amp;=  x^\intercal(k) Q x(k) + ( F x(k)+G \mathbf{u}(k)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cost-Function-in-QP-compact-form">Cost Function in QP compact form<a class="anchor-link" href="MPCu/#Cost-Function-in-QP-compact-form">¶</a>
+<h3 id="Función-de-costo-in-forma-quadrática-compacta">Función de costo in forma quadrática compacta<a class="anchor-link" href="MPCu/#Funci%C3%B3n-de-costo-in-forma-quadr%C3%A1tica-compacta">¶</a>
 </h3>\begin{align}\tag{5}
 J_N(x(k),\mathbf{u}(k)) &amp;= \frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}(k)+\alpha 
-\end{align}<p>where,
+\end{align}<p>donde
 \begin{align*}
 H&amp;=2(G^\intercal\tilde{Q}G+\tilde{R})\\
 c&amp;=L~x(k) \\
@@ -8611,18 +8610,18 @@ M&amp;=Q+F^\intercal\tilde{Q}F
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Optimization:-Explicit-solution-of-$J_N(x(k)$">Optimization: Explicit solution of $J_N(x(k)$<a class="anchor-link" href="MPCu/#Optimization:-Explicit-solution-of-%24J_N(x(k)%24">¶</a>
+<h2 id="Optimización:-Solución-explícita-de-$J_N(x(k)$">Optimización: Solución explícita de $J_N(x(k)$<a class="anchor-link" href="MPCu/#Optimizaci%C3%B3n:-Soluci%C3%B3n-expl%C3%ADcita-de-%24J_N(x(k)%24">¶</a>
 </h2>
-<p>Minimizing with the gradient and solving for $\mathbf{u}^*(k)$,</p>
+<p>Minimizando por gradiente y resolviendo para $\mathbf{u}^*(k)$,</p>
 \begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{\mathbf{u}(k)}~\frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}+\alpha \\ 
 \nabla_\mathbf{u}~J^*_N(x(k),\mathbf{u}(k)) &amp;= 0 \\
 H~\mathbf{u}^*(k)+c &amp;= 0 \\
 \mathbf{u}^*(k) &amp;= -H^{-1}~c
-\end{align*}<p>the optimal solution results in,</p>
+\end{align*}<p>la solución óptima resulta en</p>
 \begin{align}\tag{6}
 \mathbf{u}^*(k) &amp;= -H^{-1}~L~x(k)
-\end{align}<p>where that $Q\succeq,~P\succeq 0$ are positive semidefinite convex, and $R\succ 0$ is definite convex, such that $H\succ 0$. The optimal solution $\mathbf{u}^*(k)$ for any $x(k)$ is unique if $H\succ 0$ is invertible.</p>
+\end{align}<p>donde $Q\succeq,~P\succeq 0$ son convexos semidefinidos positivos, y $R\succ 0$ es convexo definido, tal que $H\succ 0$. La solución óptima $\mathbf{u}^*(k)$ para cualquier $x(k)$ es única si $H\succ 0$ es invertible.</p>
 
 </div>
 </div>
@@ -8632,9 +8631,9 @@ H~\mathbf{u}^*(k)+c &amp;= 0 \\
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Receding-Horizon">Receding Horizon<a class="anchor-link" href="MPCu/#Receding-Horizon">¶</a>
+<h2 id="Horizonte-en-Retroceso">Horizonte en Retroceso<a class="anchor-link" href="MPCu/#Horizonte-en-Retroceso">¶</a>
 </h2>
-<p>Applying the Receding Horizon principle means that only the $\textbf{first}$ control input of the vector $\mathbf{u}^*(k)$ is applied to the real system. That is,</p>
+<p>Aplicar el principio de Horizonte en Retroceso significa que solo se aplica al sistema real el $\textbf{primer}$ control de entrada del vector $\mathbf{u}^*(k)$. Es decir</p>
 \begin{align*}
 \begin{bmatrix}
     u^*(k) \\
@@ -8653,7 +8652,7 @@ H~\mathbf{u}^*(k)+c &amp;= 0 \\
 \end{align*}\begin{align*}\tag{7}
 u^*(k) &amp;= K_N~x(k)  \\
 K_N &amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
-\end{align*}<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
+\end{align*}<p>Observa que $u^*(k)$ es una ley de control lineal explícita e invariante en el tiempo porque $H$ y $L$ no dependen de $x(k)$.</p>
 
 </div>
 </div>
@@ -8663,25 +8662,25 @@ K_N &amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Stability">Stability<a class="anchor-link" href="MPCu/#Stability">¶</a>
+<h2 id="Estabilidad">Estabilidad<a class="anchor-link" href="MPCu/#Estabilidad">¶</a>
 </h2>
-<p>To guarantee the closed-loop stability of the system we use the dual-mode MPC approach, where the terminal cost matrix $P$ is calculated to mimic an infinite horizon, such that,
+<p>Para garantizar la estabilidad de circuito cerrado del sistema, utilizamos el enfoque MPC de modo dual, donde la matriz de costo terminal $P$ se calcula para imitar un horizonte infinito tal que
 \begin{align*}
 x^\intercal(k+N|k)~P~x(k+N|k) &amp;= \sum_{j=N}^{\infty} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) )
 \end{align*}</p>
-<p>Using the following conditions,</p>
+<p>Usando la siguientes condiciones</p>
 <ul>
 <li>$(A,B)$ is stabilizable</li>
 <li>$Q\succeq0,~R\succ0$</li>
-<li>$(Q^{1/2},A)$ is observable</li>
+<li>$(Q^{1/2},A)$ is observable   </li>
 </ul>
-<p>The dual-mode MPC approach establishes that, there is a unique $P\succ0$ that satisfies the <strong>Lyapunov</strong> equation for some stabilizing gain $K$,
+<p>El enfoque MPC de modo dual establece que hay un $P\succ0$ único que satisface la ecuación de <strong>Lyapunov</strong> para alguna ganancia estabilizadora $K$
 \begin{align}\tag{8}
 (A+B~K)^\intercal ~P~(A+B~K)-P = -(Q+K^\intercal~R~K)
 \end{align}
-where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ is stable.</p>
-<p>Therefore, the control law $u^*(k)$ is asymptotically stabilizing. Moreover, $P$ modifies only $\tilde{Q}$, which means that the optimal solution remains explicit.</p>
-<p>Mode-2 is used only for stability and performance, it is not applied to the plant. If $K=K_\infty$, where $K_\infty$ is an infinite-horizon LQ control, the control law $u^*(k)$ is known as optimal LQ-MPC. On the other hand, if $K\neq K_\infty\rightarrow K_N\neq K_\infty$ is known as LQ-MPC suboptimal.</p>
+donde $K$ es la ley de control del modo-2 que puede tener cualquier valor siempre que $(A+B~K)$ sea estable.</p>
+<p>Por lo tanto, la ley de control $u^*(k)$ se estabiliza asintóticamente. Además, $P$ modifica solo $\tilde{Q}$, lo que significa que la solución óptima sigue siendo explícita.</p>
+<p>El modo-2 se usa solo para la estabilidad y el rendimiento, no se aplica a la planta. Si $K=K_\infty$, donde $K_\infty$ es un control LQ de horizonte infinito, la ley de control $u^*(k)$ se conoce como LQ-MPC óptima. Por otro lado, si $K\neq K_\infty\rightarrow K_N\neq K_\infty$ se conoce como LQ-MPC subóptimo.</p>
 
 </div>
 </div>
@@ -8691,9 +8690,10 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Algorithm">Algorithm<a class="anchor-link" href="MPCu/#Algorithm">¶</a>
+<h2 id="Algorito">Algorito<a class="anchor-link" href="MPCu/#Algorito">¶</a>
 </h2>
-<img src="../../images/MPCu/algorithm.png" alt="drawing" width="60%">
+<p><img src="../../images/MPCu/algorithm.png" alt="drawing" width="60%"></p>
+
 </div>
 </div>
 </div>
@@ -8702,12 +8702,12 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example">Example<a class="anchor-link" href="MPCu/#Example">¶</a>
+<h2 id="Ejemplo">Ejemplo<a class="anchor-link" href="MPCu/#Ejemplo">¶</a>
 </h2>
-<p>Let's apply the unconstrained MPC regulator on an <strong>Unstable Non-minimum Phase</strong> system,</p>
+<p>Apliquemos el regulador MPC sin restricciones en un sistema de <strong>Fase no mínima inestable</strong>,</p>
 \begin{align*}
     Gp(s) = \dfrac{1-s}{(s-2)(s+1)}
-\end{align*}<p>in State-space form with the following conditions,
+\end{align*}<p>en forma de espacio de estados con las siguientes condiciones,
 \begin{align*}
     x(k+1) 
     &amp;= 
@@ -8745,9 +8745,9 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Initial-definitions">Initial definitions<a class="anchor-link" href="MPCu/#Initial-definitions">¶</a>
+<h3 id="Definiciones-iniciales">Definiciones iniciales<a class="anchor-link" href="MPCu/#Definiciones-iniciales">¶</a>
 </h3>
-<p>Global constants, the system, and the Penalty matrices. Mode-2 gain is used to calculate $P$.</p>
+<p>Constantes globales, el sistema y las matrices de penalización. La ganancia de modo-2 se usa para calcular $P$.</p>
 
 </div>
 </div>
@@ -8757,39 +8757,39 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Global constants</span><span class="w"></span>
-<span class="nb">clear</span><span class="w"> </span><span class="n">variables</span><span class="p">;</span><span class="w"></span>
-<span class="n">x0</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1.5</span><span class="p">;</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w">  </span><span class="c">% initial conditions</span><span class="w"></span>
-<span class="n">nk</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">       </span><span class="c">% simulation steps</span><span class="w"></span>
-<span class="n">Ts</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w">       </span><span class="c">% sampling time</span><span class="w"></span>
-<span class="n">t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ts</span><span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">nk</span><span class="p">);</span><span class="w">  </span><span class="c">% simulation time</span><span class="w"></span>
-<span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">          </span><span class="c">% horizon </span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Global constants</span>
+<span class="n">clear</span> <span class="n">variables</span><span class="p">;</span>
+<span class="n">x0</span> <span class="p">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">;</span> <span class="mi">1</span><span class="p">];</span>  <span class="c">% initial conditions</span>
+<span class="n">nk</span> <span class="p">=</span> <span class="mi">100</span><span class="p">;</span>       <span class="c">% simulation steps</span>
+<span class="n">Ts</span> <span class="p">=</span> <span class="mf">0.1</span><span class="p">;</span>       <span class="c">% sampling time</span>
+<span class="n">t</span> <span class="p">=</span> <span class="n">Ts</span><span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="p">:</span><span class="n">nk</span><span class="p">);</span>  <span class="c">% simulation time</span>
+<span class="n">N</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>          <span class="c">% horizon </span>
 
-<span class="c">% System</span><span class="w"></span>
-<span class="c">% sys = (-s+1)/((s-2)*(s+1));</span><span class="w"></span>
-<span class="p">[</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">Cc</span><span class="p">,</span><span class="n">Dc</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">tf2ss</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="p">]);</span><span class="w"></span>
-<span class="n">Bdc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">0</span><span class="p">];</span><span class="w"> </span><span class="n">Ddc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">sysc</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,[</span><span class="n">Bc</span><span class="w"> </span><span class="n">Bdc</span><span class="p">],</span><span class="n">Cc</span><span class="p">,[</span><span class="n">Dc</span><span class="w"> </span><span class="n">Ddc</span><span class="p">]);</span><span class="w"></span>
+<span class="c">% System</span>
+<span class="c">% sys = (-s+1)/((s-2)*(s+1));</span>
+<span class="p">[</span><span class="n">Ac</span><span class="p">,</span><span class="n">Bc</span><span class="p">,</span><span class="n">Cc</span><span class="p">,</span><span class="n">Dc</span><span class="p">]</span> <span class="p">=</span> <span class="n">tf2ss</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="o">-</span><span class="mi">2</span><span class="p">]);</span>
+<span class="n">Bdc</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span><span class="mi">0</span><span class="p">];</span> <span class="n">Ddc</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">sysc</span> <span class="p">=</span> <span class="n">ss</span><span class="p">(</span><span class="n">Ac</span><span class="p">,[</span><span class="n">Bc</span> <span class="n">Bdc</span><span class="p">],</span><span class="n">Cc</span><span class="p">,[</span><span class="n">Dc</span> <span class="n">Ddc</span><span class="p">]);</span>
 
-<span class="n">sysd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">c2d</span><span class="p">(</span><span class="n">sysc</span><span class="p">,</span><span class="n">Ts</span><span class="p">);</span><span class="w"></span>
-<span class="n">A</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sysd</span><span class="p">.</span><span class="n">A</span><span class="p">;</span><span class="w"> </span>
-<span class="n">B</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sysd</span><span class="p">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
-<span class="n">Bd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sysd</span><span class="p">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span>
-<span class="n">C</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sysd</span><span class="p">.</span><span class="n">C</span><span class="p">;</span><span class="w"> </span>
-<span class="n">D</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">sysd</span><span class="p">.</span><span class="n">D</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="n">sysd</span> <span class="p">=</span> <span class="n">c2d</span><span class="p">(</span><span class="n">sysc</span><span class="p">,</span><span class="n">Ts</span><span class="p">);</span>
+<span class="n">A</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">A</span><span class="p">;</span> 
+<span class="n">B</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span> 
+<span class="n">Bd</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">B</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span> 
+<span class="n">C</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">C</span><span class="p">;</span> 
+<span class="n">D</span> <span class="p">=</span> <span class="n">sysd</span><span class="p">.</span><span class="n">D</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="c">% Penalty Cost matrices</span><span class="w"></span>
-<span class="n">Q</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1e2</span><span class="w">   </span><span class="mi">0</span><span class="w"></span>
-<span class="w">      </span><span class="mi">0</span><span class="w">   </span><span class="mf">1e2</span><span class="p">];</span><span class="w"></span>
-<span class="n">R</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Penalty Cost matrices</span>
+<span class="n">Q</span> <span class="p">=</span> <span class="p">[</span> <span class="mf">1e2</span>   <span class="mi">0</span>
+      <span class="mi">0</span>   <span class="mf">1e2</span><span class="p">];</span>
+<span class="n">R</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
 
-<span class="c">% Mode-2 gain</span><span class="w"></span>
-<span class="n">K</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">)</span><span class="w"></span>
+<span class="c">% Mode-2 gain</span>
+<span class="n">K</span> <span class="p">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">)</span>
 
-<span class="c">% Terminal Cost matrix </span><span class="w"></span>
-<span class="n">Phi</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">;</span><span class="w"></span>
-<span class="n">S</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Q</span><span class="o">+</span><span class="n">K</span><span class="o">'*</span><span class="n">R</span><span class="o">*</span><span class="n">K</span><span class="p">;</span><span class="w"></span>
-<span class="n">P</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">dlyap</span><span class="p">(</span><span class="n">Phi</span><span class="o">'</span><span class="p">,</span><span class="n">S</span><span class="p">)</span><span class="w"></span>
+<span class="c">% Terminal Cost matrix </span>
+<span class="n">Phi</span> <span class="p">=</span> <span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">;</span>
+<span class="n">S</span> <span class="p">=</span> <span class="n">Q</span><span class="o">+</span><span class="n">K</span><span class="o">'*</span><span class="n">R</span><span class="o">*</span><span class="n">K</span><span class="p">;</span>
+<span class="n">P</span> <span class="p">=</span> <span class="n">dlyap</span><span class="p">(</span><span class="n">Phi</span><span class="o">'</span><span class="p">,</span><span class="n">S</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -8833,7 +8833,7 @@ P =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Kalman-Filter">Kalman Filter<a class="anchor-link" href="MPCu/#Kalman-Filter">¶</a>
+<h3 id="Filtro-de-Kalman">Filtro de Kalman<a class="anchor-link" href="MPCu/#Filtro-de-Kalman">¶</a>
 </h3>
 </div>
 </div>
@@ -8843,21 +8843,21 @@ P =
 <div class="prompt input_prompt">In [3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Stream of process noise and measurement noise (AWGN)</span><span class="w"></span>
-<span class="nb">rng</span><span class="w"> </span><span class="n">default</span><span class="p">;</span><span class="w">                </span><span class="c">% For reproducibility (seed)</span><span class="w"></span>
-<span class="n">mu_Qw</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">];</span><span class="w">             </span><span class="c">% mean of the states (mu_x1, mu_x2)</span><span class="w"></span>
-<span class="n">Qw</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">diag</span><span class="p">([</span><span class="mf">1e-4</span><span class="p">,</span><span class="w"> </span><span class="mf">1e-4</span><span class="p">]);</span><span class="w">    </span><span class="c">% process noise covariance. Qw=diag[sigma_x1^2, sigma_x2^2]</span><span class="w"></span>
-<span class="n">w</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mvnrnd</span><span class="p">(</span><span class="n">mu_Qw</span><span class="p">,</span><span class="n">Qw</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c">% noise input vector</span><span class="w"></span>
-<span class="c">% cov(w)                    % covariance matrix of w</span><span class="w"></span>
-<span class="c">% scatter(w(:,1),w(:,2))</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Stream of process noise and measurement noise (AWGN)</span>
+<span class="n">rng</span> <span class="n">default</span><span class="p">;</span>                <span class="c">% For reproducibility (seed)</span>
+<span class="n">mu_Qw</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>             <span class="c">% mean of the states (mu_x1, mu_x2)</span>
+<span class="n">Qw</span> <span class="p">=</span> <span class="nb">diag</span><span class="p">([</span><span class="mf">1e-4</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">]);</span>    <span class="c">% process noise covariance. Qw=diag[sigma_x1^2, sigma_x2^2]</span>
+<span class="n">w</span> <span class="p">=</span> <span class="n">mvnrnd</span><span class="p">(</span><span class="n">mu_Qw</span><span class="p">,</span><span class="n">Qw</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>  <span class="c">% noise input vector</span>
+<span class="c">% cov(w)                    % covariance matrix of w</span>
+<span class="c">% scatter(w(:,1),w(:,2))</span>
 
-<span class="n">mu_Rv</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">                  </span><span class="c">% mean of the measurements</span><span class="w"></span>
-<span class="n">Rv</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1e-4</span><span class="p">)</span><span class="o">*</span><span class="nb">eye</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">         </span><span class="c">% measurement noise covariance. Rv=sigma^2</span><span class="w"></span>
-<span class="n">v</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">mvnrnd</span><span class="p">(</span><span class="n">mu_Rv</span><span class="p">,</span><span class="n">Rv</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w">  </span><span class="c">% noise output vector</span><span class="w"></span>
+<span class="n">mu_Rv</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>                  <span class="c">% mean of the measurements</span>
+<span class="n">Rv</span> <span class="p">=</span> <span class="p">(</span><span class="mf">1e-4</span><span class="p">)</span><span class="o">*</span><span class="nb">eye</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>         <span class="c">% measurement noise covariance. Rv=sigma^2</span>
+<span class="n">v</span> <span class="p">=</span> <span class="n">mvnrnd</span><span class="p">(</span><span class="n">mu_Rv</span><span class="p">,</span><span class="n">Rv</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>  <span class="c">% noise output vector</span>
 
-<span class="c">% KF Steady-State</span><span class="w"></span>
-<span class="p">[</span><span class="n">kest</span><span class="p">,</span><span class="n">LKF</span><span class="p">,</span><span class="n">Ps</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">kalman</span><span class="p">(</span><span class="n">sysd</span><span class="p">,</span><span class="n">Qw</span><span class="p">,</span><span class="n">Rv</span><span class="p">);</span><span class="w"></span>
-<span class="n">LKF</span><span class="w"></span>
+<span class="c">% KF Steady-State</span>
+<span class="p">[</span><span class="n">kest</span><span class="p">,</span><span class="n">LKF</span><span class="p">,</span><span class="n">Ps</span><span class="p">]</span> <span class="p">=</span> <span class="n">kalman</span><span class="p">(</span><span class="n">sysd</span><span class="p">,</span><span class="n">Qw</span><span class="p">,</span><span class="n">Rv</span><span class="p">);</span>
+<span class="n">LKF</span>
 </pre></div>
 
     </div>
@@ -8894,7 +8894,7 @@ LKF =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Creating-the-Predicted-Equality-constraints-$F$,-and-$G$">Creating the Predicted Equality constraints $F$, and $G$<a class="anchor-link" href="MPCu/#Creating-the-Predicted-Equality-constraints-%24F%24,-and-%24G%24">¶</a>
+<h3 id="Creación-de-las-restricciones-de-igualdad-predecidas-$F$-y-$G$">Creación de las restricciones de igualdad predecidas $F$ y $G$<a class="anchor-link" href="MPCu/#Creaci%C3%B3n-de-las-restricciones-de-igualdad-predecidas-%24F%24-y-%24G%24">¶</a>
 </h3>
 </div>
 </div>
@@ -8904,28 +8904,28 @@ LKF =
 <div class="prompt input_prompt">In [4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% dimensions</span><span class="w"></span>
-<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">m</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% dimensions</span>
+<span class="n">n</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">m</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">B</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
 
-<span class="c">% allocate</span><span class="w"></span>
-<span class="n">F</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-<span class="n">G</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span><span class="w"></span>
+<span class="c">% allocate</span>
+<span class="n">F</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">n</span><span class="p">);</span>
+<span class="n">G</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">N</span><span class="p">,</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
 
-<span class="c">% form row by row</span><span class="w"></span>
-<span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">N</span><span class="w"></span>
-<span class="w">    </span><span class="c">% F</span><span class="w"></span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span>^<span class="nb">i</span><span class="p">;</span><span class="w"></span>
+<span class="c">% form row by row</span>
+<span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
+    <span class="c">% F</span>
+    <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span>^<span class="n">i</span><span class="p">;</span>
 
-<span class="w">    </span><span class="c">% G</span><span class="w"></span>
-<span class="w">    </span><span class="c">% form element by element</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="w"></span>
-<span class="w">        </span><span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span>^<span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">end</span><span class="w"></span>
-<span class="k">end</span><span class="w"></span>
+    <span class="c">% G</span>
+    <span class="c">% form element by element</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span>
+        <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span>^<span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+    <span class="k">end</span>
+<span class="k">end</span>
 
-<span class="n">F</span><span class="w"></span>
-<span class="s">G</span><span class="w"></span>
+<span class="n">F</span>
+<span class="n">G</span>
 </pre></div>
 
     </div>
@@ -8984,7 +8984,7 @@ G =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Creating-the-Predicted-Cost-matrices-$H$,-$L$,-and-$M$">Creating the Predicted Cost matrices $H$, $L$, and $M$<a class="anchor-link" href="MPCu/#Creating-the-Predicted-Cost-matrices-%24H%24,-%24L%24,-and-%24M%24">¶</a>
+<h3 id="Creación-de-las-matrices-de-costo-predecidas-$H$,-$L$-y-$M$">Creación de las matrices de costo predecidas $H$, $L$ y $M$<a class="anchor-link" href="MPCu/#Creaci%C3%B3n-de-las-matrices-de-costo-predecidas-%24H%24,-%24L%24-y-%24M%24">¶</a>
 </h3>
 </div>
 </div>
@@ -8994,26 +8994,26 @@ G =
 <div class="prompt input_prompt">In [5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% get dimensions</span><span class="w"></span>
-<span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
-<span class="n">N</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% get dimensions</span>
+<span class="n">n</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">N</span> <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">;</span>
 
-<span class="c">% diagonalize Q and R</span><span class="w"></span>
-<span class="n">Qd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">Q</span><span class="p">);</span><span class="w"></span>
-<span class="n">Qd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">blkdiag</span><span class="p">(</span><span class="n">Qd</span><span class="p">,</span><span class="n">P</span><span class="p">);</span><span class="w"></span>
-<span class="n">Rd</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">R</span><span class="p">);</span><span class="w"></span>
+<span class="c">% diagonalize Q and R</span>
+<span class="n">Qd</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">Q</span><span class="p">);</span>
+<span class="n">Qd</span> <span class="p">=</span> <span class="nb">blkdiag</span><span class="p">(</span><span class="n">Qd</span><span class="p">,</span><span class="n">P</span><span class="p">);</span>
+<span class="n">Rd</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="n">R</span><span class="p">);</span>
 
-<span class="c">% Hessian</span><span class="w"></span>
-<span class="n">H</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">G</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">Rd</span><span class="p">;</span><span class="w"></span>
+<span class="c">% Hessian</span>
+<span class="n">H</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">G</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">Rd</span><span class="p">;</span>
 
-<span class="c">% Linear term</span><span class="w"></span>
-<span class="n">L</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">F</span><span class="w"></span>
+<span class="c">% Linear term</span>
+<span class="n">L</span> <span class="p">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">G</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">F</span>
 
-<span class="c">% Constant term</span><span class="w"></span>
-<span class="n">M</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">F</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Q</span><span class="w"></span>
+<span class="c">% Constant term</span>
+<span class="n">M</span> <span class="p">=</span> <span class="n">F</span><span class="o">'*</span><span class="n">Qd</span><span class="o">*</span><span class="n">F</span> <span class="o">+</span> <span class="n">Q</span>
 
-<span class="c">% make sure the Hessian is symmetric</span><span class="w"></span>
-<span class="n">H</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">(</span><span class="n">H</span><span class="o">+</span><span class="n">H</span><span class="o">'</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"></span>
+<span class="c">% make sure the Hessian is symmetric</span>
+<span class="n">H</span> <span class="p">=</span> <span class="p">(</span><span class="n">H</span><span class="o">+</span><span class="n">H</span><span class="o">'</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
 </pre></div>
 
     </div>
@@ -9070,7 +9070,7 @@ H =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Obtaining-the-Receding-Horizon-(RH)-gain">Obtaining the Receding Horizon (RH) gain<a class="anchor-link" href="MPCu/#Obtaining-the-Receding-Horizon-(RH)-gain">¶</a>
+<h3 id="Obteniendo-la-ganancia-de-Horizonte-en-Retroceso-(RH---Receding-Horizon)">Obteniendo la ganancia de Horizonte en Retroceso (RH - Receding Horizon)<a class="anchor-link" href="MPCu/#Obteniendo-la-ganancia-de-Horizonte-en-Retroceso-(RH---Receding-Horizon)">¶</a>
 </h3>
 </div>
 </div>
@@ -9080,9 +9080,9 @@ H =
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Unconstrained MPC: RH-FH-LQR/LQ-MPC</span><span class="w"></span>
-<span class="n">Ku</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="n">H</span><span class="o">\</span><span class="n">L</span><span class="w">      </span><span class="c">% solution</span><span class="w"></span>
-<span class="n">KN</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Ku</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span><span class="w">   </span><span class="c">% RH-FH gain, first row of the m-row matrix</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">%% Unconstrained MPC: RH-FH-LQR/LQ-MPC</span>
+<span class="n">Ku</span> <span class="p">=</span> <span class="o">-</span><span class="n">H</span><span class="o">\</span><span class="n">L</span>      <span class="c">% solution</span>
+<span class="n">KN</span> <span class="p">=</span> <span class="n">Ku</span><span class="p">(</span><span class="mi">1</span><span class="p">,:)</span>   <span class="c">% RH-FH gain, first row of the m-row matrix</span>
 </pre></div>
 
     </div>
@@ -9137,18 +9137,18 @@ KN =
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Init</span><span class="w"></span>
-<span class="n">x_mpc_u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x0</span><span class="p">;</span><span class="w"></span>
-<span class="n">xs_mpc_u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="n">us_mpc_u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Init</span>
+<span class="n">x_mpc_u</span> <span class="p">=</span> <span class="n">x0</span><span class="p">;</span>
+<span class="n">xs_mpc_u</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">us_mpc_u</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
 
-<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span><span class="w"></span>
-<span class="w">    </span><span class="n">xs_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_mpc_u</span><span class="p">;</span><span class="w">    </span>
-<span class="w">    </span><span class="n">y_mpc_u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">C</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">(</span><span class="n">k</span><span class="p">);</span><span class="w"> </span>
-<span class="w">    </span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">KN</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">x_mpc_u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">LKF</span><span class="o">*</span><span class="p">(</span><span class="n">y_mpc_u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">C</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">w</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span><span class="o">'</span><span class="p">;</span><span class="w">        </span>
-<span class="w">    </span><span class="n">J_mpc_u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_mpc_u</span><span class="o">'*</span><span class="n">Q</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="o">+</span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">'*</span><span class="n">R</span><span class="o">*</span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">);</span><span class="w">     </span>
-<span class="k">end</span><span class="w"></span>
+<span class="k">for</span> <span class="n">k</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">nk</span><span class="o">+</span><span class="mi">1</span>
+    <span class="n">xs_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">x_mpc_u</span><span class="p">;</span>    
+    <span class="n">y_mpc_u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">C</span><span class="o">*</span><span class="n">x_mpc_u</span> <span class="o">+</span> <span class="n">v</span><span class="p">(</span><span class="n">k</span><span class="p">);</span> 
+    <span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">KN</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="p">;</span>
+    <span class="n">x_mpc_u</span> <span class="p">=</span> <span class="n">A</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span> <span class="o">+</span> <span class="n">LKF</span><span class="o">*</span><span class="p">(</span><span class="n">y_mpc_u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">-</span><span class="n">C</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="p">)</span> <span class="o">+</span> <span class="n">w</span><span class="p">(</span><span class="n">k</span><span class="p">,:)</span><span class="o">'</span><span class="p">;</span>        
+    <span class="n">J_mpc_u</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="p">=</span> <span class="n">x_mpc_u</span><span class="o">'*</span><span class="n">Q</span><span class="o">*</span><span class="n">x_mpc_u</span><span class="o">+</span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">)</span><span class="o">'*</span><span class="n">R</span><span class="o">*</span><span class="n">us_mpc_u</span><span class="p">(:,</span><span class="n">k</span><span class="p">);</span>     
+<span class="k">end</span>
 </pre></div>
 
     </div>
@@ -9179,11 +9179,11 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Results">Results<a class="anchor-link" href="MPCu/#Results">¶</a>
+<h2 id="Resultados">Resultados<a class="anchor-link" href="MPCu/#Resultados">¶</a>
 </h2>
-<h3 id="Input">Input<a class="anchor-link" href="MPCu/#Input">¶</a>
+<h3 id="Entradas-de-control">Entradas de control<a class="anchor-link" href="MPCu/#Entradas-de-control">¶</a>
 </h3>
-<p>The input control signal $u$ reaches zero relatively fast due the penalty cost $R=1$. Higher values of $R$ reaches zero slowly.</p>
+<p>La señal de control de entrada $u$ llega a cero relativamente rápido debido al costo de penalización $R=1$. Los valores más altos de $R$ llegan a cero lentamente.</p>
 
 </div>
 </div>
@@ -9193,13 +9193,13 @@ KN =
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Input </span><span class="w"></span>
-<span class="nb">figure</span><span class="p">;</span><span class="w">      </span>
-<span class="w">    </span><span class="nb">stairs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">us_mpc_u</span><span class="p">,</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">           </span>
-<span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$u$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'Input'</span><span class="p">);</span><span class="w">     </span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Input </span>
+<span class="nb">figure</span><span class="p">;</span>      
+    <span class="nb">stairs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">us_mpc_u</span><span class="p">,</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>           
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'$u$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span>
+    <span class="nb">title</span><span class="p">(</span><span class="s">'Input'</span><span class="p">);</span>     
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -9243,9 +9243,9 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Output">Output<a class="anchor-link" href="MPCu/#Output">¶</a>
+<h3 id="Señales-de-salidas">Señales de salidas<a class="anchor-link" href="MPCu/#Se%C3%B1ales-de-salidas">¶</a>
 </h3>
-<p>The output $y$ converges around zero slowly due to $R$. Notice that the signal reflects the observation matrix $C=[-1~1]$.</p>
+<p>La salida $y$ converge alrededor de cero lentamente debido a $R$. Observe que la señal refleja la matriz de observación $C=[-1~1]$.</p>
 
 </div>
 </div>
@@ -9255,13 +9255,13 @@ KN =
 <div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Output</span><span class="w"></span>
-<span class="nb">figure</span><span class="p">;</span><span class="w">       </span>
-<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_mpc_u</span><span class="p">,</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$y$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w">        </span>
-<span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'Output'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Output</span>
+<span class="nb">figure</span><span class="p">;</span>       
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y_mpc_u</span><span class="p">,</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'$y$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>        
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span> 
+    <span class="nb">title</span><span class="p">(</span><span class="s">'Output'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -9305,9 +9305,9 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="States">States<a class="anchor-link" href="MPCu/#States">¶</a>
+<h3 id="Estados">Estados<a class="anchor-link" href="MPCu/#Estados">¶</a>
 </h3>
-<p>The states start in the initial conditions $x(0)=[1.5~1]^\intercal$, and slowly converge to zero.</p>
+<p>Los estados comienzan en las condiciones iniciales $x(0)=[1.5~1]^\intercal$, y convergen lentamente a cero.</p>
 
 </div>
 </div>
@@ -9317,16 +9317,16 @@ KN =
 <div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% States</span><span class="w"></span>
-<span class="nb">figure</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span><span class="s">'--'</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">2</span><span class="p">,:),</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">      </span>
-<span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$x_1,~x_2$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">,</span><span class="s">'Fontsize'</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'States'</span><span class="p">);</span><span class="w">        </span>
-<span class="w">    </span><span class="nb">legend</span><span class="p">(</span><span class="s">'$x_1~$ MPCu'</span><span class="p">,</span><span class="s">'$x_2~$ MPCu'</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
-<span class="w">            </span><span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">,</span><span class="k">...</span><span class="w"></span>
-<span class="w">            </span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% States</span>
+<span class="nb">figure</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span><span class="s">'--'</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">2</span><span class="p">,:),</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>      
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'$x_1,~x_2$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">,</span><span class="s">'Fontsize'</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span> 
+    <span class="nb">title</span><span class="p">(</span><span class="s">'States'</span><span class="p">);</span>        
+    <span class="nb">legend</span><span class="p">(</span><span class="s">'$x_1~$ MPCu'</span><span class="p">,</span><span class="s">'$x_2~$ MPCu'</span><span class="p">,...</span>
+            <span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">,...</span>
+            <span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -9370,9 +9370,9 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Phase-plot">Phase-plot<a class="anchor-link" href="MPCu/#Phase-plot">¶</a>
+<h3 id="Diagrama-de-fase">Diagrama de fase<a class="anchor-link" href="MPCu/#Diagrama-de-fase">¶</a>
 </h3>
-<p>The phase-plot shows more clearly the initial condition $x(0)$. Also, it shows the convergence around zero for $k \rightarrow \infty$</p>
+<p>El diagrama de fases muestra más claramente la condición inicial $x(0)$. Además, muestra la convergencia alrededor de cero para $k \rightarrow \infty$</p>
 
 </div>
 </div>
@@ -9382,13 +9382,13 @@ KN =
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Phase-plot</span><span class="w"></span>
-<span class="nb">figure</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">2</span><span class="p">,:),</span><span class="s">'--x'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'$x_1$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w"> </span>
-<span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$x_2$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'Phase-plot'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Phase-plot</span>
+<span class="nb">figure</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">1</span><span class="p">,:),</span><span class="n">xs_mpc_u</span><span class="p">(</span><span class="mi">2</span><span class="p">,:),</span><span class="s">'--x'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'$x_1$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span> 
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'$x_2$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
+    <span class="nb">title</span><span class="p">(</span><span class="s">'Phase-plot'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -9432,9 +9432,9 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Cost-value">Cost value<a class="anchor-link" href="MPCu/#Cost-value">¶</a>
+<h3 id="Valor-de-costo">Valor de costo<a class="anchor-link" href="MPCu/#Valor-de-costo">¶</a>
 </h3>
-<p>The cost value $J^*_N(x(k),\mathbf{u}(k))$ indicates the descendent monotonic behaviour of the cost function $J_N(x(k),\mathbf{u}(k))$.</p>
+<p>El valor de costo $J^*_N(x(k),\mathbf{u}(k))$ indica el comportamiento monótono descendente de la función de costo $J_N(x(k),\mathbf{u}(k))$</p>
 
 </div>
 </div>
@@ -9444,13 +9444,13 @@ KN =
 <div class="prompt input_prompt">In [12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">% Cost Value</span><span class="w"></span>
-<span class="nb">figure</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">J_mpc_u</span><span class="p">,</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span><span class="w">  </span>
-<span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$J(k)$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'Cost Value'</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w"></span>
+<div class=" highlight hl-octave"><pre><span></span><span class="c">% Cost Value</span>
+<span class="nb">figure</span><span class="p">;</span>
+    <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">J_mpc_u</span><span class="p">,</span><span class="s">'--'</span><span class="p">,</span><span class="s">'LineWidth'</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span>  
+    <span class="nb">ylabel</span><span class="p">(</span><span class="s">'$J(k)$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
+    <span class="nb">title</span><span class="p">(</span><span class="s">'Cost Value'</span><span class="p">);</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
 </pre></div>
 
     </div>
@@ -9494,7 +9494,7 @@ KN =
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="References">References<a class="anchor-link" href="MPCu/#References">¶</a>
+<h2 id="Referencias">Referencias<a class="anchor-link" href="MPCu/#Referencias">¶</a>
 </h2>
 <p>[1] James B. Rawlings and Mayne David Q. <em>Model Predictive Control Theory and Design</em>. Nob Hill Pub, Llc, 2009. ISBN: 9780975937709.</p>
 <p>[2] Jan Maciejowski. <em>Predictive Control with Constraints</em>. Prentice Hall, 2000. ISBN: 978-0201398236.</p>
