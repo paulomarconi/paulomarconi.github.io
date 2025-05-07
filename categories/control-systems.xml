@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 05:43:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 06:02:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -29,11 +29,11 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Digital-phase-lead-controller"&gt;Digital phase-lead controller&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Digital-phase-lead-controller"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The aim of this task is to design a digital controlled system with some requirements, small steady state error, small settling time, minimum input action, and minimum overshoot.&lt;/p&gt;
-&lt;p&gt;The plant to be studied is,
+&lt;p&gt;The plant to be studied is
 \begin{align}
 G_p(s) &amp;amp;= \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{1}
 \end{align}
-and the digital controller should have the form,
+and the digital controller should have the form
 \begin{align}
 D(z) &amp;amp;= K\dfrac{z-A}{z-B} \tag{2}
 \end{align}&lt;/p&gt;
@@ -143,7 +143,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Phase-Lead-compensator"&gt;Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The selected compensator can be written as follows,
+&lt;h3 id="Phase-Lead-compensator"&gt;Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The selected compensator can be written as follows
 \begin{align}
 G_c = K_c~\dfrac{s+z}{s+p},\quad |z|\leq|p| \tag{3}
 \end{align}&lt;/p&gt;
@@ -159,7 +159,7 @@ where $\omega_c^\prime$ is the new crossover frequency for the desired phase mar
 20\log_{10} K &amp;amp;= |-8.02| \tag{5} \\
 K &amp;amp;= 2.52 \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is,
+&lt;p&gt;Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is
 \begin{align}
 G_{p1} &amp;amp;= K~G_p \nonumber\\
 G_{p1} &amp;amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
@@ -283,7 +283,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Step-3"&gt;Step 3&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-3"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;With the desired phase margin, the value of $\beta$ can be calculated as follows,
+&lt;h4 id="Step-3"&gt;Step 3&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-3"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;With the desired phase margin, the value of $\beta$ can be calculated as follows
 \begin{align}
 PM_{act}- &amp;amp; PM_d+\theta = \arctan\dfrac{\beta-1}{2\sqrt{\beta}} \tag{8}
 \end{align}
@@ -292,7 +292,7 @@ where $PM_{act}$ is the actual phase margin of the uncompensated plant $G_{p1}$,
 \begin{align}
 \beta^2- &amp;amp; \beta\left[2+4\left(\tan(PM_d-PM_{act}+\theta)\right)\right] +1 = 0 \nonumber\\
 \end{align}
-if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot below. The $\beta$ will be,
+if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot below. The $\beta$ will be
 \begin{align}
 &amp;amp;\qquad \beta = 1.18 \nonumber
 \end{align}&lt;/p&gt;
@@ -348,15 +348,15 @@ beta =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Step-4"&gt;Step 4&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-4"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Now, the  crossover over frequency $\omega_c$ needs to be calculated using the following gain condition formula,
+&lt;h4 id="Step-4"&gt;Step 4&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-4"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Now, the  crossover over frequency $\omega_c$ needs to be calculated using the following gain condition formula
 \begin{align}
 \left| G_{p1}(j\omega_c) \right| &amp;amp;= \dfrac{1}{\sqrt{\beta}} \tag{9}
 \end{align}
-if we use the peak magnitude $M_{pc}$ relation,
+if we use the peak magnitude $M_{pc}$ relation
 \begin{align}
 M_{pc} &amp;amp;= \dfrac{1}{\sqrt{\beta}} \tag{10}
 \end{align}
-and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab,
+and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab
 \begin{align}
 \omega_c&amp;amp; = 1.37 ~rad/sec \nonumber
 \end{align}&lt;/p&gt;
@@ -390,21 +390,21 @@ and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Step-5"&gt;Step 5&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Determining the zero of the controller,
+&lt;h4 id="Step-5"&gt;Step 5&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Determining the zero of the controller
 \begin{align}
 \omega_c &amp;amp;= \sqrt{\beta z^2} \tag{11} \\
 z &amp;amp;= 1.26 \nonumber
 \end{align}
-therefore, the compensator in continuous time can be written as follows,
+therefore, the compensator in continuous time can be written as follows
 \begin{align}
 G_c &amp;amp;= \beta\dfrac{s+z}{s+\beta z} \tag{12} \\
 G_c &amp;amp;= 1.18~\dfrac{s+1.26}{s+1.49} \nonumber
 \end{align}
-and in discrete time,
+and in discrete time
 \begin{align}
 G_cz &amp;amp;= 1.18~\dfrac{z-0.99}{z-0.98} \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;The open-loop compensated in continuous and discrete time are,
+&lt;p&gt;The open-loop compensated in continuous and discrete time are
 \begin{align}
 G_{ol} &amp;amp;= G_c~ G_{p1} \tag{13} \\
 G_{ol} &amp;amp;= 1.18\quad\dfrac{s+1.26}{s+1.49} \quad 2.52\quad\dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{14} \\
@@ -486,7 +486,7 @@ G_{olz} &amp;amp;= 0.01\quad \dfrac{z-0.99}{z-0.98}\quad\dfrac{z-0.98}{z^2-1.99+
 &lt;li&gt;Very high control signal output.&lt;/li&gt;
 &lt;li&gt;Can not be used in continuous time.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;As long as the plant $G(z)$ has all zeros and poles inside the unit circle (minimum phase), the plant can be written as,
+&lt;p&gt;As long as the plant $G(z)$ has all zeros and poles inside the unit circle (minimum phase), the plant can be written as
 \begin{align*}
 G(z) &amp;amp;= \dfrac{z^{d} B(z)}{A(z)} = \dfrac{z^{d}(b_o + b_1 z^{-1}+...+b_m z^{-m})}{1+a_1 z^{-1} + ... + a_n z^{-n}}, \quad d=n-m&amp;gt;0
 \end{align*}
@@ -494,20 +494,20 @@ with an step input $r(k)$, the deadbeat response requirement implies,
 \begin{align*}
     M(z) &amp;amp;= z^{-d}
 \end{align*}&lt;/p&gt;
-&lt;p&gt;The digital deadbeat will have the following transfer function,
+&lt;p&gt;The digital deadbeat will have the following transfer function
 \begin{align}
 D(z) &amp;amp;= \dfrac{A(z)}{z^{-d}B(z)}~\dfrac{z^{-d}}{1-z^{-d}} \tag{16} \\
 \end{align}
-and the closed-loop system is,
+and the closed-loop system is
 \begin{align*}
 Y(z) &amp;amp;= z^{-d} U(z)
 \end{align*} 
-which means,
+which means
 \begin{align*}
 y(k) &amp;amp;= u(k-d)
 \end{align*}
 So when $u(k)$ is a step input, the output will be d-step delay of the same signal.&lt;/p&gt;
-&lt;p&gt;Let's design a digital deadbeat controller for the plant,
+&lt;p&gt;Let's design a digital deadbeat controller for the plant
 \begin{align*}
 G_p(s) &amp;amp;= \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \\
 G_p(z) &amp;amp;= \dfrac{5.47\times 10^{-2}(z-0.34)}{z^2 - 1.78z + 0.82}
@@ -590,11 +590,11 @@ with sampling time $T_s=1$.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;The closed-loop discrete system results in,
+&lt;p&gt;The closed-loop discrete system results in
 \begin{align*}
 G_{clz} &amp;amp;= \dfrac{(z-1) (z-0.3392)^2 (z^2 - 1.783z + 0.8187)^2} {z (z-0.3392)^2 (z-1) (z^2 - 1.783z + 0.8187)^2}
 \end{align*}
-where the controller is,
+where the controller is
 \begin{align*}
 G_{cz} &amp;amp;= \dfrac{18.288 (z-1) (z-0.3392) (z^2 - 1.783z + 0.8187)^2}{z (z-0.3392)^2 (z-1) (z^2 - 1.783z + 0.8187)}
 \end{align*}&lt;/p&gt;
@@ -626,7 +626,7 @@ G_{cz} &amp;amp;= \dfrac{18.288 (z-1) (z-0.3392) (z^2 - 1.783z + 0.8187)^2}{z (z
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Design-requirements:-phase-lead-compensator"&gt;Design requirements: phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-requirements:-phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For the plant,
+&lt;h2 id="Design-requirements:-phase-lead-compensator"&gt;Design requirements: phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-requirements:-phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For the plant
 \begin{align*}
 G(s) &amp;amp;= \dfrac{K}{s(s+2.5)(s+27)}
 \end{align*}&lt;/p&gt;
@@ -664,23 +664,23 @@ applying the requirement of $PO\leq10\%$,
 \zeta &amp;amp;= \dfrac{ \ln\left(\frac{100}{P.O.}\right) }{\sqrt{\pi^2+\left[ \ln \left(  \frac{100}{P.O.}\right)\right]}}	\tag{4} \\
 \zeta &amp;amp;= 0.59 \approx 0.60 \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;Using (3), the desired Phase Margin ($PM_d$) the system should have in order to satisfy the $PO$ is defined as,
+&lt;p&gt;Using (3), the desired Phase Margin ($PM_d$) the system should have in order to satisfy the $PO$ is defined as
 \begin{align*}
 PM_d = 100\times 0.6 = 60°
 \end{align*}&lt;/p&gt;
-&lt;p&gt;Now, it is necessary to obtain the new crossover frequency ($\omega_c^\prime$) where the $PM_d$ is satisfied. Using the $PM_d$ equation and the phase angle condition ($\phi(\omega_c^\prime)$)  as follows,&lt;/p&gt;
+&lt;p&gt;Now, it is necessary to obtain the new crossover frequency ($\omega_c^\prime$) where the $PM_d$ is satisfied. Using the $PM_d$ equation and the phase angle condition ($\phi(\omega_c^\prime)$)  as follows&lt;/p&gt;
 \begin{align}
 &amp;amp;\phi(\omega_c^\prime) = -180° + PM_d \tag{5}
-\end{align}&lt;p&gt;applying the rule of angles into the (1),
+\end{align}&lt;p&gt;applying the rule of angles into the (1)
 \begin{align}
 &amp;amp;\phi(\omega_c^\prime) = -90° - \arctan \frac{\omega_c^\prime}{a} - \arctan \frac{\omega_c^\prime}{b} \tag{6}\\
 \end{align}
-and after some algebraic operations $\omega_c^\prime$,
+and after some algebraic operations $\omega_c^\prime$
 \begin{align*}
 &amp;amp; PM_d - 180°  = -90° - \arctan \frac{\omega_c^\prime}{a} - \arctan \frac{\omega_c^\prime}{b}   \\
 &amp;amp; \frac{\omega_c^\prime(a+b)}{a~b} = \left(1-\frac{\omega_c^{\prime 2}}{a~b}\right) \tan(180° - 90° -PM_d) \\
 \end{align*}
-solving the quadratic equation with the corresponding values $a$, $b$, and $PM_d$, and using the high value of the solution,
+solving the quadratic equation with the corresponding values $a$, $b$, and $PM_d$, and using the high value of the solution
 \begin{align}
 &amp;amp; \omega_c^{\prime 2}  + \frac{a+b}{\tan(180° - 90° -PM_d)} \omega_c^\prime - a~b = 0 \tag{7}\\
 &amp;amp; \omega_c^\prime  = 1.29 ~rad/sec \nonumber
@@ -689,13 +689,13 @@ solving the quadratic equation with the corresponding values $a$, $b$, and $PM_d
 \begin{align}
 &amp;amp; \arrowvert G(j\omega_c^\prime) \arrowvert = 1 \tag{8}\\
 \end{align}
-applying into the plant $G$ (1), and replacing the values,
+applying into the plant $G$ (1), and replacing the values
 \begin{align*}
 &amp;amp;\dfrac{K}{\omega_c^\prime \sqrt{\omega_c^{\prime 2}+a^2} \sqrt{\omega_c^{\prime 2}+b^2 }} = 1 \\
 &amp;amp; K	= \omega_c^\prime \sqrt{\omega_c^{\prime 2}+a^2} \sqrt{\omega_c^{\prime 2}+b^2 } \\
 &amp;amp; K = 97.96 \nonumber
 \end{align*}
-therefore, the plant becomes,
+therefore, the plant becomes
 \begin{align*}
 &amp;amp; G(s)=\dfrac{97.96}{s(s+2.5)(s+27)}
 \end{align*}&lt;/p&gt;
@@ -808,24 +808,24 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Design-of-the-Phase-lead-compensator"&gt;Design of the Phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function,
+&lt;h3 id="Design-of-the-Phase-lead-compensator"&gt;Design of the Phase-lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function
 \begin{align}
 Gc = \dfrac{s+z}{s+p} \tag{9}
 \end{align}
 where the location of the zero is to the left of the pole, $|z|&amp;lt;|p|$.&lt;/p&gt;
 &lt;p&gt;The design requirements are the velocity error constant $K_v\leq 25$, and the step response $PO\leq 10\%$&lt;/p&gt;
-&lt;p&gt;The first step is to calculate the loop gain that satisfies the $K_v$ is calculated as follows,
+&lt;p&gt;The first step is to calculate the loop gain that satisfies the $K_v$ is calculated as follows
 \begin{align*}
 K_v &amp;amp;= \lim\limits_{s \rightarrow 0} s \dfrac{K}{s(s+2.5) (s+27)} \tag{10}\\
 K_g &amp;amp;= 1687 
 \end{align*}
-therefore, the new plant is,}
+therefore, the new plant is
 \begin{align*}
 G(s) &amp;amp;= \dfrac{K_g}{s(s+a)(s+b)} \tag{11}\\
 G(s) &amp;amp;= \dfrac{1687}{s(s+2.5)(s+27)} 
 \end{align*}&lt;/p&gt;
 &lt;p&gt;Using (2), (3), and (4), for an overshoot of $PO=10 \%$, the damping ratio is $\zeta = 0.6$, and the desired phase margin is $PM_d=60°$.&lt;/p&gt;
-&lt;p&gt;In order to obtain the  $\omega_c$ that satisfies the gain condition with the new gain $K$, (8) is applied as follows,
+&lt;p&gt;In order to obtain the  $\omega_c$ that satisfies the gain condition with the new gain $K$, (8) is applied as follows
 \begin{align*}
 &amp;amp;\arrowvert G(j\omega_c) \arrowvert = 1 \nonumber\\
 &amp;amp;\left| \dfrac{K_g}{j\omega_c(j\omega_c+a)(j\omega_c+b)} \right| = 1 \nonumber\\
@@ -835,13 +835,13 @@ after some algebraic operation,
 &amp;amp;\omega_c^2(\omega_c^2+a^2)(\omega_c^2+b^2)-K_g^2 = 0 \nonumber \\
 &amp;amp;\omega_c = 7.55 ~rad/sec \nonumber
 \end{align*}&lt;/p&gt;
-&lt;p&gt;Now, the actual phase margin $PM_{act}$ is needed to calculate the additional phase ($\phi_m$) required from the compensator,
+&lt;p&gt;Now, the actual phase margin $PM_{act}$ is needed to calculate the additional phase ($\phi_m$) required from the compensator
 \begin{align*}
 PM_act &amp;amp;= 180° + \phi(\omega_c) \tag{12}\\
 PM_act &amp;amp;= 180° - 90° -\arctan \frac{\omega_c}{a} - \arctan \frac{\omega_c}{b} \nonumber \\
 PM_act &amp;amp;= 2.65 \nonumber
 \end{align*}
-so, the additional phase angle is,
+so, the additional phase angle is
 \begin{align}
 \phi_m &amp;amp;= PM_d+\theta-PM_act \tag{13}
 \end{align}
@@ -856,7 +856,7 @@ where $\theta$ is a factor of correction.&lt;/p&gt;
 \alpha &amp;amp;= \dfrac{\sin \phi_m+1}{1-\sin \phi_m} \tag{14}\\
 \alpha &amp;amp;= 11 \nonumber 
 \end{align*}
-where $\alpha$ is,
+where $\alpha$ is
 \begin{align}
 \alpha &amp;amp;= \dfrac{p}{z}  \tag{15}
 \end{align}&lt;/p&gt;
@@ -865,7 +865,7 @@ where $\alpha$ is,
 &amp;amp;20\log|G(j\omega_c^\prime)| = -10 \log \alpha \tag{16}\\
 &amp;amp;\dfrac{K_g}{\omega_c^\prime \sqrt{\omega_c^{\prime 2}+a^2} \sqrt{\omega_c^{\prime 2}+b^2 }} = \dfrac{1}{\sqrt{\alpha}} \tag{17}\\
 \end{align}
-after some operations,
+after some operations
 \begin{align*}
 &amp;amp;\omega_c^{\prime 2}(\omega_c^{\prime 2}+a^2)(\omega_c^{\prime 2}+b^2)-K_g^2~\alpha = 0 \nonumber \\
 &amp;amp;\omega_c^\prime = 13.50 ~rad/sec \nonumber
@@ -876,7 +876,7 @@ now, calculating the zero of the compensator,
 z &amp;amp;= \dfrac{\omega_c^\prime}{\alpha} \nonumber\\
 z &amp;amp;= 4.07 \nonumber\\
 \end{align}
-and the pole of the compensator using (15) is,
+and the pole of the compensator using (15) is
 \begin{align}
 p &amp;amp;= \alpha ~z \nonumber\\
 p &amp;amp;= 44.78 \nonumber
@@ -968,19 +968,19 @@ K_new =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;Evaluation of the compensated system to a unit ramp input&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The unit ramp in the LaPlace domain has the following equation,
+&lt;h3 id="Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;Evaluation of the compensated system to a unit ramp input&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-compensated-system-to-a-unit-ramp-input"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The unit ramp in the LaPlace domain has the following equation
 \begin{align}
 R(s) &amp;amp;= \frac{1}{s^2} \tag{21}
 \end{align}
-and the steady-state error to that unit ramp is,
+and the steady-state error to that unit ramp is
 \begin{align}
 ess_v &amp;amp;= \frac{1}{K_v} \tag{22}
 \end{align}
-where,
+where
 \begin{align}
 K_v &amp;amp;= \lim\limits_{s\rightarrow 0} s~G(s) \tag{23}
 \end{align}
-evaluating $K_v$ for the compensated system $G_{ol}$,
+evaluating $K_v$ for the compensated system $G_{ol}$
 \begin{align*}
 K_v &amp;amp;= \lim\limits_{s\rightarrow 0} s~ \left[\dfrac{s+z}{s+p} \quad \dfrac{K_{new}}{s(s+a)(s+b)} \right] \nonumber\\
 K_v &amp;amp;= 7.53 \nonumber
@@ -1163,7 +1163,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Design-requirements:-phase-lead-and-phase-lag-compensator"&gt;Design requirements: phase-lead and phase-lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-requirements:-phase-lead-and-phase-lag-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For the plant,
+&lt;h2 id="Design-requirements:-phase-lead-and-phase-lag-compensator"&gt;Design requirements: phase-lead and phase-lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-requirements:-phase-lead-and-phase-lag-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;For the plant
 \begin{align*}
 &amp;amp; G(s)=\dfrac{K}{s^2(s+9)(s+50)}
 \end{align*}&lt;/p&gt;
@@ -1185,7 +1185,7 @@ ans =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Phase-lead-and-phase-lag-compensator"&gt;Phase-lead and phase-lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Phase-lead-and-phase-lag-compensator"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective of this task is to design a Phase-Lead compensator, and a Phase-Lag compensator in series with the first Phase-Lead compensator using two different approaches.&lt;/p&gt;
-&lt;p&gt;The plant to be studied is,
+&lt;p&gt;The plant to be studied is
 \begin{align}
 &amp;amp; G(s)=\dfrac{K}{s^2(s+a)(s+b)} \tag{24}\\
 &amp;amp; G(s)=\dfrac{K}{s^2(s+9)(s+50)} \nonumber
@@ -1197,7 +1197,7 @@ ans =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Determine-the-location-of-closed-loop-dominant-poles"&gt;Determine the location of closed-loop dominant poles&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Determine-the-location-of-closed-loop-dominant-poles"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The design requirements are the settling time $t_s\leq 2.9~ sec$, and the overshoot $PO\leq 20\%$. Although the plant is a fourth-order system, the compensator can be designed using the properties of a second-order system.&lt;/p&gt;
-&lt;p&gt;The settling time is,
+&lt;p&gt;The settling time is
 \begin{align}
 t_s &amp;amp;= \frac{4}{\zeta\omega_n} \tag{25}
 \end{align}
@@ -1206,7 +1206,7 @@ where $\zeta$ is the damping ration and $\omega_n$ is the natural frequency.&lt;
 \begin{align*}
 \zeta &amp;amp;= 0.45, \quad \omega_n = 3.06 ~rad/sec 
 \end{align*}&lt;/p&gt;
-&lt;p&gt;Therefore, the desired closed-loop dominant poles are,
+&lt;p&gt;Therefore, the desired closed-loop dominant poles are
 \begin{align*}
 r_{1,2} &amp;amp;= -\omega_n\zeta\pm j~\omega_n\sqrt{1-\zeta^2} \tag{26}\\
 r_{1,2} &amp;amp;= -1.38\pm j~2.73
@@ -1278,11 +1278,11 @@ if the second pole $r_2$ is evaluated,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Design-of-the-Phase-Lead-compensator"&gt;Design of the Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function,
+&lt;h3 id="Design-of-the-Phase-Lead-compensator"&gt;Design of the Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lead compensator has the following transfer function
 \begin{align}
 G_{lead} = \dfrac{s+z_{lead}}{s+p_{lead}}, \quad |z_{lead}| &amp;lt; |p_{lead}| \tag{28}
 \end{align}&lt;/p&gt;
-&lt;p&gt;The design requirement is that the location of the compensator's zero is 1. Once again, the angle criteria is applied with the desired pole $r_1$ as follows,
+&lt;p&gt;The design requirement is that the location of the compensator's zero is 1. Once again, the angle criteria is applied with the desired pole $r_1$ as follows
 \begin{align}
 &amp;amp;\measuredangle \left( \dfrac{s+z_{lead}}{s+p_{lead}} \quad \dfrac{K}{s^2(s+a)(s+b)}  \right) = -180° \tag{29} \\
 &amp;amp;\measuredangle \left( \dfrac{r_1+z_{lead}}{r_1+p_{lead}} \quad \dfrac{K}{r_1^2(r_1+a)(r_1+b)}  \right) = -180° \nonumber \\
@@ -1293,21 +1293,21 @@ if $r_1 = -x+j~y$
 &amp;amp;\left( 180°-\arctan\dfrac{y}{x-z_{lead}} \right) - \arctan\dfrac{y}{p_{lead}-x} - 2\left( 180° -\arctan\dfrac{y}{x} \right) ... \nonumber\\
 &amp;amp;\quad -\arctan\dfrac{y}{a-x}-\arctan\dfrac{y}{b-x} = 180° \nonumber
 \end{align}
-after some operations,
+after some operations
 \begin{align}
 p_{lead} &amp;amp;= 8.36 \nonumber\\
 \end{align}
-so, the Phase-Lead compensator is,
+so, the Phase-Lead compensator is
 \begin{align}
 G_{lead} &amp;amp;= \dfrac{s+1}{s+8.36} \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;Now, the gain $K$ of the compensated system can be found using the gain condition,
+&lt;p&gt;Now, the gain $K$ of the compensated system can be found using the gain condition
 \begin{align}
 &amp;amp;\left|  \dfrac{s+z_{lead}}{s+p_{lead}} \quad \dfrac{K}{s^2(s+9)(s+50)} \right| = 1 \nonumber\\
 &amp;amp;\left|  \dfrac{r_1+1}{r_1+8.38} \quad \dfrac{K}{r_1^2(r_1+9)(r_1+50)} \right| = 1 \nonumber\\
 &amp;amp;K = 10047 \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;Therefore, evaluating the following open-loop compensated system,
+&lt;p&gt;Therefore, evaluating the following open-loop compensated system
 \begin{align}
 G_{ol} &amp;amp;= G_{lead} ~G(s) \tag{30}\\ 
 G_{ol} &amp;amp;= \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
@@ -1488,15 +1488,15 @@ BW_lead =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Adding-a-Pre-filter"&gt;Adding a Pre-filter&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Adding-a-Pre-filter"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The use of a Pre-filter in series with the closed-loop systems can reduce the overshoot canceling the effect of the Phase-Lead's zero.&lt;/p&gt;
-&lt;p&gt;The Pre-filter is written as follows,
+&lt;p&gt;The Pre-filter is written as follows
 \begin{align}
 G_{pf} &amp;amp;= \dfrac{p}{s+p} \tag{31}
 \end{align}
-where $p$ can be at the exact point of the $z_{lead}=1$,
+where $p$ can be at the exact point of the $z_{lead}=1$
 \begin{align}
 G_{pf} &amp;amp;= \dfrac{1}{s+1} \nonumber
 \end{align} 
-applying to the closed-loop Phase-Lead compensated system and evaluating it,
+applying to the closed-loop Phase-Lead compensated system and evaluating it
 \begin{align}
 G_{lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{G_{ol}}{1+G_{ol}} \nonumber\\
 G_{lead+prefilter} &amp;amp;=  \dfrac{1}{s+1} ~\dfrac{10047~(s+1)}{(s+50)(s+13.07)(s+1.64)(s^2+2.76~s+9.40)}\nonumber
@@ -1604,20 +1604,20 @@ BW_lead_prefilter =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Design-of-the-Phase-Lag-compensator"&gt;Design of the Phase-Lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lag-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lag compensator has the following transfer function,
+&lt;h3 id="Design-of-the-Phase-Lag-compensator"&gt;Design of the Phase-Lag compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Design-of-the-Phase-Lag-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The Phase-Lag compensator has the following transfer function
 \begin{align}
 G_{lag} = \dfrac{s+z_{lag}}{s+p_{lag}}, \quad |p_{lag}|&amp;lt; |z_{lag}| \tag{32}
 \end{align}&lt;/p&gt;
 &lt;p&gt;This compensator will be used in series with the Phase-Lead compensator designed in the previous task. And now, the design requirement is the steady-state error ($ess_a$) for a parabolic input $0.5At^2\leq2.5\%$.&lt;/p&gt;
-&lt;p&gt;First, obtaining the LaPlace transform of the parabolic input,
+&lt;p&gt;First, obtaining the LaPlace transform of the parabolic input
 \begin{align}
 r(t) &amp;amp;= 0.5 A t^2, \quad R(s) = \frac{A}{s^3} \nonumber
 \end{align}
-according to the final value theorem,
+according to the final value theorem
 \begin{align}
 ess &amp;amp;= \lim\limits_{s\rightarrow 0}~ s~\dfrac{A}{s^3} \dfrac{1}{1+G}  \tag{33} 
 \end{align}
-if $K_a = \lim\limits_{s\rightarrow 0} s^2~G$, the steady-state error is, 
+if $K_a = \lim\limits_{s\rightarrow 0} s^2~G$, the steady-state error is
 \begin{align}
 ess_a &amp;amp;= \dfrac{A}{K_a} \tag{34}
 \end{align}
@@ -1627,22 +1627,22 @@ where $K_a$ is the acceleration error constant.&lt;/p&gt;
 K_{a_d} &amp;amp;= \frac{1}{ess_a} \nonumber\\
 K_{a_d} &amp;amp;= 40 \nonumber
 \end{align}
-and again, with $A=1$ and $G=G_{ol}$ from (30), the $\textbf{actual}$ acceleration error constant $K_{a_{act}}$ is,
+and again, with $A=1$ and $G=G_{ol}$ from (30), the $\textbf{actual}$ acceleration error constant $K_{a_{act}}$ is
 \begin{align}
 K_{a_{act}} &amp;amp;= \lim\limits_{s\rightarrow 0} s^2~ G_{ol} \\
 K_{a_{act}} &amp;amp;= 2.67 \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;The relation between the zero $z_{lag}$ and the pole $p_{lag}$ of the Phase-Lag compensator can be written as follows,
+&lt;p&gt;The relation between the zero $z_{lag}$ and the pole $p_{lag}$ of the Phase-Lag compensator can be written as follows
 \begin{align}
 \alpha &amp;amp;= \dfrac{K_{a_d}}{K_{a_{act}}} = \dfrac{z_{lag}}{p_{lag}} \tag{35} \\
 \alpha &amp;amp;= 14.97 \nonumber
 \end{align}
-choosing a $z_{lag}$ ten times smaller than the real part of the desired dominant pole $r_1$,
+choosing a $z_{lag}$ ten times smaller than the real part of the desired dominant pole $r_1$
 \begin{align}
 z_{lag} &amp;amp;= \left| \dfrac{-1.38}{10} \right| \nonumber\\
 z_{lag} &amp;amp;= 0.14 \nonumber
 \end{align}
-and the pole should be,
+and the pole should be
 \begin{align}
 p_{lag} &amp;amp;= \dfrac{z_{lag}}{\alpha} \nonumber\\
 p_{lag} &amp;amp;= 0.0092 \nonumber
@@ -1697,12 +1697,12 @@ G_{lag} &amp;amp;= \dfrac{s+0.14}{s+0.0092} \nonumber
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-of-the-performance"&gt;Evaluation of the performance&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Finally, the open-loop of the Phase-Lead compensator in series with the Phase-Lag compensator is written as follows,
+&lt;h3 id="Evaluation-of-the-performance"&gt;Evaluation of the performance&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Finally, the open-loop of the Phase-Lead compensator in series with the Phase-Lag compensator is written as follows
 \begin{align}
 G_{ol1} &amp;amp;= G_{lag}~G_{lead} ~G(s) \tag{36} \\ 
 G_{ol1} &amp;amp;= \dfrac{s+0.14}{s+0.0092}~ \dfrac{s+1}{s+8.36}~ \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber
 \end{align}
-and the Pre-filter with the closed-loop systems is,
+and the Pre-filter with the closed-loop systems is
 \begin{align}
 G_{lag+lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{G_{ol1}}{1+G_{ol1}} \tag{37} \\
 G_{lag+lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{10047(s+1)(s+0.14)}{(s+50)(s+13.05)(s+1.78)(s+0.14)(s^2+2.51~s+8.75)} \nonumber
@@ -1971,7 +1971,7 @@ ess_parabolic =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="New-Phase-Lead-compensator"&gt;New Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#New-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The previous root-locus plot demonstrates that the desired dominant closed-loop poles have moved slightly from the root-locus, therefore, a new Phase-Lead compensator is calculated to correct that shift.&lt;/p&gt;
-&lt;p&gt;This time, the location of the zero is exactly below the real part of the desired pole, $z_{lead~2}=1.38$. Applying the angle condition with the desired pole $r_1$ as follows,
+&lt;p&gt;This time, the location of the zero is exactly below the real part of the desired pole, $z_{lead~2}=1.38$. Applying the angle condition with the desired pole $r_1$ as follows
 \begin{align}
 &amp;amp;\measuredangle \left( \dfrac{s+z_{lead~2}}{s+p_{lead~2}} \quad \dfrac{s+z_{lag}}{s+p_{lag}} \quad \dfrac{s+z_{lead}}{s+p_{lead}} \quad \dfrac{K}{s^2(s+a)(s+b)}  \right) = -180° \tag{38} \\
 &amp;amp;\measuredangle \left( \dfrac{r_1+z_{lead~2}}{r_1+p_{lead~2}} \quad \dfrac{r_1+z_{lag}}{r_1+p_{lag}} \quad \dfrac{r_1+z_{lead}}{r_1+p_{lead}} \quad \dfrac{K}{r_1^2(r_1+a)(r_1+b)}  \right) = -180° \nonumber \\
@@ -1987,7 +1987,7 @@ after some operations,
 \begin{align}
 p_{lead~2} &amp;amp;= 1.48 \nonumber
 \end{align}
-so, the second Phase-Lead compensator is,
+so, the second Phase-Lead compensator is
 \begin{align}
 G_{lead~2} &amp;amp;= \dfrac{s+1.38}{s+1.48} \nonumber
 \end{align}&lt;/p&gt;
@@ -2051,12 +2051,12 @@ K_new =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;Evaluation of the performance with the second Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The open-loop of the new Phase-Lead compensator in series with the previous compensators is written as follows,
+&lt;h3 id="Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;Evaluation of the performance with the second Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/#Evaluation-of-the-performance-with-the-second-Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The open-loop of the new Phase-Lead compensator in series with the previous compensators is written as follows
 \begin{align}
 G_{ol2} &amp;amp;= G_{lead~2}~G_{lag}~G_{lead} ~G(s) \tag{40}\\ 
 G_{ol2} &amp;amp;= \dfrac{s+1.38}{s+1.48}\quad \dfrac{s+0.14}{s+0.0092} \quad \dfrac{s+1}{s+8.36} \quad \dfrac{10047}{s^2(s+9)(s+50)}  \nonumber\\
 \end{align}
-and the Pre-filter with the closed-loop systems is,
+and the Pre-filter with the closed-loop systems is
 \begin{align}
 G_{lag+lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{G_{ol2}}{1+G_{ol2}} \tag{41} \\
 G_{lag+lead+prefilter} &amp;amp;= G_{pf}~ \dfrac{10047(s+1.38)(s+1)(s+0.14)}{(s+8.36)(s+1.48)(s+0.009)s^2(s+9)(s+50)} \nonumber
@@ -2452,8 +2452,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
     P_x ( \xi(k+j|k) + x_{ss} )&amp;amp;\leq q_x \\
     P_u ( v(k+j|k) + u_{ss} )&amp;amp;\leq q_u  \\
     P_{x_N}~\xi(k+N|k) &amp;amp;\leq \tilde{q}_{x_N}\\	 
-\end{align*}&lt;p&gt;for $j = 0, 1, 2, \dots, N-1$.&lt;/p&gt;
-&lt;p&gt;Where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.&lt;/p&gt;
+\end{align*}&lt;p&gt;for $j = 0, 1, 2, \dots, N-1$, where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

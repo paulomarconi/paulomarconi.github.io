@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 05:43:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/es/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 06:02:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/es/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -148,8 +148,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
     P_x ( \xi(k+j|k) + x_{ss} )&amp;amp;\leq q_x \\
     P_u ( v(k+j|k) + u_{ss} )&amp;amp;\leq q_u  \\
     P_{x_N}~\xi(k+N|k) &amp;amp;\leq \tilde{q}_{x_N}\\	 
-\end{align*}&lt;p&gt;for $j = 0, 1, 2, \dots, N-1$.&lt;/p&gt;
-&lt;p&gt;Where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.&lt;/p&gt;
+\end{align*}&lt;p&gt;for $j = 0, 1, 2, \dots, N-1$, where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 05:15:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 06:02:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -29,11 +29,11 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Digital-phase-lead-controller"&gt;Digital phase-lead controller&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Digital-phase-lead-controller"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The aim of this task is to design a digital controlled system with some requirements, small steady state error, small settling time, minimum input action, and minimum overshoot.&lt;/p&gt;
-&lt;p&gt;The plant to be studied is,
+&lt;p&gt;The plant to be studied is
 \begin{align}
 G_p(s) &amp;amp;= \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{1}
 \end{align}
-and the digital controller should have the form,
+and the digital controller should have the form
 \begin{align}
 D(z) &amp;amp;= K\dfrac{z-A}{z-B} \tag{2}
 \end{align}&lt;/p&gt;
@@ -143,7 +143,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Phase-Lead-compensator"&gt;Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The selected compensator can be written as follows,
+&lt;h3 id="Phase-Lead-compensator"&gt;Phase-Lead compensator&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Phase-Lead-compensator"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The selected compensator can be written as follows
 \begin{align}
 G_c = K_c~\dfrac{s+z}{s+p},\quad |z|\leq|p| \tag{3}
 \end{align}&lt;/p&gt;
@@ -159,7 +159,7 @@ where $\omega_c^\prime$ is the new crossover frequency for the desired phase mar
 20\log_{10} K &amp;amp;= |-8.02| \tag{5} \\
 K &amp;amp;= 2.52 \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is,
+&lt;p&gt;Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is
 \begin{align}
 G_{p1} &amp;amp;= K~G_p \nonumber\\
 G_{p1} &amp;amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
@@ -283,7 +283,7 @@ ans =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Step-3"&gt;Step 3&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-3"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;With the desired phase margin, the value of $\beta$ can be calculated as follows,
+&lt;h4 id="Step-3"&gt;Step 3&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-3"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;With the desired phase margin, the value of $\beta$ can be calculated as follows
 \begin{align}
 PM_{act}- &amp;amp; PM_d+\theta = \arctan\dfrac{\beta-1}{2\sqrt{\beta}} \tag{8}
 \end{align}
@@ -292,7 +292,7 @@ where $PM_{act}$ is the actual phase margin of the uncompensated plant $G_{p1}$,
 \begin{align}
 \beta^2- &amp;amp; \beta\left[2+4\left(\tan(PM_d-PM_{act}+\theta)\right)\right] +1 = 0 \nonumber\\
 \end{align}
-if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot below. The $\beta$ will be,
+if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot below. The $\beta$ will be
 \begin{align}
 &amp;amp;\qquad \beta = 1.18 \nonumber
 \end{align}&lt;/p&gt;
@@ -348,15 +348,15 @@ beta =
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Step-4"&gt;Step 4&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-4"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Now, the  crossover over frequency $\omega_c$ needs to be calculated using the following gain condition formula,
+&lt;h4 id="Step-4"&gt;Step 4&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-4"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Now, the  crossover over frequency $\omega_c$ needs to be calculated using the following gain condition formula
 \begin{align}
 \left| G_{p1}(j\omega_c) \right| &amp;amp;= \dfrac{1}{\sqrt{\beta}} \tag{9}
 \end{align}
-if we use the peak magnitude $M_{pc}$ relation,
+if we use the peak magnitude $M_{pc}$ relation
 \begin{align}
 M_{pc} &amp;amp;= \dfrac{1}{\sqrt{\beta}} \tag{10}
 \end{align}
-and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab,
+and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab
 \begin{align}
 \omega_c&amp;amp; = 1.37 ~rad/sec \nonumber
 \end{align}&lt;/p&gt;
@@ -390,21 +390,21 @@ and using &lt;code&gt;getGainCrossover&lt;/code&gt; command in Matlab,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="Step-5"&gt;Step 5&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Determining the zero of the controller,
+&lt;h4 id="Step-5"&gt;Step 5&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Phase-lead_deadbeat/#Step-5"&gt;¶&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Determining the zero of the controller
 \begin{align}
 \omega_c &amp;amp;= \sqrt{\beta z^2} \tag{11} \\
 z &amp;amp;= 1.26 \nonumber
 \end{align}
-therefore, the compensator in continuous time can be written as follows,
+therefore, the compensator in continuous time can be written as follows
 \begin{align}
 G_c &amp;amp;= \beta\dfrac{s+z}{s+\beta z} \tag{12} \\
 G_c &amp;amp;= 1.18~\dfrac{s+1.26}{s+1.49} \nonumber
 \end{align}
-and in discrete time,
+and in discrete time
 \begin{align}
 G_cz &amp;amp;= 1.18~\dfrac{z-0.99}{z-0.98} \nonumber
 \end{align}&lt;/p&gt;
-&lt;p&gt;The open-loop compensated in continuous and discrete time are,
+&lt;p&gt;The open-loop compensated in continuous and discrete time are
 \begin{align}
 G_{ol} &amp;amp;= G_c~ G_{p1} \tag{13} \\
 G_{ol} &amp;amp;= 1.18\quad\dfrac{s+1.26}{s+1.49} \quad 2.52\quad\dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{14} \\
@@ -486,7 +486,7 @@ G_{olz} &amp;amp;= 0.01\quad \dfrac{z-0.99}{z-0.98}\quad\dfrac{z-0.98}{z^2-1.99+
 &lt;li&gt;Very high control signal output.&lt;/li&gt;
 &lt;li&gt;Can not be used in continuous time.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;As long as the plant $G(z)$ has all zeros and poles inside the unit circle (minimum phase), the plant can be written as,
+&lt;p&gt;As long as the plant $G(z)$ has all zeros and poles inside the unit circle (minimum phase), the plant can be written as
 \begin{align*}
 G(z) &amp;amp;= \dfrac{z^{d} B(z)}{A(z)} = \dfrac{z^{d}(b_o + b_1 z^{-1}+...+b_m z^{-m})}{1+a_1 z^{-1} + ... + a_n z^{-n}}, \quad d=n-m&amp;gt;0
 \end{align*}
@@ -494,20 +494,20 @@ with an step input $r(k)$, the deadbeat response requirement implies,
 \begin{align*}
     M(z) &amp;amp;= z^{-d}
 \end{align*}&lt;/p&gt;
-&lt;p&gt;The digital deadbeat will have the following transfer function,
+&lt;p&gt;The digital deadbeat will have the following transfer function
 \begin{align}
 D(z) &amp;amp;= \dfrac{A(z)}{z^{-d}B(z)}~\dfrac{z^{-d}}{1-z^{-d}} \tag{16} \\
 \end{align}
-and the closed-loop system is,
+and the closed-loop system is
 \begin{align*}
 Y(z) &amp;amp;= z^{-d} U(z)
 \end{align*} 
-which means,
+which means
 \begin{align*}
 y(k) &amp;amp;= u(k-d)
 \end{align*}
 So when $u(k)$ is a step input, the output will be d-step delay of the same signal.&lt;/p&gt;
-&lt;p&gt;Let's design a digital deadbeat controller for the plant,
+&lt;p&gt;Let's design a digital deadbeat controller for the plant
 \begin{align*}
 G_p(s) &amp;amp;= \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \\
 G_p(z) &amp;amp;= \dfrac{5.47\times 10^{-2}(z-0.34)}{z^2 - 1.78z + 0.82}
@@ -590,11 +590,11 @@ with sampling time $T_s=1$.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;The closed-loop discrete system results in,
+&lt;p&gt;The closed-loop discrete system results in
 \begin{align*}
 G_{clz} &amp;amp;= \dfrac{(z-1) (z-0.3392)^2 (z^2 - 1.783z + 0.8187)^2} {z (z-0.3392)^2 (z-1) (z^2 - 1.783z + 0.8187)^2}
 \end{align*}
-where the controller is,
+where the controller is
 \begin{align*}
 G_{cz} &amp;amp;= \dfrac{18.288 (z-1) (z-0.3392) (z^2 - 1.783z + 0.8187)^2}{z (z-0.3392)^2 (z-1) (z^2 - 1.783z + 0.8187)}
 \end{align*}&lt;/p&gt;

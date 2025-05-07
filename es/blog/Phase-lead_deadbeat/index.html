@@ -196,11 +196,11 @@ navbar-dark bg-dark
 <h2 id="Digital-phase-lead-controller">Digital phase-lead controller<a class="anchor-link" href="#Digital-phase-lead-controller">¶</a>
 </h2>
 <p>The aim of this task is to design a digital controlled system with some requirements, small steady state error, small settling time, minimum input action, and minimum overshoot.</p>
-<p>The plant to be studied is,
+<p>The plant to be studied is
 \begin{align}
 G_p(s) &amp;= \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{1}
 \end{align}
-and the digital controller should have the form,
+and the digital controller should have the form
 \begin{align}
 D(z) &amp;= K\dfrac{z-A}{z-B} \tag{2}
 \end{align}</p>
@@ -321,7 +321,7 @@ ans =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Phase-Lead-compensator">Phase-Lead compensator<a class="anchor-link" href="#Phase-Lead-compensator">¶</a>
 </h3>
-<p>The selected compensator can be written as follows,
+<p>The selected compensator can be written as follows
 \begin{align}
 G_c = K_c~\dfrac{s+z}{s+p},\quad |z|\leq|p| \tag{3}
 \end{align}</p>
@@ -339,7 +339,7 @@ where $\omega_c^\prime$ is the new crossover frequency for the desired phase mar
 20\log_{10} K &amp;= |-8.02| \tag{5} \\
 K &amp;= 2.52 \nonumber
 \end{align}</p>
-<p>Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is,
+<p>Therefore, the uncompensated $G_p$ that satisfies the desired phase margin is
 \begin{align}
 G_{p1} &amp;= K~G_p \nonumber\\
 G_{p1} &amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
@@ -475,7 +475,7 @@ ans =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Step-3">Step 3<a class="anchor-link" href="#Step-3">¶</a>
 </h4>
-<p>With the desired phase margin, the value of $\beta$ can be calculated as follows,
+<p>With the desired phase margin, the value of $\beta$ can be calculated as follows
 \begin{align}
 PM_{act}- &amp; PM_d+\theta = \arctan\dfrac{\beta-1}{2\sqrt{\beta}} \tag{8}
 \end{align}
@@ -484,7 +484,7 @@ where $PM_{act}$ is the actual phase margin of the uncompensated plant $G_{p1}$,
 \begin{align}
 \beta^2- &amp; \beta\left[2+4\left(\tan(PM_d-PM_{act}+\theta)\right)\right] +1 = 0 \nonumber\\
 \end{align}
-if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot below. The $\beta$ will be,
+if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot below. The $\beta$ will be
 \begin{align}
 &amp;\qquad \beta = 1.18 \nonumber
 \end{align}</p>
@@ -544,15 +544,15 @@ beta =
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Step-4">Step 4<a class="anchor-link" href="#Step-4">¶</a>
 </h4>
-<p>Now, the  crossover over frequency $\omega_c$ needs to be calculated using the following gain condition formula,
+<p>Now, the  crossover over frequency $\omega_c$ needs to be calculated using the following gain condition formula
 \begin{align}
 \left| G_{p1}(j\omega_c) \right| &amp;= \dfrac{1}{\sqrt{\beta}} \tag{9}
 \end{align}
-if we use the peak magnitude $M_{pc}$ relation,
+if we use the peak magnitude $M_{pc}$ relation
 \begin{align}
 M_{pc} &amp;= \dfrac{1}{\sqrt{\beta}} \tag{10}
 \end{align}
-and using <code>getGainCrossover</code> command in Matlab,
+and using <code>getGainCrossover</code> command in Matlab
 \begin{align}
 \omega_c&amp; = 1.37 ~rad/sec \nonumber
 \end{align}</p>
@@ -590,21 +590,21 @@ and using <code>getGainCrossover</code> command in Matlab,
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Step-5">Step 5<a class="anchor-link" href="#Step-5">¶</a>
 </h4>
-<p>Determining the zero of the controller,
+<p>Determining the zero of the controller
 \begin{align}
 \omega_c &amp;= \sqrt{\beta z^2} \tag{11} \\
 z &amp;= 1.26 \nonumber
 \end{align}
-therefore, the compensator in continuous time can be written as follows,
+therefore, the compensator in continuous time can be written as follows
 \begin{align}
 G_c &amp;= \beta\dfrac{s+z}{s+\beta z} \tag{12} \\
 G_c &amp;= 1.18~\dfrac{s+1.26}{s+1.49} \nonumber
 \end{align}
-and in discrete time,
+and in discrete time
 \begin{align}
 G_cz &amp;= 1.18~\dfrac{z-0.99}{z-0.98} \nonumber
 \end{align}</p>
-<p>The open-loop compensated in continuous and discrete time are,
+<p>The open-loop compensated in continuous and discrete time are
 \begin{align}
 G_{ol} &amp;= G_c~ G_{p1} \tag{13} \\
 G_{ol} &amp;= 1.18\quad\dfrac{s+1.26}{s+1.49} \quad 2.52\quad\dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{14} \\
@@ -692,7 +692,7 @@ G_{olz} &amp;= 0.01\quad \dfrac{z-0.99}{z-0.98}\quad\dfrac{z-0.98}{z^2-1.99+0.99
 <li>Very high control signal output.</li>
 <li>Can not be used in continuous time.</li>
 </ul>
-<p>As long as the plant $G(z)$ has all zeros and poles inside the unit circle (minimum phase), the plant can be written as,
+<p>As long as the plant $G(z)$ has all zeros and poles inside the unit circle (minimum phase), the plant can be written as
 \begin{align*}
 G(z) &amp;= \dfrac{z^{d} B(z)}{A(z)} = \dfrac{z^{d}(b_o + b_1 z^{-1}+...+b_m z^{-m})}{1+a_1 z^{-1} + ... + a_n z^{-n}}, \quad d=n-m&gt;0
 \end{align*}
@@ -700,20 +700,20 @@ with an step input $r(k)$, the deadbeat response requirement implies,
 \begin{align*}
     M(z) &amp;= z^{-d}
 \end{align*}</p>
-<p>The digital deadbeat will have the following transfer function,
+<p>The digital deadbeat will have the following transfer function
 \begin{align}
 D(z) &amp;= \dfrac{A(z)}{z^{-d}B(z)}~\dfrac{z^{-d}}{1-z^{-d}} \tag{16} \\
 \end{align}
-and the closed-loop system is,
+and the closed-loop system is
 \begin{align*}
 Y(z) &amp;= z^{-d} U(z)
 \end{align*} 
-which means,
+which means
 \begin{align*}
 y(k) &amp;= u(k-d)
 \end{align*}
 So when $u(k)$ is a step input, the output will be d-step delay of the same signal.</p>
-<p>Let's design a digital deadbeat controller for the plant,
+<p>Let's design a digital deadbeat controller for the plant
 \begin{align*}
 G_p(s) &amp;= \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \\
 G_p(z) &amp;= \dfrac{5.47\times 10^{-2}(z-0.34)}{z^2 - 1.78z + 0.82}
@@ -798,11 +798,11 @@ with sampling time $T_s=1$.</p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The closed-loop discrete system results in,
+<p>The closed-loop discrete system results in
 \begin{align*}
 G_{clz} &amp;= \dfrac{(z-1) (z-0.3392)^2 (z^2 - 1.783z + 0.8187)^2} {z (z-0.3392)^2 (z-1) (z^2 - 1.783z + 0.8187)^2}
 \end{align*}
-where the controller is,
+where the controller is
 \begin{align*}
 G_{cz} &amp;= \dfrac{18.288 (z-1) (z-0.3392) (z^2 - 1.783z + 0.8187)^2}{z (z-0.3392)^2 (z-1) (z^2 - 1.783z + 0.8187)}
 \end{align*}</p>
