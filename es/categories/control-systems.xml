@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 05:29:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 07 May 2025 05:43:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Digital phase-lead and deadbeat compensators</title><link>https://paulomarconi.github.io/es/blog/Phase-lead_deadbeat/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -2390,7 +2390,7 @@ ans =
 \end{bmatrix}
 + 
 \Delta p^d
-\end{align*}&lt;p&gt;In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are:
+\end{align*}&lt;p&gt;In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are
 $$ 
 M = 10,~D=0.8,~R=0.1,~T^t=0.5,~T^g=0.2
 $$&lt;/p&gt;
@@ -2422,17 +2422,17 @@ $$&lt;/p&gt;
 &lt;img alt="MPC-SSTO" src="https://paulomarconi.github.io/images/MPC-SSTO/MPC-SSTO.png" width="50%"&gt;
 &lt;center&gt;&lt;figcaption&gt;Fig.2 - MPC and SSTO model&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-&lt;p&gt;For the Discrete Linear Time-Invariant (DLTI) state-space system,
+&lt;p&gt;For the Discrete Linear Time-Invariant (DLTI) state-space system
 \begin{align*}\tag{2}
 x(k+1) &amp;amp;= A~x(k)+B~u(k)+B_d~d(k)\\
 y(k) &amp;amp;= C~x(k)+D_d~d(k), \quad k=0,1,2,\dots
 \end{align*}
 where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, $y\in\mathbb{R}^p$, and $d\in\mathbb{R}^q$ are the states, input, output, and disturbance vectors respectively. $A,B,C,$ are the state, input, and output matrices, and $B_d,D_d$ are the disturbance matrices in the input, and in the output. $k$ is the sampling time.&lt;/p&gt;
-&lt;p&gt;The idea is to compute,
+&lt;p&gt;The idea is to compute
 $$ x \rightarrow x_{ss}, \quad u \rightarrow u_{ss} $$
-defining two auxiliar variables as,
+defining two auxiliar variables as
 $$ \xi \approx x - x_{ss}, \quad v \approx u - u_{ss} $$&lt;/p&gt;
-&lt;p&gt;Therefore, the objective is to regulate,
+&lt;p&gt;Therefore, the objective is to regulate
 $$ \xi \rightarrow 0, \quad v \rightarrow 0 $$
 where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 &lt;/div&gt;
@@ -2441,7 +2441,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Cost-function"&gt;Cost function&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Cost-function"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The problem ${\rm I\!P}_N$ is to minimize $v(k)$ given the following cost function,
+&lt;h2 id="Cost-function"&gt;Cost function&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Cost-function"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The problem ${\rm I\!P}_N$ is to minimize $v(k)$ given the following cost function
 \begin{align}\tag{3}
     {\rm I\!P}_N (v(k)) : \min_{v(k)}\sum_{j=0}^{N-1} &amp;amp; (\xi^\intercal(k+j|k)~Q~\xi(k+j|k) + v^\intercal(k+j|k)~R~v(k+j|k)) + \xi^\intercal(k+N|k)~P~\xi(k+N|k) \\
 \end{align}&lt;/p&gt;
@@ -2460,7 +2460,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Defining-the-inequality-constraints"&gt;Defining the inequality constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Defining-the-inequality-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$, 
+&lt;h2 id="Defining-the-inequality-constraints"&gt;Defining the inequality constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Defining-the-inequality-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$ 
 \begin{align*}
 \begin{bmatrix}
     C \\
@@ -2527,7 +2527,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 \end{bmatrix}}_{P_u}
 }
     u_{ss}
-\end{align}&lt;p&gt;and using a proper &lt;strong&gt;deadbeat mode-2&lt;/strong&gt; terminal inequality constraint to ensure a fast convergence to zero,&lt;/p&gt;
+\end{align}&lt;p&gt;and using a proper &lt;strong&gt;deadbeat mode-2&lt;/strong&gt; terminal inequality constraint to ensure a fast convergence to zero&lt;/p&gt;
 \begin{align}\tag{6}
 &amp;amp;
 {\underbrace{
@@ -2615,7 +2615,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Solving-the-LQ-MPC-optimization-problem"&gt;Solving the LQ-MPC optimization problem&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Solving-the-LQ-MPC-optimization-problem"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The solution of the LQ-MPC problem in compact form can written as,
+&lt;h2 id="Solving-the-LQ-MPC-optimization-problem"&gt;Solving the LQ-MPC optimization problem&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/MPC-SSTO/#Solving-the-LQ-MPC-optimization-problem"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The solution of the LQ-MPC problem in compact form can written as
 \begin{align}\tag{8}
     \min_{v(k)} \frac{1}{2}\textbf{v}^\intercal(k)~H~\textbf{v}(k) + \xi^\intercal(k)~L^\intercal~\textbf{v}(k)+\xi^\intercal(k)~M~\xi(k)
 \end{align}
@@ -2624,7 +2624,7 @@ subject to,
     P_c \textbf{v}(k) \leq q_c+S_c~\xi(k)
 \end{align*}
 where $H,L,M$ are the cost matrices given $Q$ and $R$. $P_c,~q_c,~S_c$ are the stacked inequality constraints for $P_x,~P_u,~P_{x_N},~q_u,~q_x,~\tilde{q}_{x_N}$ given the predictions matrices $\textbf{x}=Fx(k)+G\textbf{u}(k)$. Note that the prediction matrices are constructed using the states and input without the tracking model.&lt;/p&gt;
-&lt;p&gt;The solution of (5) is the optimal control input sequence,
+&lt;p&gt;The solution of (5) is the optimal control input sequence
 \begin{align*}
     \textbf{v}^*=\left\lbrace v^*(k|k),v^*(k+1|k),\dots,v^*(k+N-1|k) \right\rbrace
 \end{align*}
@@ -2680,7 +2680,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [59]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;clear&lt;/span&gt; &lt;span class="n"&gt;variables&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -2725,7 +2725,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [60]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Msys&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Dsys&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Rsys&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Tt&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Tg&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -2786,7 +2786,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [61]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Input constraints&lt;/span&gt;
@@ -2823,7 +2823,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [62]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Target&lt;/span&gt;
@@ -2888,7 +2888,7 @@ uss =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [63]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Input constraints&lt;/span&gt;
@@ -2945,7 +2945,7 @@ K =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [64]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/predict_mats.m'&lt;/span&gt;
@@ -2991,7 +2991,7 @@ K =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [65]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO'&lt;/span&gt;
@@ -3041,7 +3041,7 @@ G =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [66]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/constraint_mats.m'&lt;/span&gt;
@@ -3125,7 +3125,7 @@ G =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [67]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO'&lt;/span&gt;
@@ -3312,7 +3312,7 @@ Sc_ssto =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [68]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Closed-loop&lt;/span&gt;
@@ -3358,7 +3358,7 @@ eigen values:
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [69]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Phi&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -3391,7 +3391,7 @@ P =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [70]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO/cost_mats.m'&lt;/span&gt;
@@ -3438,7 +3438,7 @@ P =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [71]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPC-SSTO'&lt;/span&gt;
@@ -3492,7 +3492,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [72]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% initialize&lt;/span&gt;
@@ -3590,7 +3590,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [73]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Ts&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;nk&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt; &lt;span class="c"&gt;% simulation time&lt;/span&gt;
@@ -3625,7 +3625,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [74]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -3659,7 +3659,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [75]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -3711,7 +3711,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [76]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -3745,7 +3745,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [77]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
