@@ -164,7 +164,7 @@ navbar-dark bg-dark
 <figure><center><img src="../../images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"></center>
     <center><figcaption>Fig.1 - DC servo motor with gear train.</figcaption></center>
 </figure><h2>Free-body diagram analysis</h2>
-<p>The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows,</p>
+<p>The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows</p>
 <figure><center><img src="../../images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"></center>
     <center><figcaption>Fig.2 - Rotational mechanical free-body diagram.</figcaption></center>
 </figure><p>where $\theta$ is the angular displacement, $\omega$ is the angular speed, $B$ is the rotational viscous-damping coefficient, $K$ is the stiffness coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, and $r$ is the gear radius.</p>
@@ -257,7 +257,7 @@ navbar-dark bg-dark
 </div>
 
 <p>where $\alpha$ is the internal parameters of the DC motor.</p>
-<p>Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is, </p>
+<p>Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is</p>
 <div class="math">
 \begin{align}
     J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e - \tau_L &amp; = 0 \\
@@ -266,7 +266,7 @@ navbar-dark bg-dark
 </div>
 
 <h2>State-space equations</h2>
-<p>Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system,</p>
+<p>Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system</p>
 <div class="math">
 \begin{align*}
     J_{eq} \ddot{\theta}_2+B_{eq} \dot{\theta}_2+K_2 \theta_2-N \alpha i_A-\tau_L &amp; = 0 \\
@@ -431,7 +431,7 @@ therefore the equilibrium point is
 </div>
 
 <p>This equilibrium point indicates that a $\textbf{constant angular displacement (twist)}$ produced by $x_{1_0}=\theta_{2_0}$ is sufficient to balance the constant applied armature voltage $e_i=E_0$.</p>
-<p>On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is,</p>
+<p>On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is</p>
 <div class="math">
 \begin{align*}
     \begin{bmatrix}
@@ -583,7 +583,7 @@ MathJax.Hub.Config({
         </span>
     </p>
     <p>
-        Contents © 2023  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
+        Contents © 2025  <a href="mailto:p.lomarconi@sheffield.ac.uk">Paulo Loma Marconi</a> 
 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> 
     </p>

@@ -32,7 +32,7 @@ The objective is to model the dynamics of a DC servo motor with gear train, Fig.
 </figure>
 
 # Free-body diagram analysis
-The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows,
+The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows
 
 <figure>
     <center><img src="/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"/></center>
@@ -149,7 +149,7 @@ If $i_F$ is defined as constant, then \eqref{eq:tau_e} is
 
 where $\alpha$ is the internal parameters of the DC motor.
 
-Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is, 
+Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is
 
 <div class="math">
 \begin{align}
@@ -160,7 +160,7 @@ Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic sys
 
 
 # State-space equations
-Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system,
+Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system
 
 <div class="math">
 \begin{align*}
@@ -334,7 +334,7 @@ therefore the equilibrium point is
 
 This equilibrium point indicates that a $\textbf{constant angular displacement (twist)}$ produced by $x_{1_0}=\theta_{2_0}$ is sufficient to balance the constant applied armature voltage $e_i=E_0$.
 
-On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is,
+On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is
 
 <div class="math">
 \begin{align*}
