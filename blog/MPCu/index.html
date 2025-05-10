@@ -249,14 +249,16 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 <h2 id="Problem-Formulation">Problem Formulation<a class="anchor-link" href="#Problem-Formulation">¶</a>
 </h2>
 <p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function</p>
-\begin{align*}\tag{1}
+<p>\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align*}<p>subject to,</p>
-\begin{align*}\tag{2}
+\end{align*}</p>
+<p>subject to,</p>
+<p>\begin{align*}\tag{2}
 x(k+1+j|k) &amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;= x(k) 
-\end{align*}<p>for $ j=0,1,2,\dots,N-1$.</p>
+\end{align*}</p>
+<p>for $ j=0,1,2,\dots,N-1$.</p>
 <p>Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$.</p>
 <p>With the value function defined as
 \begin{align*}
@@ -297,53 +299,56 @@ the optimal control sequence is
 <h2 id="Prediction:-Predicted-Equality-Constraint">Prediction: Predicted Equality Constraint<a class="anchor-link" href="#Prediction:-Predicted-Equality-Constraint">¶</a>
 </h2>
 <p>Setting $x(k)=x(k|k)$, and $u(k)=u(k|k)$ and applying the model recursively</p>
-\begin{align*}
+<p>\begin{align*}
 x(k+1|k) &amp;= A~x(k)+B~u(k) \\
 x(k+2|k) &amp;= A~x(k+1|k)+B~u(k+1|k) \\
-    			 &amp;= A^2~x(k)+AB~u(k|k)+B~u(k+1|k) \\
+				 &amp;= A^2~x(k)+AB~u(k|k)+B~u(k+1|k) \\
 \vdots \hspace{2em}  &amp;= \hspace{3em} \vdots \\
 x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
-    			 &amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
-\end{align*}<p>stacking</p>
-\begin{align*}
+				 &amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
+\end{align*}</p>
+<p>stacking</p>
+<p>\begin{align*}
 {\underbrace{
-    \begin{bmatrix}
-    x(k+1|k) \\
-    x(k+2|k) \\
-    \vdots \\
-    x(k+N|k)
-    \end{bmatrix}}_{\mathbf{x}(k)}
+	\begin{bmatrix}
+	x(k+1|k) \\
+	x(k+2|k) \\
+	\vdots \\
+	x(k+N|k)
+	\end{bmatrix}}_{\mathbf{x}(k)}
 }
 =
 {\underbrace{
-    \begin{bmatrix}
-    A \\
-    A^2 \\
-    \vdots \\
-    A^N
-    \end{bmatrix}}_{F}
+	\begin{bmatrix}
+	A \\
+	A^2 \\
+	\vdots \\
+	A^N
+	\end{bmatrix}}_{F}
 }
 +
 {\underbrace{
-    \begin{bmatrix}
-    	B        &amp; 0        &amp; \dots  &amp; 0      \\
-    	AB       &amp; B        &amp; \dots  &amp; 0      \\
-    	\vdots   &amp; \vdots   &amp; \ddots &amp; \vdots \\
-    	A^{N-1}B &amp; A^{N-2}B &amp; \dots  &amp; B
-    \end{bmatrix}}_{G}
+	\begin{bmatrix}
+		B        &amp; 0        &amp; \dots  &amp; 0      \\
+		AB       &amp; B        &amp; \dots  &amp; 0      \\
+		\vdots   &amp; \vdots   &amp; \ddots &amp; \vdots \\
+		A^{N-1}B &amp; A^{N-2}B &amp; \dots  &amp; B
+	\end{bmatrix}}_{G}
 }
 {\underbrace{
-    \begin{bmatrix}
-    u(k|k) \\
-    u(k+1|k) \\
-    \vdots \\
-    u(k+N-1|k)
-    \end{bmatrix}}_{\mathbf{u}(k)}
+	\begin{bmatrix}
+	u(k|k) \\
+	u(k+1|k) \\
+	\vdots \\
+	u(k+N-1|k)
+	\end{bmatrix}}_{\mathbf{u}(k)}
 }
-\end{align*}<p>the predicted equality constraint is</p>
-\begin{equation}\tag{3}
+\end{align*}</p>
+<p>the predicted equality constraint is</p>
+<p>\begin{equation}\tag{3}
 \mathbf{x}(k) = F~x(k)+G~\mathbf{u}(k)
-\end{equation}<p>where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.</p>
+\end{equation}</p>
+<p>where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.</p>
 </div>
 </div>
 </div>
@@ -355,58 +360,60 @@ x(k+N|k) &amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
 <h2 id="Prediction:-Rewriting-the-Cost-Function">Prediction: Rewriting the Cost Function<a class="anchor-link" href="#Prediction:-Rewriting-the-Cost-Function">¶</a>
 </h2>
 <p>Rewriting the cost function such that</p>
-\begin{aligned}
+<p>\begin{aligned}
 x^\intercal(k|k)~Q~x(k|k)
 &amp;+
 \begin{bmatrix}
-    x(k+1|k) \\
-    x(k+2|k) \\
-    \vdots\\
-    x(k+N|k) \\
+	x(k+1|k) \\
+	x(k+2|k) \\
+	\vdots\\
+	x(k+N|k) \\
 \end{bmatrix}^\intercal
 {\underbrace{
-    \begin{bmatrix}
-    	Q      &amp; 0      &amp; \dots  &amp; 0      \\
-    	0      &amp; Q      &amp; \ddots &amp; \vdots \\
-    	\vdots &amp; \ddots &amp; Q      &amp; 0      \\
-    	0      &amp; \dots  &amp; 0      &amp; P
-    \end{bmatrix}}_{\tilde{Q}}
+	\begin{bmatrix}
+		Q      &amp; 0      &amp; \dots  &amp; 0      \\
+		0      &amp; Q      &amp; \ddots &amp; \vdots \\
+		\vdots &amp; \ddots &amp; Q      &amp; 0      \\
+		0      &amp; \dots  &amp; 0      &amp; P
+	\end{bmatrix}}_{\tilde{Q}}
 }
 \begin{bmatrix}
-    x(k+1|k) \\
-    x(k+2|k) \\
-    \vdots\\
-    x(k+N|k) \\
+	x(k+1|k) \\
+	x(k+2|k) \\
+	\vdots\\
+	x(k+N|k) \\
 \end{bmatrix}
 \\
 &amp;+
 \begin{bmatrix}
-    u(k|k) \\
-    u(k+1|k) \\
-    \vdots \\
-    u(k+N-1|k)
+	u(k|k) \\
+	u(k+1|k) \\
+	\vdots \\
+	u(k+N-1|k)
 \end{bmatrix}^\intercal
 {\underbrace{
-    \begin{bmatrix}
-    R      &amp; 0      &amp; \dots  &amp; 0      \\
-    0      &amp; R      &amp; \ddots &amp; \vdots \\
-    \vdots &amp; \ddots &amp; R      &amp; 0      \\
-    0      &amp; \dots  &amp; 0      &amp; R
-    	\end{bmatrix}}_{\tilde{R}}
+	\begin{bmatrix}
+	R      &amp; 0      &amp; \dots  &amp; 0      \\
+	0      &amp; R      &amp; \ddots &amp; \vdots \\
+	\vdots &amp; \ddots &amp; R      &amp; 0      \\
+	0      &amp; \dots  &amp; 0      &amp; R
+		\end{bmatrix}}_{\tilde{R}}
 }
 \begin{bmatrix}
-    u(k|k) \\
-    u(k+1|k) \\
-    \vdots \\
-    u(k+N-1|k)
+	u(k|k) \\
+	u(k+1|k) \\
+	\vdots \\
+	u(k+N-1|k)
 \end{bmatrix}
-\end{aligned}<p>Therefore, with $x(k|k)=x(k)$, now the problem is to minimize</p>
-\begin{align}\tag{4}
+\end{aligned}</p>
+<p>Therefore, with $x(k|k)=x(k)$, now the problem is to minimize</p>
+<p>\begin{align}\tag{4}
 J_N(x(k),\mathbf{u}(k)) &amp;=  x^\intercal(k)~Q~x(k) + \mathbf{x}^\intercal(k)~\tilde{Q}~\mathbf{x}(k) + \mathbf{u}^\intercal(k)~\tilde{R}~\mathbf{u}(k)
-\end{align}<p>subject to,</p>
-\begin{align*}
+\end{align}</p>
+<p>subject to,</p>
+<p>\begin{align*}
 \mathbf{x}(k) &amp;= F~x(k)+G~\mathbf{u}(k)
-\end{align*}
+\end{align*}</p>
 </div>
 </div>
 </div>
@@ -438,9 +445,11 @@ J_N(x(k),\mathbf{u}(k)) &amp;=  x^\intercal(k) Q x(k) + ( F x(k)+G \mathbf{u}(k)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cost-Function-in-QP-compact-form">Cost Function in QP compact form<a class="anchor-link" href="#Cost-Function-in-QP-compact-form">¶</a>
-</h3>\begin{align}\tag{5}
+</h3>
+<p>\begin{align}\tag{5}
 J_N(x(k),\mathbf{u}(k)) &amp;= \frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}(k)+\alpha 
-\end{align}<p>where
+\end{align}
+where
 \begin{align*}
 H&amp;=2(G^\intercal\tilde{Q}G+\tilde{R})\\
 c&amp;=L~x(k) \\
@@ -459,15 +468,17 @@ M&amp;=Q+F^\intercal\tilde{Q}F
 <h2 id="Optimization:-Explicit-solution-of-$J_N(x(k)$">Optimization: Explicit solution of $J_N(x(k)$<a class="anchor-link" href="#Optimization:-Explicit-solution-of-$J_N(x(k)$">¶</a>
 </h2>
 <p>Minimizing with the gradient and solving for $\mathbf{u}^*(k)$</p>
-\begin{align*}
+<p>\begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{\mathbf{u}(k)}~\frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}+\alpha \\ 
 \nabla_\mathbf{u}~J^*_N(x(k),\mathbf{u}(k)) &amp;= 0 \\
 H~\mathbf{u}^*(k)+c &amp;= 0 \\
 \mathbf{u}^*(k) &amp;= -H^{-1}~c
-\end{align*}<p>the optimal solution results in</p>
-\begin{align}\tag{6}
+\end{align*}</p>
+<p>the optimal solution results in</p>
+<p>\begin{align}\tag{6}
 \mathbf{u}^*(k) &amp;= -H^{-1}~L~x(k)
-\end{align}<p>where that $Q\succeq,~P\succeq 0$ are positive semidefinite convex, and $R\succ 0$ is definite convex, such that $H\succ 0$. The optimal solution $\mathbf{u}^*(k)$ for any $x(k)$ is unique if $H\succ 0$ is invertible.</p>
+\end{align}</p>
+<p>where that $Q\succeq,~P\succeq 0$ are positive semidefinite convex, and $R\succ 0$ is definite convex, such that $H\succ 0$. The optimal solution $\mathbf{u}^*(k)$ for any $x(k)$ is unique if $H\succ 0$ is invertible.</p>
 </div>
 </div>
 </div>
@@ -479,25 +490,27 @@ H~\mathbf{u}^*(k)+c &amp;= 0 \\
 <h2 id="Receding-Horizon">Receding Horizon<a class="anchor-link" href="#Receding-Horizon">¶</a>
 </h2>
 <p>Applying the Receding Horizon principle means that only the $\textbf{first}$ control input of the vector $\mathbf{u}^*(k)$ is applied to the real system. That is</p>
-\begin{align*}
+<p>\begin{align*}
 \begin{bmatrix}
-    u^*(k) \\
-    u^*(k+1) \\
-    \vdots \\
-    u^*(k+N-1)
+	u^*(k) \\
+	u^*(k+1) \\
+	\vdots \\
+	u^*(k+N-1)
 \end{bmatrix}
 &amp;=
 \begin{bmatrix}
-    I      &amp; 0      &amp; 0      &amp; \dots  &amp; 0      \\
-    0      &amp; I      &amp; 0      &amp; \dots  &amp; 0      \\
-    \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-    0      &amp; 0      &amp; 0      &amp; \dots  &amp; I
+	I      &amp; 0      &amp; 0      &amp; \dots  &amp; 0      \\
+	0      &amp; I      &amp; 0      &amp; \dots  &amp; 0      \\
+	\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+	0      &amp; 0      &amp; 0      &amp; \dots  &amp; I
 \end{bmatrix}
 (-H^{-1}~L)x(k)
-\end{align*}\begin{align*}\tag{7}
+\end{align*}</p>
+<p>\begin{align*}\tag{7}
 u^*(k) &amp;= K_N~x(k)  \\
 K_N &amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
-\end{align*}<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
+\end{align*}</p>
+<p>Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.</p>
 </div>
 </div>
 </div>
@@ -535,7 +548,7 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">¶</a>
 </h2>
-<img alt="drawing" src="../../images/MPCu/algorithm.png" width="60%">
+<p><img alt="drawing" src="../../images/MPCu/algorithm.png" width="60%"></p>
 </div>
 </div>
 </div>
@@ -547,9 +560,10 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 <h2 id="Example">Example<a class="anchor-link" href="#Example">¶</a>
 </h2>
 <p>Let's apply the unconstrained MPC regulator on an <strong>Unstable Non-minimum Phase</strong> system</p>
-\begin{align*}
+<p>\begin{align*}
     Gp(s) = \dfrac{1-s}{(s-2)(s+1)}
-\end{align*}<p>in State-space form with the following conditions
+\end{align*}</p>
+<p>in State-space form with the following conditions
 \begin{align*}
     x(k+1) 
     &amp;= 
@@ -737,12 +751,12 @@ LKF =
 <span class="c">% form row by row</span>
 <span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">N</span>
 <span class="w">    </span><span class="c">% F</span>
-<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span>^<span class="nb">i</span><span class="p">;</span>
+<span class="w">    </span><span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="o">^</span><span class="nb">i</span><span class="p">;</span>
 
 <span class="w">    </span><span class="c">% G</span>
 <span class="w">    </span><span class="c">% form element by element</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nb">j</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span>
-<span class="w">        </span><span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span>^<span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+<span class="w">        </span><span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="nb">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="o">^</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="nb">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
 <span class="w">    </span><span class="k">end</span>
 <span class="k">end</span>
 
@@ -1077,7 +1091,7 @@ KN =
 <span class="w">    </span><span class="nb">legend</span><span class="p">(</span><span class="s">'$x_1~$ MPCu'</span><span class="p">,</span><span class="s">'$x_2~$ MPCu'</span><span class="p">,</span><span class="k">...</span>
 <span class="w">            </span><span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">,</span><span class="k">...</span>
 <span class="w">            </span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w">    </span>
 </pre></div>
 </div>
 </div>
@@ -1122,7 +1136,7 @@ KN =
 <span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'$x_1$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span><span class="w"> </span>
 <span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$x_2$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
 <span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'Phase-plot'</span><span class="p">);</span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w">  </span>
 </pre></div>
 </div>
 </div>
@@ -1167,7 +1181,7 @@ KN =
 <span class="w">    </span><span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step [s]'</span><span class="p">);</span><span class="w">  </span>
 <span class="w">    </span><span class="nb">ylabel</span><span class="p">(</span><span class="s">'$J(k)$'</span><span class="p">,</span><span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
 <span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="s">'Cost Value'</span><span class="p">);</span>
-<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="w">    </span><span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span><span class="w">  </span>
 </pre></div>
 </div>
 </div>

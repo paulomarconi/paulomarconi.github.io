@@ -221,49 +221,50 @@ navbar-dark bg-dark
 <h2 id="State-space-model-of-the-system">State-space model of the system<a class="anchor-link" href="#State-space-model-of-the-system">¶</a>
 </h2>
 <p>The isolated power system to be studied is a linear Single-Input Single-Output (SISO) model with the addition of the disturbance in the output. The linear continuous-time state-space model is</p>
-\begin{align*}\tag{1}
+<p>\begin{align*}\tag{1}
 \begin{bmatrix}
-    \Delta\dot{\omega} \\
-    \Delta\dot{p}^m \\	 
-    \Delta\dot{p}^v \\
+	\Delta\dot{\omega} \\
+	\Delta\dot{p}^m \\	 
+	\Delta\dot{p}^v \\
 \end{bmatrix}
 &amp;=
 \begin{bmatrix}
-    -D/M &amp; 1/M &amp; 0 \\
-    0 &amp; -1/T^t &amp; -1/T^t \\
-    -1/(RT^g) &amp; 0 &amp; -1/T^g
+	-D/M &amp; 1/M &amp; 0 \\
+	0 &amp; -1/T^t &amp; -1/T^t \\
+	-1/(RT^g) &amp; 0 &amp; -1/T^g
 \end{bmatrix}
 \begin{bmatrix}
-    \Delta \omega \\
-    \Delta p \\	 
-    \Delta p^v 
+	\Delta \omega \\
+	\Delta p \\	 
+	\Delta p^v 
 \end{bmatrix}
 +
 \begin{bmatrix}
-    0 \\
-    0 \\
-    1/T^g
+	0 \\
+	0 \\
+	1/T^g
 \end{bmatrix}
 \Delta p^{ref}
 +
 \begin{bmatrix}
-    -1/M \\
-    0 \\
-    0
+	-1/M \\
+	0 \\
+	0
 \end{bmatrix}
 \Delta p^d\\
 \Delta f &amp;=
 \begin{bmatrix}
-    50 &amp; 0 &amp; 0 
+	50 &amp; 0 &amp; 0 
 \end{bmatrix}
 \begin{bmatrix}
-    \Delta \omega \\
-    \Delta p \\	 
-    \Delta p^v 
+	\Delta \omega \\
+	\Delta p \\	 
+	\Delta p^v 
 \end{bmatrix}
 + 
 \Delta p^d
-\end{align*}<p>In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are
+\end{align*}</p>
+<p>In this model, the input, $u$, is the change in reference power to the turbine governor, i.e., $\Delta p_{ref}$ (in per unit (p.u.) – that is, normalized with respect to a base value), and the output, $y$, is the frequency of the power system, i.e., $\Delta f~[Hz]$. The states are the (deviations from operating points in) angular frequency, $\Delta \omega$, mechanical output power of the steam turbine, $\Delta p^m$, and output power reference from the turbine governor, $\Delta p^v$. The demand change $\Delta p^d$ is a disturbance, $d$. For the particular power system under consideration, the model parameters are
 $$ 
 M = 10,~D=0.8,~R=0.1,~T^t=0.5,~T^g=0.2
 $$</p>
@@ -282,12 +283,12 @@ $$</p>
 <li>Maintains stability.</li>
 <li>Frequency settles to $|\Delta f| \leq 0.01 [Hz]$ within 2 seconds of the disturbance initiation.</li>
 <li>Exhibits zero steady-state error in the output.</li>
-<li>Satisfies the constraints.</li>
-</ul>
+<li>Satisfies the constraints.
 \begin{align*}
 |\Delta p^{ref}| &amp;\leq 0.5 \\
 |\Delta f| &amp;\leq 0.5
-\end{align*}
+\end{align*}</li>
+</ul>
 </div>
 </div>
 </div>
@@ -325,16 +326,17 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 </h2>
 <p>The problem ${\rm I\!P}_N$ is to minimize $v(k)$ given the following cost function
 \begin{align}\tag{3}
-    {\rm I\!P}_N (v(k)) : \min_{v(k)}\sum_{j=0}^{N-1} &amp; (\xi^\intercal(k+j|k)~Q~\xi(k+j|k) + v^\intercal(k+j|k)~R~v(k+j|k)) + \xi^\intercal(k+N|k)~P~\xi(k+N|k) \\
+	{\rm I\!P}_N (v(k)) : \min_{v(k)}\sum_{j=0}^{N-1} &amp; (\xi^\intercal(k+j|k)~Q~\xi(k+j|k) + v^\intercal(k+j|k)~R~v(k+j|k)) + \xi^\intercal(k+N|k)~P~\xi(k+N|k) \\
 \end{align}</p>
 <p>subject to,</p>
-\begin{align*}
-    \xi(k+1+j|k) &amp;= A~\xi(k+j|k)+B~v(k+j|k) \\
-    \xi(k|k) &amp;= \xi(k) \\
-    P_x ( \xi(k+j|k) + x_{ss} )&amp;\leq q_x \\
-    P_u ( v(k+j|k) + u_{ss} )&amp;\leq q_u  \\
-    P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\	 
-\end{align*}<p>for $j = 0, 1, 2, \dots, N-1$, where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.</p>
+<p>\begin{align*}
+	\xi(k+1+j|k) &amp;= A~\xi(k+j|k)+B~v(k+j|k) \\
+	\xi(k|k) &amp;= \xi(k) \\
+	P_x ( \xi(k+j|k) + x_{ss} )&amp;\leq q_x \\
+	P_u ( v(k+j|k) + u_{ss} )&amp;\leq q_u  \\
+	P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\	 
+\end{align*}</p>
+<p>for $j = 0, 1, 2, \dots, N-1$, where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.</p>
 </div>
 </div>
 </div>
@@ -345,100 +347,103 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Defining-the-inequality-constraints">Defining the inequality constraints<a class="anchor-link" href="#Defining-the-inequality-constraints">¶</a>
 </h2>
-<p>Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$ 
+<p>Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$
 \begin{align*}
 \begin{bmatrix}
-    C \\
-    -C
+	C \\
+	-C
 \end{bmatrix}
-    x(k+j|k) &amp; \leq
+	x(k+j|k) &amp; \leq
 \begin{bmatrix}
-    y_{max}\\
-    -y_{min}
+	y_{max}\\
+	-y_{min}
 \end{bmatrix}
 \\
 \begin{bmatrix}
-    I \\
-    -I
+	I \\
+	-I
 \end{bmatrix}
-    u(k+j|k) &amp; \leq
+	u(k+j|k) &amp; \leq
 \begin{bmatrix}
-    u_{max}\\
-    -u_{min}
+	u_{max}\\
+	-u_{min}
 \end{bmatrix}
 \end{align*}</p>
 <p>can be written in terms of $\xi$ and $v$ as follows</p>
-\begin{align}\tag{4}
+<p>\begin{align}\tag{4}
 {\underbrace{
 \begin{bmatrix}
-    C \\
-    -C
+	C \\
+	-C
 \end{bmatrix}}_{P_x}
 }
-    \xi(k+j|k) &amp; \leq
+	\xi(k+j|k) &amp; \leq
 {\underbrace{
 \begin{bmatrix}
-    y_{max}\\
-    -y_{min}
+	y_{max}\\
+	-y_{min}
 \end{bmatrix}}_{q_x}
 }
 -
 {\underbrace{
 \begin{bmatrix}
-    C \\
-    -C
+	C \\
+	-C
 \end{bmatrix}}_{P_x}
 }
-    x_{ss}
-\end{align}\begin{align}\tag{5}
+	x_{ss}
+\end{align}</p>
+<p>\begin{align}\tag{5}
 {\underbrace{
 \begin{bmatrix}
-    I \\
-    -I
+	I \\
+	-I
 \end{bmatrix}}_{P_u}
 }
-    v(k+j|k) &amp; \leq
+	v(k+j|k) &amp; \leq
 {\underbrace{
 \begin{bmatrix}
-    u_{max}\\
-    -u_{min}
+	u_{max}\\
+	-u_{min}
 \end{bmatrix}}_{q_u}
 }
 -
 {\underbrace{
 \begin{bmatrix}
-    I \\
-    -I
+	I \\
+	-I
 \end{bmatrix}}_{P_u}
 }
-    u_{ss}
-\end{align}<p>and using a proper <strong>deadbeat mode-2</strong> terminal inequality constraint to ensure a fast convergence to zero</p>
-\begin{align}\tag{6}
+	u_{ss}
+\end{align}</p>
+<p>and using a proper <strong>deadbeat mode-2</strong> terminal inequality constraint to ensure a fast convergence to zero</p>
+<p>\begin{align}\tag{6}
 &amp;
 {\underbrace{
-    \textbf{I}_{n\times n}\otimes
-    \begin{bmatrix}
-    P_x\\
-    P_u~K_\infty
-    \end{bmatrix}
-    \begin{bmatrix}
-    	(A+BK_\infty)^0\\
-    	\vdots\\
-    	(A+BK_\infty)^{N-1}
-    \end{bmatrix}
+	\textbf{I}_{n\times n}\otimes
+	\begin{bmatrix}
+	P_x\\
+	P_u~K_\infty
+	\end{bmatrix}
+	\begin{bmatrix}
+		(A+BK_\infty)^0\\
+		\vdots\\
+		(A+BK_\infty)^{N-1}
+	\end{bmatrix}
 }_{P_{x_N}}
 }
 \xi(k+N|k)
 \leq 
 {\underbrace{
-    \textbf{1}_n \otimes 
-    \begin{bmatrix}
-    	q_x-P_x~x_{ss}\\
-    	q_u-P_u~u_{ss}
-    \end{bmatrix}
+	\textbf{1}_n \otimes 
+	\begin{bmatrix}
+		q_x-P_x~x_{ss}\\
+		q_u-P_u~u_{ss}
+	\end{bmatrix}
 }_{\tilde{q}_{x_N}}
 }
-\end{align}<p>where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic Regulator (LQR) method.</p>
+\end{align}
+where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic Regulator (LQR) method.</p>
 </div>
 </div>
 </div>
@@ -452,52 +457,53 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 <p>The offset-free equilibrium points $(x_{ss},u_{ss})$ that satisfies the constraints exits if only if $x_{ss}=A x_{ss}+B u_{ss}+B_d d$ and $y_{ss}=C x_{ss}+D_d d=r$.</p>
 <p>Thus, the SSTO problem is
 \begin{align}\tag{7}
-    \min_{\left\lbrace x_{ss},u_{ss} \right\rbrace } \|C~x_{ss}+D_d~d-r\|+\rho \|u_{ss}\|
+	\min_{\left\lbrace x_{ss},u_{ss} \right\rbrace } \|C~x_{ss}+D_d~d-r\|+\rho \|u_{ss}\|
 \end{align}</p>
 <p>subject to,</p>
-\begin{align*}
+<p>\begin{align*}
 {\underbrace{
-    \begin{bmatrix}
-    	I-A &amp; -B\\
-    	C &amp; 0
-    \end{bmatrix}}_{A_{eq}=T}
+	\begin{bmatrix}
+		I-A &amp; -B\\
+		C &amp; 0
+	\end{bmatrix}}_{A_{eq}=T}
 }
 {\underbrace{
-    \begin{bmatrix}
-    	x_{ss}\\
-    	u_{ss}
-    \end{bmatrix}}_{x_{eq}}
+	\begin{bmatrix}
+		x_{ss}\\
+		u_{ss}
+	\end{bmatrix}}_{x_{eq}}
 }
 &amp;=
 {\underbrace{
-    \begin{bmatrix}
-    	B_d\\
-    	r-D_d
-    \end{bmatrix} 
-    d 
-    }_{b_{eq}}	
+	\begin{bmatrix}
+		B_d\\
+		r-D_d
+	\end{bmatrix} 
+	d 
+	}_{b_{eq}}	
 }
 \\
 {\underbrace{
-    	\begin{bmatrix}
-    	P_x &amp; 0\\
-    	0 &amp; P_u
-    	\end{bmatrix}}_{A_{neq}}
+		\begin{bmatrix}
+		P_x &amp; 0\\
+		0 &amp; P_u
+		\end{bmatrix}}_{A_{neq}}
 }
 {\underbrace{
-    	\begin{bmatrix}
-    	x_{ss}\\
-    	u_{ss}
-    	\end{bmatrix}}_{x_{neq}}
+		\begin{bmatrix}
+		x_{ss}\\
+		u_{ss}
+		\end{bmatrix}}_{x_{neq}}
 }
 &amp;\leq
 {\underbrace{
-    	\begin{bmatrix}
-    	q_x\\
-    	q_u
-    	\end{bmatrix}}_{b_{neq}}
+		\begin{bmatrix}
+		q_x\\
+		q_u
+		\end{bmatrix}}_{b_{neq}}
 }
-\end{align*}<p>where $\rho$ is a penalty constant.</p>
+\end{align*}
+where $\rho$ is a penalty constant.</p>
 </div>
 </div>
 </div>
@@ -510,25 +516,25 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 </h2>
 <p>The solution of the LQ-MPC problem in compact form can written as
 \begin{align}\tag{8}
-    \min_{v(k)} \frac{1}{2}\textbf{v}^\intercal(k)~H~\textbf{v}(k) + \xi^\intercal(k)~L^\intercal~\textbf{v}(k)+\xi^\intercal(k)~M~\xi(k)
+	\min_{v(k)} \frac{1}{2}\textbf{v}^\intercal(k)~H~\textbf{v}(k) + \xi^\intercal(k)~L^\intercal~\textbf{v}(k)+\xi^\intercal(k)~M~\xi(k)
 \end{align}
 subject to,
 \begin{align*}
-    P_c \textbf{v}(k) \leq q_c+S_c~\xi(k)
+	P_c \textbf{v}(k) \leq q_c+S_c~\xi(k)
 \end{align*}
 where $H,L,M$ are the cost matrices given $Q$ and $R$. $P_c,~q_c,~S_c$ are the stacked inequality constraints for $P_x,~P_u,~P_{x_N},~q_u,~q_x,~\tilde{q}_{x_N}$ given the predictions matrices $\textbf{x}=Fx(k)+G\textbf{u}(k)$. Note that the prediction matrices are constructed using the states and input without the tracking model.</p>
 <p>The solution of (5) is the optimal control input sequence
 \begin{align*}
-    \textbf{v}^*=\left\lbrace v^*(k|k),v^*(k+1|k),\dots,v^*(k+N-1|k) \right\rbrace
+	\textbf{v}^*=\left\lbrace v^*(k|k),v^*(k+1|k),\dots,v^*(k+N-1|k) \right\rbrace
 \end{align*}
 which can be solved numerically.</p>
 <p>Because MPC uses the receding-horizon principle, only the first optimized control input is needed
 \begin{align*}
-    v(k)=v^*(k|k)=\kappa_N(\xi(k))
+	v(k)=v^*(k|k)=\kappa_N(\xi(k))
 \end{align*}
 but the real control input applied to the system is
 \begin{align}\tag{9}
-    u(k)=u_{ss}+v^*(k|k)
+	u(k)=u_{ss}+v^*(k|k)
 \end{align}</p>
 </div>
 </div>
@@ -540,9 +546,9 @@ but the real control input applied to the system is
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Stability">Stability<a class="anchor-link" href="#Stability">¶</a>
 </h2>
-<p>In order to ensure stability it is necessary to compute a terminal cost matrix $P$ that satisfies the Lyapunov equation 
+<p>In order to ensure stability it is necessary to compute a terminal cost matrix $P$ that satisfies the Lyapunov equation
 \begin{equation*}
-    (A+B~K)^\intercal P(A+B~K)-P+(Q+K^\intercal R~K)=0
+	(A+B~K)^\intercal P(A+B~K)-P+(Q+K^\intercal R~K)=0
 \end{equation*}
 which solution can be computed numerically. A good approach is to use a deadbeat mode-2 control gain $K$ that converges the states to the origin $x=0$ as long as $(A+BK)$ is stable, which means that the eigenvalues $\lambda$ are inside the unit circle, $|\lambda| &lt; 1$.</p>
 </div>
@@ -561,7 +567,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 <li>$Q\succeq 0$, can be $C^\intercal C$</li>
 <li>$R\succ 0$, changed later for tuning.</li>
 </ul>
-<img alt="drawing" src="../../images/MPC-SSTO/algorithm.png" width="60%">
+<p><img alt="drawing" src="../../images/MPC-SSTO/algorithm.png" width="60%"></p>
 </div>
 </div>
 </div>
@@ -606,7 +612,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 
 <span class="c">% Q and R for tunning</span>
 <span class="n">Qdesign</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> 
-<span class="n">Rdesign</span> <span class="p">=</span> <span class="p">.</span><span class="mi">08</span><span class="p">;</span>
+<span class="n">Rdesign</span> <span class="p">=</span> <span class="p">.</span><span class="mi">08</span><span class="p">;</span> 
 </pre></div>
 </div>
 </div>
@@ -827,7 +833,7 @@ uss =
 
 <span class="n">Maux</span> <span class="p">=</span> <span class="p">[];</span>
 <span class="k">for</span> <span class="n">i</span> <span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">Maux</span> <span class="p">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span>^<span class="p">(</span><span class="n">i</span><span class="p">)];</span>
+    <span class="n">Maux</span> <span class="p">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
 <span class="k">end</span> 
 <span class="n">Mm</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),[</span><span class="n">Px</span><span class="p">;</span> <span class="n">Pu</span><span class="o">*</span><span class="n">K</span><span class="p">]);</span>
 
@@ -886,12 +892,12 @@ K =
     <span class="c">% form row by row</span>
     <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
         <span class="c">%  F</span>
-        <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span>^<span class="n">i</span><span class="p">;</span>
+        <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span><span class="o">^</span><span class="n">i</span><span class="p">;</span>
         
         <span class="c">% G</span>
         <span class="c">% form element by element</span>
         <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span>
-            <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span>^<span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+            <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
         <span class="k">end</span>
     <span class="k">end</span>
 <span class="k">end</span>
@@ -1532,6 +1538,9 @@ M =
     <span class="nb">xlabel</span><span class="p">(</span><span class="s">'Time step k [s]'</span><span class="p">);</span> 
     <span class="nb">ylabel</span><span class="p">(</span><span class="s">'u(k)'</span><span class="p">);</span>
     <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+
+
+   
 </pre></div>
 </div>
 </div>
@@ -1618,6 +1627,7 @@ M =
     <span class="nb">xlabel</span><span class="p">(</span><span class="s">'x2(k)'</span><span class="p">);</span> 
     <span class="nb">ylabel</span><span class="p">(</span><span class="s">'x3(k)'</span><span class="p">);</span>
     <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+    
 </pre></div>
 </div>
 </div>

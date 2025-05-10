@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about thermal model)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/thermal-model.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about thermal model)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/thermal-model.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 May 2025 03:18:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 10 May 2025 18:09:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -29,24 +29,25 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Nonlinear-model"&gt;Nonlinear model&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nonlinear_DCmotor/#Nonlinear-model"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The nonlinear dynamic system is
 \begin{align}
-    R_A i_A + L_A \dot{i}_A+\alpha \omega_1                             &amp;amp; = e_{i}(t)   \\
-    J_1 \dot{\omega}_1 + B_1 \omega_1 - r_1 f_c                         &amp;amp; = \alpha i_A \\
-    J_2 \dot{\omega}_2 + B_2 \omega_2 + B_{2C}~sign(\omega_2) + r_2 f_c &amp;amp; = -\tau_{L}  \\
-    C_{TM} \dot{\theta}_M + \frac{(\theta_M-\theta_A)}{R_{TM}}          &amp;amp; = i^2_A R_A
+	R_A i_A + L_A \dot{i}_A+\alpha \omega_1                             &amp;amp; = e_{i}(t)   \\
+	J_1 \dot{\omega}_1 + B_1 \omega_1 - r_1 f_c                         &amp;amp; = \alpha i_A \\
+	J_2 \dot{\omega}_2 + B_2 \omega_2 + B_{2C}~sign(\omega_2) + r_2 f_c &amp;amp; = -\tau_{L}  \\
+	C_{TM} \dot{\theta}_M + \frac{(\theta_M-\theta_A)}{R_{TM}}          &amp;amp; = i^2_A R_A
 \end{align}
 where $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, $i_A$ is the input stationary current, $\alpha$ is the internal parameters, $\omega$ is the angular speed, $e_i(t)$ is the applied armature voltage, $B$ is the rotational viscous-damping coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, $r$ is the gear radius, and $B_{2C}$ is the static friction. The thermal model is similar to an electrical capacitor-resistor model with thermal capacity $C_{TM}$, $R_{TM}$ is the resistive losses to ambient temperature, $\theta_M$ is the motor temperature, and $\theta_A$ is the ambient temperature.&lt;/p&gt;
 &lt;p&gt;Now let us define the sate-vector differential equations: state vector $x = [ i_A~ \omega_2~ \theta_M ]^T $, and input vector $u = [ e_{i}~ \tau_{L}~ \theta_A ]^T$.&lt;/p&gt;
 &lt;p&gt;For $\omega_1=N \omega_2$ and $N=\frac{r_2}{r_1}$, eliminating $f_c$ we have that&lt;/p&gt;
+&lt;p&gt;\begin{align}
+	\dot{i}_A      &amp;amp; = -\frac{R_A}{L_A}\ i_A - \frac{N \alpha}{L_A} \omega_2 + \frac{1}{L_A} e_{i}                         \\
+	\dot{\omega}_2 &amp;amp; = \frac{N \alpha}{J_{eq}} i_A - \frac{B_{eq}}{J_{eq}} \omega_2 - \frac{B_{2C}}{J_{eq}} sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
+	\dot{\theta}_M &amp;amp; = \frac{R_A}{C_{TM}} i^2_A - \frac{1}{C_{TM} R_{TM}} \theta_M + \frac{1}{C_{TM} R_{TM}} \theta_A
+\end{align}
+where $J_{eq}=J_2+N^2 J_1$ and $B_{eq}=B_2+N^2 B_1$.&lt;/p&gt;
+&lt;p&gt;For simulation purpose only we can simplify as
 \begin{align}
-    \dot{i}_A      &amp;amp; = -\frac{R_A}{L_A}\ i_A - \frac{N \alpha}{L_A} \omega_2 + \frac{1}{L_A} e_{i}                         \\
-    \dot{\omega}_2 &amp;amp; = \frac{N \alpha}{J_{eq}} i_A - \frac{B_{eq}}{J_{eq}} \omega_2 - \frac{B_{2C}}{J_{eq}} sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
-    \dot{\theta}_M &amp;amp; = \frac{R_A}{C_{TM}} i^2_A - \frac{1}{C_{TM} R_{TM}} \theta_M + \frac{1}{C_{TM} R_{TM}} \theta_A
-\end{align}&lt;p&gt;where $J_{eq}=J_2+N^2 J_1$ and $B_{eq}=B_2+N^2 B_1$.&lt;/p&gt;
-&lt;p&gt;For simulation purpose only we can simplify as 
-\begin{align}
-    \dot{i}_A      &amp;amp; = -a~ i_A - b~ \omega_2 + \frac{1}{L_A}e_{i}                        \\
-    \dot{\omega}_2 &amp;amp; = c~ i_A - d~ \omega_2 - e~ sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
-    \dot{\theta}_M &amp;amp; = f~ i^2_A - g~ \theta_M + g~ \theta_A
+	\dot{i}_A      &amp;amp; = -a~ i_A - b~ \omega_2 + \frac{1}{L_A}e_{i}                        \\
+	\dot{\omega}_2 &amp;amp; = c~ i_A - d~ \omega_2 - e~ sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
+	\dot{\theta}_M &amp;amp; = f~ i^2_A - g~ \theta_M + g~ \theta_A
 \end{align}
 where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$, $d=\frac{B_{eq}}{J_{eq}}$, $e=\frac{B_{2C}}{J_{eq}}$, $f=\frac{R_A}{C_{TM}}$, and $g=\frac{1}{C_{TM} R_{TM}}$.&lt;/p&gt;
 &lt;/div&gt;
@@ -164,7 +165,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 
    &lt;span class="c"&gt;% Update the step size&lt;/span&gt;
    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="o"&gt;~=&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;
-      &lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hmax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tau&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="n"&gt;pow&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hmax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tau&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;pow&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
    &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
 
@@ -323,7 +324,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 &lt;span class="n"&gt;C_TM&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;R_TM&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c"&gt;% Watt-sec/Kelvin (-&amp;gt; 9 sec time constant - fast!)&lt;/span&gt;
 
 &lt;span class="n"&gt;Jeq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;J_2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;J_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="n"&gt;Beq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;B_2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;^&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;Beq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;B_2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;R_A&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;L_A&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;K_E&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;L_A&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;K_T&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Jeq&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -346,7 +347,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 
 &lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;e_i&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;L_A&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;e&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nb"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Tau_L&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Jeq&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T_Amb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T_Amb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;xdot&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(:);&lt;/span&gt; &lt;span class="c"&gt;% force column vector&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -572,7 +573,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:left"&gt;Scenario 1 	&lt;/th&gt;
+&lt;th style="text-align:left"&gt;Scenario 1&lt;/th&gt;
 &lt;th style="text-align:left"&gt;Scenario 2&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -636,7 +637,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt; &lt;/th&gt;
+&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt;&lt;/th&gt;
 &lt;/tr&gt;
@@ -647,7 +648,6 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;td style="text-align:center"&gt;$0.267$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$0.025$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$0.009$&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style="text-align:center"&gt;number of time steps&lt;/td&gt;
@@ -683,7 +683,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt; &lt;/th&gt;
+&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt;&lt;/th&gt;
 &lt;/tr&gt;
@@ -694,7 +694,6 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;td style="text-align:center"&gt;$517.798$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$3.463$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$0.093$&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style="text-align:center"&gt;number of time steps&lt;/td&gt;

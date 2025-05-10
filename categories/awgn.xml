@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about AWGN)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/awgn.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about AWGN)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/awgn.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 May 2025 03:18:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC regulator with Kalman filter</title><link>https://paulomarconi.github.io/blog/MPCc/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 10 May 2025 18:16:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC regulator with Kalman filter</title><link>https://paulomarconi.github.io/blog/MPCc/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -40,7 +40,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;img alt="MPCc" src="https://paulomarconi.github.io/images/MPCc/MPCc.png" width="40%"&gt;
 &lt;center&gt;&lt;figcaption&gt;Fig.1 - Constrained MPC&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
-&lt;p&gt;Consider the following discrete-time LTI state-space system,
+&lt;p&gt;Consider the following discrete-time LTI state-space system
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;amp;= A~x(k)+B~u(k)+w(k)\\
@@ -54,24 +54,25 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Problem-Formulation"&gt;Problem Formulation&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Problem-Formulation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,&lt;/p&gt;
-\begin{align*}\tag{1}
+&lt;h2 id="Problem-Formulation"&gt;Problem Formulation&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Problem-Formulation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function&lt;/p&gt;
+&lt;p&gt;\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align*}&lt;p&gt;subject to,&lt;/p&gt;
-\begin{align*}\tag{2}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;subject to,&lt;/p&gt;
+&lt;p&gt;\begin{align*}\tag{2}
 x(k+1+j|k) &amp;amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;amp;= x(k) \\
 P_x~x(k+j|k) &amp;amp;\leq q_x \\
 P_u~u(k+j|k) &amp;amp;\leq q_u  \\
 P_{x_N}~x(k+N|k) &amp;amp;\leq q_{x_N}
-\end{align*}&lt;p&gt;for $ j=0,1,2,\dots,N-1$.&lt;/p&gt;
-&lt;p&gt;Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$. $P_x$, $P_u$, and $P_{x_N}$ are the states, input, and terminal state inequality constraints.&lt;/p&gt;
-&lt;p&gt;With the value function defined as,
+\end{align*}&lt;/p&gt;
+&lt;p&gt;for $ j=0,1,2,\dots,N-1$, where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$. $P_x$, $P_u$, and $P_{x_N}$ are the states, input, and terminal state inequality constraints.&lt;/p&gt;
+&lt;p&gt;With the value function defined as
 \begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
 \end{align*}
-the optimal control sequence is,
+the optimal control sequence is
 \begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
@@ -84,24 +85,24 @@ the optimal control sequence is,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="State-constraints"&gt;State constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#State-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's define $P_x$ as box constraints,
+&lt;h2 id="State-constraints"&gt;State constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#State-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's define $P_x$ as box constraints
 \begin{align*}
 \underbrace{
-    \begin{bmatrix}
-    +\textbf{I}_{n\times n}\\
-    -\textbf{I}_{n\times n}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+\textbf{I}_{n\times n}\\
+	-\textbf{I}_{n\times n}
+	\end{bmatrix}
 }_{P_x}
 x(k+j|k)
 &amp;amp;\leq
 \underbrace{
-    \begin{bmatrix}
-    +x_{max}\\
-    -x_{min}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+x_{max}\\
+	-x_{min}
+	\end{bmatrix}
 }_{q_x}
 \end{align*}&lt;/p&gt;
-&lt;p&gt;formulate it with $P_{x_N}$ and $q_{x_N}$ (they will be defined in the stability section), 
+&lt;p&gt;formulate it with $P_{x_N}$ and $q_{x_N}$ (they will be defined in the stability section)
 \begin{align*}
 \begin{cases}
 P_x~x(k+j|k) &amp;amp;\leq q_x\\
@@ -112,50 +113,48 @@ stacking,
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \begin{bmatrix}
-    P_x\\
-    0\\
-    0\\
-    \vdots\\
-    0
-    \end{bmatrix}
-}&lt;em&gt;{\tilde{P&lt;/em&gt;{x_0}}}
-x(k|k)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;\underbrace{
-    \begin{bmatrix}
-    0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0       \\
-    P_x    &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0       \\
-    0      &amp;amp; P_x    &amp;amp; \dots &amp;amp; 0  \\
-    \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots  \\
-    0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; P_{x_N}
-    \end{bmatrix}
-}&lt;em&gt;{\tilde{P_x}}
+	\begin{bmatrix}
+	P_x\\
+	0\\
+	0\\
+	\vdots\\
+	0
+	\end{bmatrix}
+}_{\tilde{P_{x_0}}}
+x(k|k)
++
 \underbrace{
-    \begin{bmatrix}
-    x(k+1|k)\\
-    x(k+2|k)\\
-    \vdots\\
-    x(k+N|k)
-    \end{bmatrix}
-}&lt;/em&gt;{\mathbf{x}(k)}
+	\begin{bmatrix}
+	0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0       \\
+	P_x    &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0       \\
+	0      &amp;amp; P_x    &amp;amp; \dots &amp;amp; 0  \\
+	\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots  \\
+	0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; P_{x_N}
+	\end{bmatrix}
+}_{\tilde{P_x}}
+\underbrace{
+	\begin{bmatrix}
+	x(k+1|k)\\
+	x(k+2|k)\\
+	\vdots\\
+	x(k+N|k)
+	\end{bmatrix}
+}_{\mathbf{x}(k)}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_x\\
-    q_x\\
-    q_x\\
-    \vdots\\
-    q_{x_N}
-    \end{bmatrix}
-}&lt;em&gt;{\tilde{q_x}}
+	\begin{bmatrix}
+	q_x\\
+	q_x\\
+	q_x\\
+	\vdots\\
+	q_{x_N}
+	\end{bmatrix}
+}_{\tilde{q_x}}
 \end{aligned}
 \end{equation*}
-results in,
+results in
 \begin{align}\tag{3}
-\tilde{P_x}~\mathbf{x}(k)\leq \tilde{q_x}-\tilde{P}&lt;/em&gt;{x_0}~x(k)
+\tilde{P_x}~\mathbf{x}(k)\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
 \end{align}&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -163,21 +162,21 @@ results in,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Input-constraints"&gt;Input constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Input-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's define $P_u$ as box constraints,
+&lt;h2 id="Input-constraints"&gt;Input constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Input-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's define $P_u$ as box constraints
 \begin{align*}
 \underbrace{
-    \begin{bmatrix}
-    +\textbf{I}_{m\times m}\\
-    -\textbf{I}_{m\times m}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+\textbf{I}_{m\times m}\\
+	-\textbf{I}_{m\times m}
+	\end{bmatrix}
 }_{P_u}
 u(k+j|k)
 &amp;amp;\leq
 \underbrace{
-    \begin{bmatrix}
-    +u_{max}\\
-    -u_{min}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+u_{max}\\
+	-u_{min}
+	\end{bmatrix}
 }_{q_x}
 \end{align*}&lt;/p&gt;
 &lt;p&gt;then,
@@ -188,33 +187,33 @@ stacking,
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \begin{bmatrix}
-    P_u &amp;amp; 0 &amp;amp; \dots &amp;amp; 0\\
-    0 &amp;amp; P_u &amp;amp; \dots &amp;amp; 0\\
-    \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots\\
-    0 &amp;amp; 0 &amp;amp; \dots &amp;amp; P_u	
-    \end{bmatrix}
+	\begin{bmatrix}
+	P_u &amp;amp; 0 &amp;amp; \dots &amp;amp; 0\\
+	0 &amp;amp; P_u &amp;amp; \dots &amp;amp; 0\\
+	\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots\\
+	0 &amp;amp; 0 &amp;amp; \dots &amp;amp; P_u	
+	\end{bmatrix}
 }_{\tilde{P_u}}
 \underbrace{
-    \begin{bmatrix}
-    u(k|k)\\
-    u(k+1|k)\\
-    \vdots\\
-    u(k+N-1|k)
-    \end{bmatrix}
+	\begin{bmatrix}
+	u(k|k)\\
+	u(k+1|k)\\
+	\vdots\\
+	u(k+N-1|k)
+	\end{bmatrix}
 }_{\mathbf{u}(k)}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_u\\
-    q_u\\
-    \vdots\\
-    q_u
-    \end{bmatrix}
+	\begin{bmatrix}
+	q_u\\
+	q_u\\
+	\vdots\\
+	q_u
+	\end{bmatrix}
 }_{\tilde{q_u}}
 \end{aligned}
 \end{equation*}
-results in,
+results in
 \begin{align}\tag{4}
 \tilde{P_u}~\mathbf{u}(k)\leq \tilde{q_u}
 \end{align}&lt;/p&gt;
@@ -224,44 +223,42 @@ results in,
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Constructing-the-inequality-constraints-in-compact-form"&gt;Constructing the inequality constraints in compact form&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Constructing-the-inequality-constraints-in-compact-form"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If,
-Constructing inequality constraints in a compact form,
+&lt;h2 id="Constructing-the-inequality-constraints-in-compact-form"&gt;Constructing the inequality constraints in compact form&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Constructing-the-inequality-constraints-in-compact-form"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If
+Constructing inequality constraints in a compact form
 \begin{align*}
 \begin{cases}
-    \tilde{P_u}~\mathbf{u}(k) &amp;amp;\leq \tilde{q_u}\\
-    \tilde{P_x}~\mathbf{x}(k) &amp;amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
+	\tilde{P_u}~\mathbf{u}(k) &amp;amp;\leq \tilde{q_u}\\
+	\tilde{P_x}~\mathbf{x}(k) &amp;amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
 \end{cases}
 \end{align*}
-using the predicted equality constraints $\mathbf{x}(k)=F~x(k)+G~\mathbf{u}(k)$ (rev previous post of &lt;a href="https://paulomarconi.github.io/blog/MPCu/"&gt;Unconstrained MPC&lt;/a&gt;),
+using the predicted equality constraints $\mathbf{x}(k)=F~x(k)+G~\mathbf{u}(k)$ (rev previous post of &lt;a href="https://paulomarconi.github.io/blog/MPCu/"&gt;Unconstrained MPC&lt;/a&gt;)
 \begin{align*}
 \tilde{P_x}(F~x(k)+G~\mathbf{u}(k)) &amp;amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)\\
 \tilde{P_x}~G~\mathbf{u}(k) &amp;amp;\leq \tilde{q_x}+(-\tilde{P}_{x_0}-\tilde{P_x}~F)~x(k)
 \end{align*}
-stacking,
+stacking
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \begin{bmatrix}
-    \tilde{P_u}\\
-    \tilde{P_x}~G
-    \end{bmatrix}
-}&lt;em&gt;{P_c}
+	\begin{bmatrix}
+	\tilde{P_u}\\
+	\tilde{P_x}~G
+	\end{bmatrix}
+}_{P_c}
 \mathbf{u}(k)
 \leq
 \underbrace{
-    \begin{bmatrix}
-    \tilde{q_u}\\
-    \tilde{q_x}
-    \end{bmatrix}
-}&lt;/em&gt;{q_c}&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;/li&gt;&lt;/ul&gt;
-&lt;p&gt;\underbrace{
-    \begin{bmatrix}
-    0\\
-    -\tilde{P}_{x_0}-\tilde{P_x}~F
-    \end{bmatrix}
+	\begin{bmatrix}
+	\tilde{q_u}\\
+	\tilde{q_x}
+	\end{bmatrix}
+}_{q_c}
++
+\underbrace{
+	\begin{bmatrix}
+	0\\
+	-\tilde{P}_{x_0}-\tilde{P_x}~F
+	\end{bmatrix}
 }_{S_c}
 x(k)
 \end{aligned}
@@ -276,7 +273,7 @@ P_c~\mathbf{u}(k) \leq q_c+S_c~x(k)
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="QP-solution"&gt;QP solution&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#QP-solution"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The LQ-MPC problem in constrained compact form is to minimize,
+&lt;h2 id="QP-solution"&gt;QP solution&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#QP-solution"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The LQ-MPC problem in constrained compact form is to minimize
 \begin{align}\tag{6}
 J^*_N(x(k),\mathbf{u}(k)) &amp;amp;= \min_{\mathbf{u}(k)}~\frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}(k)+\alpha
 \end{align}
@@ -284,39 +281,40 @@ subject to,
 \begin{align*}
 P_c~\mathbf{u}(k) &amp;amp;\leq q_c+S_c~x(k) 
 \end{align*}
-where the optimal solution can be defined as,&lt;/p&gt;
-\begin{align*}
+where the optimal solution can be defined as&lt;/p&gt;
+&lt;p&gt;\begin{align*}
 \mathbf{u}^*(k) &amp;amp;= \mathrm{arg}\min_{u(k)}~	
 \left.
-    \begin{cases} 
-    	\dfrac{1}{2} \mathbf{u}(k)^\intercal H \mathbf{u}(k)+x^\intercal(k) L^\intercal \mathbf{u}(k)+\alpha~: P_c \mathbf{u} \leq q_c+S_c x(k) 
-    \end{cases} 
+	\begin{cases} 
+		\dfrac{1}{2} \mathbf{u}(k)^\intercal H \mathbf{u}(k)+x^\intercal(k) L^\intercal \mathbf{u}(k)+\alpha~: P_c \mathbf{u} \leq q_c+S_c x(k) 
+	\end{cases} 
 \right\}
 \\
 &amp;amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
-\end{align*}&lt;p&gt;with the same definitions of $H,~L$ and $\alpha$ of the unconstrained MPC case.&lt;/p&gt;
+\end{align*}&lt;/p&gt;
+&lt;p&gt;with the same definitions of $H,~L$ and $\alpha$ of the unconstrained MPC case.&lt;/p&gt;
 &lt;p&gt;Applying the RH principle leads to the implicit nonlinear time-variant control law,
 \begin{align}\tag{7}
 u^*(k|k) = \kappa_N \left( x(k) \right)
 \end{align}
 and it is defined for $x(k)\in \mathcal{X}_N$, where $\mathcal{X}_N$ is the feasibility region.&lt;/p&gt;
-&lt;p&gt;The feasibility region $\mathcal{X}_N$ is the set of states for which the cost function  has a solution, and is defined as,
+&lt;p&gt;The feasibility region $\mathcal{X}_N$ is the set of states for which the cost function  has a solution, and is defined as
 \begin{align*}
 \mathcal{X}_N = \{x(k):\mathcal{U}_N(x(k)) \neq 0\}
 \end{align*}
-where the feasible set $\mathcal{U}_N$ is,
+where the feasible set $\mathcal{U}_N$ is
 \begin{align*}
 \mathcal{U}_N(x(k)) &amp;amp;= \{ \mathbf{u}(k) : P_c~\mathbf{u}(k) \leq q_c+S_c~x(k) \}
 \end{align*}
-Also, the input constraint set is,
+Also, the input constraint set is
 \begin{align*}
 \mathcal{U} &amp;amp;=\{ u(k) : P_u~u(k)\leq q_u \} \subseteq \mathbb{R}^m\\
 \end{align*}
-the state constraint set is,
+the state constraint set is
 \begin{align*}
 \mathcal{X} &amp;amp;=\{ x(k) : P_x~x(k)\leq q_x \} \subseteq \mathbb{R}^n\\
 \end{align*}
-and the terminal constraint set is,
+and the terminal constraint set is
 \begin{align*}
 \mathcal{X}_f &amp;amp;=\{ x(k) : P_{x_N}~x(k)\leq q_{x_N} \} \subseteq \mathbb{R}^n
 \end{align*}&lt;/p&gt;
@@ -333,68 +331,68 @@ x(k+N+j|k) &amp;amp;\in \mathcal{X},~j=1,2,...\\
 u(k+N+j|k) &amp;amp;\in \mathcal{U},~j=1,2,...
 \end{aligned}  
 \end{equation*}&lt;/p&gt;
-&lt;p&gt;An approach is to use &lt;strong&gt;deadbeat mode-2&lt;/strong&gt; constraints as terminal constraints. For $j=N,\dots,N+n-1$ in,
+&lt;p&gt;An approach is to use &lt;strong&gt;deadbeat mode-2&lt;/strong&gt; constraints as terminal constraints. For $j=N,\dots,N+n-1$ in
 \begin{equation*}
 \begin{aligned}
 x(k+j|k) &amp;amp;= (A+B~K)^j~x(k+N|k)\\
 u(k+j|k) &amp;amp;= K(A+B~K)^j~x(k+N|k)
 \end{aligned}
 \end{equation*}
-that is, extending the constraints for $n$ steps beyond mode-1, 
+that is, extending the constraints for $n$ steps beyond mode-1,
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \overbrace{
-    	\begin{bmatrix}
-    		Px    &amp;amp; 0     &amp;amp; \dots &amp;amp; 0     \\
-    		P_u K &amp;amp; 0     &amp;amp; \dots &amp;amp; 0     \\
-    		0     &amp;amp; P_x   &amp;amp; \dots &amp;amp; 0     \\
-    		0     &amp;amp; P_u K &amp;amp; \dots &amp;amp; 0     \\
-    		\dots &amp;amp; \dots &amp;amp; \dots &amp;amp; \dots
-    	\end{bmatrix}
-    }^{\mathcal{M}}
-    \begin{bmatrix}
-    	(A+B K)^0\\
-    	(A+B K)^1 \\
-    	\vdots\\
-    	(A+B K)^{n-1}
-    \end{bmatrix}
+	\overbrace{
+		\begin{bmatrix}
+			Px    &amp;amp; 0     &amp;amp; \dots &amp;amp; 0     \\
+			P_u K &amp;amp; 0     &amp;amp; \dots &amp;amp; 0     \\
+			0     &amp;amp; P_x   &amp;amp; \dots &amp;amp; 0     \\
+			0     &amp;amp; P_u K &amp;amp; \dots &amp;amp; 0     \\
+			\dots &amp;amp; \dots &amp;amp; \dots &amp;amp; \dots
+		\end{bmatrix}
+	}^{\mathcal{M}}
+	\begin{bmatrix}
+		(A+B K)^0\\
+		(A+B K)^1 \\
+		\vdots\\
+		(A+B K)^{n-1}
+	\end{bmatrix}
 }_{P_{x_N}}
 x(k+N|k)
 \leq
 \underbrace{
-    \begin{bmatrix}
-    	q_x\\
-    	q_u\\
-    	q_x\\
-    	q_u\\
-    	\vdots
-    \end{bmatrix}
+	\begin{bmatrix}
+		q_x\\
+		q_u\\
+		q_x\\
+		q_u\\
+		\vdots
+	\end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
 \end{equation*}
-where, 
+where
 \begin{equation*}
 \begin{aligned}
-    \mathcal{M} = \textbf{I}_{n\times n} 
-    \otimes
-    \begin{bmatrix}
-    P_x\\
-    P_u K
-    \end{bmatrix}
-    ,\qquad
-    q_{x_N} = \textbf{1}_{n\times 1} \otimes 
-    \begin{bmatrix}
-    q_x\\
-    q_u
-    \end{bmatrix}
+	\mathcal{M} = \textbf{I}_{n\times n} 
+	\otimes
+	\begin{bmatrix}
+	P_x\\
+	P_u K
+	\end{bmatrix}
+	,\qquad
+	q_{x_N} = \textbf{1}_{n\times 1} \otimes 
+	\begin{bmatrix}
+	q_x\\
+	q_u
+	\end{bmatrix}
 \end{aligned}
 \end{equation*}
-Therefore, for any $x(k+N|k) \in \mathcal{X}_f$ 
+Therefore, for any $x(k+N|k) \in \mathcal{X}_f$
 \begin{align}\tag{8}
 \mathcal{X}_f = \{ x(k+N|k) \in \mathbb{R}^n : P_{x_N}~x(k+N|k) \leq q_{x_N} \}
 \end{align}&lt;/p&gt;
-&lt;p&gt;This terminal constraint set has the property to be an admissible invariant set, which means that mode-2 constraints are satisfied, and mode-2 predictions stay within $\mathcal{X}_f$. This concept is called &lt;strong&gt;admissibility implies stability&lt;/strong&gt;, in other words,
+&lt;p&gt;This terminal constraint set has the property to be an admissible invariant set, which means that mode-2 constraints are satisfied, and mode-2 predictions stay within $\mathcal{X}_f$. This concept is called &lt;strong&gt;admissibility implies stability&lt;/strong&gt;, in other words
 \begin{align*}
 x(k+N|k) \in \mathcal{X}_f &amp;amp;\Rightarrow x(k+N|k) \in \mathcal{X}\\
 u(k+N|k) &amp;amp;= K~(x(k+N|k)) \in \mathcal{U} 
@@ -420,17 +418,18 @@ u(k+N|k) &amp;amp;= K~(x(k+N|k)) \in \mathcal{U}
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Algorithm"&gt;Algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;img alt="drawing" src="https://paulomarconi.github.io/images/MPCc/algorithm.png" width="60%"&gt;
+&lt;h2 id="Algorithm"&gt;Algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img alt="drawing" src="https://paulomarconi.github.io/images/MPCc/algorithm.png" width="60%"&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Example"&gt;Example&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Example"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's apply the constrained MPC regulator on an &lt;strong&gt;Unstable Non-minimum Phase&lt;/strong&gt; system,&lt;/p&gt;
-\begin{align*}
+&lt;h2 id="Example"&gt;Example&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCc/#Example"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's apply the constrained MPC regulator on an &lt;strong&gt;Unstable Non-minimum Phase&lt;/strong&gt; system&lt;/p&gt;
+&lt;p&gt;\begin{align*}
     Gp(s) = \dfrac{1-s}{(s-2)(s+1)}
-\end{align*}&lt;p&gt;in State-space form with the following conditions,
+\end{align*}&lt;/p&gt;
+&lt;p&gt;in State-space form with the following conditions
 \begin{align*}
     x(k+1) 
     &amp;amp;= 
@@ -459,9 +458,9 @@ u(k+N|k) &amp;amp;= K~(x(k+N|k)) \in \mathcal{U}
     ,\quad R = 1\\
     w(k) &amp;amp; \sim \mathcal{N}(0,1e^{-4}), \quad v(k) \sim \mathcal{N}(0,1e^{-4})
 \end{align*}&lt;/p&gt;
-&lt;p&gt;Constraints,
+&lt;p&gt;Constraints
 \begin{align*}
-    	|x| \leq 2, \quad |u| \leq 7
+		|x| \leq 2, \quad |u| \leq 7
 \end{align*}&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -475,7 +474,7 @@ u(k+N|k) &amp;amp;= K~(x(k+N|k)) \in \mathcal{U}
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [2]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Global constants&lt;/span&gt;
@@ -517,7 +516,7 @@ u(k+N|k) &amp;amp;= K~(x(k+N|k)) \in \mathcal{U}
 &lt;span class="c"&gt;% System Dimensions&lt;/span&gt;
 &lt;span class="n"&gt;n&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;    &lt;span class="c"&gt;% Number of State variables&lt;/span&gt;
 &lt;span class="n"&gt;m&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;    &lt;span class="c"&gt;% Number of Input variables&lt;/span&gt;
-&lt;span class="n"&gt;p&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;    &lt;span class="c"&gt;% Number of Output measurments&lt;/span&gt;
+&lt;span class="n"&gt;p&lt;/span&gt;  &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;size&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;C&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;    &lt;span class="c"&gt;% Number of Output measurments &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -556,7 +555,7 @@ P =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [3]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Stream of process noise and measurement noise (AWGN)&lt;/span&gt;
@@ -605,7 +604,7 @@ LKF =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [4]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% Input constraints&lt;/span&gt;
@@ -646,14 +645,14 @@ LKF =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [5]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dlqr&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Q&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="n"&gt;nn&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;Maux&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[];&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;nn&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
-    &lt;span class="n"&gt;Maux&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Maux&lt;/span&gt;&lt;span class="p"&gt;;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)];&lt;/span&gt;
+    &lt;span class="n"&gt;Maux&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Maux&lt;/span&gt;&lt;span class="p"&gt;;(&lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)];&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt; 
 &lt;span class="n"&gt;Mm&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;kron&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;eye&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nn&lt;/span&gt;&lt;span class="p"&gt;),[&lt;/span&gt;&lt;span class="n"&gt;Px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;Pu&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
 
@@ -686,7 +685,7 @@ LKF =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [6]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;% computes a control invariant set for LTI system x^+ = A*x+B*u&lt;/span&gt;
@@ -743,7 +742,7 @@ Iteration 9...
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [7]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPCc/predict_mats.m'&lt;/span&gt;
@@ -762,12 +761,12 @@ Iteration 9...
     &lt;span class="c"&gt;% form row by row&lt;/span&gt;
     &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;
         &lt;span class="c"&gt;%  F&lt;/span&gt;
-        &lt;span class="n"&gt;F&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),:)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;^&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="n"&gt;F&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),:)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         
         &lt;span class="c"&gt;% G&lt;/span&gt;
         &lt;span class="c"&gt;% form element by element&lt;/span&gt;
         &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;
-            &lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;^&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
         &lt;span class="k"&gt;end&lt;/span&gt;
     &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
@@ -789,7 +788,7 @@ Iteration 9...
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [8]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPCc'&lt;/span&gt;
@@ -820,7 +819,7 @@ Iteration 9...
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [9]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPCc/constraint_mats.m'&lt;/span&gt;
@@ -904,7 +903,7 @@ Iteration 9...
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [10]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPCc'&lt;/span&gt;
@@ -935,7 +934,7 @@ Iteration 9...
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [11]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%%file 'C:/Users/zurit/OneDrive/blog/files/MPCc/cost_mats.m'&lt;/span&gt;
@@ -982,7 +981,7 @@ Iteration 9...
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [12]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPCc'&lt;/span&gt;
@@ -1039,7 +1038,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [13]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;%% Unconstrained MPC: RH-FH-LQR/LQ-MPC&lt;/span&gt;
@@ -1070,7 +1069,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="s"&gt;'C:/Users/zurit/OneDrive/blog/files/MPCc'&lt;/span&gt;
@@ -1159,7 +1158,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [15]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; 
@@ -1215,7 +1214,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [16]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1279,7 +1278,7 @@ M =
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell rendered"&gt;
 &lt;div class="input"&gt;
-&lt;div class="prompt input_prompt"&gt;In [17]:&lt;/div&gt;
+&lt;div class="prompt input_prompt"&gt;In [ ]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-octave"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1291,7 +1290,7 @@ M =
     &lt;span class="nb"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'MPCu'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'MPCc'&lt;/span&gt;&lt;span class="p"&gt;,...&lt;/span&gt;
             &lt;span class="s"&gt;'Location'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'southeast'&lt;/span&gt;&lt;span class="p"&gt;,...&lt;/span&gt;
             &lt;span class="s"&gt;'Interpreter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Latex'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-    &lt;span class="nb"&gt;grid&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nb"&gt;grid&lt;/span&gt; &lt;span class="n"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;    
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1371,14 +1370,16 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Problem-Formulation"&gt;Problem Formulation&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Problem-Formulation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function&lt;/p&gt;
-\begin{align*}\tag{1}
+&lt;p&gt;\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align*}&lt;p&gt;subject to,&lt;/p&gt;
-\begin{align*}\tag{2}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;subject to,&lt;/p&gt;
+&lt;p&gt;\begin{align*}\tag{2}
 x(k+1+j|k) &amp;amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;amp;= x(k) 
-\end{align*}&lt;p&gt;for $ j=0,1,2,\dots,N-1$.&lt;/p&gt;
+\end{align*}&lt;/p&gt;
+&lt;p&gt;for $ j=0,1,2,\dots,N-1$.&lt;/p&gt;
 &lt;p&gt;Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$.&lt;/p&gt;
 &lt;p&gt;With the value function defined as
 \begin{align*}
@@ -1411,53 +1412,56 @@ the optimal control sequence is
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Prediction:-Predicted-Equality-Constraint"&gt;Prediction: Predicted Equality Constraint&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Prediction:-Predicted-Equality-Constraint"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Setting $x(k)=x(k|k)$, and $u(k)=u(k|k)$ and applying the model recursively&lt;/p&gt;
-\begin{align*}
+&lt;p&gt;\begin{align*}
 x(k+1|k) &amp;amp;= A~x(k)+B~u(k) \\
 x(k+2|k) &amp;amp;= A~x(k+1|k)+B~u(k+1|k) \\
-    			 &amp;amp;= A^2~x(k)+AB~u(k|k)+B~u(k+1|k) \\
+				 &amp;amp;= A^2~x(k)+AB~u(k|k)+B~u(k+1|k) \\
 \vdots \hspace{2em}  &amp;amp;= \hspace{3em} \vdots \\
 x(k+N|k) &amp;amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
-    			 &amp;amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
-\end{align*}&lt;p&gt;stacking&lt;/p&gt;
-\begin{align*}
+				 &amp;amp;= A^N~x(k)+A^{N-1}B~u(k|k)+\dots+B~u(k+N-1|k)
+\end{align*}&lt;/p&gt;
+&lt;p&gt;stacking&lt;/p&gt;
+&lt;p&gt;\begin{align*}
 {\underbrace{
-    \begin{bmatrix}
-    x(k+1|k) \\
-    x(k+2|k) \\
-    \vdots \\
-    x(k+N|k)
-    \end{bmatrix}}_{\mathbf{x}(k)}
+	\begin{bmatrix}
+	x(k+1|k) \\
+	x(k+2|k) \\
+	\vdots \\
+	x(k+N|k)
+	\end{bmatrix}}_{\mathbf{x}(k)}
 }
 =
 {\underbrace{
-    \begin{bmatrix}
-    A \\
-    A^2 \\
-    \vdots \\
-    A^N
-    \end{bmatrix}}_{F}
+	\begin{bmatrix}
+	A \\
+	A^2 \\
+	\vdots \\
+	A^N
+	\end{bmatrix}}_{F}
 }
 +
 {\underbrace{
-    \begin{bmatrix}
-    	B        &amp;amp; 0        &amp;amp; \dots  &amp;amp; 0      \\
-    	AB       &amp;amp; B        &amp;amp; \dots  &amp;amp; 0      \\
-    	\vdots   &amp;amp; \vdots   &amp;amp; \ddots &amp;amp; \vdots \\
-    	A^{N-1}B &amp;amp; A^{N-2}B &amp;amp; \dots  &amp;amp; B
-    \end{bmatrix}}_{G}
+	\begin{bmatrix}
+		B        &amp;amp; 0        &amp;amp; \dots  &amp;amp; 0      \\
+		AB       &amp;amp; B        &amp;amp; \dots  &amp;amp; 0      \\
+		\vdots   &amp;amp; \vdots   &amp;amp; \ddots &amp;amp; \vdots \\
+		A^{N-1}B &amp;amp; A^{N-2}B &amp;amp; \dots  &amp;amp; B
+	\end{bmatrix}}_{G}
 }
 {\underbrace{
-    \begin{bmatrix}
-    u(k|k) \\
-    u(k+1|k) \\
-    \vdots \\
-    u(k+N-1|k)
-    \end{bmatrix}}_{\mathbf{u}(k)}
+	\begin{bmatrix}
+	u(k|k) \\
+	u(k+1|k) \\
+	\vdots \\
+	u(k+N-1|k)
+	\end{bmatrix}}_{\mathbf{u}(k)}
 }
-\end{align*}&lt;p&gt;the predicted equality constraint is&lt;/p&gt;
-\begin{equation}\tag{3}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;the predicted equality constraint is&lt;/p&gt;
+&lt;p&gt;\begin{equation}\tag{3}
 \mathbf{x}(k) = F~x(k)+G~\mathbf{u}(k)
-\end{equation}&lt;p&gt;where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.&lt;/p&gt;
+\end{equation}&lt;/p&gt;
+&lt;p&gt;where $\mathbf{x}(k)$, and $\mathbf{u}(k)$ are the state, and input predictions over all steps $j=0,1,2,\dots,N$.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1465,58 +1469,60 @@ x(k+N|k) &amp;amp;= A~x(k+N-1|k)+B~u(k+N-1|k) \\
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Prediction:-Rewriting-the-Cost-Function"&gt;Prediction: Rewriting the Cost Function&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Prediction:-Rewriting-the-Cost-Function"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Rewriting the cost function such that&lt;/p&gt;
-\begin{aligned}
+&lt;p&gt;\begin{aligned}
 x^\intercal(k|k)~Q~x(k|k)
 &amp;amp;+
 \begin{bmatrix}
-    x(k+1|k) \\
-    x(k+2|k) \\
-    \vdots\\
-    x(k+N|k) \\
+	x(k+1|k) \\
+	x(k+2|k) \\
+	\vdots\\
+	x(k+N|k) \\
 \end{bmatrix}^\intercal
 {\underbrace{
-    \begin{bmatrix}
-    	Q      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
-    	0      &amp;amp; Q      &amp;amp; \ddots &amp;amp; \vdots \\
-    	\vdots &amp;amp; \ddots &amp;amp; Q      &amp;amp; 0      \\
-    	0      &amp;amp; \dots  &amp;amp; 0      &amp;amp; P
-    \end{bmatrix}}_{\tilde{Q}}
+	\begin{bmatrix}
+		Q      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
+		0      &amp;amp; Q      &amp;amp; \ddots &amp;amp; \vdots \\
+		\vdots &amp;amp; \ddots &amp;amp; Q      &amp;amp; 0      \\
+		0      &amp;amp; \dots  &amp;amp; 0      &amp;amp; P
+	\end{bmatrix}}_{\tilde{Q}}
 }
 \begin{bmatrix}
-    x(k+1|k) \\
-    x(k+2|k) \\
-    \vdots\\
-    x(k+N|k) \\
+	x(k+1|k) \\
+	x(k+2|k) \\
+	\vdots\\
+	x(k+N|k) \\
 \end{bmatrix}
 \\
 &amp;amp;+
 \begin{bmatrix}
-    u(k|k) \\
-    u(k+1|k) \\
-    \vdots \\
-    u(k+N-1|k)
+	u(k|k) \\
+	u(k+1|k) \\
+	\vdots \\
+	u(k+N-1|k)
 \end{bmatrix}^\intercal
 {\underbrace{
-    \begin{bmatrix}
-    R      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
-    0      &amp;amp; R      &amp;amp; \ddots &amp;amp; \vdots \\
-    \vdots &amp;amp; \ddots &amp;amp; R      &amp;amp; 0      \\
-    0      &amp;amp; \dots  &amp;amp; 0      &amp;amp; R
-    	\end{bmatrix}}_{\tilde{R}}
+	\begin{bmatrix}
+	R      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
+	0      &amp;amp; R      &amp;amp; \ddots &amp;amp; \vdots \\
+	\vdots &amp;amp; \ddots &amp;amp; R      &amp;amp; 0      \\
+	0      &amp;amp; \dots  &amp;amp; 0      &amp;amp; R
+		\end{bmatrix}}_{\tilde{R}}
 }
 \begin{bmatrix}
-    u(k|k) \\
-    u(k+1|k) \\
-    \vdots \\
-    u(k+N-1|k)
+	u(k|k) \\
+	u(k+1|k) \\
+	\vdots \\
+	u(k+N-1|k)
 \end{bmatrix}
-\end{aligned}&lt;p&gt;Therefore, with $x(k|k)=x(k)$, now the problem is to minimize&lt;/p&gt;
-\begin{align}\tag{4}
+\end{aligned}&lt;/p&gt;
+&lt;p&gt;Therefore, with $x(k|k)=x(k)$, now the problem is to minimize&lt;/p&gt;
+&lt;p&gt;\begin{align}\tag{4}
 J_N(x(k),\mathbf{u}(k)) &amp;amp;=  x^\intercal(k)~Q~x(k) + \mathbf{x}^\intercal(k)~\tilde{Q}~\mathbf{x}(k) + \mathbf{u}^\intercal(k)~\tilde{R}~\mathbf{u}(k)
-\end{align}&lt;p&gt;subject to,&lt;/p&gt;
-\begin{align*}
+\end{align}&lt;/p&gt;
+&lt;p&gt;subject to,&lt;/p&gt;
+&lt;p&gt;\begin{align*}
 \mathbf{x}(k) &amp;amp;= F~x(k)+G~\mathbf{u}(k)
-\end{align*}
+\end{align*}&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1541,9 +1547,10 @@ J_N(x(k),\mathbf{u}(k)) &amp;amp;=  x^\intercal(k) Q x(k) + ( F x(k)+G \mathbf{u
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h3 id="Cost-Function-in-QP-compact-form"&gt;Cost Function in QP compact form&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Cost-Function-in-QP-compact-form"&gt;¶&lt;/a&gt;&lt;/h3&gt;\begin{align}\tag{5}
+&lt;h3 id="Cost-Function-in-QP-compact-form"&gt;Cost Function in QP compact form&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Cost-Function-in-QP-compact-form"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;\begin{align}\tag{5}
 J_N(x(k),\mathbf{u}(k)) &amp;amp;= \frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}(k)+\alpha 
-\end{align}&lt;p&gt;where
+\end{align}
+where
 \begin{align*}
 H&amp;amp;=2(G^\intercal\tilde{Q}G+\tilde{R})\\
 c&amp;amp;=L~x(k) \\
@@ -1558,15 +1565,17 @@ M&amp;amp;=Q+F^\intercal\tilde{Q}F
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Optimization:-Explicit-solution-of-$J_N(x(k)$"&gt;Optimization: Explicit solution of $J_N(x(k)$&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Optimization:-Explicit-solution-of-$J_N(x(k)$"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Minimizing with the gradient and solving for $\mathbf{u}^*(k)$&lt;/p&gt;
-\begin{align*}
+&lt;p&gt;\begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;amp;= \min_{\mathbf{u}(k)}~\frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}+\alpha \\ 
 \nabla_\mathbf{u}~J^*_N(x(k),\mathbf{u}(k)) &amp;amp;= 0 \\
 H~\mathbf{u}^*(k)+c &amp;amp;= 0 \\
 \mathbf{u}^*(k) &amp;amp;= -H^{-1}~c
-\end{align*}&lt;p&gt;the optimal solution results in&lt;/p&gt;
-\begin{align}\tag{6}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;the optimal solution results in&lt;/p&gt;
+&lt;p&gt;\begin{align}\tag{6}
 \mathbf{u}^*(k) &amp;amp;= -H^{-1}~L~x(k)
-\end{align}&lt;p&gt;where that $Q\succeq,~P\succeq 0$ are positive semidefinite convex, and $R\succ 0$ is definite convex, such that $H\succ 0$. The optimal solution $\mathbf{u}^*(k)$ for any $x(k)$ is unique if $H\succ 0$ is invertible.&lt;/p&gt;
+\end{align}&lt;/p&gt;
+&lt;p&gt;where that $Q\succeq,~P\succeq 0$ are positive semidefinite convex, and $R\succ 0$ is definite convex, such that $H\succ 0$. The optimal solution $\mathbf{u}^*(k)$ for any $x(k)$ is unique if $H\succ 0$ is invertible.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1574,25 +1583,27 @@ H~\mathbf{u}^*(k)+c &amp;amp;= 0 \\
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Receding-Horizon"&gt;Receding Horizon&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Receding-Horizon"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Applying the Receding Horizon principle means that only the $\textbf{first}$ control input of the vector $\mathbf{u}^*(k)$ is applied to the real system. That is&lt;/p&gt;
-\begin{align*}
+&lt;p&gt;\begin{align*}
 \begin{bmatrix}
-    u^*(k) \\
-    u^*(k+1) \\
-    \vdots \\
-    u^*(k+N-1)
+	u^*(k) \\
+	u^*(k+1) \\
+	\vdots \\
+	u^*(k+N-1)
 \end{bmatrix}
 &amp;amp;=
 \begin{bmatrix}
-    I      &amp;amp; 0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
-    0      &amp;amp; I      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
-    \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\
-    0      &amp;amp; 0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; I
+	I      &amp;amp; 0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
+	0      &amp;amp; I      &amp;amp; 0      &amp;amp; \dots  &amp;amp; 0      \\
+	\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\
+	0      &amp;amp; 0      &amp;amp; 0      &amp;amp; \dots  &amp;amp; I
 \end{bmatrix}
 (-H^{-1}~L)x(k)
-\end{align*}\begin{align*}\tag{7}
+\end{align*}&lt;/p&gt;
+&lt;p&gt;\begin{align*}\tag{7}
 u^*(k) &amp;amp;= K_N~x(k)  \\
 K_N &amp;amp;= [I \quad 0 \quad 0 \quad \dots \quad 0](-H^{-1}~L)
-\end{align*}&lt;p&gt;Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.&lt;/p&gt;
+\end{align*}&lt;/p&gt;
+&lt;p&gt;Notice that $u^*(k)$ is an explicit linear time-invariant control law because $H$ and $L$ do not depend on $x(k)$.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1622,7 +1633,7 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Algorithm"&gt;Algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;img alt="drawing" src="https://paulomarconi.github.io/images/MPCu/algorithm.png" width="60%"&gt;
+&lt;h2 id="Algorithm"&gt;Algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;&lt;img alt="drawing" src="https://paulomarconi.github.io/images/MPCu/algorithm.png" width="60%"&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1630,9 +1641,10 @@ where $K$ is the mode-2 control law which can be any value as long as $(A+B~K)$ 
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Example"&gt;Example&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPCu/#Example"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Let's apply the unconstrained MPC regulator on an &lt;strong&gt;Unstable Non-minimum Phase&lt;/strong&gt; system&lt;/p&gt;
-\begin{align*}
+&lt;p&gt;\begin{align*}
     Gp(s) = \dfrac{1-s}{(s-2)(s+1)}
-\end{align*}&lt;p&gt;in State-space form with the following conditions
+\end{align*}&lt;/p&gt;
+&lt;p&gt;in State-space form with the following conditions
 \begin{align*}
     x(k+1) 
     &amp;amp;= 
@@ -1810,12 +1822,12 @@ LKF =
 &lt;span class="c"&gt;% form row by row&lt;/span&gt;
 &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% F&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),:)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;^&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;F&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),:)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% G&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;% form element by element&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;
-&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;^&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="n"&gt;G&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;m&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;A&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;i&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;j&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
 
@@ -2127,7 +2139,7 @@ KN =
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;legend&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'$x_1~$ MPCu'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'$x_2~$ MPCu'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="k"&gt;...&lt;/span&gt;
 &lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="s"&gt;'Location'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'southeast'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="k"&gt;...&lt;/span&gt;
 &lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="s"&gt;'Interpreter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Latex'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;    &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2168,7 +2180,7 @@ KN =
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'$x_1$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Interpreter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Latex'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'$x_2$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Interpreter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Latex'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Phase-plot'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2209,7 +2221,7 @@ KN =
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;xlabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Time step [s]'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;ylabel&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'$J(k)$'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Interpreter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s"&gt;'Latex'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nb"&gt;title&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'Cost Value'&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="n"&gt;grid&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;on&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

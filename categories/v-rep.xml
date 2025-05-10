@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about V-rep)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/v-rep.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about V-rep)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/v-rep.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 May 2025 03:18:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple foraging and random aggregation strategy for swarm robotics without communication</title><link>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 10 May 2025 18:09:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple foraging and random aggregation strategy for swarm robotics without communication</title><link>https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -58,11 +58,12 @@ Each trial should last &lt;strong&gt;​60 seconds&lt;/strong&gt; of simulation 
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Foraging-and-Random-Aggregation"&gt;Foraging and Random Aggregation&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Foraging-and-Random-Aggregation"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The DFSM diagram in Fig. 1, which is defined by (1) and (2), starts in the Behaviour state where the robot is set as $\textit{avoider}$ while the simulation time is $t\leq 60[s]$. During that time, the Foraging state looks for the green blobs with the Search blob/ePuck algorithm while avoiding obstacles using the Rebound algorithm. Moreover, a Random Movement state is used to introduce randomness to the system so the agent can take different paths if there is no blob or obstacle detection. For $60&amp;lt;t\leq 120$, the Behaviour of the robot is set to $\textit{follower}$ and switches to Random Aggregation state where it uses both algorithms, the Rebound to follow ePucks with the proximity sensors and the Search to look for the closest ePuck wheels. For both algorithms, the output is the angle of attack $\alpha_n$, where $n$ depends on the current state.&lt;/p&gt;
-\begin{align*}
+&lt;p&gt;\begin{align*}
 S&amp;amp;=\lbrace B,F,R,A,Ra \rbrace  \tag{1}\\ 	
 \varSigma&amp;amp;= \lbrace t\leq 60,60&amp;lt;t\leq 120,bl~\exists,bl~\nexists,ob~\exists,ob~\nexists,eP~\exists, eP~\nexists \rbrace \tag{2}\\
 s_0&amp;amp;=\lbrace B \rbrace \\
-\end{align*}&lt;p&gt;where $S$ is the finite set of states, $\varSigma$ is the input alphabet, $\delta:S\times\varSigma$ is the state transition function, Table 1, $s_0$ is the initial state, $\exists$ and $\nexists$ mean detection and no detection respectively.&lt;/p&gt;
+\end{align*}&lt;/p&gt;
+&lt;p&gt;where $S$ is the finite set of states, $\varSigma$ is the input alphabet, $\delta:S\times\varSigma$ is the state transition function, Table 1, $s_0$ is the initial state, $\exists$ and $\nexists$ mean detection and no detection respectively.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -70,6 +71,7 @@ s_0&amp;amp;=\lbrace B \rbrace \\
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;center&gt;Table 1: State transition function $\delta$
+
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -159,10 +161,11 @@ s_0&amp;amp;=\lbrace B \rbrace \\
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Unicycle-model"&gt;Unicycle model&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Unicycle-model"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Unicycle model in Fig. 2a [1] controls the angular velocities of the right and left wheels, $v_r$ and $v_l$ as follows&lt;/p&gt;
-\begin{align}
+&lt;p&gt;\begin{align}
 v_r&amp;amp;= \dfrac{2~V_x+\omega~L}{2~R} \tag{3}\\
 v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
-\end{align}&lt;p&gt;where $V_x$ is the linear velocity of the robot, $L$ is the distance between the wheels, $R$ is the radius of each wheel, and $\omega$ is the angular velocity of the robot. Using $\alpha_n$ and the simulation sampling period $T$, the control variable for the simulation is $\omega=\alpha_n/T$, refer to code line 24, 197, and 215.&lt;/p&gt;
+\end{align}&lt;/p&gt;
+&lt;p&gt;where $V_x$ is the linear velocity of the robot, $L$ is the distance between the wheels, $R$ is the radius of each wheel, and $\omega$ is the angular velocity of the robot. Using $\alpha_n$ and the simulation sampling period $T$, the control variable for the simulation is $\omega=\alpha_n/T$, refer to code line 24, 197, and 215.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -170,9 +173,10 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Rebound-avoider/follower-algorithm"&gt;Rebound avoider/follower algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Rebound-avoider/follower-algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The Rebound algorithm [2] calculates the Rebound angle $\alpha_R$ to avoid/follow an obstacle/objective given $\alpha_0=\pi/N$ and $\alpha_i=i~\alpha_0$,&lt;/p&gt;
-\begin{align}\tag{5}
+&lt;p&gt;\begin{align}\tag{5}
 \alpha_R&amp;amp;=\dfrac{\sum_{i=-N/2}^{N/2}~\alpha_i~D_i}{\sum_{i=-N/2}^{N/2}~D_i}
-\end{align}&lt;p&gt;where $\alpha_0$ is the uniformly distributed angular pace, $N$ is the number of sensors, $\alpha_i$ is the angular information per pace $\alpha_i~\epsilon\left[-\frac{N}{2},\frac{N}{2}\right]$, and $D_i$ is the distance value obtained by the proximity sensors, refer to code line 18 and 139.&lt;/p&gt;
+\end{align}&lt;/p&gt;
+&lt;p&gt;where $\alpha_0$ is the uniformly distributed angular pace, $N$ is the number of sensors, $\alpha_i$ is the angular information per pace $\alpha_i~\epsilon\left[-\frac{N}{2},\frac{N}{2}\right]$, and $D_i$ is the distance value obtained by the proximity sensors, refer to code line 18 and 139.&lt;/p&gt;
 &lt;p&gt;The weight vector given by $\alpha_i$ sets the robot behaviour for each corresponding mapped sensor $\lbrace s_1,s_2,s_3,s_4,s_5,s_6\rbrace$. For the $\textit{avoider}$ is $\lbrace -3,-2,-1,1,2,3 \rbrace$, and for the $\textit{follower}$ is $\lbrace 3,2,1,-1,-2,-3 \rbrace$. Fig. 2b and Fig. 2c show an example of $\alpha_R$ with the Vector Field Histogram (VFH) for the $\textit{avoider}$ case. Refer to code line 128 and 132.&lt;/p&gt;
 &lt;figure&gt;
 &lt;img alt="drawing" src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/Unicycle_Rebound_Search.png" width="55%"&gt;
@@ -185,14 +189,16 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Search-blob/ePuck-algorithm"&gt;Search blob/ePuck algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Search-blob/ePuck-algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The ePuck embedded camera on V-rep is a vision sensor that filters the RGB colours of the blobs and other ePucks. Not collected Blobs are mapped as green and collected ones as red, and the ePuck wheels are also mapped because they have green and red parts, refer to code line 97. The data of interest that this sensor outputs are the size, centroid's 2D position, and orientation of the detected objects. Therefore, when objects are detected by the camera, a simple routine finds the biggest one which is the closest relative to the ePuck, and using (6) and (7), it can be calculated the angle of attack $\alpha_C$ or $\alpha_e$ for the blobs and ePucks respectively, refer to Fig. 2d and code line 150. The orientation value is used to differentiate between objects, for blobs is $=0$ and for ePuck wheels is $\neq 0$, refer to code line 105.&lt;/p&gt;
-\begin{align}
+&lt;p&gt;\begin{align}
 \alpha_C &amp;amp;= \arctan \dfrac{x_b-x_o}{y_b-y_o} \tag{6}\\
 \alpha_e &amp;amp;= \arctan \dfrac{x_e-x_o}{y_e-y_o} \tag{7}
-\end{align}&lt;p&gt;where $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) are modified with a random value $w$ with a probability function $P$,&lt;/p&gt;
-\begin{align}
+\end{align}
+where $(x_o,y_o)$, $(x_b,y_b)$, and $(x_e,y_e)$ are the robot, blob and another ePuck wheel relative position in the 2D image. In the Random state, either the robot is foraging but does not see any blobs or is aggregating but there is no other ePuck nearby, (6) and (7) are modified with a random value $w$ with a probability function $P$,&lt;/p&gt;
+&lt;p&gt;\begin{align}
 \alpha_{C_r} &amp;amp;= \alpha_C~w \tag{8}\\
 \alpha_{e_r} &amp;amp;= \alpha_e~w \tag{9}
-\end{align}&lt;p&gt;where $P(\lbrace w~\epsilon~\Omega:X(w)=1/3 \rbrace)$ and $\Omega=\lbrace -1,0,1 \rbrace$, refer to code line 158 and 205.&lt;/p&gt;
+\end{align}
+where $P(\lbrace w~\epsilon~\Omega:X(w)=1/3 \rbrace)$ and $\Omega=\lbrace -1,0,1 \rbrace$, refer to code line 158 and 205.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -222,9 +228,9 @@ v_l&amp;amp;=\dfrac{2~V_x-\omega~L}{2~R} \tag{4}
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Lua-code-of-the-algorithm"&gt;Lua code of the algorithm&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Lua-code-of-the-algorithm"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;pre class="lang-lua line-numbers" data-jsonp="https://api.github.com/repos/paulomarconi/Foraging_Aggregation_V-rep_e-puck/contents/report/vrep.lua"&gt;&lt;/pre&gt;
 &lt;h3 id="Edit-the-controller"&gt;Edit the controller&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Edit-the-controller"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To edit the controller for all the ePuck, open V-rep and load the scene  &lt;code&gt;sim_5_Robots.ttt&lt;/code&gt;, and edit the ePuck file.&lt;/p&gt;
-&lt;img alt="controller_location" src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/controller_location.png" width="auto"&gt;
+&lt;p&gt;&lt;img alt="controller_location" src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/controller_location.png" width="auto"&gt;&lt;/p&gt;
 &lt;h3 id="Save-the-output-data"&gt;Save the output data&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Foraging_Aggregation_V-rep_e-puck/#Save-the-output-data"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To edit the location of the output data, open the &lt;code&gt;disc file&lt;/code&gt;.&lt;/p&gt;
-&lt;img alt="output_location" src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/output_location.png" width="auto"&gt;
+&lt;p&gt;&lt;img alt="output_location" src="https://paulomarconi.github.io/images/Foraging_Aggregation_V-rep_e-puck/output_location.png" width="auto"&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;

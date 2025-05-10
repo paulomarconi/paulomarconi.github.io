@@ -227,7 +227,7 @@ navbar-dark bg-dark
 <h2 id="Constrained-MPC">Constrained MPC<a class="anchor-link" href="#Constrained-MPC">¶</a>
 </h2>
 <figure><img alt="MPCc" src="../../../images/MPCc/MPCc.png" width="40%"><center><figcaption>Fig.1 - Constrained MPC</figcaption></center>
-</figure><p>Consider the following discrete-time LTI state-space system,
+</figure><p>Consider the following discrete-time LTI state-space system
 \begin{equation*}
 \begin{aligned}
 x(k+1) &amp;= A~x(k)+B~u(k)+w(k)\\
@@ -245,24 +245,25 @@ where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, and $y\in\mathbb{R}^p$, are the st
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Problem-Formulation">Problem Formulation<a class="anchor-link" href="#Problem-Formulation">¶</a>
 </h2>
-<p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function,</p>
-\begin{align*}\tag{1}
+<p>The objective is to regulate $x\rightarrow 0$ as $k\rightarrow \infty$ while minimizing the following cost function</p>
+<p>\begin{align*}\tag{1}
 J_N(x(k),\mathbf{u}(k)) &amp;= \sum_{j=0}^{N-1} \left( \|x(k+j|k)\|^2_Q + \|u(k+j|k)\|^2_R \right) + \|x(k+N|k)\|^2_P \\
 &amp;= \sum_{j=0}^{N-1} (x^\intercal(k+j|k)~Q~x(k+j|k)+ u^\intercal(k+j|k)~R~u(k+j|k) ) + x^\intercal(k+N|k)~P~x(k+N|k) 
-\end{align*}<p>subject to,</p>
-\begin{align*}\tag{2}
+\end{align*}</p>
+<p>subject to,</p>
+<p>\begin{align*}\tag{2}
 x(k+1+j|k) &amp;= A~x(k+j|k)+B~u(k+j|k) \\
 x(k|k) &amp;= x(k) \\
 P_x~x(k+j|k) &amp;\leq q_x \\
 P_u~u(k+j|k) &amp;\leq q_u  \\
 P_{x_N}~x(k+N|k) &amp;\leq q_{x_N}
-\end{align*}<p>for $ j=0,1,2,\dots,N-1$.</p>
-<p>Where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$. $P_x$, $P_u$, and $P_{x_N}$ are the states, input, and terminal state inequality constraints.</p>
-<p>With the value function defined as,
+\end{align*}</p>
+<p>for $ j=0,1,2,\dots,N-1$, where $Q\in\mathbb{R}^{n\times n}$ and $R\in\mathbb{R}^{m\times m}$ are the state penalty, and input penalty matrices. $P\in\mathbb{R}^{n\times n}$ is the terminal cost matrix, $N \in\mathbb{N}$ is the horizon length, $k$ is the sampling time, and $(k+j|k)$ can be defined as the next $(k+j)$ value given $k$. $P_x$, $P_u$, and $P_{x_N}$ are the states, input, and terminal state inequality constraints.</p>
+<p>With the value function defined as
 \begin{align*}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{u(k)}~ J_N(x(k),\mathbf{u}(k))
 \end{align*}
-the optimal control sequence is,
+the optimal control sequence is
 \begin{equation*}
 \begin{aligned}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~ J^*_N(x(k),\mathbf{u}(k))\\
@@ -279,24 +280,24 @@ the optimal control sequence is,
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="State-constraints">State constraints<a class="anchor-link" href="#State-constraints">¶</a>
 </h2>
-<p>Let's define $P_x$ as box constraints,
+<p>Let's define $P_x$ as box constraints
 \begin{align*}
 \underbrace{
-    \begin{bmatrix}
-    +\textbf{I}_{n\times n}\\
-    -\textbf{I}_{n\times n}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+\textbf{I}_{n\times n}\\
+	-\textbf{I}_{n\times n}
+	\end{bmatrix}
 }_{P_x}
 x(k+j|k)
 &amp;\leq
 \underbrace{
-    \begin{bmatrix}
-    +x_{max}\\
-    -x_{min}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+x_{max}\\
+	-x_{min}
+	\end{bmatrix}
 }_{q_x}
 \end{align*}</p>
-<p>formulate it with $P_{x_N}$ and $q_{x_N}$ (they will be defined in the stability section), 
+<p>formulate it with $P_{x_N}$ and $q_{x_N}$ (they will be defined in the stability section)
 \begin{align*}
 \begin{cases}
 P_x~x(k+j|k) &amp;\leq q_x\\
@@ -307,49 +308,48 @@ stacking,
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \begin{bmatrix}
-    P_x\\
-    0\\
-    0\\
-    \vdots\\
-    0
-    \end{bmatrix}
-}<em>{\tilde{P</em>{x_0}}}
-x(k|k)</p>
-<ul><li>
-</li></ul>
-<p>\underbrace{
-    \begin{bmatrix}
-    0      &amp; 0      &amp; \dots  &amp; 0       \\
-    P_x    &amp; 0      &amp; \dots  &amp; 0       \\
-    0      &amp; P_x    &amp; \dots &amp; 0  \\
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots  \\
-    0      &amp; 0      &amp; \dots  &amp; P_{x_N}
-    \end{bmatrix}
-}<em>{\tilde{P_x}}
+	\begin{bmatrix}
+	P_x\\
+	0\\
+	0\\
+	\vdots\\
+	0
+	\end{bmatrix}
+}_{\tilde{P_{x_0}}}
+x(k|k)
++
 \underbrace{
-    \begin{bmatrix}
-    x(k+1|k)\\
-    x(k+2|k)\\
-    \vdots\\
-    x(k+N|k)
-    \end{bmatrix}
-}</em>{\mathbf{x}(k)}
+	\begin{bmatrix}
+	0      &amp; 0      &amp; \dots  &amp; 0       \\
+	P_x    &amp; 0      &amp; \dots  &amp; 0       \\
+	0      &amp; P_x    &amp; \dots &amp; 0  \\
+	\vdots &amp; \vdots &amp; \ddots &amp; \vdots  \\
+	0      &amp; 0      &amp; \dots  &amp; P_{x_N}
+	\end{bmatrix}
+}_{\tilde{P_x}}
+\underbrace{
+	\begin{bmatrix}
+	x(k+1|k)\\
+	x(k+2|k)\\
+	\vdots\\
+	x(k+N|k)
+	\end{bmatrix}
+}_{\mathbf{x}(k)}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_x\\
-    q_x\\
-    q_x\\
-    \vdots\\
-    q_{x_N}
-    \end{bmatrix}
-}<em>{\tilde{q_x}}
+	\begin{bmatrix}
+	q_x\\
+	q_x\\
+	q_x\\
+	\vdots\\
+	q_{x_N}
+	\end{bmatrix}
+}_{\tilde{q_x}}
 \end{aligned}
 \end{equation*}
-results in,
+results in
 \begin{align}\tag{3}
-\tilde{P_x}~\mathbf{x}(k)\leq \tilde{q_x}-\tilde{P}</em>{x_0}~x(k)
+\tilde{P_x}~\mathbf{x}(k)\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
 \end{align}</p>
 </div>
 </div>
@@ -361,21 +361,21 @@ results in,
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Input-constraints">Input constraints<a class="anchor-link" href="#Input-constraints">¶</a>
 </h2>
-<p>Let's define $P_u$ as box constraints,
+<p>Let's define $P_u$ as box constraints
 \begin{align*}
 \underbrace{
-    \begin{bmatrix}
-    +\textbf{I}_{m\times m}\\
-    -\textbf{I}_{m\times m}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+\textbf{I}_{m\times m}\\
+	-\textbf{I}_{m\times m}
+	\end{bmatrix}
 }_{P_u}
 u(k+j|k)
 &amp;\leq
 \underbrace{
-    \begin{bmatrix}
-    +u_{max}\\
-    -u_{min}
-    \end{bmatrix}
+	\begin{bmatrix}
+	+u_{max}\\
+	-u_{min}
+	\end{bmatrix}
 }_{q_x}
 \end{align*}</p>
 <p>then,
@@ -386,33 +386,33 @@ stacking,
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \begin{bmatrix}
-    P_u &amp; 0 &amp; \dots &amp; 0\\
-    0 &amp; P_u &amp; \dots &amp; 0\\
-    \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
-    0 &amp; 0 &amp; \dots &amp; P_u	
-    \end{bmatrix}
+	\begin{bmatrix}
+	P_u &amp; 0 &amp; \dots &amp; 0\\
+	0 &amp; P_u &amp; \dots &amp; 0\\
+	\vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
+	0 &amp; 0 &amp; \dots &amp; P_u	
+	\end{bmatrix}
 }_{\tilde{P_u}}
 \underbrace{
-    \begin{bmatrix}
-    u(k|k)\\
-    u(k+1|k)\\
-    \vdots\\
-    u(k+N-1|k)
-    \end{bmatrix}
+	\begin{bmatrix}
+	u(k|k)\\
+	u(k+1|k)\\
+	\vdots\\
+	u(k+N-1|k)
+	\end{bmatrix}
 }_{\mathbf{u}(k)}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_u\\
-    q_u\\
-    \vdots\\
-    q_u
-    \end{bmatrix}
+	\begin{bmatrix}
+	q_u\\
+	q_u\\
+	\vdots\\
+	q_u
+	\end{bmatrix}
 }_{\tilde{q_u}}
 \end{aligned}
 \end{equation*}
-results in,
+results in
 \begin{align}\tag{4}
 \tilde{P_u}~\mathbf{u}(k)\leq \tilde{q_u}
 \end{align}</p>
@@ -426,43 +426,42 @@ results in,
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Constructing-the-inequality-constraints-in-compact-form">Constructing the inequality constraints in compact form<a class="anchor-link" href="#Constructing-the-inequality-constraints-in-compact-form">¶</a>
 </h2>
-<p>If,
-Constructing inequality constraints in a compact form,
+<p>If
+Constructing inequality constraints in a compact form
 \begin{align*}
 \begin{cases}
-    \tilde{P_u}~\mathbf{u}(k) &amp;\leq \tilde{q_u}\\
-    \tilde{P_x}~\mathbf{x}(k) &amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
+	\tilde{P_u}~\mathbf{u}(k) &amp;\leq \tilde{q_u}\\
+	\tilde{P_x}~\mathbf{x}(k) &amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)
 \end{cases}
 \end{align*}
-using the predicted equality constraints $\mathbf{x}(k)=F~x(k)+G~\mathbf{u}(k)$ (rev previous post of <a href="../../../blog/MPCu/">Unconstrained MPC</a>),
+using the predicted equality constraints $\mathbf{x}(k)=F~x(k)+G~\mathbf{u}(k)$ (rev previous post of <a href="../../../blog/MPCu/">Unconstrained MPC</a>)
 \begin{align*}
 \tilde{P_x}(F~x(k)+G~\mathbf{u}(k)) &amp;\leq \tilde{q_x}-\tilde{P}_{x_0}~x(k)\\
 \tilde{P_x}~G~\mathbf{u}(k) &amp;\leq \tilde{q_x}+(-\tilde{P}_{x_0}-\tilde{P_x}~F)~x(k)
 \end{align*}
-stacking,
+stacking
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \begin{bmatrix}
-    \tilde{P_u}\\
-    \tilde{P_x}~G
-    \end{bmatrix}
-}<em>{P_c}
+	\begin{bmatrix}
+	\tilde{P_u}\\
+	\tilde{P_x}~G
+	\end{bmatrix}
+}_{P_c}
 \mathbf{u}(k)
 \leq
 \underbrace{
-    \begin{bmatrix}
-    \tilde{q_u}\\
-    \tilde{q_x}
-    \end{bmatrix}
-}</em>{q_c}</p>
-<ul><li>
-</li></ul>
-<p>\underbrace{
-    \begin{bmatrix}
-    0\\
-    -\tilde{P}_{x_0}-\tilde{P_x}~F
-    \end{bmatrix}
+	\begin{bmatrix}
+	\tilde{q_u}\\
+	\tilde{q_x}
+	\end{bmatrix}
+}_{q_c}
++
+\underbrace{
+	\begin{bmatrix}
+	0\\
+	-\tilde{P}_{x_0}-\tilde{P_x}~F
+	\end{bmatrix}
 }_{S_c}
 x(k)
 \end{aligned}
@@ -481,7 +480,7 @@ P_c~\mathbf{u}(k) \leq q_c+S_c~x(k)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="QP-solution">QP solution<a class="anchor-link" href="#QP-solution">¶</a>
 </h2>
-<p>The LQ-MPC problem in constrained compact form is to minimize,
+<p>The LQ-MPC problem in constrained compact form is to minimize
 \begin{align}\tag{6}
 J^*_N(x(k),\mathbf{u}(k)) &amp;= \min_{\mathbf{u}(k)}~\frac{1}{2} \mathbf{u}(k)^\intercal~H~\mathbf{u}(k)+c^\intercal~\mathbf{u}(k)+\alpha
 \end{align}
@@ -489,39 +488,40 @@ subject to,
 \begin{align*}
 P_c~\mathbf{u}(k) &amp;\leq q_c+S_c~x(k) 
 \end{align*}
-where the optimal solution can be defined as,</p>
-\begin{align*}
+where the optimal solution can be defined as</p>
+<p>\begin{align*}
 \mathbf{u}^*(k) &amp;= \mathrm{arg}\min_{u(k)}~	
 \left.
-    \begin{cases} 
-    	\dfrac{1}{2} \mathbf{u}(k)^\intercal H \mathbf{u}(k)+x^\intercal(k) L^\intercal \mathbf{u}(k)+\alpha~: P_c \mathbf{u} \leq q_c+S_c x(k) 
-    \end{cases} 
+	\begin{cases} 
+		\dfrac{1}{2} \mathbf{u}(k)^\intercal H \mathbf{u}(k)+x^\intercal(k) L^\intercal \mathbf{u}(k)+\alpha~: P_c \mathbf{u} \leq q_c+S_c x(k) 
+	\end{cases} 
 \right\}
 \\
 &amp;= \left\{ u^*(k|k),u^*(k+1|k),\dots,u^*(k+N-1|k) \right\}
-\end{align*}<p>with the same definitions of $H,~L$ and $\alpha$ of the unconstrained MPC case.</p>
+\end{align*}</p>
+<p>with the same definitions of $H,~L$ and $\alpha$ of the unconstrained MPC case.</p>
 <p>Applying the RH principle leads to the implicit nonlinear time-variant control law,
 \begin{align}\tag{7}
 u^*(k|k) = \kappa_N \left( x(k) \right)
 \end{align}
 and it is defined for $x(k)\in \mathcal{X}_N$, where $\mathcal{X}_N$ is the feasibility region.</p>
-<p>The feasibility region $\mathcal{X}_N$ is the set of states for which the cost function  has a solution, and is defined as,
+<p>The feasibility region $\mathcal{X}_N$ is the set of states for which the cost function  has a solution, and is defined as
 \begin{align*}
 \mathcal{X}_N = \{x(k):\mathcal{U}_N(x(k)) \neq 0\}
 \end{align*}
-where the feasible set $\mathcal{U}_N$ is,
+where the feasible set $\mathcal{U}_N$ is
 \begin{align*}
 \mathcal{U}_N(x(k)) &amp;= \{ \mathbf{u}(k) : P_c~\mathbf{u}(k) \leq q_c+S_c~x(k) \}
 \end{align*}
-Also, the input constraint set is,
+Also, the input constraint set is
 \begin{align*}
 \mathcal{U} &amp;=\{ u(k) : P_u~u(k)\leq q_u \} \subseteq \mathbb{R}^m\\
 \end{align*}
-the state constraint set is,
+the state constraint set is
 \begin{align*}
 \mathcal{X} &amp;=\{ x(k) : P_x~x(k)\leq q_x \} \subseteq \mathbb{R}^n\\
 \end{align*}
-and the terminal constraint set is,
+and the terminal constraint set is
 \begin{align*}
 \mathcal{X}_f &amp;=\{ x(k) : P_{x_N}~x(k)\leq q_{x_N} \} \subseteq \mathbb{R}^n
 \end{align*}</p>
@@ -542,68 +542,68 @@ x(k+N+j|k) &amp;\in \mathcal{X},~j=1,2,...\\
 u(k+N+j|k) &amp;\in \mathcal{U},~j=1,2,...
 \end{aligned}  
 \end{equation*}</p>
-<p>An approach is to use <strong>deadbeat mode-2</strong> constraints as terminal constraints. For $j=N,\dots,N+n-1$ in,
+<p>An approach is to use <strong>deadbeat mode-2</strong> constraints as terminal constraints. For $j=N,\dots,N+n-1$ in
 \begin{equation*}
 \begin{aligned}
 x(k+j|k) &amp;= (A+B~K)^j~x(k+N|k)\\
 u(k+j|k) &amp;= K(A+B~K)^j~x(k+N|k)
 \end{aligned}
 \end{equation*}
-that is, extending the constraints for $n$ steps beyond mode-1, 
+that is, extending the constraints for $n$ steps beyond mode-1,
 \begin{equation*}
 \begin{aligned}
 \underbrace{
-    \overbrace{
-    	\begin{bmatrix}
-    		Px    &amp; 0     &amp; \dots &amp; 0     \\
-    		P_u K &amp; 0     &amp; \dots &amp; 0     \\
-    		0     &amp; P_x   &amp; \dots &amp; 0     \\
-    		0     &amp; P_u K &amp; \dots &amp; 0     \\
-    		\dots &amp; \dots &amp; \dots &amp; \dots
-    	\end{bmatrix}
-    }^{\mathcal{M}}
-    \begin{bmatrix}
-    	(A+B K)^0\\
-    	(A+B K)^1 \\
-    	\vdots\\
-    	(A+B K)^{n-1}
-    \end{bmatrix}
+	\overbrace{
+		\begin{bmatrix}
+			Px    &amp; 0     &amp; \dots &amp; 0     \\
+			P_u K &amp; 0     &amp; \dots &amp; 0     \\
+			0     &amp; P_x   &amp; \dots &amp; 0     \\
+			0     &amp; P_u K &amp; \dots &amp; 0     \\
+			\dots &amp; \dots &amp; \dots &amp; \dots
+		\end{bmatrix}
+	}^{\mathcal{M}}
+	\begin{bmatrix}
+		(A+B K)^0\\
+		(A+B K)^1 \\
+		\vdots\\
+		(A+B K)^{n-1}
+	\end{bmatrix}
 }_{P_{x_N}}
 x(k+N|k)
 \leq
 \underbrace{
-    \begin{bmatrix}
-    	q_x\\
-    	q_u\\
-    	q_x\\
-    	q_u\\
-    	\vdots
-    \end{bmatrix}
+	\begin{bmatrix}
+		q_x\\
+		q_u\\
+		q_x\\
+		q_u\\
+		\vdots
+	\end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
 \end{equation*}
-where, 
+where
 \begin{equation*}
 \begin{aligned}
-    \mathcal{M} = \textbf{I}_{n\times n} 
-    \otimes
-    \begin{bmatrix}
-    P_x\\
-    P_u K
-    \end{bmatrix}
-    ,\qquad
-    q_{x_N} = \textbf{1}_{n\times 1} \otimes 
-    \begin{bmatrix}
-    q_x\\
-    q_u
-    \end{bmatrix}
+	\mathcal{M} = \textbf{I}_{n\times n} 
+	\otimes
+	\begin{bmatrix}
+	P_x\\
+	P_u K
+	\end{bmatrix}
+	,\qquad
+	q_{x_N} = \textbf{1}_{n\times 1} \otimes 
+	\begin{bmatrix}
+	q_x\\
+	q_u
+	\end{bmatrix}
 \end{aligned}
 \end{equation*}
-Therefore, for any $x(k+N|k) \in \mathcal{X}_f$ 
+Therefore, for any $x(k+N|k) \in \mathcal{X}_f$
 \begin{align}\tag{8}
 \mathcal{X}_f = \{ x(k+N|k) \in \mathbb{R}^n : P_{x_N}~x(k+N|k) \leq q_{x_N} \}
 \end{align}</p>
-<p>This terminal constraint set has the property to be an admissible invariant set, which means that mode-2 constraints are satisfied, and mode-2 predictions stay within $\mathcal{X}_f$. This concept is called <strong>admissibility implies stability</strong>, in other words,
+<p>This terminal constraint set has the property to be an admissible invariant set, which means that mode-2 constraints are satisfied, and mode-2 predictions stay within $\mathcal{X}_f$. This concept is called <strong>admissibility implies stability</strong>, in other words
 \begin{align*}
 x(k+N|k) \in \mathcal{X}_f &amp;\Rightarrow x(k+N|k) \in \mathcal{X}\\
 u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U} 
@@ -633,7 +633,7 @@ u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U}
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">¶</a>
 </h2>
-<img alt="drawing" src="../../../images/MPCc/algorithm.png" width="60%">
+<p><img alt="drawing" src="../../../images/MPCc/algorithm.png" width="60%"></p>
 </div>
 </div>
 </div>
@@ -644,10 +644,11 @@ u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U}
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Example">Example<a class="anchor-link" href="#Example">¶</a>
 </h2>
-<p>Let's apply the constrained MPC regulator on an <strong>Unstable Non-minimum Phase</strong> system,</p>
-\begin{align*}
+<p>Let's apply the constrained MPC regulator on an <strong>Unstable Non-minimum Phase</strong> system</p>
+<p>\begin{align*}
     Gp(s) = \dfrac{1-s}{(s-2)(s+1)}
-\end{align*}<p>in State-space form with the following conditions,
+\end{align*}</p>
+<p>in State-space form with the following conditions
 \begin{align*}
     x(k+1) 
     &amp;= 
@@ -676,9 +677,9 @@ u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U}
     ,\quad R = 1\\
     w(k) &amp; \sim \mathcal{N}(0,1e^{-4}), \quad v(k) \sim \mathcal{N}(0,1e^{-4})
 \end{align*}</p>
-<p>Constraints,
+<p>Constraints
 \begin{align*}
-    	|x| \leq 2, \quad |u| \leq 7
+		|x| \leq 2, \quad |u| \leq 7
 \end{align*}</p>
 </div>
 </div>
@@ -695,7 +696,7 @@ u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [2]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">% Global constants</span>
@@ -737,7 +738,7 @@ u(k+N|k) &amp;= K~(x(k+N|k)) \in \mathcal{U}
 <span class="c">% System Dimensions</span>
 <span class="n">n</span>  <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c">% Number of State variables</span>
 <span class="n">m</span>  <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>    <span class="c">% Number of Input variables</span>
-<span class="n">p</span>  <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c">% Number of Output measurments</span>
+<span class="n">p</span>  <span class="p">=</span> <span class="nb">size</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>    <span class="c">% Number of Output measurments </span>
 </pre></div>
 </div>
 </div>
@@ -779,7 +780,7 @@ P =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [3]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">% Stream of process noise and measurement noise (AWGN)</span>
@@ -831,7 +832,7 @@ LKF =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [4]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">% Input constraints</span>
@@ -875,14 +876,14 @@ LKF =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [5]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="n">K</span> <span class="p">=</span> <span class="o">-</span><span class="n">dlqr</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">Q</span><span class="p">,</span><span class="n">R</span><span class="p">);</span>
 <span class="n">nn</span> <span class="p">=</span> <span class="n">N</span><span class="p">;</span>
 <span class="n">Maux</span> <span class="p">=</span> <span class="p">[];</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="n">nn</span><span class="o">-</span><span class="mi">1</span>
-    <span class="n">Maux</span> <span class="p">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span>^<span class="p">(</span><span class="n">i</span><span class="p">)];</span>
+    <span class="n">Maux</span> <span class="p">=</span> <span class="p">[</span><span class="n">Maux</span><span class="p">;(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="p">)];</span>
 <span class="k">end</span> 
 <span class="n">Mm</span> <span class="p">=</span> <span class="nb">kron</span><span class="p">(</span><span class="nb">eye</span><span class="p">(</span><span class="n">nn</span><span class="p">),[</span><span class="n">Px</span><span class="p">;</span> <span class="n">Pu</span><span class="o">*</span><span class="n">K</span><span class="p">]);</span>
 
@@ -918,7 +919,7 @@ LKF =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">% computes a control invariant set for LTI system x^+ = A*x+B*u</span>
@@ -981,7 +982,7 @@ Iteration 9...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPCc/predict_mats.m'</span>
@@ -1000,12 +1001,12 @@ Iteration 9...
     <span class="c">% form row by row</span>
     <span class="k">for</span> <span class="n">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">N</span>
         <span class="c">%  F</span>
-        <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span>^<span class="n">i</span><span class="p">;</span>
+        <span class="n">F</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),:)</span> <span class="p">=</span> <span class="n">A</span><span class="o">^</span><span class="n">i</span><span class="p">;</span>
         
         <span class="c">% G</span>
         <span class="c">% form element by element</span>
         <span class="k">for</span> <span class="n">j</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="n">i</span>
-            <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span>^<span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
+            <span class="n">G</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">n</span><span class="p">),</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">m</span><span class="p">))</span> <span class="p">=</span> <span class="n">A</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">B</span><span class="p">;</span>
         <span class="k">end</span>
     <span class="k">end</span>
 <span class="k">end</span>
@@ -1027,7 +1028,7 @@ Iteration 9...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPCc'</span>
@@ -1061,7 +1062,7 @@ Iteration 9...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPCc/constraint_mats.m'</span>
@@ -1145,7 +1146,7 @@ Iteration 9...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPCc'</span>
@@ -1179,7 +1180,7 @@ Iteration 9...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [11]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">%%file 'C:/Users/zurit/OneDrive/blog/files/MPCc/cost_mats.m'</span>
@@ -1226,7 +1227,7 @@ Iteration 9...
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [12]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPCc'</span>
@@ -1286,7 +1287,7 @@ M =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [13]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">%% Unconstrained MPC: RH-FH-LQR/LQ-MPC</span>
@@ -1320,7 +1321,7 @@ M =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [14]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="n">cd</span> <span class="s">'C:/Users/zurit/OneDrive/blog/files/MPCc'</span>
@@ -1416,7 +1417,7 @@ M =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [15]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="nb">figure</span><span class="p">;</span> 
@@ -1475,7 +1476,7 @@ M =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [16]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="nb">figure</span><span class="p">;</span>
@@ -1542,7 +1543,7 @@ M =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [17]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="nb">figure</span><span class="p">;</span>
@@ -1554,7 +1555,7 @@ M =
     <span class="nb">legend</span><span class="p">(</span><span class="s">'MPCu'</span><span class="p">,</span><span class="s">'MPCc'</span><span class="p">,...</span>
             <span class="s">'Location'</span><span class="p">,</span><span class="s">'southeast'</span><span class="p">,...</span>
             <span class="s">'Interpreter'</span><span class="p">,</span><span class="s">'Latex'</span><span class="p">);</span>
-    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>
+    <span class="nb">grid</span> <span class="n">on</span><span class="p">;</span>    
 </pre></div>
 </div>
 </div>

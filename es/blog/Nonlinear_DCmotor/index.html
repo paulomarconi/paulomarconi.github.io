@@ -201,24 +201,25 @@ navbar-dark bg-dark
 </h2>
 <p>The nonlinear dynamic system is
 \begin{align}
-    R_A i_A + L_A \dot{i}_A+\alpha \omega_1                             &amp; = e_{i}(t)   \\
-    J_1 \dot{\omega}_1 + B_1 \omega_1 - r_1 f_c                         &amp; = \alpha i_A \\
-    J_2 \dot{\omega}_2 + B_2 \omega_2 + B_{2C}~sign(\omega_2) + r_2 f_c &amp; = -\tau_{L}  \\
-    C_{TM} \dot{\theta}_M + \frac{(\theta_M-\theta_A)}{R_{TM}}          &amp; = i^2_A R_A
+	R_A i_A + L_A \dot{i}_A+\alpha \omega_1                             &amp; = e_{i}(t)   \\
+	J_1 \dot{\omega}_1 + B_1 \omega_1 - r_1 f_c                         &amp; = \alpha i_A \\
+	J_2 \dot{\omega}_2 + B_2 \omega_2 + B_{2C}~sign(\omega_2) + r_2 f_c &amp; = -\tau_{L}  \\
+	C_{TM} \dot{\theta}_M + \frac{(\theta_M-\theta_A)}{R_{TM}}          &amp; = i^2_A R_A
 \end{align}
 where $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, $i_A$ is the input stationary current, $\alpha$ is the internal parameters, $\omega$ is the angular speed, $e_i(t)$ is the applied armature voltage, $B$ is the rotational viscous-damping coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, $r$ is the gear radius, and $B_{2C}$ is the static friction. The thermal model is similar to an electrical capacitor-resistor model with thermal capacity $C_{TM}$, $R_{TM}$ is the resistive losses to ambient temperature, $\theta_M$ is the motor temperature, and $\theta_A$ is the ambient temperature.</p>
 <p>Now let us define the sate-vector differential equations: state vector $x = [ i_A~ \omega_2~ \theta_M ]^T $, and input vector $u = [ e_{i}~ \tau_{L}~ \theta_A ]^T$.</p>
 <p>For $\omega_1=N \omega_2$ and $N=\frac{r_2}{r_1}$, eliminating $f_c$ we have that</p>
+<p>\begin{align}
+	\dot{i}_A      &amp; = -\frac{R_A}{L_A}\ i_A - \frac{N \alpha}{L_A} \omega_2 + \frac{1}{L_A} e_{i}                         \\
+	\dot{\omega}_2 &amp; = \frac{N \alpha}{J_{eq}} i_A - \frac{B_{eq}}{J_{eq}} \omega_2 - \frac{B_{2C}}{J_{eq}} sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
+	\dot{\theta}_M &amp; = \frac{R_A}{C_{TM}} i^2_A - \frac{1}{C_{TM} R_{TM}} \theta_M + \frac{1}{C_{TM} R_{TM}} \theta_A
+\end{align}
+where $J_{eq}=J_2+N^2 J_1$ and $B_{eq}=B_2+N^2 B_1$.</p>
+<p>For simulation purpose only we can simplify as
 \begin{align}
-    \dot{i}_A      &amp; = -\frac{R_A}{L_A}\ i_A - \frac{N \alpha}{L_A} \omega_2 + \frac{1}{L_A} e_{i}                         \\
-    \dot{\omega}_2 &amp; = \frac{N \alpha}{J_{eq}} i_A - \frac{B_{eq}}{J_{eq}} \omega_2 - \frac{B_{2C}}{J_{eq}} sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
-    \dot{\theta}_M &amp; = \frac{R_A}{C_{TM}} i^2_A - \frac{1}{C_{TM} R_{TM}} \theta_M + \frac{1}{C_{TM} R_{TM}} \theta_A
-\end{align}<p>where $J_{eq}=J_2+N^2 J_1$ and $B_{eq}=B_2+N^2 B_1$.</p>
-<p>For simulation purpose only we can simplify as 
-\begin{align}
-    \dot{i}_A      &amp; = -a~ i_A - b~ \omega_2 + \frac{1}{L_A}e_{i}                        \\
-    \dot{\omega}_2 &amp; = c~ i_A - d~ \omega_2 - e~ sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
-    \dot{\theta}_M &amp; = f~ i^2_A - g~ \theta_M + g~ \theta_A
+	\dot{i}_A      &amp; = -a~ i_A - b~ \omega_2 + \frac{1}{L_A}e_{i}                        \\
+	\dot{\omega}_2 &amp; = c~ i_A - d~ \omega_2 - e~ sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
+	\dot{\theta}_M &amp; = f~ i^2_A - g~ \theta_M + g~ \theta_A
 \end{align}
 where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$, $d=\frac{B_{eq}}{J_{eq}}$, $e=\frac{B_{2C}}{J_{eq}}$, $f=\frac{R_A}{C_{TM}}$, and $g=\frac{1}{C_{TM} R_{TM}}$.</p>
 </div>
@@ -341,7 +342,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 
    <span class="c">% Update the step size</span>
    <span class="k">if</span> <span class="n">delta</span> <span class="o">~=</span> <span class="mf">0.0</span>
-      <span class="n">h</span> <span class="p">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">hmax</span><span class="p">,</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">tau</span><span class="o">/</span><span class="n">delta</span><span class="p">)</span>^<span class="n">pow</span><span class="p">);</span>
+      <span class="n">h</span> <span class="p">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">hmax</span><span class="p">,</span> <span class="mf">0.8</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">tau</span><span class="o">/</span><span class="n">delta</span><span class="p">)</span><span class="o">^</span><span class="n">pow</span><span class="p">);</span>
    <span class="k">end</span>
 <span class="k">end</span>
 
@@ -507,7 +508,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 <span class="n">C_TM</span> <span class="p">=</span> <span class="mi">9</span><span class="o">/</span><span class="n">R_TM</span><span class="p">;</span>  <span class="c">% Watt-sec/Kelvin (-&gt; 9 sec time constant - fast!)</span>
 
 <span class="n">Jeq</span> <span class="p">=</span> <span class="n">J_2</span><span class="o">+</span><span class="n">N</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">J_1</span><span class="p">;</span>
-<span class="n">Beq</span> <span class="p">=</span> <span class="n">B_2</span><span class="o">+</span><span class="n">N</span>^<span class="mi">2</span><span class="o">*</span><span class="n">B_1</span><span class="p">;</span>
+<span class="n">Beq</span> <span class="p">=</span> <span class="n">B_2</span><span class="o">+</span><span class="n">N</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="n">B_1</span><span class="p">;</span>
 <span class="n">a</span> <span class="p">=</span> <span class="n">R_A</span><span class="o">/</span><span class="n">L_A</span><span class="p">;</span>
 <span class="n">b</span> <span class="p">=</span> <span class="n">K_E</span><span class="o">*</span><span class="n">N</span><span class="o">/</span><span class="n">L_A</span><span class="p">;</span>
 <span class="n">c</span> <span class="p">=</span> <span class="n">N</span><span class="o">*</span><span class="n">K_T</span><span class="o">/</span><span class="n">Jeq</span><span class="p">;</span>
@@ -530,7 +531,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 
 <span class="n">xdot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">e_i</span><span class="o">/</span><span class="n">L_A</span><span class="p">;</span>
 <span class="n">xdot</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">=</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="nb">e</span><span class="o">*</span><span class="nb">sign</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">-</span><span class="n">Tau_L</span><span class="o">/</span><span class="n">Jeq</span><span class="p">;</span>
-<span class="n">xdot</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="n">f</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>^<span class="mi">2</span><span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">g</span><span class="o">*</span><span class="n">T_Amb</span><span class="p">;</span>
+<span class="n">xdot</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">=</span> <span class="n">f</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="n">g</span><span class="o">*</span><span class="n">x</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">g</span><span class="o">*</span><span class="n">T_Amb</span><span class="p">;</span>
 <span class="n">xdot</span> <span class="p">=</span> <span class="n">xdot</span><span class="p">(:);</span> <span class="c">% force column vector</span>
 </pre></div>
 </div>
@@ -763,7 +764,7 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <table>
 <thead><tr>
 <th style="text-align:center"></th>
-<th style="text-align:left">Scenario 1 	</th>
+<th style="text-align:left">Scenario 1</th>
 <th style="text-align:left">Scenario 2</th>
 </tr></thead>
 <tbody>
@@ -831,8 +832,7 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <table>
 <thead><tr>
 <th style="text-align:center"></th>
-<th style="text-align:center">
-<code>ode45</code> </th>
+<th style="text-align:center"><code>ode45</code></th>
 <th style="text-align:center"><code>ode45m</code></th>
 <th style="text-align:center"><code>eufix1</code></th>
 </tr></thead>
@@ -842,7 +842,6 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <td style="text-align:center">$0.267$</td>
 <td style="text-align:center">$0.025$</td>
 <td style="text-align:center">$0.009$</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">number of time steps</td>
@@ -873,8 +872,7 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <table>
 <thead><tr>
 <th style="text-align:center"></th>
-<th style="text-align:center">
-<code>ode45</code> </th>
+<th style="text-align:center"><code>ode45</code></th>
 <th style="text-align:center"><code>ode45m</code></th>
 <th style="text-align:center"><code>eufix1</code></th>
 </tr></thead>
@@ -884,7 +882,6 @@ This script is an example only. In the <strong>Simulation Results</strong> secti
 <td style="text-align:center">$517.798$</td>
 <td style="text-align:center">$3.463$</td>
 <td style="text-align:center">$0.093$</td>
-<td></td>
 </tr>
 <tr>
 <td style="text-align:center">number of time steps</td>

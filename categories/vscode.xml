@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about VSCode)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/vscode.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about VSCode)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/vscode.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 May 2025 03:18:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 10 May 2025 18:09:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/a&gt;&lt;/li&gt;
@@ -134,10 +134,12 @@ C:\Users\&amp;lt;user_name&amp;gt;\anaconda3\Scripts
 &lt;/ul&gt;
 &lt;p&gt;So, let's say I want to write a post, I should do the following:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → it switches to Python 3.8 (you can check with &lt;code&gt;python --version&lt;/code&gt;).&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
+&lt;li&gt;&lt;p&gt;Run &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → it switches to Python 3.8 (you can check with &lt;code&gt;python --version&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
 Python 3.8.13 :: Anaconda, Inc.  
 &lt;/code&gt;&lt;/pre&gt;
-Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available.&lt;/li&gt;
+&lt;p&gt;Any post I write will be compiled by this environment only. None of the libraries from the other environment(s) will be available.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;But if I want to work with OpenCV:&lt;/p&gt;
 &lt;ul&gt;
@@ -159,8 +161,10 @@ Python 3.7.6 :: Anaconda, Inc.
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Install-Jupyter-Notebook,-Nikola-and-jmatlab"&gt;Install Jupyter Notebook, Nikola and jmatlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Install-Jupyter-Notebook,-Nikola-and-jmatlab"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Open terminal in &lt;code&gt;cd "C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola"&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Install Jupyter Notebook and nbextensions:&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Open terminal in &lt;code&gt;cd "C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola"&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install Jupyter Notebook and nbextensions:&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Install Jupyter.&lt;pre&gt;&lt;code&gt;pip install notebook
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
@@ -184,16 +188,20 @@ jupyter nbextensions_configurator enable --user
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Install Nikola.&lt;pre&gt;&lt;code&gt;pip install Nikola[extras]
+&lt;li&gt;&lt;p&gt;Install Nikola.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install Nikola[extras]
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Install Matlab-kernel.&lt;pre&gt;&lt;code&gt;pip install matlab_kernel
+&lt;li&gt;&lt;p&gt;Install Matlab-kernel.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install matlab_kernel
 python -m matlab_kernel install --user
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Check installed kernels.&lt;pre&gt;&lt;code&gt;jupyter kernelspec list
+&lt;li&gt;&lt;p&gt;Check installed kernels.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jupyter kernelspec list
 &lt;/code&gt;&lt;/pre&gt;
-You'll see something like this.&lt;pre&gt;&lt;code&gt;Available kernels:
+&lt;p&gt;You'll see something like this.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Available kernels:
 matlab     C:\Users\&amp;lt;user_name&amp;gt;\AppData\Roaming\jupyter\kernels\matlab
 matlab     C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\jupyter\kernels\matlab_connect
 python3    C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola\share\jupyter\kernels\python3
@@ -419,50 +427,50 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kp"&gt;-moz-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;output_prompt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;/* 5px right shift to account for margin in parent container */&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;output_area&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;text_cell_render&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;#333333&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;left&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;visited&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;text-decoration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;text-decoration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;code&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;#eeeeee&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-right&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.05&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.05&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;page-content&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;content&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -479,7 +487,7 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;/* or 950px */&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="c"&gt;/* Widens image-containing divs so that image is full body width */&lt;/span&gt;
 &lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;output_subarea&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -546,7 +554,7 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Output-files-folder-location"&gt;Output &lt;code&gt;files&lt;/code&gt; folder location&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Output-files-folder-location"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Your documents saved in the &lt;code&gt;files&lt;/code&gt; folder will be copied to &lt;code&gt;/output/files&lt;/code&gt; instead of the root folder, which is the default location.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -556,14 +564,16 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Avoid-deploying-draft-posts"&gt;Avoid deploying draft posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Avoid-deploying-draft-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;If you don't want to deploy a draft post.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Add to the metadata post.&lt;pre&gt;&lt;code&gt;.. status: draft
+&lt;li&gt;&lt;p&gt;Add to the metadata post.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.. status: draft
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Set in &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;li&gt;&lt;p&gt;Set in &lt;code&gt;conf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It will be built and seen on your localhost but won't be deployed to GitHub. Also, when you run &lt;code&gt;nikola github_deploy&lt;/code&gt;, the draft post is removed from the &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It will be built and seen on your localhost but won't be deployed to GitHub. Also, when you run &lt;code&gt;nikola github_deploy&lt;/code&gt;, the draft post is removed from the &lt;code&gt;output&lt;/code&gt; folder.&lt;/p&gt;
 &lt;p&gt;By default the metadata has no &lt;code&gt;status&lt;/code&gt; line or is set to:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;.. status: published 
 &lt;/code&gt;&lt;/pre&gt;
@@ -688,10 +698,10 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;h3 id="Index-your-site-using-Google-Search-Console"&gt;Index your site using Google Search Console&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Index-your-site-using-Google-Search-Console"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;To make sure your site can be find through Google, index it with Google Search Console. You can also do it using your Google Analytics account if you have one, but the easiest way is using HTML meta tag, &lt;a href="https://support.google.com/webmasters/answer/9008080#html_verification"&gt;official documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Go to &lt;a href="https://search.google.com/search-console/about"&gt;Google Search Console website&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Select &lt;code&gt;URL prefix&lt;/code&gt; as property type, and introduce your url &lt;code&gt;https://&amp;lt;github_username&amp;gt;.github.io&lt;/code&gt;&lt;img alt="Google Search Console url" src="https://paulomarconi.github.io/images/Nikola_guide/google_search_console_url.png" width="60%"&gt;
-&lt;/li&gt;
-&lt;li&gt;On the Verify ownership window, select HTML tag&lt;img alt="Google Search Console tag" src="https://paulomarconi.github.io/images/Nikola_guide/google_search_console_html-tag.png" width="50%"&gt;
-&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;URL prefix&lt;/code&gt; as property type, and introduce your url &lt;code&gt;https://&amp;lt;github_username&amp;gt;.github.io&lt;/code&gt;
+&lt;img alt="Google Search Console url" src="https://paulomarconi.github.io/images/Nikola_guide/google_search_console_url.png" width="60%"&gt;&lt;/li&gt;
+&lt;li&gt;On the Verify ownership window, select HTML tag
+&lt;img alt="Google Search Console tag" src="https://paulomarconi.github.io/images/Nikola_guide/google_search_console_html-tag.png" width="50%"&gt;&lt;/li&gt;
 &lt;li&gt;Copy the &lt;strong&gt;unique&lt;/strong&gt; given code to&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
@@ -701,8 +711,8 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;/pre&gt;&lt;/div&gt;
 &lt;ul&gt;
 &lt;li&gt;Build and deploy your site.&lt;/li&gt;
-&lt;li&gt;Select &lt;code&gt;Verify&lt;/code&gt;, and you will see&lt;img alt="Google Search Console verifed" src="https://paulomarconi.github.io/images/Nikola_guide/google_search_console_verifed.png" width="60%"&gt;
-&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;Verify&lt;/code&gt;, and you will see
+&lt;img alt="Google Search Console verifed" src="https://paulomarconi.github.io/images/Nikola_guide/google_search_console_verifed.png" width="60%"&gt;&lt;/li&gt;
 &lt;li&gt;Finally, add your &lt;code&gt;sitemap.xml&lt;/code&gt; by going to &lt;strong&gt;Google Search Console menu/Sitemaps&lt;/strong&gt;, and &lt;strong&gt;Submit&lt;/strong&gt; &lt;code&gt;https://&amp;lt;github_username&amp;gt;.github.io/sitemap.xml&lt;/code&gt;. You can verify this file is generated automatically with Nikola, and is located inside the output folder.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -804,17 +814,12 @@ print('hello world')
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Adding-Prism"&gt;Adding Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Adding-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternatively, I like to use &lt;a href="https://prismjs.com/"&gt;Prism&lt;/a&gt; due its &lt;strong&gt;JSONP Highlight plugin&lt;/strong&gt; which allows you to import external code hosted on GitHub or some other place.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Select the &lt;a href="https://prismjs.com/download.html"&gt;Minifed version&lt;/a&gt; and all available languages.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Add any plugin. My selection is as follows.&lt;/p&gt;
-&lt;img alt="Prism plugins" src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png" width="70%"&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Download the JS and CSS files.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Save them on &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; and &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Add the following on the Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
+&lt;li&gt;Select the &lt;a href="https://prismjs.com/download.html"&gt;Minifed version&lt;/a&gt; and all available languages.&lt;/li&gt;
+&lt;li&gt;Add any plugin. My selection is as follows.
+&lt;img alt="Prism plugins" src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png" width="70%"&gt;&lt;/li&gt;
+&lt;li&gt;Download the JS and CSS files.&lt;/li&gt;
+&lt;li&gt;Save them on &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; and &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the following on the Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
 ...
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 '''
@@ -823,27 +828,22 @@ BODY_END = '''
 '''
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Also, add the &lt;code&gt;prism.css&lt;/code&gt; into the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+&lt;li&gt;Also, add the &lt;code&gt;prism.css&lt;/code&gt; into the &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
     ...
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Done!.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight an external code file.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;li&gt;Done!.&lt;/li&gt;
+&lt;li&gt;Now, use the following code in Markdown and Jupyter Notebook in order to import and highlight an external code file.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In rST.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.. raw:: html
+&lt;li&gt;In rST.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.. raw:: html
 
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Check &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; for usage examples.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Check &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; for usage examples.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -880,22 +880,30 @@ BODY_END = '''
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Compile-your-website/blog-and-deploy-on-GitHub-pages"&gt;Compile your website/blog and deploy on GitHub pages&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Compile-your-website/blog-and-deploy-on-GitHub-pages"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Build the project site&lt;pre&gt;&lt;code&gt;nikola build
+&lt;li&gt;&lt;p&gt;Build the project site&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nikola build
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;If everthing was built correctly then check the results with&lt;pre&gt;&lt;code&gt;nikola serve --browser
+&lt;li&gt;&lt;p&gt;If everthing was built correctly then check the results with&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nikola serve --browser
 &lt;/code&gt;&lt;/pre&gt;
-otherwise see &lt;strong&gt;Notes&lt;/strong&gt; for possible error solutions.&lt;/li&gt;
-&lt;li&gt;Install &lt;a href="https://git-scm.com/"&gt;Git&lt;/a&gt; and make the following are added to your &lt;code&gt;system path variables&lt;/code&gt;&lt;pre&gt;&lt;code&gt;C:\Program Files\Git
+&lt;p&gt;otherwise see &lt;strong&gt;Notes&lt;/strong&gt; for possible error solutions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;a href="https://git-scm.com/"&gt;Git&lt;/a&gt; and make the following are added to your &lt;code&gt;system path variables&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;C:\Program Files\Git
 C:\Program Files\Git\cmd
 &lt;/code&gt;&lt;/pre&gt;
-you can check the location with &lt;code&gt;where git&lt;/code&gt; command.&lt;/li&gt;
-&lt;li&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub account.&lt;/li&gt;
-&lt;li&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.&lt;pre&gt;&lt;code&gt;git init .
+&lt;p&gt;you can check the location with &lt;code&gt;where git&lt;/code&gt; command.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a new repository named &lt;code&gt;&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt;on your GitHub account.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Initialize Git and add origin inside the &lt;code&gt;blog&lt;/code&gt; folder of your local drive.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git init .
 git remote add origin https://github.com/&amp;lt;user_name&amp;gt;/&amp;lt;user_name&amp;gt;.github.io
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;&lt;pre&gt;&lt;code&gt;.vscode
+&lt;li&gt;&lt;p&gt;Create a &lt;code&gt;.gitignore&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.vscode
 .doit.db*
 cache
 __pycache__
@@ -904,33 +912,43 @@ output
 */.ipynb_checkpoints/*
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Edit Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
+&lt;li&gt;&lt;p&gt;Edit Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;GITHUB_SOURCE_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'src'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_DEPLOY_BRANCH&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'master'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_REMOTE_NAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'origin'&lt;/span&gt;
 &lt;span class="n"&gt;GITHUB_COMMIT_SOURCE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;True&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Deploy to GitHub.&lt;pre&gt;&lt;code&gt;nikola github_deploy
+&lt;li&gt;&lt;p&gt;Deploy to GitHub.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nikola github_deploy
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Select the &lt;code&gt;master&lt;/code&gt; branch on the GitHub Pages section located on the repository settings.&lt;/li&gt;
-&lt;li&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the results.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Select the &lt;code&gt;master&lt;/code&gt; branch on the GitHub Pages section located on the repository settings.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;https://&amp;lt;user_name&amp;gt;.github.io&lt;/code&gt; to see the results.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Notes&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Nikola creates two branches, &lt;code&gt;master&lt;/code&gt; has the content of the output folder, and &lt;code&gt;src&lt;/code&gt; has the actual content of your posts and pages.&lt;/li&gt;
-&lt;li&gt;If the following errors appear:&lt;pre&gt;&lt;code&gt;ERROR: yapsy: Unable to import plugin: C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\Nikola\lib\site-packages\nikola\plugins\compile\ipynb
+&lt;li&gt;&lt;p&gt;Nikola creates two branches, &lt;code&gt;master&lt;/code&gt; has the content of the output folder, and &lt;code&gt;src&lt;/code&gt; has the actual content of your posts and pages.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If the following errors appear:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ERROR: yapsy: Unable to import plugin: C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\Nikola\lib\site-packages\nikola\plugins\compile\ipynb
 &lt;/code&gt;&lt;/pre&gt;
-or&lt;pre&gt;&lt;code&gt;Cannot find 'ipynb' compiler; it might require an extra plugin 
+&lt;p&gt;or&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Cannot find 'ipynb' compiler; it might require an extra plugin 
 &lt;/code&gt;&lt;/pre&gt;
-you must downgrade &lt;code&gt;nbconvert&lt;/code&gt; to &lt;code&gt;5.6.1&lt;/code&gt;. Do the following:&lt;pre&gt;&lt;code&gt;pip uninstall nbconvert
+&lt;p&gt;you must downgrade &lt;code&gt;nbconvert&lt;/code&gt; to &lt;code&gt;5.6.1&lt;/code&gt;. Do the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip uninstall nbconvert
 pip install nbconvert==5.6.1 
 conda install "nbconvert=5.6.1"
 &lt;/code&gt;&lt;/pre&gt;
-make sure to reinstall &lt;code&gt;matlab_kernel&lt;/code&gt; with&lt;pre&gt;&lt;code&gt;pip install matlab_kernel
+&lt;p&gt;make sure to reinstall &lt;code&gt;matlab_kernel&lt;/code&gt; with&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install matlab_kernel
 python -m matlab_kernel install --user
 &lt;/code&gt;&lt;/pre&gt;
-and erase &lt;code&gt;.doit.db.bak&lt;/code&gt;, &lt;code&gt;.doit.db.dat&lt;/code&gt; and &lt;code&gt;.doit.db.dir&lt;/code&gt; from the root folder.&lt;/li&gt;
+&lt;p&gt;and erase &lt;code&gt;.doit.db.bak&lt;/code&gt;, &lt;code&gt;.doit.db.dat&lt;/code&gt; and &lt;code&gt;.doit.db.dir&lt;/code&gt; from the root folder.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -947,8 +965,8 @@ and erase &lt;code&gt;.doit.db.bak&lt;/code&gt;, &lt;code&gt;.doit.db.dat&lt;/co
 &lt;li&gt;Open VSCode&lt;pre&gt;&lt;code&gt;code
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Check if the kernels are available.&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" width="100%"&gt;
-&lt;/li&gt;
+&lt;li&gt;Check if the kernels are available.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" width="100%"&gt;&lt;/li&gt;
 &lt;li&gt;If the &lt;code&gt;matlab&lt;/code&gt; kernel is not listed then you must install again the &lt;code&gt;matlab_kernel&lt;/code&gt; with&lt;pre&gt;&lt;code&gt;python -m matlab_kernel install --user
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
@@ -1230,88 +1248,89 @@ x =
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-    	&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    	Px              &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;x             &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	&lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;
-    	&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    &lt;span class="nb"&gt;}^{&lt;/span&gt;&lt;span class="k"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;M&lt;span class="nb"&gt;}}&lt;/span&gt;
-    &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    (A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    (A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;1     &lt;span class="k"&gt;\\&lt;/span&gt;
-    &lt;span class="k"&gt;\vdots&lt;/span&gt;        &lt;span class="k"&gt;\\&lt;/span&gt;
-    (A+B K)&lt;span class="nb"&gt;^{&lt;/span&gt;n-1&lt;span class="nb"&gt;}&lt;/span&gt;
-    &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+		&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+		Px              &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;x             &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		&lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;
+		&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="nb"&gt;}^{&lt;/span&gt;&lt;span class="k"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;M&lt;span class="nb"&gt;}}&lt;/span&gt;
+	&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	(A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;0     &lt;span class="k"&gt;\\&lt;/span&gt;
+	(A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;1     &lt;span class="k"&gt;\\&lt;/span&gt;
+	&lt;span class="k"&gt;\vdots&lt;/span&gt;        &lt;span class="k"&gt;\\&lt;/span&gt;
+	(A+B K)&lt;span class="nb"&gt;^{&lt;/span&gt;n-1&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="nb"&gt;}_{&lt;/span&gt;P&lt;span class="nb"&gt;_{&lt;/span&gt;x&lt;span class="nb"&gt;_&lt;/span&gt;N&lt;span class="nb"&gt;}}&lt;/span&gt;
 &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+N|k&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\leq&lt;/span&gt;
 &lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
-    &lt;span class="k"&gt;\vdots&lt;/span&gt;
-    &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
+	&lt;span class="k"&gt;\vdots&lt;/span&gt;
+	&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="nb"&gt;}_{&lt;/span&gt;q&lt;span class="nb"&gt;_{&lt;/span&gt;x&lt;span class="nb"&gt;_&lt;/span&gt;N&lt;span class="nb"&gt;}}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-\begin{equation}
+&lt;p&gt;\begin{equation}
 \begin{aligned}
 \underbrace{
-    \overbrace{
-    	\begin{bmatrix}
-    	Px              &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
-    	P_u \bar{\nu} K &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
-    	0               &amp;amp; P_x             &amp;amp; \dots &amp;amp; 0     \\
-    	0               &amp;amp; P_u \bar{\nu} K &amp;amp; \dots &amp;amp; 0     \\
-    	\dots           &amp;amp; \dots           &amp;amp; \dots &amp;amp; \dots
-    	\end{bmatrix}
-    }^{\mathcal{M}}
-    \begin{bmatrix}
-    (A+B K)^0     \\
-    (A+B K)^1     \\
-    \vdots        \\
-    (A+B K)^{n-1}
-    \end{bmatrix}
+	\overbrace{
+		\begin{bmatrix}
+		Px              &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
+		P_u \bar{\nu} K &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
+		0               &amp;amp; P_x             &amp;amp; \dots &amp;amp; 0     \\
+		0               &amp;amp; P_u \bar{\nu} K &amp;amp; \dots &amp;amp; 0     \\
+		\dots           &amp;amp; \dots           &amp;amp; \dots &amp;amp; \dots
+		\end{bmatrix}
+	}^{\mathcal{M}}
+	\begin{bmatrix}
+	(A+B K)^0     \\
+	(A+B K)^1     \\
+	\vdots        \\
+	(A+B K)^{n-1}
+	\end{bmatrix}
 }_{P_{x_N}}
 \hat{x}_{k+N|k}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_x    \\
-    q_u    \\
-    q_x    \\
-    q_u    \\
-    \vdots
-    \end{bmatrix}
+	\begin{bmatrix}
+	q_x    \\
+	q_u    \\
+	q_x    \\
+	q_u    \\
+	\vdots
+	\end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
-\end{equation}&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
+\end{equation}&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;cases&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
-    &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; + &lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\left&lt;/span&gt;( y&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; -  C &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\right&lt;/span&gt;) &lt;span class="k"&gt;\\&lt;/span&gt;
-    e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\left&lt;/span&gt;(I-&lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; C &lt;span class="k"&gt;\right&lt;/span&gt;) e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; -&lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;   &lt;span class="k"&gt;\\&lt;/span&gt;
-    P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; - &lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;C~P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt;                                        &lt;span class="k"&gt;\\&lt;/span&gt;
-    K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt; (C P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt;+R&lt;span class="nb"&gt;_&lt;/span&gt;z)&lt;span class="nb"&gt;^{&lt;/span&gt;-1&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; + &lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\left&lt;/span&gt;( y&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; -  C &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\right&lt;/span&gt;) &lt;span class="k"&gt;\\&lt;/span&gt;
+	e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\left&lt;/span&gt;(I-&lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; C &lt;span class="k"&gt;\right&lt;/span&gt;) e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; -&lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\nu_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;   &lt;span class="k"&gt;\\&lt;/span&gt;
+	P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; - &lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;C~P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt;                                        &lt;span class="k"&gt;\\&lt;/span&gt;
+	K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt; (C P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt;+R&lt;span class="nb"&gt;_&lt;/span&gt;z)&lt;span class="nb"&gt;^{&lt;/span&gt;-1&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;cases&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-\begin{equation*}
+&lt;p&gt;\begin{equation*}
 \begin{cases}
 \begin{aligned}
-    \hat{x}_{k+1|k+1} &amp;amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
-    e_{k+1|k+1}       &amp;amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
-    P_{k+1|k+1}       &amp;amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
-    K_{k+1}           &amp;amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
+	\hat{x}_{k+1|k+1} &amp;amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
+	e_{k+1|k+1}       &amp;amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
+	P_{k+1|k+1}       &amp;amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
+	K_{k+1}           &amp;amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
 \end{aligned}
 \end{cases}
-\end{equation*}
+\end{equation*}&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1362,7 +1381,7 @@ x =
 &lt;h2 id="Embedded-.pdf"&gt;Embedded &lt;code&gt;.pdf&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Embedded-.pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;To embed a local or external &lt;code&gt;.pdf&lt;/code&gt; document, you can use the Google Drive viewer in html code with Markdown.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt; &lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100%"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"1200px"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;download the PDF.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;  
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="Example"&gt;Example&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Example"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" height="1200px" width="100%"&gt;
 &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
@@ -1374,8 +1393,8 @@ x =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Incorrect-cell-code-highlighting-with-two-kernels"&gt;Incorrect cell code highlighting with two kernels&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/Nikola-guide/#Incorrect-cell-code-highlighting-with-two-kernels"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The cell code highlighting has some problems when you have double kernels in your Notebook, which is a problem of the Jupyter Notebook metadata.&lt;/p&gt;
-&lt;p&gt;Example of poor code highlighting.&lt;/p&gt;
-&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" width="40%"&gt;
+&lt;p&gt;Example of poor code highlighting.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" width="40%"&gt;&lt;/p&gt;
 &lt;p&gt;My &lt;strong&gt;partial solution&lt;/strong&gt; is to add the following to the &lt;code&gt;.ipynb&lt;/code&gt; metadata (raw data) of the Notebook post.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;"metadata": {
   ...
@@ -1387,10 +1406,10 @@ x =
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;It's done only once but you have to edit the Notebook with VSCode. If you edit it with the Jupyter Notebook browser GUI, it will change the metadata content every time you switch the kernel. Try it for yourself!.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;With &lt;code&gt;"pygments_lexer": "octave"&lt;/code&gt;.&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" width="40%"&gt;
-&lt;/li&gt;
-&lt;li&gt;With &lt;code&gt;"pygments_lexer": "ipython3"&lt;/code&gt; Pygments.&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" width="40%"&gt;
-&lt;/li&gt;
+&lt;li&gt;With &lt;code&gt;"pygments_lexer": "octave"&lt;/code&gt;.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" width="40%"&gt;&lt;/li&gt;
+&lt;li&gt;With &lt;code&gt;"pygments_lexer": "ipython3"&lt;/code&gt; Pygments.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" width="40%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;If you want to post with multiple kernels and more programming languages, it's worth trying &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;

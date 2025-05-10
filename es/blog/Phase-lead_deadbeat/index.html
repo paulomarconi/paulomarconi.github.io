@@ -225,7 +225,7 @@ D(z) &amp;= K\dfrac{z-A}{z-B} \tag{2}
 <div class="highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="n">variables</span><span class="p">;</span>
 <span class="c">%% plant Gp </span>
 <span class="n">s</span> <span class="p">=</span> <span class="n">tf</span><span class="p">(</span><span class="s">'s'</span><span class="p">);</span>
-<span class="n">Gp</span> <span class="p">=</span> <span class="mf">0.04</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span>^<span class="mi">2</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mf">0.04</span><span class="p">);</span> <span class="c">% uncompensated plant</span>
+<span class="n">Gp</span> <span class="p">=</span> <span class="mf">0.04</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mf">0.04</span><span class="p">);</span> <span class="c">% uncompensated plant</span>
 
 <span class="n">fig</span> <span class="p">=</span> <span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> 
 <span class="n">margin</span><span class="p">(</span><span class="n">Gp</span><span class="p">);</span> <span class="c">% calculates the phase margin and gain margin at their frequencies</span>
@@ -354,11 +354,11 @@ G_{p1} &amp;= 2.52 \dfrac{0.04(s+1)}{s^2+0.2s+0.04} \tag{6}
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="c">%% Design requirements</span>
 <span class="n">PO</span> <span class="p">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c">% percentage overshoot</span>
-<span class="n">zeta</span> <span class="p">=</span> <span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">pi</span>^<span class="mi">2</span><span class="o">+</span> <span class="p">(</span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">))</span>^<span class="mi">2</span> <span class="p">);</span> <span class="c">% damping ratio</span>
+<span class="n">zeta</span> <span class="p">=</span> <span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">pi</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span> <span class="p">(</span><span class="nb">log</span><span class="p">(</span><span class="mi">100</span><span class="o">/</span><span class="n">PO</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span> <span class="p">);</span> <span class="c">% damping ratio</span>
 <span class="n">PM_d</span> <span class="p">=</span> <span class="nb">round</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">zeta</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="c">% desired PM</span>
 
 <span class="c">%% Obtaining the gain K that meets the desired PM_d</span>
-<span class="n">K</span> <span class="p">=</span> <span class="mi">10</span>^<span class="p">(</span><span class="mf">8.03</span><span class="o">/</span><span class="mi">20</span><span class="p">);</span> <span class="c">% the gain 8.03 obtained from the bode plot</span>
+<span class="n">K</span> <span class="p">=</span> <span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="mf">8.03</span><span class="o">/</span><span class="mi">20</span><span class="p">);</span> <span class="c">% the gain 8.03 obtained from the bode plot</span>
 <span class="n">Gp1</span> <span class="p">=</span> <span class="n">K</span><span class="o">*</span><span class="n">Gp</span><span class="p">;</span> <span class="c">% new uncompensated plant</span>
 
 <span class="n">fig</span> <span class="p">=</span> <span class="nb">figure</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
@@ -507,7 +507,7 @@ if $\theta=6°$, $PM_d=60°$, and $PM_{act}=61.25°$ obtained from the Bode plot
 
 <span class="c">% obtaining beta with the actual PM and the desired PM</span>
 <span class="n">theta</span> <span class="p">=</span> <span class="mi">6</span><span class="p">;</span> <span class="c">% correction factor</span>
-<span class="nb">beta</span> <span class="p">=</span> <span class="nb">roots</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span> <span class="nb">tand</span><span class="p">(</span><span class="n">PM_d</span><span class="o">-</span><span class="n">PM_act</span><span class="o">+</span><span class="n">theta</span><span class="p">)</span> <span class="p">)</span>^<span class="mi">2</span><span class="p">)</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">beta</span> <span class="p">=</span> <span class="nb">roots</span><span class="p">(</span> <span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span> <span class="nb">tand</span><span class="p">(</span><span class="n">PM_d</span><span class="o">-</span><span class="n">PM_act</span><span class="o">+</span><span class="n">theta</span><span class="p">)</span> <span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span> <span class="mi">1</span><span class="p">]</span> <span class="p">)</span>
 <span class="c">% beta = (1+sind(PM_d-PM_act+theta))/(1-sind(PM_d-PM_act+theta));</span>
 </pre></div>
 </div>
@@ -698,7 +698,7 @@ G(z) &amp;= \dfrac{z^{d} B(z)}{A(z)} = \dfrac{z^{d}(b_o + b_1 z^{-1}+...+b_m z^{
 \end{align*}
 with an step input $r(k)$, the deadbeat response requirement implies,
 \begin{align*}
-    M(z) &amp;= z^{-d}
+	M(z) &amp;= z^{-d}
 \end{align*}</p>
 <p>The digital deadbeat will have the following transfer function
 \begin{align}
@@ -707,7 +707,7 @@ D(z) &amp;= \dfrac{A(z)}{z^{-d}B(z)}~\dfrac{z^{-d}}{1-z^{-d}} \tag{16} \\
 and the closed-loop system is
 \begin{align*}
 Y(z) &amp;= z^{-d} U(z)
-\end{align*} 
+\end{align*}
 which means
 \begin{align*}
 y(k) &amp;= u(k-d)
@@ -729,7 +729,7 @@ with sampling time $T_s=1$.</p>
 <div class="input_area">
 <div class="highlight hl-octave"><pre><span></span><span class="n">clear</span> <span class="n">variables</span><span class="p">;</span>
 <span class="n">s</span> <span class="p">=</span> <span class="n">tf</span><span class="p">(</span><span class="s">'s'</span><span class="p">);</span>
-<span class="n">Gp</span> <span class="p">=</span> <span class="mf">0.04</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span>^<span class="mi">2</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mf">0.04</span><span class="p">);</span> <span class="c">% uncompensated plant</span>
+<span class="n">Gp</span> <span class="p">=</span> <span class="mf">0.04</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">s</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mf">0.04</span><span class="p">);</span> <span class="c">% uncompensated plant</span>
 <span class="n">Ts</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c">% sampling time</span>
 <span class="n">Gz</span> <span class="p">=</span> <span class="n">c2d</span><span class="p">(</span><span class="n">Gp</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="s">'zoh'</span><span class="p">);</span> <span class="c">% System transfer function in discrete time</span>
 

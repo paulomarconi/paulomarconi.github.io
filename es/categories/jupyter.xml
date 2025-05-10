@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre Jupyter)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/jupyter.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk"&gt;Paulo Loma Marconi&lt;/a&gt; 
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre Jupyter)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/jupyter.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 09 May 2025 03:18:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 10 May 2025 18:09:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -29,24 +29,25 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Nonlinear-model"&gt;Nonlinear model&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/#Nonlinear-model"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;The nonlinear dynamic system is
 \begin{align}
-    R_A i_A + L_A \dot{i}_A+\alpha \omega_1                             &amp;amp; = e_{i}(t)   \\
-    J_1 \dot{\omega}_1 + B_1 \omega_1 - r_1 f_c                         &amp;amp; = \alpha i_A \\
-    J_2 \dot{\omega}_2 + B_2 \omega_2 + B_{2C}~sign(\omega_2) + r_2 f_c &amp;amp; = -\tau_{L}  \\
-    C_{TM} \dot{\theta}_M + \frac{(\theta_M-\theta_A)}{R_{TM}}          &amp;amp; = i^2_A R_A
+	R_A i_A + L_A \dot{i}_A+\alpha \omega_1                             &amp;amp; = e_{i}(t)   \\
+	J_1 \dot{\omega}_1 + B_1 \omega_1 - r_1 f_c                         &amp;amp; = \alpha i_A \\
+	J_2 \dot{\omega}_2 + B_2 \omega_2 + B_{2C}~sign(\omega_2) + r_2 f_c &amp;amp; = -\tau_{L}  \\
+	C_{TM} \dot{\theta}_M + \frac{(\theta_M-\theta_A)}{R_{TM}}          &amp;amp; = i^2_A R_A
 \end{align}
 where $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, $i_A$ is the input stationary current, $\alpha$ is the internal parameters, $\omega$ is the angular speed, $e_i(t)$ is the applied armature voltage, $B$ is the rotational viscous-damping coefficient, $J$ is the moment of inertia, $f_c$ is the contact force between two gears, $r$ is the gear radius, and $B_{2C}$ is the static friction. The thermal model is similar to an electrical capacitor-resistor model with thermal capacity $C_{TM}$, $R_{TM}$ is the resistive losses to ambient temperature, $\theta_M$ is the motor temperature, and $\theta_A$ is the ambient temperature.&lt;/p&gt;
 &lt;p&gt;Now let us define the sate-vector differential equations: state vector $x = [ i_A~ \omega_2~ \theta_M ]^T $, and input vector $u = [ e_{i}~ \tau_{L}~ \theta_A ]^T$.&lt;/p&gt;
 &lt;p&gt;For $\omega_1=N \omega_2$ and $N=\frac{r_2}{r_1}$, eliminating $f_c$ we have that&lt;/p&gt;
+&lt;p&gt;\begin{align}
+	\dot{i}_A      &amp;amp; = -\frac{R_A}{L_A}\ i_A - \frac{N \alpha}{L_A} \omega_2 + \frac{1}{L_A} e_{i}                         \\
+	\dot{\omega}_2 &amp;amp; = \frac{N \alpha}{J_{eq}} i_A - \frac{B_{eq}}{J_{eq}} \omega_2 - \frac{B_{2C}}{J_{eq}} sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
+	\dot{\theta}_M &amp;amp; = \frac{R_A}{C_{TM}} i^2_A - \frac{1}{C_{TM} R_{TM}} \theta_M + \frac{1}{C_{TM} R_{TM}} \theta_A
+\end{align}
+where $J_{eq}=J_2+N^2 J_1$ and $B_{eq}=B_2+N^2 B_1$.&lt;/p&gt;
+&lt;p&gt;For simulation purpose only we can simplify as
 \begin{align}
-    \dot{i}_A      &amp;amp; = -\frac{R_A}{L_A}\ i_A - \frac{N \alpha}{L_A} \omega_2 + \frac{1}{L_A} e_{i}                         \\
-    \dot{\omega}_2 &amp;amp; = \frac{N \alpha}{J_{eq}} i_A - \frac{B_{eq}}{J_{eq}} \omega_2 - \frac{B_{2C}}{J_{eq}} sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
-    \dot{\theta}_M &amp;amp; = \frac{R_A}{C_{TM}} i^2_A - \frac{1}{C_{TM} R_{TM}} \theta_M + \frac{1}{C_{TM} R_{TM}} \theta_A
-\end{align}&lt;p&gt;where $J_{eq}=J_2+N^2 J_1$ and $B_{eq}=B_2+N^2 B_1$.&lt;/p&gt;
-&lt;p&gt;For simulation purpose only we can simplify as 
-\begin{align}
-    \dot{i}_A      &amp;amp; = -a~ i_A - b~ \omega_2 + \frac{1}{L_A}e_{i}                        \\
-    \dot{\omega}_2 &amp;amp; = c~ i_A - d~ \omega_2 - e~ sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
-    \dot{\theta}_M &amp;amp; = f~ i^2_A - g~ \theta_M + g~ \theta_A
+	\dot{i}_A      &amp;amp; = -a~ i_A - b~ \omega_2 + \frac{1}{L_A}e_{i}                        \\
+	\dot{\omega}_2 &amp;amp; = c~ i_A - d~ \omega_2 - e~ sign(\omega_2) - \frac{1}{J_eq}\tau_{L} \\
+	\dot{\theta}_M &amp;amp; = f~ i^2_A - g~ \theta_M + g~ \theta_A
 \end{align}
 where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$, $d=\frac{B_{eq}}{J_{eq}}$, $e=\frac{B_{2C}}{J_{eq}}$, $f=\frac{R_A}{C_{TM}}$, and $g=\frac{1}{C_{TM} R_{TM}}$.&lt;/p&gt;
 &lt;/div&gt;
@@ -164,7 +165,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 
    &lt;span class="c"&gt;% Update the step size&lt;/span&gt;
    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;delta&lt;/span&gt; &lt;span class="o"&gt;~=&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;
-      &lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hmax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tau&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="n"&gt;pow&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+      &lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;min&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;hmax&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mf"&gt;0.8&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tau&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;delta&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="n"&gt;pow&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
    &lt;span class="k"&gt;end&lt;/span&gt;
 &lt;span class="k"&gt;end&lt;/span&gt;
 
@@ -323,7 +324,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 &lt;span class="n"&gt;C_TM&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;9&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;R_TM&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;  &lt;span class="c"&gt;% Watt-sec/Kelvin (-&amp;gt; 9 sec time constant - fast!)&lt;/span&gt;
 
 &lt;span class="n"&gt;Jeq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;J_2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;J_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="n"&gt;Beq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;B_2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;^&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;Beq&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;B_2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;B_1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;R_A&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;L_A&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;K_E&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;L_A&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;K_T&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Jeq&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -346,7 +347,7 @@ where $a=\frac{R_A}{L_A}$, $b=\frac{N \alpha}{L_A}$, $c=\frac{N \alpha}{J_{eq}}$
 
 &lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;e_i&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;L_A&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;e&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="nb"&gt;sign&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;Tau_L&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Jeq&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;^&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T_Amb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="n"&gt;g&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;T_Amb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="n"&gt;xdot&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="n"&gt;xdot&lt;/span&gt;&lt;span class="p"&gt;(:);&lt;/span&gt; &lt;span class="c"&gt;% force column vector&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -572,7 +573,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:left"&gt;Scenario 1 	&lt;/th&gt;
+&lt;th style="text-align:left"&gt;Scenario 1&lt;/th&gt;
 &lt;th style="text-align:left"&gt;Scenario 2&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
@@ -636,7 +637,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt; &lt;/th&gt;
+&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt;&lt;/th&gt;
 &lt;/tr&gt;
@@ -647,7 +648,6 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;td style="text-align:center"&gt;$0.267$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$0.025$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$0.009$&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style="text-align:center"&gt;number of time steps&lt;/td&gt;
@@ -683,7 +683,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th style="text-align:center"&gt;&lt;/th&gt;
-&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt; &lt;/th&gt;
+&lt;th style="text-align:center"&gt;&lt;code&gt;ode45&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;ode45m&lt;/code&gt;&lt;/th&gt;
 &lt;th style="text-align:center"&gt;&lt;code&gt;eufix1&lt;/code&gt;&lt;/th&gt;
 &lt;/tr&gt;
@@ -694,7 +694,6 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;td style="text-align:center"&gt;$517.798$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$3.463$&lt;/td&gt;
 &lt;td style="text-align:center"&gt;$0.093$&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style="text-align:center"&gt;number of time steps&lt;/td&gt;
@@ -791,10 +790,12 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;/ul&gt;
 &lt;p&gt;Entonces, si quiero escribir un post:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Corro &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → cambia a Python 3.6 (puedes verificar con &lt;code&gt;python --version&lt;/code&gt;).&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
+&lt;li&gt;&lt;p&gt;Corro &lt;code&gt;activate jmatlabNikola&lt;/code&gt; → cambia a Python 3.6 (puedes verificar con &lt;code&gt;python --version&lt;/code&gt;).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;(jmatlabNikola) C:\Users\&amp;lt;user_name&amp;gt;\blog&amp;gt;python --version
 Python 3.6.10 :: Anaconda, Inc.  
 &lt;/code&gt;&lt;/pre&gt;
-Cualquier post que escriba será compilado solamente en este entorno. Ninguna de las librerías del otro entorno(s) estará disponible.&lt;/li&gt;
+&lt;p&gt;Cualquier post que escriba será compilado solamente en este entorno. Ninguna de las librerías del otro entorno(s) estará disponible.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Si quiero trabajar con OpenCV:&lt;/p&gt;
 &lt;ul&gt;
@@ -818,25 +819,33 @@ Python 3.7.6 :: Anaconda, Inc.
 &lt;h2 id="Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab"&gt;Instalación de Jupyter Notebook, Nikola y jmatlab&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Instalaci%C3%B3n-de-Jupyter-Notebook,-Nikola-y-jmatlab"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Abre el terminal en &lt;code&gt;cd "C:\Users\&amp;lt;user_name&amp;gt;\.conda\envs\jmatlabNikola"&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Instala Jupyter Notebook:&lt;ul&gt;
-&lt;li&gt;Jupyter Notebook es instaladon por defecto cuando creas un entorno usando el navegador de Anaconda.&lt;/li&gt;
-&lt;li&gt;Con conda.&lt;pre&gt;&lt;code&gt;conda install -c conda-forge notebook
+&lt;li&gt;&lt;p&gt;Jupyter Notebook es instaladon por defecto cuando creas un entorno usando el navegador de Anaconda.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Con conda.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;conda install -c conda-forge notebook
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Con pip.&lt;pre&gt;&lt;code&gt;pip install notebook
+&lt;li&gt;&lt;p&gt;Con pip.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install notebook
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Instala las &lt;a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"&gt;&lt;code&gt;nbextensions&lt;/code&gt;&lt;/a&gt;.&lt;pre&gt;&lt;code&gt;pip install jupyter_contrib_nbextensions
+&lt;li&gt;&lt;p&gt;Instala las &lt;a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"&gt;&lt;code&gt;nbextensions&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Instala el Jupyter nbextension configurator.&lt;pre&gt;&lt;code&gt;pip install jupyter_nbextensions_configurator
+&lt;li&gt;&lt;p&gt;Instala el Jupyter nbextension configurator.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Corre Jupyter Notebook por línea de comando para verificar que está instalado correctamente junto con las nbextensions.&lt;pre&gt;&lt;code&gt;jupyter notebook
+&lt;li&gt;&lt;p&gt;Corre Jupyter Notebook por línea de comando para verificar que está instalado correctamente junto con las nbextensions.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jupyter notebook
 &lt;/code&gt;&lt;/pre&gt;
-Abrirá tu navegador en &lt;a href="http://localhost:8888"&gt;http://localhost:8888&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Recomiendo habilitar las siguientes nbextensions&lt;ul&gt;
+&lt;p&gt;Abrirá tu navegador en &lt;a href="http://localhost:8888"&gt;http://localhost:8888&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Recomiendo habilitar las siguientes nbextensions&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;(some) LaTex environments for Jupyter&lt;/li&gt;
 &lt;li&gt;Equation Auto Numbering&lt;/li&gt;
 &lt;li&gt;CodeMirror mode extensions -&amp;gt; Matlab/Octave highlighting&lt;/li&gt;
@@ -1076,50 +1085,50 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="kp"&gt;-moz-&lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;border-radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;output_prompt&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="c"&gt;/* 5px right shift to account for margin in parent container */&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;output_area&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;text_cell_render&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;#333333&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;text-align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;left&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;ul&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;12&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;visited&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;text-decoration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nd"&gt;link&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;text-decoration&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;none&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;code&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;background-color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mh"&gt;#eeeeee&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;font-size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;14&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;rendered_html&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-right&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.05&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;padding-bottom&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mf"&gt;0.05&lt;/span&gt;&lt;span class="kt"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;page-content&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;content&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
@@ -1136,7 +1145,7 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;margin-left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;auto&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="c"&gt;/* or 950px */&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-
+&lt;span class="w"&gt;  &lt;/span&gt;
 &lt;span class="c"&gt;/* Widens image-containing divs so that image is full body width */&lt;/span&gt;
 &lt;span class="nt"&gt;div&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nc"&gt;output_subarea&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="w"&gt;     &lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;max-width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="kt"&gt;%&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -1203,7 +1212,7 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Ubicaci%C3%B3n-del-folder-de-salida-files"&gt;Ubicación del folder de salida &lt;code&gt;files&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ubicaci%C3%B3n-del-folder-de-salida-files"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Tus documentos guardados en el folder &lt;code&gt;files&lt;/code&gt; serán copiados a &lt;code&gt;/output/files&lt;/code&gt; en vez de la raíz, que es su ubicación por defecto.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;FILES_FOLDERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'files'&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1213,14 +1222,16 @@ nikola&lt;span class="w"&gt; &lt;/span&gt;new_page&lt;span class="w"&gt; &lt;/sp
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h3 id="Evita-publicar-borrardores-de-los-posts"&gt;Evita publicar borrardores de los posts&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Evita-publicar-borrardores-de-los-posts"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Si no deseas publicarlos.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Agrega los siguiente al metadata del post.&lt;pre&gt;&lt;code&gt;.. status: draft
+&lt;li&gt;&lt;p&gt;Agrega los siguiente al metadata del post.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.. status: draft
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;Configura lo siguiente en &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
+&lt;li&gt;&lt;p&gt;Configura lo siguiente en &lt;code&gt;conf.py&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;DEPLOY_DRAFTS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;False&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Será compilado y visto en tu &lt;code&gt;localhost&lt;/code&gt; pero no será publicado en GitHub. También, cuando corras &lt;code&gt;nikola github_deploy&lt;/code&gt;, el post borrador es removido del folder &lt;code&gt;output&lt;/code&gt;.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Será compilado y visto en tu &lt;code&gt;localhost&lt;/code&gt; pero no será publicado en GitHub. También, cuando corras &lt;code&gt;nikola github_deploy&lt;/code&gt;, el post borrador es removido del folder &lt;code&gt;output&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Por defecto la metadata no tiene la linea &lt;code&gt;status&lt;/code&gt;, agrégalo.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;.. status: published 
 &lt;/code&gt;&lt;/pre&gt;
@@ -1407,16 +1418,11 @@ print('hello world')
 &lt;h3 id="Agregando-Prism"&gt;Agregando Prism&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Agregando-Prism"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Alternativamente, me gusta usar &lt;a href="https://prismjs.com/"&gt;Prism&lt;/a&gt; due its &lt;strong&gt;JSONP Highlight plugin&lt;/strong&gt; que permite importar código externo alojado en cualquier servidor como GitHub.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Escoge la versión &lt;a href="https://prismjs.com/download.html"&gt;Minifed&lt;/a&gt; con todos los lenguajes.&lt;/li&gt;
-&lt;li&gt;Agrega cualquier plugin. Mi selección fue la siguiente.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="Prism plugins" src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png"&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Descarga los archivos JS y CSS.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Guárdalos en &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; y &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Agrega los siguiente al documento de Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
+&lt;li&gt;Agrega cualquier plugin. Mi selección fue la siguiente.
+&lt;img alt="Prism plugins" src="https://paulomarconi.github.io/images/Nikola_guide/selected_prism_plugins.png"&gt;&lt;/li&gt;
+&lt;li&gt;Descarga los archivos JS y CSS.&lt;/li&gt;
+&lt;li&gt;Guárdalos en &lt;code&gt;/themes/themeBlog/assets/css/prism.css&lt;/code&gt; y &lt;code&gt;/themes/themeBlog/assets/js/prism.js&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Agrega los siguiente al documento de Nikola &lt;code&gt;conf.py&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;EXTRA_HEAD_DATA = '''
 ...
 &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 '''
@@ -1425,27 +1431,22 @@ BODY_END = '''
 '''
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;También, agerga &lt;code&gt;prism.css&lt;/code&gt; en &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
+&lt;li&gt;También, agerga &lt;code&gt;prism.css&lt;/code&gt; en &lt;code&gt;post_ipynb.tmpl&lt;/code&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;&amp;lt;&lt;/span&gt;%block name="extra_head"&amp;gt;
     ...
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;link&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"../../assets/css/prism.css"&lt;/span&gt; &lt;span class="na"&gt;rel&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"stylesheet"&lt;/span&gt; &lt;span class="p"&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class="err"&gt;&amp;lt;&lt;/span&gt;/%block&amp;gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Listo!.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Ahora, usa el siguiente código en Markdown y Jupyter Notebook para poder importar código externo.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;li&gt;Listo!.&lt;/li&gt;
+&lt;li&gt;Ahora, usa el siguiente código en Markdown y Jupyter Notebook para poder importar código externo.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;En rST.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.. raw:: html
+&lt;li&gt;En rST.&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.. raw:: html
 
   &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"lang-markup"&lt;/span&gt; &lt;span class="na"&gt;data-jsonp&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://api.github.com/repos/&amp;lt;user_name&amp;gt;/&amp;lt;repository_name&amp;gt;/contents/&amp;lt;file_name&amp;gt;"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;pre&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Revisa &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; para más ejemplos de uso.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Revisa &lt;a href="https://prismjs.com/#plugins"&gt;Prism Plugins&lt;/a&gt; para más ejemplos de uso.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1527,9 +1528,9 @@ output
 &lt;li&gt;Abre VSCode&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;code
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/li&gt;
-&lt;li&gt;Revisa si los kernels están disponibles.&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" width="80%"&gt; 
-Están doblemente listados porque uno indica que la ubicación es correcta y el otro indica que está disponible. Tal vez es un bug, no estoy seguro.
-&lt;/li&gt;
+&lt;li&gt;Revisa si los kernels están disponibles.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/VSCode_available_kernels.png" width="80%"&gt;
+Están doblemente listados porque uno indica que la ubicación es correcta y el otro indica que está disponible. Tal vez es un bug, no estoy seguro.&lt;/li&gt;
 &lt;li&gt;Alternativamente, activa &lt;code&gt;jmatlabNikola&lt;/code&gt; y corre VSCode con el navegador de Anaconda.&lt;/li&gt;
 &lt;li&gt;Recuerda cambiar los &lt;strong&gt;kernels de Matlab y Python kernels&lt;/strong&gt; para cada celda que lo necesites.&lt;/li&gt;
 &lt;/ul&gt;
@@ -1810,88 +1811,89 @@ x =
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-    	&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    	Px              &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;x             &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    	&lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;
-    	&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    &lt;span class="nb"&gt;}^{&lt;/span&gt;&lt;span class="k"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;M&lt;span class="nb"&gt;}}&lt;/span&gt;
-    &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    (A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;0     &lt;span class="k"&gt;\\&lt;/span&gt;
-    (A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;1     &lt;span class="k"&gt;\\&lt;/span&gt;
-    &lt;span class="k"&gt;\vdots&lt;/span&gt;        &lt;span class="k"&gt;\\&lt;/span&gt;
-    (A+B K)&lt;span class="nb"&gt;^{&lt;/span&gt;n-1&lt;span class="nb"&gt;}&lt;/span&gt;
-    &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\overbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
+		&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+		Px              &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;x             &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		0               &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; P&lt;span class="nb"&gt;_&lt;/span&gt;u &lt;span class="k"&gt;\bar&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;&lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;}&lt;/span&gt; K &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; 0     &lt;span class="k"&gt;\\&lt;/span&gt;
+		&lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;\dots&lt;/span&gt;
+		&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="nb"&gt;}^{&lt;/span&gt;&lt;span class="k"&gt;\mathcal&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;M&lt;span class="nb"&gt;}}&lt;/span&gt;
+	&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	(A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;0     &lt;span class="k"&gt;\\&lt;/span&gt;
+	(A+B K)&lt;span class="nb"&gt;^&lt;/span&gt;1     &lt;span class="k"&gt;\\&lt;/span&gt;
+	&lt;span class="k"&gt;\vdots&lt;/span&gt;        &lt;span class="k"&gt;\\&lt;/span&gt;
+	(A+B K)&lt;span class="nb"&gt;^{&lt;/span&gt;n-1&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="nb"&gt;}_{&lt;/span&gt;P&lt;span class="nb"&gt;_{&lt;/span&gt;x&lt;span class="nb"&gt;_&lt;/span&gt;N&lt;span class="nb"&gt;}}&lt;/span&gt;
 &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+N|k&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\leq&lt;/span&gt;
 &lt;span class="k"&gt;\underbrace&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;
-    &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
-    q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
-    &lt;span class="k"&gt;\vdots&lt;/span&gt;
-    &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;x    &lt;span class="k"&gt;\\&lt;/span&gt;
+	q&lt;span class="nb"&gt;_&lt;/span&gt;u    &lt;span class="k"&gt;\\&lt;/span&gt;
+	&lt;span class="k"&gt;\vdots&lt;/span&gt;
+	&lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;bmatrix&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="nb"&gt;}_{&lt;/span&gt;q&lt;span class="nb"&gt;_{&lt;/span&gt;x&lt;span class="nb"&gt;_&lt;/span&gt;N&lt;span class="nb"&gt;}}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-\begin{equation}
+&lt;p&gt;\begin{equation}
 \begin{aligned}
 \underbrace{
-    \overbrace{
-    	\begin{bmatrix}
-    	Px              &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
-    	P_u \bar{\nu} K &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
-    	0               &amp;amp; P_x             &amp;amp; \dots &amp;amp; 0     \\
-    	0               &amp;amp; P_u \bar{\nu} K &amp;amp; \dots &amp;amp; 0     \\
-    	\dots           &amp;amp; \dots           &amp;amp; \dots &amp;amp; \dots
-    	\end{bmatrix}
-    }^{\mathcal{M}}
-    \begin{bmatrix}
-    (A+B K)^0     \\
-    (A+B K)^1     \\
-    \vdots        \\
-    (A+B K)^{n-1}
-    \end{bmatrix}
+	\overbrace{
+		\begin{bmatrix}
+		Px              &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
+		P_u \bar{\nu} K &amp;amp; 0               &amp;amp; \dots &amp;amp; 0     \\
+		0               &amp;amp; P_x             &amp;amp; \dots &amp;amp; 0     \\
+		0               &amp;amp; P_u \bar{\nu} K &amp;amp; \dots &amp;amp; 0     \\
+		\dots           &amp;amp; \dots           &amp;amp; \dots &amp;amp; \dots
+		\end{bmatrix}
+	}^{\mathcal{M}}
+	\begin{bmatrix}
+	(A+B K)^0     \\
+	(A+B K)^1     \\
+	\vdots        \\
+	(A+B K)^{n-1}
+	\end{bmatrix}
 }_{P_{x_N}}
 \hat{x}_{k+N|k}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_x    \\
-    q_u    \\
-    q_x    \\
-    q_u    \\
-    \vdots
-    \end{bmatrix}
+	\begin{bmatrix}
+	q_x    \\
+	q_u    \\
+	q_x    \\
+	q_u    \\
+	\vdots
+	\end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
-\end{equation}&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
+\end{equation}&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;cases&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\begin&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
-    &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; + &lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\left&lt;/span&gt;( y&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; -  C &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\right&lt;/span&gt;) &lt;span class="k"&gt;\\&lt;/span&gt;
-    e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\left&lt;/span&gt;(I-&lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; C &lt;span class="k"&gt;\right&lt;/span&gt;) e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; -&lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\nu&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;   &lt;span class="k"&gt;\\&lt;/span&gt;
-    P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; - &lt;span class="k"&gt;\gamma&lt;/span&gt;&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;C~P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt;                                        &lt;span class="k"&gt;\\&lt;/span&gt;
-    K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt; (C P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt;+R&lt;span class="nb"&gt;_&lt;/span&gt;z)&lt;span class="nb"&gt;^{&lt;/span&gt;-1&lt;span class="nb"&gt;}&lt;/span&gt;
+	&lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; + &lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\left&lt;/span&gt;( y&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; -  C &lt;span class="k"&gt;\hat&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;x&lt;span class="nb"&gt;}_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\right&lt;/span&gt;) &lt;span class="k"&gt;\\&lt;/span&gt;
+	e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = &lt;span class="k"&gt;\left&lt;/span&gt;(I-&lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; C &lt;span class="k"&gt;\right&lt;/span&gt;) e&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; -&lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; &lt;span class="k"&gt;\nu_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;   &lt;span class="k"&gt;\\&lt;/span&gt;
+	P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k+1&lt;span class="nb"&gt;}&lt;/span&gt;       &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; - &lt;span class="k"&gt;\gamma_&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt; K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;C~P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt;                                        &lt;span class="k"&gt;\\&lt;/span&gt;
+	K&lt;span class="nb"&gt;_{&lt;/span&gt;k+1&lt;span class="nb"&gt;}&lt;/span&gt;           &lt;span class="nb"&gt;&amp;amp;&lt;/span&gt; = P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt; (C P&lt;span class="nb"&gt;_{&lt;/span&gt;k+1|k&lt;span class="nb"&gt;}&lt;/span&gt; C&lt;span class="nb"&gt;^&lt;/span&gt;&lt;span class="k"&gt;\intercal&lt;/span&gt;+R&lt;span class="nb"&gt;_&lt;/span&gt;z)&lt;span class="nb"&gt;^{&lt;/span&gt;-1&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;aligned&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;cases&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;span class="k"&gt;\end&lt;/span&gt;&lt;span class="nb"&gt;{&lt;/span&gt;equation*&lt;span class="nb"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-\begin{equation*}
+&lt;p&gt;\begin{equation*}
 \begin{cases}
 \begin{aligned}
-    \hat{x}_{k+1|k+1} &amp;amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
-    e_{k+1|k+1}       &amp;amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
-    P_{k+1|k+1}       &amp;amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
-    K_{k+1}           &amp;amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
+	\hat{x}_{k+1|k+1} &amp;amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
+	e_{k+1|k+1}       &amp;amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
+	P_{k+1|k+1}       &amp;amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
+	K_{k+1}           &amp;amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
 \end{aligned}
 \end{cases}
-\end{equation*}
+\end{equation*}&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1942,7 +1944,7 @@ x =
 &lt;h2 id="Adjuntar-.pdf"&gt;Adjuntar &lt;code&gt;.pdf&lt;/code&gt;&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Adjuntar-.pdf"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Para adjuntar un documento &lt;code&gt;.pdf&lt;/code&gt; local o externo, puedes usar el visor de Google Drive en html con Markdown.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt; &lt;span class="na"&gt;data&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt; &lt;span class="na"&gt;width&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"100%"&lt;/span&gt; &lt;span class="na"&gt;height&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"1200px"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
     &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;"https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/&amp;lt;user_name/&amp;lt;repository_name&amp;gt;/master/&amp;lt;file_name&amp;gt;.pdf"&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;download the PDF.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;p&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;  
-&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;object&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt; 
 &lt;/pre&gt;&lt;/div&gt;
 &lt;h3 id="Ejemplo"&gt;Ejemplo&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Ejemplo"&gt;¶&lt;/a&gt;&lt;/h3&gt;&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf" height="1200px" width="100%"&gt;
 &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/MPC-SSTO/master/report/root.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
@@ -1954,8 +1956,8 @@ x =
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2 id="Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels"&gt;Incorrecto formateo de código en las celdas con dos kernels&lt;a class="anchor-link" href="https://paulomarconi.github.io/es/blog/Nikola-guide/#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;El formateo de código en las celdas tiene problemas cuando tienes dos kernels en tu Notebook, el cuál es un problema del metada de Jupyter Notebook.&lt;/p&gt;
-&lt;p&gt;Ejemplo de formateo de código incompleto.&lt;/p&gt;
-&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" width="40%"&gt;
+&lt;p&gt;Ejemplo de formateo de código incompleto.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_no.png" width="40%"&gt;&lt;/p&gt;
 &lt;p&gt;Mi &lt;strong&gt;solución parcial&lt;/strong&gt; es agregar la siguiente línea al metadata (raw data) del Notebook del post.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;"metadata": {
   ...
@@ -1967,10 +1969,10 @@ x =
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Se hace solo una vez pero debes editar el Notebook con VSCode. Si lo editas con el editor Jupyter Notebook en el navegador, este cambiará el metadata cada vez que cambies de kernel. Inténtalo!.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;With &lt;code&gt;"pygments_lexer": "octave"&lt;/code&gt;.&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" width="40%"&gt;
-&lt;/li&gt;
-&lt;li&gt;With &lt;code&gt;"pygments_lexer": "ipython3"&lt;/code&gt; Pygments.&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" width="40%"&gt;
-&lt;/li&gt;
+&lt;li&gt;With &lt;code&gt;"pygments_lexer": "octave"&lt;/code&gt;.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_octave.png" width="40%"&gt;&lt;/li&gt;
+&lt;li&gt;With &lt;code&gt;"pygments_lexer": "ipython3"&lt;/code&gt; Pygments.
+&lt;img alt="drawing" src="https://paulomarconi.github.io/images/Nikola_guide/cell_code_highlighting_ipython3.png" width="40%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;Extra&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Se deseas postear con múltiples kernels de diferentes lenguajes, vale la pena revisar &lt;a href="https://vatlab.github.io/blog/post/sos-notebook/"&gt;SoS Notebook&lt;/a&gt;.&lt;/p&gt;

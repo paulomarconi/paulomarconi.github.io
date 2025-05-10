@@ -302,10 +302,13 @@ navbar-dark bg-dark
 </ul>
 <p>Entonces, si quiero escribir un post:</p>
 <ul>
-<li>Corro <code>activate jmatlabNikola</code> → cambia a Python 3.6 (puedes verificar con <code>python --version</code>).<pre><code>(jmatlabNikola) C:\Users\&lt;user_name&gt;\blog&gt;python --version
+<li>
+<p>Corro <code>activate jmatlabNikola</code> → cambia a Python 3.6 (puedes verificar con <code>python --version</code>).</p>
+<pre><code>(jmatlabNikola) C:\Users\&lt;user_name&gt;\blog&gt;python --version
 Python 3.6.10 :: Anaconda, Inc.  
 </code></pre>
-Cualquier post que escriba será compilado solamente en este entorno. Ninguna de las librerías del otro entorno(s) estará disponible.</li>
+<p>Cualquier post que escriba será compilado solamente en este entorno. Ninguna de las librerías del otro entorno(s) estará disponible.</p>
+</li>
 </ul>
 <p>Si quiero trabajar con OpenCV:</p>
 <ul>
@@ -334,26 +337,40 @@ Python 3.7.6 :: Anaconda, Inc.
 <li>Abre el terminal en <code>cd "C:\Users\&lt;user_name&gt;\.conda\envs\jmatlabNikola"</code>
 </li>
 <li>Instala Jupyter Notebook:<ul>
-<li>Jupyter Notebook es instaladon por defecto cuando creas un entorno usando el navegador de Anaconda.</li>
-<li>Con conda.<pre><code>conda install -c conda-forge notebook
+<li>
+<p>Jupyter Notebook es instaladon por defecto cuando creas un entorno usando el navegador de Anaconda.</p>
+</li>
+<li>
+<p>Con conda.</p>
+<pre><code>conda install -c conda-forge notebook
 </code></pre>
 </li>
-<li>Con pip.<pre><code>pip install notebook
+<li>
+<p>Con pip.</p>
+<pre><code>pip install notebook
 </code></pre>
 </li>
-<li>Instala las <a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"><code>nbextensions</code></a>.<pre><code>pip install jupyter_contrib_nbextensions
+<li>
+<p>Instala las <a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html#install-the-python-package"><code>nbextensions</code></a>.</p>
+<pre><code>pip install jupyter_contrib_nbextensions
 jupyter contrib nbextension install --user
 </code></pre>
 </li>
-<li>Instala el Jupyter nbextension configurator.<pre><code>pip install jupyter_nbextensions_configurator
+<li>
+<p>Instala el Jupyter nbextension configurator.</p>
+<pre><code>pip install jupyter_nbextensions_configurator
 jupyter nbextensions_configurator enable --user
 </code></pre>
 </li>
-<li>Corre Jupyter Notebook por línea de comando para verificar que está instalado correctamente junto con las nbextensions.<pre><code>jupyter notebook
+<li>
+<p>Corre Jupyter Notebook por línea de comando para verificar que está instalado correctamente junto con las nbextensions.</p>
+<pre><code>jupyter notebook
 </code></pre>
-Abrirá tu navegador en <a href="http://localhost:8888">http://localhost:8888</a>
+<p>Abrirá tu navegador en <a href="http://localhost:8888">http://localhost:8888</a></p>
 </li>
-<li>Recomiendo habilitar las siguientes nbextensions<ul>
+<li>
+<p>Recomiendo habilitar las siguientes nbextensions</p>
+<ul>
 <li>(some) LaTex environments for Jupyter</li>
 <li>Equation Auto Numbering</li>
 <li>CodeMirror mode extensions -&gt; Matlab/Octave highlighting</li>
@@ -634,50 +651,50 @@ nikola<span class="w"> </span>new_page<span class="w"> </span>--title<span class
 <span class="w">    </span><span class="kp">-moz-</span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="nt">div</span><span class="p">.</span><span class="nc">output_prompt</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c">/* 5px right shift to account for margin in parent container */</span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="w">  </span><span class="nt">div</span><span class="p">.</span><span class="nc">output_area</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="nt">div</span><span class="p">.</span><span class="nc">text_cell_render</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="mh">#333333</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">text-align</span><span class="p">:</span><span class="w"> </span><span class="kc">left</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">12</span><span class="kt">px</span><span class="w"> </span><span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="p">:</span><span class="nd">visited</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="p">:</span><span class="nd">link</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
 <span class="w">  </span><span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="nt">pre</span><span class="o">,</span><span class="w"> </span><span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="nt">code</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="mh">#eeeeee</span><span class="p">;</span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="w"> </span><span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
 <span class="w">    </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">rendered_html</span><span class="w"> </span><span class="nt">pre</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span>
 <span class="w">    </span><span class="k">padding-right</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="kt">em</span><span class="p">;</span>
 <span class="w">    </span><span class="k">padding-top</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="kt">em</span><span class="p">;</span>
 <span class="w">    </span><span class="k">padding-bottom</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="kt">em</span><span class="p">;</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="p">.</span><span class="nc">page-content</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="nc">content</span><span class="w"> </span><span class="nt">p</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
@@ -694,7 +711,7 @@ nikola<span class="w"> </span>new_page<span class="w"> </span>--title<span class
 <span class="w">    </span><span class="k">margin-left</span><span class="p">:</span><span class="w"> </span><span class="kc">auto</span><span class="p">;</span>
 <span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span><span class="w"> </span><span class="c">/* or 950px */</span>
 <span class="p">}</span>
-
+<span class="w">  </span>
 <span class="c">/* Widens image-containing divs so that image is full body width */</span>
 <span class="nt">div</span><span class="p">.</span><span class="nc">output_subarea</span><span class="w"> </span><span class="p">{</span><span class="w">     </span>
 <span class="w">    </span><span class="k">max-width</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
@@ -776,7 +793,7 @@ nikola<span class="w"> </span>new_page<span class="w"> </span>--title<span class
 <h3 id="Ubicaci%C3%B3n-del-folder-de-salida-files">Ubicación del folder de salida <code>files</code><a class="anchor-link" href="#Ubicaci%C3%B3n-del-folder-de-salida-files">¶</a>
 </h3>
 <p>Tus documentos guardados en el folder <code>files</code> serán copiados a <code>/output/files</code> en vez de la raíz, que es su ubicación por defecto.</p>
-<div class="highlight"><pre><span></span><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="n">FILES_FOLDERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'files'</span><span class="p">:</span> <span class="s1">'files'</span><span class="p">}</span> 
 </pre></div>
 </div>
 </div>
@@ -790,14 +807,18 @@ nikola<span class="w"> </span>new_page<span class="w"> </span>--title<span class
 </h3>
 <p>Si no deseas publicarlos.</p>
 <ul>
-<li>Agrega los siguiente al metadata del post.<pre><code>.. status: draft
+<li>
+<p>Agrega los siguiente al metadata del post.</p>
+<pre><code>.. status: draft
 </code></pre>
 </li>
-<li>Configura lo siguiente en <code>conf.py</code><div class="highlight"><pre><span></span><span class="n">DEPLOY_DRAFTS</span> <span class="o">=</span> <span class="kc">False</span>
+<li>
+<p>Configura lo siguiente en <code>conf.py</code></p>
+<div class="highlight"><pre><span></span><span class="n">DEPLOY_DRAFTS</span> <span class="o">=</span> <span class="kc">False</span>
 </pre></div>
+<p>Será compilado y visto en tu <code>localhost</code> pero no será publicado en GitHub. También, cuando corras <code>nikola github_deploy</code>, el post borrador es removido del folder <code>output</code>.</p>
 </li>
 </ul>
-<p>Será compilado y visto en tu <code>localhost</code> pero no será publicado en GitHub. También, cuando corras <code>nikola github_deploy</code>, el post borrador es removido del folder <code>output</code>.</p>
 <p>Por defecto la metadata no tiene la linea <code>status</code>, agrégalo.</p>
 <pre><code>.. status: published 
 </code></pre>
@@ -1028,19 +1049,13 @@ print('hello world')
 <p>Alternativamente, me gusta usar <a href="https://prismjs.com/">Prism</a> due its <strong>JSONP Highlight plugin</strong> que permite importar código externo alojado en cualquier servidor como GitHub.</p>
 <ul>
 <li>Escoge la versión <a href="https://prismjs.com/download.html">Minifed</a> con todos los lenguajes.</li>
-<li>Agrega cualquier plugin. Mi selección fue la siguiente.</li>
-</ul>
-<p><img alt="Prism plugins" src="../../../images/Nikola_guide/selected_prism_plugins.png"></p>
-<ul>
-<li>
-<p>Descarga los archivos JS y CSS.</p>
+<li>Agrega cualquier plugin. Mi selección fue la siguiente.
+<img alt="Prism plugins" src="../../../images/Nikola_guide/selected_prism_plugins.png">
 </li>
-<li>
-<p>Guárdalos en <code>/themes/themeBlog/assets/css/prism.css</code> y <code>/themes/themeBlog/assets/js/prism.js</code></p>
+<li>Descarga los archivos JS y CSS.</li>
+<li>Guárdalos en <code>/themes/themeBlog/assets/css/prism.css</code> y <code>/themes/themeBlog/assets/js/prism.js</code>
 </li>
-<li>
-<p>Agrega los siguiente al documento de Nikola <code>conf.py</code></p>
-<div class="highlight"><pre><span></span>EXTRA_HEAD_DATA = '''
+<li>Agrega los siguiente al documento de Nikola <code>conf.py</code><div class="highlight"><pre><span></span>EXTRA_HEAD_DATA = '''
 ...
 <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../assets/css/prism.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="p">/&gt;</span>
 '''
@@ -1049,32 +1064,22 @@ BODY_END = '''
 '''
 </pre></div>
 </li>
-<li>
-<p>También, agerga <code>prism.css</code> en <code>post_ipynb.tmpl</code></p>
-<div class="highlight"><pre><span></span><span class="err">&lt;</span>%block name="extra_head"&gt;
+<li>También, agerga <code>prism.css</code> en <code>post_ipynb.tmpl</code><div class="highlight"><pre><span></span><span class="err">&lt;</span>%block name="extra_head"&gt;
     ...
     <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"../../assets/css/prism.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="p">/&gt;</span>
 <span class="err">&lt;</span>/%block&gt;
 </pre></div>
 </li>
-<li>
-<p>Listo!.</p>
-</li>
-<li>
-<p>Ahora, usa el siguiente código en Markdown y Jupyter Notebook para poder importar código externo.</p>
-<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file_name&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
+<li>Listo!.</li>
+<li>Ahora, usa el siguiente código en Markdown y Jupyter Notebook para poder importar código externo.<div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file_name&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </pre></div>
 </li>
-<li>
-<p>En rST.</p>
-<div class="highlight"><pre><span></span>.. raw:: html
+<li>En rST.<div class="highlight"><pre><span></span>.. raw:: html
 
   <span class="p">&lt;</span><span class="nt">pre</span> <span class="na">class</span><span class="o">=</span><span class="s">"lang-markup"</span> <span class="na">data-jsonp</span><span class="o">=</span><span class="s">"https://api.github.com/repos/&lt;user_name&gt;/&lt;repository_name&gt;/contents/&lt;file_name&gt;"</span><span class="p">&gt;&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
 </pre></div>
 </li>
-<li>
-<p>Revisa <a href="https://prismjs.com/#plugins">Prism Plugins</a> para más ejemplos de uso.</p>
-</li>
+<li>Revisa <a href="https://prismjs.com/#plugins">Prism Plugins</a> para más ejemplos de uso.</li>
 </ul>
 </div>
 </div>
@@ -1168,9 +1173,9 @@ output
 <li>Abre VSCode<div class="highlight"><pre><span></span>code
 </pre></div>
 </li>
-<li>Revisa si los kernels están disponibles.<img alt="drawing" src="../../../images/Nikola_guide/VSCode_available_kernels.png" width="80%"> 
-Están doblemente listados porque uno indica que la ubicación es correcta y el otro indica que está disponible. Tal vez es un bug, no estoy seguro.
-</li>
+<li>Revisa si los kernels están disponibles.
+<img alt="drawing" src="../../../images/Nikola_guide/VSCode_available_kernels.png" width="80%">
+Están doblemente listados porque uno indica que la ubicación es correcta y el otro indica que está disponible. Tal vez es un bug, no estoy seguro.</li>
 <li>Alternativamente, activa <code>jmatlabNikola</code> y corre VSCode con el navegador de Anaconda.</li>
 <li>Recuerda cambiar los <strong>kernels de Matlab y Python kernels</strong> para cada celda que lo necesites.</li>
 </ul>
@@ -1479,88 +1484,89 @@ x =
 <div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
 <span class="k">\underbrace</span><span class="nb">{</span>
-    <span class="k">\overbrace</span><span class="nb">{</span>
-    	<span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
-    	Px              <span class="nb">&amp;</span> 0               <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
-    	P<span class="nb">_</span>u <span class="k">\bar</span><span class="nb">{</span><span class="k">\nu</span><span class="nb">}</span> K <span class="nb">&amp;</span> 0               <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
-    	0               <span class="nb">&amp;</span> P<span class="nb">_</span>x             <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
-    	0               <span class="nb">&amp;</span> P<span class="nb">_</span>u <span class="k">\bar</span><span class="nb">{</span><span class="k">\nu</span><span class="nb">}</span> K <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
-    	<span class="k">\dots</span>           <span class="nb">&amp;</span> <span class="k">\dots</span>           <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> <span class="k">\dots</span>
-    	<span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
-    <span class="nb">}^{</span><span class="k">\mathcal</span><span class="nb">{</span>M<span class="nb">}}</span>
-    <span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
-    (A+B K)<span class="nb">^</span>0     <span class="k">\\</span>
-    (A+B K)<span class="nb">^</span>1     <span class="k">\\</span>
-    <span class="k">\vdots</span>        <span class="k">\\</span>
-    (A+B K)<span class="nb">^{</span>n-1<span class="nb">}</span>
-    <span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+	<span class="k">\overbrace</span><span class="nb">{</span>
+		<span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+		Px              <span class="nb">&amp;</span> 0               <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+		P<span class="nb">_</span>u <span class="k">\bar</span><span class="nb">{</span><span class="k">\nu</span><span class="nb">}</span> K <span class="nb">&amp;</span> 0               <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+		0               <span class="nb">&amp;</span> P<span class="nb">_</span>x             <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+		0               <span class="nb">&amp;</span> P<span class="nb">_</span>u <span class="k">\bar</span><span class="nb">{</span><span class="k">\nu</span><span class="nb">}</span> K <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> 0     <span class="k">\\</span>
+		<span class="k">\dots</span>           <span class="nb">&amp;</span> <span class="k">\dots</span>           <span class="nb">&amp;</span> <span class="k">\dots</span> <span class="nb">&amp;</span> <span class="k">\dots</span>
+		<span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+	<span class="nb">}^{</span><span class="k">\mathcal</span><span class="nb">{</span>M<span class="nb">}}</span>
+	<span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+	(A+B K)<span class="nb">^</span>0     <span class="k">\\</span>
+	(A+B K)<span class="nb">^</span>1     <span class="k">\\</span>
+	<span class="k">\vdots</span>        <span class="k">\\</span>
+	(A+B K)<span class="nb">^{</span>n-1<span class="nb">}</span>
+	<span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
 <span class="nb">}_{</span>P<span class="nb">_{</span>x<span class="nb">_</span>N<span class="nb">}}</span>
 <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+N|k<span class="nb">}</span>
 <span class="k">\leq</span>
 <span class="k">\underbrace</span><span class="nb">{</span>
-    <span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
-    q<span class="nb">_</span>x    <span class="k">\\</span>
-    q<span class="nb">_</span>u    <span class="k">\\</span>
-    q<span class="nb">_</span>x    <span class="k">\\</span>
-    q<span class="nb">_</span>u    <span class="k">\\</span>
-    <span class="k">\vdots</span>
-    <span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+	<span class="k">\begin</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
+	q<span class="nb">_</span>x    <span class="k">\\</span>
+	q<span class="nb">_</span>u    <span class="k">\\</span>
+	q<span class="nb">_</span>x    <span class="k">\\</span>
+	q<span class="nb">_</span>u    <span class="k">\\</span>
+	<span class="k">\vdots</span>
+	<span class="k">\end</span><span class="nb">{</span>bmatrix<span class="nb">}</span>
 <span class="nb">}_{</span>q<span class="nb">_{</span>x<span class="nb">_</span>N<span class="nb">}}</span>
 <span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
 </pre></div>
-\begin{equation}
+<p>\begin{equation}
 \begin{aligned}
 \underbrace{
-    \overbrace{
-    	\begin{bmatrix}
-    	Px              &amp; 0               &amp; \dots &amp; 0     \\
-    	P_u \bar{\nu} K &amp; 0               &amp; \dots &amp; 0     \\
-    	0               &amp; P_x             &amp; \dots &amp; 0     \\
-    	0               &amp; P_u \bar{\nu} K &amp; \dots &amp; 0     \\
-    	\dots           &amp; \dots           &amp; \dots &amp; \dots
-    	\end{bmatrix}
-    }^{\mathcal{M}}
-    \begin{bmatrix}
-    (A+B K)^0     \\
-    (A+B K)^1     \\
-    \vdots        \\
-    (A+B K)^{n-1}
-    \end{bmatrix}
+	\overbrace{
+		\begin{bmatrix}
+		Px              &amp; 0               &amp; \dots &amp; 0     \\
+		P_u \bar{\nu} K &amp; 0               &amp; \dots &amp; 0     \\
+		0               &amp; P_x             &amp; \dots &amp; 0     \\
+		0               &amp; P_u \bar{\nu} K &amp; \dots &amp; 0     \\
+		\dots           &amp; \dots           &amp; \dots &amp; \dots
+		\end{bmatrix}
+	}^{\mathcal{M}}
+	\begin{bmatrix}
+	(A+B K)^0     \\
+	(A+B K)^1     \\
+	\vdots        \\
+	(A+B K)^{n-1}
+	\end{bmatrix}
 }_{P_{x_N}}
 \hat{x}_{k+N|k}
 \leq
 \underbrace{
-    \begin{bmatrix}
-    q_x    \\
-    q_u    \\
-    q_x    \\
-    q_u    \\
-    \vdots
-    \end{bmatrix}
+	\begin{bmatrix}
+	q_x    \\
+	q_u    \\
+	q_x    \\
+	q_u    \\
+	\vdots
+	\end{bmatrix}
 }_{q_{x_N}}
 \end{aligned}
-\end{equation}<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation*<span class="nb">}</span>
+\end{equation}</p>
+<div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation*<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>cases<span class="nb">}</span>
 <span class="k">\begin</span><span class="nb">{</span>aligned<span class="nb">}</span>
-    <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k+1<span class="nb">}</span> <span class="nb">&amp;</span> = <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> + <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\left</span>( y<span class="nb">_{</span>k+1<span class="nb">}</span> -  C <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> <span class="k">\right</span>) <span class="k">\\</span>
-    e<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = <span class="k">\left</span>(I-<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> C <span class="k">\right</span>) e<span class="nb">_{</span>k+1|k<span class="nb">}</span> -<span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\nu</span><span class="nb">_{</span>k+1<span class="nb">}</span>   <span class="k">\\</span>
-    P<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> - <span class="k">\gamma</span><span class="nb">_{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span>C~P<span class="nb">_{</span>k+1|k<span class="nb">}</span>                                        <span class="k">\\</span>
-    K<span class="nb">_{</span>k+1<span class="nb">}</span>           <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span> (C P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span>+R<span class="nb">_</span>z)<span class="nb">^{</span>-1<span class="nb">}</span>
+	<span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k+1<span class="nb">}</span> <span class="nb">&amp;</span> = <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> + <span class="k">\gamma_</span><span class="nb">{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\left</span>( y<span class="nb">_{</span>k+1<span class="nb">}</span> -  C <span class="k">\hat</span><span class="nb">{</span>x<span class="nb">}_{</span>k+1|k<span class="nb">}</span> <span class="k">\right</span>) <span class="k">\\</span>
+	e<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = <span class="k">\left</span>(I-<span class="k">\gamma_</span><span class="nb">{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> C <span class="k">\right</span>) e<span class="nb">_{</span>k+1|k<span class="nb">}</span> -<span class="k">\gamma_</span><span class="nb">{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span> <span class="k">\nu_</span><span class="nb">{</span>k+1<span class="nb">}</span>   <span class="k">\\</span>
+	P<span class="nb">_{</span>k+1|k+1<span class="nb">}</span>       <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> - <span class="k">\gamma_</span><span class="nb">{</span>k+1<span class="nb">}</span> K<span class="nb">_{</span>k+1<span class="nb">}</span>C~P<span class="nb">_{</span>k+1|k<span class="nb">}</span>                                        <span class="k">\\</span>
+	K<span class="nb">_{</span>k+1<span class="nb">}</span>           <span class="nb">&amp;</span> = P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span> (C P<span class="nb">_{</span>k+1|k<span class="nb">}</span> C<span class="nb">^</span><span class="k">\intercal</span>+R<span class="nb">_</span>z)<span class="nb">^{</span>-1<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>aligned<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>cases<span class="nb">}</span>
 <span class="k">\end</span><span class="nb">{</span>equation*<span class="nb">}</span>
 </pre></div>
-\begin{equation*}
+<p>\begin{equation*}
 \begin{cases}
 \begin{aligned}
-    \hat{x}_{k+1|k+1} &amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
-    e_{k+1|k+1}       &amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
-    P_{k+1|k+1}       &amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
-    K_{k+1}           &amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
+	\hat{x}_{k+1|k+1} &amp; = \hat{x}_{k+1|k} + \gamma_{k+1} K_{k+1} \left( y_{k+1} -  C \hat{x}_{k+1|k} \right) \\
+	e_{k+1|k+1}       &amp; = \left(I-\gamma_{k+1} K_{k+1} C \right) e_{k+1|k} -\gamma_{k+1} K_{k+1} \nu_{k+1}   \\
+	P_{k+1|k+1}       &amp; = P_{k+1|k} - \gamma_{k+1} K_{k+1}C~P_{k+1|k}                                        \\
+	K_{k+1}           &amp; = P_{k+1|k} C^\intercal (C P_{k+1|k} C^\intercal+R_z)^{-1}
 \end{aligned}
 \end{cases}
-\end{equation*}
+\end{equation*}</p>
 </div>
 </div>
 </div>
@@ -1621,7 +1627,7 @@ x =
 <p>Para adjuntar un documento <code>.pdf</code> local o externo, puedes usar el visor de Google Drive en html con Markdown.</p>
 <div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">object</span> <span class="na">data</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span> <span class="na">width</span><span class="o">=</span><span class="s">"100%"</span> <span class="na">height</span><span class="o">=</span><span class="s">"1200px"</span><span class="p">&gt;</span> 
     <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/&lt;user_name/&lt;repository_name&gt;/master/&lt;file_name&gt;.pdf"</span><span class="p">&gt;</span>download the PDF.<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>  
-<span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">object</span><span class="p">&gt;</span> 
 </pre></div>
 <h3 id="Ejemplo">Ejemplo<a class="anchor-link" href="#Ejemplo">¶</a>
 </h3>
@@ -1639,8 +1645,9 @@ x =
 <h2 id="Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">Incorrecto formateo de código en las celdas con dos kernels<a class="anchor-link" href="#Incorrecto-formateo-de-c%C3%B3digo-en-las-celdas-con-dos-kernels">¶</a>
 </h2>
 <p>El formateo de código en las celdas tiene problemas cuando tienes dos kernels en tu Notebook, el cuál es un problema del metada de Jupyter Notebook.</p>
-<p>Ejemplo de formateo de código incompleto.</p>
-<img alt="drawing" src="../../../images/Nikola_guide/cell_code_highlighting_no.png" width="40%"><p>Mi <strong>solución parcial</strong> es agregar la siguiente línea al metadata (raw data) del Notebook del post.</p>
+<p>Ejemplo de formateo de código incompleto.
+<img alt="drawing" src="../../../images/Nikola_guide/cell_code_highlighting_no.png" width="40%"></p>
+<p>Mi <strong>solución parcial</strong> es agregar la siguiente línea al metadata (raw data) del Notebook del post.</p>
 <pre><code>"metadata": {
   ...
   "language_info": {
@@ -1651,9 +1658,11 @@ x =
 </code></pre>
 <p>Se hace solo una vez pero debes editar el Notebook con VSCode. Si lo editas con el editor Jupyter Notebook en el navegador, este cambiará el metadata cada vez que cambies de kernel. Inténtalo!.</p>
 <ul>
-<li>With <code>"pygments_lexer": "octave"</code>.<img alt="drawing" src="../../../images/Nikola_guide/cell_code_highlighting_octave.png" width="40%">
+<li>With <code>"pygments_lexer": "octave"</code>.
+<img alt="drawing" src="../../../images/Nikola_guide/cell_code_highlighting_octave.png" width="40%">
 </li>
-<li>With <code>"pygments_lexer": "ipython3"</code> Pygments.<img alt="drawing" src="../../../images/Nikola_guide/cell_code_highlighting_ipython3.png" width="40%">
+<li>With <code>"pygments_lexer": "ipython3"</code> Pygments.
+<img alt="drawing" src="../../../images/Nikola_guide/cell_code_highlighting_ipython3.png" width="40%">
 </li>
 </ul>
 <p><strong>Extra</strong></p>
