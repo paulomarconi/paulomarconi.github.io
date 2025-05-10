@@ -24,7 +24,7 @@ SITE_URL = "https://paulomarconi.github.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://paulomarconi.github.io/"
-BLOG_EMAIL = "p.lomarconi@sheffield.ac.uk"
+BLOG_EMAIL = "p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"
 BLOG_DESCRIPTION = "Personal blog"  # (translatable)
 
 # Nikola is multilingual!
