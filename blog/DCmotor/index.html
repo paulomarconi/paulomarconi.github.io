@@ -174,27 +174,24 @@ navbar-dark bg-dark
 </figure><p>where $R_F$ is the field resistance, $L_F$ is the field inductance, $E_F$ is the applied constant field voltage, and $i_F$ is the input field current. $R_A$ is the stationary resistance, $L_A$ is the stationary inductance, and $e_m$ is the induced voltage, $i_A$ is the input stationary current, and $e_i(t)$ is the applied armature voltage, and $\tau_e$ is the electro-mechanical driving torque exerted on the rotor. </p>
 <p>If the flux density $\mathcal{B}$ is</p>
 <div class="math">
-\begin{align}
-    \mathcal{B} &amp; = \frac{\phi(i_F)}{A}           
-\end{align}
+\begin{equation}
+    \mathcal{B} = \frac{\phi(i_F)}{A},           
+\end{equation}
 </div>
-
 <p>the torque on the rotor is</p>
-<div class="math">s
+<div class="math">
 \begin{align}
     \tau_e      &amp; = \mathcal{B} l a~i_A \nonumber \\
-    \tau_e      &amp; = \frac{l a}{A} \phi(i_F) i_A \label{eq:tau_e}
+    \tau_e      &amp; = \frac{l a}{A} \phi(i_F) i_A, \label{eq:tau_e}
 \end{align}
 </div>
-
 <p>where $\phi(i_F)$ is the flux induced by $i_F$, $A$ is the cross-sectional area of the flux path in the air gap between the rotor and stator, $l$ is the total length of the armature conductors within the magnetic field, and $a$ is the radius of the armature.</p>
 <p>Also, the voltage induced in the armature $e_m$ can be written as</p>
 <div class="math">
-\begin{align}
-    e_m &amp; = \frac{l a}{A} \phi(i_F) \omega
-\end{align}
+\begin{equation}
+    e_m = \frac{l a}{A} \phi(i_F) \omega,
+\end{equation}
 </div>
-
 <p>where both, $\tau_e$ and $e_m$, depend on the geometry of the DC motor. </p>
 <h2>Dynamic system</h2>
 <p>We begin applying D'Alembert's law (restatement of Newton's law) to the rotational mechanical section.</p>
@@ -202,163 +199,152 @@ navbar-dark bg-dark
 \begin{align}
     \sum \tau_{all}                                          &amp; = 0 \nonumber                 \\
     J_1 \dot{\omega}_1 + B_1 \omega_1 + r_1 f_c              &amp; = \tau_e(t)   \label{eq:Rot1} \\
-    J_2 \dot{\omega}_2 + B_2 \omega_2 + K_2 \theta - r_2 f_c &amp; = \tau_L(t)   \label{eq:Rot2}
+    J_2 \dot{\omega}_2 + B_2 \omega_2 + K_2 \theta - r_2 f_c &amp; = \tau_L(t),  \label{eq:Rot2}
 \end{align}
 </div>
-
 <p>where $\tau_{all}$ are the torques acting on a body, $K\theta$ is the stiffness torque, $B\omega$ is the viscous-frictional torque, $J\dot{\omega}$ is the inertial torque, $\tau_e(t)$ is the driving torque,  $\tau_L(t)$ is the load torque, and $r f_c$ is the contact torque.</p>
 <p>Due to the relation between gears,</p>
 <div class="math">
-\begin{align*}
+\begin{align}
     \theta_1       &amp; = N \theta_2       \\
     \omega_1       &amp; = N \omega_2       \\
     \dot{\omega}_1 &amp; = N \dot{\omega}_2 \\
-    N              &amp; = \frac{r_2}{r_1}
-\end{align*}
+    N              &amp; = \frac{r_2}{r_1},
+\end{align}
 </div>
-
 <p>where $N$ is the gear radius relation. We solve \eqref{eq:Rot1} and \eqref{eq:Rot2} in terms of $\omega_2$ and $\theta_2$,</p>
 <div class="math">
-\begin{align}
-    (J_2+N^2 J_1)\dot{\omega}_2+(B_2+N^2 B_1)\omega_1+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0 \nonumber 
-\end{align}
+\begin{equation}
+    (J_2+N^2 J_1)\dot{\omega}_2+(B_2+N^2 B_1)\omega_1+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0, 
+\end{equation}
 </div>
-
 <p>defining the relations</p>
 <div class="math">
-\begin{align*}
+\begin{align}
     J_{eq} &amp; = J_2+N^2 J_1 \\
-    B_{eq} &amp; = B_2+N^2 B_1
-\end{align*}
+    B_{eq} &amp; = B_2+N^2 B_1,
+\end{align}
 </div>
-
 <p>it becomes in</p>
 <div class="math">
-\begin{align}   
-    J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0 \label{eq:Rot3}
-\end{align}
+\begin{equation}    
+    J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e(t)-\tau_L(t) = 0. \label{eq:Rot3}
+\end{equation}
 </div>
 
 <p>Now, let us derive the equations of the electro-mechanical section using Kirchoff's law.</p>
 <div class="math">
 \begin{align}
     \sum V_{all}            &amp; = 0       \nonumber             \\
-    e_m+V_{L_{A}}+V_{R_{A}} &amp; = e_i(t)  \label{eq:Elec1}
+    e_m+V_{L_{A}}+V_{R_{A}} &amp; = e_i(t),     \label{eq:Elec1}
 \end{align}
 </div>
-
 <p>where $V_{all}$ are the induced voltages on the rotor and stator, $V_{L_{A}}$ is the stationary resistance voltage, $V_{R_{A}}$ is the stationary inductance voltage.  </p>
 <p>If $i_F$ is defined as constant, then \eqref{eq:tau_e} is</p>
 <div class="math">
 \begin{align}
     \tau_e(t) &amp; = \left( \frac{l a}{A} \phi(i_F) \right) i_A(t) \nonumber \\
-    \tau_e(t) &amp; = \alpha i_A(t)
+    \tau_e(t) &amp; = \alpha i_A(t),
 \end{align}
 </div>
-
 <p>where $\alpha$ is the internal parameters of the DC motor.</p>
 <p>Then, simplifying and using \eqref{eq:Rot3} and \eqref{eq:Elec1} the dynamic system is</p>
 <div class="math">
 \begin{align}
     J_{eq} \dot{\omega}_2+B_{eq} \omega_2+K_2 \theta_2-N \tau_e - \tau_L &amp; = 0 \\
-    L_A \dot{i}_A + R_A i_A + \alpha \omega_1 - e_i                      &amp; = 0
+    L_A \dot{i}_A + R_A i_A + \alpha \omega_1 - e_i                      &amp; = 0,
 \end{align}
 </div>
 
 <h2>State-space equations</h2>
 <p>Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system</p>
 <div class="math">
-\begin{align*}
+\begin{align}
     J_{eq} \ddot{\theta}_2+B_{eq} \dot{\theta}_2+K_2 \theta_2-N \alpha i_A-\tau_L &amp; = 0 \\
-    L_A \dot{i}_A + R_A i_A + \alpha \omega_1 - e_i                               &amp; = 0                              
-\end{align*}
+    L_A \dot{i}_A + R_A i_A + \alpha \omega_1 - e_i                               &amp; = 0,                              
+\end{align}
 </div>
-
-<p>reordering,</p>
+<p>reordering</p>
 <div class="math">
-\begin{align*}
-    \ddot{\theta}_2 &amp; = -\frac{B_{eq}}{J_{eq}} \dot{\theta}_2 - \frac{K_2}{J_{eq}} \theta_2 + \frac{N \alpha}{J_{eq}} i_A - \frac{1}{J_{eq}} \tau_L \\\
-    \dot{i}_A       &amp; = -\frac{R_A}{L_A} i_A -\frac{N \alpha}{L_A} \dot{\theta}_2 + \frac{1}{L_A} e_i
-\end{align*}
+\begin{align}
+    \ddot{\theta}_2 &amp; = -\frac{B_{eq}}{J_{eq}} \dot{\theta}_2 - \frac{K_2}{J_{eq}} \theta_2 + \frac{N \alpha}{J_{eq}} i_A - \frac{1}{J_{eq}} \tau_L \\
+    \dot{i}_A       &amp; = -\frac{R_A}{L_A} i_A -\frac{N \alpha}{L_A} \dot{\theta}_2 + \frac{1}{L_A} e_i,
+\end{align}
 </div>
-
 <p>defining the states as</p>
 <div class="math">
-\begin{align*}
-    \begin{cases}
-        x_1 &amp; = \theta_2, \quad \dot{x}_1 = \dot{\theta}_2 = x_2                                                                                                                  \\\
-        x_2 &amp; = \dot{\theta}_2, \quad \dot{x}_2  = \ddot{\theta}_2 =  -\frac{B_{eq}}{J_{eq}} x_2 - \frac{K_2}{J_{eq}} x_1 + \frac{N \alpha}{J_{eq}} x_3 - \frac{1}{J_{eq}} \tau_L \\\
-        x_3 &amp; = i_A, \quad \dot{x}_3 = \dot{i}_A = -\frac{R_A}{L_A} x_3 -\frac{N \alpha}{L_A} x_2 + \frac{1}{L_A} e_i
-    \end{cases} 
-\end{align*}
+\begin{align}
+    x_1 &amp; = \theta_2, \quad \dot{x}_1 = \dot{\theta}_2 = x_2                                                                                                                  \\
+    x_2 &amp; = \dot{\theta}_2, \quad \dot{x}_2  = \ddot{\theta}_2 =  -\frac{B_{eq}}{J_{eq}} x_2 - \frac{K_2}{J_{eq}} x_1 + \frac{N \alpha}{J_{eq}} x_3 - \frac{1}{J_{eq}} \tau_L \\
+    x_3 &amp; = i_A, \quad \dot{x}_3 = \dot{i}_A = -\frac{R_A}{L_A} x_3 -\frac{N \alpha}{L_A} x_2 + \frac{1}{L_A} e_i,
+\end{align}
 </div>
-
 <p>then</p>
 <div class="math">
 \begin{align}
-\begin{bmatrix}
-    \dot{x}_1 \\
-    \dot{x}_2 \\
-    \dot{x}_3
-\end{bmatrix}
-&amp;=
-\underbrace{
     \begin{bmatrix}
-        0                   &amp; 1                      &amp; 0                       \\
-        -\frac{K_2}{J_{eq}} &amp; -\frac{B_{eq}}{J_{eq}} &amp; \frac{N \alpha}{J_{eq}} \\
-        0                   &amp; -\frac{N \alpha}{L_A}  &amp; -\frac{R_A}{L_A}
+        \dot{x}_1 \\
+        \dot{x}_2 \\
+        \dot{x}_3
     \end{bmatrix}
-}_A
-\underbrace{
-    \begin{bmatrix}
-        x_1 \\
-        x_2 \\
-        x_3
-    \end{bmatrix}
-}_\mathbf{x}
-+
-\underbrace{
-    \begin{bmatrix}
-        0 &amp; 0               &amp; 0             \\
-        0 &amp; -\frac{1}{J_eq} &amp; 0             \\
-        0 &amp; 0               &amp; \frac{1}{L_A}
-    \end{bmatrix}
-}_B
-\underbrace{
-    \begin{bmatrix}
-        0      \\
-        \tau_L \\
-        e_i
-    \end{bmatrix}
-}_\mathbf{u}
-\\
-\mathbf{\dot{x}} &amp;= A \mathbf{x} + B \mathbf{u} \label{eq:sys1}
+    &amp;=
+    \underbrace{
+        \begin{bmatrix}
+            0                   &amp; 1                      &amp; 0                       \\
+            -\frac{K_2}{J_{eq}} &amp; -\frac{B_{eq}}{J_{eq}} &amp; \frac{N \alpha}{J_{eq}} \\
+            0                   &amp; -\frac{N \alpha}{L_A}  &amp; -\frac{R_A}{L_A}
+        \end{bmatrix}
+    }_A
+    \underbrace{
+        \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            x_3
+        \end{bmatrix}
+    }_\mathbf{x}
+    +
+    \underbrace{
+        \begin{bmatrix}
+            0 &amp; 0               &amp; 0             \\
+            0 &amp; -\frac{1}{J_eq} &amp; 0             \\
+            0 &amp; 0               &amp; \frac{1}{L_A}
+        \end{bmatrix}
+    }_B
+    \underbrace{
+        \begin{bmatrix}
+            0      \\
+            \tau_L \\
+            e_i
+        \end{bmatrix}
+    }_\mathbf{u}
+    \\
+    \mathbf{\dot{x}} &amp;= A \mathbf{x} + B \mathbf{u}, \label{eq:sys1}    
 \end{align}
 </div>
 
 <p>The output $y=\dot{\omega}_2$ can be defined as</p>
 <div class="math">
 \begin{align}
-y &amp;=
-\underbrace{
+    y &amp;=
+    \underbrace{
+        \begin{bmatrix}
+            0 &amp; 1 &amp; 0
+        \end{bmatrix}
+    }_C
     \begin{bmatrix}
-        0 &amp; 1 &amp; 0
+        x_1 \\
+        x_2 \\
+        x_3
     \end{bmatrix}
-}_C
-\begin{bmatrix}
-    x_1 \\
-    x_2 \\
-    x_3
-\end{bmatrix}
-+
-\underbrace{
-    \begin{bmatrix}
-        0 &amp; 0 &amp; 0
-    \end{bmatrix}
-}_D
-e_i
-\\
-y &amp;= C \mathbf{\dot{x}}
+    +
+    \underbrace{
+        \begin{bmatrix}
+            0 &amp; 0 &amp; 0
+        \end{bmatrix}
+    }_D
+    e_i
+    \\
+    y &amp;= C \mathbf{\dot{x}},
 \end{align}
 </div>
 
@@ -388,31 +374,30 @@ y &amp;= C \mathbf{\dot{x}}
         0      \\
         \tau_L \\
         e_i
-    \end{bmatrix}
+    \end{bmatrix},
 \end{align}
 </div>
 
 <p>Solving for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and $K_2 \neq 0$,</p>
 <div class="math">
-\begin{align*}
+\begin{align}
     0 &amp; = x_{2_0}                                                                                      \\
     0 &amp; = -\frac{K_2}{J_{eq}} x_{1_0} -\frac{B_{eq}}{J_{eq}} x_{2_0} + \frac{N \alpha}{J_{eq}} x_{3_0} \\
-    0 &amp; = -\frac{N \alpha}{L_A}  x_{2_0} -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0
-\end{align*}
+    0 &amp; = -\frac{N \alpha}{L_A}  x_{2_0} -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0,
+\end{align}
 </div>
-
 <p>due to $x_{2_0}=0$, we have</p>
 <div class="math">
-\begin{align*}
+\begin{align}
     0 &amp; = -\frac{K_2}{J_{eq}} x_{1_0} + \frac{N \alpha}{J_{eq}} x_{3_0} \\
-    0 &amp; = -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0
-\end{align*}
+    0 &amp; = -\frac{R_A}{L_A} x_{3_0} + \frac{1}{L_A} E_0,
+\end{align}
 then
-\begin{align*}
+\begin{align}
     x_{1_0} &amp; = \frac{N \alpha}{K_2 R_A} E_0 \\
-    x_{3_0} &amp; = \frac{1}{R_A} E_0
-\end{align*}
-therefore the equilibrium point is
+    x_{3_0} &amp; = \frac{1}{R_A} E_0,
+\end{align}
+therefore, the equilibrium point is
 \begin{align}
     \mathbf{x_0} &amp;= 
     \begin{bmatrix}
@@ -426,14 +411,13 @@ therefore the equilibrium point is
         0 \\
         \frac{1}{R_A}
     \end{bmatrix}
-    E_0
+    E_0.
 \end{align}
 </div>
 
-<p>This equilibrium point indicates that a $\textbf{constant angular displacement (twist)}$ produced by $x_{1_0}=\theta_{2_0}$ is sufficient to balance the constant applied armature voltage $e_i=E_0$.</p>
-<p>On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is</p>
+<p>This equilibrium point indicates that a $\textbf{constant angular displacement (twist)}$ produced by $x_{1_0}=\theta_{2_0}$ is sufficient to balance the constant applied armature voltage $e_i=E_0$. On the other hand, if we solve for no external torque $\tau_L=0$, constant applied armature voltage $e_i=E_0$, and no stiffness $K_2 = 0$. The problem is</p>
 <div class="math">
-\begin{align*}
+\begin{align}
     \begin{bmatrix}
         x_{1_0} \\
         x_{2_0} \\
@@ -454,8 +438,8 @@ therefore the equilibrium point is
         0   \\
         0   \\
         E_0
-    \end{bmatrix}
-\end{align*}
+    \end{bmatrix},
+\end{align}
 </div>
 
 <p>if we eliminate $x_{1_0}$ because the first column of $A^{-1}$ has zeros, the problem reduces to</p>
@@ -477,10 +461,9 @@ therefore the equilibrium point is
     \begin{bmatrix}
         0   \\
         E_0
-    \end{bmatrix}
+    \end{bmatrix},
 \end{align}
 </div>
-
 <p>solving, we have</p>
 <div class="math">
 \begin{align}
@@ -493,10 +476,9 @@ therefore the equilibrium point is
         \frac{N \alpha}{B_{eq} R_A+(N \alpha)^2}\\
         \frac{-B_{eq}}{B_{eq} R_A+(N \alpha)^2}
     \end{bmatrix}
-    E_0
+    E_0,
 \end{align}
 </div>
-
 <p>which indicates that a $\textbf{constant angular speed}$ produced by $x_{2_0}=\dot{\theta_{2_0}}$ is needed to balance the constant applied armature voltage $e_i=E_0$.</p>
 <h2>References</h2>
 <p>[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., <em>Modeling and Analysis of Dynamic Systems</em>, 2001, ISBN 0471394424.</p>
