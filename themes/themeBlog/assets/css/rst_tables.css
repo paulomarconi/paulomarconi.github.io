@@ -1,0 +1,7 @@
+/* This CSS is add borders grid tables in reStructuredText (rst) files. */
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 6px;
+}

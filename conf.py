@@ -1319,7 +1319,10 @@ EXTRA_HEAD_DATA = '''
   <link rel="stylesheet" href="../../assets/css/prism.css">
   <!-- for /es/blog/... posts-->
   <link rel="stylesheet" href="../../../assets/css/prism.css">
-  <meta name="google-site-verification" content="FvPotVuMyeh_tpN7AvA8uZBWgDSyNfoHe6HrnEFiKTE" />
+  
+  <meta name="google-site-verification" content="FvPotVuMyeh_tpN7AvA8uZBWgDSyNfoHe6HrnEFiKTE" /> 
+  
+  <link rel="stylesheet" href="../assets/css/rst_tables.css">
 '''
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).

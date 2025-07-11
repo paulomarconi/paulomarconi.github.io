@@ -85,10 +85,13 @@ Images with defined size and caption
 
 pdf2htmlEX
 ==========
+https://pdf2htmlex.github.io/pdf2htmlEX/
 
 .. code-block:: bash
+
     pdf2htmlEX --zoom 1.3 test.pdf
     pdf2htmlEX --embed cfijo --dest-dir out test.pdf
+
 
 Markdown
 ========
@@ -230,23 +233,24 @@ rST + Embedded pdf
 
 License Cheat Sheet 
 ====================
-https://choosealicense.com/licenses/
-https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
-
-| Type of Work                                            | Recommended License                                               
-| ------------------------------------------------------- | ------------------------------------------------------------------
-| Software                                                | GPL 3.0 or later                                                    
-| Educational Content / Media (non-commercial reuse only) | CC BY-NC-SA 4.0 (for non-commercial reuse) or GPL 3.0 (code)                                                  
-| Text (e.g., blog posts, articles)                       | CC BY 4.0/CC BY-SA 4.0 (for commercial reuse) or GPL 3.0 (code)
-| Research (e.g., papers, theses)                         | CC BY 4.0/CC BY-SA 4.0 (for commercial reuse) or GPL 3.0 (code)
-| Data (e.g., datasets, databases)                        | CC0 1.0 Universal (for public domain dedication) or CC BY 4.0 (for attribution)
-| Circuit Designs                                         | GPL 3.0 (code), CERN OHL v2 Permissive/Strongly-Weakly Reciprocal (hardware)                              
-| 3D Printed objects                                      | CC-BY 4.0/CC-BY-SA 4.0 (creative, .stl), CERN OHL/GPL (functional, code) 
+| https://choosealicense.com/licenses/ 
+| https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
 
 
-
-
-
-
-
-
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Type of Work                                            | Recommended License                                                                        |
++=========================================================+============================================================================================+
+| Software                                                | GPL 3.0 or later                                                                           |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Educational Content/Media (non-commercial reuse only)   | CC BY-NC-SA 4.0 (for non-commercial reuse) or GPL 3.0 (code)                               |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Text (e.g., blog posts, articles)                       | CC BY 4.0/CC BY-SA 4.0 (for commercial reuse) or GPL 3.0 (code)                            |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Research (e.g., papers, theses)                         | CC BY 4.0/CC BY-SA 4.0 (for commercial reuse) or GPL 3.0 (code)                            |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Data (e.g., datasets, databases)                        | CC0 1.0 Universal (for public domain dedication) or CC BY 4.0 (for attribution)            |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| Circuit Designs                                         | GPL 3.0 (code), CERN OHL v2 Permissive/Strongly/Weakly Reciprocal (hardware)               |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| 3D Printed objects                                      | CC BY 4.0/CC BY-SA 4.0 (creative, .stl), CERN OHL/GPL (functional, code)                   |
++---------------------------------------------------------+--------------------------------------------------------------------------------------------+
