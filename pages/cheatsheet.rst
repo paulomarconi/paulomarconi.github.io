@@ -18,7 +18,10 @@ https://getnikola.com/handbook.html
     nikola serve
     nikola build
     nikola auto
-    nikola new_post -f ipynb 
+    nikola new_post -f md
+    nikola new_post -f rst
+    nikola new_post -f html
+    nikola new_post -f ipynb
     nikola github_deploy
     nikola check -f --clean-files
 
@@ -49,13 +52,19 @@ https://docs.github.com/en/github/using-git/
 
 .. code-block:: bash
 
-    git init
-    git remote -v
-    git remote rm <remote_name>
-    git remote add origin https://github.com/<user_name>/<repo_name>.git
-    git push <remote_name> <branch_name>
-    git push origin master
-    git push -f origin master
+    git init 
+    git remote -v # list remote repositories
+    git remote rm <remote_name> # remove remote repository
+    git remote add origin https://github.com/<user_name>/<repo_name>.git 
+    git status
+    git add <file_name> # add file to staging area
+    git add --all # add all files to staging area
+    git add . # add all files in the current directory to staging area
+    git commit -m "commit message" # commit changes with a message
+    git commit -a -m "commit message"  # add and commit all modified files
+    git push <remote_name> <branch_name> # push changes to remote repository
+    git push origin master # push changes to master branch
+    git push -f origin master # force push changes to master branch
 
 
 Images with defined size and caption
@@ -76,15 +85,14 @@ Images with defined size and caption
 
 pdf2htmlEX
 ==========
-pdf2htmlEX --zoom 1.3 test.pdf
 
-pdf2htmlEX --embed cfijo --dest-dir out test.pdf
-
+.. code-block:: bash
+    pdf2htmlEX --zoom 1.3 test.pdf
+    pdf2htmlEX --embed cfijo --dest-dir out test.pdf
 
 Markdown
 ========
 https://www.markdownguide.org/basic-syntax/
-
 
 
 md + LaTex
@@ -220,6 +228,20 @@ rST + Embedded pdf
             </object> 
 
 
+License Cheat Sheet 
+====================
+https://choosealicense.com/licenses/
+https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
+
+| Type of Work                                            | Recommended License                                               
+| ------------------------------------------------------- | ------------------------------------------------------------------
+| Software                                                | GPL 3.0 or later                                                    
+| Educational Content / Media (non-commercial reuse only) | CC BY-NC-SA 4.0 (for non-commercial reuse) or GPL 3.0 (code)                                                  
+| Text (e.g., blog posts, articles)                       | CC BY 4.0/CC BY-SA 4.0 (for commercial reuse) or GPL 3.0 (code)
+| Research (e.g., papers, theses)                         | CC BY 4.0/CC BY-SA 4.0 (for commercial reuse) or GPL 3.0 (code)
+| Data (e.g., datasets, databases)                        | CC0 1.0 Universal (for public domain dedication) or CC BY 4.0 (for attribution)
+| Circuit Designs                                         | GPL 3.0 (code), CERN OHL v2 Permissive/Strongly-Weakly Reciprocal (hardware)                              
+| 3D Printed objects                                      | CC-BY 4.0/CC-BY-SA 4.0 (creative, .stl), CERN OHL/GPL (functional, code) 
 
 
 
