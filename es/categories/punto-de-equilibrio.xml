@@ -3,27 +3,30 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 06:32:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modelo dinámico de un motor DC con tren de engranajes</title><link>https://paulomarconi.github.io/es/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Tabla de Contenidos&lt;/h2&gt;
-
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 16:54:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Modelo dinámico de un motor DC con tren de engranajes</title><link>https://paulomarconi.github.io/es/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Tabla de Contenidos&lt;/h2&gt;
+&lt;div class="toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#c%C3%B3digo-fuente-ingl%C3%A9s"&gt;Código Fuente (inglés)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#introducci%C3%B3n"&gt;Introducción&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#an%C3%A1lisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#sistema-din%C3%A1mico"&gt;Sistema dinámico&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#codigo-fuente-ingles"&gt;Código Fuente (inglés)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#introduccion"&gt;Introducción&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#analisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#sistema-dinamico"&gt;Sistema dinámico&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#ecuaciones-en-espacio-de-estados"&gt;Ecuaciones en espacio de estados&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#punto-de-equilibrio-mathbfx_0"&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#referencias"&gt;Referencias&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Código Fuente (inglés)&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="codigo-fuente-ingles"&gt;Código Fuente (inglés)&lt;/h2&gt;
 &lt;p&gt;Versión &lt;a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/es/files/DCmotor/DCmotor.html"&gt;HTML&lt;/a&gt;. Código fuente en LaTex disponible en &lt;a href="https://github.com/paulomarconi/DCmotor"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
-&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;h2 id="introduccion"&gt;Introducción&lt;/h2&gt;
 &lt;p&gt;El objetivo es modelar la dinámica de un motor DC de servomotor con tren de engranajes, Fig. 1, y deducir dos puntos de equilibrio.&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.1 - Motor DC de servomotor con tren de engranajes.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;Análisis del Diagrama de Cuerpo Libre&lt;/h2&gt;
+&lt;h2 id="analisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/h2&gt;
 &lt;p&gt;El sistema se puede descomponer en dos secciones: una mecánica rotacional y una electromecánica. La mecánica rotacional se puede derivar de la siguiente manera,&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"&gt;&lt;/center&gt;
@@ -61,7 +64,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;/div&gt;
 
 &lt;p&gt;donde tanto $\tau_e$ como $e_m$ dependen de la geometría del motor DC.&lt;/p&gt;
-&lt;h2&gt;Sistema dinámico&lt;/h2&gt;
+&lt;h3 id="sistema-dinamico"&gt;Sistema dinámico&lt;/h3&gt;
 &lt;p&gt;Comenzamos aplicando la ley de D'Alembert (reformulación de la ley de Newton) al sistema mecánico rotacional.&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -130,7 +133,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;Ecuaciones en espacio de estados&lt;/h2&gt;
+&lt;h2 id="ecuaciones-en-espacio-de-estados"&gt;Ecuaciones en espacio de estados&lt;/h2&gt;
 &lt;p&gt;Definamos las ecuaciones de espacio de estados parar $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. Del sistema dinámico,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
@@ -227,7 +230,7 @@ y &amp;amp;= C \mathbf{\dot{x}}
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/h2&gt;
+&lt;h2 id="punto-de-equilibrio-mathbfx_0"&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/h2&gt;
 &lt;p&gt;Usando $\mathbf{\dot{x}}=0$ en \eqref{eq:sys1}, el punto de equilibrio $\mathbf{x_0}$ puede calcularse como &lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -363,5 +366,5 @@ therefore the equilibrium point is
 &lt;/div&gt;
 
 &lt;p&gt;lo que indica que una $\textbf{velocidad angular constante}$ producida por $x_{2_0}=\dot{\theta_{2_0}}$ es necesaria para equilibrar la constante tensión de armadura aplicada $e_i=E_0$.&lt;/p&gt;
-&lt;h2&gt;Referencias&lt;/h2&gt;
+&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;</description><category>ecuaciones diferenciales</category><category>espacio de estados</category><category>modelo dinámico</category><category>motor DC</category><category>punto de equilibrio</category><guid>https://paulomarconi.github.io/es/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item></channel></rss>

@@ -28,6 +28,7 @@
 <meta property="og:url" content="https://paulomarconi.github.io/blog/DCmotor/">
 <meta property="og:description" content="Table of Contents
 
+
 Source code
 Introduction
 Free-body diagram analysis
@@ -36,8 +37,9 @@ State-space equations
 Equilibrium point $\mathbf{x_0}$
 References
 
+
 Source code
-Version PDF/HTML. LaTex source code">
+Version PDF/HTML. LaTex source co">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-10-22T14:29:38-04:00">
 <meta property="article:tag" content="DC motor">
@@ -149,6 +151,7 @@ navbar-dark bg-dark
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <h2>Table of Contents</h2>
+<div class="toc">
 <ul>
 <li><a href="#source-code">Source code</a></li>
 <li><a href="#introduction">Introduction</a></li>
@@ -158,13 +161,14 @@ navbar-dark bg-dark
 <li><a href="#equilibrium-point-mathbfx_0">Equilibrium point $\mathbf{x_0}$</a></li>
 <li><a href="#references">References</a></li>
 </ul>
-<h2>Source code</h2>
+</div>
+<h2 id="source-code">Source code</h2>
 <p>Version <a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf">PDF</a>/<a href="../../files/DCmotor/DCmotor.html">HTML</a>. LaTex source code on <a href="https://github.com/paulomarconi/DCmotor">GitHub</a>. </p>
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>The objective is to model the dynamics of a DC servo motor with gear train, Fig. 1, and to deduce two equilibrium points.</p>
 <figure><center><img src="../../images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"></center>
     <center><figcaption>Fig.1 - DC servo motor with gear train.</figcaption></center>
-</figure><h2>Free-body diagram analysis</h2>
+</figure><h2 id="free-body-diagram-analysis">Free-body diagram analysis</h2>
 <p>The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows</p>
 <figure><center><img src="../../images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"></center>
     <center><figcaption>Fig.2 - Rotational mechanical free-body diagram.</figcaption></center>
@@ -194,7 +198,7 @@ navbar-dark bg-dark
 \end{equation}
 </div>
 <p>where both, $\tau_e$ and $e_m$, depend on the geometry of the DC motor. </p>
-<h2>Dynamic system</h2>
+<h2 id="dynamic-system">Dynamic system</h2>
 <p>We begin applying D'Alembert's law (restatement of Newton's law) to the rotational mechanical section.</p>
 <div class="math">
 \begin{align}
@@ -257,7 +261,7 @@ navbar-dark bg-dark
 \end{align}
 </div>
 
-<h2>State-space equations</h2>
+<h2 id="state-space-equations">State-space equations</h2>
 <p>Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system</p>
 <div class="math">
 \begin{align}
@@ -349,7 +353,7 @@ navbar-dark bg-dark
 \end{align}
 </div>
 
-<h2>Equilibrium point $\mathbf{x_0}$</h2>
+<h2 id="equilibrium-point-mathbfx_0">Equilibrium point $\mathbf{x_0}$</h2>
 <p>Using $\mathbf{\dot{x}}=0$ in \eqref{eq:sys1}, the equilibrium point $\mathbf{x_0}$ can be calculated as </p>
 <div class="math">
 \begin{align}
@@ -481,7 +485,7 @@ therefore, the equilibrium point is
 \end{align}
 </div>
 <p>which indicates that a $\textbf{constant angular speed}$ produced by $x_{2_0}=\dot{\theta_{2_0}}$ is needed to balance the constant applied armature voltage $e_i=E_0$.</p>
-<h2>References</h2>
+<h2 id="references">References</h2>
 <p>[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., <em>Modeling and Analysis of Dynamic Systems</em>, 2001, ISBN 0471394424.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

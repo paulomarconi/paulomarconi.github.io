@@ -33,11 +33,14 @@ Código Fuente (inglés)
 Introducción
 Análisis del Diagrama de Cuerpo Libre
 Sistema dinámico
+
+
 Ecuaciones en espacio de estados
 Punto de equilibrio $\mathbf{x_0}$
 Referencias
 
-Código">
+
+Cód">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-10-22T14:29:38-04:00">
 <meta property="article:tag" content="ecuaciones diferenciales">
@@ -149,23 +152,27 @@ navbar-dark bg-dark
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <h2>Tabla de Contenidos</h2>
-
+<div class="toc">
 <ul>
-<li><a href="#c%C3%B3digo-fuente-ingl%C3%A9s">Código Fuente (inglés)</a></li>
-<li><a href="#introducci%C3%B3n">Introducción</a></li>
-<li><a href="#an%C3%A1lisis-del-diagrama-de-cuerpo-libre">Análisis del Diagrama de Cuerpo Libre</a></li>
-<li><a href="#sistema-din%C3%A1mico">Sistema dinámico</a></li>
+<li><a href="#codigo-fuente-ingles">Código Fuente (inglés)</a></li>
+<li><a href="#introduccion">Introducción</a></li>
+<li>
+<a href="#analisis-del-diagrama-de-cuerpo-libre">Análisis del Diagrama de Cuerpo Libre</a><ul>
+<li><a href="#sistema-dinamico">Sistema dinámico</a></li>
+</ul>
+</li>
 <li><a href="#ecuaciones-en-espacio-de-estados">Ecuaciones en espacio de estados</a></li>
 <li><a href="#punto-de-equilibrio-mathbfx_0">Punto de equilibrio $\mathbf{x_0}$</a></li>
 <li><a href="#referencias">Referencias</a></li>
 </ul>
-<h2>Código Fuente (inglés)</h2>
+</div>
+<h2 id="codigo-fuente-ingles">Código Fuente (inglés)</h2>
 <p>Versión <a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf">PDF</a>/<a href="../../files/DCmotor/DCmotor.html">HTML</a>. Código fuente en LaTex disponible en <a href="https://github.com/paulomarconi/DCmotor">GitHub</a>. </p>
-<h2>Introducción</h2>
+<h2 id="introduccion">Introducción</h2>
 <p>El objetivo es modelar la dinámica de un motor DC de servomotor con tren de engranajes, Fig. 1, y deducir dos puntos de equilibrio.</p>
 <figure><center><img src="../../../images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"></center>
     <center><figcaption>Fig.1 - Motor DC de servomotor con tren de engranajes.</figcaption></center>
-</figure><h2>Análisis del Diagrama de Cuerpo Libre</h2>
+</figure><h2 id="analisis-del-diagrama-de-cuerpo-libre">Análisis del Diagrama de Cuerpo Libre</h2>
 <p>El sistema se puede descomponer en dos secciones: una mecánica rotacional y una electromecánica. La mecánica rotacional se puede derivar de la siguiente manera,</p>
 <figure><center><img src="../../../images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"></center>
     <center><figcaption>Fig.2 - Diagrama de cuerpo libre mecánico rotacional.</figcaption></center>
@@ -198,7 +205,7 @@ navbar-dark bg-dark
 </div>
 
 <p>donde tanto $\tau_e$ como $e_m$ dependen de la geometría del motor DC.</p>
-<h2>Sistema dinámico</h2>
+<h3 id="sistema-dinamico">Sistema dinámico</h3>
 <p>Comenzamos aplicando la ley de D'Alembert (reformulación de la ley de Newton) al sistema mecánico rotacional.</p>
 <div class="math">
 \begin{align}
@@ -267,7 +274,7 @@ navbar-dark bg-dark
 \end{align}
 </div>
 
-<h2>Ecuaciones en espacio de estados</h2>
+<h2 id="ecuaciones-en-espacio-de-estados">Ecuaciones en espacio de estados</h2>
 <p>Definamos las ecuaciones de espacio de estados parar $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. Del sistema dinámico,</p>
 <div class="math">
 \begin{align*}
@@ -364,7 +371,7 @@ y &amp;= C \mathbf{\dot{x}}
 \end{align}
 </div>
 
-<h2>Punto de equilibrio $\mathbf{x_0}$</h2>
+<h2 id="punto-de-equilibrio-mathbfx_0">Punto de equilibrio $\mathbf{x_0}$</h2>
 <p>Usando $\mathbf{\dot{x}}=0$ en \eqref{eq:sys1}, el punto de equilibrio $\mathbf{x_0}$ puede calcularse como </p>
 <div class="math">
 \begin{align}
@@ -500,7 +507,7 @@ therefore the equilibrium point is
 </div>
 
 <p>lo que indica que una $\textbf{velocidad angular constante}$ producida por $x_{2_0}=\dot{\theta_{2_0}}$ es necesaria para equilibrar la constante tensión de armadura aplicada $e_i=E_0$.</p>
-<h2>Referencias</h2>
+<h2 id="referencias">Referencias</h2>
 <p>[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., <em>Modeling and Analysis of Dynamic Systems</em>, 2001, ISBN 0471394424.</p>
     </div>
     <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">

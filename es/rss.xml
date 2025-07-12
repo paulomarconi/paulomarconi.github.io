@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 08:10:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 16:55:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Nonlinear DC motor with thermal model and Coulomb friction (stiction)</title><link>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -721,26 +721,29 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description><guid>https://paulomarconi.github.io/es/blog/Nonlinear_DCmotor/</guid><pubDate>Fri, 20 Nov 2020 21:48:34 GMT</pubDate></item><item><title>Modelo dinámico de un motor DC con tren de engranajes</title><link>https://paulomarconi.github.io/es/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Tabla de Contenidos&lt;/h2&gt;
-
+&lt;div class="toc"&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#c%C3%B3digo-fuente-ingl%C3%A9s"&gt;Código Fuente (inglés)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#introducci%C3%B3n"&gt;Introducción&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#an%C3%A1lisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#sistema-din%C3%A1mico"&gt;Sistema dinámico&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#codigo-fuente-ingles"&gt;Código Fuente (inglés)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#introduccion"&gt;Introducción&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#analisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#sistema-dinamico"&gt;Sistema dinámico&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#ecuaciones-en-espacio-de-estados"&gt;Ecuaciones en espacio de estados&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#punto-de-equilibrio-mathbfx_0"&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/DCmotor/#referencias"&gt;Referencias&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Código Fuente (inglés)&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="codigo-fuente-ingles"&gt;Código Fuente (inglés)&lt;/h2&gt;
 &lt;p&gt;Versión &lt;a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/es/files/DCmotor/DCmotor.html"&gt;HTML&lt;/a&gt;. Código fuente en LaTex disponible en &lt;a href="https://github.com/paulomarconi/DCmotor"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
-&lt;h2&gt;Introducción&lt;/h2&gt;
+&lt;h2 id="introduccion"&gt;Introducción&lt;/h2&gt;
 &lt;p&gt;El objetivo es modelar la dinámica de un motor DC de servomotor con tren de engranajes, Fig. 1, y deducir dos puntos de equilibrio.&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.1 - Motor DC de servomotor con tren de engranajes.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;Análisis del Diagrama de Cuerpo Libre&lt;/h2&gt;
+&lt;h2 id="analisis-del-diagrama-de-cuerpo-libre"&gt;Análisis del Diagrama de Cuerpo Libre&lt;/h2&gt;
 &lt;p&gt;El sistema se puede descomponer en dos secciones: una mecánica rotacional y una electromecánica. La mecánica rotacional se puede derivar de la siguiente manera,&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"&gt;&lt;/center&gt;
@@ -778,7 +781,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 &lt;/div&gt;
 
 &lt;p&gt;donde tanto $\tau_e$ como $e_m$ dependen de la geometría del motor DC.&lt;/p&gt;
-&lt;h2&gt;Sistema dinámico&lt;/h2&gt;
+&lt;h3 id="sistema-dinamico"&gt;Sistema dinámico&lt;/h3&gt;
 &lt;p&gt;Comenzamos aplicando la ley de D'Alembert (reformulación de la ley de Newton) al sistema mecánico rotacional.&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -847,7 +850,7 @@ This script is an example only. In the &lt;strong&gt;Simulation Results&lt;/stro
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;Ecuaciones en espacio de estados&lt;/h2&gt;
+&lt;h2 id="ecuaciones-en-espacio-de-estados"&gt;Ecuaciones en espacio de estados&lt;/h2&gt;
 &lt;p&gt;Definamos las ecuaciones de espacio de estados parar $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. Del sistema dinámico,&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align*}
@@ -944,7 +947,7 @@ y &amp;amp;= C \mathbf{\dot{x}}
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/h2&gt;
+&lt;h2 id="punto-de-equilibrio-mathbfx_0"&gt;Punto de equilibrio $\mathbf{x_0}$&lt;/h2&gt;
 &lt;p&gt;Usando $\mathbf{\dot{x}}=0$ en \eqref{eq:sys1}, el punto de equilibrio $\mathbf{x_0}$ puede calcularse como &lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -1080,8 +1083,9 @@ therefore the equilibrium point is
 &lt;/div&gt;
 
 &lt;p&gt;lo que indica que una $\textbf{velocidad angular constante}$ producida por $x_{2_0}=\dot{\theta_{2_0}}$ es necesaria para equilibrar la constante tensión de armadura aplicada $e_i=E_0$.&lt;/p&gt;
-&lt;h2&gt;Referencias&lt;/h2&gt;
+&lt;h2 id="referencias"&gt;Referencias&lt;/h2&gt;
 &lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;</description><category>ecuaciones diferenciales</category><category>espacio de estados</category><category>modelo dinámico</category><category>motor DC</category><category>punto de equilibrio</category><guid>https://paulomarconi.github.io/es/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item><item><title>LanguageTool + TeXstudio + VSCode</title><link>https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/a&gt;&lt;/li&gt;
@@ -1091,10 +1095,11 @@ therefore the equilibrium point is
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#check-languagetool-is-activated-on-vscode"&gt;Check LanguageTool is activated on VSCode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/LanguageTool%2BTeXstudio%2BVSCode/#test-the-parallel-working-on-vscode-and-texstudio"&gt;Test the parallel working on VSCode and TeXstudio&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents but when I tried to use in parallel with VSCode I found some problems. &lt;/p&gt;
 &lt;p&gt;The objective of this brief tutorial is to configure TeXstudio and VSCode to work with LanguageTool in parallel. &lt;/p&gt;
-&lt;h2&gt;Download and configure LanguageTool&lt;/h2&gt;
+&lt;h2 id="download-and-configure-languagetool"&gt;Download and configure LanguageTool&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Download &lt;a href="https://languagetool.org/download/"&gt;LanguageTool desktop version for offline use&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Unzip the folder.&lt;/li&gt;
@@ -1102,32 +1107,32 @@ therefore the equilibrium point is
 &lt;li&gt;In &lt;code&gt;TexChecking &amp;gt; Options&lt;/code&gt; enable &lt;code&gt;Run as server on port 8081&lt;/code&gt;
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/LanguageTool.png" alt="LanguageTool" width="70%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Configure TeXstudio&lt;/h2&gt;
+&lt;h2 id="configure-texstudio"&gt;Configure TeXstudio&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Go to &lt;code&gt;Options &amp;gt; Configure TeXstudio &amp;gt; Language Checking&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Configure &lt;code&gt;Server URL&lt;/code&gt;, &lt;code&gt;LT Path&lt;/code&gt;, and &lt;code&gt;LT Arguments&lt;/code&gt; as follows.
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/TeXstudio_config.png" alt="TeXstudio_config" width="70%"&gt;&lt;/li&gt;
 &lt;li&gt;Maybe you'll find that some users add &lt;code&gt;--allow-origin "*"&lt;/code&gt; to &lt;code&gt;LT Arguments&lt;/code&gt;. It's not necessary for TeXstudio because &lt;code&gt;--allow-origin "*"&lt;/code&gt; is used to serve from the browser add-on, see &lt;a href="https://dev.languagetool.org/http-server"&gt;official documentation&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Check LanguageTool is activated on TeXstudio&lt;/h2&gt;
+&lt;h2 id="check-languagetool-is-activated-on-texstudio"&gt;Check LanguageTool is activated on TeXstudio&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Go to &lt;code&gt;Help &amp;gt; Check LanguageTool&lt;/code&gt;. The &lt;code&gt;LT Report.txt&lt;/code&gt; will be opened showing &lt;code&gt;LT current status: working&lt;/code&gt;.
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/TeXstudio_check.png" alt="TeXstudio_check" width="50%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Download and configure the LanguageTool Linter VSCode extension&lt;/h2&gt;
+&lt;h2 id="download-and-configure-the-languagetool-linter-vscode-extension"&gt;Download and configure the LanguageTool Linter VSCode extension&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Download &lt;a href="https://marketplace.visualstudio.com/items?itemName=davidlday.languagetool-linter"&gt;LanguageTool Linter&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Go to the extesion configuration and set the &lt;code&gt;Class Path&lt;/code&gt; and &lt;code&gt;Jar File&lt;/code&gt; options as follows,
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/VSCode_config.png" alt="VSCode_config" width="70%"&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Check LanguageTool is activated on VSCode&lt;/h2&gt;
+&lt;h2 id="check-languagetool-is-activated-on-vscode"&gt;Check LanguageTool is activated on VSCode&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Open the &lt;code&gt;OUTPUT&lt;/code&gt; window and select LanguageTool Linter. You will see the following.
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/VSCode_check.png" alt="VSCode_check" width="100%"&gt;&lt;/li&gt;
 &lt;li&gt;Although I mentioned not to use &lt;code&gt;--allow-origin "*"&lt;/code&gt;, we use on VSCode to force LanguageTool to open another port because &lt;code&gt;8081&lt;/code&gt; is already used by TeXstudio&lt;/li&gt;
 &lt;li&gt;A warning message will appear at the bottom to change it the default setting. I tried the suggestion but didn't work for me.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Test the parallel working on VSCode and TeXstudio&lt;/h2&gt;
+&lt;h2 id="test-the-parallel-working-on-vscode-and-texstudio"&gt;Test the parallel working on VSCode and TeXstudio&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;TeXstudio                                                                                            &lt;br&gt;
   &lt;img src="https://paulomarconi.github.io/images/LanguageTool+TeXstudio+VSCode/TeXstudio_test.png" alt="TeXstudio_test" width="50%"&gt;&lt;/li&gt;

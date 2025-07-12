@@ -3,7 +3,8 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 06:32:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dynamic model of a DC motor with gear train</title><link>https://paulomarconi.github.io/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 16:54:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Dynamic model of a DC motor with gear train</title><link>https://paulomarconi.github.io/blog/DCmotor/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#source-code"&gt;Source code&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
@@ -13,16 +14,17 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#equilibrium-point-mathbfx_0"&gt;Equilibrium point $\mathbf{x_0}$&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/DCmotor/#references"&gt;References&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Source code&lt;/h2&gt;
+&lt;/div&gt;
+&lt;h2 id="source-code"&gt;Source code&lt;/h2&gt;
 &lt;p&gt;Version &lt;a href="https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf"&gt;PDF&lt;/a&gt;/&lt;a href="https://paulomarconi.github.io/files/DCmotor/DCmotor.html"&gt;HTML&lt;/a&gt;. LaTex source code on &lt;a href="https://github.com/paulomarconi/DCmotor"&gt;GitHub&lt;/a&gt;. &lt;/p&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The objective is to model the dynamics of a DC servo motor with gear train, Fig. 1, and to deduce two equilibrium points.&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/DCmotor.png" alt="DCmotor" width="35%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Fig.1 - DC servo motor with gear train.&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
-&lt;h2&gt;Free-body diagram analysis&lt;/h2&gt;
+&lt;h2 id="free-body-diagram-analysis"&gt;Free-body diagram analysis&lt;/h2&gt;
 &lt;p&gt;The system can be decomposed in two sections: a rotational mechanical, and an electro-mechanical. The rotational mechanical can be derived as follows&lt;/p&gt;
 &lt;figure&gt;
     &lt;center&gt;&lt;img src="https://paulomarconi.github.io/images/DCmotor/Rotational_free-body.png" alt="Rotational_free-body" width="35%"&gt;&lt;/center&gt;
@@ -56,7 +58,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{equation}
 &lt;/div&gt;
 &lt;p&gt;where both, $\tau_e$ and $e_m$, depend on the geometry of the DC motor. &lt;/p&gt;
-&lt;h2&gt;Dynamic system&lt;/h2&gt;
+&lt;h2 id="dynamic-system"&gt;Dynamic system&lt;/h2&gt;
 &lt;p&gt;We begin applying D'Alembert's law (restatement of Newton's law) to the rotational mechanical section.&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -119,7 +121,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;State-space equations&lt;/h2&gt;
+&lt;h2 id="state-space-equations"&gt;State-space equations&lt;/h2&gt;
 &lt;p&gt;Let us define the state-space equations for $x=\left[ \theta_2~\dot{\theta}_2~i_A \right]^{\intercal}$. From the dynamic system&lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -211,7 +213,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 \end{align}
 &lt;/div&gt;
 
-&lt;h2&gt;Equilibrium point $\mathbf{x_0}$&lt;/h2&gt;
+&lt;h2 id="equilibrium-point-mathbfx_0"&gt;Equilibrium point $\mathbf{x_0}$&lt;/h2&gt;
 &lt;p&gt;Using $\mathbf{\dot{x}}=0$ in \eqref{eq:sys1}, the equilibrium point $\mathbf{x_0}$ can be calculated as &lt;/p&gt;
 &lt;div class="math"&gt;
 \begin{align}
@@ -343,5 +345,5 @@ therefore, the equilibrium point is
 \end{align}
 &lt;/div&gt;
 &lt;p&gt;which indicates that a $\textbf{constant angular speed}$ produced by $x_{2_0}=\dot{\theta_{2_0}}$ is needed to balance the constant applied armature voltage $e_i=E_0$.&lt;/p&gt;
-&lt;h2&gt;References&lt;/h2&gt;
+&lt;h2 id="references"&gt;References&lt;/h2&gt;
 &lt;p&gt;[1] Close, Charles M. and Frederick, Dean K. and Newell, Jonathan C., &lt;em&gt;Modeling and Analysis of Dynamic Systems&lt;/em&gt;, 2001, ISBN 0471394424.&lt;/p&gt;</description><category>DC motor</category><category>differential equations</category><category>dynamics model</category><category>equilibrium point</category><category>state-space</category><guid>https://paulomarconi.github.io/blog/DCmotor/</guid><pubDate>Thu, 22 Oct 2020 18:29:38 GMT</pubDate></item></channel></rss>

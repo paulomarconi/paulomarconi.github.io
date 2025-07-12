@@ -11,13 +11,7 @@
 -->
 
 <h1>Table of Contents</h1>
-- [Source code](#source-code)
-- [Introduction](#introduction)
-- [Free-body diagram analysis](#free-body-diagram-analysis)
-- [Dynamic system](#dynamic-system)
-- [State-space equations](#state-space-equations)
-- [Equilibrium point $\mathbf{x_0}$](#equilibrium-point-mathbfx_0)
-- [References](#references)
+[TOC]
 
 # Source code
 

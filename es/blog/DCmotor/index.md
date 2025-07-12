@@ -11,14 +11,7 @@
 -->
 
 <h1>Tabla de Contenidos</h1>
-
-- [Código Fuente (inglés)](#código-fuente-inglés)
-- [Introducción](#introducción)
-- [Análisis del Diagrama de Cuerpo Libre](#análisis-del-diagrama-de-cuerpo-libre)
-- [Sistema dinámico](#sistema-dinámico)
-- [Ecuaciones en espacio de estados](#ecuaciones-en-espacio-de-estados)
-- [Punto de equilibrio $\\mathbf{x\_0}$](#punto-de-equilibrio-mathbfx_0)
-- [Referencias](#referencias)
+[TOC]
 
 # Código Fuente (inglés)
 
@@ -82,7 +75,7 @@ Además, la tensión inducida en la armadura $e_m$ puede escribirse como
 
 donde tanto $\tau_e$ como $e_m$ dependen de la geometría del motor DC.
 
-# Sistema dinámico
+## Sistema dinámico
 Comenzamos aplicando la ley de D'Alembert (reformulación de la ley de Newton) al sistema mecánico rotacional.
 
 <div class="math">

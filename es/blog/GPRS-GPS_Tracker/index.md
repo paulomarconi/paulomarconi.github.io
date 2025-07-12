@@ -9,14 +9,16 @@
 .. type: text
 -->
 
+<h1>Table of Contents</h1>
+[TOC]
 
 # Source files
-Schematic and PCB design files, [GitHub](https://github.com/paulomarconi/GPRS-GPS_Tracker)
+Schematic and PCB design files, [GitHub repository](https://github.com/paulomarconi/GPRS-GPS_Tracker)
 
 # Description
 A self-contained and autonomous GPRS/GPS Tracker using SIM900 and Atmega328p for Arduino UNO-compatible firmware. Proof of concept prototype that integrates sensors, power management features and communication interfaces.
 
-# Characteristics:
+# Characteristics
 - Atmega328p microcontroller for Arduino UNO-compatible firmware.
 - Connectors for SIM900 shield for 
 - FTDI232 module for USB communication and firmware uploading.
@@ -49,6 +51,32 @@ A self-contained and autonomous GPRS/GPS Tracker using SIM900 and Atmega328p for
 <figure>
     <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="100%"/></center>
     <center><figcaption>Bottom view</figcaption></center>
+</figure>
+
+# Assembled 
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/PCB_1.jpg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/PCB_2.jpg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_1.jpeg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_2.jpeg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_3.jpeg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_4.jpeg" alt="" width="50%"/></center>
 </figure>
 
 
