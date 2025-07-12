@@ -9,6 +9,9 @@
 .. type: text
 -->
 
+<h1>Table of Contents</h1>
+[TOC]
+
 # Source files
 Source code on [GitHub](https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus)
 
