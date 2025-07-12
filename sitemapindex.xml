@@ -7,438 +7,494 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/acdc-converter.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/aggregation.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/anaconda.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/arduino-uno.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/atmega328p.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/awgn.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/bode.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/cache-memory.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/compensator.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/control-systems.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/coulomb-friction.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/dc-motor.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/de0_cv-fpga.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/deadbeat.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/differential-equations.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/direct-mapped-cache.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/dynamics-model.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/e-puck.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/electronic-design.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/equilibrium-point.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/foraging.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/fpga.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/ftdi232.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/github.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/gprsgps.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/jupyter.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/kalman-filter.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/languagetool.xml</loc>
-  <lastmod>2025-07-12T16:51:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/lm35.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/microprocessor.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nikola.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/nonlinear.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/optimization.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/pcb-design.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/phase-lag.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/phase-lead.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/pre-filter.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/proteus.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/python.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/quartus.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/root-locus.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/schematic.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/sim900.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/ssto.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/state-space.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/stiction.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/swarm-robotics.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/texstudio.xml</loc>
-  <lastmod>2025-07-12T16:51:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/thermal-model.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/tracker.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/unconstrained.xml</loc>
-  <lastmod>2025-07-12T16:06:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/v-rep.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/vhdl.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/vscode.xml</loc>
-  <lastmod>2025-07-12T16:51:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/acdc-converter.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/aggregation.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/anaconda.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/arduino-uno.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/atmega328p.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/awgn.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/bode.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/cache-memory.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/compensator.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/control-systems.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/coulomb-friction.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/dc-motor.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/de0_cv-fpga.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/deadbeat.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/differential-equations.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/direct-mapped-cache.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/dynamics-model.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/e-puck.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/ecuaciones-diferenciales.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/electronic-design.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/espacio-de-estados.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/filtro-de-kalman.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/foraging.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/fpga.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/ftdi232.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/github.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/gprsgps.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/jupyter.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/kalman-filter.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/languagetool.xml</loc>
-  <lastmod>2025-07-12T16:51:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/lm35.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/microprocessor.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/modelo-dinamico.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/motor-dc.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/mpc.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nikola.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/nonlinear.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/optimizacion.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/optimization.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/pcb-design.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/phase-lag.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/phase-lead.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/pre-filter.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/proteus.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/punto-de-equilibrio.xml</loc>
-  <lastmod>2025-07-12T16:54:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/python.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/quartus.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/root-locus.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/schematic.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/sim900.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/sin-restricciones.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/sistemas-de-control.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/ssto.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/stiction.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/swarm-robotics.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/texstudio.xml</loc>
-  <lastmod>2025-07-12T16:51:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/thermal-model.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/tracker.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/v-rep.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/vhdl.xml</loc>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/vscode.xml</loc>
-  <lastmod>2025-07-12T16:51:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/galleries/rss.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
-  <lastmod>2025-07-12T06:32:00Z</lastmod>
+  <lastmod>2025-07-12T22:16:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2025-07-12T16:55:00Z</lastmod>
+  <lastmod>2025-07-12T22:39:00Z</lastmod>
  </sitemap>
 </sitemapindex>
