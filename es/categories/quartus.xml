@@ -3,7 +3,18 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 22:39:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA </title><link>https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2 id="source-files"&gt;Source files&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 22:42:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA </title><link>https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#source-files"&gt;Source files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#description"&gt;Description&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#guideline"&gt;Guideline&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#problem-formulation"&gt;Problem formulation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#the-proposed-solution"&gt;The proposed solution.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#test-on-de0_cv-fpga"&gt;Test on DE0_CV FPGA&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="source-files"&gt;Source files&lt;/h2&gt;
 &lt;p&gt;Source code on &lt;a href="https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="description"&gt;Description&lt;/h2&gt;
 &lt;p&gt;Design, simulation and implementation of a direct-mapped cache memory system in written VHDL using Altera Quartus Prime and DE0_CV FPGA development kit. The results are compared to a system without cache memory to verify the performance enhancement.&lt;/p&gt;
