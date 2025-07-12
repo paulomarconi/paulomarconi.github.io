@@ -10,14 +10,7 @@
 -->
 
 <h1>Table of Contents</h1>
-- [Introduction](#introduction)
-- [Download and configure LanguageTool](#download-and-configure-languagetool)
-- [Configure TeXstudio](#configure-texstudio)
-- [Check LanguageTool is activated on TeXstudio](#check-languagetool-is-activated-on-texstudio)
-- [Download and configure the LanguageTool Linter VSCode extension](#download-and-configure-the-languagetool-linter-vscode-extension)
-- [Check LanguageTool is activated on VSCode](#check-languagetool-is-activated-on-vscode)
-- [Test the parallel working on VSCode and TeXstudio](#test-the-parallel-working-on-vscode-and-texstudio)
-
+[TOC]
 
 # Introduction
 LanguageTool is a proofreading open-source software written in Java that allows you to integrate grammar, and spell checking on several text editors. I use it mainly with TeXstudio for LaTex documents but when I tried to use in parallel with VSCode I found some problems. 
