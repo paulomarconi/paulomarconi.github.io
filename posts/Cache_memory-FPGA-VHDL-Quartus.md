@@ -16,20 +16,19 @@
 Source code on [GitHub](https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus)
 
 # Description
-
 Design, simulation and implementation of a direct-mapped cache memory system in written VHDL using Altera Quartus Prime and DE0_CV FPGA development kit. The results are compared to a system without cache memory to verify the performance enhancement.
 
-Based on Simple Microprocessor Design (ESD Book Chapter 3),             
-originally created by Weijun Zhang, Copyright 2001, [http://esd.cs.ucr.edu/labs/tutorial/](http://esd.cs.ucr.edu/labs/tutorial/)
+Based on Simple Microprocessor Design (ESD Book Chapter 3), originally created by Weijun Zhang, Copyright 2001, [http://esd.cs.ucr.edu/labs/tutorial/](http://esd.cs.ucr.edu/labs/tutorial/)
 
 Coursework project:
+
 - University of New Brunswick, Universidad Mayor de San Andrés
 - Module: ECE6733 - Computer Architecture Performance +       
 - Prof. Eduardo Castillo    
 
 # Guideline
-
-- Open `SimpleCompArch.qar` archive project, compile with `Quartus 16.1` and simulate with `ModelSim 10.5b`, set time simulation to $17 ns$ to see all resultant elements of matrix multiplication C.
+- Open `SimpleCompArch.qar` archive project, compile with `Quartus 16.1` and simulate with `ModelSim 10.5b`. 
+- Set time simulation to $17 ns$ to see all resultant elements of matrix multiplication C.
 
 # Problem formulation
 
