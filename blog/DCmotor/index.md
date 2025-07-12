@@ -14,7 +14,6 @@
 [TOC]
 
 # Source code
-
 Version [PDF](https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf)/[HTML](../../files/DCmotor/DCmotor.html). LaTex source code on [GitHub](https://github.com/paulomarconi/DCmotor). 
 
 # Introduction

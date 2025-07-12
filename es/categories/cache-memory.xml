@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 22:42:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA </title><link>https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 22:51:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA </title><link>https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/#source-files"&gt;Source files&lt;/a&gt;&lt;/li&gt;
@@ -18,15 +18,17 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;p&gt;Source code on &lt;a href="https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id="description"&gt;Description&lt;/h2&gt;
 &lt;p&gt;Design, simulation and implementation of a direct-mapped cache memory system in written VHDL using Altera Quartus Prime and DE0_CV FPGA development kit. The results are compared to a system without cache memory to verify the performance enhancement.&lt;/p&gt;
-&lt;p&gt;Based on Simple Microprocessor Design (ESD Book Chapter 3),           &lt;br&gt;
-originally created by Weijun Zhang, Copyright 2001, &lt;a href="http://esd.cs.ucr.edu/labs/tutorial/"&gt;http://esd.cs.ucr.edu/labs/tutorial/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Coursework project:
-- University of New Brunswick, Universidad Mayor de San Andrés
-- Module: ECE6733 - Computer Architecture Performance +     &lt;br&gt;
-- Prof. Eduardo Castillo    &lt;/p&gt;
+&lt;p&gt;Based on Simple Microprocessor Design (ESD Book Chapter 3), originally created by Weijun Zhang, Copyright 2001, &lt;a href="http://esd.cs.ucr.edu/labs/tutorial/"&gt;http://esd.cs.ucr.edu/labs/tutorial/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Coursework project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;University of New Brunswick, Universidad Mayor de San Andrés&lt;/li&gt;
+&lt;li&gt;Module: ECE6733 - Computer Architecture Performance +       &lt;/li&gt;
+&lt;li&gt;Prof. Eduardo Castillo    &lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="guideline"&gt;Guideline&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Open &lt;code&gt;SimpleCompArch.qar&lt;/code&gt; archive project, compile with &lt;code&gt;Quartus 16.1&lt;/code&gt; and simulate with &lt;code&gt;ModelSim 10.5b&lt;/code&gt;, set time simulation to $17 ns$ to see all resultant elements of matrix multiplication C.&lt;/li&gt;
+&lt;li&gt;Open &lt;code&gt;SimpleCompArch.qar&lt;/code&gt; archive project, compile with &lt;code&gt;Quartus 16.1&lt;/code&gt; and simulate with &lt;code&gt;ModelSim 10.5b&lt;/code&gt;. &lt;/li&gt;
+&lt;li&gt;Set time simulation to $17 ns$ to see all resultant elements of matrix multiplication C.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="problem-formulation"&gt;Problem formulation&lt;/h2&gt;
 &lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus/master/Guidelines__P2_W17.pdf" width="100%" height="1200px"&gt; 

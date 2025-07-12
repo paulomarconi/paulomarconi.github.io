@@ -14,11 +14,9 @@
 [TOC]
 
 # Código Fuente (inglés)
-
 Versión [PDF](https://raw.githubusercontent.com/paulomarconi/DCmotor/master/asst01_2017/asst01_2017.pdf)/[HTML](../../files/DCmotor/DCmotor.html). Código fuente en LaTex disponible en [GitHub](https://github.com/paulomarconi/DCmotor). 
 
 # Introducción
-
 El objetivo es modelar la dinámica de un motor DC de servomotor con tren de engranajes, Fig. 1, y deducir dos puntos de equilibrio.
 
 <figure>
