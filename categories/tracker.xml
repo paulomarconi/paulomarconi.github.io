@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Posts about tracker)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/categories/tracker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 08:10:44 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Source files&lt;/h2&gt;
+&lt;p&gt;Schematic and PCB design files, &lt;a href="https://github.com/paulomarconi/GPRS-GPS_Tracker"&gt;GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Description&lt;/h2&gt;
+&lt;p&gt;A self-contained and autonomous GPRS/GPS Tracker using SIM900 and Atmega328p for Arduino UNO-compatible firmware. Proof of concept prototype that integrates sensors, power management features and communication interfaces.&lt;/p&gt;
+&lt;h2&gt;Characteristics:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Atmega328p microcontroller for Arduino UNO-compatible firmware.&lt;/li&gt;
+&lt;li&gt;Connectors for SIM900 shield for &lt;/li&gt;
+&lt;li&gt;FTDI232 module for USB communication and firmware uploading.&lt;/li&gt;
+&lt;li&gt;AC/DC converter for 110/220 V input.&lt;/li&gt;
+&lt;li&gt;Li-on 7.2B battery charger for mobile and backup support.&lt;/li&gt;
+&lt;li&gt;LM35 temperature sensor.&lt;/li&gt;
+&lt;li&gt;AC sensor.&lt;/li&gt;
+&lt;li&gt;Proximity sensor via optocoupler.&lt;/li&gt;
+&lt;li&gt;The schematic and PCB design are made in Proteus.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Schematic&lt;/h2&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/schematic.pdf" width="100%" height="450px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/schematic.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;h2&gt;PCB&lt;/h2&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf" width="100%" height="650px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;h2&gt;3D view&lt;/h2&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="100%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Top view&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="100%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Bottom view&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h2&gt;Bill of materials (BOM)&lt;/h2&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/BOM.pdf" width="100%" height="1200px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/BOM.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;</description><category>AC/DC converter</category><category>Arduino UNO</category><category>ATmega328p</category><category>Electronic design</category><category>FTDI232</category><category>GPRS/GPS</category><category>LM35</category><category>PCB design</category><category>Proteus</category><category>Schematic</category><category>SIM900</category><category>tracker</category><guid>https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/</guid><pubDate>Thu, 12 Mar 2015 11:20:21 GMT</pubDate></item></channel></rss>

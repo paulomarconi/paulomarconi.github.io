@@ -18,8 +18,8 @@ https://getnikola.com/handbook.html
     nikola serve
     nikola build
     nikola auto
-    nikola new_post -f md
-    nikola new_post -f rst
+    nikola new_post -f markdown
+    nikola new_post -f rest
     nikola new_post -f html
     nikola new_post -f ipynb
     nikola github_deploy
@@ -231,7 +231,7 @@ rST + Embedded pdf
             </object> 
 
 
-License Cheat Sheet 
+License
 ====================
 | https://choosealicense.com/licenses/ 
 | https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt
