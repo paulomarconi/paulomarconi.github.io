@@ -19,11 +19,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/blog/Cache_memory-FPGA-VHDL-Quartus/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T22:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/DCmotor/</loc>
@@ -73,12 +69,16 @@
   <lastmod>2025-07-12T22:42:00Z</lastmod>
  </url>
  <url>
+  <loc>https://paulomarconi.github.io/blog/cache_memory-fpga-vhdl-quartus/</loc>
+  <lastmod>2025-07-12T22:45:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://paulomarconi.github.io/blog/index-1.html</loc>
   <lastmod>2025-07-12T22:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T22:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/acdc-converter/</loc>
@@ -290,7 +290,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/unconstrained/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T22:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/v-rep/</loc>
@@ -322,11 +322,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
- </url>
- <url>
-  <loc>https://paulomarconi.github.io/es/blog/Cache_memory-FPGA-VHDL-Quartus/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T22:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/DCmotor/</loc>
@@ -382,6 +378,11 @@
   <loc>https://paulomarconi.github.io/es/blog/Phase-lead_phase-lag/</loc>
   <lastmod>2025-07-12T22:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/Phase-lead_phase-lag/" />
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/cache_memory-fpga-vhdl-quartus/</loc>
+  <lastmod>2025-07-12T22:45:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/cache_memory-fpga-vhdl-quartus/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/index-1.html</loc>
