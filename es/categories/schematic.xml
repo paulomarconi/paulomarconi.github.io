@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sat, 12 Jul 2025 22:42:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Jul 2025 00:15:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#source-files"&gt;Source files&lt;/a&gt;&lt;/li&gt;
@@ -12,7 +12,7 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#schematic"&gt;Schematic&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#pcb"&gt;PCB&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#3d-view"&gt;3D view&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#assembled"&gt;Assembled&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#implementation"&gt;Implementation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#bill-of-materials-bom"&gt;Bill of materials (BOM)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
@@ -53,29 +53,29 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
     &lt;center&gt;&lt;figcaption&gt;Bottom view&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
-&lt;h2 id="assembled"&gt;Assembled&lt;/h2&gt;
+&lt;h2 id="implementation"&gt;Implementation&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/PCB_1.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/PCB_1.jpg" alt="" width="50%"&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/PCB_2.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/PCB_2.jpg" alt="" width="50%"&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_1.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_1.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_2.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_2.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_3.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_3.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Assembled/box_4.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_4.jpeg" alt="" width="50%"&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;h2 id="bill-of-materials-bom"&gt;Bill of materials (BOM)&lt;/h2&gt;

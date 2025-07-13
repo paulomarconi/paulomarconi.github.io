@@ -13,7 +13,7 @@
 [TOC]
 
 # Source files
-Source code on [GitHub](https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus)
+Source code and docs on [GitHub](https://github.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus)
 
 # Description
 Design, simulation and implementation of a direct-mapped cache memory system in written VHDL using Altera Quartus Prime and DE0_CV FPGA development kit. The results are compared to a system without cache memory to verify the performance enhancement.

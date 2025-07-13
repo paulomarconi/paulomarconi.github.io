@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware) | PauLoMarconi</title>
+<title>Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device | PauLoMarconi</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/ipython.min.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/nikola_ipython.css" rel="stylesheet" type="text/css">
@@ -12,7 +12,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS (en)" hreflang="en" href="../../rss.xml">
 <link rel="alternate" type="application/rss+xml" title="RSS (es)" hreflang="es" href="../../es/rss.xml">
-<link rel="canonical" href="https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/">
+<link rel="canonical" href="https://paulomarconi.github.io/blog/mindwave/">
 <link rel="icon" href="../../files/blogFavicon.ico" sizes="128x128">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
@@ -21,42 +21,30 @@
 <meta name="google-site-verification" content="FvPotVuMyeh_tpN7AvA8uZBWgDSyNfoHe6HrnEFiKTE">
 <link rel="stylesheet" href="../assets/css/rst_tables.css">
 <meta name="author" content="Paulo Loma Marconi">
-<link rel="next" href="../mindwave/" title="Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device" type="text/html">
+<link rel="prev" href="../GPRS-GPS_Tracker/" title="GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)" type="text/html">
+<link rel="next" href="../cache_memory-fpga-vhdl-quartus/" title="Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA " type="text/html">
 <meta property="og:site_name" content="PauLoMarconi">
-<meta property="og:title" content="GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firm">
-<meta property="og:url" content="https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/">
+<meta property="og:title" content="Mobile robot controlled by Mindwave, Arduino nano, L293D motor control">
+<meta property="og:url" content="https://paulomarconi.github.io/blog/mindwave/">
 <meta property="og:description" content="Table of Contents
 
 
 Source files
 Description
-Characteristics
+Characteristics:
 Schematic
 PCB
 3D view
 Implementation
-Bill of materials (BOM)
 
 
 Source files
 Schematic and PCB design files, GitHub repository
 Description
-A">
+Schematic and PCB design">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2015-03-12T07:20:21-04:00">
-<meta property="article:tag" content="AC/DC converter">
-<meta property="article:tag" content="Arduino UNO">
-<meta property="article:tag" content="ATmega328p">
-<meta property="article:tag" content="Electronic design">
-<meta property="article:tag" content="FTDI232">
-<meta property="article:tag" content="GPRS/GPS">
-<meta property="article:tag" content="LM35">
-<meta property="article:tag" content="PCB design">
-<meta property="article:tag" content="Proteus">
-<meta property="article:tag" content="Schematic">
-<meta property="article:tag" content="SIM900">
-<meta property="article:tag" content="tracker">
-<link rel="alternate" hreflang="es" href="../../es/blog/GPRS-GPS_Tracker/">
+<meta property="article:published_time" content="2015-08-30T23:16:33-04:00">
+<link rel="alternate" hreflang="es" href="../../es/blog/mindwave/">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -132,7 +120,7 @@ navbar-dark bg-dark
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -140,11 +128,11 @@ navbar-dark bg-dark
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2015-03-12T07:20:21-04:00" itemprop="datePublished" title="2015-03-12">2015-03-12</time></a>
+            <time class="published dt-published" datetime="2015-08-30T23:16:33-04:00" itemprop="datePublished" title="2015-08-30">2015-08-30</time></a>
             </p>
                 <p class="commentline">
     
-    <a href="#disqus_thread" data-disqus-identifier="cache/posts/GPRS-GPS_Tracker.html">Comments</a>
+    <a href="#disqus_thread" data-disqus-identifier="cache/posts/Mindwave.html">Comments</a>
 
 
             
@@ -160,74 +148,44 @@ navbar-dark bg-dark
 <ul>
 <li><a href="#source-files">Source files</a></li>
 <li><a href="#description">Description</a></li>
-<li><a href="#characteristics">Characteristics</a></li>
+<li><a href="#characteristics">Characteristics:</a></li>
 <li><a href="#schematic">Schematic</a></li>
 <li><a href="#pcb">PCB</a></li>
 <li><a href="#3d-view">3D view</a></li>
 <li><a href="#implementation">Implementation</a></li>
-<li><a href="#bill-of-materials-bom">Bill of materials (BOM)</a></li>
 </ul>
 </div>
 <h2 id="source-files">Source files</h2>
-<p>Schematic and PCB design files, <a href="https://github.com/paulomarconi/GPRS-GPS_Tracker">GitHub repository</a></p>
+<p>Schematic and PCB design files, <a href="https://github.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller">GitHub repository</a></p>
 <h2 id="description">Description</h2>
-<p>A self-contained and autonomous GPRS/GPS Tracker using SIM900 and Atmega328p for Arduino UNO-compatible firmware. Proof of concept prototype that integrates sensors, power management features and communication interfaces.</p>
-<h2 id="characteristics">Characteristics</h2>
+<p>Schematic and PCB design of a small-factor device for controlling the movement of a mobile robot with the Mindwave interface. The design is composed by an Arduino nano, L293D motor controller, HC05 Bluetooth device with external battery connector.</p>
+<h2 id="characteristics">Characteristics:</h2>
 <ul>
-<li>Atmega328p microcontroller for Arduino UNO-compatible firmware.</li>
-<li>Connectors for SIM900 shield for </li>
-<li>FTDI232 module for USB communication and firmware uploading.</li>
-<li>AC/DC converter for 110/220 V input.</li>
-<li>Li-on 7.2B battery charger for mobile and backup support.</li>
-<li>LM35 temperature sensor.</li>
-<li>AC sensor.</li>
-<li>Proximity sensor via optocoupler.</li>
+<li>Connectors for Arduino nano shield.</li>
+<li>Connector for external battery.</li>
+<li>Integrated L293D TTL.</li>
+<li>Connector for HC05 module.</li>
 <li>The schematic and PCB design are made in Proteus.</li>
 </ul>
 <h2 id="schematic">Schematic</h2>
-<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/schematic.pdf" width="100%" height="450px">
-    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/schematic.pdf">download the PDF.</a></p>
-</object>
-
-<h2 id="pcb">PCB</h2>
-<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf" width="100%" height="650px">
-    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf">download the PDF.</a></p>
-</object>
-
-<h2 id="3d-view">3D view</h2>
-<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="100%"></center>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/schematic.bmp" alt="" width="100%"></center>
     <center><figcaption>Top view</figcaption></center>
-</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="100%"></center>
+</figure><h2 id="pcb">PCB</h2>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/PCB.bmp" alt="" width="100%"></center>
+    <center><figcaption>Top view</figcaption></center>
+</figure><h2 id="3d-view">3D view</h2>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/3Dview.png" alt="" width="100%"></center>
     <center><figcaption>Bottom view</figcaption></center>
 </figure><h2 id="implementation">Implementation</h2>
-<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/PCB_1.jpg" alt="" width="50%"></center>
-</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/PCB_2.jpg" alt="" width="50%"></center>
-</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_1.jpeg" alt="" width="50%"></center>
-</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_2.jpeg" alt="" width="50%"></center>
-</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_3.jpeg" alt="" width="50%"></center>
-</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Implementation/box_4.jpeg" alt="" width="50%"></center>
-</figure><h2 id="bill-of-materials-bom">Bill of materials (BOM)</h2>
-<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/BOM.pdf" width="100%" height="1200px">
-    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/BOM.pdf">download the PDF.</a></p>
-</object>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
-<li><a class="tag p-category" href="../../categories/acdc-converter/" rel="tag">AC/DC converter</a></li>
-            <li><a class="tag p-category" href="../../categories/arduino-uno/" rel="tag">Arduino UNO</a></li>
-            <li><a class="tag p-category" href="../../categories/atmega328p/" rel="tag">ATmega328p</a></li>
-            <li><a class="tag p-category" href="../../categories/electronic-design/" rel="tag">Electronic design</a></li>
-            <li><a class="tag p-category" href="../../categories/ftdi232/" rel="tag">FTDI232</a></li>
-            <li><a class="tag p-category" href="../../categories/gprsgps/" rel="tag">GPRS/GPS</a></li>
-            <li><a class="tag p-category" href="../../categories/lm35/" rel="tag">LM35</a></li>
-            <li><a class="tag p-category" href="../../categories/pcb-design/" rel="tag">PCB design</a></li>
-            <li><a class="tag p-category" href="../../categories/proteus/" rel="tag">Proteus</a></li>
-            <li><a class="tag p-category" href="../../categories/schematic/" rel="tag">Schematic</a></li>
-            <li><a class="tag p-category" href="../../categories/sim900/" rel="tag">SIM900</a></li>
-            <li><a class="tag p-category" href="../../categories/tracker/" rel="tag">tracker</a></li>
-        </ul>
-<ul class="pager hidden-print">
-<li class="next">
-                <a href="../mindwave/" rel="next" title="Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device">Next post</a>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/protoboard1.jpg" alt="" width="50%"></center>
+</figure>
+</div>
+    <aside class="postpromonav"><nav><ul class="pager hidden-print">
+<li class="previous">
+                <a href="../GPRS-GPS_Tracker/" rel="prev" title="GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../cache_memory-fpga-vhdl-quartus/" rel="next" title="Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA ">Next post</a>
             </li>
         </ul></nav></aside><section class="comments hidden-print"><h2>Comments</h2>
         
@@ -235,9 +193,9 @@ navbar-dark bg-dark
         <div id="disqus_thread"></div>
         <script>
         var disqus_shortname ="paulomarconi",
-            disqus_url="https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/",
-        disqus_title="GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)",
-        disqus_identifier="cache/posts/GPRS-GPS_Tracker.html",
+            disqus_url="https://paulomarconi.github.io/blog/mindwave/",
+        disqus_title="Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device",
+        disqus_identifier="cache/posts/Mindwave.html",
         disqus_config = function () {
             this.language = "en";
         };

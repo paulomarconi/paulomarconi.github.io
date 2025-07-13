@@ -11,7 +11,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/archive.html</loc>
-  <lastmod>2025-07-12T22:51:00Z</lastmod>
+  <lastmod>2025-07-13T03:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/bio/</loc>
@@ -19,7 +19,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/</loc>
-  <lastmod>2025-07-12T22:45:00Z</lastmod>
+  <lastmod>2025-07-13T03:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/DCmotor/</loc>
@@ -74,11 +74,15 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/blog/index-1.html</loc>
-  <lastmod>2025-07-12T22:51:00Z</lastmod>
+  <lastmod>2025-07-13T03:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/blog/mindwave/</loc>
+  <lastmod>2025-07-13T03:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/</loc>
-  <lastmod>2025-07-12T22:48:00Z</lastmod>
+  <lastmod>2025-07-13T00:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/acdc-converter/</loc>
@@ -110,7 +114,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/cache-memory/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/compensator/</loc>
@@ -130,7 +134,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/de0_cv-fpga/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/deadbeat/</loc>
@@ -142,7 +146,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/direct-mapped-cache/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/dynamics-model/</loc>
@@ -166,7 +170,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/fpga/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/ftdi232/</loc>
@@ -202,7 +206,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/microprocessor/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/mpc/</loc>
@@ -246,7 +250,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/quartus/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/root-locus/</loc>
@@ -290,7 +294,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/unconstrained/</loc>
-  <lastmod>2025-07-12T22:48:00Z</lastmod>
+  <lastmod>2025-07-13T00:15:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/v-rep/</loc>
@@ -298,7 +302,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/vhdl/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/categories/vscode/</loc>
@@ -314,7 +318,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/archive.html</loc>
-  <lastmod>2025-07-12T22:51:00Z</lastmod>
+  <lastmod>2025-07-13T03:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/bio/</loc>
@@ -322,7 +326,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/</loc>
-  <lastmod>2025-07-12T22:45:00Z</lastmod>
+  <lastmod>2025-07-13T03:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/DCmotor/</loc>
@@ -386,7 +390,12 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/blog/index-1.html</loc>
-  <lastmod>2025-07-12T22:51:00Z</lastmod>
+  <lastmod>2025-07-13T03:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://paulomarconi.github.io/es/blog/mindwave/</loc>
+  <lastmod>2025-07-13T03:21:00Z</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://paulomarconi.github.io/blog/mindwave/" />
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/</loc>
@@ -422,7 +431,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/cache-memory/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/compensator/</loc>
@@ -442,7 +451,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/de0_cv-fpga/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/deadbeat/</loc>
@@ -454,7 +463,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/direct-mapped-cache/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/dynamics-model/</loc>
@@ -486,7 +495,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/fpga/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/ftdi232/</loc>
@@ -522,7 +531,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/microprocessor/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/modelo-dinamico/</loc>
@@ -582,7 +591,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/quartus/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/root-locus/</loc>
@@ -634,7 +643,7 @@
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/vhdl/</loc>
-  <lastmod>2025-07-12T22:42:00Z</lastmod>
+  <lastmod>2025-07-12T23:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://paulomarconi.github.io/es/categories/vscode/</loc>
