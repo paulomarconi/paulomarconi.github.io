@@ -36,7 +36,7 @@ Coursework project:
 	<p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus/master/Guidelines__P2_W17.pdf">download the PDF.</a></p>  
 </object>
 
-# The proposed solution.
+# The proposed solution
 
 <object data="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus/master/FinalProjectFico_docs/Project_Report/Project_Report.pdf" width="100%" height="1200px"> 
 	<p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/paulomarconi/Cache_memory-FPGA-VHDL-Quartus/master/FinalProjectFico_docs/Project_Report/Project_Report.pdf">download the PDF.</a></p>

@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Sun, 13 Jul 2025 00:15:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 14 Jul 2025 19:14:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/GPRS-GPS_Tracker/#source-files"&gt;Source files&lt;/a&gt;&lt;/li&gt;
@@ -44,12 +44,12 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 
 &lt;h2 id="3d-view"&gt;3D view&lt;/h2&gt;
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="100%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="50%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Top view&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
 &lt;figure&gt;
-    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="100%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="50%"&gt;&lt;/center&gt;
     &lt;center&gt;&lt;figcaption&gt;Bottom view&lt;/figcaption&gt;&lt;/center&gt;
 &lt;/figure&gt;
 
