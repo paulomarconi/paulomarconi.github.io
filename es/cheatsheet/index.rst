@@ -66,6 +66,41 @@ https://docs.github.com/en/github/using-git/
     git push origin master # push changes to master branch
     git push -f origin master # force push changes to master branch
 
+.gitignore
+----------
+https://git-scm.com/docs/gitignore
+
+.. code-block:: bash
+
+    # Ignore all
+    /*
+
+    # except these files
+    !README.md
+    !LICENSE
+
+    # except this folder
+    !folder1/
+    # ignore this folder again
+    folder1/*
+    # except these subfolders
+    !folder1/subfolder1/
+    # ignore this folder again
+    folder1/subfolder1/*
+    # except these files inside 
+    !file.png
+    !*.pdf
+
+
+    # except this folder
+    !folder2/
+    # ignore this folder again
+    folder2/*
+    # except these files inside 
+    !file.tex
+    !*.pdf
+    !*.bmp
+
 
 Images with defined size and caption
 ====================================
@@ -161,7 +196,32 @@ md + Embedded pdf
     </object> 
 
 
+md + Embedded Youtube video
+---------------------------
 
+Copy the `<extra_code>` of the `Embed Video` shareable section of the YouTube video.
+
+.. code-block:: html 
+
+    <object data="https://www.youtube.com/embed/Zvd96RGTEjk?si=<extra_code>" width="100%" height="600px"> 
+        <p>It appears you don't have a video plugin for this browser or JavaScript is disabled. You can <a href="https://www.youtube.com/watch?v=Zvd96RGTEjk">download the video.</a></p>
+    </object>
+
+
+
+md + Embedded Git video
+---------------------------
+
+.. code-block:: html 
+
+    <div style="text-align: center;">
+        <video width="100%" controls autoplay muted loop playsinline>
+            <source src="https://github.com/<user_name>/<repo_name>/raw/refs/heads/master/<folder_location>/<file_name>.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video> 
+    </div>
+
+If the previous `src=...` name is not working, use the `View raw` link of the video file hosted in the repository.
 
 
 reStructuredText

@@ -29,26 +29,57 @@ Schematic and PCB design of a small-factor device for controlling the movement o
 
 <figure>
     <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/schematic.bmp" alt="" width="100%"/></center>
-    <center><figcaption>Top view</figcaption></center>
 </figure>
 
 # PCB
 
 <figure>
-    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/PCB.bmp" alt="" width="100%"/></center>
-    <center><figcaption>Top view</figcaption></center>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/PCB.bmp" alt="" width="50%"/></center>
 </figure>
 
 # 3D view
 
 <figure>
-    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/3Dview.png" alt="" width="100%"/></center>
-    <center><figcaption>Bottom view</figcaption></center>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Hardware/3Dview.png" alt="" width="50%"/></center>
 </figure>
 
 # Implementation 
 
 <figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/Mindwave.png" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/PCB.jpg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
     <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/protoboard1.jpg" alt="" width="50%"/></center>
 </figure>
 
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/protoboard2.jpg" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/protoboard3.png" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/robot1.png" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/robot2.png" alt="" width="50%"/></center>
+</figure>
+
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/master/Implementation/testing.jpg" alt="" width="50%"/></center>
+</figure>
+
+<div style="text-align: center;">
+    <video width="100%" controls muted playsinline>
+        <source src="https://github.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller/raw/refs/heads/master/Implementation/design.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+    </video> 
+</div>
