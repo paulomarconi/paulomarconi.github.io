@@ -44,12 +44,12 @@ A self-contained and autonomous GPRS/GPS Tracker using SIM900 and Atmega328p for
 # 3D view
 
 <figure>
-    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="100%"/></center>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="50%"/></center>
     <center><figcaption>Top view</figcaption></center>
 </figure>
 
 <figure>
-    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="100%"/></center>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="50%"/></center>
     <center><figcaption>Bottom view</figcaption></center>
 </figure>
 
