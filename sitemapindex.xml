@@ -7,23 +7,35 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/acdc-converter.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/aggregation.xml</loc>
   <lastmod>2025-07-12T22:42:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/altium.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/categories/anaconda.xml</loc>
   <lastmod>2025-07-12T22:42:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/categories/arduino-nano.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/categories/arduino-uno.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/atmega328p.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/autodesk-invertor.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/awgn.xml</loc>
@@ -36,6 +48,10 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/cache-memory.xml</loc>
   <lastmod>2025-07-14T19:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/cad.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/compensator.xml</loc>
@@ -79,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/electronic-design.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/equilibrium-point.xml</loc>
@@ -95,7 +111,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/ftdi232.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/geetech-prusa-i3x.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/github.xml</loc>
@@ -103,7 +123,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/gprsgps.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/hc05-bluetooth.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/jupyter.xml</loc>
@@ -119,7 +143,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/lm35.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/matlab.xml</loc>
@@ -128,6 +152,14 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/microprocessor.xml</loc>
   <lastmod>2025-07-14T19:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/mindwave.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/mobile-robot.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/mpc.xml</loc>
@@ -147,7 +179,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/pcb-design.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T05:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/categories/pcb.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/phase-lag.xml</loc>
@@ -163,7 +199,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/proteus.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/python.xml</loc>
@@ -179,11 +215,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/schematic.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/sim900.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/ssto.xml</loc>
@@ -211,11 +247,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/tracker.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/unconstrained.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T05:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/categories/v-rep.xml</loc>
@@ -231,23 +267,35 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/acdc-converter.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/aggregation.xml</loc>
   <lastmod>2025-07-12T22:42:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/altium.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/anaconda.xml</loc>
   <lastmod>2025-07-12T22:42:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/arduino-nano.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/arduino-uno.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/atmega328p.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/autodesk-invertor.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/awgn.xml</loc>
@@ -260,6 +308,10 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/cache-memory.xml</loc>
   <lastmod>2025-07-14T19:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/cad.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/compensator.xml</loc>
@@ -307,7 +359,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/electronic-design.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/espacio-de-estados.xml</loc>
@@ -327,7 +379,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/ftdi232.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/geetech-prusa-i3x.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/github.xml</loc>
@@ -335,7 +391,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/gprsgps.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/hc05-bluetooth.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/jupyter.xml</loc>
@@ -351,7 +411,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/lm35.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/matlab.xml</loc>
@@ -360,6 +420,14 @@
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/microprocessor.xml</loc>
   <lastmod>2025-07-14T19:14:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/mindwave.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/mobile-robot.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/modelo-dinamico.xml</loc>
@@ -391,7 +459,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/pcb-design.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T05:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://paulomarconi.github.io/es/categories/pcb.xml</loc>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/phase-lag.xml</loc>
@@ -407,7 +479,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/proteus.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/punto-de-equilibrio.xml</loc>
@@ -427,11 +499,11 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/schematic.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/sim900.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/sin-restricciones.xml</loc>
@@ -463,7 +535,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/tracker.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/categories/v-rep.xml</loc>
@@ -483,7 +555,7 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/es/rss.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/galleries/rss.xml</loc>
@@ -491,10 +563,10 @@
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/rss.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://paulomarconi.github.io/sitemap.xml</loc>
-  <lastmod>2025-07-14T19:14:00Z</lastmod>
+  <lastmod>2025-08-01T06:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>

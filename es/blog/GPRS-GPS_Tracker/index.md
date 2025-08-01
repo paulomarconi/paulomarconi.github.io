@@ -2,7 +2,7 @@
 .. title: GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)
 .. slug: GPRS-GPS_Tracker
 .. date: 2015-03-12 07:20:21 UTC-04:00
-.. tags: Electronic design, Schematic, PCB design, GPRS/GPS, tracker, SIM900, ATmega328p, Arduino UNO, LM35, AC/DC converter, FTDI232, Proteus
+.. tags: Electronic design, schematic, PCB, GPRS/GPS, tracker, SIM900, ATmega328p, Arduino UNO, LM35, AC/DC converter, FTDI232, Proteus
 .. category: 
 .. link: 
 .. description: 
@@ -37,9 +37,9 @@ A self-contained and autonomous GPRS/GPS Tracker using SIM900 and Atmega328p for
 
 # PCB
 
-<object data="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf" width="100%" height="650px">
-    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf">download the PDF.</a></p>
-</object>
+<figure>
+    <center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.png" alt="3Dview1" width="50%"/></center>
+</figure>
 
 # 3D view
 

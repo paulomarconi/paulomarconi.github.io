@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Mon, 14 Jul 2025 19:14:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 01 Aug 2025 06:06:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>GPRS/GPS (SIM900) Tracker with Atmega328p (Arduino UNO-compatible firmware)</title><link>https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;div class="toc"&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/#source-files"&gt;Source files&lt;/a&gt;&lt;/li&gt;
@@ -38,9 +38,9 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;/object&gt;
 
 &lt;h2 id="pcb"&gt;PCB&lt;/h2&gt;
-&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf" width="100%" height="650px"&gt;
-    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
-&lt;/object&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.png" alt="3Dview1" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
 
 &lt;h2 id="3d-view"&gt;3D view&lt;/h2&gt;
 &lt;figure&gt;
@@ -81,4 +81,4 @@ src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copy
 &lt;h2 id="bill-of-materials-bom"&gt;Bill of materials (BOM)&lt;/h2&gt;
 &lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/BOM.pdf" width="100%" height="1200px"&gt;
     &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/BOM.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
-&lt;/object&gt;</description><category>AC/DC converter</category><category>Arduino UNO</category><category>ATmega328p</category><category>Electronic design</category><category>FTDI232</category><category>GPRS/GPS</category><category>LM35</category><category>PCB design</category><category>Proteus</category><category>Schematic</category><category>SIM900</category><category>tracker</category><guid>https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/</guid><pubDate>Thu, 12 Mar 2015 11:20:21 GMT</pubDate></item></channel></rss>
+&lt;/object&gt;</description><category>AC/DC converter</category><category>Arduino UNO</category><category>ATmega328p</category><category>Electronic design</category><category>FTDI232</category><category>GPRS/GPS</category><category>LM35</category><category>PCB</category><category>Proteus</category><category>schematic</category><category>SIM900</category><category>tracker</category><guid>https://paulomarconi.github.io/blog/GPRS-GPS_Tracker/</guid><pubDate>Thu, 12 Mar 2015 11:20:21 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PauLoMarconi (Publicaciones sobre Geetech Prusa i3x)</title><link>https://paulomarconi.github.io/</link><description></description><atom:link href="https://paulomarconi.github.io/es/categories/geetech-prusa-i3x.xml" rel="self" type="application/rss+xml"></atom:link><language>es</language><copyright>Contents © 2025 &lt;a href="mailto:p.lomarconi@sheffield.ac.uk, prlomarconi@gmail.com"&gt;Paulo Loma Marconi&lt;/a&gt; 
+&lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
+&lt;img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Fri, 01 Aug 2025 06:06:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>IEA_robotics - Mechatronic design of a small-factor mobile robot for multi-agent robotic systems. </title><link>https://paulomarconi.github.io/es/blog/iea_robotics/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;div class="toc"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#source-files"&gt;Source files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#description"&gt;Description&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#iea_urobotics_v1-characteristics"&gt;IEA_uRobotics_v1 characteristics&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#schematic"&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#pcb"&gt;PCB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#pcb-3d-view"&gt;PCB 3D view&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#cad-view"&gt;CAD view&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#implementation"&gt;Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#bill-of-materials-bom"&gt;Bill of materials (BOM)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#iea_urobotics_v2-characteristics"&gt;IEA_uRobotics_v2 characteristics&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#schematic_1"&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#pcb_1"&gt;PCB&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#pcb-3d-view_1"&gt;PCB 3D view&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#implementation_1"&gt;Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://paulomarconi.github.io/es/blog/iea_robotics/#bill-of-materials-bom_1"&gt;Bill of materials (BOM)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;h2 id="source-files"&gt;Source files&lt;/h2&gt;
+&lt;p&gt;Schematic, PCB and CAD design files, &lt;a href="https://github.com/paulomarconi/IEA_Robotics"&gt;GitHub repository&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="description"&gt;Description&lt;/h2&gt;
+&lt;p&gt;Mechatronic design of a small-factor mobile robot for multi-agent robotic systems. &lt;/p&gt;
+&lt;h2 id="iea_urobotics_v1-characteristics"&gt;IEA_uRobotics_v1 characteristics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Schematic and PCB designs made in Proteus.&lt;/li&gt;
+&lt;li&gt;+5V/3.3V voltage regulator.&lt;/li&gt;
+&lt;li&gt;Maple mini (STM32).&lt;/li&gt;
+&lt;li&gt;NRF24L01+ transceiver.&lt;/li&gt;
+&lt;li&gt;L293D motor driver.&lt;/li&gt;
+&lt;li&gt;Two motor enconders.&lt;/li&gt;
+&lt;li&gt;Six Infrared (IR) proximity sensors.&lt;/li&gt;
+&lt;li&gt;Designed with DIP components. &lt;/li&gt;
+&lt;li&gt;Mechanical design made in Autodesk Inventor.&lt;/li&gt;
+&lt;li&gt;3D printer parts made with Geetech Prusa i3x.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="schematic"&gt;Schematic&lt;/h3&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/schematic.pdf" width="100%" height="700px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/schematic.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;h3 id="pcb"&gt;PCB&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/PCB.png" alt="3Dview1" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="pcb-3d-view"&gt;PCB 3D view&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/3Dview_1.png" alt="3Dview1" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Top view&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/3Dview_2.png" alt="3Dview2" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Top view&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/3Dview_3.png" alt="3Dview2" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Bottom view&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="cad-view"&gt;CAD view&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_1.png" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_2.png" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_3.png" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_4.png" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_5.png" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_6.png" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;div style="text-align: center;"&gt;
+    &lt;video width="100%" controls autoplay muted loop playsinline&gt;
+        &lt;source src="https://github.com/paulomarconi/IEA_Robotics/raw/refs/heads/master/IEA_uRobots_v1/implementation/CAD_video.mp4" type="video/mp4"&gt;
+        Your browser does not support the video tag.
+    &lt;/source&gt;&lt;/video&gt;
+&lt;/div&gt;
+
+&lt;h3 id="implementation"&gt;Implementation&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_1.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_2.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_3.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_4.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_5.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_1.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_2.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_3.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_4.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="bill-of-materials-bom"&gt;Bill of materials (BOM)&lt;/h3&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/BOM.pdf" width="100%" height="1200px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/BOM.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;h2 id="iea_urobotics_v2-characteristics"&gt;IEA_uRobotics_v2 characteristics&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Schematic and PCB designs made in Altium.&lt;/li&gt;
+&lt;li&gt;Designed with SMD components. &lt;/li&gt;
+&lt;li&gt;ST-LinkV2 programmer STM32F103C8T6.&lt;/li&gt;
+&lt;li&gt;Main uC STM32F429VIT6. &lt;/li&gt;
+&lt;li&gt;USB connector + ESD protection.&lt;/li&gt;
+&lt;li&gt;9 Degrees of Freedom (DoF) motion tracking IMU MPU9250 for low-range spatial positioning.&lt;/li&gt;
+&lt;li&gt;Dual DC motor driver A3906..&lt;/li&gt;
+&lt;li&gt;Li-Ion/Li-Po charger MCP7383.&lt;/li&gt;
+&lt;li&gt;Decawave DWM1000 module for mid-range spatial positioning.&lt;/li&gt;
+&lt;li&gt;+5V/+3.3V voltage regultor for external power supply and battery: LD3985M33R, MCP186AMX330TAG, LD39050PU33R and LD1117S0TR.&lt;/li&gt;
+&lt;li&gt;BMD-300 Bluetooth Low Energy (BLe) module for wirelss communication.&lt;/li&gt;
+&lt;li&gt;Six Time of Figth (ToF) VL3501x sensors. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="schematic_1"&gt;Schematic&lt;/h3&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_schematic.pdf" width="100%" height="800px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_schematic.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;h3 id="pcb_1"&gt;PCB&lt;/h3&gt;
+&lt;object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_PCB.pdf" width="100%" height="600px"&gt;
+    &lt;p&gt;It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can &lt;a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_PCB.pdf"&gt;download the PDF.&lt;/a&gt;&lt;/p&gt;
+&lt;/object&gt;
+
+&lt;h3 id="pcb-3d-view_1"&gt;PCB 3D view&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_PCB-3D.png" alt="3Dview1" width="50%"&gt;&lt;/center&gt;
+    &lt;center&gt;&lt;figcaption&gt;Top view&lt;/figcaption&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="implementation_1"&gt;Implementation&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/Cirqoid_3DPrinter_setup.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/Soldering_station.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_1.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_2.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_3.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_4.jpg" alt="" width="50%"&gt;&lt;/center&gt;
+&lt;/figure&gt;
+
+&lt;h3 id="bill-of-materials-bom_1"&gt;Bill of materials (BOM)&lt;/h3&gt;
+&lt;figure&gt;
+    &lt;center&gt;&lt;img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_BOM.png" alt="" width="80%"&gt;&lt;/center&gt;
+&lt;/figure&gt;</description><guid>https://paulomarconi.github.io/es/blog/iea_robotics/</guid><pubDate>Mon, 02 Oct 2017 22:29:46 GMT</pubDate></item></channel></rss>

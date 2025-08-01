@@ -97,7 +97,148 @@ navbar-dark bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="cache_memory-fpga-vhdl-quartus/" class="u-url">Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA </a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="iea_robotics/" class="u-url">IEA_robotics - Mechatronic design of a small-factor mobile robot for multi-agent robotic systems. </a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                Paulo Loma Marconi
+            </span></p>
+            <p class="dateline">
+            <a href="iea_robotics/" rel="bookmark">
+            <time class="published dt-published" datetime="2017-10-02T18:29:46-04:00" itemprop="datePublished" title="2017-10-02">2017-10-02</time></a>
+            </p>
+                <p class="commentline">
+    
+    <a href="iea_robotics/#disqus_thread" data-disqus-identifier="cache/posts/IEA_robotics.html">Comments</a>
+
+
+        </p>
+</div>
+    </header><div class="e-content entry-content">
+    <h2>Table of Contents</h2>
+<div class="toc">
+<ul>
+<li><a href="iea_robotics/#source-files">Source files</a></li>
+<li><a href="iea_robotics/#description">Description</a></li>
+<li>
+<a href="iea_robotics/#iea_urobotics_v1-characteristics">IEA_uRobotics_v1 characteristics</a><ul>
+<li><a href="iea_robotics/#schematic">Schematic</a></li>
+<li><a href="iea_robotics/#pcb">PCB</a></li>
+<li><a href="iea_robotics/#pcb-3d-view">PCB 3D view</a></li>
+<li><a href="iea_robotics/#cad-view">CAD view</a></li>
+<li><a href="iea_robotics/#implementation">Implementation</a></li>
+<li><a href="iea_robotics/#bill-of-materials-bom">Bill of materials (BOM)</a></li>
+</ul>
+</li>
+<li>
+<a href="iea_robotics/#iea_urobotics_v2-characteristics">IEA_uRobotics_v2 characteristics</a><ul>
+<li><a href="iea_robotics/#schematic_1">Schematic</a></li>
+<li><a href="iea_robotics/#pcb_1">PCB</a></li>
+<li><a href="iea_robotics/#pcb-3d-view_1">PCB 3D view</a></li>
+<li><a href="iea_robotics/#implementation_1">Implementation</a></li>
+<li><a href="iea_robotics/#bill-of-materials-bom_1">Bill of materials (BOM)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="source-files">Source files</h2>
+<p>Schematic, PCB and CAD design files, <a href="https://github.com/paulomarconi/IEA_Robotics">GitHub repository</a></p>
+<h2 id="description">Description</h2>
+<p>Mechatronic design of a small-factor mobile robot for multi-agent robotic systems. </p>
+<h2 id="iea_urobotics_v1-characteristics">IEA_uRobotics_v1 characteristics</h2>
+<ul>
+<li>Schematic and PCB designs made in Proteus.</li>
+<li>+5V/3.3V voltage regulator.</li>
+<li>Maple mini (STM32).</li>
+<li>NRF24L01+ transceiver.</li>
+<li>L293D motor driver.</li>
+<li>Two motor enconders.</li>
+<li>Six Infrared (IR) proximity sensors.</li>
+<li>Designed with DIP components. </li>
+<li>Mechanical design made in Autodesk Inventor.</li>
+<li>3D printer parts made with Geetech Prusa i3x.</li>
+</ul>
+<h3 id="schematic">Schematic</h3>
+<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/schematic.pdf" width="100%" height="700px">
+    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/schematic.pdf">download the PDF.</a></p>
+</object>
+
+<h3 id="pcb">PCB</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/PCB.png" alt="3Dview1" width="50%"></center>
+</figure><h3 id="pcb-3d-view">PCB 3D view</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/3Dview_1.png" alt="3Dview1" width="50%"></center>
+    <center><figcaption>Top view</figcaption></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/3Dview_2.png" alt="3Dview2" width="50%"></center>
+    <center><figcaption>Top view</figcaption></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/3Dview_3.png" alt="3Dview2" width="50%"></center>
+    <center><figcaption>Bottom view</figcaption></center>
+</figure><h3 id="cad-view">CAD view</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_1.png" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_2.png" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_3.png" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_4.png" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_5.png" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/CAD_6.png" alt="" width="50%"></center>
+</figure><div style="text-align: center;">
+    <video width="100%" controls autoplay muted loop playsinline><source src="https://github.com/paulomarconi/IEA_Robotics/raw/refs/heads/master/IEA_uRobots_v1/implementation/CAD_video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </source></video>
+</div>
+
+<h3 id="implementation">Implementation</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_1.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_2.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_3.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_4.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/assembled_5.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_1.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_2.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_3.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/implementation/robot_4.jpg" alt="" width="50%"></center>
+</figure><h3 id="bill-of-materials-bom">Bill of materials (BOM)</h3>
+<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/BOM.pdf" width="100%" height="1200px">
+    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v1/hardware/BOM.pdf">download the PDF.</a></p>
+</object>
+
+<h2 id="iea_urobotics_v2-characteristics">IEA_uRobotics_v2 characteristics</h2>
+<ul>
+<li>Schematic and PCB designs made in Altium.</li>
+<li>Designed with SMD components. </li>
+<li>ST-LinkV2 programmer STM32F103C8T6.</li>
+<li>Main uC STM32F429VIT6. </li>
+<li>USB connector + ESD protection.</li>
+<li>9 Degrees of Freedom (DoF) motion tracking IMU MPU9250 for low-range spatial positioning.</li>
+<li>Dual DC motor driver A3906..</li>
+<li>Li-Ion/Li-Po charger MCP7383.</li>
+<li>Decawave DWM1000 module for mid-range spatial positioning.</li>
+<li>+5V/+3.3V voltage regultor for external power supply and battery: LD3985M33R, MCP186AMX330TAG, LD39050PU33R and LD1117S0TR.</li>
+<li>BMD-300 Bluetooth Low Energy (BLe) module for wirelss communication.</li>
+<li>Six Time of Figth (ToF) VL3501x sensors. </li>
+</ul>
+<h3 id="schematic_1">Schematic</h3>
+<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_schematic.pdf" width="100%" height="800px">
+    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_schematic.pdf">download the PDF.</a></p>
+</object>
+
+<h3 id="pcb_1">PCB</h3>
+<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_PCB.pdf" width="100%" height="600px">
+    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_PCB.pdf">download the PDF.</a></p>
+</object>
+
+<h3 id="pcb-3d-view_1">PCB 3D view</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_PCB-3D.png" alt="3Dview1" width="50%"></center>
+    <center><figcaption>Top view</figcaption></center>
+</figure><h3 id="implementation_1">Implementation</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/Cirqoid_3DPrinter_setup.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/Soldering_station.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_1.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_2.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_3.jpg" alt="" width="50%"></center>
+</figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/implementation/PCB_4.jpg" alt="" width="50%"></center>
+</figure><h3 id="bill-of-materials-bom_1">Bill of materials (BOM)</h3>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/IEA_Robotics/master/IEA_uRobots_v2/hardware/IEA_uRobots_v2_BOM.png" alt="" width="80%"></center>
+</figure>
+</div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="cache_memory-fpga-vhdl-quartus/" class="u-url">Simple computer architecture using direct-mapped cache memory system in VHDL using Quartus for DE0_CV FPGA </a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Paulo Loma Marconi
@@ -160,7 +301,7 @@ navbar-dark bg-dark
     <p>It appears you don't have a video plugin for this browser or JavaScript is disabled. You can <a href="https://www.youtube.com/watch?v=Zvd96RGTEjk">download the video.</a></p>
 </object>
     </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="mindwave/" class="u-url">Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device</a></h1>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="mindwave/" class="u-url">Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth module</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 Paulo Loma Marconi
@@ -182,7 +323,7 @@ navbar-dark bg-dark
 <ul>
 <li><a href="mindwave/#source-files">Source files</a></li>
 <li><a href="mindwave/#description">Description</a></li>
-<li><a href="mindwave/#characteristics">Characteristics:</a></li>
+<li><a href="mindwave/#characteristics">Characteristics</a></li>
 <li><a href="mindwave/#schematic">Schematic</a></li>
 <li><a href="mindwave/#pcb">PCB</a></li>
 <li><a href="mindwave/#3d-view">3D view</a></li>
@@ -192,8 +333,8 @@ navbar-dark bg-dark
 <h2 id="source-files">Source files</h2>
 <p>Schematic and PCB design files, <a href="https://github.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller">GitHub repository</a></p>
 <h2 id="description">Description</h2>
-<p>Schematic and PCB design of a small-factor device for controlling the movement of a mobile robot with the Mindwave interface. The design is composed by an Arduino nano, L293D motor controller, HC05 Bluetooth device with external battery connector.</p>
-<h2 id="characteristics">Characteristics:</h2>
+<p>Schematic and PCB design of a small-factor device for controlling the movement of a mobile robot with the Mindwave interface. The design is composed by an Arduino nano, L293D motor controller, HC05 Bluetooth module with external battery connector.</p>
+<h2 id="characteristics">Characteristics</h2>
 <ul>
 <li>Connectors for Arduino nano shield.</li>
 <li>Connector for external battery.</li>
@@ -274,11 +415,8 @@ navbar-dark bg-dark
 </object>
 
 <h2 id="pcb">PCB</h2>
-<object data="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf" width="100%" height="650px">
-    <p>It appears you don't have a PDF plugin for this browser or JavaScript is disabled. You can <a href="https://drive.google.com/viewerng/viewer?embedded=true&amp;url=https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.pdf">download the PDF.</a></p>
-</object>
-
-<h2 id="3d-view">3D view</h2>
+<figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/PCB.png" alt="3Dview1" width="50%"></center>
+</figure><h2 id="3d-view">3D view</h2>
 <figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_1.png" alt="3Dview1" width="50%"></center>
     <center><figcaption>Top view</figcaption></center>
 </figure><figure><center><img src="https://raw.githubusercontent.com/paulomarconi/GPRS-GPS_Tracker/master/Proteus/3Dview_2.png" alt="3Dview2" width="50%"></center>
