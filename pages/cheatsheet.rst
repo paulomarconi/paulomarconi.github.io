@@ -57,9 +57,9 @@ https://docs.github.com/en/github/using-git/
     git remote rm <remote_name> # remove remote repository
     git remote add origin https://github.com/<user_name>/<repo_name>.git 
     git status
-    git add <file_name> # add file to staging area
-    git add --all # add all files to staging area
-    git add . # add all files in the current directory to staging area
+    git add <file_name> # add file to the staging area
+    git add --all # add all files to the staging area
+    git add . # add all files to the staging area
     git commit -m "commit message" # commit changes with a message
     git commit -a -m "commit message"  # add and commit all modified files
     git push <remote_name> <branch_name> # push changes to remote repository

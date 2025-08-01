@@ -1,8 +1,8 @@
 <!--
-.. title: Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth device
+.. title: Mobile robot controlled by Mindwave, Arduino nano, L293D motor controller and HC05 Bluetooth module
 .. slug: mindwave
 .. date: 2015-08-30 23:16:33 UTC-04:00
-.. tags: 
+.. tags: Mindwave, Arduino nano, HC05 Bluetooth, schematic, PCB, Proteus
 .. category: 
 .. link: 
 .. description: 
@@ -16,9 +16,9 @@
 Schematic and PCB design files, [GitHub repository](https://github.com/paulomarconi/Mindwave-ArduinoNano-HC05_robot-controller)
 
 # Description
-Schematic and PCB design of a small-factor device for controlling the movement of a mobile robot with the Mindwave interface. The design is composed by an Arduino nano, L293D motor controller, HC05 Bluetooth device with external battery connector.
+Schematic and PCB design of a small-factor device for controlling the movement of a mobile robot with the Mindwave interface. The design is composed by an Arduino nano, L293D motor controller, HC05 Bluetooth module with external battery connector.
 
-# Characteristics:
+# Characteristics
 - Connectors for Arduino nano shield.
 - Connector for external battery.
 - Integrated L293D TTL.
