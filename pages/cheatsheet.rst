@@ -64,7 +64,10 @@ https://docs.github.com/en/github/using-git/
     git commit -a -m "commit message"  # add and commit all modified files
     git push <remote_name> <branch_name> # push changes to remote repository
     git push origin master # push changes to master branch
+    git push origin main # push changes to main branch
     git push -f origin master # force push changes to master branch
+    git remote set-url origin NEW_URL # update your local folder when your repository's name has been changed (NEW_URL with or without .git)
+    git branch # list all branches. See if you are in master or main branch 
 
 .gitignore
 ----------
