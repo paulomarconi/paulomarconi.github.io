@@ -24,6 +24,30 @@ https://getnikola.com/handbook.html
     nikola new_post -f ipynb
     nikola github_deploy
     nikola check -f --clean-files
+    nikola clean -a // force clean all files
+
+For Nikola only: 
+
+.. code-block:: bash
+
+    conda create -n nikola_env python=3.11 // safe python version
+
+Inside the nikola_env:
+
+.. code-block:: bash
+
+    python -m pip install -U pip setuptools wheel
+    python -m pip install -U "Nikola[extras]"
+    
+
+Do the following to rebuild your site after installing Nikola in a new conda environment, to avoid the error ``Nikola: error: unrecognized arguments: -f``:
+
+.. code-block:: bash
+    
+    del .doit.db* // remove corrupted/old format database. Need in case of new conda nikola_env.
+    nikola clean -a
+    nikola build
+
 
 Jupyter line/cell magic commands
 ====================================
@@ -41,10 +65,11 @@ https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c68
 
 .. code-block:: bash
 
-    conda create --name <env_name> python=3.6
+    conda create --name <env_name> python=3.6 
     conda env list
     conda env remove --name <env_name>
     conda update --all  // update all packages in the current environment to the latest version  
+    C:\Users\<name>\miniconda3\Scripts\activate && conda activate base // activate base environment in Windows cmd using absolute path (script)
 
 Git
 ===
