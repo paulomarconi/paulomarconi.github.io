@@ -68,6 +68,7 @@ https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c68
     conda create --name <env_name> python=3.6 
     conda env list
     conda env remove --name <env_name>
+    conda update conda // update conda to the latest version
     conda update --all  // update all packages in the current environment to the latest version  
     C:\Users\<name>\miniconda3\Scripts\activate && conda activate base // activate base environment in Windows cmd using absolute path (script)
 

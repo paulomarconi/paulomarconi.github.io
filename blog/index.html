@@ -4456,7 +4456,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Defining-the-inequality-constraints">Defining the inequality constraints<a class="anchor-link" href="MPC-SSTO/#Defining-the-inequality-constraints">¶</a>
 </h2>
-<p>Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$
+<p>Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$<br>
 \begin{align*}
 \begin{bmatrix}
 	C \\
@@ -4585,10 +4585,9 @@ where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic R
 &amp;=
 {\underbrace{
 	\begin{bmatrix}
-		B_d\\
-		r-D_d
+		B_d d\\
+		r-D_d d
 	\end{bmatrix} 
-	d 
 	}_{b_{eq}}	
 }
 \\

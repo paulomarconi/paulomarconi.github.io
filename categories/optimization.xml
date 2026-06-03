@@ -3,7 +3,7 @@
 &lt;a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"&gt;
 &lt;img alt="Creative Commons License BY-NC-SA"
 style="border-width:0; margin-bottom:12px;"
-src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Tue, 21 Apr 2026 20:02:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"&gt;&lt;/a&gt;</copyright><lastBuildDate>Wed, 03 Jun 2026 19:30:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Constrained MPC with feed-forward SSTO</title><link>https://paulomarconi.github.io/blog/MPC-SSTO/</link><dc:creator>Paulo Loma Marconi</dc:creator><description>&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;h2&gt;Table of Contents&lt;span class="tocSkip"&gt;&lt;/span&gt;&lt;/h2&gt;
@@ -157,7 +157,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.&lt;/p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;&lt;div class="inner_cell"&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="Defining-the-inequality-constraints"&gt;Defining the inequality constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Defining-the-inequality-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$
+&lt;h2 id="Defining-the-inequality-constraints"&gt;Defining the inequality constraints&lt;a class="anchor-link" href="https://paulomarconi.github.io/blog/MPC-SSTO/#Defining-the-inequality-constraints"&gt;¶&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$&lt;br&gt;
 \begin{align*}
 \begin{bmatrix}
 	C \\
@@ -282,10 +282,9 @@ where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic R
 &amp;amp;=
 {\underbrace{
 	\begin{bmatrix}
-		B_d\\
-		r-D_d
+		B_d d\\
+		r-D_d d
 	\end{bmatrix} 
-	d 
 	}_{b_{eq}}	
 }
 \\
