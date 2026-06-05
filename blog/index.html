@@ -4565,9 +4565,9 @@ where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic R
 </h2>
 <p>The offset-free equilibrium points $(x_{ss},u_{ss})$ that satisfies the constraints exits if only if $x_{ss}=A x_{ss}+B u_{ss}+B_d d$ and $y_{ss}=C x_{ss}+D_d d=r$.</p>
 <p>Thus, the SSTO problem is
-\begin{align}\tag{7}
-	\min_{\left\lbrace x_{ss},u_{ss} \right\rbrace } \|C~x_{ss}+D_d~d-r\|+\rho \|u_{ss}\|
-\end{align}</p>
+\begin{equation}\tag{7}
+	\min_{\left\lbrace x_{ss},u_{ss} \right\rbrace } \|y_{ss}-r\|+\rho \|u_{ss}\|  \\
+\end{equation}</p>
 <p>subject to,</p>
 <p>\begin{align*}
 {\underbrace{
