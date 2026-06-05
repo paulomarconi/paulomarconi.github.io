@@ -4433,17 +4433,17 @@ $$</p>
 <figure><img alt="MPC-SSTO" src="../../images/MPC-SSTO/MPC-SSTO.png" width="50%"><center><figcaption>Fig.2 - MPC and SSTO model</figcaption></center>
 </figure><p>For the Discrete Linear Time-Invariant (DLTI) state-space system
 \begin{align*}\tag{2}
-x(k+1) &amp;= A~x(k)+B~u(k)+B_d~d(k)\\
-y(k) &amp;= C~x(k)+D_d~d(k), \quad k=0,1,2,\dots
+x(k+1) &amp;= A x(k)+B u(k)+B_d d(k)\\
+y(k) &amp;= C x(k)+D_d d(k), \quad k=0,1,2,\dots
 \end{align*}
-where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, $y\in\mathbb{R}^p$, and $d\in\mathbb{R}^q$ are the states, input, output, and disturbance vectors respectively. $A,B,C,$ are the state, input, and output matrices, and $B_d,D_d$ are the disturbance matrices in the input, and in the output. $k$ is the sampling time.</p>
+where $x\in\mathbb{R}^n$, $u\in\mathbb{R}^m$, $y\in\mathbb{R}^p$, and $d\in\mathbb{R}^q$ are the states, input, output, and disturbance vectors respectively. $A, B, C,$ are the state, input, and output matrices, and $B_d, D_d$ are the disturbance matrices in the input, and in the output. $k$ is the sampling time.</p>
 <p>The idea is to compute
 $$ x \rightarrow x_{ss}, \quad u \rightarrow u_{ss} $$
 defining two auxiliar variables as
-$$ \xi \approx x - x_{ss}, \quad v \approx u - u_{ss} $$</p>
+$$ \xi \approx x - x_{ss}, \quad v \approx u - u_{ss}. $$</p>
 <p>Therefore, the objective is to regulate
-$$ \xi \rightarrow 0, \quad v \rightarrow 0 $$
-where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
+$$ \xi \rightarrow 0, \quad v \rightarrow 0, $$
+where $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 </div>
 </div>
 </div>
@@ -4464,7 +4464,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 	\xi(k|k) &amp;= \xi(k) \\
 	P_x ( \xi(k+j|k) + x_{ss} )&amp;\leq q_x \\
 	P_u ( v(k+j|k) + u_{ss} )&amp;\leq q_u  \\
-	P_{x_N}~\xi(k+N|k) &amp;\leq \tilde{q}_{x_N}\\	 
+	P_{x_N}~\xi(k+N|k) &amp;\leq q_{x_N}\\	 
 \end{align*}</p>
 <p>for $j = 0, 1, 2, \dots, N-1$, where $Q$ and $R$ are weight matrices, $P$ is the terminal cost matrix, $P_x$, $P_u$, $P_{x_N}$ are the linear inequality (polyhedra) constraints, $N$ is the finite-horizon. Note that $B_d,D_d$ and $d$ are not present because the SSTO will manage the disturbance rejection.</p>
 </div>
@@ -4477,8 +4477,13 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Defining-the-inequality-constraints">Defining the inequality constraints<a class="anchor-link" href="MPC-SSTO/#Defining-the-inequality-constraints">¶</a>
 </h2>
-<p>Given $|\Delta p^{ref}|=|u|\leq u_{min,max}$, and $|\Delta f|=|y|\leq y_{min,max}$, for $y=C~x$<br>
+<p>Given
 \begin{align*}
+	|\Delta p^{ref}|=|u| &amp; \leq u_{min,max} \\
+	|\Delta f|=|y| &amp; \leq y_{min,max}.
+\end{align*}</p>
+<p>Knowing that $y=C x$,</p>
+<p>\begin{align*}
 \begin{bmatrix}
 	C \\
 	-C
@@ -4497,7 +4502,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 \begin{bmatrix}
 	u_{max}\\
 	-u_{min}
-\end{bmatrix}
+\end{bmatrix},
 \end{align*}</p>
 <p>can be written in terms of $\xi$ and $v$ as follows</p>
 <p>\begin{align}\tag{4}
@@ -4530,7 +4535,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 	-I
 \end{bmatrix}}_{P_u}
 }
-	v(k+j|k) &amp; \leq
+v(k+j|k) &amp; \leq
 {\underbrace{
 \begin{bmatrix}
 	u_{max}\\
@@ -4544,7 +4549,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 	-I
 \end{bmatrix}}_{P_u}
 }
-	u_{ss}
+u_{ss},
 \end{align}</p>
 <p>and using a proper <strong>deadbeat mode-2</strong> terminal inequality constraint to ensure a fast convergence to zero</p>
 <p>\begin{align}\tag{6}
@@ -4553,7 +4558,7 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 	\textbf{I}_{n\times n}\otimes
 	\begin{bmatrix}
 	P_x\\
-	P_u~K_\infty
+	P_u K_\infty
 	\end{bmatrix}
 	\begin{bmatrix}
 		(A+BK_\infty)^0\\
@@ -4567,11 +4572,11 @@ where, $x_{ss}$ and $u_{ss}$ are the Steady-State target values.</p>
 {\underbrace{
 	\textbf{1}_n \otimes 
 	\begin{bmatrix}
-		q_x-P_x~x_{ss}\\
-		q_u-P_u~u_{ss}
+		q_x-P_x x_{ss}\\
+		q_u-P_u u_{ss}
 	\end{bmatrix}
-}_{\tilde{q}_{x_N}}
-}
+}_{q_{x_N}}
+},
 \end{align}
 where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic Regulator (LQR) method.</p>
 </div>
@@ -4630,7 +4635,7 @@ where $K_\infty$ is the deadbeat mode-2 gain calculated using Linear Quadratic R
 		q_x\\
 		q_u
 		\end{bmatrix}}_{b_{neq}}
-}
+},
 \end{align*}
 where $\rho$ is a penalty constant.</p>
 </div>
@@ -4649,21 +4654,21 @@ where $\rho$ is a penalty constant.</p>
 \end{align}
 subject to,
 \begin{align*}
-	P_c \textbf{v}(k) \leq q_c+S_c~\xi(k)
+	P_c \textbf{v}(k) \leq q_c+S_c~\xi(k),
 \end{align*}
-where $H,L,M$ are the cost matrices given $Q$ and $R$. $P_c,~q_c,~S_c$ are the stacked inequality constraints for $P_x,~P_u,~P_{x_N},~q_u,~q_x,~\tilde{q}_{x_N}$ given the predictions matrices $\textbf{x}=Fx(k)+G\textbf{u}(k)$. Note that the prediction matrices are constructed using the states and input without the tracking model.</p>
+where $H,L,M$ are the cost matrices given $Q$ and $R$. $P_c,~q_c,~S_c$ are the stacked inequality constraints for $P_x, P_u, P_{x_N}, q_u, q_x, q_{x_N}$ given the predictions matrices $\textbf{x}=Fx(k)+G\textbf{u}(k)$. Note that the prediction matrices are constructed using the states and input without the tracking model.</p>
 <p>The solution of (5) is the optimal control input sequence
 \begin{align*}
-	\textbf{v}^*=\left\lbrace v^*(k|k),v^*(k+1|k),\dots,v^*(k+N-1|k) \right\rbrace
+	\textbf{v}^*=\left\lbrace v^*(k|k),v^*(k+1|k),\dots,v^*(k+N-1|k) \right\rbrace,
 \end{align*}
 which can be solved numerically.</p>
 <p>Because MPC uses the receding-horizon principle, only the first optimized control input is needed
 \begin{align*}
-	v(k)=v^*(k|k)=\kappa_N(\xi(k))
+	v(k)=v^*(k|k)=\kappa_N(\xi(k)),
 \end{align*}
 but the real control input applied to the system is
 \begin{align}\tag{9}
-	u(k)=u_{ss}+v^*(k|k)
+	u(k)=u_{ss}+v^*(k|k).
 \end{align}</p>
 </div>
 </div>
@@ -4677,7 +4682,7 @@ but the real control input applied to the system is
 </h2>
 <p>In order to ensure stability it is necessary to compute a terminal cost matrix $P$ that satisfies the Lyapunov equation
 \begin{equation*}
-	(A+B~K)^\intercal P(A+B~K)-P+(Q+K^\intercal R~K)=0
+	(A+B~K)^\intercal P(A+B~K)-P+(Q+K^\intercal R~K)=0,
 \end{equation*}
 which solution can be computed numerically. A good approach is to use a deadbeat mode-2 control gain $K$ that converges the states to the origin $x=0$ as long as $(A+BK)$ is stable, which means that the eigenvalues $\lambda$ are inside the unit circle, $|\lambda| &lt; 1$.</p>
 </div>
@@ -4693,7 +4698,7 @@ which solution can be computed numerically. A good approach is to use a deadbeat
 <p>Now that the solution of the LQ-MPC is established and the stability can be guaranteed, there are basic conditions to meet such as</p>
 <ul>
 <li>$(A,B)$ is stabilizable which can be proved by the controllability, in Matlab <code>rank(ctrb(A,B))</code>.</li>
-<li>$Q\succeq 0$, can be $C^\intercal C$</li>
+<li>$Q\succeq 0$, can be $C^\intercal C$.</li>
 <li>$R\succ 0$, changed later for tuning.</li>
 </ul>
 <p><img alt="drawing" src="../../images/MPC-SSTO/algorithm.png" width="60%"></p>
