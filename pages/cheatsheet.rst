@@ -85,6 +85,7 @@ https://docs.github.com/en/github/using-git/
     git status
     git add <file_name> # add file to the staging area
     git add --all # add all files to the staging area
+    git add -A # add all files to the staging area
     git add . # add all files to the staging area
     git commit -m "commit message" # commit changes with a message
     git commit -a -m "commit message"  # add and commit all modified files

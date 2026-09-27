@@ -1024,7 +1024,19 @@ CONTENT_FOOTER = '''
             <i class="fa fa-square fa-stack-2x"></i>
             <i class="fa fa-envelope fa-inverse fa-stack-1x"></i>
         </a>
+        </span>         
+        <span class="fa-stack fa-2x">
+        <a href="https://3dwarehouse.sketchup.com/by/paulomarconi" title="3D Warehouse">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-cube fa-inverse fa-stack-1x"></i>
+        </a>
         </span>
+        <span class="fa-stack fa-2x">
+        <a href="https://www.thingiverse.com/paulomarconi/makes" title="Thingiverse">
+            <i class="fa fa-square fa-stack-2x"></i>
+            <i class="fa fa-cubes fa-inverse fa-stack-1x"></i>
+        </a>
+        </span>      
     </p>
     <p>
         Contents &copy; {date}  <a href="mailto:{email}">{author}</a> {license} 
