@@ -76,6 +76,15 @@ Git
 ===
 https://docs.github.com/en/github/using-git/
 
+
+.. code-block:: bash
+    
+    git init -b master # initialize a new Git repository with master branch
+    git init -b main # initialize a new Git repository with main branch  
+    git add .
+    git commit -m "Initial commit"
+    gh repo create repo_name --public --source=. --remote=origin --push --description "..." # create a new public repository on GitHub and push the local repository to it
+
 .. code-block:: bash
 
     git init 
